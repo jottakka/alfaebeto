@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c70cngjeeglb"]
+
+[ext_resource type="Script" path="res://Blocks/Word.cs" id="1_dwt8o"]
+[ext_resource type="PackedScene" uid="uid://co3270trdfkno" path="res://Blocks/letter_block.tscn" id="2_nrj3o"]
+
+[node name="Word" type="Node2D"]
+script = ExtResource("1_dwt8o")
+LetterBlockPackedScene = ExtResource("2_nrj3o")

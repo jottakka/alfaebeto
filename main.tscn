@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlrbuuun6npg2"]
+
+[ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
+[ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("WordBuilderComponent")]
+script = ExtResource("1_lo5c0")
+WordBuilderComponent = NodePath("WordBuilderComponent")
+
+[node name="WordBuilderComponent" parent="." instance=ExtResource("2_l307d")]
