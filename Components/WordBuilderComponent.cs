@@ -5,11 +5,19 @@ public partial class WordBuilderComponent : Node
 	[Export]
 	public PackedScene WordPackedScene { get; set; }
 
-	public static Word BuildWord(string wordText, Vector2 position)
+	private static WordBuilder _wordBuilder = null;
+
+	public override void _Ready()
 	{
-		var word = new Word();
-		word.WordText = wordText;
-		word.Position = position;
+		if (_wordBuilder == null)
+		{
+			_wordBuilder = new WordBuilder(WordPackedScene);
+		}
+	}
+
+	public Word BuildWord(string wordText, Vector2 position)
+	{
+		var word = _wordBuilder.BuildWord(wordText, position);
 		return word;
 	}
 }

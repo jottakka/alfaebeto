@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr3yima6l4o20"]
+
+[ext_resource type="Script" path="res://Components/WeaponComponent.cs" id="1_derjo"]
+[ext_resource type="PackedScene" uid="uid://ew30y65rjmpq" path="res://Weapons/laser.tscn" id="2_q7uon"]
+[ext_resource type="PackedScene" uid="uid://bqeiykugylvr7" path="res://Player/player_input_processor.tscn" id="3_itri2"]
+
+[node name="WeaponComponent" type="Node" node_paths=PackedStringArray("PlayerInputProcessor", "CooldownTimer")]
+script = ExtResource("1_derjo")
+LaserPackedScene = ExtResource("2_q7uon")
+PlayerInputProcessor = NodePath("PlayerInputProcessor")
+CooldownTimer = NodePath("CooldownTimer")
+
+[node name="PlayerInputProcessor" parent="." instance=ExtResource("3_itri2")]
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.2

@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Godot;
 
-public sealed class wordBuilder
+public sealed class WordBuilder
 {
     private PackedScene _wordBlockPackedScene;
 
-    public wordBuilder(PackedScene packedScene)
+    public WordBuilder(PackedScene packedScene)
     {
         _wordBlockPackedScene = packedScene;
     }
