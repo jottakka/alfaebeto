@@ -1,16 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://co3270trdfkno"]
 
 [ext_resource type="Script" path="res://Blocks/LetterBlock.cs" id="1_kys8a"]
-[ext_resource type="Texture2D" uid="uid://cqinub0ygopyg" path="res://Blocks/Art/powerupBlue.png" id="1_u2dmn"]
+[ext_resource type="Texture2D" uid="uid://8e1eyd7qtew7" path="res://Blocks/Art/elementMetal018.png" id="2_tyg10"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sk5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj5s"]
-size = Vector2(29, 33)
+size = Vector2(16.5, 16)
 
 [node name="LetterBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "CollisionShape", "AnimationPlayer")]
-collision_layer = 0
-collision_mask = 0
+position = Vector2(16, 0)
 physics_material_override = SubResource("PhysicsMaterial_2sk5a")
 script = ExtResource("1_kys8a")
 Sprite = NodePath("Sprite2D")
@@ -19,23 +18,27 @@ CollisionShape = NodePath("CollisionShape2D")
 AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.784, 2)
-texture = ExtResource("1_u2dmn")
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.235714, 0.224216)
+texture = ExtResource("2_tyg10")
+offset = Vector2(69, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(16, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_rsj5s")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -30.0
-offset_top = -24.0
-offset_right = 30.0
-offset_bottom = 26.0
+self_modulate = Color(1, 1, 1, 0.796078)
+offset_left = 1.0
+offset_top = -23.0
+offset_right = 32.0
+offset_bottom = 21.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 27
 text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

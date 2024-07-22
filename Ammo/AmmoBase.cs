@@ -13,7 +13,7 @@ public partial class AmmoBase : Area2D
 	[Export]
 	public Vector2 InitialPosition { get; set; }
 	[Export]
-	public float Speed { get; set; } = 700.0f;
+	public float Speed { get; set; } = 600.0f;
 
 	private Vector2 _direction;
 	

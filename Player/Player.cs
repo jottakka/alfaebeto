@@ -18,7 +18,7 @@ public sealed partial class Player :  CharacterBody2D
 	[Export]
 	public WeaponComponent WeaponComponent { get; set; }
 	[Export]
-	public float Speed { get; set; } = 400.0f;
+	public float Speed { get; set; } = 600.0f;
 
 	public override void _Ready()
 	{

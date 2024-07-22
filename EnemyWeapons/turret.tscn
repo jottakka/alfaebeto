@@ -42,7 +42,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -180,11 +180,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_5f0ii"]
 radius = 20.025
 
-[node name="Turret" type="Area2D" node_paths=PackedStringArray("TurrentControllerComponent", "AnimationPlayer", "Muzzle")]
+[node name="Turret" type="Area2D" node_paths=PackedStringArray("TurrentControllerComponent", "AnimationPlayer", "Muzzle", "CooldownTimer")]
 script = ExtResource("2_e0rhr")
 TurrentControllerComponent = NodePath("TurrentControllerComponent")
 AnimationPlayer = NodePath("AnimationPlayer")
 Muzzle = NodePath("Muzzle")
+CooldownTimer = NodePath("CooldownTimer")
 
 [node name="Base" type="Sprite2D" parent="."]
 texture = ExtResource("2_kaeeo")
@@ -200,9 +201,10 @@ position = Vector2(0, 53)
 libraries = {
 "": SubResource("AnimationLibrary_0l1i0")
 }
-speed_scale = 0.6
+speed_scale = 2.0
 
 [node name="Light" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 0.709804, 0.705882)
 show_behind_parent = true
 position = Vector2(0, 63)
@@ -220,3 +222,6 @@ texture = ExtResource("3_k6i5o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5f0ii")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.1

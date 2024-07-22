@@ -14,9 +14,9 @@ public sealed partial class Laser : Area2D
 	[Export]
 	public VisibleOnScreenNotifier2D VisibleOnScreenNotifier { get; set; }
 	[Export]
-	public static float CooldownSecs { get; set; } = 0.2f;
+	public static float CooldownSecs { get; set; } = 0.1f;
 	[Export]
-	public float Speed { get; set; } = 700.0f;
+	public float Speed { get; set; } = 900.0f;
 
 	public override void _Ready()
 	{
