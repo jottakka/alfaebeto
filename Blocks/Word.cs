@@ -8,7 +8,10 @@ public partial class Word : Node2D
 	public PackedScene LetterBlockPackedScene { get; set; }
 	[Export]
 	public string WordText { get; set; } = "TESTE";
-	public IList<LetterBlock> LetterBlocks { get; set; } = new List<LetterBlock>();
+	
+	public float CenterOffset { get; set; } = 0.0f;
+	
+	public IList<LetterBlock> LetterBlocks { get; set; }
 
 	private static LetterBlockBuilder _letterBuilder = null;
 
@@ -25,7 +28,7 @@ public partial class Word : Node2D
 	{
 		// Start position for the first letter
 		float currentX = 0.0f;
-
+		LetterBlocks = new List<LetterBlock>();
 		// Aggregate function to place each letter based on the previous one's position and width
 		foreach (var letter in WordText)
 		{
@@ -35,12 +38,13 @@ public partial class Word : Node2D
 			);
 			AddChild(letterBlock);
 			var collisionShape = letterBlock
-				.GetChildren()
-				.OfType<CollisionShape2D>()
-				.Single();
+				.CollisionShape;
+			LetterBlocks.Add(letterBlock);
 			var shape = collisionShape.Shape as RectangleShape2D;
 			currentX += shape.Size.X * 2;
 		}
+		CenterOffset = currentX / 2.0f;
+		Position -= new Vector2(CenterOffset, 0);
 	}
 }
 

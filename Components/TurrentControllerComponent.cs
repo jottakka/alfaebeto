@@ -7,10 +7,11 @@ public sealed partial class TurrentControllerComponent : Node
 	[Export]
 	public PackedScene AmmoPackedScene { get; set; }
 	[Export]
-	public float PointingTolerance { get; set; } = Mathf.Pi / 30.0f ;
+	public float PointingTolerance { get; set; } = Mathf.Pi / 15.0f ;
 	[Export]
 	public float MaxAroundAxisRotation { get; set; } = Mathf.Pi / 2.0f;
-	
+
+	private Timer _timer;
 	private TurrentBase _turrent;
 	private Player _player => Global.Instance.Player;
 	private Node _scene => Global.Instance.Scene;
@@ -32,7 +33,6 @@ public sealed partial class TurrentControllerComponent : Node
 			float globalAngle = Mathf.Atan2(direction.Y, direction.X);
 			// Get turrent muzzle direction to global turrent facing direction
 			float muzzleAngle = GetMuzzleAngle();
-
 			// Estimate updated muzzle angle
 			var muzzleAngleAfter = Mathf.LerpAngle(muzzleAngle, globalAngle, _turrent.RotationSpeed * (float)delta);
 			// Rotate turrent muzzle relative to muzzle new and old angles difference
