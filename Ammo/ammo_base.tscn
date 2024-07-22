@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cldj0ylgrvu2t"]
+
+[ext_resource type="Texture2D" uid="uid://dq6sv1kerr6je" path="res://Ammo/Art/energy_ball.png" id="1_bdrbm"]
+[ext_resource type="Script" path="res://Ammo/AmmoBase.cs" id="1_ridbi"]
+[ext_resource type="Texture2D" uid="uid://brf0t530pevrs" path="res://Ammo/Art/circle_05.png" id="3_mdxkh"]
+[ext_resource type="Texture2D" uid="uid://c27b5udupevmr" path="res://Ammo/Art/spaceEffects_004.png" id="4_3d1t1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xymx"]
+radius = 16.0312
+
+[node name="Ammo" type="Area2D" node_paths=PackedStringArray("Sprite", "CollisionShape", "VisibleOnScreenNotifier")]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_ridbi")
+Sprite = NodePath("Sprite2D")
+CollisionShape = NodePath("CollisionShape2D")
+VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bdrbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6xymx")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(44.25, 0.500001)
+scale = Vector2(0.375, 1.45)
+
+[node name="Circle05" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0.847059, 0.12549)
+z_index = -1
+position = Vector2(0, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mdxkh")
+
+[node name="SpaceEffects004" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0.792157, 0.266667)
+z_index = -1
+position = Vector2(-27, 0)
+rotation = 1.5708
+texture = ExtResource("4_3d1t1")

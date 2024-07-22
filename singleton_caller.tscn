@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://obj2e2mm307t"]
+
+[ext_resource type="Script" path="res://SingletonCaller.cs" id="1_q8dvb"]
+
+[node name="SingletonCaller" type="Node"]
+script = ExtResource("1_q8dvb")

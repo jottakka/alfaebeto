@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://byr2ow0cg7y4w"]
+
+[ext_resource type="Script" path="res://Components/TurrentControllerComponent.cs" id="1_jhlqv"]
+[ext_resource type="PackedScene" uid="uid://cldj0ylgrvu2t" path="res://Ammo/ammo_base.tscn" id="2_e7ti5"]
+[ext_resource type="PackedScene" uid="uid://blh1wi0lweqk0" path="res://Components/ammo_component.tscn" id="2_jx3ja"]
+[ext_resource type="PackedScene" uid="uid://cakt2rsoe5g55" path="res://global.tscn" id="4_wc066"]
+
+[node name="TurrentControllerComponent" type="Node" node_paths=PackedStringArray("AmmoComponent")]
+script = ExtResource("1_jhlqv")
+AmmoComponent = NodePath("AmmoComponent")
+AmmoPackedScene = ExtResource("2_e7ti5")
+
+[node name="AmmoComponent" parent="." instance=ExtResource("2_jx3ja")]
+
+[node name="Global" parent="." instance=ExtResource("4_wc066")]

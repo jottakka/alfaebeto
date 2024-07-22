@@ -21,7 +21,7 @@ public sealed partial class Laser : Area2D
 	public override void _Ready()
 	{
 		VisibleOnScreenNotifier.ScreenExited += OnScreenExited;
-		ZIndex = (int)VisibilityZOrdering.Laser;
+		ZIndex = (int)VisibilityZOrdering.Ammo;
 	}
 
 	public override void _PhysicsProcess(double delta)

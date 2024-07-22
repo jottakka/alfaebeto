@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public enum VisibilityZOrdering
 {
-    Laser=1,
+    Ammo=1,
     PlayerAndEnemies=3,
     UI = 4
 }

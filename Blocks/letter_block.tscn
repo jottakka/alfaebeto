@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sk5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj5s"]
-size = Vector2(32, 32)
+size = Vector2(29, 33)
 
 [node name="LetterBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "CollisionShape", "AnimationPlayer")]
 collision_layer = 0
@@ -23,6 +23,7 @@ scale = Vector2(1.784, 2)
 texture = ExtResource("1_u2dmn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_rsj5s")
 

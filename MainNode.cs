@@ -10,8 +10,11 @@ public sealed partial class MainNode : Node2D
 	public Marker2D PlayerSpawnPosition { get; set; }
 	[Export]
 	public ParallaxBackground ParallaxBackground { get; set; }
+
 	public override void _Ready()
 	{
+		Global.Instance.Player = Player;
+		Global.Instance.Scene = this;
 		Player.GlobalPosition = PlayerSpawnPosition.Position;
 		var word = WordBuilderComponent.BuildWord("TESTE", new Vector2(0, 0));
 		AddChild(word);
