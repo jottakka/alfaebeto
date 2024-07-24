@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=8 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
 [ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="6_x62d7"]
+[ext_resource type="PackedScene" uid="uid://ck85u3rkf5tmf" path="res://Enemies/enemy_base.tscn" id="7_s3cex"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("WordBuilderComponent", "Player", "PlayerSpawnPosition", "ParallaxBackground")]
 script = ExtResource("1_lo5c0")
@@ -58,3 +59,6 @@ color = Color(1, 1, 1, 0.419608)
 
 [node name="WordEnemy" parent="." instance=ExtResource("6_x62d7")]
 position = Vector2(335, 119)
+
+[node name="EnemyBase" parent="." instance=ExtResource("7_s3cex")]
+position = Vector2(94, 156)

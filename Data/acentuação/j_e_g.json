@@ -1,0 +1,50 @@
+{
+  "UsoDeG": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /g/ antes das vogais 'a', 'o', 'u'",
+        "Exemplos": ["gato", "gol", "guri", "gostar", "guerra"]
+      },
+      {
+        "Regra": "Usado para representar o som /ʒ/ antes das vogais 'e' e 'i'",
+        "Exemplos": ["gelo", "gira", "genial", "gigante", "geral"]
+      },
+      {
+        "Regra": "Usado em palavras de origem latina que terminam em '-gem'",
+        "Exemplos": ["imagem", "viagem", "coragem", "homenagem", "mensagem"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'g' representando o som /g/",
+        "Exemplos": ["água", "águia", "ambíguo", "ágata", "ágape"]
+      },
+      {
+        "Regra": "Palavras que não seguem a regra de 'g' representando o som /ʒ/",
+        "Exemplos": ["gente", "genro", "ginásio", "ginecologia", "gipsita"]
+      }
+    ]
+  },
+  "UsoDeJ": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /ʒ/ (j)",
+        "Exemplos": ["jato", "jogo", "janela", "joelho", "justiça"]
+      },
+      {
+        "Regra": "Usado em palavras de origem tupi, africana ou árabe",
+        "Exemplos": ["jirau", "Joca", "Jericoacoara", "jiboia", "jaca"]
+      },
+      {
+        "Regra": "Usado em formas derivadas dos verbos terminados em '-jar'",
+        "Exemplos": ["viajar", "arranjar", "trabalhar", "caçar", "abrajar"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'j' representando o som /ʒ/",
+        "Exemplos": ["jeito", "jejum", "jegue", "jeito", "jeitão"]
+      }
+    ]
+  }
+}

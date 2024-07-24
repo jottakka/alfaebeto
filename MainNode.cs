@@ -19,10 +19,10 @@ public sealed partial class MainNode : Node2D
 		var word = WordBuilderComponent.BuildWord("TESTE", new Vector2(0, 0));
 		AddChild(word);
 	}
+	
 	public override void _Process(double delta)
 	{
 		UpdateParallaxOffset(delta);
-
 	}
 
 	private void UpdateParallaxOffset(double delta)

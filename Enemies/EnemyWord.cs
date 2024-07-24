@@ -26,15 +26,37 @@ public sealed partial class EnemyWord : CharacterBody2D
 	private Vector2 _velocity;
 	public override void _Ready()
 	{
+		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
+		// Collidion layer to act upon
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
+
+
+
+		BuildWordBlocks();
+		SetUpInitialStates();
+		SetUpSignals();
+	}
+
+	private void BuildWordBlocks()
+	{
 		Word = WordBuilderComponent.BuildWord("PALAVRA", new Vector2(0, 0));
 		AddChild(Word);
+	}
+
+	private void SetUpInitialStates()
+	{
 		RightTurrentWing.Position += new Vector2(Word.CenterOffset, 0);
 		LeftTurrentWing.Position -= new Vector2(Word.CenterOffset, 0);
 		_velocity = new Vector2(
 			Mathf.Abs(VerticalVelocityModulus),
 			Math.Abs(HorizontalSpeedModulus)
 		);
+	}
 
+	private void SetUpSignals()
+	{
 		VisibleOnScreenNotifier2D.ScreenExited += QueueFree;
 
 		LeftTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>

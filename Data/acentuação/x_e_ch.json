@@ -1,0 +1,54 @@
+{
+  "UsoDeX": {
+    "Regras": [
+      {
+        "Regra": "Usado após ditongos",
+        "Exemplos": ["caixa", "peixe", "trouxer", "feixe", "meixa"]
+      },
+      {
+        "Regra": "Usado nas palavras de origem indígena, africana ou inglesa",
+        "Exemplos": ["abacaxi", "xará", "xampu", "xerife", "xícara"]
+      },
+      {
+        "Regra": "Usado após a sílaba inicial 'en-'",
+        "Exemplos": ["enxame", "enxada", "enxergar", "enxurrada", "enxoval"]
+      },
+      {
+        "Regra": "Usado para representar o som /ks/ entre vogais",
+        "Exemplos": ["exame", "exato", "texto", "complexo", "táxi"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'x' após ditongos",
+        "Exemplos": ["deixar", "baixar", "feixe", "trouxeram", "trouxesse"]
+      },
+      {
+        "Regra": "Palavras que não seguem a regra de 'x' após a sílaba inicial 'en-'",
+        "Exemplos": ["encher", "encharcar", "encheu", "encharcado", "encheram"]
+      }
+    ]
+  },
+  "UsoDeCh": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /ʃ/ (ch)",
+        "Exemplos": ["chão", "chave", "chocolate", "chuva", "chamar"]
+      },
+      {
+        "Regra": "Usado em palavras de origem estrangeira adaptadas ao português",
+        "Exemplos": ["choque", "chique", "chalé", "chefe", "champanhe"]
+      },
+      {
+        "Regra": "Usado em formas do verbo 'encher' e seus derivados",
+        "Exemplos": ["encher", "cheio", "encheu", "cheia", "enchente"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'ch' representando o som /ʃ/",
+        "Exemplos": ["mexer", "enxergar", "exagerar", "exame", "exato"]
+      }
+    ]
+  }
+}

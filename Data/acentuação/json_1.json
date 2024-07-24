@@ -1,0 +1,202 @@
+{
+  "Categorias": [
+    {
+      "Nome": "Monossílabas Tônicas",
+      "Dificuldade": 2,
+      "Frequência": "Muito Frequente",
+      "Subcategorias": [
+        {
+          "Nome": "Terminadas em -a(s)",
+          "Dificuldade": 1,
+          "Frequência": "Muito Frequente",
+          "Palavras": ["pá", "já", "má", "lá", "trás", "más", "chás"]
+        },
+        {
+          "Nome": "Terminadas em -e(s)",
+          "Dificuldade": 1,
+          "Frequência": "Muito Frequente",
+          "Palavras": ["pé", "fé", "sé", "mês", "três", "rés"]
+        },
+        {
+          "Nome": "Terminadas em -o(s)",
+          "Dificuldade": 1,
+          "Frequência": "Muito Frequente",
+          "Palavras": ["pó", "só", "dó", "cós", "sós", "nós"]
+        }
+      ]
+    },
+    {
+      "Nome": "Oxítonas",
+      "Dificuldade": 3,
+      "Frequência": "Frequente",
+      "Subcategorias": [
+        {
+          "Nome": "Terminadas em -a(s)",
+          "Dificuldade": 2,
+          "Frequência": "Frequente",
+          "Palavras": ["sofá", "maracujá", "Paraná", "ananás", "marajás", "atrás"]
+        },
+        {
+          "Nome": "Terminadas em -e(s)",
+          "Dificuldade": 2,
+          "Frequência": "Frequente",
+          "Palavras": ["Pelé", "café", "você", "freguês", "bebês"]
+        },
+        {
+          "Nome": "Terminadas em -o(s)",
+          "Dificuldade": 2,
+          "Frequência": "Frequente",
+          "Palavras": ["cipó", "paletó", "avó", "dominó", "pavô", "vovô", "chororô"]
+        },
+        {
+          "Nome": "Terminadas em -em",
+          "Dificuldade": 3,
+          "Frequência": "Regular",
+          "Palavras": ["amém", "também", "armazém", "alguém"]
+        },
+        {
+          "Nome": "Terminadas em -ens",
+          "Dificuldade": 3,
+          "Frequência": "Regular",
+          "Palavras": ["parabéns", "reféns", "armazéns"]
+        }
+      ]
+    },
+    {
+      "Nome": "Paroxítonas",
+      "Dificuldade": 4,
+      "Frequência": "Muito Frequente",
+      "Subcategorias": [
+        {
+          "Nome": "Terminadas em -l",
+          "Dificuldade": 2,
+          "Frequência": "Regular",
+          "Palavras": ["fácil", "útil", "fóssil", "réptil", "níquel"]
+        },
+        {
+          "Nome": "Terminadas em -i(s)",
+          "Dificuldade": 3,
+          "Frequência": "Regular",
+          "Palavras": ["júri", "lápis", "tênis", "biquíni"]
+        },
+        {
+          "Nome": "Terminadas em -n",
+          "Dificuldade": 3,
+          "Frequência": "Infrequente",
+          "Palavras": ["hífen", "pólen", "elétron", "nêutron", "abdômen"]
+        },
+        {
+          "Nome": "Terminadas em -u(s)",
+          "Dificuldade": 3,
+          "Frequência": "Infrequente",
+          "Palavras": ["vírus", "Vênus", "ônus", "bônus", "álbum"]
+        },
+        {
+          "Nome": "Terminadas em -r",
+          "Dificuldade": 3,
+          "Frequência": "Regular",
+          "Palavras": ["revólver", "caráter", "âmbar", "repórter"]
+        },
+        {
+          "Nome": "Terminadas em -x",
+          "Dificuldade": 3,
+          "Frequência": "Infrequente",
+          "Palavras": ["látex", "fênix", "tórax", "fértil", "órix"]
+        },
+        {
+          "Nome": "Terminadas em -ã(s)",
+          "Dificuldade": 2,
+          "Frequência": "Infrequente",
+          "Palavras": ["ímã", "órfã", "órfãs", "fã"]
+        },
+        {
+          "Nome": "Terminadas em -ão(s)",
+          "Dificuldade": 2,
+          "Frequência": "Infrequente",
+          "Palavras": ["órgão", "sótão", "fusão", "órgãos"]
+        },
+        {
+          "Nome": "Terminadas em -um",
+          "Dificuldade": 3,
+          "Frequência": "Infrequente",
+          "Palavras": ["álbum", "médium", "fórum"]
+        },
+        {
+          "Nome": "Terminadas em -uns",
+          "Dificuldade": 3,
+          "Frequência": "Infrequente",
+          "Palavras": ["álbuns", "fóruns"]
+        },
+        {
+          "Nome": "Terminadas em -ps",
+          "Dificuldade": 4,
+          "Frequência": "Muito Infrequente",
+          "Palavras": ["fórceps", "bíceps"]
+        },
+        {
+          "Nome": "Terminadas em Ditongo",
+          "Dificuldade": 2,
+          "Frequência": "Frequente",
+          "Palavras": ["água", "história", "série", "pônei", "móveis", "tênue"]
+        }
+      ]
+    },
+    {
+      "Nome": "Proparoxítonas",
+      "Dificuldade": 5,
+      "Frequência": "Regular",
+      "Subcategorias": [
+        {
+          "Nome": "Todas Proparoxítonas",
+          "Dificuldade": 5,
+          "Frequência": "Regular",
+          "Palavras": ["lânguido", "física", "trópico", "álibi", "hábitat", "déficit", "lápide", "álgebra", "célula", "pêndulo", "amígdalas", "amálgama", "cúpula", "análise", "ânimo"]
+        }
+      ]
+    },
+    {
+      "Nome": "Ditongos Abertos",
+      "Dificuldade": 4,
+      "Frequência": "Regular",
+      "Subcategorias": [
+        {
+          "Nome": "Terminadas em -éi",
+          "Dificuldade": 4,
+          "Frequência": "Regular",
+          "Palavras": ["fiéis", "papéis", "pastéis", "coronéis", "anéis"]
+        },
+        {
+          "Nome": "Terminadas em -éu",
+          "Dificuldade": 4,
+          "Frequência": "Regular",
+          "Palavras": ["céu", "chapéu", "troféu", "véu", "réu"]
+        },
+        {
+          "Nome": "Terminadas em -ói",
+          "Dificuldade": 4,
+          "Frequência": "Regular",
+          "Palavras": ["herói", "sóis", "faróis", "lençóis", "rói"]
+        }
+      ]
+    },
+    {
+      "Nome": "Hiatos I e U Tônicos",
+      "Dificuldade": 4,
+      "Frequência": "Frequente",
+      "Subcategorias": [
+        {
+          "Nome": "Sozinhos na Sílaba",
+          "Dificuldade": 3,
+          "Frequência": "Frequente",
+          "Palavras": ["saída", "juízes", "saúde", "viúva", "caíste", "saíste"]
+        },
+        {
+          "Nome": "Precedidos de Vogais",
+          "Dificuldade": 4,
+          "Frequência": "Regular",
+          "Palavras": ["balaústre", "ruído", "viúvo", "egoísmo", "egoísta"]
+        }
+      ]
+    }
+  ]
+}

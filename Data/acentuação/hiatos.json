@@ -1,0 +1,56 @@
+{
+  "Categoria": {
+    "Nome": "Hiatos",
+    "Dificuldade": 6,
+    "Frequencia": "regular",
+    "Subcategorias": [
+      {
+        "Nome": "I e U tônicos",
+        "Dificuldade": 5,
+        "Frequencia": "regular",
+        "Palavras": [
+          "baú",
+          "país",
+          "saída",
+          "saúde",
+          "egoísmo",
+          "ruído",
+          "juízes",
+          "faísca",
+          "miúdo",
+          "Grajaú",
+          "tatuí",
+          "reúne",
+          "Luís",
+          "caída",
+          "juízo",
+          "inútil",
+          "graúdo",
+          "viúva",
+          "atuí",
+          "juá",
+          "raízes",
+          "cajuína",
+          "atuído",
+          "intuído",
+          "atraído",
+          "ruína",
+          "aí",
+          "baiúca",
+          "atuía",
+          "fruíam",
+          "moído",
+          "saída",
+          "fluído",
+          "atraí",
+          "atuído",
+          "moído",
+          "saudável",
+          "intuição",
+          "tatuíra",
+          "mauísmo"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "Categorias": [
+    {
+      "Nome": "Hiato",
+      "Dificuldade": 3,
+      "Frequência": "Regular",
+	  "Descrição": "O hiato é definido quando duas vogais se encontram na sequência, mas se separam durante a divisão da sílaba.",
+      "Subcategorias": [
+        {
+          "Nome": "Vogais Iguais",
+          "Dificuldade": 4,
+          "Frequência": "Infrequente",
+          "Palavras": ["xiita", "saara", "coordenação", "voo", "coo","caatinga"]
+        },
+        {
+          "Nome": "Vogais Diferentes",
+          "Dificuldade": 3,
+          "Frequência": "Frequente",
+          "Palavras": ["saúde", "baú", "país", "raiz", "saída","história","gênio","rádio","dúzia","glória","hiato"]
+        },
+        {
+          "Nome": "Seguido de NH",
+          "Dificuldade": 4,
+          "Frequência": "Infrequente",
+          "Palavras": ["rainha", "moinho", "bainha"]
+        },
+        {
+          "Nome": "I ou U Tônicos",
+          "Dificuldade": 4,
+          "Frequência": "Regular",
+          "Palavras": ["saí", "faísca", "baú", "baía", "balaústre", "juiz", "cafeína", "saúva"]
+        }
+      ]
+    },
+    {
+      "Nome": "Ditongo",
+      "Dificuldade": 2,
+      "Frequência": "Muito Frequente",
+	  "Descrição":"O ditongo acontece quando há o encontro de duas vogais (veja mais sobre vogais em vogal, semivogal e consoante), que pertencem à mesma sílaba durante a divisão silábica e são pronunciadas na mesma emissão de voz",
+      "Subcategorias": [
+        {
+          "Nome": "Crescente",
+          "Dificuldade": 2,
+		  "Descrição":"esse caso acontece quando a semivogal, a letra mais fraca, antecede a vogal, a letra mais forte",
+          "Frequência": "Frequente",
+          "Palavras": [
+				"glória", "pátria", "diabo", "área",
+				"cárie", "calvície",
+				"dieta",
+				"vários", "médio", "áureo", "níveo",
+				"mandioca",
+				"piolho",
+				"miúdo",
+				"água", "quase", "mágoa",
+				"linguiça", "tênue",
+				"quiproquó",
+				"aquoso",
+				"oblíquo",
+				"coelho",
+				"equestre", "goela"
+			]
+        },
+        {
+          "Nome": "Decrescente",
+          "Dificuldade": 2,
+          "Frequência": "Frequente",
+          "Palavras": ["pai", "mau", "sei", "papéis","seu","céu", "viu","noite","herói","vou","azuis"]
+        },
+		{
+          "Nome": "Nasal Crescente",
+		  "Descrição":"Um ditongo nasalisado é uma combinação de uma vogal e uma semivogal que inclui a nasalização, ou seja, o som passa pelo nariz. Crescente quando sequência começa com uma semivogal nasalizada e termina com uma vogal nasalizada",
+          "Dificuldade": 2,
+          "Frequência": "Regular",
+          "Palavras": ["crança", "quando","frequente","moinho"]
+        },
+        {
+          "Nome": "Nasal Decrescente",
+		  "Descrição":"Um ditongo nasalisado é uma combinação de uma vogal e uma semivogal que inclui a nasalização, ou seja, o som passa pelo nariz. Decrescente quando a sequência começa com uma vogal nasalizada e termina com uma semivogal nasalizada.",
+          "Dificuldade": 2,
+          "Frequência": "Regular",
+          "Palavras": ["mãe", "pão","razão","órgão","balão","sermões", "muito"]
+        }
+      ]
+    },
+    {
+      "Nome": "Tritongo",
+      "Dificuldade": 4,
+      "Frequência": "Muito Infrequente",
+      "Subcategorias": [
+        {
+          "Nome": "Oral",
+          "Dificuldade": 4,
+          "Frequência": "Muito Infrequente",
+          "Palavras": ["iguais", "Paraguai"]
+        },
+        {
+          "Nome": "Nasal",
+          "Dificuldade": 4,
+          "Frequência": "Muito Infrequente",
+          "Palavras": ["saguão", "quão"]
+        }
+      ]
+    }
+  ]
+}

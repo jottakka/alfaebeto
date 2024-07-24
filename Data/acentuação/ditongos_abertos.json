@@ -1,0 +1,90 @@
+{
+  "Categoria": {
+    "Nome": "Ditongos Abertos",
+    "Dificuldade": 5,
+    "Frequencia": "regular",
+    "Subcategorias": [
+      {
+        "Nome": "Terminados em ei(s)",
+        "Dificuldade": 4,
+        "Frequencia": "regular",
+        "Palavras": [
+          "papéis",
+          "fiéis",
+          "papel",
+          "mel",
+          "réu",
+          "céu",
+          "troféu",
+          "coréu",
+          "puréu",
+          "abel",
+          "borel",
+          "hotel",
+          "motel",
+          "anel",
+          "babel",
+          "chaméu",
+          "aerol",
+          "réus",
+          "fiel",
+          "pente"
+        ]
+      },
+      {
+        "Nome": "Terminados em eu(s)",
+        "Dificuldade": 4,
+        "Frequencia": "regular",
+        "Palavras": [
+          "chapéu",
+          "céu",
+          "troféu",
+          "féu",
+          "dóeu",
+          "anéis",
+          "israel",
+          "alfarém",
+          "amém",
+          "carvão",
+          "tão",
+          "cão",
+          "balão",
+          "avô",
+          "avó",
+          "parvão",
+          "vorão",
+          "borão",
+          "furão",
+          "filé"
+        ]
+      },
+      {
+        "Nome": "Terminados em oi(s)",
+        "Dificuldade": 4,
+        "Frequencia": "regular",
+        "Palavras": [
+          "herói",
+          "anzóis",
+          "heróis",
+          "azói",
+          "brói",
+          "camboi",
+          "destrói",
+          "constrói",
+          "dói",
+          "fói",
+          "jói",
+          "lói",
+          "mói",
+          "nói",
+          "pói",
+          "rói",
+          "tói",
+          "vois",
+          "cóis",
+          "dóei"
+        ]
+      }
+    ]
+  }
+}

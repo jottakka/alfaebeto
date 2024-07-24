@@ -1,0 +1,160 @@
+[gd_scene load_steps=8 format=3 uid="uid://82hbd68lldrd"]
+
+[ext_resource type="Texture2D" uid="uid://corgjc1shalqr" path="res://Enemies/Art/spaceStation_027.png" id="1_0sp0u"]
+[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="2_4xi46"]
+[ext_resource type="Texture2D" uid="uid://b4nmujfb0dhyj" path="res://Enemies/Art/muzzle_01.png" id="2_tjnpi"]
+
+[sub_resource type="Animation" id="Animation_vab0v"]
+resource_name = "spawner_moving"
+loop_mode = 2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0472, 2.0944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.195225, 0.273876), Vector2(0.15, 0.32), Vector2(0.195225, 0.273876), Vector2(0.15, 0.32), Vector2(0.195225, 0.273876)]
+}
+
+[sub_resource type="Animation" id="Animation_8fmnc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.195225, 0.273876)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/JetEffect:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 18.919, 1, 0.762)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/JetEffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6lmrh"]
+resource_name = "spawn_enemy"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.195225, 0.273876), Vector2(0.14, 0.33), Vector2(0.14, 0.33), Vector2(0.25, 0.21), Vector2(0.195225, 0.273876)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/JetEffect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 18.919, 1, 0.762), Color(1, 18.919, 1, 0.762), Color(1, 18.9176, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/JetEffect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghfun"]
+_data = {
+"RESET": SubResource("Animation_8fmnc"),
+"spawn_enemy": SubResource("Animation_6lmrh"),
+"spawner_moving": SubResource("Animation_vab0v")
+}
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.39488e-14, 0)
+rotation = 1.5708
+scale = Vector2(0.195225, 0.273876)
+texture = ExtResource("1_0sp0u")
+offset = Vector2(-125, 0)
+
+[node name="JetEffect" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(1, 18.919, 1, 0.762)
+show_behind_parent = true
+position = Vector2(-316, 1.64438e-05)
+rotation = -1.5708
+scale = Vector2(0.47619, 0.4)
+texture = ExtResource("2_tjnpi")
+
+[node name="WordEnemy" parent="." instance=ExtResource("2_4xi46")]
+position = Vector2(-136, 61)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -49)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ghfun")
+}

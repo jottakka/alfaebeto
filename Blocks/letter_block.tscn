@@ -1,44 +1,137 @@
-[gd_scene load_steps=5 format=3 uid="uid://co3270trdfkno"]
+[gd_scene load_steps=10 format=3 uid="uid://co3270trdfkno"]
 
 [ext_resource type="Script" path="res://Blocks/LetterBlock.cs" id="1_kys8a"]
+[ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="2_0ego7"]
 [ext_resource type="Texture2D" uid="uid://8e1eyd7qtew7" path="res://Blocks/Art/elementMetal018.png" id="2_tyg10"]
+[ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="4_yaxhc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sk5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj5s"]
 size = Vector2(16.5, 16)
 
-[node name="LetterBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "CollisionShape", "AnimationPlayer")]
+[sub_resource type="Animation" id="Animation_oqrkg"]
+resource_name = "hurt_letter_block"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 0, 0.0156863, 0.392157), Color(1, 1, 1, 0.392157), Color(1, 0, 0.0156863, 0.392157), Color(1, 1, 1, 0.392157)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1.1, 1.1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_8mrv4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3460b"]
+_data = {
+"RESET": SubResource("Animation_8mrv4"),
+"hurt_letter_block": SubResource("Animation_oqrkg")
+}
+
+[node name="LetterBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "CollisionShape", "AnimationPlayer", "HitBox", "HurtComponent")]
 position = Vector2(16, 0)
+collision_layer = 0
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_2sk5a")
 script = ExtResource("1_kys8a")
 Sprite = NodePath("Sprite2D")
-Label = NodePath("Label")
-CollisionShape = NodePath("CollisionShape2D")
+Label = NodePath("Sprite2D/Label")
+CollisionShape = NodePath("HitBox/CollisionShape2D")
 AnimationPlayer = NodePath("AnimationPlayer")
+HitBox = NodePath("HitBox")
+HurtComponent = NodePath("HurtComponent")
+
+[node name="HitBox" parent="." instance=ExtResource("2_0ego7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(16, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_rsj5s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
 position = Vector2(0, -1.90735e-06)
 scale = Vector2(0.235714, 0.224216)
 texture = ExtResource("2_tyg10")
 offset = Vector2(69, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 0)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_rsj5s")
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -29.697
+offset_top = -93.6597
+offset_right = 165.303
+offset_bottom = 93.3403
+color = Color(1, 1, 1, 0)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0.796078)
-offset_left = 1.0
-offset_top = -23.0
-offset_right = 32.0
-offset_bottom = 21.0
+anchors_preset = -1
+anchor_left = -0.333334
+anchor_top = -0.316001
+anchor_right = 0.416666
+anchor_bottom = 0.355428
+offset_left = 46.6667
+offset_top = -40.4996
+offset_right = 77.6667
+offset_bottom = 30.5004
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 120
 text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3460b")
+}
+
+[node name="HurtCooldown" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="HurtComponent" parent="." node_paths=PackedStringArray("HurtCooldownTimer", "HitBox") instance=ExtResource("4_yaxhc")]
+HurtCooldownTimer = NodePath("../HurtCooldown")
+HitBox = NodePath("../HitBox")

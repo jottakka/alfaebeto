@@ -1,23 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://blpg2mfx2l1of"]
+[gd_scene load_steps=6 format=3 uid="uid://blpg2mfx2l1of"]
 
 [ext_resource type="Texture2D" uid="uid://efi2fcit068j" path="res://Player/Art/player_red.png" id="1_18mcv"]
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_mm6fq"]
 [ext_resource type="PackedScene" uid="uid://bqeiykugylvr7" path="res://Player/player_input_processor.tscn" id="3_ee75e"]
 [ext_resource type="PackedScene" uid="uid://dr3yima6l4o20" path="res://Components/weapon_component.tscn" id="4_2bnbr"]
+[ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="5_l1njh"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("Sprite2D", "CollisionPolygon2D", "PlayerInputProcessor", "MuzzlePosition", "WeaponComponent")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("Sprite2D", "CollisionPolygon2D", "PlayerInputProcessor", "MuzzlePosition", "WeaponComponent", "HurtBox", "HitBox")]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_mm6fq")
 Sprite2D = NodePath("Sprite2D")
-CollisionPolygon2D = NodePath("CollisionPolygon2D")
+CollisionPolygon2D = NodePath("HurtBox/CollisionPolygon2D")
 PlayerInputProcessor = NodePath("PlayerInputProcessor")
 MuzzlePosition = NodePath("MuzzlePosition")
 WeaponComponent = NodePath("WeaponComponent")
+HurtBox = NodePath("HurtBox")
+HitBox = NodePath("HitBox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_18mcv")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(7, 38, 14, 27, 47, 20, 49, -5, 38, 3, 11, -11, 8, -38, -8, -38, -12, -11, -36, 2, -50, -6, -47, 21, -14, 27, -8, 38)
 
 [node name="PlayerInputProcessor" parent="." instance=ExtResource("3_ee75e")]
 
@@ -26,3 +28,17 @@ Player = NodePath("..")
 
 [node name="MuzzlePosition" type="Marker2D" parent="."]
 position = Vector2(0, -38)
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+polygon = PackedVector2Array(7, 38, 14, 27, 47, 20, 49, -5, 38, 3, 11, -11, 8, -38, -8, -38, -12, -11, -36, 2, -50, -6, -47, 21, -14, 27, -8, 38)
+
+[node name="HitBox" parent="." instance=ExtResource("5_l1njh")]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(7, 38, 14, 27, 47, 20, 49, -5, 38, 3, 11, -11, 8, -38, -8, -38, -12, -11, -36, 2, -50, -6, -47, 21, -14, 27, -8, 38)

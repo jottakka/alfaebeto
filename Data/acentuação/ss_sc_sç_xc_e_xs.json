@@ -1,0 +1,84 @@
+{
+  "UsoDeSS": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /s/ entre vogais",
+        "Exemplos": ["passo", "massa", "gesso", "assado", "passar"]
+      },
+      {
+        "Regra": "Usado em palavras derivadas que contêm a raiz com 's'",
+        "Exemplos": ["possível", "assessor", "missão", "compassivo", "agressor"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'ss' representando o som /s/ entre vogais",
+        "Exemplos": ["assumir", "assentar", "associação", "assolar", "assumido"]
+      }
+    ]
+  },
+  "UsoDeSC": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /s/ antes das vogais 'e' e 'i'",
+        "Exemplos": ["crescer", "descida", "ascender", "descer", "consciente"]
+      },
+      {
+        "Regra": "Usado em palavras derivadas de outras que já contêm 'sc'",
+        "Exemplos": ["adolescente", "consciente", "descer", "crescer", "descer"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'sc' representando o som /s/ antes das vogais 'e' e 'i'",
+        "Exemplos": ["escândalo", "escola", "escavar", "escarlate", "escudo"]
+      }
+    ]
+  },
+  "UsoDeSÇ": {
+    "Regras": [
+      {
+        "Regra": "Usado em palavras derivadas de verbos terminados em '-sar' ou '-sor'",
+        "Exemplos": ["nasça", "cresça", "desça", "engrosse", "desça"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'sç' em derivadas de verbos terminados em '-sar' ou '-sor'",
+        "Exemplos": ["escassez", "descaço", "escaço", "escaçada", "escaçudo"]
+      }
+    ]
+  },
+  "UsoDeXC": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /s/ antes das vogais 'e' e 'i'",
+        "Exemplos": ["exceto", "excelente", "excesso", "excêntrico", "excitar"]
+      },
+      {
+        "Regra": "Usado para representar o som /ks/ entre vogais",
+        "Exemplos": ["exceto", "exceção", "complexo", "texto", "fixo"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'xc' representando o som /s/ ou /ks/",
+        "Exemplos": ["exclusivo", "exclamação", "excluir", "exclusão", "exclusa"]
+      }
+    ]
+  },
+  "UsoDeXS": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /s/ ou /z/ entre vogais",
+        "Exemplos": ["exsudar", "exsangue", "exsilabado", "exsicar", "exsocial"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'xs' representando o som /s/ ou /z/",
+        "Exemplos": ["exsudar", "exselência", "exsalte", "exsuado", "exsicar"]
+      }
+    ]
+  }
+}

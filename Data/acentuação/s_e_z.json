@@ -1,0 +1,62 @@
+{
+  "UsoDeS": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /s/ no início de sílabas",
+        "Exemplos": ["sapo", "sala", "soma", "seda", "sino"]
+      },
+      {
+        "Regra": "Usado após consoantes",
+        "Exemplos": ["pasta", "cansar", "pensar", "respeito", "transporte"]
+      },
+      {
+        "Regra": "Usado para representar o som /z/ entre vogais",
+        "Exemplos": ["casa", "mesa", "vaso", "musica", "analisar"]
+      },
+      {
+        "Regra": "Usado para formar sufixos -ês, -esa, -ense",
+        "Exemplos": ["português", "francesa", "chinês", "paulista", "japonês"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de som /s/ no início de sílabas",
+        "Exemplos": ["excesso", "crescer", "descer", "nascimento", "ascender"]
+      },
+      {
+        "Regra": "Palavras que não seguem a regra de som /z/ entre vogais",
+        "Exemplos": ["exame", "exato", "executar", "exagerar", "exemplo"]
+      }
+    ]
+  },
+  "UsoDeZ": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /z/ no final de sílabas",
+        "Exemplos": ["azul", "fuzil", "luz", "feliz", "paz"]
+      },
+      {
+        "Regra": "Usado em palavras derivadas com sufixo -izar",
+        "Exemplos": ["civilizar", "realizar", "organizar", "analisar", "utilizar"]
+      },
+      {
+        "Regra": "Usado em palavras terminadas em -ez e -eza",
+        "Exemplos": ["vez", "vezes", "rigidez", "certeza", "beleza"]
+      },
+      {
+        "Regra": "Usado em sufixos -z e -ez",
+        "Exemplos": ["arroz", "rapaz", "capaz", "vez", "vezes"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de som /z/ no final de sílabas",
+        "Exemplos": ["cruz", "arroz", "rapaz", "efemérides", "xerez"]
+      },
+      {
+        "Regra": "Palavras que não seguem a regra de palavras derivadas com sufixo -izar",
+        "Exemplos": ["frisar", "paralisar", "denunciar", "priorizar", "minimizar"]
+      }
+    ]
+  }
+}

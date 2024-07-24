@@ -11,9 +11,33 @@ public partial class LetterBlock : StaticBody2D
 	public CollisionShape2D CollisionShape { get; set; }
 	[Export]
 	AnimationPlayer AnimationPlayer { get; set; }
+	[Export]
+	public HitBox HitBox { get; set; }
+	[Export]
+	public HurtComponent HurtComponent { get; set; }
 
 	public override void _Ready()
 	{
+		this.ResetCollisionLanyerAndMask();
+		HurtComponent.OnHurtSignal += (Area2D enemyArea) =>
+		{
+			AnimationPlayer.Play(LetterBlockAnimations.Hurt);
+		};
+
+		AnimationPlayer.AnimationFinished += (StringName animationName) =>
+		{
+			if (animationName == LetterBlockAnimations.Hurt)
+			{
+				AnimationPlayer.Play(LetterBlockAnimations.RESET);
+			}
+		};
+		//// Collidion layer to act upon
+		//this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
+		//this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
+		//this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
+
+		//// Collision Masks to observe
+		//this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

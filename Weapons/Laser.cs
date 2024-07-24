@@ -10,9 +10,13 @@ public sealed partial class Laser : Area2D
 	[Export]
 	public Sprite2D Sprite2D { get; set; }
 	[Export]
-	public CollisionShape2D CollisionShape2D { get; set; }
-	[Export]
 	public VisibleOnScreenNotifier2D VisibleOnScreenNotifier { get; set; }
+	[Export]
+	public AnimationPlayer AnimationPlayer { get; set; }
+	[Export]
+	public PlayerSpecialHurtBox PlayerSpecialHurtBox  { get; set; }
+	[Export]
+	public HitBox HitBox { get; set; }
 	[Export]
 	public static float CooldownSecs { get; set; } = 0.1f;
 	[Export]
@@ -20,12 +24,27 @@ public sealed partial class Laser : Area2D
 
 	public override void _Ready()
 	{
+		this.SetVisibilityZOrdering(VisibilityZOrdering.Ammo);
 		VisibleOnScreenNotifier.ScreenExited += OnScreenExited;
-		ZIndex = (int)VisibilityZOrdering.Ammo;
+		AnimationPlayer.AnimationFinished += (StringName animationName) =>
+		{
+			if (animationName == WeaponAnimations.LaserOnHit)
+			{
+				QueueFree();
+			}
+		};
+
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
+		var overlapingArea = HitBox.GetOverlappingAreas().FirstOrDefault();
+
+		if (overlapingArea is not null)
+		{
+			AnimationPlayer.Play(WeaponAnimations.LaserOnHit);
+			Speed = 0;
+		}
 		Position += new Vector2(0, -(Speed * (float)delta));
 	}
 

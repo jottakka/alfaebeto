@@ -1,0 +1,50 @@
+{
+  "UsoDeC": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /k/ antes das vogais 'a', 'o', 'u'",
+        "Exemplos": ["casa", "cor", "curva", "carro", "cozinha"]
+      },
+      {
+        "Regra": "Usado para representar o som /s/ antes das vogais 'e' e 'i'",
+        "Exemplos": ["cena", "cidade", "cedo", "cinto", "cedilha"]
+      },
+      {
+        "Regra": "Usado em palavras de origem latina com os prefixos 'co-', 'con-', 'com-'",
+        "Exemplos": ["coordenar", "conectar", "compensar", "comer", "contar"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'c' representando o som /k/",
+        "Exemplos": ["acidente", "acessar", "acre", "acúmulo", "acuidade"]
+      },
+      {
+        "Regra": "Palavras que não seguem a regra de 'c' representando o som /s/",
+        "Exemplos": ["amigo", "amiga", "amor", "azar", "zero"]
+      }
+    ]
+  },
+  "UsoDeÇ": {
+    "Regras": [
+      {
+        "Regra": "Usado para representar o som /s/ antes das vogais 'a', 'o', 'u'",
+        "Exemplos": ["açaí", "açougue", "braço", "cabeça", "moça"]
+      },
+      {
+        "Regra": "Usado em palavras derivadas de verbos que terminam em '-çar' no infinitivo",
+        "Exemplos": ["alcançar", "abraçar", "lançar", "caçar", "descançar"]
+      },
+      {
+        "Regra": "Usado em palavras derivadas de substantivos que terminam em '-ção'",
+        "Exemplos": ["atenção", "emoção", "produção", "tradição", "promoção"]
+      }
+    ],
+    "Exceções": [
+      {
+        "Regra": "Palavras que não seguem a regra de 'ç' representando o som /s/ antes das vogais 'a', 'o', 'u'",
+        "Exemplos": ["curso", "urso", "pulsar", "músculo", "casual"]
+      }
+    ]
+  }
+}
