@@ -18,6 +18,8 @@ public partial class Global : Node
 			return;
 		}
 		Instance = this;
+		// Initialize random number generator
+		GD.Randomize();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

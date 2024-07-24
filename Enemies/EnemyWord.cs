@@ -33,7 +33,6 @@ public sealed partial class EnemyWord : CharacterBody2D
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
 
 
-
 		BuildWordBlocks();
 		SetUpInitialStates();
 		SetUpSignals();

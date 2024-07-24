@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv65fxpmgwdkg"]
+[gd_scene load_steps=7 format=3 uid="uid://dv65fxpmgwdkg"]
 
 [ext_resource type="Script" path="res://Enemies/EnemyWord.cs" id="1_7m2q7"]
 [ext_resource type="PackedScene" uid="uid://ceyofkkott2kg" path="res://Enemies/Parts/jet_engine.tscn" id="1_egju3"]
 [ext_resource type="PackedScene" uid="uid://c02ldw10qedp" path="res://Enemies/Parts/left_turrent_wing.tscn" id="1_el46a"]
 [ext_resource type="PackedScene" uid="uid://c2ik33idgkd7q" path="res://Enemies/Parts/right_turrent_wing.tscn" id="2_qeip4"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="5_cwssp"]
+[ext_resource type="PackedScene" uid="uid://82hbd68lldrd" path="res://Enemies/Parts/enemy_spawner.tscn" id="6_8nj1u"]
 
 [node name="WordEnemy" type="CharacterBody2D" node_paths=PackedStringArray("WordBuilderComponent", "RightTurrentWing", "LeftTurrentWing", "VisibleOnScreenNotifier2D")]
 collision_layer = 0
@@ -34,3 +35,11 @@ scale = Vector2(0.7, 0.7)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-1.90735e-06, -101.5)
 scale = Vector2(4.4, 0.45)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("6_8nj1u")]
+position = Vector2(-44, -16)
+rotation = -0.523599
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("6_8nj1u")]
+position = Vector2(45, -16)
+rotation = 0.523599

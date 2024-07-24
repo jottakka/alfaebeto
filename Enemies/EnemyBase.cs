@@ -11,16 +11,26 @@ public partial class EnemyBase : CharacterBody2D
 	public float Speed { get; set; } = 100.0f;
 	[Export]
 	public float KnockBackFactor { get; set; } = 50.0f;
+
+	public Vector2 InitialPosition { get; set; } = Vector2.Zero;
+	public Vector2 SpawnInitialVelocity { get; set; } = Vector2.Zero;
+
 	private Player _player => Global.Instance.Player;
+
+	private bool _isSpawning = false;
 	public override void _Ready()
 	{
+		Visible = false;
 		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
-
+		GlobalPosition = InitialPosition;
 		HurtComponent.OnHurtSignal += (Area2D enemyArea) =>
 		{
-			AnimationPlayer.Play(EnemyAnimations.EnemyBugHurtBlink);
-			var knockVelocity = GlobalPosition.DirectionTo(enemyArea.GlobalPosition);
-			Position -= knockVelocity * KnockBackFactor;
+			if (_isSpawning is false)
+			{
+				AnimationPlayer.Play(EnemyAnimations.EnemyBugHurtBlink);
+				var knockVelocity = GlobalPosition.DirectionTo(enemyArea.GlobalPosition);
+				Position -= knockVelocity * KnockBackFactor;
+			}
 		};
 
 		AnimationPlayer.AnimationFinished += (StringName animationName) =>
@@ -30,23 +40,42 @@ public partial class EnemyBase : CharacterBody2D
 				AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
 				HurtComponent.OnHurtStateFinished();
 			}
+			if (animationName == EnemyAnimations.EnemySpawn)
+			{
+				AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
+				_isSpawning = false;
+			}
 		};
 
 		// Collidion layer to act upon
 		this.ActivateCollisionLayer(CollisionLayers.RegularEnemy);
 		this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
-
-		AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if(HurtComponent.IsHurt is false)
+		if (HurtComponent.IsHurt)
+		{
+			return;
+		}
+		if (_isSpawning)
+		{
+			Position += SpawnInitialVelocity * (float)delta;
+		}
+		else
 		{
 			var direction = GlobalPosition.DirectionTo(_player.GlobalPosition);
+			Velocity = direction * Speed * (float)delta;
 			Position += direction * Speed * (float)delta;
-			MoveAndSlide();
 		}
+		MoveAndSlide();
+	}
+
+	public void SetAsSpawning()
+	{
+		_isSpawning = true;
+		AnimationPlayer.Play(EnemyAnimations.EnemySpawn);
+		Visible = true;
 	}
 }
 

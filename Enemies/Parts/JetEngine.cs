@@ -7,6 +7,6 @@ public sealed partial class JetEngine : Area2D
 
 	public override void _Ready()
 	{
-		AnimationPlayer.Play("jet");
+		AnimationPlayer.Play(EnemyPartAnimations.JetEngineMoving);
 	}
 }
