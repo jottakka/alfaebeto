@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck85u3rkf5tmf"]
+[gd_scene load_steps=14 format=3 uid="uid://ck85u3rkf5tmf"]
 
 [ext_resource type="Script" path="res://Enemies/EnemyBase.cs" id="1_eiuj6"]
 [ext_resource type="Texture2D" uid="uid://cvarfi2ejaleu" path="res://Enemies/Art/Boss_1_A_Small.png" id="1_in2n3"]
 [ext_resource type="Texture2D" uid="uid://xfraavxtd6ad" path="res://Enemies/Art/smoke_04.png" id="2_7p125"]
 [ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="4_l0mx3"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="5_jdbne"]
+[ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="6_mxe21"]
 
 [sub_resource type="Animation" id="Animation_kw5us"]
 length = 0.001
@@ -163,9 +164,6 @@ tracks/2/keys = {
 "values": [Color(0.560784, 1, 0.435294, 0), Color(0.352941, 0.929412, 0.266667, 0.815686), Color(0.560784, 1, 0.435294, 0), Color(0, 0.921569, 0.0941176, 0.815686), Color(0.560784, 1, 0.435294, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_4uwbn"]
-resource_name = "new_animation"
-
 [sub_resource type="Animation" id="Animation_nkwlr"]
 resource_name = "enemy_spawn"
 tracks/0/type = "value"
@@ -241,6 +239,9 @@ tracks/5/keys = {
 "values": [true, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_4uwbn"]
+resource_name = "new_animation"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_42wdb"]
 _data = {
 "RESET": SubResource("Animation_kw5us"),
@@ -254,7 +255,7 @@ _data = {
 radius = 21.0
 height = 42.0
 
-[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox", "HurtComponent")]
+[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox", "HurtComponent", "HealthComponent")]
 rotation = 3.14159
 collision_layer = 0
 collision_mask = 0
@@ -262,6 +263,7 @@ script = ExtResource("1_eiuj6")
 AnimationPlayer = NodePath("AnimationPlayer")
 HitBox = NodePath("HitBox")
 HurtComponent = NodePath("HurtComponent")
+HealthComponent = NodePath("HealthComponent")
 
 [node name="Smoke" type="Sprite2D" parent="."]
 self_modulate = Color(0.560784, 1, 0.435294, 0.764706)
@@ -295,3 +297,6 @@ HitBox = NodePath("../HitBox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CapsuleShape2D_fam17")
+
+[node name="HealthComponent" parent="." instance=ExtResource("6_mxe21")]
+MaxHealth = 30

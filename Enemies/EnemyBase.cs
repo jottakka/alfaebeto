@@ -8,6 +8,8 @@ public partial class EnemyBase : CharacterBody2D
 	[Export]
 	public HurtComponent HurtComponent { get; set; }
 	[Export]
+	public HealthComponent HealthComponent { get; set; }
+	[Export]
 	public float Speed { get; set; } = 100.0f;
 	[Export]
 	public float KnockBackFactor { get; set; } = 50.0f;
@@ -16,36 +18,19 @@ public partial class EnemyBase : CharacterBody2D
 	public Vector2 SpawnInitialVelocity { get; set; } = Vector2.Zero;
 
 	private Player _player => Global.Instance.Player;
-
 	private bool _isSpawning = false;
+
 	public override void _Ready()
 	{
 		Visible = false;
 		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 		GlobalPosition = InitialPosition;
-		HurtComponent.OnHurtSignal += (Area2D enemyArea) =>
-		{
-			if (_isSpawning is false)
-			{
-				AnimationPlayer.Play(EnemyAnimations.EnemyBugHurtBlink);
-				var knockVelocity = GlobalPosition.DirectionTo(enemyArea.GlobalPosition);
-				Position -= knockVelocity * KnockBackFactor;
-			}
-		};
 
-		AnimationPlayer.AnimationFinished += (StringName animationName) =>
-		{
-			if (animationName == EnemyAnimations.EnemyBugHurtBlink)
-			{
-				AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
-				HurtComponent.OnHurtStateFinished();
-			}
-			if (animationName == EnemyAnimations.EnemySpawn)
-			{
-				AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
-				_isSpawning = false;
-			}
-		};
+		HurtComponent.OnHurtSignal += OnHurt;
+
+		AnimationPlayer.AnimationFinished += OnAnimationFinished;
+
+		HealthComponent.OnHealthDepletedSignal += QueueFree;
 
 		// Collidion layer to act upon
 		this.ActivateCollisionLayer(CollisionLayers.RegularEnemy);
@@ -76,6 +61,34 @@ public partial class EnemyBase : CharacterBody2D
 		_isSpawning = true;
 		AnimationPlayer.Play(EnemyAnimations.EnemySpawn);
 		Visible = true;
+	}
+
+	private void OnAnimationFinished(StringName animationName)
+	{
+		if (animationName == EnemyAnimations.EnemyBugHurtBlink)
+		{
+			AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
+			HurtComponent.OnHurtStateFinished();
+		}
+		if (animationName == EnemyAnimations.EnemySpawn)
+		{
+			AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
+			_isSpawning = false;
+		}
+	}
+
+	private void OnHurt(Area2D enemyArea)
+	{
+		if (_isSpawning is false)
+		{
+			if( enemyArea is PlayerSpecialHurtBox)
+			{
+				HealthComponent.TakeDamage(10);
+			}
+			AnimationPlayer.Play(EnemyAnimations.EnemyBugHurtBlink);
+			var knockVelocity = GlobalPosition.DirectionTo(enemyArea.GlobalPosition);
+			Position -= knockVelocity * KnockBackFactor;
+		}
 	}
 }
 
