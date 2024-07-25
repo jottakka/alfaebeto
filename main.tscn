@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
 [ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
-[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="6_x62d7"]
+[ext_resource type="PackedScene" uid="uid://d37imgwwmwrhf" path="res://MeteorWords/meteor_word_target.tscn" id="6_wqw3p"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("WordBuilderComponent", "Player", "PlayerSpawnPosition", "ParallaxBackground")]
 script = ExtResource("1_lo5c0")
@@ -56,5 +56,5 @@ scale_amount_min = 0.1
 scale_amount_max = 0.34
 color = Color(1, 1, 1, 0.419608)
 
-[node name="WordEnemy" parent="." instance=ExtResource("6_x62d7")]
-position = Vector2(334, 74)
+[node name="Area2D" parent="." instance=ExtResource("6_wqw3p")]
+position = Vector2(251, 156)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-public enum CollisionLayers
+﻿public enum CollisionLayers
 {
     Enviroment = 1,
     Player = 2,

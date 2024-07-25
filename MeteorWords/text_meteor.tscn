@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://v88j8pbc0eot"]
+
+[ext_resource type="Script" path="res://MeteorWords/TextMeteor.cs" id="1_5m7tk"]
+[ext_resource type="Texture2D" uid="uid://clh74bdgsi76m" path="res://MeteorWords/Art/meteorGrey_big4.png" id="1_o47ak"]
+[ext_resource type="FontFile" uid="uid://ddi5qfyp03r63" path="res://MeteorWords/Art/Kenney Future.ttf" id="3_7pa2t"]
+[ext_resource type="FontFile" uid="uid://c0f8vh7l5fvfk" path="res://MeteorWords/Art/Kenney Blocks.ttf" id="4_ygf8f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_227e2"]
+line_spacing = 0.0
+font = ExtResource("3_7pa2t")
+font_size = 30
+font_color = Color(0.28964, 0.0652607, 0.0244701, 0.717647)
+shadow_color = Color(0.392157, 0.392157, 0.392157, 0)
+
+[sub_resource type="Animation" id="Animation_msqaj"]
+resource_name = "word_meteor_start"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuestionMarkLabel:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0705882, 0.188235, 0.45098, 0.686275), Color(0.722567, 2.93598e-06, 0.423116, 0.686275), Color(0.258649, 0.0335748, 0.501804, 0.686275), Color(0.760784, 0.0666667, 0, 0.686275)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuestionMarkLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/MarginContainer/CenterContainer/Word:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.301451, 0.0693731, 0.0265222, 0.717647), Color(0.13468, 0.0168376, 0.0058619, 0.717647)]
+}
+
+[sub_resource type="Animation" id="Animation_qb7lc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuestionMarkLabel:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuestionMarkLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/MarginContainer/CenterContainer/Word:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.28964, 0.0652607, 0.0244701, 0.717647)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imy5s"]
+_data = {
+"RESET": SubResource("Animation_qb7lc"),
+"word_meteor_start": SubResource("Animation_msqaj")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_8g2ym"]
+font = ExtResource("4_ygf8f")
+font_size = 40
+
+[node name="TextMeteor" type="Area2D" node_paths=PackedStringArray("Word", "QuestionMarkLabel", "AnimationPlayer")]
+script = ExtResource("1_5m7tk")
+Word = NodePath("MarginContainer/MarginContainer/CenterContainer/Word")
+QuestionMarkLabel = NodePath("QuestionMarkLabel")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 98.0
+offset_bottom = 77.0
+size_flags_vertical = 4
+theme_override_constants/margin_top = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_o47ak")
+patch_margin_left = 45
+patch_margin_top = 4
+patch_margin_right = 52
+patch_margin_bottom = 7
+axis_stretch_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 41
+theme_override_constants/margin_bottom = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Word" type="Label" parent="MarginContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ABA   CATE"
+label_settings = SubResource("LabelSettings_227e2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_imy5s")
+}
+
+[node name="QuestionMarkLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 98.0
+offset_top = 7.0
+offset_right = 128.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(15, 31)
+text = "?"
+label_settings = SubResource("LabelSettings_8g2ym")
+horizontal_alignment = 1
+vertical_alignment = 1

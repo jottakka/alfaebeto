@@ -1,61 +1,56 @@
 using Godot;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 public sealed partial class EnemySpawnerControllerComponent : Node
 {
-	[Export]
-	public PackedScene EnemyPackedScene { get; set; }
-	[Export]
-	public Timer CooldownTimer { get; set; }
-	[Export]
-	public float BaseCooldown { get; set; } = 1.0f;
-	[Export]
-	public float CooldownVariance { get; set; } = 0.2f;
-	[Export]
-	public float SpawnSpeed { get; set; } = 100.0f;
+    [Export]
+    public PackedScene EnemyPackedScene { get; set; }
+    [Export]
+    public Timer CooldownTimer { get; set; }
+    [Export]
+    public float BaseCooldown { get; set; } = 1.0f;
+    [Export]
+    public float CooldownVariance { get; set; } = 0.2f;
+    [Export]
+    public float SpawnSpeed { get; set; } = 100.0f;
 
-	private EnemyBuilder _enemyBuilder;
-	private Node _scene => Global.Instance.Scene;
-	private EnemySpawner _enemySpawner;
+    private EnemyBuilder _enemyBuilder;
+    private Node _scene => Global.Instance.Scene;
+    private EnemySpawner _enemySpawner;
 
-	public override void _Ready()
-	{
-		_enemySpawner = GetParent<EnemySpawner>();
-		_enemyBuilder = new EnemyBuilder(EnemyPackedScene);
-		
-		CooldownTimer.WaitTime = GetRandomCooldownTime();
-		CooldownTimer.Start();
-		CooldownTimer.Timeout += _enemySpawner.StartSpawn;
+    public override void _Ready()
+    {
+        _enemySpawner = GetParent<EnemySpawner>();
+        _enemyBuilder = new EnemyBuilder(EnemyPackedScene);
 
-		_enemySpawner.OnSpawnEnemyReadySignal += SpawnProjectile;
-		_enemySpawner.OnSpawnProcessingFinishedSignal += OnReadyToRestarTimer;
-	}
+        CooldownTimer.WaitTime = GetRandomCooldownTime();
+        CooldownTimer.Start();
+        CooldownTimer.Timeout += _enemySpawner.StartSpawn;
 
-	public void OnReadyToRestarTimer()
-	{
-		CooldownTimer.WaitTime = GetRandomCooldownTime();
-		CooldownTimer.Start();
-	}
+        _enemySpawner.OnSpawnEnemyReadySignal += SpawnProjectile;
+        _enemySpawner.OnSpawnProcessingFinishedSignal += OnReadyToRestarTimer;
+    }
 
-	private double GetRandomCooldownTime()
-	{
-		return GD.Randfn(BaseCooldown,CooldownVariance);
-	}
+    public void OnReadyToRestarTimer()
+    {
+        CooldownTimer.WaitTime = GetRandomCooldownTime();
+        CooldownTimer.Start();
+    }
 
-	public void SpawnProjectile()
-	{
-		var velocity = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition) * SpawnSpeed;
-		var enemy = _enemyBuilder.Create(
-			_enemySpawner.Muzzle.GlobalPosition,
-			velocity
-		);
-		_scene.AddChild(enemy);
-		enemy.SetAsSpawning();
-	}
+    private double GetRandomCooldownTime()
+    {
+        return GD.Randfn(BaseCooldown, CooldownVariance);
+    }
+
+    public void SpawnProjectile()
+    {
+        var velocity = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition) * SpawnSpeed;
+        var enemy = _enemyBuilder.Create(
+            _enemySpawner.Muzzle.GlobalPosition,
+            velocity
+        );
+        _scene.AddChild(enemy);
+        enemy.SetAsSpawning();
+    }
 }
 

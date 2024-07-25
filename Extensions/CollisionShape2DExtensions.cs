@@ -1,5 +1,4 @@
 ﻿using Godot;
-using System.Reflection.Emit;
 public static class CollisionObject2DExtensions
 {
     public static void ResetCollisionLanyerAndMask(this CollisionObject2D collisionShape)

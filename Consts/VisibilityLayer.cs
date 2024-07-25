@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-public enum VisibilityZOrdering
+﻿public enum VisibilityZOrdering
 {
-    Ammo=1,
-    PlayerAndEnemies=3,
+    Ammo = 1,
+    PlayerAndEnemies = 3,
     WordEnemy = 4,
     UI = 4
 }

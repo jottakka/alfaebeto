@@ -1,0 +1,361 @@
+[gd_scene load_steps=18 format=3 uid="uid://d0fwxeh3fs848"]
+
+[ext_resource type="Script" path="res://MeteorWords/AnswerMeteor.cs" id="1_c54gp"]
+[ext_resource type="Texture2D" uid="uid://dp0hygdh6q8aj" path="res://MeteorWords/Art/spaceMeteors_003.png" id="2_wmlta"]
+[ext_resource type="FontFile" uid="uid://ddi5qfyp03r63" path="res://MeteorWords/Art/Kenney Future.ttf" id="3_jkkrp"]
+[ext_resource type="Texture2D" uid="uid://chotrib2dwon1" path="res://MeteorWords/Art/debrisWood_2.png" id="3_ksiqo"]
+[ext_resource type="Texture2D" uid="uid://b3dwl3abqiqoo" path="res://MeteorWords/Art/debrisWood_1.png" id="4_k14lq"]
+[ext_resource type="Texture2D" uid="uid://dwf2d10j5chaf" path="res://MeteorWords/Art/debrisWood_3.png" id="5_y45w7"]
+[ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="6_nyga7"]
+[ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="8_j5c5y"]
+[ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="9_10su3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_au3ro"]
+font = ExtResource("3_jkkrp")
+font_size = 110
+font_color = Color(0.240955, 0.169095, 0.0525059, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axu2x"]
+radius = 51.0
+
+[sub_resource type="Animation" id="Animation_ev0gi"]
+resource_name = "ans_meteor_moving"
+length = 6.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DebrisWood2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DebrisWood3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 6.28319, 12.5664, 18.8496, 25.1327]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DebrisWood1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 3.14159, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DebrisWood2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 6.28319, 12.5664]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MainMeteor:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, -4), Vector2(4, -5), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainMeteor:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0872665, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainMeteor/OptionText:label_settings:font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.739616, 0.708822, 0.996798, 1), Color(0.81515, 0.748957, 0.189705, 1), Color(0.0254641, 0.901701, 0.794398, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3ivlj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DebrisWood2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-66, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DebrisWood3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DebrisWood1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DebrisWood2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MainMeteor:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainMeteor:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainMeteor/OptionText:label_settings:font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.240955, 0.169095, 0.0525059, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uw30c"]
+_data = {
+"RESET": SubResource("Animation_3ivlj"),
+"ans_meteor_moving": SubResource("Animation_ev0gi")
+}
+
+[sub_resource type="Animation" id="Animation_43op1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMeteor/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMeteor/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainMeteor:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.46729, 0.422907)]
+}
+
+[sub_resource type="Animation" id="Animation_hv08c"]
+resource_name = "meteor_hurt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMeteor/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.470588), Color(1, 0.109804, 0.0705882, 0.392157), Color(1, 1, 1, 0.470588), Color(1, 0.109804, 0.0705882, 0.392157), Color(1, 1, 1, 0.470588)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMeteor/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainMeteor:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.46729, 0.422907), Vector2(0.5, 0.453), Vector2(0.46729, 0.422907), Vector2(0.5, 0.453), Vector2(0.46729, 0.422907)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_41uif"]
+_data = {
+"RESET": SubResource("Animation_43op1"),
+"ans_meteor_hurt": SubResource("Animation_hv08c")
+}
+
+[node name="AnswerMeteor" type="Area2D" node_paths=PackedStringArray("HitBox", "HurtComponent", "HealthComponent", "AnimationPlayer", "EffectsPlayer", "OptionText")]
+script = ExtResource("1_c54gp")
+HitBox = NodePath("HitBox")
+HurtComponent = NodePath("HurtComponent")
+HealthComponent = NodePath("HealthComponent")
+AnimationPlayer = NodePath("AnimationPlayer")
+EffectsPlayer = NodePath("EffectsPlayer")
+OptionText = NodePath("MainMeteor/OptionText")
+
+[node name="MainMeteor" type="Sprite2D" parent="."]
+clip_children = 2
+scale = Vector2(0.46729, 0.422907)
+texture = ExtResource("2_wmlta")
+
+[node name="OptionText" type="Label" parent="MainMeteor"]
+offset_left = -82.0
+offset_top = -85.0
+offset_right = 103.0
+offset_bottom = 89.0
+text = "SS"
+label_settings = SubResource("LabelSettings_au3ro")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="MainMeteor"]
+visible = false
+offset_left = -142.0
+offset_top = -132.0
+offset_right = 142.0
+offset_bottom = 141.0
+color = Color(1, 1, 1, 0)
+
+[node name="DebrisWood2" type="Sprite2D" parent="."]
+position = Vector2(-66, 36)
+scale = Vector2(0.5, 0.401639)
+texture = ExtResource("3_ksiqo")
+
+[node name="DebrisWood1" type="Sprite2D" parent="."]
+position = Vector2(67, 24)
+scale = Vector2(0.46875, 0.535714)
+texture = ExtResource("4_k14lq")
+
+[node name="DebrisWood3" type="Sprite2D" parent="."]
+position = Vector2(-28, -54)
+scale = Vector2(0.516949, 0.634615)
+texture = ExtResource("5_y45w7")
+
+[node name="HitBox" parent="." instance=ExtResource("6_nyga7")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(2, -3)
+shape = SubResource("CircleShape2D_axu2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uw30c")
+}
+
+[node name="EffectsPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_41uif")
+}
+
+[node name="HurtComponent" parent="." node_paths=PackedStringArray("HurtCooldownTimer", "HitBox") instance=ExtResource("8_j5c5y")]
+HurtCooldownTimer = NodePath("../HurtCooldown")
+HitBox = NodePath("../HitBox")
+
+[node name="HealthComponent" parent="." instance=ExtResource("9_10su3")]
+MaxHealth = 30
+
+[node name="HurtCooldown" type="Timer" parent="."]
+wait_time = 0.1
