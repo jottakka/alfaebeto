@@ -3,13 +3,29 @@ using Godot;
 using System;
 public sealed partial class HitBox : Area2D
 {
-	private Type ParentType;
+	[Export]
+	public bool SetOnReady { get; set; } = true;
+
+	public Node Parent => GetParent();
+
 	public override void _Ready()
 	{
 		this.ResetCollisionLanyerAndMask();
-		var parent = GetParent();
-		ParentType = parent.GetType();
-		switch (parent)
+
+		if(SetOnReady)
+		{
+			ActivateCollisionsMasks();
+		}
+	}
+
+	public void DeactivateCollisionMasks()
+	{
+		this.ResetCollisionLanyerAndMask();
+	}
+
+	public void ActivateCollisionsMasks()
+	{
+		switch (Parent)
 		{
 			case Player _:
 				SetHitBoxForPlayer();
@@ -43,7 +59,7 @@ public sealed partial class HitBox : Area2D
 		//this.ActivateCollisionMask(CollisionLayers.RegularEnemyHurtBox);
 	}
 
-	public void SetHitBoxForRegularEnemy()
+	private void SetHitBoxForRegularEnemy()
 	{
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
@@ -51,7 +67,7 @@ public sealed partial class HitBox : Area2D
 		this.ActivateCollisionMask(CollisionLayers.PlayerHitBox);
 	}
 
-	public void SetHitBoxForWordEnemy()
+	private void SetHitBoxForWordEnemy()
 	{
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
 
@@ -59,7 +75,7 @@ public sealed partial class HitBox : Area2D
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
 	}
 
-	public void SetHitBoxForLaser()
+	private void SetHitBoxForLaser()
 	{
 		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
 	}

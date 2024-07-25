@@ -57,4 +57,4 @@ scale_amount_max = 0.34
 color = Color(1, 1, 1, 0.419608)
 
 [node name="WordEnemy" parent="." instance=ExtResource("6_x62d7")]
-position = Vector2(335, 119)
+position = Vector2(334, 74)

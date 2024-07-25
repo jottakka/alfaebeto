@@ -67,14 +67,24 @@ public partial class EnemyBase : CharacterBody2D
 	{
 		if (animationName == EnemyAnimations.EnemyBugHurtBlink)
 		{
-			AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
-			HurtComponent.OnHurtStateFinished();
+			OnHurtStateFinished();
 		}
 		if (animationName == EnemyAnimations.EnemySpawn)
 		{
-			AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
-			_isSpawning = false;
+			OnSpawnStateFinished();
 		}
+	}
+
+	private void OnHurtStateFinished()
+	{
+		AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
+		HurtComponent.OnHurtStateFinished();
+	}
+
+	private void OnSpawnStateFinished() {
+		HitBox.ActivateCollisionsMasks();
+		AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
+		_isSpawning = false;
 	}
 
 	private void OnHurt(Area2D enemyArea)

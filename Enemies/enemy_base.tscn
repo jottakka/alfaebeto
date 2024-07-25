@@ -294,6 +294,7 @@ libraries = {
 HitBox = NodePath("../HitBox")
 
 [node name="HitBox" parent="." instance=ExtResource("5_jdbne")]
+SetOnReady = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CapsuleShape2D_fam17")
