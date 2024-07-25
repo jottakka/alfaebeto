@@ -1,5 +1,11 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using WordProcessing.Processing;
+using WordProcessing.Filtering;
+using WordProcessing.Models.DiacriticalMarks;
 
 public partial class Global : Node
 {
@@ -9,7 +15,17 @@ public partial class Global : Node
 
 	public Node Scene { get; set; }
 
-	// Called when the node enters the scene tree for the first time.
+	public Queue<WordInfo> Words { get; set; }
+
+	public Global()
+	{
+		string filePath = @"C:\git\alfa_e_betto\Data\acentuação\acentos_dados.json";
+		string jsonString = File.ReadAllText(filePath);
+		Words = MarksJsonDeserializer
+			.DeserializeJsonString(jsonString)
+			.GetWordsShuffledByCategory(CategoryEnum.Paroxitonas);
+	}
+
 	public override void _Ready()
 	{
 		if (Instance is not null)

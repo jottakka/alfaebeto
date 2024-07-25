@@ -6,4 +6,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>AlfaEBetto</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordProcessing\WordProcessing.csproj" />
+  </ItemGroup>
 </Project>

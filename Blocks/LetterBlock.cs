@@ -15,6 +15,11 @@ public partial class LetterBlock : StaticBody2D
 	public HitBox HitBox { get; set; }
 	[Export]
 	public HurtComponent HurtComponent { get; set; }
+	[Export]
+	public bool IsTarget { get; set; }
+
+	[Signal]
+	public delegate void OnTargetDestructedSignalEventHandler();
 
 	public override void _Ready()
 	{
@@ -29,20 +34,13 @@ public partial class LetterBlock : StaticBody2D
 			if (animationName == LetterBlockAnimations.Hurt)
 			{
 				AnimationPlayer.Play(LetterBlockAnimations.RESET);
+
+				if(IsTarget)
+				{
+					EmitSignal(nameof(OnTargetDestructedSignal));
+				}
 			}
 		};
-		//// Collidion layer to act upon
-		//this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
-		//this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
-		//this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
-
-		//// Collision Masks to observe
-		//this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
 	}
 
 	public void SetLabel(char letter)

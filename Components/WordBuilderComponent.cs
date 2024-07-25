@@ -1,4 +1,5 @@
 using Godot;
+using WordProcessing.Models.DiacriticalMarks;
 
 public partial class WordBuilderComponent : Node
 {
@@ -15,9 +16,9 @@ public partial class WordBuilderComponent : Node
 		}
 	}
 
-	public Word BuildWord(string wordText, Vector2 position)
+	public Word BuildWord(WordInfo wordInfo, Vector2 position)
 	{
-		var word = _wordBuilder.BuildWord(wordText, position);
+		var word = _wordBuilder.BuildWord(wordInfo, position);
 		return word;
 	}
 }

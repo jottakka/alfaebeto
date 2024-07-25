@@ -16,8 +16,6 @@ public sealed partial class MainNode : Node2D
 		Global.Instance.Player = Player;
 		Global.Instance.Scene = this;
 		Player.GlobalPosition = PlayerSpawnPosition.Position;
-		var word = WordBuilderComponent.BuildWord("TESTE", new Vector2(0, 0));
-		AddChild(word);
 	}
 	
 	public override void _Process(double delta)

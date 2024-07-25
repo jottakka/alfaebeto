@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Godot;
+using WordProcessing.Models.DiacriticalMarks;
 
 public sealed class WordBuilder
 {
@@ -15,11 +16,11 @@ public sealed class WordBuilder
         _wordBlockPackedScene = packedScene;
     }
 
-    public Word BuildWord(string word, Vector2 startPosition)
+    public Word BuildWord(WordInfo word, Vector2 startPosition)
     {
         Word wordNode = _wordBlockPackedScene.Instantiate<Word>();
         wordNode.Position = startPosition;
-        wordNode.WordText = word;
+        wordNode.WordInfo = word;
         return wordNode;
     }
 }
