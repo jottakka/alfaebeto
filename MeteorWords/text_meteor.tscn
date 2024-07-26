@@ -12,53 +12,16 @@ font_size = 30
 font_color = Color(0.28964, 0.0652607, 0.0244701, 0.717647)
 shadow_color = Color(0.392157, 0.392157, 0.392157, 0)
 
-[sub_resource type="Animation" id="Animation_msqaj"]
-resource_name = "word_meteor_start"
-loop_mode = 1
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("QuestionMarkLabel:label_settings:font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.0705882, 0.188235, 0.45098, 0.686275), Color(0.722567, 2.93598e-06, 0.423116, 0.686275), Color(0.258649, 0.0335748, 0.501804, 0.686275), Color(0.760784, 0.0666667, 0, 0.686275)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("QuestionMarkLabel:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/MarginContainer/CenterContainer/Word:label_settings:font_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.301451, 0.0693731, 0.0265222, 0.717647), Color(0.13468, 0.0168376, 0.0058619, 0.717647)]
-}
+[sub_resource type="LabelSettings" id="LabelSettings_8g2ym"]
+font = ExtResource("4_ygf8f")
+font_size = 35
 
 [sub_resource type="Animation" id="Animation_qb7lc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QuestionMarkLabel:label_settings:font_color")
+tracks/0/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -70,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QuestionMarkLabel:scale")
+tracks/1/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -82,7 +45,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/MarginContainer/CenterContainer/Word:label_settings:font_color")
+tracks/2/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordFirstPart:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -92,20 +55,58 @@ tracks/2/keys = {
 "values": [Color(0.28964, 0.0652607, 0.0244701, 0.717647)]
 }
 
+[sub_resource type="Animation" id="Animation_msqaj"]
+resource_name = "word_meteor_start"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0705882, 0.188235, 0.45098, 0.686275), Color(0.722567, 2.93598e-06, 0.423116, 0.686275), Color(0.258649, 0.0335748, 0.501804, 0.686275), Color(0.760784, 0.0666667, 0, 0.686275)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordFirstPart:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.301451, 0.0693731, 0.0265222, 0.717647), Color(0.13468, 0.0168376, 0.0058619, 0.717647)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imy5s"]
 _data = {
 "RESET": SubResource("Animation_qb7lc"),
 "word_meteor_start": SubResource("Animation_msqaj")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_8g2ym"]
-font = ExtResource("4_ygf8f")
-font_size = 40
-
-[node name="TextMeteor" type="Area2D" node_paths=PackedStringArray("Word", "QuestionMarkLabel", "AnimationPlayer")]
+[node name="TextMeteor" type="Area2D" node_paths=PackedStringArray("WordFirstPart", "WordLastPart", "QuestionMarkLabel", "AnimationPlayer")]
 script = ExtResource("1_5m7tk")
-Word = NodePath("MarginContainer/MarginContainer/CenterContainer/Word")
-QuestionMarkLabel = NodePath("QuestionMarkLabel")
+WordFirstPart = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordFirstPart")
+WordLastPart = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordLastPart")
+QuestionMarkLabel = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel")
 AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -130,14 +131,29 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 41
 theme_override_constants/margin_bottom = 0
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 
-[node name="Word" type="Label" parent="MarginContainer/MarginContainer/CenterContainer"]
+[node name="WordFirstPart" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "ABA   CATE"
+text = "ABA"
+label_settings = SubResource("LabelSettings_227e2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="QuestionMarkLabel" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "?"
+label_settings = SubResource("LabelSettings_8g2ym")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WordLastPart" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "CATE"
 label_settings = SubResource("LabelSettings_227e2")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -147,21 +163,3 @@ uppercase = true
 libraries = {
 "": SubResource("AnimationLibrary_imy5s")
 }
-
-[node name="QuestionMarkLabel" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 98.0
-offset_top = 7.0
-offset_right = 128.0
-offset_bottom = 67.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(15, 31)
-text = "?"
-label_settings = SubResource("LabelSettings_8g2ym")
-horizontal_alignment = 1
-vertical_alignment = 1

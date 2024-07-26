@@ -57,4 +57,13 @@ scale_amount_max = 0.34
 color = Color(1, 1, 1, 0.419608)
 
 [node name="Area2D" parent="." instance=ExtResource("6_wqw3p")]
-position = Vector2(251, 156)
+position = Vector2(141, 50)
+
+[node name="MeteorWordTarget" parent="." instance=ExtResource("6_wqw3p")]
+position = Vector2(355, 153)
+
+[node name="MeteorWordTarget2" parent="." instance=ExtResource("6_wqw3p")]
+position = Vector2(141, 327)
+
+[node name="MeteorWordTarget3" parent="." instance=ExtResource("6_wqw3p")]
+position = Vector2(355, 415)

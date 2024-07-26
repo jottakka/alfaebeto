@@ -3,22 +3,22 @@ using WordProcessing.Models.DiacriticalMarks;
 
 public partial class WordBuilderComponent : Node
 {
-    [Export]
-    public PackedScene WordPackedScene { get; set; }
+	[Export]
+	public PackedScene WordPackedScene { get; set; }
 
-    private static WordBuilder _wordBuilder = null;
+	private static WordBuilder _wordBuilder = null;
 
-    public override void _Ready()
-    {
-        if (_wordBuilder == null)
-        {
-            _wordBuilder = new WordBuilder(WordPackedScene);
-        }
-    }
+	public override void _Ready()
+	{
+		if (_wordBuilder == null)
+		{
+			_wordBuilder = new WordBuilder(WordPackedScene);
+		}
+	}
 
-    public Word BuildWord(WordInfo wordInfo, Vector2 position)
-    {
-        var word = _wordBuilder.BuildWord(wordInfo, position);
-        return word;
-    }
+	public Word BuildWord(WordInfo wordInfo, Vector2 position)
+	{
+		var word = _wordBuilder.BuildWord(wordInfo, position);
+		return word;
+	}
 }

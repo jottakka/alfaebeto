@@ -1,0 +1,292 @@
+{
+  "Options": ["x", "ch"],
+  "Rules": [
+    {
+      "RuleType": "VerboEncher",
+      "Description": "Verbos derivados de 'encher'",
+      "Words": [
+        {
+          "Word": "encher",
+          "RightOption": "ch",
+          "Indices": [2, 3],
+          "FirstPart": "en",
+          "SecondPart": "er"
+        },
+        {
+          "Word": "cheio",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "eio"
+        },
+        {
+          "Word": "encheu",
+          "RightOption": "ch",
+          "Indices": [2, 3],
+          "FirstPart": "en",
+          "SecondPart": "eu"
+        },
+        {
+          "Word": "cheia",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "eia"
+        },
+        {
+          "Word": "enchente",
+          "RightOption": "ch",
+          "Indices": [2, 3],
+          "FirstPart": "en",
+          "SecondPart": "ente"
+        }
+      ]
+    },
+    {
+      "RuleType": "UsadoAposDitongos",
+      "Description": "Usado após ditongos",
+      "Words": [
+        {
+          "Word": "caixa",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "cai",
+          "SecondPart": "a"
+        },
+        {
+          "Word": "peixe",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "pei",
+          "SecondPart": "e"
+        },
+        {
+          "Word": "trouxer",
+          "RightOption": "x",
+          "Indices": [3],
+          "FirstPart": "trou",
+          "SecondPart": "er"
+        },
+        {
+          "Word": "feixe",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "fei",
+          "SecondPart": "e"
+        },
+        {
+          "Word": "meixa",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "mei",
+          "SecondPart": "a"
+        }
+      ]
+    },
+    {
+      "RuleType": "OrigemIndigenaAfricanaInglesa",
+      "Description": "Usado nas palavras de origem indígena, africana ou inglesa",
+      "Words": [
+        {
+          "Word": "abacaxi",
+          "RightOption": "x",
+          "Indices": [5],
+          "FirstPart": "abaca",
+          "SecondPart": "i"
+        },
+        {
+          "Word": "xará",
+          "RightOption": "x",
+          "Indices": [0],
+          "FirstPart": "",
+          "SecondPart": "ará"
+        },
+        {
+          "Word": "xampu",
+          "RightOption": "x",
+          "Indices": [0],
+          "FirstPart": "",
+          "SecondPart": "ampu"
+        },
+        {
+          "Word": "xerife",
+          "RightOption": "x",
+          "Indices": [0],
+          "FirstPart": "",
+          "SecondPart": "erife"
+        },
+        {
+          "Word": "xícara",
+          "RightOption": "x",
+          "Indices": [0],
+          "FirstPart": "",
+          "SecondPart": "ícara"
+        }
+      ]
+    },
+    {
+      "RuleType": "AposEn",
+      "Description": "Usado após a sílaba inicial 'en-'",
+      "Words": [
+        {
+          "Word": "enxame",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "en",
+          "SecondPart": "ame"
+        },
+        {
+          "Word": "enxada",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "en",
+          "SecondPart": "ada"
+        },
+        {
+          "Word": "enxergar",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "en",
+          "SecondPart": "ergar"
+        },
+        {
+          "Word": "enxurrada",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "en",
+          "SecondPart": "urrada"
+        },
+        {
+          "Word": "enxoval",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "en",
+          "SecondPart": "oval"
+        }
+      ]
+    },
+    {
+      "RuleType": "RepresentaSomKs",
+      "Description": "Usado para representar o som /ks/ entre vogais",
+      "Words": [
+        {
+          "Word": "exame",
+          "RightOption": "x",
+          "Indices": [1],
+          "FirstPart": "e",
+          "SecondPart": "ame"
+        },
+        {
+          "Word": "exato",
+          "RightOption": "x",
+          "Indices": [1],
+          "FirstPart": "e",
+          "SecondPart": "ato"
+        },
+        {
+          "Word": "texto",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "te",
+          "SecondPart": "to"
+        },
+        {
+          "Word": "complexo",
+          "RightOption": "x",
+          "Indices": [4],
+          "FirstPart": "comple",
+          "SecondPart": "o"
+        },
+        {
+          "Word": "táxi",
+          "RightOption": "x",
+          "Indices": [2],
+          "FirstPart": "tá",
+          "SecondPart": "i"
+        }
+      ]
+    },
+    {
+      "RuleType": "ChSomSh",
+      "Description": "Usado para representar o som /ʃ/ (ch)",
+      "Words": [
+        {
+          "Word": "chão",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "ão"
+        },
+        {
+          "Word": "chave",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "ave"
+        },
+        {
+          "Word": "chocolate",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "ocolate"
+        },
+        {
+          "Word": "chuva",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "uva"
+        },
+        {
+          "Word": "chamar",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "amar"
+        }
+      ]
+    },
+    {
+      "RuleType": "OrigemEstrangeiraAdaptada",
+      "Description": "Usado em palavras de origem estrangeira adaptadas ao português",
+      "Words": [
+        {
+          "Word": "choque",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "oque"
+        },
+        {
+          "Word": "chique",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "ique"
+        },
+        {
+          "Word": "chalé",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "alé"
+        },
+        {
+          "Word": "chefe",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "efe"
+        },
+        {
+          "Word": "champanhe",
+          "RightOption": "ch",
+          "Indices": [0, 1],
+          "FirstPart": "",
+          "SecondPart": "ampanhe"
+        }
+      ]
+    }
+  ]
+}

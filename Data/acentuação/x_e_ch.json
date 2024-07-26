@@ -52,3 +52,22 @@
     ]
   }
 }
+
+
+Tendo esses dados acima cria um json seguindo modelo abaixo [corrija qualquer error] :
+
+{
+  "Options": [ "x", "ch" ],
+  "Rules": {
+    "RegraType": "VerboEncher", <- will be used enum
+    "Description": "verbos encher",
+    "words": [
+      {
+      "Word":"encher",
+      "RightOption":"ch",
+      "Indices":[ 2, 3 ],
+      "FirstPArt":"en", <- first part without X or ch
+      "SecondPart":"er" <- second part without X or ch
+      }
+  ]
+}
