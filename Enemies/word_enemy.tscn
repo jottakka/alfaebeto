@@ -7,14 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="5_cwssp"]
 [ext_resource type="PackedScene" uid="uid://82hbd68lldrd" path="res://Enemies/Parts/enemy_spawner.tscn" id="6_8nj1u"]
 
-[node name="WordEnemy" type="CharacterBody2D" node_paths=PackedStringArray("WordBuilderComponent", "RightTurrentWing", "LeftTurrentWing", "VisibleOnScreenNotifier2D")]
+[node name="WordEnemy" type="CharacterBody2D" node_paths=PackedStringArray("WordBuilderComponent", "EnemySpawnerRight", "EnemySpawnerLeft", "RightTurrentWing", "LeftTurrentWing", "VisibleOnScreenNotifierUpper", "VisibleOnScreenNotifierBottom")]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_7m2q7")
 WordBuilderComponent = NodePath("WordBuilderComponent")
+EnemySpawnerRight = NodePath("EnemySpawnerRight")
+EnemySpawnerLeft = NodePath("EnemySpawnerLeft")
 RightTurrentWing = NodePath("RightTurrentWing")
 LeftTurrentWing = NodePath("LeftTurrentWing")
-VisibleOnScreenNotifier2D = NodePath("VisibleOnScreenNotifier2D")
+VisibleOnScreenNotifierUpper = NodePath("VisibleOnScreenNotifierUpper")
+VisibleOnScreenNotifierBottom = NodePath("VisibleOnScreenNotifierBottom")
 
 [node name="JetEngine" parent="." instance=ExtResource("1_egju3")]
 position = Vector2(0, -16)
@@ -32,14 +35,18 @@ scale = Vector2(0.7, 0.7)
 
 [node name="WordBuilderComponent" parent="." instance=ExtResource("5_cwssp")]
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-1.90735e-06, -101.5)
-scale = Vector2(4.4, 0.45)
+[node name="VisibleOnScreenNotifierUpper" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, -53)
+scale = Vector2(-0.489451, 0.45)
 
-[node name="EnemySpawner" parent="." instance=ExtResource("6_8nj1u")]
+[node name="EnemySpawnerLeft" parent="." instance=ExtResource("6_8nj1u")]
 position = Vector2(-44, -16)
 rotation = -0.523599
 
-[node name="EnemySpawner2" parent="." instance=ExtResource("6_8nj1u")]
+[node name="EnemySpawnerRight" parent="." instance=ExtResource("6_8nj1u")]
 position = Vector2(45, -16)
 rotation = 0.523599
+
+[node name="VisibleOnScreenNotifierBottom" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, 313)
+scale = Vector2(0.125, 0.5)

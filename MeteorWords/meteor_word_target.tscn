@@ -81,31 +81,31 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("TextMeteor:position")
+tracks/6/path = NodePath("TextMeteor:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-113, -40)]
+"values": [Vector2(1, 1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("TextMeteor:scale")
+tracks/7/path = NodePath("AnswerMeteor2:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("AnswerMeteor2:modulate")
+tracks/8/path = NodePath("AnswerMeteor1:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -117,22 +117,10 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("AnswerMeteor1:modulate")
+tracks/9/path = NodePath("TextMeteor:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("TextMeteor:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -219,58 +207,46 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("TextMeteor:position")
+tracks/6/path = NodePath("TextMeteor:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-113, -40), Vector2(-118, -45), Vector2(-113, -40), Vector2(-108, -35), Vector2(-113, -40)]
+"values": [Vector2(1, 1), Vector2(1.02, 1.02), Vector2(1, 1), Vector2(0.98, 0.98), Vector2(1, 1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("TextMeteor:scale")
-tracks/7/interp = 1
+tracks/7/path = NodePath("AnswerMeteor1:modulate")
+tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.02, 1.02), Vector2(1, 1), Vector2(0.98, 0.98), Vector2(1, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AnswerMeteor1:modulate")
-tracks/8/interp = 2
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(1, 2, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.419813, 0.419813, 0.419813, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("AnswerMeteor2:modulate")
-tracks/9/interp = 2
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnswerMeteor2:modulate")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(1, 3, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.329158, 0.329158, 0.329158, 1), Color(1, 1, 1, 1)]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("TextMeteor:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextMeteor:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(1, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -293,7 +269,7 @@ VisibleOnScreenNotifier2D = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="TextMeteor" parent="." instance=ExtResource("1_hdjwy")]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-113, -40)
+position = Vector2(-7.62939e-06, -7.62939e-06)
 skew = -0.0368198
 
 [node name="AnswerMeteor1" parent="." instance=ExtResource("2_g5j5c")]

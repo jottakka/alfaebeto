@@ -7,11 +7,17 @@ public sealed partial class EnemyWord : CharacterBody2D
 	[Export]
 	public WordBuilderComponent WordBuilderComponent { get; set; }
 	[Export]
+	public EnemySpawner EnemySpawnerRight { get; set; }
+	[Export]
+	public EnemySpawner EnemySpawnerLeft { get; set; }
+	[Export]
 	public TurrentWing RightTurrentWing { get; set; }
 	[Export]
 	public TurrentWing LeftTurrentWing { get; set; }
 	[Export]
-	public VisibleOnScreenNotifier2D VisibleOnScreenNotifier2D { get; set; }
+	public VisibleOnScreenNotifier2D VisibleOnScreenNotifierUpper { get; set; }
+	[Export]
+	public VisibleOnScreenNotifier2D VisibleOnScreenNotifierBottom { get; set; }
 	[Export]
 	public float HorizontalSpeedModulus { get; set; } = 30.0f;
 	[Export]
@@ -48,28 +54,53 @@ public sealed partial class EnemyWord : CharacterBody2D
 	{
 		RightTurrentWing.Position += new Vector2(Word.CenterOffset, 0);
 		LeftTurrentWing.Position -= new Vector2(Word.CenterOffset, 0);
+
+
 		_velocity = new Vector2(
-			Mathf.Abs(VerticalVelocityModulus),
+			Mathf.Abs(VerticalVelocityModulus) * Mathf.Pow(-1, (GD.Randi() % 2.0f)),
 			Math.Abs(HorizontalSpeedModulus)
 		);
 	}
 
 	private void SetUpSignals()
 	{
-		VisibleOnScreenNotifier2D.ScreenExited += QueueFree;
+		VisibleOnScreenNotifierUpper.ScreenEntered += () =>
+		{
+			EnemySpawnerLeft.AllowSpawn();
+			EnemySpawnerRight.AllowSpawn();
+			RightTurrentWing.AllowShoot();
+			LeftTurrentWing.AllowShoot();
+		};
 
+		VisibleOnScreenNotifierUpper.ScreenExited += () =>
+		{
+			_velocity = new Vector2(
+					_velocity.X,
+					Mathf.Abs(VerticalVelocityModulus)
+				);
+		};
+
+		VisibleOnScreenNotifierBottom.ScreenExited += () =>
+		{
+			_velocity = new Vector2(
+					_velocity.X,
+					-Mathf.Abs(VerticalVelocityModulus)
+				);
+		};
+		
 		LeftTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>
 		{
 			_velocity = new Vector2(
 					Mathf.Abs(HorizontalSpeedModulus),
-					Math.Abs(VerticalVelocityModulus)
+					_velocity.Y
 				);
 		};
+		
 		RightTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>
 		{
 			_velocity = new Vector2(
 					-Mathf.Abs(HorizontalSpeedModulus),
-					Math.Abs(VerticalVelocityModulus)
+					_velocity.Y
 				);
 		};
 

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
 [ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
-[ext_resource type="PackedScene" uid="uid://d37imgwwmwrhf" path="res://MeteorWords/meteor_word_target.tscn" id="6_wqw3p"]
+[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="6_a33p8"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("WordBuilderComponent", "Player", "PlayerSpawnPosition", "ParallaxBackground")]
 script = ExtResource("1_lo5c0")
@@ -56,14 +56,10 @@ scale_amount_min = 0.1
 scale_amount_max = 0.34
 color = Color(1, 1, 1, 0.419608)
 
-[node name="Area2D" parent="." instance=ExtResource("6_wqw3p")]
-position = Vector2(141, 50)
+[node name="SpecialSpawnPosition" type="Marker2D" parent="."]
+position = Vector2(273, -57)
 
-[node name="MeteorWordTarget" parent="." instance=ExtResource("6_wqw3p")]
-position = Vector2(355, 153)
-
-[node name="MeteorWordTarget2" parent="." instance=ExtResource("6_wqw3p")]
-position = Vector2(141, 327)
-
-[node name="MeteorWordTarget3" parent="." instance=ExtResource("6_wqw3p")]
-position = Vector2(355, 415)
+[node name="WordEnemy" parent="." instance=ExtResource("6_a33p8")]
+position = Vector2(264, 604)
+HorizontalSpeedModulus = 50.0
+VerticalVelocityModulus = 100.0

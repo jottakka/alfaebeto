@@ -14,16 +14,32 @@ public sealed partial class TurrentBase : Area2D
 	[Signal]
 	public delegate void ShootPointReachedSignalEventHandler();
 
-	public bool AllowShoot { get; private set; } = true;
+	private bool _isAllowedToShoot = false;
+	private bool _isCooldownTimoutFinished = true;
+
 	public override void _Ready()
 	{
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 		CooldownTimer.Timeout += CooldownTimerTimeout;
 	}
 
+	public void AllowShoot()
+	{
+		_isAllowedToShoot = true;
+
+	}
+
+	public void DesallowShoot()
+	{
+		_isAllowedToShoot = false;
+	}
+
 	public void Shoot()
 	{
-		AnimationPlayer.Play("shoot");
+		if (_isAllowedToShoot)
+		{
+			AnimationPlayer.Play(EnemyWeaponAnimations.TurrentShoot);
+		}
 	}
 
 	public void OnAnimationShootReady()
@@ -33,15 +49,15 @@ public sealed partial class TurrentBase : Area2D
 
 	private void CooldownTimerTimeout()
 	{
-		AllowShoot = true;
+		_isCooldownTimoutFinished = true;
 	}
 
 	private void OnAnimationFinished(StringName animationFinished)
 	{
-		if (animationFinished == "shoot")
+		if (animationFinished == EnemyWeaponAnimations.TurrentShoot)
 		{
 			CooldownTimer.Start();
-			AllowShoot = false;
+			_isCooldownTimoutFinished = false;
 		}
 	}
 }

@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://v88j8pbc0eot"]
+[gd_scene load_steps=12 format=3 uid="uid://v88j8pbc0eot"]
 
 [ext_resource type="Script" path="res://MeteorWords/TextMeteor.cs" id="1_5m7tk"]
 [ext_resource type="Texture2D" uid="uid://clh74bdgsi76m" path="res://MeteorWords/Art/meteorGrey_big4.png" id="1_o47ak"]
 [ext_resource type="FontFile" uid="uid://ddi5qfyp03r63" path="res://MeteorWords/Art/Kenney Future.ttf" id="3_7pa2t"]
 [ext_resource type="FontFile" uid="uid://c0f8vh7l5fvfk" path="res://MeteorWords/Art/Kenney Blocks.ttf" id="4_ygf8f"]
+[ext_resource type="Texture2D" uid="uid://dnpd2cfoiu5q7" path="res://MeteorWords/Art/meteorGrey_big1.png" id="5_0yeby"]
+[ext_resource type="Texture2D" uid="uid://dkicsme8kto3l" path="res://MeteorWords/Art/10.png" id="6_htg02"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_227e2"]
 line_spacing = 0.0
@@ -54,11 +56,70 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0.28964, 0.0652607, 0.0244701, 0.717647)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Debri1:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.235149, 0.202381)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Debri3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Debri1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Debri3/Octopus:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Debri3/Octopus:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.60843, -42.5676)]
+}
 
 [sub_resource type="Animation" id="Animation_msqaj"]
 resource_name = "word_meteor_start"
 loop_mode = 1
-step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,7 +139,7 @@ tracks/1/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/Question
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1)]
@@ -95,6 +156,66 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0.301451, 0.0693731, 0.0265222, 0.717647), Color(0.13468, 0.0168376, 0.0058619, 0.717647)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Debri1:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.235149, 0.202381), Vector2(0.25, 0.215)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Debri3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, -0.0872665]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Debri1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.174533, 0.174533]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Debri3/Octopus:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.3, 0.684557),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0872665]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Debri3/Octopus:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.608, -40.568), Vector2(-0.608, -33)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imy5s"]
 _data = {
@@ -110,8 +231,17 @@ QuestionMarkLabel = NodePath("MarginContainer/MarginContainer/HBoxContainer/Ques
 AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 98.0
-offset_bottom = 77.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -38.5
+offset_right = 51.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 4
 theme_override_constants/margin_top = 0
 
@@ -137,7 +267,6 @@ layout_mode = 2
 [node name="WordFirstPart" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "ABA"
 label_settings = SubResource("LabelSettings_227e2")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -153,7 +282,6 @@ vertical_alignment = 1
 [node name="WordLastPart" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "CATE"
 label_settings = SubResource("LabelSettings_227e2")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -163,3 +291,27 @@ uppercase = true
 libraries = {
 "": SubResource("AnimationLibrary_imy5s")
 }
+
+[node name="Debri1" type="Sprite2D" parent="."]
+position = Vector2(52, 62)
+scale = Vector2(0.235149, 0.202381)
+texture = ExtResource("5_0yeby")
+centered = false
+offset = Vector2(-141, 0)
+flip_h = true
+
+[node name="Debri2" type="Sprite2D" parent="Debri1"]
+position = Vector2(19.4387, -43.9476)
+scale = Vector2(1.17164, 1.59559)
+texture = ExtResource("1_o47ak")
+
+[node name="Debri3" type="Sprite2D" parent="."]
+position = Vector2(-44, -49)
+scale = Vector2(0.283182, 0.303571)
+texture = ExtResource("5_0yeby")
+
+[node name="Octopus" type="Sprite2D" parent="Debri3"]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(-0.60843, -42.5676)
+scale = Vector2(2.02811, 2.13405)
+texture = ExtResource("6_htg02")

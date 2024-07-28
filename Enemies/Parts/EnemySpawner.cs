@@ -9,6 +9,8 @@ public sealed partial class EnemySpawner : Area2D
 	[Export]
 	public AnimationPlayer AnimationPlayer { get; set; }
 	[Signal]
+	public delegate void OnSpawnerPermissionChangeSignalEventHandler(bool isAllowed);
+	[Signal]
 	public delegate void OnSpawnEnemyReadySignalEventHandler();
 	[Signal]
 	public delegate void OnSpawnProcessingFinishedSignalEventHandler();
@@ -19,10 +21,19 @@ public sealed partial class EnemySpawner : Area2D
 		{
 			if (animationName == EnemyPartAnimations.SpawnEnemy)
 			{
-				//AnimationPlayer.Play(EnemyPartAnimations.SpawnerMoving);
 				EmitSignal(nameof(OnSpawnProcessingFinishedSignal));
 			}
 		};
+	}
+
+	public void AllowSpawn()
+	{
+		EmitSignal(nameof(OnSpawnerPermissionChangeSignal), true);
+	}
+
+	public void DesallowSpawn()
+	{
+		EmitSignal(nameof(OnSpawnerPermissionChangeSignal), false);
 	}
 
 	public void StartSpawn()

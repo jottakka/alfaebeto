@@ -17,6 +17,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 	private EnemyBuilder _enemyBuilder;
 	private Node _scene => Global.Instance.Scene;
 	private EnemySpawner _enemySpawner;
+	private bool _allowToShoot = false;
 
 	public override void _Ready()
 	{
@@ -24,14 +25,27 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 		_enemyBuilder = new EnemyBuilder(EnemyPackedScene);
 
 		CooldownTimer.WaitTime = GetRandomCooldownTime();
-		CooldownTimer.Start();
 		CooldownTimer.Timeout += _enemySpawner.StartSpawn;
 
 		_enemySpawner.OnSpawnEnemyReadySignal += SpawnProjectile;
 		_enemySpawner.OnSpawnProcessingFinishedSignal += OnReadyToRestarTimer;
+		_enemySpawner.OnSpawnerPermissionChangeSignal += OnSpawnerPermissionChange;
 	}
 
-	public void OnReadyToRestarTimer()
+	private void OnSpawnerPermissionChange(bool isAllowedToShoot)
+	{
+		_allowToShoot = isAllowedToShoot;
+		if (_allowToShoot)
+		{
+			CooldownTimer.Start();
+		}
+		else
+		{
+			CooldownTimer.Stop();
+		}
+	}
+
+	private void OnReadyToRestarTimer()
 	{
 		CooldownTimer.WaitTime = GetRandomCooldownTime();
 		CooldownTimer.Start();
@@ -42,7 +56,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 		return GD.Randfn(BaseCooldown, CooldownVariance);
 	}
 
-	public void SpawnProjectile()
+	private void SpawnProjectile()
 	{
 		var velocity = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition) * SpawnSpeed;
 		var enemy = _enemyBuilder.Create(
