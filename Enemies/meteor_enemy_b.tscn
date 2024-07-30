@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://d14rrh8c1n6q1"]
+
+[ext_resource type="Script" path="res://Enemies/MeteorEnemyBase.cs" id="1_fgh0j"]
+[ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="2_s8ab1"]
+[ext_resource type="Texture2D" uid="uid://du5bfnq6r11ni" path="res://Enemies/Art/meteorBrown_big1.png" id="2_wx8pg"]
+[ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="3_4hrwn"]
+[ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="5_122ki"]
+[ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="6_whk66"]
+
+[sub_resource type="Animation" id="Animation_rrwij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yb7vt"]
+resource_name = "meteor_enemy_spin"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.6, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 6.28319, 12.5664]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eo5x7"]
+_data = {
+"RESET": SubResource("Animation_rrwij"),
+"meteor_enemy_spin": SubResource("Animation_yb7vt")
+}
+
+[node name="MeteorEnemyA" type="Area2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "HitBox", "EnemyHurtBox")]
+script = ExtResource("1_fgh0j")
+AnimationPlayer = NodePath("AnimationPlayer")
+VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
+HealthComponent = NodePath("HealthComponent")
+HurtComponent = NodePath("HurtComponent")
+HitBox = NodePath("HitBox")
+EnemyHurtBox = NodePath("EnemyHurtBox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wx8pg")
+
+[node name="HitBox" parent="." instance=ExtResource("2_s8ab1")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(-21, 39, 10, 28, 34, 32, 49, -1, 22, -41, -32, -40, -49, 9)
+
+[node name="EnemyHurtBox" parent="." instance=ExtResource("3_4hrwn")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnemyHurtBox"]
+polygon = PackedVector2Array(-21, 39, 10, 28, 34, 32, 49, -1, 22, -41, -32, -40, -49, 9)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eo5x7")
+}
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, -0.5)
+scale = Vector2(4.95, 4.15)
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_122ki")]
+MaxHealth = 20
+
+[node name="HurtComponent" parent="." node_paths=PackedStringArray("HurtCooldownTimer", "HitBox") instance=ExtResource("6_whk66")]
+HurtCooldownTimer = NodePath("../HurtCooldownTimer")
+HitBox = NodePath("../HitBox")
+
+[node name="HurtCooldownTimer" type="Timer" parent="."]
+wait_time = 0.1

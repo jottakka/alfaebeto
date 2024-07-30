@@ -15,19 +15,25 @@ public sealed partial class AnswerMeteor : Area2D
 	[Export]
 	public Label OptionText { get; set; }
 
+	[Signal]
+	public delegate void OnTargetDestroiedSignalEventHandler();
+
+	public bool IsTarget { get; set; } = false;
+
 	public override void _Ready()
 	{
 		HurtComponent.OnHurtSignal += OnHurt;
+		HealthComponent.OnHealthDepletedSignal += OnHealthDepleted;
 		AnimationPlayer.Play(MeteorAnimations.AnswerMeteorMoving);
 	}
 
-	//private void OnHurtAnimationFinished(StringName animationName)
-	//{
-	//    if (animationName == LetterBlockAnimations.Hurt)
-	//    {
-	//        AnimationPlayer.Play(LetterBlockAnimations.RESET);
-	//    }
-	//}
+	private void OnHealthDepleted()
+	{
+		if (IsTarget)
+		{
+			EmitSignal(nameof(OnTargetDestroiedSignal));
+		}
+	}
 
 	private void OnHurt(Area2D enemyArea)
 	{

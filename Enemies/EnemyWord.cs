@@ -22,26 +22,33 @@ public sealed partial class EnemyWord : CharacterBody2D
 	public float HorizontalSpeedModulus { get; set; } = 30.0f;
 	[Export]
 	public float VerticalVelocityModulus { get; set; } = 10.0f;
+	
+	[Signal]
+	public delegate void OnQueueFreeSignalEventHandler();
 
 	public Word Word { get; set; }
 
 	private WordInfo _wordInfo;
 
 	private Vector2 _velocity;
+
 	public override void _Ready()
 	{
 		_wordInfo = Global.Instance.MarkedWords.Dequeue();
 
 		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
-		// Collidion layer to act upon
-		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
-		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
-		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
-
 
 		BuildWordBlocks();
 		SetUpInitialStates();
 		SetUpSignals();
+	}
+
+	public override void _Notification(int what)
+	{
+		if (what == NotificationPredelete)
+		{
+			EmitSignal(nameof(OnQueueFreeSignal));
+		}
 	}
 
 	private void BuildWordBlocks()
@@ -87,7 +94,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 					-Mathf.Abs(VerticalVelocityModulus)
 				);
 		};
-		
+
 		LeftTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>
 		{
 			_velocity = new Vector2(
@@ -95,7 +102,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 					_velocity.Y
 				);
 		};
-		
+
 		RightTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>
 		{
 			_velocity = new Vector2(
@@ -109,8 +116,8 @@ public sealed partial class EnemyWord : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Velocity = _velocity * (float)delta;
-		MoveAndCollide(Velocity);
+		var velocity = _velocity * (float)delta;
+		MoveAndCollide(velocity);
 	}
 }
 

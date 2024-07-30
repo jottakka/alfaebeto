@@ -1,28 +1,95 @@
-﻿using Godot;
+using Godot;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 public sealed partial class SceneEnemySpawnerComponent : Node
 {
-    [Export]
-    public Marker2D SpecialSpawnerPosition { get; set; }
-    [Export]
-    public PackedScene[] SpecialEnemiesPackedScenes { get; set; } = Array.Empty<PackedScene>();
-    [Export]
-    public PackedScene[] RegularEnemiesPackedScenes { get; set; } = Array.Empty<PackedScene>();
-    [Export]
-    public PackedScene[] WordMeteorPackedScenes { get; set; } = Array.Empty<PackedScene>();
+	[Export]
+	public Marker2D SpecialSpawnerPosition { get; set; }
+	[Export]
+	public PackedScene[] SpecialEnemiesPackedScenes { get; set; } = Array.Empty<PackedScene>();
+	[Export]
+	public PackedScene[] RegularEnemiesPackedScenes { get; set; } = Array.Empty<PackedScene>();
+	[Export]
+	public PackedScene[] WordMeteorPackedScenes { get; set; } = Array.Empty<PackedScene>();
+	[Export]
+	public PackedScene[] MeteorPackedScenes { get; set; } = Array.Empty<PackedScene>();
+	[Export]
+	public PathFollow2D SpawnFollowPath { get; set; }
+	[Export]
+	public Timer MeteorSpawnTimer { get; set; }
+	[Export]
+	public Timer MeteorWordSpawnTimer { get; set; }
+	[Export]
+	public Timer SpecialEnemySpawnTimer { get; set; }
 
-    [Signal]
-    public delegate void OnSpawnNextRequestedSignalEventHandler();
-    private Node _parent => GetParent();
+	[Signal]
+	public delegate void OnSpawnNextRequestedSignalEventHandler();
 
- 
-    public void SpawnNextSpecial()
-    {
-        
-    }
+	private States _currentState = States.NoSpecialEnemy;
+	private Node _parent => GetParent();
+
+	public override void _Ready()
+	{
+		SpawnFollowPath.Rotates = false;
+		SpawnFollowPath.Loop = false;
+
+		MeteorSpawnTimer.Timeout += () => SpawnEnemy(MeteorPackedScenes);
+		MeteorWordSpawnTimer.Timeout += SpawnNextWordMeteor;
+		SpecialEnemySpawnTimer.Timeout += SpawnNextSpecial;
+		MeteorWordSpawnTimer.Start();
+		SpecialEnemySpawnTimer.Start();
+		MeteorSpawnTimer.Start();
+	}
+
+
+	private void SpawnEnemy(PackedScene[] packedScenes)
+	{
+		var idx = GD.Randi() % packedScenes.Length;
+		var enemySceneInstantiated = packedScenes[idx].Instantiate<Node2D>();
+		enemySceneInstantiated.Position = GetNewTopSpawnPathRandPosition();
+		_parent.AddChildDeffered(enemySceneInstantiated);
+	}
+
+	public void SpawnNextSpecial()
+	{
+		SpecialEnemySpawnTimer.Stop();
+		_currentState = States.SpecialEnemyAlive;
+
+		var enemySceneInstantiated = SpecialEnemiesPackedScenes[0].Instantiate<EnemyWord>();
+		enemySceneInstantiated.Position = SpecialSpawnerPosition.Position;
+		enemySceneInstantiated.OnQueueFreeSignal += OnSpecialEnemyFreed;
+
+		_parent.AddChildDeffered(enemySceneInstantiated);
+	}
+
+	public void SpawnNextWordMeteor()
+	{
+		if (_currentState is States.SpecialEnemyAlive)
+		{
+			return;
+		}
+
+		var enemySceneInstantiated = WordMeteorPackedScenes[0].Instantiate<MeteorWordTarget>();
+		var randonHorizontalVariation = new Vector2((float)GD.RandRange(-75.0f, 75.0f), 0.0f);
+		enemySceneInstantiated.Position = SpecialSpawnerPosition.Position + randonHorizontalVariation;
+		_parent.AddChildDeffered(enemySceneInstantiated);
+	}
+
+	private void OnSpecialEnemyFreed()
+	{
+		_currentState = States.NoSpecialEnemy;
+		SpecialEnemySpawnTimer.Start();
+	}
+
+	private Vector2 GetNewTopSpawnPathRandPosition()
+	{
+		SpawnFollowPath.ProgressRatio = GD.Randf();
+		return SpawnFollowPath.GlobalPosition;
+	}
+
+	private enum States
+	{
+		SpecialEnemyAlive,
+		NoSpecialEnemy,
+	}
 }

@@ -31,7 +31,7 @@ public sealed partial class WeaponComponent : Node
 		_isWaitingCooldown = true;
 		var laser = LaserPackedScene.Instantiate<Laser>();
 		laser.Position = Player.MuzzlePosition.GlobalPosition;
-		Player.GetParent().AddChild(laser);
+		Player.GetParent().AddChildDeffered(laser);
 		CooldownTimer.Start();
 	}
 

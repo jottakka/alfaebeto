@@ -22,16 +22,26 @@ public sealed partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
+
+		this.ResetCollisionLanyerAndMask();
+		this.ActivateCollisionLayer(CollisionLayers.Player);
+
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
+		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		var movementDirection = PlayerInputProcessor.MovementDirection;
-		Velocity = movementDirection * (Speed * (float)delta);
+		var velocity = movementDirection * (Speed * (float)delta);
 		GlobalPosition = new Vector2(
 			Mathf.Clamp(GlobalPosition.X, 0, GetViewportRect().Size.X),
 			Mathf.Clamp(GlobalPosition.Y, 0, GetViewportRect().Size.Y)
 		);
-		MoveAndCollide(Velocity);
+		var collisionInfo = MoveAndCollide(velocity);
+		if (collisionInfo is not null)
+		{
+			Velocity = Velocity.Bounce(collisionInfo.GetNormal());
+		}
 	}
 }

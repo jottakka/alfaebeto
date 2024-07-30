@@ -1,18 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=8 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
 [ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
-[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="6_a33p8"]
+[ext_resource type="PackedScene" uid="uid://uovrvrmqh1g7" path="res://Components/scene_enemy_spawner_component.tscn" id="9_e2oro"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("WordBuilderComponent", "Player", "PlayerSpawnPosition", "ParallaxBackground")]
+[sub_resource type="Curve2D" id="Curve2D_itbqw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 64, -3, 0, 0, 0, 0, 448, -3, 0, 0, 0, 0, 64, -3)
+}
+point_count = 3
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("WordBuilderComponent", "Player", "PlayerSpawnPosition", "ParallaxBackground", "SceneEnemySpawnerComponent")]
 script = ExtResource("1_lo5c0")
 WordBuilderComponent = NodePath("WordBuilderComponent")
 Player = NodePath("Player")
 PlayerSpawnPosition = NodePath("PlayerSpawnPosition")
 ParallaxBackground = NodePath("ParallaxBackground")
+SceneEnemySpawnerComponent = NodePath("SceneEnemySpawnerComponent")
 
 [node name="WordBuilderComponent" parent="." instance=ExtResource("2_l307d")]
 
@@ -59,7 +66,16 @@ color = Color(1, 1, 1, 0.419608)
 [node name="SpecialSpawnPosition" type="Marker2D" parent="."]
 position = Vector2(273, -57)
 
-[node name="WordEnemy" parent="." instance=ExtResource("6_a33p8")]
-position = Vector2(264, 604)
-HorizontalSpeedModulus = 50.0
-VerticalVelocityModulus = 100.0
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, -37)
+curve = SubResource("Curve2D_itbqw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(354.381, -3)
+progress = 477.619
+rotates = false
+cubic_interp = false
+
+[node name="SceneEnemySpawnerComponent" parent="." node_paths=PackedStringArray("SpecialSpawnerPosition", "SpawnFollowPath") instance=ExtResource("9_e2oro")]
+SpecialSpawnerPosition = NodePath("../SpecialSpawnPosition")
+SpawnFollowPath = NodePath("../Path2D/PathFollow2D")

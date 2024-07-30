@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://uovrvrmqh1g7"]
+
+[ext_resource type="Script" path="res://Components/SceneEnemySpawnerComponent.cs" id="1_a8jyr"]
+[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="2_oudl7"]
+[ext_resource type="PackedScene" uid="uid://ck85u3rkf5tmf" path="res://Enemies/enemy_base.tscn" id="3_q15y7"]
+[ext_resource type="PackedScene" uid="uid://d37imgwwmwrhf" path="res://MeteorWords/meteor_word_target.tscn" id="4_t6cal"]
+[ext_resource type="PackedScene" uid="uid://cvr8oob8wwhy4" path="res://Enemies/meteor_enemy_a.tscn" id="5_ki2ap"]
+
+[node name="SceneEnemySpawnerComponent" type="Node" node_paths=PackedStringArray("MeteorSpawnTimer", "MeteorWordSpawnTimer", "SpecialEnemySpawnTimer")]
+script = ExtResource("1_a8jyr")
+SpecialEnemiesPackedScenes = [ExtResource("2_oudl7")]
+RegularEnemiesPackedScenes = [ExtResource("3_q15y7")]
+WordMeteorPackedScenes = [ExtResource("4_t6cal")]
+MeteorPackedScenes = [ExtResource("5_ki2ap"), ExtResource("5_ki2ap")]
+MeteorSpawnTimer = NodePath("MeteorSpawnTimer")
+MeteorWordSpawnTimer = NodePath("MeteorWordSpawnTimer")
+SpecialEnemySpawnTimer = NodePath("SpecialEnemySpawnTimer")
+
+[node name="SpecialEnemySpawnTimer" type="Timer" parent="."]
+wait_time = 20.0
+
+[node name="MeteorWordSpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="MeteorSpawnTimer" type="Timer" parent="."]
+wait_time = 6.0

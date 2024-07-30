@@ -1,6 +1,5 @@
 using Godot;
 
-
 public sealed partial class EnemySpawnerControllerComponent : Node
 {
 	[Export]
@@ -63,8 +62,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 			_enemySpawner.Muzzle.GlobalPosition,
 			velocity
 		);
-		_scene.AddChild(enemy);
+		_scene.AddChildDeffered(enemy);
 		enemy.SetAsSpawning();
 	}
 }
-

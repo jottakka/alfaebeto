@@ -31,6 +31,9 @@ public sealed partial class HitBox : Area2D
 			case EnemyBase _:
 				SetHitBoxForRegularEnemy();
 				break;
+			case MeteorEnemyBase _:
+				SetHitBoxForMeteorEnemy();
+				break;
 			case EnemyWord _ or AnswerMeteor _:
 				SetHitBoxForWordsEnemy();
 				break;
@@ -50,11 +53,10 @@ public sealed partial class HitBox : Area2D
 
 	private void SetHitBoxForPlayer()
 	{
-		this.ActivateCollisionLayer(CollisionLayers.Player);
 		this.ActivateCollisionLayer(CollisionLayers.PlayerHitBox);
 
-		//this.ActivateCollisionMask(CollisionLayers.WordEnemyHurtBox);
-		//this.ActivateCollisionMask(CollisionLayers.RegularEnemyHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.WordEnemyHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHitBox);
 	}
 
 	private void SetHitBoxForRegularEnemy()
@@ -62,19 +64,33 @@ public sealed partial class HitBox : Area2D
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
-		this.ActivateCollisionMask(CollisionLayers.PlayerHitBox);
+		this.ActivateCollisionMask(CollisionLayers.Player);
 	}
 
 	private void SetHitBoxForWordsEnemy()
 	{
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
 
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
 	}
 
+	private void SetHitBoxForMeteorEnemy()
+	{
+		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemy);
+		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemyHitBox);
+
+		// Collision Masks to observe
+		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.Player);
+
+	}
+
 	private void SetHitBoxForLaser()
 	{
-		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHitBox);
+		this.ActivateCollisionMask(CollisionLayers.WordEnemyHitBox);
 	}
 }

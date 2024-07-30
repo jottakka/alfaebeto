@@ -58,6 +58,6 @@ public sealed partial class TurrentControllerComponent : Node
 			GetMuzzleAngle(),
 			_turrent.Muzzle.GlobalPosition
 			);
-		_scene.AddChild(ammo);
+		_scene.AddChildDeffered(ammo);
 	}
 }

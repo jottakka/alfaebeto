@@ -42,3 +42,6 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
 polygon = PackedVector2Array(7, 38, 14, 27, 47, 20, 49, -5, 38, 3, 11, -11, 8, -38, -8, -38, -12, -11, -36, 2, -50, -6, -47, 21, -14, 27, -8, 38)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(7, 38, 14, 27, 47, 20, 49, -5, 38, 3, 11, -11, 8, -38, -8, -38, -12, -11, -36, 2, -50, -6, -47, 21, -14, 27, -8, 38)
