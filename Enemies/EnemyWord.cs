@@ -38,6 +38,15 @@ public sealed partial class EnemyWord : CharacterBody2D
 
 		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
 
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
+
+
+		// Collision Masks to observe
+		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.Player);
+
 		BuildWordBlocks();
 		SetUpInitialStates();
 		SetUpSignals();

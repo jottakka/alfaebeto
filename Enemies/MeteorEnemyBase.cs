@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Godot;
-public partial class MeteorEnemyBase : Node2D
+public partial class MeteorEnemyBase : AnimatableBody2D
 {
 	[Export]
 	public AnimationPlayer AnimationPlayer { get; set; }
@@ -41,6 +41,11 @@ public partial class MeteorEnemyBase : Node2D
 		var speed = (float)GD.RandRange(MinSpeed, MaxSpeed);
 		_velocity = new Vector2(0, 1) * speed;
 		Scale = Vector2.One * scale;
+
+		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemy);
+
+		// Collision Masks to observe
+		this.ActivateCollisionMask(CollisionLayers.Player);
 	}
 
 	public override void _PhysicsProcess(double delta)

@@ -33,10 +33,16 @@ public partial class LetterBlock : StaticBody2D
 		Sprite.Frame = _currenSpriteFrame;
 		DeathSpriteEffect.Visible = false;
 
-		this.ResetCollisionLanyerAndMask();
-
 		HurtComponent.OnHurtSignal += OnHurt;
 		AnimationPlayer.AnimationFinished += OnHurtAnimationFinished;
+
+
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
+
+
+		// Collision Masks to observe
+		this.ActivateCollisionMask(CollisionLayers.Player);
+
 
 		SetUpHealthComponent();
 	}
@@ -50,11 +56,13 @@ public partial class LetterBlock : StaticBody2D
 	{
 		Position = position;
 	}
+
 	private void OnHealthLevelChanged(int healthLevel)
 	{
 		_currenSpriteFrame = healthLevel;
 		Sprite.Frame = _currenSpriteFrame;
 	}
+
 	private void OnDeath()
 	{
 		IsDead = true;
@@ -89,5 +97,4 @@ public partial class LetterBlock : StaticBody2D
 		HealthComponent.OnHealthDepletedSignal += OnDeath;
 		HealthComponent.OnHealthLevelChangeSignal += OnHealthLevelChanged;
 	}
-
 }

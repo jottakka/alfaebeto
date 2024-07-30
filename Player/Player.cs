@@ -33,15 +33,18 @@ public sealed partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		var movementDirection = PlayerInputProcessor.MovementDirection;
-		var velocity = movementDirection * (Speed * (float)delta);
+		Velocity = movementDirection * (Speed * (float)delta);
 		GlobalPosition = new Vector2(
 			Mathf.Clamp(GlobalPosition.X, 0, GetViewportRect().Size.X),
 			Mathf.Clamp(GlobalPosition.Y, 0, GetViewportRect().Size.Y)
 		);
-		var collisionInfo = MoveAndCollide(velocity);
+		var collisionInfo = MoveAndCollide(Velocity);
 		if (collisionInfo is not null)
 		{
-			Velocity = Velocity.Bounce(collisionInfo.GetNormal());
+			// Removing this [30.0] will make the player get stuck
+			// on other polygon shaped collision objects
+			Velocity = Velocity.Bounce(collisionInfo.GetNormal())*30.0f;
+			MoveAndSlide();
 		}
 	}
 }

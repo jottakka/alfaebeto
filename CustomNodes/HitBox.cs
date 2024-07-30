@@ -34,10 +34,7 @@ public sealed partial class HitBox : Area2D
 			case MeteorEnemyBase _:
 				SetHitBoxForMeteorEnemy();
 				break;
-			case EnemyWord _ or AnswerMeteor _:
-				SetHitBoxForWordsEnemy();
-				break;
-			case LetterBlock _:
+			case LetterBlock _ or EnemyWord _ or AnswerMeteor _:
 				SetHitBoxForWordsEnemy();
 				break;
 			case Laser _:
@@ -53,9 +50,11 @@ public sealed partial class HitBox : Area2D
 
 	private void SetHitBoxForPlayer()
 	{
+		this.ActivateCollisionLayer(CollisionLayers.Player);
 		this.ActivateCollisionLayer(CollisionLayers.PlayerHitBox);
 
 		this.ActivateCollisionMask(CollisionLayers.WordEnemyHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
 		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHitBox);
 	}
 
@@ -71,9 +70,12 @@ public sealed partial class HitBox : Area2D
 	{
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
+
 
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.Player);
 	}
 
 	private void SetHitBoxForMeteorEnemy()

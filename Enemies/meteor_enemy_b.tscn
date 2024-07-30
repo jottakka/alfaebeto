@@ -45,7 +45,7 @@ _data = {
 "meteor_enemy_spin": SubResource("Animation_yb7vt")
 }
 
-[node name="MeteorEnemyA" type="Area2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "HitBox", "EnemyHurtBox")]
+[node name="MeteorEnemyA" type="AnimatableBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "HitBox", "EnemyHurtBox")]
 script = ExtResource("1_fgh0j")
 AnimationPlayer = NodePath("AnimationPlayer")
 VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
@@ -85,3 +85,6 @@ HitBox = NodePath("../HitBox")
 
 [node name="HurtCooldownTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-21, 39, 10, 28, 34, 32, 49, -1, 22, -41, -32, -40, -49, 9)
