@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0fwxeh3fs848"]
+[gd_scene load_steps=19 format=3 uid="uid://d0fwxeh3fs848"]
 
 [ext_resource type="Script" path="res://MeteorWords/AnswerMeteor.cs" id="1_c54gp"]
 [ext_resource type="Texture2D" uid="uid://dp0hygdh6q8aj" path="res://MeteorWords/Art/spaceMeteors_003.png" id="2_wmlta"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="6_nyga7"]
 [ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="8_j5c5y"]
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="9_10su3"]
+[ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="10_3nona"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_au3ro"]
 font = ExtResource("3_jkkrp")
@@ -286,10 +287,11 @@ _data = {
 "ans_meteor_hurt": SubResource("Animation_hv08c")
 }
 
-[node name="AnswerMeteor" type="Area2D" node_paths=PackedStringArray("HitBox", "HurtComponent", "HealthComponent", "AnimationPlayer", "EffectsPlayer", "OptionText")]
+[node name="AnswerMeteor" type="StaticBody2D" node_paths=PackedStringArray("HitBox", "HurtComponent", "HurtBox", "HealthComponent", "AnimationPlayer", "EffectsPlayer", "OptionText")]
 script = ExtResource("1_c54gp")
 HitBox = NodePath("HitBox")
 HurtComponent = NodePath("HurtComponent")
+HurtBox = NodePath("EnemyHurtBox")
 HealthComponent = NodePath("HealthComponent")
 AnimationPlayer = NodePath("AnimationPlayer")
 EffectsPlayer = NodePath("EffectsPlayer")
@@ -359,3 +361,13 @@ MaxHealth = 50
 
 [node name="HurtCooldown" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("CircleShape2D_axu2x")
+
+[node name="EnemyHurtBox" parent="." instance=ExtResource("10_3nona")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
+position = Vector2(2, -3)
+shape = SubResource("CircleShape2D_axu2x")

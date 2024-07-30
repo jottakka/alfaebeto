@@ -7,5 +7,8 @@
 script = ExtResource("1_y3p5q")
 EnemyPackedScene = ExtResource("2_2fysa")
 CooldownTimer = NodePath("CooldownTimer")
+BaseCooldown = 2.0
+CooldownVariance = 0.5
+SpawnSpeed = 140.0
 
 [node name="CooldownTimer" type="Timer" parent="."]

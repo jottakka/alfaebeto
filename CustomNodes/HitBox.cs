@@ -8,7 +8,7 @@ public sealed partial class HitBox : Area2D
 
 	public override void _Ready()
 	{
-		this.ResetCollisionLanyerAndMask();
+		this.ResetCollisionLayerAndMask();
 
 		if (SetOnReady)
 		{
@@ -18,7 +18,7 @@ public sealed partial class HitBox : Area2D
 
 	public void DeactivateCollisionMasks()
 	{
-		this.ResetCollisionLanyerAndMask();
+		this.ResetCollisionLayerAndMask();
 	}
 
 	public void ActivateCollisionsMasks()
@@ -50,44 +50,37 @@ public sealed partial class HitBox : Area2D
 
 	private void SetHitBoxForPlayer()
 	{
-		this.ActivateCollisionLayer(CollisionLayers.Player);
 		this.ActivateCollisionLayer(CollisionLayers.PlayerHitBox);
 
 		this.ActivateCollisionMask(CollisionLayers.WordEnemyHurtBox);
-		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
-		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHitBox);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox);
+		this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
 	}
 
 	private void SetHitBoxForRegularEnemy()
 	{
+		this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHitBox);
+
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
-		this.ActivateCollisionMask(CollisionLayers.Player);
 	}
 
 	private void SetHitBoxForWordsEnemy()
 	{
-		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
-		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
-
 
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
-		this.ActivateCollisionMask(CollisionLayers.Player);
 	}
 
 	private void SetHitBoxForMeteorEnemy()
 	{
-		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemy);
 		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemyHitBox);
 
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
 		this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
-		this.ActivateCollisionMask(CollisionLayers.Player);
-
 	}
 
 	private void SetHitBoxForLaser()

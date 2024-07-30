@@ -1,7 +1,7 @@
 ﻿using Godot;
 public static class CollisionObject2DExtensions
 {
-    public static void ResetCollisionLanyerAndMask(this CollisionObject2D collisionShape)
+    public static void ResetCollisionLayerAndMask(this CollisionObject2D collisionShape)
     {
         collisionShape.CollisionLayer = 0;
         collisionShape.CollisionMask = 0;

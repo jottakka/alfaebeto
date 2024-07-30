@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhq80aiwilqge"]
+
+[ext_resource type="Script" path="res://CustomNodes/PlayerCollectableArea.cs" id="1_54nmf"]
+
+[node name="PlayerCollectableArea" type="Area2D"]
+script = ExtResource("1_54nmf")

@@ -15,4 +15,6 @@
     WordEnemyHitBox,
     MeteorEnemyHitBox,
     RegularEnemyHitBox,
+    Collectables,
+    PlayerCollectionArea,
 }

@@ -45,8 +45,8 @@ public sealed partial class MeteorWordTarget : Area2D
 	{
 		AnswerMeteor1.OptionText.Text = "ch";
 		AnswerMeteor2.OptionText.Text = "x";
-		_targetMeteor = _xorCHWord.RightOption == "ch" 
-			? AnswerMeteor1 
+		_targetMeteor = _xorCHWord.RightOption == "ch"
+			? AnswerMeteor1
 			: AnswerMeteor2;
 		_targetMeteor.IsTarget = true;
 

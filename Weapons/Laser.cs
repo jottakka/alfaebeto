@@ -17,7 +17,9 @@ public sealed partial class Laser : Area2D
 	public static float CooldownSecs { get; set; } = 0.1f;
 	[Export]
 	public float Speed { get; set; } = 900.0f;
-
+	[Export]
+	public float LaserRange { get; set; } = 300.0f;
+	private float _distance = 0.0f;
 	public override void _Ready()
 	{
 		this.SetVisibilityZOrdering(VisibilityZOrdering.Ammo);
@@ -41,6 +43,12 @@ public sealed partial class Laser : Area2D
 			AnimationPlayer.Play(WeaponAnimations.LaserOnHit);
 			Speed = 0;
 		}
+		
+		if(_distance >= LaserRange)
+		{
+			QueueFree();
+		}
+		_distance += Speed * (float)delta;
 		Position += new Vector2(0, -(Speed * (float)delta));
 	}
 

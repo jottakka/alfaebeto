@@ -9,4 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WordProcessing\WordProcessing.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Collectables\Resources\" />
+  </ItemGroup>
 </Project>

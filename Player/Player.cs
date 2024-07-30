@@ -23,9 +23,11 @@ public sealed partial class Player : CharacterBody2D
 	{
 		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
-		this.ResetCollisionLanyerAndMask();
+		this.ResetCollisionLayerAndMask();
 		this.ActivateCollisionLayer(CollisionLayers.Player);
 
+
+		this.ActivateCollisionMask(CollisionLayers.Collectables);
 		this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
 		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
 	}
