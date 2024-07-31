@@ -1,44 +1,43 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Godot;
 
 public sealed partial class PlayerShield : CharacterBody2D
 {
-	[Export]
-	public AnimationPlayer AnimationPlayer { get; set; }
-	[Export]
-	public bool IsActive { get; set; } = true;
+    [Export]
+    public AnimationPlayer AnimationPlayer { get; set; }
+    [Export]
+    public HitBox HitBox { get; set; }
+    [Export]
+    public bool IsActive { get; set; } = true;
 
-	private Player _player => this.GetParent<Player>();
+    private Player _player => this.GetParent<Player>();
 
-	public override void _Ready()
-	{
-		MotionMode = MotionModeEnum.Floating;
-		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
+    public override void _Ready()
+    {
+        MotionMode = MotionModeEnum.Floating;
 
-		this.ActivateCollisionLayer(CollisionLayers.PlayerShield);
+        this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
-		this.ActivateCollisionMask(CollisionLayers.RegularEnemy);
-		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
-		this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
+        this.ActivateCollisionLayer(CollisionLayers.PlayerShield);
 
-		AnimationPlayer.Play(PlayerAnimations.RESET);
-		AnimationPlayer.AnimationFinished += OnAnimationFinished;	
-	}
+        this.ActivateCollisionMask(CollisionLayers.RegularEnemy);
+        this.ActivateCollisionMask(CollisionLayers.WordEnemy);
+        this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
 
-	private void OnCollision(Node node)
-	{
-		AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldHit);
-	}
+        AnimationPlayer.Play(PlayerAnimations.RESET);
 
-	private void OnAnimationFinished(StringName animationName)
-	{
-		if(animationName == PlayerAnimations.OnPlayerShieldHit)
-		{
-			AnimationPlayer.Play(PlayerAnimations.RESET);
-		}
-	}
+        AnimationPlayer.AnimationFinished += OnAnimationFinished;
+    }
+
+    public void OnCollision()
+    {
+        AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldHit);
+    }
+
+    private void OnAnimationFinished(StringName animationName)
+    {
+        if (animationName == PlayerAnimations.OnPlayerShieldHit)
+        {
+            AnimationPlayer.Play(PlayerAnimations.RESET);
+        }
+    }
 }

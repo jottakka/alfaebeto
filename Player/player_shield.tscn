@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fl011vmvxel3"]
+[gd_scene load_steps=8 format=3 uid="uid://fl011vmvxel3"]
 
 [ext_resource type="Texture2D" uid="uid://ctwxsirqdmxfc" path="res://Player/Art/chield.png" id="1_gixby"]
 [ext_resource type="Script" path="res://Player/PlayerShield.cs" id="1_yj3ad"]
+[ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="3_cpsqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oe7lu"]
-radius = 83.5225
+radius = 88.0
 
 [sub_resource type="Animation" id="Animation_260jb"]
 length = 2.0
@@ -44,9 +45,10 @@ _data = {
 "on_shield_hit": SubResource("Animation_vsmgc")
 }
 
-[node name="PlayerShield" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer")]
+[node name="PlayerShield" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox")]
 script = ExtResource("1_yj3ad")
 AnimationPlayer = NodePath("AnimationPlayer")
+HitBox = NodePath("HitBox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 2.16078, 28.1098, 0.196078)
@@ -61,3 +63,8 @@ shape = SubResource("CircleShape2D_oe7lu")
 libraries = {
 "": SubResource("AnimationLibrary_exwg6")
 }
+
+[node name="HitBox" parent="." instance=ExtResource("3_cpsqx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_oe7lu")
