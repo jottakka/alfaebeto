@@ -26,10 +26,8 @@ public sealed partial class Player : CharacterBody2D
         MotionMode = MotionModeEnum.Floating;
         this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
-
         this.ResetCollisionLayerAndMask();
         this.ActivateCollisionLayer(CollisionLayers.Player);
-
 
         this.ActivateCollisionMask(CollisionLayers.Collectables);
         this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
@@ -43,14 +41,14 @@ public sealed partial class Player : CharacterBody2D
 
     private void PhysicsProcessInternal(float delta)
     {
-        var movementDirection = PlayerInputProcessor.MovementDirection;
-        var velocity = movementDirection * (Speed * delta);
+        Vector2 movementDirection = PlayerInputProcessor.MovementDirection;
+        Vector2 velocity = movementDirection * (Speed * delta);
         GlobalPosition = new Vector2(
             Mathf.Clamp(GlobalPosition.X, 0, GetViewportRect().Size.X),
             Mathf.Clamp(GlobalPosition.Y, 0, GetViewportRect().Size.Y)
         );
 
-        var collisionInfo = PlayerShield.IsActive ?
+        KinematicCollision2D collisionInfo = PlayerShield.IsActive ?
             PlayerShield.MoveAndCollide(velocity) :
             MoveAndCollide(velocity);
 
@@ -70,6 +68,7 @@ public sealed partial class Player : CharacterBody2D
 
             UpdatePlayerPositionWhenShieldActive();
         }
+
         UpdateShieldPositionWhenActive();
     }
 

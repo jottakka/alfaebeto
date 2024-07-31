@@ -29,10 +29,10 @@ public sealed partial class HealthComponent : Node
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
-        EmitSignal(nameof(OnHealthChangedSignal), CurrentHealth);
+        _ = EmitSignal(nameof(OnHealthChangedSignal), CurrentHealth);
         if (CurrentHealth <= 0)
         {
-            EmitSignal(nameof(OnHealthDepletedSignal));
+            _ = EmitSignal(nameof(OnHealthDepletedSignal));
         }
         else if (EmmitInBetweenSignals)
         {
@@ -47,7 +47,8 @@ public sealed partial class HealthComponent : Node
         {
             CurrentHealth = MaxHealth;
         }
-        EmitSignal(nameof(OnHealthChangedSignal), CurrentHealth);
+
+        _ = EmitSignal(nameof(OnHealthChangedSignal), CurrentHealth);
         if (EmmitInBetweenSignals)
         {
             CalculateLevel();
@@ -56,11 +57,11 @@ public sealed partial class HealthComponent : Node
 
     public void CalculateLevel()
     {
-        var relatvieLevel = (MaxHealth - CurrentHealth) / (float)MaxHealth;
-        var new_level = Mathf.FloorToInt((HeathLevelSignalsIntervals) * relatvieLevel);
+        float relatvieLevel = (MaxHealth - CurrentHealth) / (float)MaxHealth;
+        int new_level = Mathf.FloorToInt(HeathLevelSignalsIntervals * relatvieLevel);
         if (new_level != _currentLevel)
         {
-            EmitSignal(nameof(OnHealthLevelChangeSignal), new_level);
+            _ = EmitSignal(nameof(OnHealthLevelChangeSignal), new_level);
             _currentLevel = Mathf.Min(new_level, HeathLevelSignalsIntervals - 1);
         }
     }

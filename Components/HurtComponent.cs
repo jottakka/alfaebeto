@@ -1,6 +1,5 @@
-using Godot;
 using System.Linq;
-
+using Godot;
 
 public sealed partial class HurtComponent : Node
 {
@@ -26,13 +25,13 @@ public sealed partial class HurtComponent : Node
     {
         if (IsHurt is false)
         {
-            var overlapingArea = HitBox.GetOverlappingAreas().FirstOrDefault();
+            Area2D overlapingArea = HitBox.GetOverlappingAreas().FirstOrDefault();
 
             if (overlapingArea is not null)
             {
                 OnHitBoxBodyEntered();
                 //HitEnemyVelocity = overlapingArea.GetParent<CharacterBody2D>()?.Velocity ?? Vector2.Zero;
-                EmitSignal(nameof(OnHurtSignal), overlapingArea);
+                _ = EmitSignal(nameof(OnHurtSignal), overlapingArea);
             }
         }
     }

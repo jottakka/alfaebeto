@@ -9,7 +9,7 @@ public partial class LetterBlock : StaticBody2D
     [Export]
     public CollisionShape2D CollisionShape { get; set; }
     [Export]
-    AnimationPlayer AnimationPlayer { get; set; }
+    private AnimationPlayer AnimationPlayer { get; set; }
     [Export]
     public HitBox HitBox { get; set; }
     [Export]
@@ -19,7 +19,7 @@ public partial class LetterBlock : StaticBody2D
     [Export]
     public Sprite2D DeathSpriteEffect { get; set; }
     [Export]
-    HealthComponent HealthComponent { get; set; }
+    private HealthComponent HealthComponent { get; set; }
 
     [Signal]
     public delegate void OnTargetDestructedSignalEventHandler();
@@ -36,13 +36,10 @@ public partial class LetterBlock : StaticBody2D
         HurtComponent.OnHurtSignal += OnHurt;
         AnimationPlayer.AnimationFinished += OnHurtAnimationFinished;
 
-
         this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
-
 
         // Collision Masks to observe
         this.ActivateCollisionMask(CollisionLayers.Player);
-
 
         SetUpHealthComponent();
     }
@@ -69,7 +66,7 @@ public partial class LetterBlock : StaticBody2D
         DeathSpriteEffect.Visible = true;
         if (IsTarget)
         {
-            EmitSignal(nameof(OnTargetDestructedSignal));
+            _ = EmitSignal(nameof(OnTargetDestructedSignal));
         }
     }
 

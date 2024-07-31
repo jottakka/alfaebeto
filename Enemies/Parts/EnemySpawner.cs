@@ -21,19 +21,19 @@ public sealed partial class EnemySpawner : Area2D
         {
             if (animationName == EnemyPartAnimations.SpawnEnemy)
             {
-                EmitSignal(nameof(OnSpawnProcessingFinishedSignal));
+                _ = EmitSignal(nameof(OnSpawnProcessingFinishedSignal));
             }
         };
     }
 
     public void AllowSpawn()
     {
-        EmitSignal(nameof(OnSpawnerPermissionChangeSignal), true);
+        _ = EmitSignal(nameof(OnSpawnerPermissionChangeSignal), true);
     }
 
     public void DesallowSpawn()
     {
-        EmitSignal(nameof(OnSpawnerPermissionChangeSignal), false);
+        _ = EmitSignal(nameof(OnSpawnerPermissionChangeSignal), false);
     }
 
     public void StartSpawn()
@@ -43,7 +43,7 @@ public sealed partial class EnemySpawner : Area2D
 
     public void OnSpawnEnemyAnimationPointReady()
     {
-        EmitSignal(nameof(OnSpawnEnemyReadySignal));
+        _ = EmitSignal(nameof(OnSpawnEnemyReadySignal));
     }
 }
 

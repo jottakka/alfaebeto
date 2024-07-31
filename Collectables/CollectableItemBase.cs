@@ -1,6 +1,5 @@
 using Godot;
 
-
 public partial class CollectableItemBase : Area2D
 {
     [Export]
@@ -50,8 +49,8 @@ public partial class CollectableItemBase : Area2D
     {
         if (_IsBeingCollected is true)
         {
-            var directionToPlayer = GlobalPosition.DirectionTo(_player.GlobalPosition);
-            var velocity = directionToPlayer * _speed;
+            Vector2 directionToPlayer = GlobalPosition.DirectionTo(_player.GlobalPosition);
+            Vector2 velocity = directionToPlayer * _speed;
             Position += velocity * (float)delta;
             _speed += Acceleration;
         }
@@ -61,7 +60,7 @@ public partial class CollectableItemBase : Area2D
     {
         if (body is Player)
         {
-            EmitSignal(nameof(OnCollectedSignal));
+            _ = EmitSignal(nameof(OnCollectedSignal));
             QueueFree();
         }
     }

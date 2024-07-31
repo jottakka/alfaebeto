@@ -2,7 +2,7 @@ using Godot;
 
 public sealed class LetterBlockBuilder
 {
-    private PackedScene _letterBlockPackedScene;
+    private readonly PackedScene _letterBlockPackedScene;
 
     public LetterBlockBuilder(PackedScene packedScene)
     {

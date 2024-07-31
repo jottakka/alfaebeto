@@ -18,10 +18,10 @@ public sealed partial class CoinSpawnerComponent : Node
 
     public void SpawnCoins(Vector2 position)
     {
-        var numberOfCoins = GD.RandRange(MinCoinsSpawn, MaxCoinsSpawn);
+        int numberOfCoins = GD.RandRange(MinCoinsSpawn, MaxCoinsSpawn);
         for (int i = 0; i < numberOfCoins; i++)
         {
-            var coin = CollectableCoinScene.Instantiate<CollectableCoin>();
+            CollectableCoin coin = CollectableCoinScene.Instantiate<CollectableCoin>();
             coin.GlobalPosition = new Vector2(
                 position.X + RandomScatterRange(),
                 position.Y + RandomScatterRange()

@@ -1,8 +1,7 @@
 using Godot;
 public sealed partial class SingletonCaller : Node
 {
-    Global Global { get; set; }
-
+    private Global Global { get; set; }
 
     public override void _Ready()
     {

@@ -1,6 +1,6 @@
-using Godot;
 using System.Collections.Generic;
 using System.IO;
+using Godot;
 using WordProcessing.Filtering;
 using WordProcessing.Models.DiacriticalMarks;
 using WordProcessing.Models.XorCH;
@@ -40,6 +40,7 @@ public partial class Global : Node
             QueueFree();
             return;
         }
+
         Instance = this;
         // Initialize random number generator
         GD.Randomize();

@@ -1,6 +1,5 @@
 using Godot;
 
-
 public sealed partial class WeaponComponent : Node
 {
     [Export]
@@ -29,7 +28,7 @@ public sealed partial class WeaponComponent : Node
     private void ShootLaser()
     {
         _isWaitingCooldown = true;
-        var laser = LaserPackedScene.Instantiate<Laser>();
+        Laser laser = LaserPackedScene.Instantiate<Laser>();
         laser.Position = Player.MuzzlePosition.GlobalPosition;
         Player.GetParent().AddChildDeffered(laser);
         CooldownTimer.Start();

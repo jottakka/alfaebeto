@@ -1,5 +1,5 @@
-using Godot;
 using System.Linq;
+using Godot;
 
 public sealed partial class Laser : Area2D
 {
@@ -36,7 +36,7 @@ public sealed partial class Laser : Area2D
 
     public override void _PhysicsProcess(double delta)
     {
-        var overlapingArea = HitBox.GetOverlappingAreas().FirstOrDefault();
+        Area2D overlapingArea = HitBox.GetOverlappingAreas().FirstOrDefault();
 
         if (overlapingArea is not null)
         {
@@ -48,6 +48,7 @@ public sealed partial class Laser : Area2D
         {
             QueueFree();
         }
+
         _distance += Speed * (float)delta;
         Position += new Vector2(0, -(Speed * (float)delta));
     }

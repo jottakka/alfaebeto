@@ -3,7 +3,7 @@ using WordProcessing.Models.DiacriticalMarks;
 
 public sealed class WordBuilder
 {
-    private PackedScene _wordBlockPackedScene;
+    private readonly PackedScene _wordBlockPackedScene;
 
     public WordBuilder(PackedScene packedScene)
     {

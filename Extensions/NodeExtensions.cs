@@ -1,6 +1,5 @@
 ﻿using Godot;
 
-
 public static class NodeExtensions
 {
     public static void AddChildDeffered(
@@ -8,7 +7,7 @@ public static class NodeExtensions
         Node child
        )
     {
-        parent.CallDeferred(
+        _ = parent.CallDeferred(
             Node.MethodName.AddChild,
             child
         );

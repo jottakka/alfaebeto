@@ -7,14 +7,14 @@ public sealed class EnemyBuilder
         _enemyPackedScene = enemyPackedScene;
     }
 
-    private PackedScene _enemyPackedScene;
+    private readonly PackedScene _enemyPackedScene;
 
     public EnemyBase Create(
         Vector2 position,
         Vector2 velocity
     )
     {
-        var enemy = _enemyPackedScene.Instantiate<EnemyBase>();
+        EnemyBase enemy = _enemyPackedScene.Instantiate<EnemyBase>();
         enemy.Velocity = velocity;
         enemy.InitialPosition = position;
         return enemy;

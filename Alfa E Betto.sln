@@ -5,9 +5,9 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alfa E Betto", "Alfa E Betto.csproj", "{69C41D8C-65BA-4232-BE1A-4083B00545B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordProcessing", "..\WordProcessing\WordProcessing.csproj", "{5922C871-9B55-4A90-80C3-5C153A820076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordProcessing", "..\WordProcessing\WordProcessing.csproj", "{5922C871-9B55-4A90-80C3-5C153A820076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordProcessing.Test", "..\WordProcessing.Test\WordProcessing.Test.csproj", "{1CCDBE75-214C-4EA1-83D7-697E23642321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordProcessing.Test", "..\WordProcessing.Test\WordProcessing.Test.csproj", "{1CCDBE75-214C-4EA1-83D7-697E23642321}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

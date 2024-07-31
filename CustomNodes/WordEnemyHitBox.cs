@@ -1,6 +1,5 @@
-﻿namespace AlfaEBetto.CustomNodes
+﻿namespace AlfaEBetto.CustomNodes;
+
+internal class WordEnemyHitBox
 {
-    internal class WordEnemyHitBox
-    {
-    }
 }

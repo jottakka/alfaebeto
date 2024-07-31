@@ -59,7 +59,7 @@ public sealed partial class AnswerMeteor : StaticBody2D
     {
         if (IsTarget)
         {
-            EmitSignal(nameof(OnTargetDestroiedSignal));
+            _ = EmitSignal(nameof(OnTargetDestroiedSignal));
         }
     }
 

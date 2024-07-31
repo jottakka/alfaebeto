@@ -31,8 +31,8 @@ public partial class MeteorEnemyBase : StaticBody2D
         HealthComponent.OnHealthDepletedSignal += QueueFree;
 
         VisibleOnScreenNotifier.ScreenExited += QueueFree;
-        var scale = (float)GD.RandRange(MinSizeProportion, MaxSizeProportion);
-        var speed = (float)GD.RandRange(MinSpeed, MaxSpeed);
+        float scale = (float)GD.RandRange(MinSizeProportion, MaxSizeProportion);
+        float speed = (float)GD.RandRange(MinSpeed, MaxSpeed);
         _velocity = new Vector2(0, 1) * speed;
         Scale = Vector2.One * scale;
 
@@ -51,7 +51,7 @@ public partial class MeteorEnemyBase : StaticBody2D
 
     private void SetUpSpinAnimation()
     {
-        var spinDirection = GD.Randi() % 2 == 0;
+        bool spinDirection = GD.Randi() % 2 == 0;
 
         if (spinDirection)
         {

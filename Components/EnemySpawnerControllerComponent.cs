@@ -57,8 +57,8 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
     private void SpawnProjectile()
     {
-        var velocity = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition) * SpawnSpeed;
-        var enemy = _enemyBuilder.Create(
+        Vector2 velocity = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition) * SpawnSpeed;
+        EnemyBase enemy = _enemyBuilder.Create(
             _enemySpawner.Muzzle.GlobalPosition,
             velocity
         );

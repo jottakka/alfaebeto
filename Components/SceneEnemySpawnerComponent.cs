@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 public sealed partial class SceneEnemySpawnerComponent : Node
 {
@@ -44,11 +44,10 @@ public sealed partial class SceneEnemySpawnerComponent : Node
         MeteorSpawnTimer.Start();
     }
 
-
     private void SpawnEnemy(PackedScene[] packedScenes)
     {
-        var idx = GD.Randi() % packedScenes.Length;
-        var enemySceneInstantiated = packedScenes[idx].Instantiate<Node2D>();
+        long idx = GD.Randi() % packedScenes.Length;
+        Node2D enemySceneInstantiated = packedScenes[idx].Instantiate<Node2D>();
         enemySceneInstantiated.Position = GetNewTopSpawnPathRandPosition();
         _parent.AddChildDeffered(enemySceneInstantiated);
     }
@@ -58,7 +57,7 @@ public sealed partial class SceneEnemySpawnerComponent : Node
         SpecialEnemySpawnTimer.Stop();
         _currentState = States.SpecialEnemyAlive;
 
-        var enemySceneInstantiated = SpecialEnemiesPackedScenes[0].Instantiate<EnemyWord>();
+        EnemyWord enemySceneInstantiated = SpecialEnemiesPackedScenes[0].Instantiate<EnemyWord>();
         enemySceneInstantiated.Position = SpecialSpawnerPosition.Position;
         enemySceneInstantiated.OnQueueFreeSignal += OnSpecialEnemyFreed;
 
@@ -72,8 +71,8 @@ public sealed partial class SceneEnemySpawnerComponent : Node
             return;
         }
 
-        var enemySceneInstantiated = WordMeteorPackedScenes[0].Instantiate<MeteorWordTarget>();
-        var randonHorizontalVariation = new Vector2((float)GD.RandRange(-75.0f, 75.0f), 0.0f);
+        MeteorWordTarget enemySceneInstantiated = WordMeteorPackedScenes[0].Instantiate<MeteorWordTarget>();
+        Vector2 randonHorizontalVariation = new((float)GD.RandRange(-75.0f, 75.0f), 0.0f);
         enemySceneInstantiated.Position = SpecialSpawnerPosition.Position + randonHorizontalVariation;
         _parent.AddChildDeffered(enemySceneInstantiated);
     }

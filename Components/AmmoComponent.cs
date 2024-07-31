@@ -8,7 +8,7 @@ public sealed partial class AmmoComponent : Node
         Vector2 position
     )
     {
-        var ammo = PackedScene.Instantiate<AmmoBase>();
+        AmmoBase ammo = PackedScene.Instantiate<AmmoBase>();
         ammo.ShootRadAngle = rotation;
         ammo.InitialPosition = position;
         return ammo;

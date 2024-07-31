@@ -45,17 +45,19 @@ public partial class EnemyBase : CharacterBody2D
         {
             return;
         }
+
         if (_isSpawning)
         {
             Position += SpawnInitialVelocity * (float)delta;
         }
         else
         {
-            var direction = GlobalPosition.DirectionTo(_player.GlobalPosition);
+            Vector2 direction = GlobalPosition.DirectionTo(_player.GlobalPosition);
             Velocity = direction * Speed * (float)delta;
             Position += direction * Speed * (float)delta;
         }
-        MoveAndSlide();
+
+        _ = MoveAndSlide();
     }
 
     public void SetAsSpawning()
@@ -77,6 +79,7 @@ public partial class EnemyBase : CharacterBody2D
         {
             OnHurtStateFinished();
         }
+
         if (animationName == EnemyAnimations.EnemySpawn)
         {
             OnSpawnStateFinished();
@@ -104,8 +107,9 @@ public partial class EnemyBase : CharacterBody2D
             {
                 HealthComponent.TakeDamage(10);
             }
+
             AnimationPlayer.Play(EnemyAnimations.EnemyBugHurtBlink);
-            var knockVelocity = GlobalPosition.DirectionTo(enemyArea.GlobalPosition);
+            Vector2 knockVelocity = GlobalPosition.DirectionTo(enemyArea.GlobalPosition);
             Position -= knockVelocity * KnockBackFactor;
         }
     }

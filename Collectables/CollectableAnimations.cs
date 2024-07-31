@@ -2,5 +2,5 @@
 
 public static class CollectableAnimations
 {
-    public static StringName CoinSpinning = new StringName("coin_spinning");
+    public static StringName CoinSpinning = new("coin_spinning");
 }

@@ -34,7 +34,7 @@ public sealed partial class TurrentControllerComponent : Node
             // Get turrent muzzle direction to global turrent facing direction
             float muzzleAngle = GetMuzzleAngle();
             // Estimate updated muzzle angle
-            var muzzleAngleAfter = Mathf.LerpAngle(muzzleAngle, globalAngle, _turrent.RotationSpeed * (float)delta);
+            float muzzleAngleAfter = Mathf.LerpAngle(muzzleAngle, globalAngle, _turrent.RotationSpeed * (float)delta);
             // Rotate turrent muzzle relative to muzzle new and old angles difference
             _turrent.Rotate(muzzleAngleAfter - muzzleAngle);
 
@@ -47,14 +47,14 @@ public sealed partial class TurrentControllerComponent : Node
 
     private float GetMuzzleAngle()
     {
-        var muzzleDirection = _turrent.Muzzle.GlobalPosition - _turrent.GlobalPosition;
+        Vector2 muzzleDirection = _turrent.Muzzle.GlobalPosition - _turrent.GlobalPosition;
         float muzzleAngle = Mathf.Atan2(muzzleDirection.Y, muzzleDirection.X);
         return muzzleAngle;
     }
 
     public void SpawnProjectile()
     {
-        var ammo = AmmoComponent.Create(
+        AmmoBase ammo = AmmoComponent.Create(
             GetMuzzleAngle(),
             _turrent.Muzzle.GlobalPosition
             );

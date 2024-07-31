@@ -10,15 +10,12 @@ public partial class WordBuilderComponent : Node
 
     public override void _Ready()
     {
-        if (_wordBuilder == null)
-        {
-            _wordBuilder = new WordBuilder(WordPackedScene);
-        }
+        _wordBuilder ??= new WordBuilder(WordPackedScene);
     }
 
     public Word BuildWord(WordInfo wordInfo, Vector2 position)
     {
-        var word = _wordBuilder.BuildWord(wordInfo, position);
+        Word word = _wordBuilder.BuildWord(wordInfo, position);
         return word;
     }
 }

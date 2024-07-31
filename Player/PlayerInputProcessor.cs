@@ -14,9 +14,11 @@ public partial class PlayerInputProcessor : Node
 
     private Vector2 GetNewMovementDirection()
     {
-        Vector2 direction = new();
-        direction.X = Input.GetActionStrength(UserInput.MoveRight) - Input.GetActionStrength(UserInput.MoveLeft);
-        direction.Y = Input.GetActionStrength(UserInput.MoveDown) - Input.GetActionStrength(UserInput.MoveUp);
+        Vector2 direction = new()
+        {
+            X = Input.GetActionStrength(UserInput.MoveRight) - Input.GetActionStrength(UserInput.MoveLeft),
+            Y = Input.GetActionStrength(UserInput.MoveDown) - Input.GetActionStrength(UserInput.MoveUp)
+        };
 
         // If input is digital, normalize it for diagonal movement
         if (Mathf.Abs(direction.X) == 1 && Mathf.Abs(direction.Y) == 1)

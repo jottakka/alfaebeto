@@ -44,7 +44,7 @@ public sealed partial class TurrentBase : Area2D
 
     public void OnAnimationShootReady()
     {
-        EmitSignal(nameof(ShootPointReachedSignal));
+        _ = EmitSignal(nameof(ShootPointReachedSignal));
     }
 
     private void CooldownTimerTimeout()

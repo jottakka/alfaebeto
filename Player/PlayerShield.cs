@@ -9,7 +9,7 @@ public sealed partial class PlayerShield : CharacterBody2D
     [Export]
     public bool IsActive { get; set; } = true;
 
-    private Player _player => this.GetParent<Player>();
+    private Player _player => GetParent<Player>();
 
     public override void _Ready()
     {
