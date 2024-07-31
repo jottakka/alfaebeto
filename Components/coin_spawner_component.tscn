@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7cdvbjh55lol"]
+
+[ext_resource type="Script" path="res://Components/CoinSpawnerComponent.cs" id="1_5k0qj"]
+[ext_resource type="PackedScene" uid="uid://cn34ji53hhjih" path="res://Collectables/collectable_coin.tscn" id="2_rec6x"]
+
+[node name="CoinSpawnerComponent" type="Node"]
+script = ExtResource("1_5k0qj")
+CollectableCoinScene = ExtResource("2_rec6x")
+CoinsScatterRadius = 15.0

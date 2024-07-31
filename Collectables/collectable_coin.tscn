@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn34ji53hhjih"]
+[gd_scene load_steps=7 format=3 uid="uid://cn34ji53hhjih"]
 
+[ext_resource type="Script" path="res://Collectables/CollectableCoin.cs" id="1_ogduu"]
 [ext_resource type="Texture2D" uid="uid://bfme5rxpc8tkg" path="res://Collectables/Art/coin_gold.png" id="1_yekgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_govdm"]
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_tgyh3"]
 resource_name = "coin_spinning"
@@ -64,9 +68,16 @@ _data = {
 "coin_spinning": SubResource("Animation_tgyh3")
 }
 
-[node name="CollectableCoin" type="Area2D"]
+[node name="CollectableCoin" type="Area2D" node_paths=PackedStringArray("AnimationPlayer", "Sprite")]
+script = ExtResource("1_ogduu")
+AnimationPlayer = NodePath("AnimationPlayer")
+Sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_govdm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.950114, 0.662585, 0.807382, 1)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_yekgv")
 hframes = 4

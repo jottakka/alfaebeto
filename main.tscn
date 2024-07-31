@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=8 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
 [ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
-[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="6_a33p8"]
-[ext_resource type="PackedScene" uid="uid://dnrnvmtchxjl0" path="res://Collectables/collectable_item_base.tscn" id="8_6ori3"]
 [ext_resource type="PackedScene" uid="uid://uovrvrmqh1g7" path="res://Components/scene_enemy_spawner_component.tscn" id="9_e2oro"]
 
 [sub_resource type="Curve2D" id="Curve2D_itbqw"]
@@ -81,15 +79,3 @@ cubic_interp = false
 [node name="SceneEnemySpawnerComponent" parent="." node_paths=PackedStringArray("SpecialSpawnerPosition", "SpawnFollowPath") instance=ExtResource("9_e2oro")]
 SpecialSpawnerPosition = NodePath("../SpecialSpawnPosition")
 SpawnFollowPath = NodePath("../Path2D/PathFollow2D")
-
-[node name="WordEnemy" parent="." instance=ExtResource("6_a33p8")]
-position = Vector2(256, 512)
-
-[node name="CollectableItemBase" parent="." instance=ExtResource("8_6ori3")]
-position = Vector2(112, 384)
-
-[node name="CollectableItemBase2" parent="." instance=ExtResource("8_6ori3")]
-position = Vector2(416, 392)
-
-[node name="CollectableItemBase3" parent="." instance=ExtResource("8_6ori3")]
-position = Vector2(280, 320)

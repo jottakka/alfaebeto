@@ -10,6 +10,8 @@ public partial class EnemyBase : CharacterBody2D
 	[Export]
 	public HealthComponent HealthComponent { get; set; }
 	[Export]
+	public CoinSpawnerComponent CoinSpawnerComponent { get; set; }
+	[Export]
 	public float Speed { get; set; } = 100.0f;
 	[Export]
 	public float KnockBackFactor { get; set; } = 50.0f;
@@ -30,7 +32,7 @@ public partial class EnemyBase : CharacterBody2D
 
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
-		HealthComponent.OnHealthDepletedSignal += QueueFree;
+		HealthComponent.OnHealthDepletedSignal += OnDeath;
 
 		// Collidion layer to act upon
 		this.ActivateCollisionLayer(CollisionLayers.RegularEnemy);
@@ -61,6 +63,12 @@ public partial class EnemyBase : CharacterBody2D
 		_isSpawning = true;
 		AnimationPlayer.Play(EnemyAnimations.EnemySpawn);
 		Visible = true;
+	}
+
+	private void OnDeath()
+	{
+		CoinSpawnerComponent.SpawnCoins(GlobalPosition);
+		QueueFree();
 	}
 
 	private void OnAnimationFinished(StringName animationName)
