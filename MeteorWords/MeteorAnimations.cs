@@ -1,6 +1,8 @@
 ﻿using Godot;
 public static class MeteorAnimations
 {
+    public static StringName RESET = new StringName("RESET");
+
     public static StringName AnswerMeteorMoving = new StringName("ans_meteor_moving");
     public static StringName AnswerMeteorHurt = new StringName("ans_meteor_hurt");
 

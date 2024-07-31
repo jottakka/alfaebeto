@@ -45,7 +45,7 @@ _data = {
 "meteor_enemy_spin": SubResource("Animation_yb7vt")
 }
 
-[node name="MeteorEnemyA" type="AnimatableBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "HitBox", "EnemyHurtBox")]
+[node name="MeteorEnemyB" type="StaticBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "HitBox", "EnemyHurtBox")]
 script = ExtResource("1_fgh0j")
 AnimationPlayer = NodePath("AnimationPlayer")
 VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")

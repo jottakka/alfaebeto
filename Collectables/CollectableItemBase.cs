@@ -41,9 +41,9 @@ public partial class CollectableItemBase : Area2D
 		this.ActivateCollisionMask(CollisionLayers.PlayerCollectionArea);
 
 		// when the collectable item enters the player collection area
-		this.AreaEntered += OnAreaShapeEntered;
+		AreaEntered += OnAreaShapeEntered;
 		// when it reachs the player itself
-		this.BodyEntered += OnPlayerBodyEntered;
+		BodyEntered += OnPlayerBodyEntered;
 	}
 
 	public override void _PhysicsProcess(double delta)

@@ -32,6 +32,9 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	{
 		SpawnFollowPath.Rotates = false;
 		SpawnFollowPath.Loop = false;
+		SpawnNextSpecial();
+		SpawnEnemy(MeteorPackedScenes);
+		SpawnEnemy(MeteorPackedScenes);
 
 		MeteorSpawnTimer.Timeout += () => SpawnEnemy(MeteorPackedScenes);
 		MeteorWordSpawnTimer.Timeout += SpawnNextWordMeteor;

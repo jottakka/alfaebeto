@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Godot;
-public partial class MeteorEnemyBase : AnimatableBody2D
+public partial class MeteorEnemyBase : StaticBody2D
 {
 	[Export]
 	public AnimationPlayer AnimationPlayer { get; set; }
@@ -32,7 +32,6 @@ public partial class MeteorEnemyBase : AnimatableBody2D
 	public override void _Ready()
 	{
 		HurtComponent.OnHurtSignal += OnHurt;
-		SetUpSpinAnimation();
 
 		HealthComponent.OnHealthDepletedSignal += QueueFree;
 
@@ -46,6 +45,8 @@ public partial class MeteorEnemyBase : AnimatableBody2D
 
 		// Collision Masks to observe
 		this.ActivateCollisionMask(CollisionLayers.Player);
+
+		SetUpSpinAnimation();
 	}
 
 	public override void _PhysicsProcess(double delta)
