@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://fl011vmvxel3"]
+
+[ext_resource type="Texture2D" uid="uid://ctwxsirqdmxfc" path="res://Player/Art/chield.png" id="1_gixby"]
+
+[sub_resource type="Animation" id="Animation_vsmgc"]
+resource_name = "on_shield_hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.824664, 0.880048, 0.989802, 1), Color(1, 2.16078, 28.1098, 0.196078)]
+}
+
+[sub_resource type="Animation" id="Animation_260jb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 2.16078, 28.1098, 0.196078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exwg6"]
+_data = {
+"RESET": SubResource("Animation_260jb"),
+"on_shield_hit": SubResource("Animation_vsmgc")
+}
+
+[node name="PlayerShield" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 2.16078, 28.1098, 0.196078)
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.443359, 0.443359)
+texture = ExtResource("1_gixby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_exwg6")
+}

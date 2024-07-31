@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://blpg2mfx2l1of"]
+[gd_scene load_steps=9 format=3 uid="uid://blpg2mfx2l1of"]
 
 [ext_resource type="Texture2D" uid="uid://efi2fcit068j" path="res://Player/Art/player_red.png" id="1_18mcv"]
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_mm6fq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dr3yima6l4o20" path="res://Components/weapon_component.tscn" id="4_2bnbr"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="5_l1njh"]
 [ext_resource type="PackedScene" uid="uid://dhq80aiwilqge" path="res://CustomNodes/player_collectable_area.tscn" id="6_vdg1p"]
+[ext_resource type="PackedScene" uid="uid://fl011vmvxel3" path="res://Player/player_shield.tscn" id="7_rdpca"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ax6h"]
 radius = 184.719
@@ -55,3 +56,5 @@ CollisionShape2D = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollectableArea"]
 shape = SubResource("CircleShape2D_1ax6h")
+
+[node name="PlayerShield" parent="." instance=ExtResource("7_rdpca")]
