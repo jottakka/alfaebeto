@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Global.cs"
-Panku="*res://addons/panku_console/console.tscn"
 
 [display]
 
@@ -35,7 +34,7 @@ project/assembly_name="Alfa E Betto"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg", "res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg")
 
 [input]
 

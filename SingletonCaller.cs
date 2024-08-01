@@ -1,10 +1,10 @@
 using Godot;
 public sealed partial class SingletonCaller : Node
 {
-    private Global Global { get; set; }
+	private Global Global { get; set; }
 
-    public override void _Ready()
-    {
-        Global = GetNode<Global>($"/root/{nameof(Global)}");
-    }
+	public override void _Ready()
+	{
+		Global = GetNode<Global>($"/root/{nameof(Global)}");
+	}
 }

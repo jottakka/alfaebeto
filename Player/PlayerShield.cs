@@ -14,10 +14,12 @@ public sealed partial class PlayerShield : CharacterBody2D
     public override void _Ready()
     {
         MotionMode = MotionModeEnum.Floating;
+        this.ResetCollisionLayerAndMask();
 
         this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
         this.ActivateCollisionLayer(CollisionLayers.PlayerShield);
+        this.ActivateCollisionLayer(CollisionLayers.PlayerShieldHurtBox);
 
         this.ActivateCollisionMask(CollisionLayers.RegularEnemy);
         this.ActivateCollisionMask(CollisionLayers.WordEnemy);
@@ -26,6 +28,19 @@ public sealed partial class PlayerShield : CharacterBody2D
         AnimationPlayer.Play(PlayerAnimations.RESET);
 
         AnimationPlayer.AnimationFinished += OnAnimationFinished;
+
+        HitBox.AreaEntered += (_) =>
+        {
+            GD.Print("PlayerShield HitBox AreaEntered");
+            OnCollision();
+
+        };
+        HitBox.BodyEntered += (_) =>
+        {
+            GD.Print("PlayerShield HitBox AreaEntered");
+            OnCollision();
+
+        };
     }
 
     public void OnCollision()

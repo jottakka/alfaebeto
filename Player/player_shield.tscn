@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="3_cpsqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oe7lu"]
-radius = 88.0
+radius = 88.3629
 
 [sub_resource type="Animation" id="Animation_260jb"]
 length = 2.0
@@ -65,6 +65,7 @@ libraries = {
 }
 
 [node name="HitBox" parent="." instance=ExtResource("3_cpsqx")]
+priority = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_oe7lu")

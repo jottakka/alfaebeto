@@ -57,7 +57,7 @@ public sealed partial class HitBox : Area2D
 
         this.ActivateCollisionMask(CollisionLayers.WordEnemyHurtBox);
         this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox);
-        this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
+        this.ActivateCollisionMask(CollisionLayers.RegularEnemyHurtBox);
     }
 
     private void SetHitBoxForPlayer()
@@ -74,9 +74,9 @@ public sealed partial class HitBox : Area2D
         this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHitBox);
 
         // Collision Masks to observe
-        this.ActivateCollisionMask(CollisionLayers.PlayerShieldHitBox);
         this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
         this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
+        this.ActivateCollisionMask(CollisionLayers.PlayerShield);
     }
 
     private void SetHitBoxForWordsEnemy()
@@ -94,6 +94,7 @@ public sealed partial class HitBox : Area2D
         // Collision Masks to observe
         this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
         this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
+        this.ActivateCollisionMask(CollisionLayers.PlayerShieldHurtBox);
     }
 
     private void SetHitBoxForLaser()

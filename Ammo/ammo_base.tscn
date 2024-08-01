@@ -1,22 +1,150 @@
-[gd_scene load_steps=6 format=3 uid="uid://cldj0ylgrvu2t"]
+[gd_scene load_steps=10 format=3 uid="uid://cldj0ylgrvu2t"]
 
 [ext_resource type="Texture2D" uid="uid://dq6sv1kerr6je" path="res://Ammo/Art/energy_ball.png" id="1_bdrbm"]
 [ext_resource type="Script" path="res://Ammo/AmmoBase.cs" id="1_ridbi"]
 [ext_resource type="Texture2D" uid="uid://brf0t530pevrs" path="res://Ammo/Art/circle_05.png" id="3_mdxkh"]
 [ext_resource type="Texture2D" uid="uid://c27b5udupevmr" path="res://Ammo/Art/spaceEffects_004.png" id="4_3d1t1"]
+[ext_resource type="Texture2D" uid="uid://rov2klpkyx7q" path="res://Ammo/Art/explosions.png" id="5_l6gy3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xymx"]
 radius = 16.0312
 
-[node name="Ammo" type="Area2D" node_paths=PackedStringArray("Sprite", "CollisionShape", "VisibleOnScreenNotifier")]
+[sub_resource type="Animation" id="Animation_ksk4r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosions:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosions:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.956863, 0.611765, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosions/Circle06:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.145098)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6lrjh"]
+resource_name = "new_animation"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosions:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosions:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.956863, 0.611765, 0.784314), Color(0.000885296, 0.000718515, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosions/Circle06:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.145098)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f82es"]
+_data = {
+"RESET": SubResource("Animation_ksk4r"),
+"ammo_explosion": SubResource("Animation_6lrjh")
+}
+
+[node name="Ammo" type="Area2D" node_paths=PackedStringArray("Sprite", "CollisionShape", "VisibleOnScreenNotifier", "AnimationPlayer", "ExplosionSprite")]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_ridbi")
 Sprite = NodePath("Sprite2D")
 CollisionShape = NodePath("CollisionShape2D")
 VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
+AnimationPlayer = NodePath("AnimationPlayer")
+ExplosionSprite = NodePath("Explosions")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bdrbm")
+
+[node name="Circle05" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(1, 1, 0.847059, 0.12549)
+z_index = -1
+position = Vector2(0, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mdxkh")
+
+[node name="SpaceEffects004" type="Sprite2D" parent="Sprite2D/Circle05"]
+self_modulate = Color(1, 1, 0.792157, 0.266667)
+z_index = -1
+position = Vector2(-90, -3.33333)
+rotation = 1.5708
+scale = Vector2(3.33333, 3.33333)
+texture = ExtResource("4_3d1t1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6xymx")
@@ -25,16 +153,22 @@ shape = SubResource("CircleShape2D_6xymx")
 position = Vector2(44.25, 0.500001)
 scale = Vector2(0.375, 1.45)
 
-[node name="Circle05" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 0.847059, 0.12549)
-z_index = -1
-position = Vector2(0, 1)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_mdxkh")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f82es")
+}
 
-[node name="SpaceEffects004" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 0.792157, 0.266667)
-z_index = -1
-position = Vector2(-27, 0)
-rotation = 1.5708
-texture = ExtResource("4_3d1t1")
+[node name="Explosions" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.956863, 0.611765, 1)
+position = Vector2(16.6667, 9.18355e-41)
+scale = Vector2(0.137097, 0.137097)
+texture = ExtResource("5_l6gy3")
+hframes = 4
+
+[node name="Circle06" type="Sprite2D" parent="Explosions"]
+self_modulate = Color(1, 1, 1, 0.145098)
+show_behind_parent = true
+position = Vector2(145.882, -24.3137)
+scale = Vector2(7.29412, 7.29412)
+texture = ExtResource("3_mdxkh")

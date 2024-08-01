@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ck85u3rkf5tmf"]
+[gd_scene load_steps=16 format=3 uid="uid://ck85u3rkf5tmf"]
 
 [ext_resource type="Script" path="res://Enemies/EnemyBase.cs" id="1_eiuj6"]
 [ext_resource type="Texture2D" uid="uid://cvarfi2ejaleu" path="res://Enemies/Art/Boss_1_A_Small.png" id="1_in2n3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="5_jdbne"]
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="6_mxe21"]
 [ext_resource type="PackedScene" uid="uid://b7cdvbjh55lol" path="res://Components/coin_spawner_component.tscn" id="7_jgai6"]
+[ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="8_7qfii"]
 
 [sub_resource type="Animation" id="Animation_kw5us"]
 length = 0.001
@@ -256,13 +257,14 @@ _data = {
 radius = 21.0
 height = 42.0
 
-[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox", "HurtComponent", "HealthComponent", "CoinSpawnerComponent")]
+[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox", "HurtBox", "HurtComponent", "HealthComponent", "CoinSpawnerComponent")]
 rotation = 3.14159
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_eiuj6")
 AnimationPlayer = NodePath("AnimationPlayer")
 HitBox = NodePath("HitBox")
+HurtBox = NodePath("EnemyHurtBox")
 HurtComponent = NodePath("HurtComponent")
 HealthComponent = NodePath("HealthComponent")
 CoinSpawnerComponent = NodePath("CoinSpawnerComponent")
@@ -305,3 +307,8 @@ shape = SubResource("CapsuleShape2D_fam17")
 MaxHealth = 30
 
 [node name="CoinSpawnerComponent" parent="." instance=ExtResource("7_jgai6")]
+
+[node name="EnemyHurtBox" parent="." instance=ExtResource("8_7qfii")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
+shape = SubResource("CapsuleShape2D_fam17")
