@@ -66,7 +66,7 @@ public sealed partial class HitBox : Area2D
 
         this.ActivateCollisionMask(CollisionLayers.WordEnemyHurtBox);
         this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox);
-        this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
+        this.ActivateCollisionMask(CollisionLayers.RegularEnemyHurtBox);
     }
 
     private void SetHitBoxForRegularEnemy()
