@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=9 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
 [ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
+[ext_resource type="PackedScene" uid="uid://cvr8oob8wwhy4" path="res://Enemies/meteor_enemy_a.tscn" id="7_cxptv"]
 [ext_resource type="PackedScene" uid="uid://uovrvrmqh1g7" path="res://Components/scene_enemy_spawner_component.tscn" id="9_e2oro"]
 
 [sub_resource type="Curve2D" id="Curve2D_itbqw"]
@@ -78,4 +79,5 @@ cubic_interp = false
 
 [node name="SceneEnemySpawnerComponent" parent="." node_paths=PackedStringArray("SpecialSpawnerPosition", "SpawnFollowPath") instance=ExtResource("9_e2oro")]
 SpecialSpawnerPosition = NodePath("../SpecialSpawnPosition")
+MeteorPackedScenes = [ExtResource("7_cxptv")]
 SpawnFollowPath = NodePath("../Path2D/PathFollow2D")

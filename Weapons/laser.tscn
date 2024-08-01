@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ew30y65rjmpq"]
 
-[ext_resource type="Texture2D" uid="uid://b2chvma1yj55y" path="res://Weapons/Art/laserRed01.png" id="1_siqs4"]
 [ext_resource type="Script" path="res://Weapons/Laser.cs" id="2_lrh8k"]
+[ext_resource type="Texture2D" uid="uid://p3u0srp3tyi3" path="res://Weapons/Art/short-ray.png" id="2_y0brm"]
 [ext_resource type="PackedScene" uid="uid://ccqbc6py7ptiv" path="res://CustomNodes/player_special_hurt_box.tscn" id="3_et51a"]
 [ext_resource type="Texture2D" uid="uid://wyhehrtap0qh" path="res://Weapons/Art/star_02.png" id="4_elupe"]
 [ext_resource type="Texture2D" uid="uid://bxnm274fcddgh" path="res://Weapons/Art/laserRed08.png" id="5_23b5h"]
@@ -152,15 +152,20 @@ PlayerSpecialHurtBox = NodePath("PlayerSpecialHurtBox")
 HitBox = NodePath("HitBox")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, 39)
+position = Vector2(1, 49)
 scale = Vector2(0.9, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_siqs4")
+modulate = Color(0.99966, 0.918085, 0.904108, 1)
+self_modulate = Color(0.999071, 0.753697, 0.713672, 1)
+position = Vector2(0, 0.5)
+scale = Vector2(0.526515, 0.635417)
+texture = ExtResource("2_y0brm")
 
 [node name="PlayerSpecialHurtBox" parent="." instance=ExtResource("3_et51a")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSpecialHurtBox"]
+visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_iy6u7")
 
@@ -186,6 +191,7 @@ libraries = {
 }
 
 [node name="HitBox" parent="." instance=ExtResource("6_nannb")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, 0.5)

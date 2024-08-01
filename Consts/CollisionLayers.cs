@@ -18,5 +18,6 @@
     WordEnemyHitBox,
     MeteorEnemyHitBox,
     RegularEnemyHitBox,
+    EnemyAmmo,
     Collectables,
 }

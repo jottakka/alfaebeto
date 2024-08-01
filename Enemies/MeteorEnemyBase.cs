@@ -10,26 +10,27 @@ public partial class MeteorEnemyBase : StaticBody2D
 	[Export]
 	public HurtComponent HurtComponent { get; set; }
 	[Export]
-	public float MaxSizeProportion { get; set; } = 1.0f;
+	public Sprite2D Sprite2D { get; set; }
 	[Export]
-	public float MinSizeProportion { get; set; } = 0.6f;
+	public float MaxSizeProportion { get; set; } = 1.5f;
 	[Export]
-	public float MaxSpeed { get; set; } = 150.0f;
+	public float MinSizeProportion { get; set; } = 1.0f;
 	[Export]
-	public float MinSpeed { get; set; } = 100.0f;
+	public float MaxSpeed { get; set; } = 60.0f;
+	[Export]
+	public float MinSpeed { get; set; } = 40.0f;
 	[Export]
 	public HitBox HitBox { get; set; }
 	[Export]
 	public EnemyHurtBox EnemyHurtBox { get; set; }
 
 	private Vector2 _velocity;
+	private int _currenSpriteFrame = 0;
 
 	public override void _Ready()
 	{
 		HurtComponent.OnHurtSignal += OnHurt;
-
-		HealthComponent.OnHealthDepletedSignal += QueueFree;
-
+		SetUpHealthComponent();
 		VisibleOnScreenNotifier.ScreenExited += QueueFree;
 		float scale = (float)GD.RandRange(MinSizeProportion, MaxSizeProportion);
 		float speed = (float)GD.RandRange(MinSpeed, MaxSpeed);
@@ -69,5 +70,19 @@ public partial class MeteorEnemyBase : StaticBody2D
 		{
 			HealthComponent.TakeDamage(10);
 		}
+	}
+
+	private void OnHealthLevelChanged(int healthLevel)
+	{
+		_currenSpriteFrame = healthLevel;
+		Sprite2D.Frame = _currenSpriteFrame;
+	}
+
+	private void SetUpHealthComponent()
+	{
+		HealthComponent.EmmitInBetweenSignals = true;
+		HealthComponent.HeathLevelSignalsIntervals = 6;
+		HealthComponent.OnHealthDepletedSignal += QueueFree;
+		HealthComponent.OnHealthLevelChangeSignal += OnHealthLevelChanged;
 	}
 }

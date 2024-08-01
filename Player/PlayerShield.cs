@@ -2,57 +2,57 @@ using Godot;
 
 public sealed partial class PlayerShield : CharacterBody2D
 {
-    [Export]
-    public AnimationPlayer AnimationPlayer { get; set; }
-    [Export]
-    public HitBox HitBox { get; set; }
-    [Export]
-    public bool IsActive { get; set; } = true;
+	[Export]
+	public AnimationPlayer AnimationPlayer { get; set; }
+	[Export]
+	public HitBox HitBox { get; set; }
+	[Export]
+	public bool IsActive { get; set; } = true;
 
-    private Player _player => GetParent<Player>();
+	private Player _player => GetParent<Player>();
 
-    public override void _Ready()
-    {
-        MotionMode = MotionModeEnum.Floating;
-        this.ResetCollisionLayerAndMask();
+	public override void _Ready()
+	{
+		MotionMode = MotionModeEnum.Floating;
+		this.ResetCollisionLayerAndMask();
 
-        this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
+		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
-        this.ActivateCollisionLayer(CollisionLayers.PlayerShield);
-        this.ActivateCollisionLayer(CollisionLayers.PlayerShieldHurtBox);
+		this.ActivateCollisionLayer(CollisionLayers.PlayerShield);
+		this.ActivateCollisionLayer(CollisionLayers.PlayerShieldHurtBox);
 
-        this.ActivateCollisionMask(CollisionLayers.RegularEnemy);
-        this.ActivateCollisionMask(CollisionLayers.WordEnemy);
-        this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
+		this.ActivateCollisionMask(CollisionLayers.RegularEnemy);
+		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
 
-        AnimationPlayer.Play(PlayerAnimations.RESET);
+		AnimationPlayer.Play(PlayerAnimations.RESET);
 
-        AnimationPlayer.AnimationFinished += OnAnimationFinished;
+		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
-        HitBox.AreaEntered += (_) =>
-        {
-            GD.Print("PlayerShield HitBox AreaEntered");
-            OnCollision();
+		HitBox.AreaEntered += (_) =>
+		{
+			GD.Print("PlayerShield HitBox AreaEntered");
+			OnCollision();
 
-        };
-        HitBox.BodyEntered += (_) =>
-        {
-            GD.Print("PlayerShield HitBox AreaEntered");
-            OnCollision();
+		};
+		HitBox.BodyEntered += (_) =>
+		{
+			GD.Print("PlayerShield HitBox AreaEntered");
+			OnCollision();
 
-        };
-    }
+		};
+	}
 
-    public void OnCollision()
-    {
-        AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldHit);
-    }
+	public void OnCollision()
+	{
+		AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldHit);
+	}
 
-    private void OnAnimationFinished(StringName animationName)
-    {
-        if (animationName == PlayerAnimations.OnPlayerShieldHit)
-        {
-            AnimationPlayer.Play(PlayerAnimations.RESET);
-        }
-    }
+	private void OnAnimationFinished(StringName animationName)
+	{
+		if (animationName == PlayerAnimations.OnPlayerShieldHit)
+		{
+			AnimationPlayer.Play(PlayerAnimations.RESET);
+		}
+	}
 }

@@ -36,10 +36,11 @@ public partial class AmmoBase : Area2D
 		ZIndex = (int)VisibilityZOrdering.Ammo;
 
 		this.ResetCollisionLayerAndMask();
-		this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
+		this.ActivateCollisionLayer(CollisionLayers.EnemyAmmo);
 
 		this.ActivateCollisionMask(CollisionLayers.PlayerHitBox);
 		this.ActivateCollisionMask(CollisionLayers.PlayerShieldHitBox);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHitBox);
 	}
 
 	public override void _PhysicsProcess(double delta)

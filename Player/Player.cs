@@ -59,7 +59,6 @@ public sealed partial class Player : CharacterBody2D
 			if (PlayerShield.IsActive)
 			{
 				OnCollisionHandler(collisionInfo, PlayerShield);
-				PlayerShield.OnCollision();
 			}
 			else
 			{

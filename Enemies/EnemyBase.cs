@@ -28,6 +28,7 @@ public partial class EnemyBase : CharacterBody2D
 	{
 		Visible = false;
 		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
+		this.ResetCollisionLayerAndMask();
 		GlobalPosition = InitialPosition;
 
 		HurtComponent.OnHurtSignal += OnHurt;

@@ -1,4 +1,3 @@
-using System.Linq;
 using Godot;
 
 public sealed partial class HurtComponent : Node
@@ -19,27 +18,18 @@ public sealed partial class HurtComponent : Node
 		{
 			HurtCooldownTimer.Timeout += OnHurtStateFinished;
 		}
+
+		HitBox.AreaEntered += OnHitBoxAreaEntered;
 	}
 
-	public override void _PhysicsProcess(double delta)
+	public void OnHitBoxAreaEntered(Area2D area)
 	{
 		if (IsHurt is false)
 		{
-			Area2D overlapingArea = HitBox.GetOverlappingAreas().FirstOrDefault();
-
-			if (overlapingArea is not null)
-			{
-				OnHitBoxBodyEntered();
-				//HitEnemyVelocity = overlapingArea.GetParent<CharacterBody2D>()?.Velocity ?? Vector2.Zero;
-				_ = EmitSignal(nameof(OnHurtSignal), overlapingArea);
-			}
+			IsHurt = true;
+			HurtCooldownTimer?.Start();
+			_ = EmitSignal(nameof(OnHurtSignal), area);
 		}
-	}
-
-	public void OnHitBoxBodyEntered()
-	{
-		IsHurt = true;
-		HurtCooldownTimer?.Start();
 	}
 
 	public void OnHurtStateFinished()

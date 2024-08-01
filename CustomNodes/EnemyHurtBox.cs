@@ -3,6 +3,13 @@ public sealed partial class EnemyHurtBox : Area2D
 {
 	public Node Parent => GetParent();
 
+	public override void _Ready()
+	{
+		this.ResetCollisionLayerAndMask();
+
+		ActivateCollisionsMasks();
+	}
+
 	public void ActivateCollisionsMasks()
 	{
 		switch (Parent)

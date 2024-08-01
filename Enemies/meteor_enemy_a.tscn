@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvr8oob8wwhy4"]
+[gd_scene load_steps=11 format=3 uid="uid://cvr8oob8wwhy4"]
 
 [ext_resource type="Script" path="res://Enemies/MeteorEnemyBase.cs" id="1_6xa6j"]
-[ext_resource type="Texture2D" uid="uid://cxvp5f1fijwq" path="res://Enemies/Art/meteorBrown_big2.png" id="1_7bp6b"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="2_evlx3"]
+[ext_resource type="Texture2D" uid="uid://dckaxrpeslrc8" path="res://Enemies/Art/asteroid_spriteSheet.png" id="2_wkxdg"]
 [ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="3_v6abw"]
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="5_bjsfj"]
 [ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="6_mrlhr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfqw4"]
+radius = 35.0
+height = 94.0
 
 [sub_resource type="Animation" id="Animation_rrwij"]
 length = 0.001
@@ -45,29 +49,34 @@ _data = {
 "meteor_enemy_spin": SubResource("Animation_yb7vt")
 }
 
-[node name="MeteorEnemyA" type="StaticBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "HitBox", "EnemyHurtBox")]
+[node name="MeteorEnemyA" type="StaticBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "Sprite2D", "HitBox", "EnemyHurtBox")]
 script = ExtResource("1_6xa6j")
 AnimationPlayer = NodePath("AnimationPlayer")
 VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
 HealthComponent = NodePath("HealthComponent")
 HurtComponent = NodePath("HurtComponent")
+Sprite2D = NodePath("Sprite2D")
 HitBox = NodePath("HitBox")
 EnemyHurtBox = NodePath("EnemyHurtBox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_7bp6b")
+scale = Vector2(0.189453, 0.163086)
+texture = ExtResource("2_wkxdg")
+hframes = 6
 
 [node name="HitBox" parent="." instance=ExtResource("2_evlx3")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
-position = Vector2(-25, 49)
-polygon = PackedVector2Array(-1, 0, 15, -17, 70, -32, 84, -77, 33, -96, -14, -89, -34, -54, -29, -23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jfqw4")
 
 [node name="EnemyHurtBox" parent="." instance=ExtResource("3_v6abw")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnemyHurtBox"]
-position = Vector2(-25, 49)
-polygon = PackedVector2Array(-1, 0, 15, -17, 70, -32, 84, -77, 33, -96, -14, -89, -34, -54, -29, -23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
+position = Vector2(0, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jfqw4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -75,11 +84,13 @@ libraries = {
 }
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(4.76837e-07, 9.53674e-07)
-scale = Vector2(6, 4.9)
+position = Vector2(-0.500004, -7)
+scale = Vector2(4.85, 4.2)
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_bjsfj")]
-MaxHealth = 20
+MaxHealth = 60
+EmmitInBetweenSignals = true
+HeathLevelSignalsIntervals = 6
 
 [node name="HurtComponent" parent="." node_paths=PackedStringArray("HurtCooldownTimer", "HitBox") instance=ExtResource("6_mrlhr")]
 HurtCooldownTimer = NodePath("../HurtCooldownTimer")
@@ -88,6 +99,7 @@ HitBox = NodePath("../HitBox")
 [node name="HurtCooldownTimer" type="Timer" parent="."]
 wait_time = 0.2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-25, 49)
-polygon = PackedVector2Array(-1, 0, 15, -17, 70, -32, 84, -77, 33, -96, -14, -89, -34, -54, -29, -23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jfqw4")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0fwxeh3fs848"]
+[gd_scene load_steps=20 format=3 uid="uid://d0fwxeh3fs848"]
 
 [ext_resource type="Script" path="res://MeteorWords/AnswerMeteor.cs" id="1_c54gp"]
 [ext_resource type="Texture2D" uid="uid://dp0hygdh6q8aj" path="res://MeteorWords/Art/spaceMeteors_003.png" id="2_wmlta"]
 [ext_resource type="FontFile" uid="uid://ddi5qfyp03r63" path="res://MeteorWords/Art/Kenney Future.ttf" id="3_jkkrp"]
 [ext_resource type="Texture2D" uid="uid://chotrib2dwon1" path="res://MeteorWords/Art/debrisWood_2.png" id="3_ksiqo"]
+[ext_resource type="Texture2D" uid="uid://bpvjm2qhimp1b" path="res://MeteorWords/Art/crack_03.png" id="4_eh3gw"]
 [ext_resource type="Texture2D" uid="uid://b3dwl3abqiqoo" path="res://MeteorWords/Art/debrisWood_1.png" id="4_k14lq"]
 [ext_resource type="Texture2D" uid="uid://dwf2d10j5chaf" path="res://MeteorWords/Art/debrisWood_3.png" id="5_y45w7"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="6_nyga7"]
@@ -105,6 +106,30 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(0.240955, 0.169095, 0.0525059, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMeteor/CrackSprite:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MainMeteor/CrackSprite:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_ev0gi"]
 resource_name = "ans_meteor_moving"
@@ -194,6 +219,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.739616, 0.708822, 0.996798, 1), Color(0.81515, 0.748957, 0.189705, 1), Color(0.0254641, 0.901701, 0.794398, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMeteor/CrackSprite:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.808673, 0.0474535, 0.0270305, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uw30c"]
@@ -287,11 +324,12 @@ _data = {
 "ans_meteor_hurt": SubResource("Animation_hv08c")
 }
 
-[node name="AnswerMeteor" type="StaticBody2D" node_paths=PackedStringArray("HitBox", "HurtComponent", "HurtBox", "HealthComponent", "AnimationPlayer", "EffectsPlayer", "OptionText")]
+[node name="AnswerMeteor" type="StaticBody2D" node_paths=PackedStringArray("HitBox", "HurtComponent", "HurtBox", "CrackSprite2D", "HealthComponent", "AnimationPlayer", "EffectsPlayer", "OptionText")]
 script = ExtResource("1_c54gp")
 HitBox = NodePath("HitBox")
 HurtComponent = NodePath("HurtComponent")
 HurtBox = NodePath("EnemyHurtBox")
+CrackSprite2D = NodePath("MainMeteor/CrackSprite")
 HealthComponent = NodePath("HealthComponent")
 AnimationPlayer = NodePath("AnimationPlayer")
 EffectsPlayer = NodePath("EffectsPlayer")
@@ -319,6 +357,10 @@ offset_top = -132.0
 offset_right = 142.0
 offset_bottom = 141.0
 color = Color(1, 1, 1, 0)
+
+[node name="CrackSprite" type="Sprite2D" parent="MainMeteor"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("4_eh3gw")
 
 [node name="DebrisWood2" type="Sprite2D" parent="."]
 position = Vector2(-66, 36)
@@ -363,10 +405,12 @@ MaxHealth = 50
 wait_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(2, -3)
 shape = SubResource("CircleShape2D_axu2x")
 
 [node name="EnemyHurtBox" parent="." instance=ExtResource("10_3nona")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
 position = Vector2(2, -3)
