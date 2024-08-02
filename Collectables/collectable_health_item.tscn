@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf4adrfpt4ltr"]
+
+[ext_resource type="PackedScene" uid="uid://dnrnvmtchxjl0" path="res://Collectables/collectable_item_base.tscn" id="1_7wep3"]
+
+[node name="CollectableHealthItem" instance=ExtResource("1_7wep3")]

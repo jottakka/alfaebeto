@@ -12,6 +12,8 @@ public partial class MeteorEnemyBase : StaticBody2D
 	[Export]
 	public Sprite2D Sprite2D { get; set; }
 	[Export]
+	public RandomItemDropComponent RandomItemDropComponent { get; set; }
+	[Export]
 	public float MaxSizeProportion { get; set; } = 1.5f;
 	[Export]
 	public float MinSizeProportion { get; set; } = 1.0f;
@@ -78,11 +80,17 @@ public partial class MeteorEnemyBase : StaticBody2D
 		Sprite2D.Frame = _currenSpriteFrame;
 	}
 
+	private void OnHealthDepleted()
+	{
+		RandomItemDropComponent.DropRandomItem(GlobalPosition);
+		QueueFree();
+	}
+
 	private void SetUpHealthComponent()
 	{
 		HealthComponent.EmmitInBetweenSignals = true;
 		HealthComponent.HeathLevelSignalsIntervals = 6;
-		HealthComponent.OnHealthDepletedSignal += QueueFree;
+		HealthComponent.OnHealthDepletedSignal += OnHealthDepleted;
 		HealthComponent.OnHealthLevelChangeSignal += OnHealthLevelChanged;
 	}
 }
