@@ -13,8 +13,6 @@ public sealed partial class Player : CharacterBody2D
 	[Export]
 	public WeaponComponent WeaponComponent { get; set; }
 	[Export]
-	public Area2D HurtBox { get; set; }
-	[Export]
 	public HitBox HitBox { get; set; }
 	[Export]
 	public HurtComponent HurtComponent { get; set; }
@@ -23,24 +21,35 @@ public sealed partial class Player : CharacterBody2D
 	[Export]
 	public PlayerShield PlayerShield { get; set; }
 	[Export]
+	public AnimationPlayer EffectsPlayer { get; set; }
+	[Export]
+	public PlayerItemCollectingComponent PlayerItemCollectingComponent { get; set; }
+	[Export]
 	public float Speed { get; set; } = 600.0f;
 
 	public override void _Ready()
 	{
 		MotionMode = MotionModeEnum.Floating;
 		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
+		SettingCollisions();
 
+		HurtComponent.OnHurtSignal += OnHurt;
+		HealthComponent.OnHealthDepletedSignal += OnDeath;
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		PhysicsProcessInternal((float)delta);
+	}
+
+	private void SettingCollisions()
+	{
 		this.ResetCollisionLayerAndMask();
 		this.ActivateCollisionLayer(CollisionLayers.Player);
 
 		this.ActivateCollisionMask(CollisionLayers.Collectables);
 		this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
 		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
-	}
-
-	public override void _PhysicsProcess(double delta)
-	{
-		PhysicsProcessInternal((float)delta);
 	}
 
 	private void PhysicsProcessInternal(float delta)
@@ -98,5 +107,21 @@ public sealed partial class Player : CharacterBody2D
 		{
 			PlayerShield.GlobalPosition = GlobalPosition;
 		}
+	}
+
+	private void OnDeath()
+	{
+		QueueFree();
+	}
+
+	private void OnHurt(Area2D enemyArea)
+	{
+		if (PlayerShield.IsActive)
+		{
+			return;
+		}
+
+		HealthComponent.TakeDamage(10);
+		EffectsPlayer.Play(PlayerAnimations.OnPlayerHurtBlink);
 	}
 }

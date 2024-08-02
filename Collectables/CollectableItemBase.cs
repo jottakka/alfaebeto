@@ -3,8 +3,6 @@ using Godot;
 public partial class CollectableItemBase : Area2D
 {
 	[Export]
-	public CollectableItemResource CollectableItemResource { get; set; }
-	[Export]
 	public AnimationPlayer AnimationPlayer { get; set; }
 	[Export]
 	public Sprite2D Sprite { get; set; }
@@ -14,7 +12,7 @@ public partial class CollectableItemBase : Area2D
 	public float Acceleration { get; set; } = 10.0f;
 
 	[Signal]
-	public delegate void OnCollectedSignalEventHandler();
+	public delegate void OnCollectedSignalEventHandler(CollectableItemBase item);
 
 	private bool _IsBeingCollected = false;
 	private Player _player => Global.Instance.Player;
@@ -23,15 +21,6 @@ public partial class CollectableItemBase : Area2D
 	public override void _Ready()
 	{
 		_speed = InitialSpeed;
-		//if (CollectableItemResource.Texture is not null)
-		//{
-		//	Sprite.Texture = CollectableItemResource.Texture;
-		//}
-		//else
-		//
-		//	var scene = CollectableItemResource.Scene.Instantiate();
-		//	AddChild(scene);
-		//}
 		this.ResetCollisionLayerAndMask();
 
 		this.ActivateCollisionLayer(CollisionLayers.Collectables);
@@ -60,7 +49,7 @@ public partial class CollectableItemBase : Area2D
 	{
 		if (body is Player)
 		{
-			_ = EmitSignal(nameof(OnCollectedSignal));
+			_ = EmitSignal(nameof(OnCollectedSignal), this);
 			QueueFree();
 		}
 	}

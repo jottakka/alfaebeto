@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://ocjqicth11fy"]
+[gd_scene load_steps=4 format=3 uid="uid://ocjqicth11fy"]
 
 [ext_resource type="PackedScene" uid="uid://dnrnvmtchxjl0" path="res://Collectables/collectable_item_base.tscn" id="1_b8uw8"]
+[ext_resource type="Script" path="res://Collectables/CollectableShieldItem.cs" id="2_du76q"]
 [ext_resource type="Texture2D" uid="uid://dhgw5tml0o4va" path="res://Collectables/Art/tanks_crateArmor.png" id="2_vq1vr"]
 
 [node name="CollectableShieldItem" instance=ExtResource("1_b8uw8")]
+script = ExtResource("2_du76q")
+ShieldPoints = 100
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_vq1vr")

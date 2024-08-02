@@ -7,7 +7,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 	[Export]
 	public Timer CooldownTimer { get; set; }
 	[Export]
-	public float BaseCooldown { get; set; } = 1.0f;
+	public float BaseCooldown { get; set; } = 1.5f;
 	[Export]
 	public float CooldownVariance { get; set; } = 0.2f;
 	[Export]

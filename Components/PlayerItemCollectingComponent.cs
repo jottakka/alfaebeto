@@ -15,7 +15,7 @@ public sealed partial class PlayerItemCollectingComponent : Node
 			case CollectableCoin:
 				break;
 			default:
-				GD.PrintErr("Item type not recognized");
+				GD.PrintErr($"Item type not recognized {item.GetType().Name}");
 				break;
 		}
 	}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=10 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
 [ext_resource type="PackedScene" uid="uid://cvr8oob8wwhy4" path="res://Enemies/meteor_enemy_a.tscn" id="7_cxptv"]
+[ext_resource type="PackedScene" uid="uid://3mtpb57hvf86" path="res://UI/health_shield_ui.tscn" id="8_2ypqf"]
 [ext_resource type="PackedScene" uid="uid://uovrvrmqh1g7" path="res://Components/scene_enemy_spawner_component.tscn" id="9_e2oro"]
 
 [sub_resource type="Curve2D" id="Curve2D_itbqw"]
@@ -81,3 +82,15 @@ cubic_interp = false
 SpecialSpawnerPosition = NodePath("../SpecialSpawnPosition")
 MeteorPackedScenes = [ExtResource("7_cxptv")]
 SpawnFollowPath = NodePath("../Path2D/PathFollow2D")
+
+[node name="HealthShieldUi" parent="." instance=ExtResource("8_2ypqf")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 960.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)

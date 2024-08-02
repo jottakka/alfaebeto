@@ -304,7 +304,7 @@ SetOnReady = false
 shape = SubResource("CapsuleShape2D_fam17")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_mxe21")]
-MaxHealth = 30
+MaxHealth = 10
 
 [node name="CoinSpawnerComponent" parent="." instance=ExtResource("7_jgai6")]
 

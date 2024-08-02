@@ -36,7 +36,7 @@ public sealed partial class TurrentBase : Area2D
 
 	public void Shoot()
 	{
-		if (_isAllowedToShoot)
+		if (_isAllowedToShoot && _isCooldownTimoutFinished)
 		{
 			AnimationPlayer.Play(EnemyWeaponAnimations.TurrentShoot);
 		}

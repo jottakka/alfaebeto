@@ -1,5 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf4adrfpt4ltr"]
+[gd_scene load_steps=3 format=3 uid="uid://bf4adrfpt4ltr"]
 
 [ext_resource type="PackedScene" uid="uid://dnrnvmtchxjl0" path="res://Collectables/collectable_item_base.tscn" id="1_7wep3"]
+[ext_resource type="Script" path="res://Collectables/CollectableHealthItem.cs" id="2_snjt3"]
 
 [node name="CollectableHealthItem" instance=ExtResource("1_7wep3")]
+script = ExtResource("2_snjt3")
+HealingPoints = 100

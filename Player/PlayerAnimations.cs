@@ -1,9 +1,9 @@
 ﻿using Godot;
 
-public static class PlayerAnimations
+public static class UiAnimations
 {
     public static StringName RESET = new("RESET");
 
-    public static StringName OnPlayerShieldHit = new("on_shield_hit");
+    public static StringName OnHealthDanger = new("health_danger");
 }
 

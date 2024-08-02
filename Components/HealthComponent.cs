@@ -13,8 +13,10 @@ public sealed partial class HealthComponent : Node
 
 	private int _currentLevel = 0;
 
+	private bool _parentIsPlayer;
+
 	[Signal]
-	public delegate void OnHealthChangedSignalEventHandler(int currentHealth);
+	public delegate void OnHealthChangedSignalEventHandler(int currentHealth, bool isIncrease);
 	[Signal]
 	public delegate void OnHealthDepletedSignalEventHandler();
 	[Signal]
@@ -22,47 +24,67 @@ public sealed partial class HealthComponent : Node
 
 	public override void _Ready()
 	{
+		_parentIsPlayer = GetParent() is Player;
 		CurrentHealth = MaxHealth;
 		_currentLevel = HeathLevelSignalsIntervals;
 	}
 
 	public void TakeDamage(int damage)
 	{
+		if (_parentIsPlayer && CurrentHealth == 1)
+		{
+			CurrentHealth = 0;
+			_ = EmitSignal(nameof(OnHealthDepletedSignal));
+			EmitStateSinals(isIncrease: false);
+			return;
+		}
+
 		CurrentHealth -= damage;
-		_ = EmitSignal(nameof(OnHealthChangedSignal), CurrentHealth);
-		if (CurrentHealth <= 0)
+		int minValeu = _parentIsPlayer ? 1 : 0;
+		_ = Mathf.Clamp(CurrentHealth, minValeu, MaxHealth);
+
+		if (CurrentHealth == 0)
 		{
 			_ = EmitSignal(nameof(OnHealthDepletedSignal));
+
 		}
-		else if (EmmitInBetweenSignals)
+		else
 		{
-			CalculateLevel();
+			EmitStateSinals(isIncrease: false);
 		}
 	}
 
 	public void Heal(int healAmount)
 	{
-		CurrentHealth += healAmount;
-		if (CurrentHealth > MaxHealth)
+		if (CurrentHealth == MaxHealth)
 		{
-			CurrentHealth = MaxHealth;
+			return;
 		}
 
-		_ = EmitSignal(nameof(OnHealthChangedSignal), CurrentHealth);
+		CurrentHealth += healAmount;
+		CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
+
+		EmitStateSinals(true);
+	}
+
+	private void EmitStateSinals(bool isIncrease)
+	{
+		_ = EmitSignal(nameof(OnHealthChangedSignal), CurrentHealth, isIncrease);
+
 		if (EmmitInBetweenSignals)
 		{
 			CalculateLevel();
 		}
 	}
 
-	public void CalculateLevel()
+	private void CalculateLevel()
 	{
 		float relatvieLevel = (MaxHealth - CurrentHealth) / (float)MaxHealth;
 		int new_level = Mathf.FloorToInt(HeathLevelSignalsIntervals * relatvieLevel);
 		if (new_level != _currentLevel)
 		{
-			_ = EmitSignal(nameof(OnHealthLevelChangeSignal), new_level);
 			_currentLevel = Mathf.Min(new_level, HeathLevelSignalsIntervals - 1);
+			_ = EmitSignal(nameof(OnHealthLevelChangeSignal), _currentLevel);
 		}
 	}
 }
