@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvr8oob8wwhy4"]
+[gd_scene load_steps=12 format=3 uid="uid://cvr8oob8wwhy4"]
 
 [ext_resource type="Script" path="res://Enemies/MeteorEnemyBase.cs" id="1_6xa6j"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="2_evlx3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="3_v6abw"]
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="5_bjsfj"]
 [ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="6_mrlhr"]
+[ext_resource type="PackedScene" uid="uid://bnyju3ly0y3o1" path="res://Components/random_item_drop_component.tscn" id="7_fiqv5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfqw4"]
 radius = 35.0
@@ -49,13 +50,14 @@ _data = {
 "meteor_enemy_spin": SubResource("Animation_yb7vt")
 }
 
-[node name="MeteorEnemyA" type="StaticBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "Sprite2D", "HitBox", "EnemyHurtBox")]
+[node name="MeteorEnemyA" type="StaticBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "Sprite2D", "RandomItemDropComponent", "HitBox", "EnemyHurtBox")]
 script = ExtResource("1_6xa6j")
 AnimationPlayer = NodePath("AnimationPlayer")
 VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
 HealthComponent = NodePath("HealthComponent")
 HurtComponent = NodePath("HurtComponent")
 Sprite2D = NodePath("Sprite2D")
+RandomItemDropComponent = NodePath("RandomItemDropComponent")
 HitBox = NodePath("HitBox")
 EnemyHurtBox = NodePath("EnemyHurtBox")
 
@@ -103,3 +105,5 @@ wait_time = 0.2
 position = Vector2(0, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jfqw4")
+
+[node name="RandomItemDropComponent" parent="." instance=ExtResource("7_fiqv5")]

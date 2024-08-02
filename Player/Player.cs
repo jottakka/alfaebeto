@@ -17,6 +17,10 @@ public sealed partial class Player : CharacterBody2D
 	[Export]
 	public HitBox HitBox { get; set; }
 	[Export]
+	public HurtComponent HurtComponent { get; set; }
+	[Export]
+	public HealthComponent HealthComponent { get; set; }
+	[Export]
 	public PlayerShield PlayerShield { get; set; }
 	[Export]
 	public float Speed { get; set; } = 600.0f;
@@ -73,7 +77,7 @@ public sealed partial class Player : CharacterBody2D
 
 	private void OnCollisionHandler(KinematicCollision2D collisionInfo, CharacterBody2D body)
 	{
-		body.GlobalPosition += collisionInfo.GetNormal() * 60.0f;
+		body.GlobalPosition += collisionInfo.GetNormal() * 40.0f;
 	}
 
 	private void UpdatePlayerPositionWhenShieldActive()
@@ -94,11 +98,5 @@ public sealed partial class Player : CharacterBody2D
 		{
 			PlayerShield.GlobalPosition = GlobalPosition;
 		}
-	}
-
-	private void OnShieldActivated()
-	{
-		PlayerShield.IsActive = true;
-		PlayerShield.GlobalPosition = GlobalPosition;
 	}
 }

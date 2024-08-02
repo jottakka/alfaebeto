@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnyju3ly0y3o1"]
+
+[ext_resource type="Script" path="res://Components/RandomItemDropComponent.cs" id="1_v824l"]
+[ext_resource type="PackedScene" uid="uid://cn34ji53hhjih" path="res://Collectables/collectable_coin.tscn" id="2_b5xrv"]
+[ext_resource type="PackedScene" uid="uid://bf4adrfpt4ltr" path="res://Collectables/collectable_health_item.tscn" id="3_4ikns"]
+[ext_resource type="PackedScene" uid="uid://ocjqicth11fy" path="res://Collectables/collectable_shield_item.tscn" id="4_nkn0t"]
+
+[node name="RandomItemDropComponent" type="Node"]
+script = ExtResource("1_v824l")
+CollectableItemScenes = Array[PackedScene]([ExtResource("2_b5xrv"), ExtResource("3_4ikns"), ExtResource("4_nkn0t")])
