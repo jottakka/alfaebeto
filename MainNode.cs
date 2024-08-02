@@ -23,7 +23,7 @@ public sealed partial class MainNode : Node2D
 	public override void _Process(double delta)
 	{
 		UpdateParallaxOffset(delta);
-	}
+	} 
 
 	private void UpdateParallaxOffset(double delta)
 	{

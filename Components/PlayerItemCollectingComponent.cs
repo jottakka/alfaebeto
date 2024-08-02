@@ -1,7 +1,28 @@
 using Godot;
 public sealed partial class PlayerItemCollectingComponent : Node
 {
+	[Export]
+	public AudioStreamPlayer AudioStreamPlayer { get; set; }
+
 	private Player _player => GetParent<Player>();
+	private Timer _timer = new();
+	private int _coinsCount = 0;
+
+	public override void _Ready()
+	{
+		AddChild(_timer);
+		_timer.Timeout += () =>
+		{
+			AudioStreamPlayer.Play();
+			_coinsCount--;
+
+			if (_coinsCount == 0)
+			{
+				_timer.Stop();
+			}
+		};
+	}
+
 	public void CollectItem(CollectableItemBase item)
 	{
 		switch (item)
@@ -21,6 +42,17 @@ public sealed partial class PlayerItemCollectingComponent : Node
 		}
 	}
 
+	private void AddCoinCount()
+	{
+		if (_coinsCount == 0)
+		{
+			AudioStreamPlayer.Play();
+			_timer.Start(0.03);
+		}
+
+		_coinsCount++;
+	}
+
 	private void CollectHealthItem(CollectableHealthItem healthItem)
 	{
 		_player.HealthComponent.Heal(healthItem.HealingPoints);
@@ -34,5 +66,7 @@ public sealed partial class PlayerItemCollectingComponent : Node
 	private void CollectCoin(CollectableCoin coin)
 	{
 		_player.AddMoney(coin.Value);
+
+		AddCoinCount();
 	}
 }

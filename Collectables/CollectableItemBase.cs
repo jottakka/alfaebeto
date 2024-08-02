@@ -52,6 +52,7 @@ public partial class CollectableItemBase : Area2D
 		if (body is Player)
 		{
 			_ = EmitSignal(nameof(OnCollectedSignal), this);
+
 			QueueFree();
 		}
 	}
