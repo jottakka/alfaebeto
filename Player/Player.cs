@@ -27,6 +27,11 @@ public sealed partial class Player : CharacterBody2D
 	[Export]
 	public float Speed { get; set; } = 600.0f;
 
+	[Signal]
+	public delegate void OnMoneyChangedSignalEventHandler(long money);
+
+	public long Money { get; private set; } = 0;
+
 	public override void _Ready()
 	{
 		MotionMode = MotionModeEnum.Floating;
@@ -40,6 +45,12 @@ public sealed partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		PhysicsProcessInternal((float)delta);
+	}
+
+	public void AddMoney(long money)
+	{
+		Money += money;
+		_ = EmitSignal(nameof(OnMoneyChangedSignal), Money);
 	}
 
 	private void SettingCollisions()

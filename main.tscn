@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=11 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
 [ext_resource type="PackedScene" uid="uid://cvr8oob8wwhy4" path="res://Enemies/meteor_enemy_a.tscn" id="7_cxptv"]
 [ext_resource type="PackedScene" uid="uid://3mtpb57hvf86" path="res://UI/health_shield_ui.tscn" id="8_2ypqf"]
+[ext_resource type="PackedScene" uid="uid://2vtfkbiotoyf" path="res://UI/money_counter_ui.tscn" id="9_7jlfb"]
 [ext_resource type="PackedScene" uid="uid://uovrvrmqh1g7" path="res://Components/scene_enemy_spawner_component.tscn" id="9_e2oro"]
 
 [sub_resource type="Curve2D" id="Curve2D_itbqw"]
@@ -94,3 +95,7 @@ offset_bottom = 960.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
+
+[node name="MoneyCounterUi" parent="." instance=ExtResource("9_7jlfb")]
+offset_left = 288.0
+offset_right = 288.0

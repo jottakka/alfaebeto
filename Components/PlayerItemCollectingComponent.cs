@@ -12,7 +12,8 @@ public sealed partial class PlayerItemCollectingComponent : Node
 			case CollectableHealthItem healthItem:
 				CollectHealthItem(healthItem);
 				break;
-			case CollectableCoin:
+			case CollectableCoin coin:
+				CollectCoin(coin);
 				break;
 			default:
 				GD.PrintErr($"Item type not recognized {item.GetType().Name}");
@@ -28,5 +29,10 @@ public sealed partial class PlayerItemCollectingComponent : Node
 	private void CollectShieldItem(CollectableShieldItem shieldItem)
 	{
 		_player.PlayerShield.AddShieldPoints(shieldItem.ShieldPoints);
+	}
+
+	private void CollectCoin(CollectableCoin coin)
+	{
+		_player.AddMoney(coin.Value);
 	}
 }

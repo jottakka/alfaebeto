@@ -2,118 +2,118 @@ using Godot;
 
 public sealed partial class PlayerShield : CharacterBody2D
 {
-    [Export]
-    public AnimationPlayer AnimationPlayer { get; set; }
-    [Export]
-    public HitBox HitBox { get; set; }
-    [Export]
-    public bool IsActive { get; set; } = false;
-    [Export]
-    public int MaxShieldPoints { get; set; } = 60;
+	[Export]
+	public AnimationPlayer AnimationPlayer { get; set; }
+	[Export]
+	public HitBox HitBox { get; set; }
+	[Export]
+	public bool IsActive { get; set; } = false;
+	[Export]
+	public int MaxShieldPoints { get; set; } = 60;
 
-    [Signal]
-    public delegate void OnShieldPointsChangedSignalEventHandler(int currentValue, bool isIncrease);
+	[Signal]
+	public delegate void OnShieldPointsChangedSignalEventHandler(int currentValue, bool isIncrease);
 
-    public int CurrentShieldPoints { get; private set; }
+	public int CurrentShieldPoints { get; private set; }
 
-    private Player _player => GetParent<Player>();
+	private Player _player => GetParent<Player>();
 
-    public override void _Ready()
-    {
-        CurrentShieldPoints = 0;
-        MotionMode = MotionModeEnum.Floating;
-        this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
+	public override void _Ready()
+	{
+		CurrentShieldPoints = 0;
+		MotionMode = MotionModeEnum.Floating;
+		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
-        Deactivate();
+		Deactivate();
 
-        AnimationPlayer.Play(PlayerAnimations.RESET);
+		AnimationPlayer.Play(PlayerAnimations.RESET);
 
-        AnimationPlayer.AnimationFinished += OnAnimationFinished;
+		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
-        HitBox.AreaEntered += (_) =>
-        {
-            OnCollision();
+		HitBox.AreaEntered += (_) =>
+		{
+			OnCollision();
 
-        };
-        HitBox.BodyEntered += (_) =>
-        {
-            OnCollision();
+		};
+		HitBox.BodyEntered += (_) =>
+		{
+			OnCollision();
 
-        };
-    }
+		};
+	}
 
-    public void Deactivate()
-    {
-        IsActive = false;
-        Visible = false;
-        DeactivateCollisions();
-    }
+	public void Deactivate()
+	{
+		IsActive = false;
+		Visible = false;
+		DeactivateCollisions();
+	}
 
-    public void Activate()
-    {
-        IsActive = true;
-        Visible = true;
-        ActivateCollisions();
-    }
+	public void Activate()
+	{
+		IsActive = true;
+		Visible = true;
+		ActivateCollisions();
+	}
 
-    public void AddShieldPoints(int points)
-    {
-        if (CurrentShieldPoints == MaxShieldPoints)
-        {
-            return;
-        }
+	public void AddShieldPoints(int points)
+	{
+		if (CurrentShieldPoints == MaxShieldPoints)
+		{
+			return;
+		}
 
-        if (IsActive is false)
-        {
-            Activate();
-        }
+		if (IsActive is false)
+		{
+			Activate();
+		}
 
-        CurrentShieldPoints += points;
-        CurrentShieldPoints = Mathf.Clamp(CurrentShieldPoints, 0, MaxShieldPoints);
-        _ = EmitSignal(nameof(OnShieldPointsChangedSignal), CurrentShieldPoints, true);
-    }
+		CurrentShieldPoints += points;
+		CurrentShieldPoints = Mathf.Clamp(CurrentShieldPoints, 0, MaxShieldPoints);
+		_ = EmitSignal(nameof(OnShieldPointsChangedSignal), CurrentShieldPoints, true);
+	}
 
-    public void RemoveShieldPoints(int points)
-    {
-        CurrentShieldPoints -= points;
-        CurrentShieldPoints = Mathf.Clamp(CurrentShieldPoints, 0, MaxShieldPoints);
-        if (CurrentShieldPoints == 0)
-        {
-            Deactivate();
-        }
+	public void RemoveShieldPoints(int points)
+	{
+		CurrentShieldPoints -= points;
+		CurrentShieldPoints = Mathf.Clamp(CurrentShieldPoints, 0, MaxShieldPoints);
+		if (CurrentShieldPoints == 0)
+		{
+			Deactivate();
+		}
 
-        _ = EmitSignal(nameof(OnShieldPointsChangedSignal), CurrentShieldPoints, false);
-    }
+		_ = EmitSignal(nameof(OnShieldPointsChangedSignal), CurrentShieldPoints, false);
+	}
 
-    private void OnCollision()
-    {
-        AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldHit);
-    }
+	private void OnCollision()
+	{
+		AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldHit);
+	}
 
-    private void ActivateCollisions()
-    {
-        this.ActivateCollisionLayer(CollisionLayers.PlayerShield);
-        this.ActivateCollisionLayer(CollisionLayers.PlayerShieldHurtBox);
+	private void ActivateCollisions()
+	{
+		this.ActivateCollisionLayer(CollisionLayers.PlayerShield);
+		this.ActivateCollisionLayer(CollisionLayers.PlayerShieldHurtBox);
 
-        this.ActivateCollisionMask(CollisionLayers.RegularEnemy);
-        this.ActivateCollisionMask(CollisionLayers.WordEnemy);
-        this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
+		this.ActivateCollisionMask(CollisionLayers.RegularEnemy);
+		this.ActivateCollisionMask(CollisionLayers.WordEnemy);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemy);
 
-        HitBox.ActivateCollisionsMasks();
-    }
+		HitBox.ActivateCollisionsMasks();
+	}
 
-    private void DeactivateCollisions()
-    {
-        this.ResetCollisionLayerAndMask();
-        HitBox.DeactivateCollisionMasks();
-    }
+	private void DeactivateCollisions()
+	{
+		this.ResetCollisionLayerAndMask();
+		HitBox.DeactivateCollisionMasks();
+	}
 
-    private void OnAnimationFinished(StringName animationName)
-    {
-        if (animationName == PlayerAnimations.OnPlayerShieldHit)
-        {
-            RemoveShieldPoints(10);
-            AnimationPlayer.Play(PlayerAnimations.RESET);
-        }
-    }
+	private void OnAnimationFinished(StringName animationName)
+	{
+		if (animationName == PlayerAnimations.OnPlayerShieldHit)
+		{
+			RemoveShieldPoints(10);
+			AnimationPlayer.Play(PlayerAnimations.RESET);
+		}
+	}
 }

@@ -28,6 +28,8 @@ public partial class CollectableItemBase : Area2D
 		this.ActivateCollisionMask(CollisionLayers.Player);
 		this.ActivateCollisionMask(CollisionLayers.PlayerCollectionArea);
 
+		OnCollectedSignal += _player.PlayerItemCollectingComponent.CollectItem;
+
 		// when the collectable item enters the player collection area
 		AreaEntered += OnAreaShapeEntered;
 		// when it reachs the player itself

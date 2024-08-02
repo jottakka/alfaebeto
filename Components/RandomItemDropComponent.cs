@@ -15,7 +15,6 @@ public sealed partial class RandomItemDropComponent : Node
 		PackedScene itemPackedScene = CollectableItemScenes[itemIdx];
 		CollectableItemBase item = itemPackedScene.Instantiate<CollectableItemBase>();
 		item.GlobalPosition = position;
-		item.OnCollectedSignal += _player.PlayerItemCollectingComponent.CollectItem;
 		_scene.AddChildDeffered(item);
 	}
 }

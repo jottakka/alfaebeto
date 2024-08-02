@@ -26,6 +26,7 @@ public sealed partial class CoinSpawnerComponent : Node
 				position.X + RandomScatterRange(),
 				position.Y + RandomScatterRange()
 			);
+
 			_scene.AddChildDeffered(coin);
 		}
 	}

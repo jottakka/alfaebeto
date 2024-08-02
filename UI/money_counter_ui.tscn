@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://2vtfkbiotoyf"]
+
+[ext_resource type="FontFile" uid="uid://b0g2k5rmf0pov" path="res://UI/Art/Kenney High Square.ttf" id="1_o3hl7"]
+[ext_resource type="Script" path="res://UI/MoneyCounterUi.cs" id="1_q6e12"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsl1n"]
+font = ExtResource("1_o3hl7")
+font_size = 50
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="MoneyCounterUi" type="Control" node_paths=PackedStringArray("Label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6e12")
+Label = NodePath("CenterContainer/Label")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+self_modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 2
+text = "$  0001234567.00"
+label_settings = SubResource("LabelSettings_rsl1n")
+vertical_alignment = 1
