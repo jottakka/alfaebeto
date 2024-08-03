@@ -9,11 +9,6 @@ public sealed partial class HealthComponent : Node
 	[Export]
 	// The higher the lower is health
 	public int HeathLevelSignalsIntervals { get; set; } = 1;
-	public int CurrentHealth { get; private set; }
-
-	private int _currentLevel = 0;
-
-	private bool _parentIsPlayer;
 
 	[Signal]
 	public delegate void OnHealthChangedSignalEventHandler(int currentHealth, bool isIncrease);
@@ -21,6 +16,14 @@ public sealed partial class HealthComponent : Node
 	public delegate void OnHealthDepletedSignalEventHandler();
 	[Signal]
 	public delegate void OnHealthLevelChangeSignalEventHandler(int percentageLeft);
+
+	public bool IsDead => CurrentHealth <= 0;
+
+	public int CurrentHealth { get; private set; }
+
+	private int _currentLevel = 0;
+
+	private bool _parentIsPlayer;
 
 	public override void _Ready()
 	{
@@ -41,12 +44,11 @@ public sealed partial class HealthComponent : Node
 
 		CurrentHealth -= damage;
 		int minValeu = _parentIsPlayer ? 1 : 0;
-		_ = Mathf.Clamp(CurrentHealth, minValeu, MaxHealth);
+		CurrentHealth = Mathf.Clamp(CurrentHealth, minValeu, MaxHealth);
 
 		if (CurrentHealth == 0)
 		{
 			_ = EmitSignal(nameof(OnHealthDepletedSignal));
-
 		}
 		else
 		{

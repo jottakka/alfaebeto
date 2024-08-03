@@ -25,6 +25,8 @@ public partial class MeteorEnemyBase : StaticBody2D
 	public HitBox HitBox { get; set; }
 	[Export]
 	public EnemyHurtBox EnemyHurtBox { get; set; }
+	[Export]
+	public AudioStreamPlayer2D HurtSound { get; set; }
 
 	private Vector2 _velocity;
 	private int _currenSpriteFrame = 0;
@@ -71,6 +73,7 @@ public partial class MeteorEnemyBase : StaticBody2D
 		if (enemyArea is PlayerSpecialHurtBox)
 		{
 			HealthComponent.TakeDamage(10);
+			HurtSound.Play();
 		}
 	}
 

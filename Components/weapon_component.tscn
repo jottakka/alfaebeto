@@ -1,16 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr3yima6l4o20"]
+[gd_scene load_steps=6 format=3 uid="uid://dr3yima6l4o20"]
 
 [ext_resource type="Script" path="res://Components/WeaponComponent.cs" id="1_derjo"]
 [ext_resource type="PackedScene" uid="uid://ew30y65rjmpq" path="res://Weapons/laser.tscn" id="2_q7uon"]
 [ext_resource type="PackedScene" uid="uid://bqeiykugylvr7" path="res://Player/player_input_processor.tscn" id="3_itri2"]
+[ext_resource type="AudioStream" uid="uid://brsiofofnumsw" path="res://Player/Sound/laserRetro_002.ogg" id="7_pi4w2"]
 
-[node name="WeaponComponent" type="Node" node_paths=PackedStringArray("PlayerInputProcessor", "CooldownTimer")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7e8a4"]
+playback_mode = 1
+random_pitch = 1.1
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("7_pi4w2")
+stream_0/weight = 1.0
+
+[node name="WeaponComponent" type="Node" node_paths=PackedStringArray("PlayerInputProcessor", "CooldownTimer", "LaserSound")]
 script = ExtResource("1_derjo")
 LaserPackedScene = ExtResource("2_q7uon")
 PlayerInputProcessor = NodePath("PlayerInputProcessor")
 CooldownTimer = NodePath("CooldownTimer")
+LaserSound = NodePath("AudioStreamPlayer2D")
 
 [node name="PlayerInputProcessor" parent="." instance=ExtResource("3_itri2")]
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_7e8a4")
+volume_db = -5.0
+attenuation = 6.06286
+max_polyphony = 5
+panning_strength = 1.51

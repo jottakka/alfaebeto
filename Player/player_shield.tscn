@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://fl011vmvxel3"]
+[gd_scene load_steps=12 format=3 uid="uid://fl011vmvxel3"]
 
 [ext_resource type="Texture2D" uid="uid://ctwxsirqdmxfc" path="res://Player/Art/chield.png" id="1_gixby"]
 [ext_resource type="Script" path="res://Player/PlayerShield.cs" id="1_yj3ad"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="3_cpsqx"]
+[ext_resource type="AudioStream" uid="uid://crvqkbrb21jyg" path="res://Player/Sound/forceField_004.ogg" id="3_iv4pe"]
+[ext_resource type="AudioStream" uid="uid://bbsmxxhulv7bv" path="res://Player/Sound/laserLarge_002.ogg" id="3_wxcqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oe7lu"]
 radius = 88.3629
@@ -23,6 +25,13 @@ tracks/0/keys = {
 "values": [Color(1, 2.16078, 28.1098, 0.196078), Color(1, 2.16078, 28.1098, 0.352941), Color(1, 2.16078, 28.1098, 0.196078)]
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i8kme"]
+random_pitch = 1.5
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("3_wxcqy")
+stream_0/weight = 1.0
+
 [sub_resource type="Animation" id="Animation_vsmgc"]
 resource_name = "on_shield_hit"
 length = 0.3
@@ -38,11 +47,59 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.824664, 0.880048, 0.989802, 1), Color(1, 2.16078, 28.1098, 0.196078)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_i8kme")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_yraca"]
+resource_name = "shield_up"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.19, 0.28, 0.49),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 2.16078, 28.1098, 0), Color(1, 2.16078, 28.1098, 0.392157), Color(1, 2.16078, 28.1098, 0), Color(1, 2.16078, 28.1098, 0.54902), Color(1, 2.16078, 28.1098, 0.196078)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_iv4pe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_exwg6"]
 _data = {
 "RESET": SubResource("Animation_260jb"),
-"on_shield_hit": SubResource("Animation_vsmgc")
+"on_shield_hit": SubResource("Animation_vsmgc"),
+"shield_up": SubResource("Animation_yraca")
 }
 
 [node name="PlayerShield" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox")]
@@ -57,6 +114,7 @@ scale = Vector2(0.443359, 0.443359)
 texture = ExtResource("1_gixby")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_oe7lu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -65,7 +123,12 @@ libraries = {
 }
 
 [node name="HitBox" parent="." instance=ExtResource("3_cpsqx")]
+visible = false
 priority = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_oe7lu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
+attenuation = 3.73213

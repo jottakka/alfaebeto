@@ -1,13 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://ck85u3rkf5tmf"]
+[gd_scene load_steps=30 format=3 uid="uid://ck85u3rkf5tmf"]
 
 [ext_resource type="Script" path="res://Enemies/EnemyBase.cs" id="1_eiuj6"]
 [ext_resource type="Texture2D" uid="uid://cvarfi2ejaleu" path="res://Enemies/Art/Boss_1_A_Small.png" id="1_in2n3"]
 [ext_resource type="Texture2D" uid="uid://xfraavxtd6ad" path="res://Enemies/Art/smoke_04.png" id="2_7p125"]
+[ext_resource type="AudioStream" uid="uid://cmp0n83kkayh1" path="res://Enemies/Sound/slime_001.ogg" id="4_7q5bv"]
+[ext_resource type="AudioStream" uid="uid://c6svi7grvb2ia" path="res://Enemies/Sound/hit_blood_flesh_gore_A_13.ogg" id="4_ji3st"]
 [ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="4_l0mx3"]
+[ext_resource type="AudioStream" uid="uid://by6skmn6j6vs6" path="res://Enemies/Sound/hit_blood_flesh_gore_A_11.ogg" id="5_5syqd"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="5_jdbne"]
+[ext_resource type="AudioStream" uid="uid://4yxjd1b6rc77" path="res://Enemies/Sound/slime_000.ogg" id="5_yaafk"]
+[ext_resource type="AudioStream" uid="uid://dh5eul5y3idxv" path="res://Enemies/Sound/hit_blood_flesh_gore_A_10.ogg" id="6_ftwje"]
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="6_mxe21"]
 [ext_resource type="PackedScene" uid="uid://b7cdvbjh55lol" path="res://Components/coin_spawner_component.tscn" id="7_jgai6"]
 [ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="8_7qfii"]
+[ext_resource type="AudioStream" uid="uid://b6ekha7rog2vo" path="res://Enemies/Sound/Gregor Quendel - Designed Plastic - Elements - Liquid 17.wav" id="9_rmp3i"]
+[ext_resource type="AudioStream" uid="uid://cs830yol6eh5u" path="res://Enemies/Sound/hit_blood_flesh_gore_A_12.ogg" id="10_gh0tr"]
+[ext_resource type="AudioStream" uid="uid://ceu3w7v5rv6g1" path="res://Enemies/Sound/hit_blood_flesh_gore_A_14.ogg" id="11_p2aoy"]
+[ext_resource type="AudioStream" uid="uid://coy5borc2jex" path="res://Enemies/Sound/SFX_Pop_Designed_Cartoon_Juicy.wav" id="12_l8h4e"]
+[ext_resource type="Texture2D" uid="uid://dupwy8l78runo" path="res://Enemies/Art/splats.png" id="18_0ono3"]
 
 [sub_resource type="Animation" id="Animation_kw5us"]
 length = 0.001
@@ -84,6 +94,16 @@ tracks/5/keys = {
 "values": [true]
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_86ah7"]
+random_pitch = 2.0
+streams_count = 3
+stream_0/stream = ExtResource("4_ji3st")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_5syqd")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_ftwje")
+stream_2/weight = 1.0
+
 [sub_resource type="Animation" id="Animation_xi023"]
 resource_name = "enemy_bug_hurt_blink"
 length = 0.6
@@ -124,6 +144,29 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.75, 0.75), Vector2(1, 1), Vector2(0.75, 0.75), Vector2(1, 1)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_86ah7")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g5e82"]
+random_pitch = 1.5
+streams_count = 2
+stream_0/stream = ExtResource("4_7q5bv")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_yaafk")
+stream_1/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_77lno"]
 resource_name = "enemy_bug_moving"
@@ -165,6 +208,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0.560784, 1, 0.435294, 0), Color(0.352941, 0.929412, 0.266667, 0.815686), Color(0.560784, 1, 0.435294, 0), Color(0, 0.921569, 0.0941176, 0.815686), Color(0.560784, 1, 0.435294, 0)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_g5e82")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nkwlr"]
 resource_name = "enemy_spawn"
@@ -240,25 +298,158 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_rmp3i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/6/use_blend = true
 
-[sub_resource type="Animation" id="Animation_4uwbn"]
-resource_name = "new_animation"
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ofuwp"]
+random_pitch = 2.0
+streams_count = 2
+stream_0/stream = ExtResource("10_gh0tr")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("11_p2aoy")
+stream_1/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_akfde"]
+random_pitch = 2.0
+random_volume_offset_db = 5.0
+streams_count = 1
+stream_0/stream = ExtResource("12_l8h4e")
+stream_0/weight = 1.0
+
+[sub_resource type="Animation" id="Animation_p67ki"]
+resource_name = "enemy_bug_die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 12.5664]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke:self_modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.560784, 1, 0.435294, 0.764706), Color(0.997822, 0.780289, 0.788448, 0.168627)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SplatsSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SplatsSprite2D:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0313726, 0.505882, 0.027451, 1), Color(0.0509804, 0.678431, 0.0431373, 0)]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ofuwp")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_akfde")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/6/use_blend = true
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D/ColorRect:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.997, 0.411, 0.342, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_42wdb"]
 _data = {
 "RESET": SubResource("Animation_kw5us"),
+"enemy_bug_die": SubResource("Animation_p67ki"),
 "enemy_bug_hurt_blink": SubResource("Animation_xi023"),
 "enemy_bug_moving": SubResource("Animation_77lno"),
-"enemy_spawn": SubResource("Animation_nkwlr"),
-"new_animation": SubResource("Animation_4uwbn")
+"enemy_spawn": SubResource("Animation_nkwlr")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fam17"]
 radius = 21.0
 height = 42.0
 
-[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox", "HurtBox", "HurtComponent", "HealthComponent", "CoinSpawnerComponent")]
-rotation = 3.14159
+[node name="EnemyBase" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer", "HitBox", "HurtBox", "HurtComponent", "HealthComponent", "CoinSpawnerComponent", "SplatsSprite2D")]
+rotation = 12.5664
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_eiuj6")
@@ -268,6 +459,7 @@ HurtBox = NodePath("EnemyHurtBox")
 HurtComponent = NodePath("HurtComponent")
 HealthComponent = NodePath("HealthComponent")
 CoinSpawnerComponent = NodePath("CoinSpawnerComponent")
+SplatsSprite2D = NodePath("SplatsSprite2D")
 
 [node name="Smoke" type="Sprite2D" parent="."]
 self_modulate = Color(0.560784, 1, 0.435294, 0.764706)
@@ -304,7 +496,7 @@ SetOnReady = false
 shape = SubResource("CapsuleShape2D_fam17")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_mxe21")]
-MaxHealth = 10
+MaxHealth = 15
 
 [node name="CoinSpawnerComponent" parent="." instance=ExtResource("7_jgai6")]
 
@@ -312,3 +504,15 @@ MaxHealth = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurtBox"]
 shape = SubResource("CapsuleShape2D_fam17")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -20.0
+pitch_scale = 3.0
+max_polyphony = 2
+
+[node name="SplatsSprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.0509804, 0.678431, 0.0431373, 0)
+position = Vector2(7.62939e-06, 1.52588e-05)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_0ono3")
+hframes = 5

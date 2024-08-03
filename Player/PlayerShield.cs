@@ -16,6 +16,7 @@ public sealed partial class PlayerShield : CharacterBody2D
 
 	public int CurrentShieldPoints { get; private set; }
 
+	private bool _isShieldUp = false;
 	private Player _player => GetParent<Player>();
 
 	public override void _Ready()
@@ -26,19 +27,15 @@ public sealed partial class PlayerShield : CharacterBody2D
 
 		Deactivate();
 
-		AnimationPlayer.Play(PlayerAnimations.RESET);
-
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
 		HitBox.AreaEntered += (_) =>
 		{
 			OnCollision();
-
 		};
 		HitBox.BodyEntered += (_) =>
 		{
 			OnCollision();
-
 		};
 	}
 
@@ -46,6 +43,7 @@ public sealed partial class PlayerShield : CharacterBody2D
 	{
 		IsActive = false;
 		Visible = false;
+		_isShieldUp = false;
 		DeactivateCollisions();
 	}
 
@@ -54,6 +52,8 @@ public sealed partial class PlayerShield : CharacterBody2D
 		IsActive = true;
 		Visible = true;
 		ActivateCollisions();
+		AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldUp);
+
 	}
 
 	public void AddShieldPoints(int points)
@@ -75,6 +75,11 @@ public sealed partial class PlayerShield : CharacterBody2D
 
 	public void RemoveShieldPoints(int points)
 	{
+		if (_isShieldUp is false)
+		{
+			return;
+		}
+
 		CurrentShieldPoints -= points;
 		CurrentShieldPoints = Mathf.Clamp(CurrentShieldPoints, 0, MaxShieldPoints);
 		if (CurrentShieldPoints == 0)
@@ -110,10 +115,22 @@ public sealed partial class PlayerShield : CharacterBody2D
 
 	private void OnAnimationFinished(StringName animationName)
 	{
+		if (animationName == PlayerAnimations.OnPlayerShieldUp)
+		{
+			OnShieldUpFinished();
+			return;
+		}
+
 		if (animationName == PlayerAnimations.OnPlayerShieldHit)
 		{
 			RemoveShieldPoints(10);
 			AnimationPlayer.Play(PlayerAnimations.RESET);
 		}
+	}
+
+	private void OnShieldUpFinished()
+	{
+		_isShieldUp = true;
+		AnimationPlayer.Play(PlayerAnimations.RESET);
 	}
 }

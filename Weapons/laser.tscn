@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ew30y65rjmpq"]
+[gd_scene load_steps=13 format=3 uid="uid://ew30y65rjmpq"]
 
 [ext_resource type="Script" path="res://Weapons/Laser.cs" id="2_lrh8k"]
 [ext_resource type="Texture2D" uid="uid://p3u0srp3tyi3" path="res://Weapons/Art/short-ray.png" id="2_y0brm"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://wyhehrtap0qh" path="res://Weapons/Art/star_02.png" id="4_elupe"]
 [ext_resource type="Texture2D" uid="uid://bxnm274fcddgh" path="res://Weapons/Art/laserRed08.png" id="5_23b5h"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="6_nannb"]
+[ext_resource type="AudioStream" uid="uid://b6bw3pwx7to0a" path="res://Weapons/Sounds/Gregor Quendel - Designed Mecha - Elements - Impact 01.wav" id="6_sr4dv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iy6u7"]
-size = Vector2(8, 55)
+size = Vector2(3, 55)
 
 [sub_resource type="Animation" id="Animation_crj82"]
 length = 0.001
@@ -73,6 +74,13 @@ tracks/4/keys = {
 "values": [0.785398]
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g1u7x"]
+random_pitch = 1.5
+random_volume_offset_db = 5.0
+streams_count = 1
+stream_0/stream = ExtResource("6_sr4dv")
+stream_0/weight = 1.0
+
 [sub_resource type="Animation" id="Animation_e1f46"]
 resource_name = "on_hit"
 length = 0.2
@@ -136,6 +144,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.785398, 0.0]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_g1u7x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2qp2s"]
 _data = {
@@ -152,21 +175,18 @@ PlayerSpecialHurtBox = NodePath("PlayerSpecialHurtBox")
 HitBox = NodePath("HitBox")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(1, 49)
-scale = Vector2(0.9, 0.5)
+position = Vector2(0, 37)
+scale = Vector2(0.4, 0.15)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.99966, 0.918085, 0.904108, 1)
-self_modulate = Color(0.999071, 0.753697, 0.713672, 1)
-position = Vector2(0, 0.5)
-scale = Vector2(0.526515, 0.635417)
+self_modulate = Color(0.999971, 0.9942, 0.993205, 1)
+scale = Vector2(0.298295, 0.635417)
 texture = ExtResource("2_y0brm")
 
 [node name="PlayerSpecialHurtBox" parent="." instance=ExtResource("3_et51a")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSpecialHurtBox"]
-visible = false
-position = Vector2(0, 0.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_iy6u7")
 
 [node name="Star02" type="Sprite2D" parent="."]
@@ -191,8 +211,12 @@ libraries = {
 }
 
 [node name="HitBox" parent="." instance=ExtResource("6_nannb")]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_iy6u7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -15.0
+pitch_scale = 3.0
+attenuation = 2.2974
