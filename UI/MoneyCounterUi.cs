@@ -7,16 +7,19 @@ public sealed partial class MoneyCounterUi : Control
 	[Export]
 	public long Money { get; set; } = 0;
 
+	private Player _player => Global.Instance.Player;
+
 	public override void _Ready()
 	{
 		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
 		SetMoney(Money);
-		GetParent().Ready += OnParentReady;
+
+		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
 	}
 
-	private void OnParentReady()
+	private void OnMainNodeReady()
 	{
-		Global.Instance.Player.OnMoneyChangedSignal += SetMoney;
+		_player.OnMoneyChangedSignal += SetMoney;
 	}
 
 	public void SetMoney(long money)

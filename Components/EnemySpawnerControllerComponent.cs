@@ -62,7 +62,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 			_enemySpawner.Muzzle.GlobalPosition,
 			velocity
 		);
-		_scene.AddChildDeffered(enemy);
 		enemy.SetAsSpawning();
+		_scene.AddChildDeffered(enemy);
 	}
 }

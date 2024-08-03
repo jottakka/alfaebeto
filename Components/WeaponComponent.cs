@@ -8,10 +8,13 @@ public sealed partial class WeaponComponent : Node
 	public PlayerInputProcessor PlayerInputProcessor { get; set; }
 	[Export]
 	public Timer CooldownTimer { get; set; }
-	[Export]
-	public Player Player { get; set; }
+
+	private Player _player => Global.Instance.Player;
+
+	private StageBase _scene => Global.Instance.Scene;
 
 	private bool _isWaitingCooldown = false;
+
 	public override void _Ready()
 	{
 		CooldownTimer.Timeout += OnCooldownTimeout;
@@ -29,8 +32,8 @@ public sealed partial class WeaponComponent : Node
 	{
 		_isWaitingCooldown = true;
 		Laser laser = LaserPackedScene.Instantiate<Laser>();
-		laser.Position = Player.MuzzlePosition.GlobalPosition;
-		Player.GetParent().AddChildDeffered(laser);
+		laser.Position = _player.MuzzlePosition.GlobalPosition;
+		_scene.AddChildDeffered(laser);
 		CooldownTimer.Start();
 	}
 

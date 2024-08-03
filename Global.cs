@@ -10,13 +10,16 @@ public partial class Global : Node
 {
 	public static Global Instance { get; private set; } = null;
 
-	public Player Player { get; set; }
+	public Player Player { get; private set; }
 
-	public Node Scene { get; set; }
+	public StageBase Scene { get; private set; }
 
-	public Queue<WordInfo> MarkedWords { get; set; }
+	public Queue<WordInfo> MarkedWords { get; private set; }
 
-	public Queue<XorCHWord> XorChWords { get; set; }
+	public Queue<XorCHWord> XorChWords { get; private set; }
+
+	[Signal]
+	public delegate void OnMainNodeSetupFinishedSignalEventHandler();
 
 	public Global()
 	{
@@ -46,8 +49,10 @@ public partial class Global : Node
 		GD.Randomize();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public void SettingMainNodeData(Player player, StageBase stage)
 	{
+		Player = player;
+		Scene = stage;
+		_ = EmitSignal(nameof(OnMainNodeSetupFinishedSignal));
 	}
 }

@@ -17,10 +17,10 @@ public sealed partial class HeartShieldUi : Control
 	public override void _Ready()
 	{
 		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
-		GetParent().Ready += OnParentReady;
+		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
 	}
 
-	private void OnParentReady()
+	private void OnMainNodeReady()
 	{
 		SetProgressBar(
 			HealthProgressBar,

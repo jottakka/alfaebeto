@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgp8fvw4ywvwv"]
+
+[ext_resource type="PackedScene" uid="uid://3mtpb57hvf86" path="res://UI/health_shield_ui.tscn" id="1_2ar0c"]
+[ext_resource type="Script" path="res://UI/FullUi.cs" id="1_nyqms"]
+[ext_resource type="PackedScene" uid="uid://2vtfkbiotoyf" path="res://UI/money_counter_ui.tscn" id="2_xs66a"]
+
+[node name="FullUi" type="Control" node_paths=PackedStringArray("MoneyCounterUi", "HeartShieldUi")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nyqms")
+MoneyCounterUi = NodePath("PanelContainer/MoneyCounterUi")
+HeartShieldUi = NodePath("PanelContainer/HealthShieldUi")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="MoneyCounterUi" parent="PanelContainer" instance=ExtResource("2_xs66a")]
+layout_mode = 2
+
+[node name="HealthShieldUi" parent="PanelContainer" instance=ExtResource("1_2ar0c")]
+layout_mode = 2
+size_flags_vertical = 8

@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://b3dh2memd5u2p" path="res://UI/Art/shield.png" id="1_wir1x"]
 [ext_resource type="Texture2D" uid="uid://d1cis7hp88npv" path="res://UI/Art/suit_hearts.png" id="2_6plev"]
 
+[sub_resource type="Animation" id="Animation_xom46"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthProgressBar:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.262839, 0.743235, 0.249473, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_x5jqd"]
 resource_name = "health_danger"
 loop_mode = 1
@@ -18,21 +33,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.262839, 0.743235, 0.249473, 1), Color(1, 0.286275, 0, 1), Color(0.262839, 0.743235, 0.249473, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_xom46"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HealthProgressBar:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.262839, 0.743235, 0.249473, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_72s0j"]

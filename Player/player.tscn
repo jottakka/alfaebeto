@@ -80,8 +80,7 @@ color = Color(1, 1, 1, 0.00392157)
 
 [node name="PlayerInputProcessor" parent="." instance=ExtResource("3_ee75e")]
 
-[node name="WeaponComponent" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("4_2bnbr")]
-Player = NodePath("..")
+[node name="WeaponComponent" parent="." instance=ExtResource("4_2bnbr")]
 
 [node name="MuzzlePosition" type="Marker2D" parent="."]
 position = Vector2(0, -38)

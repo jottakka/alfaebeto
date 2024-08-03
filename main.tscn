@@ -1,101 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=4 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
-[ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_l307d"]
+[ext_resource type="PackedScene" uid="uid://btej4fp6xwmvg" path="res://Stages/stage_a.tscn" id="2_b6ikt"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
-[ext_resource type="Texture2D" uid="uid://cl86xks3qc2yw" path="res://Art/purple.png" id="4_7sjlk"]
-[ext_resource type="Texture2D" uid="uid://cn83eq50hkmrw" path="res://Art/line.png" id="5_4v11e"]
-[ext_resource type="PackedScene" uid="uid://cvr8oob8wwhy4" path="res://Enemies/meteor_enemy_a.tscn" id="7_cxptv"]
-[ext_resource type="PackedScene" uid="uid://3mtpb57hvf86" path="res://UI/health_shield_ui.tscn" id="8_2ypqf"]
-[ext_resource type="PackedScene" uid="uid://2vtfkbiotoyf" path="res://UI/money_counter_ui.tscn" id="9_7jlfb"]
-[ext_resource type="PackedScene" uid="uid://uovrvrmqh1g7" path="res://Components/scene_enemy_spawner_component.tscn" id="9_e2oro"]
 
-[sub_resource type="Curve2D" id="Curve2D_itbqw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 64, -3, 0, 0, 0, 0, 448, -3, 0, 0, 0, 0, 64, -3)
-}
-point_count = 3
-
-[node name="Main" type="Node2D" node_paths=PackedStringArray("WordBuilderComponent", "Player", "PlayerSpawnPosition", "ParallaxBackground", "SceneEnemySpawnerComponent")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("Player", "Stage")]
 script = ExtResource("1_lo5c0")
-WordBuilderComponent = NodePath("WordBuilderComponent")
 Player = NodePath("Player")
-PlayerSpawnPosition = NodePath("PlayerSpawnPosition")
-ParallaxBackground = NodePath("ParallaxBackground")
-SceneEnemySpawnerComponent = NodePath("SceneEnemySpawnerComponent")
+Stage = NodePath("StageA")
 
-[node name="WordBuilderComponent" parent="." instance=ExtResource("2_l307d")]
+[node name="StageA" parent="." instance=ExtResource("2_b6ikt")]
 
 [node name="Player" parent="." instance=ExtResource("3_hhegi")]
 position = Vector2(272, 736)
-scale = Vector2(0.8, 0.8)
-
-[node name="PlayerSpawnPosition" type="Marker2D" parent="."]
-position = Vector2(272, 736)
-scale = Vector2(0.8, 0.8)
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(0, 960)
-
-[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture_repeat = 2
-texture = ExtResource("4_7sjlk")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 540, 960)
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-z_index = -1
-position = Vector2(272, -37)
-amount = 20
-lifetime = 3.0
-speed_scale = 3.0
-randomness = 1.0
-fract_delta = false
-texture = ExtResource("5_4v11e")
-emission_shape = 3
-emission_rect_extents = Vector2(245, 1)
-direction = Vector2(0, 1)
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 300.0
-initial_velocity_max = 700.0
-scale_amount_min = 0.1
-scale_amount_max = 0.34
-color = Color(1, 1, 1, 0.419608)
-
-[node name="SpecialSpawnPosition" type="Marker2D" parent="."]
-position = Vector2(273, -57)
-
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(0, -37)
-curve = SubResource("Curve2D_itbqw")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(354.381, -3)
-progress = 477.619
-rotates = false
-cubic_interp = false
-
-[node name="SceneEnemySpawnerComponent" parent="." node_paths=PackedStringArray("SpecialSpawnerPosition", "SpawnFollowPath") instance=ExtResource("9_e2oro")]
-SpecialSpawnerPosition = NodePath("../SpecialSpawnPosition")
-MeteorPackedScenes = [ExtResource("7_cxptv")]
-SpawnFollowPath = NodePath("../Path2D/PathFollow2D")
-
-[node name="HealthShieldUi" parent="." instance=ExtResource("8_2ypqf")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_top = 960.0
-offset_bottom = 960.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.7, 0.7)
-
-[node name="MoneyCounterUi" parent="." instance=ExtResource("9_7jlfb")]
-offset_left = 288.0
-offset_right = 288.0
