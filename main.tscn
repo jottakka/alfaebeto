@@ -7,9 +7,10 @@
 [node name="Main" type="Node2D" node_paths=PackedStringArray("Player", "Stage")]
 script = ExtResource("1_lo5c0")
 Player = NodePath("Player")
-Stage = NodePath("StageA")
+Stage = NodePath("Stage")
 
-[node name="StageA" parent="." instance=ExtResource("2_b6ikt")]
+[node name="Stage" parent="." instance=ExtResource("2_b6ikt")]
 
 [node name="Player" parent="." instance=ExtResource("3_hhegi")]
 position = Vector2(272, 736)
+scale = Vector2(0.6, 0.6)

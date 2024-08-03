@@ -27,3 +27,4 @@ layout_mode = 2
 [node name="HealthShieldUi" parent="PanelContainer" instance=ExtResource("1_2ar0c")]
 layout_mode = 2
 size_flags_vertical = 8
+size_flags_stretch_ratio = 8.7

@@ -10,7 +10,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sk5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj5s"]
-size = Vector2(16.5, 16)
+size = Vector2(20.5, 16)
 
 [sub_resource type="Animation" id="Animation_8mrv4"]
 length = 0.001
@@ -91,14 +91,14 @@ HealthComponent = NodePath("HealthComponent")
 [node name="HitBox" parent="." instance=ExtResource("2_0ego7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(16, 0)
+position = Vector2(20.25, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_rsj5s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
-position = Vector2(0, -1.90735e-06)
-scale = Vector2(0.235714, 0.224216)
+position = Vector2(0.0588268, -1.90735e-06)
+scale = Vector2(0.294541, 0.224216)
 texture = ExtResource("3_62ctt")
 offset = Vector2(69, 0)
 vframes = 3
@@ -154,6 +154,6 @@ EmmitInBetweenSignals = true
 HeathLevelSignalsIntervals = 3
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(16, 0)
+position = Vector2(20.5, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_rsj5s")
