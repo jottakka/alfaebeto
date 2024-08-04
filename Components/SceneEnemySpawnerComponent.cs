@@ -26,7 +26,7 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	public delegate void OnSpawnNextRequestedSignalEventHandler();
 
 	private States _currentState = States.NoSpecialEnemy;
-	private Node _parent => GetParent();
+	private StageBase _parent => (StageBase)GetParent();
 
 	public override void _Ready()
 	{

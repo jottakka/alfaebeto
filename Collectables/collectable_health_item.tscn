@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf4adrfpt4ltr"]
+[gd_scene load_steps=4 format=3 uid="uid://bf4adrfpt4ltr"]
 
 [ext_resource type="PackedScene" uid="uid://dnrnvmtchxjl0" path="res://Collectables/collectable_item_base.tscn" id="1_7wep3"]
 [ext_resource type="Script" path="res://Collectables/CollectableHealthItem.cs" id="2_snjt3"]
+[ext_resource type="Texture2D" uid="uid://1m41sobhdvcd" path="res://Collectables/Art/setting.png" id="3_bg0uo"]
 
 [node name="CollectableHealthItem" instance=ExtResource("1_7wep3")]
 script = ExtResource("2_snjt3")
 HealingPoints = 100
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bg0uo")

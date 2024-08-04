@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://3mtpb57hvf86"]
+[gd_scene load_steps=8 format=3 uid="uid://3mtpb57hvf86"]
 
 [ext_resource type="Script" path="res://UI/HeartShieldUi.cs" id="1_0huvd"]
-[ext_resource type="Texture2D" uid="uid://b3dh2memd5u2p" path="res://UI/Art/shield.png" id="1_wir1x"]
-[ext_resource type="Texture2D" uid="uid://d1cis7hp88npv" path="res://UI/Art/suit_hearts.png" id="2_6plev"]
+[ext_resource type="Texture2D" uid="uid://canhk1icoe182" path="res://UI/Art/modify.png" id="2_xbutg"]
+[ext_resource type="Texture2D" uid="uid://dwc4e7ffjf7vk" path="res://UI/Art/shield (2).png" id="3_xon7c"]
+[ext_resource type="AudioStream" uid="uid://cbmy46jwy6jbs" path="res://UI/Sounds/heartbeat_constant_60bpm.ogg" id="4_qug18"]
 
 [sub_resource type="Animation" id="Animation_xom46"]
 length = 0.001
@@ -41,7 +42,7 @@ _data = {
 "health_danger": SubResource("Animation_x5jqd")
 }
 
-[node name="HealthShieldUi" type="Control" node_paths=PackedStringArray("HealthProgressBar", "ShieldProgressBar", "AnimationPlayer")]
+[node name="HealthShieldUi" type="Control" node_paths=PackedStringArray("HealthProgressBar", "ShieldProgressBar", "AnimationPlayer", "HeartBeatAudioStreamPlayer")]
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.7, 0.7)
@@ -49,6 +50,7 @@ script = ExtResource("1_0huvd")
 HealthProgressBar = NodePath("HealthProgressBar")
 ShieldProgressBar = NodePath("ShieldProgressBar")
 AnimationPlayer = NodePath("AnimationPlayer")
+HeartBeatAudioStreamPlayer = NodePath("AudioStreamPlayer")
 
 [node name="HealthProgressBar" type="ProgressBar" parent="."]
 modulate = Color(0.262839, 0.743235, 0.249473, 1)
@@ -64,8 +66,8 @@ show_percentage = false
 [node name="Health" type="Sprite2D" parent="HealthProgressBar"]
 self_modulate = Color(0.262745, 0.745098, 0.25098, 0.588235)
 position = Vector2(-30, 14)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_6plev")
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("2_xbutg")
 
 [node name="ShieldProgressBar" type="ProgressBar" parent="."]
 self_modulate = Color(0, 0.694118, 0.870588, 1)
@@ -81,10 +83,14 @@ show_percentage = false
 [node name="Shield" type="Sprite2D" parent="ShieldProgressBar"]
 self_modulate = Color(0, 0.694118, 0.870588, 0.588235)
 position = Vector2(-32, 12)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_wir1x")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_xon7c")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_72s0j")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qug18")
+volume_db = -20.0

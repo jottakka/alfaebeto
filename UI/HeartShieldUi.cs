@@ -8,9 +8,11 @@ public sealed partial class HeartShieldUi : Control
 	[Export]
 	public AnimationPlayer AnimationPlayer { get; set; }
 	[Export]
+	public AudioStreamPlayer HeartBeatAudioStreamPlayer { get; set; }
+	[Export]
 	public float HealthBlinkThreshold { get; set; } = 0.30f;
 	[Export]
-	public float MaxBlinkSpeed { get; set; } = 3.0f;
+	public float MaxBlinkSpeed { get; set; } = 2f;
 
 	private Player _player => Global.Instance.Player;
 
@@ -18,6 +20,11 @@ public sealed partial class HeartShieldUi : Control
 	{
 		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
 		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
+		HeartBeatAudioStreamPlayer.Finished += () =>
+		{
+			HeartBeatAudioStreamPlayer.Play();
+		};
+
 	}
 
 	private void OnMainNodeReady()
@@ -37,6 +44,7 @@ public sealed partial class HeartShieldUi : Control
 
 		_player.HealthComponent.OnHealthChangedSignal += OnHealthChange;
 		_player.PlayerShield.OnShieldPointsChangedSignal += OnShieldChanged;
+		HeartBeatAudioStreamPlayer.Stop();
 	}
 
 	private void SetProgressBar(ProgressBar progressBar, int maxValue, int? currentPoints = null, int minValue = 0, bool exp = false)
@@ -53,7 +61,7 @@ public sealed partial class HeartShieldUi : Control
 	{
 		ShieldProgressBar.Value = currentShieldPoints;
 		//Hide shield progress bar if shield points are 0
-		ShieldProgressBar.Visible = currentShieldPoints != 0;
+		ShieldProgressBar.Visible = currentShieldPoints is 0;
 	}
 
 	private void OnHealthChange(int currentHealth, bool isIncrease)
@@ -64,10 +72,17 @@ public sealed partial class HeartShieldUi : Control
 		{
 			double blinkSpeedUp = MaxBlinkSpeed * (1.0f - (HealthProgressBar.Value / HealthProgressBar.MaxValue));
 			AnimationPlayer.Play(UiAnimations.OnHealthDanger, blinkSpeedUp);
+			HeartBeatAudioStreamPlayer.PitchScale = (float)blinkSpeedUp;
+
+			if (HeartBeatAudioStreamPlayer.Playing is false)
+			{
+				HeartBeatAudioStreamPlayer.Play();
+			}
 		}
 		else
 		{
 			AnimationPlayer.Play(UiAnimations.RESET);
+			HeartBeatAudioStreamPlayer.Stop();
 		}
 	}
 }

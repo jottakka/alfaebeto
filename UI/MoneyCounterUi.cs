@@ -5,6 +5,8 @@ public sealed partial class MoneyCounterUi : Control
 	[Export]
 	public Label Label { get; set; }
 	[Export]
+	public AnimationPlayer AnimationPlayer { get; set; }
+	[Export]
 	public long Money { get; set; } = 0;
 
 	private Player _player => Global.Instance.Player;
@@ -25,5 +27,6 @@ public sealed partial class MoneyCounterUi : Control
 	public void SetMoney(long money)
 	{
 		Label.Text = $"$  {money:0000000000.00}";
+		AnimationPlayer.Play(UiAnimations.OnAddMoney);
 	}
 }

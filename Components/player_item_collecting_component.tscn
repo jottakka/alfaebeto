@@ -1,15 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfgorkxxks0xb"]
+[gd_scene load_steps=6 format=3 uid="uid://dfgorkxxks0xb"]
 
 [ext_resource type="Script" path="res://Components/PlayerItemCollectingComponent.cs" id="1_gwvcd"]
-[ext_resource type="AudioStream" uid="uid://bhcud4umr2cab" path="res://Collectables/Art/coin-fx.wav" id="2_py7ct"]
+[ext_resource type="AudioStream" uid="uid://dvnbrftc7ixbg" path="res://Collectables/Sounds/coins_pickup_shake_02.ogg" id="2_5b1i8"]
+[ext_resource type="AudioStream" uid="uid://besrerpdlkswa" path="res://Collectables/Sounds/coins_pickup_shake_08.ogg" id="3_j0c3p"]
+[ext_resource type="AudioStream" uid="uid://dmq17gr51txnj" path="res://Collectables/Sounds/coins_pickup_shake_10.ogg" id="4_s6v6y"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p61px"]
-playback_mode = 1
-random_pitch = 1.5
+random_pitch = 1.1
 random_volume_offset_db = 3.0
-streams_count = 1
-stream_0/stream = ExtResource("2_py7ct")
+streams_count = 3
+stream_0/stream = ExtResource("2_5b1i8")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_j0c3p")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_s6v6y")
+stream_2/weight = 1.0
 
 [node name="PlayerItemCollectingComponent" type="Node" node_paths=PackedStringArray("AudioStreamPlayer")]
 script = ExtResource("1_gwvcd")
@@ -17,3 +22,5 @@ AudioStreamPlayer = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_p61px")
+volume_db = -15.0
+max_polyphony = 20

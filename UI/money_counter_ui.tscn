@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://2vtfkbiotoyf"]
+[gd_scene load_steps=6 format=3 uid="uid://2vtfkbiotoyf"]
 
 [ext_resource type="FontFile" uid="uid://b0g2k5rmf0pov" path="res://UI/Art/Kenney High Square.ttf" id="1_o3hl7"]
 [ext_resource type="Script" path="res://UI/MoneyCounterUi.cs" id="1_q6e12"]
@@ -6,9 +6,44 @@
 [sub_resource type="LabelSettings" id="LabelSettings_rsl1n"]
 font = ExtResource("1_o3hl7")
 font_size = 50
+shadow_size = 6
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="MoneyCounterUi" type="Control" node_paths=PackedStringArray("Label")]
+[sub_resource type="Animation" id="Animation_l1ro7"]
+resource_name = "add_money"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.4, 1.4), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.588235), Color(1, 1, 1, 1), Color(1, 1, 1, 0.588235)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohi77"]
+_data = {
+"add_money": SubResource("Animation_l1ro7")
+}
+
+[node name="MoneyCounterUi" type="Control" node_paths=PackedStringArray("Label", "AnimationPlayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,16 +52,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q6e12")
 Label = NodePath("CenterContainer/Label")
+AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -96.0
-offset_right = 96.0
-offset_bottom = 40.0
+offset_left = -129.5
+offset_right = 129.5
+offset_bottom = 45.0
 grow_horizontal = 2
+pivot_offset = Vector2(133, 0)
 
 [node name="Label" type="Label" parent="CenterContainer"]
 self_modulate = Color(1, 1, 1, 0.588235)
@@ -34,3 +71,8 @@ layout_mode = 2
 text = "$  0001234567.00"
 label_settings = SubResource("LabelSettings_rsl1n")
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ohi77")
+}

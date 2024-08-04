@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://btej4fp6xwmvg"]
+[gd_scene load_steps=14 format=3 uid="uid://btej4fp6xwmvg"]
 
 [ext_resource type="Script" path="res://Stages/StageBase.cs" id="1_bedws"]
 [ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="2_7gvhq"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvr8oob8wwhy4" path="res://Enemies/meteor_enemy_a.tscn" id="7_vwldg"]
 [ext_resource type="PackedScene" uid="uid://dgp8fvw4ywvwv" path="res://UI/full_ui.tscn" id="8_0ij7j"]
 [ext_resource type="Texture2D" uid="uid://cov8ok00d7epu" path="res://Stages/Art/Meteor1.png" id="9_lnt2x"]
+[ext_resource type="AudioStream" uid="uid://6d3bx246xcpf" path="res://Stages/Sounds/1.ogg" id="11_51a2o"]
 
 [sub_resource type="Curve2D" id="Curve2D_itbqw"]
 _data = {
@@ -67,10 +68,10 @@ region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="PlanetParticules" type="CPUParticles2D" parent="BackgroundEffects"]
-z_index = -1
+z_index = -15
 position = Vector2(272, -37)
 amount = 1
-lifetime = 4.0
+lifetime = 40.0
 fract_delta = false
 texture = ExtResource("6_ajorw")
 emission_shape = 3
@@ -78,19 +79,19 @@ emission_rect_extents = Vector2(245, 1)
 direction = Vector2(0, 1)
 spread = 0.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 300.0
-initial_velocity_max = 300.0
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
 angular_velocity_min = -20.0
 angular_velocity_max = 20.0
 scale_amount_min = 0.08
-scale_amount_max = 0.12
+scale_amount_max = 0.2
 
 [node name="PlanetParticules2" type="CPUParticles2D" parent="BackgroundEffects"]
-z_index = -1
+z_index = -15
 position = Vector2(273, -80)
 amount = 1
-lifetime = 4.0
-preprocess = 3.0
+lifetime = 20.0
+preprocess = 10.0
 fract_delta = false
 texture = ExtResource("7_on5ww")
 emission_shape = 3
@@ -98,32 +99,12 @@ emission_rect_extents = Vector2(245, 1)
 direction = Vector2(0, 1)
 spread = 0.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 300.0
+initial_velocity_min = 100.0
 initial_velocity_max = 300.0
-angular_velocity_min = -20.0
-angular_velocity_max = 20.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
 scale_amount_min = 0.08
 scale_amount_max = 0.12
-
-[node name="StarParticules" type="CPUParticles2D" parent="BackgroundEffects"]
-z_index = -1
-position = Vector2(272, -37)
-amount = 20
-lifetime = 3.0
-speed_scale = 3.0
-randomness = 1.0
-fract_delta = false
-texture = ExtResource("5_ybn7s")
-emission_shape = 3
-emission_rect_extents = Vector2(245, 1)
-direction = Vector2(0, 1)
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 300.0
-initial_velocity_max = 700.0
-scale_amount_min = 0.1
-scale_amount_max = 0.34
-color = Color(1, 1, 1, 0.419608)
 
 [node name="MeteorParticules" type="CPUParticles2D" parent="BackgroundEffects"]
 z_index = -8
@@ -147,9 +128,34 @@ color_initial_ramp = SubResource("Gradient_om2pq")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
+[node name="StarParticules" type="CPUParticles2D" parent="BackgroundEffects"]
+z_index = -1
+position = Vector2(272, -37)
+amount = 20
+lifetime = 3.0
+speed_scale = 3.0
+randomness = 1.0
+fract_delta = false
+texture = ExtResource("5_ybn7s")
+emission_shape = 3
+emission_rect_extents = Vector2(245, 1)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 700.0
+scale_amount_min = 0.1
+scale_amount_max = 0.34
+color = Color(1, 1, 1, 0.419608)
+
 [node name="ColorRect" type="ColorRect" parent="BackgroundEffects"]
 offset_right = 540.0
 offset_bottom = 960.0
 color = Color(0.0745098, 0.0745098, 0.0745098, 0.435294)
 
 [node name="FullUi" parent="." instance=ExtResource("8_0ij7j")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_51a2o")
+volume_db = -33.0
+autoplay = true

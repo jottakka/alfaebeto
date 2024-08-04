@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dnrnvmtchxjl0" path="res://Collectables/collectable_item_base.tscn" id="1_b8uw8"]
 [ext_resource type="Script" path="res://Collectables/CollectableShieldItem.cs" id="2_du76q"]
-[ext_resource type="Texture2D" uid="uid://dhgw5tml0o4va" path="res://Collectables/Art/tanks_crateArmor.png" id="2_vq1vr"]
+[ext_resource type="Texture2D" uid="uid://g1ewt3d5r35s" path="res://Collectables/Art/shield (3).png" id="3_slylq"]
 
 [node name="CollectableShieldItem" instance=ExtResource("1_b8uw8")]
 script = ExtResource("2_du76q")
 ShieldPoints = 100
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource("2_vq1vr")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_slylq")

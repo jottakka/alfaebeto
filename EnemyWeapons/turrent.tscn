@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://h7wg0do81ewk"]
+[gd_scene load_steps=16 format=3 uid="uid://h7wg0do81ewk"]
 
 [ext_resource type="Script" path="res://EnemyWeapons/TurrentBase.cs" id="1_kf106"]
 [ext_resource type="Texture2D" uid="uid://bvh87qrpihk7f" path="res://EnemyWeapons/Art/turretBase_big.png" id="2_3j2w5"]
 [ext_resource type="Texture2D" uid="uid://c0inki65mxk3t" path="res://Enemies/Art/gun08.png" id="3_7hyiw"]
 [ext_resource type="Texture2D" uid="uid://citc3nvhytfby" path="res://EnemyWeapons/Art/muzzle_flare_07.png" id="4_i55ol"]
 [ext_resource type="Texture2D" uid="uid://c0e8rxhbfwlyk" path="res://EnemyWeapons/Art/circle_05.png" id="5_6jtuj"]
+[ext_resource type="AudioStream" uid="uid://c2k3854p0flo5" path="res://EnemyWeapons/Sounds/medwpn2_firearms_shot_02.ogg" id="5_tg4qw"]
 [ext_resource type="PackedScene" uid="uid://byr2ow0cg7y4w" path="res://Components/turrent_controller_component.tscn" id="6_u5fjk"]
+[ext_resource type="AudioStream" uid="uid://c5kiu36j4n1kf" path="res://EnemyWeapons/Sounds/medwpn2_firearms_shot_01.ogg" id="6_w0oes"]
+[ext_resource type="AudioStream" uid="uid://dx6o2215hnh0y" path="res://EnemyWeapons/Sounds/medwpn2_firearms_shot_04.ogg" id="7_tog8w"]
+[ext_resource type="AudioStream" uid="uid://beksjy4o52jak" path="res://EnemyWeapons/Sounds/medwpn2_firearms_shot_03.ogg" id="8_queil"]
 
 [sub_resource type="Animation" id="Animation_mnmvg"]
 length = 0.001
@@ -94,9 +98,21 @@ tracks/6/keys = {
 "values": [false]
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c6bfp"]
+random_volume_offset_db = 5.0
+streams_count = 4
+stream_0/stream = ExtResource("5_tg4qw")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_w0oes")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_tog8w")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("8_queil")
+stream_3/weight = 1.0
+
 [sub_resource type="Animation" id="Animation_avh8m"]
 resource_name = "shoot"
-length = 0.8
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -195,6 +211,21 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2D")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_c6bfp")
+}],
+"times": PackedFloat32Array(0.8)
+}
+tracks/8/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0l1i0"]
 _data = {
@@ -258,3 +289,8 @@ shape = SubResource("CircleShape2D_5f0ii")
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -15.0
+pitch_scale = 0.7
+attenuation = 1.7411
