@@ -1,11 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://co3270trdfkno"]
+[gd_scene load_steps=23 format=3 uid="uid://co3270trdfkno"]
 
 [ext_resource type="Script" path="res://Blocks/LetterBlock.cs" id="1_kys8a"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="2_0ego7"]
 [ext_resource type="Texture2D" uid="uid://s5ovxsm2dipc" path="res://Blocks/Art/metal_blocks.png" id="3_62ctt"]
 [ext_resource type="Texture2D" uid="uid://b20itis0ygs08" path="res://Blocks/Art/crack_01.png" id="4_84qg0"]
 [ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="4_yaxhc"]
+[ext_resource type="AudioStream" uid="uid://ceis8fhqxniy4" path="res://Blocks/Sounds/Biting_Crunchy_Single_Close_01.wav" id="5_fwhm5"]
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="6_458g0"]
+[ext_resource type="AudioStream" uid="uid://ddjljmm2tqner" path="res://Blocks/Sounds/SFX_Pop_Designed_Soft_1.wav" id="6_c6xtn"]
+[ext_resource type="AudioStream" uid="uid://ckbdifqqg1xkb" path="res://Blocks/Sounds/SFX_Pop_Designed_Soft_2.wav" id="7_nkwqb"]
+[ext_resource type="AudioStream" uid="uid://dbbe74wu6cwem" path="res://Blocks/Sounds/SFX_Pop_Designed_Soft_3.wav" id="8_282b7"]
+[ext_resource type="AudioStream" uid="uid://bovuon6jr5nch" path="res://Blocks/Sounds/explosionCrunch_001.ogg" id="9_royy3"]
+[ext_resource type="Texture2D" uid="uid://bhqp58qf1hx54" path="res://Blocks/Art/explosion_flash.png" id="12_lrlcm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sk5a"]
 
@@ -38,6 +44,125 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.0588268, -1.90735e-06)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExplosionFlashSprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.167215, 0.167215)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ExplosionFlashSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ExplosionFlashSprite2D:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.294541, 0.224216)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dt1j2"]
+random_pitch = 1.2
+streams_count = 3
+stream_0/stream = ExtResource("6_c6xtn")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("7_nkwqb")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("8_282b7")
+stream_2/weight = 1.0
+
+[sub_resource type="Animation" id="Animation_mskx5"]
+resource_name = "hurt_dead_letter_block"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_dt1j2")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0588268, -1.90735e-06), Vector2(-4.941, 0), Vector2(0.0588268, -1.90735e-06), Vector2(5.059, 0), Vector2(0.0588268, -1.90735e-06)]
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l147e"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("5_fwhm5")
+stream_0/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_oqrkg"]
 resource_name = "hurt_letter_block"
@@ -66,14 +191,115 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1.1, 1.1), Vector2(0.9, 0.9)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_l147e")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_on7v8"]
+random_pitch = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("9_royy3")
+stream_0/weight = 1.0
+
+[sub_resource type="Animation" id="Animation_poxcl"]
+resource_name = "letter_block_explode"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExplosionFlashSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.167215, 0.167215), Vector2(0.184, 0.184), Vector2(0.167215, 0.167215)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExplosionFlashSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExplosionFlashSprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.294541, 0.224216), Vector2(0.339, 0.257)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_on7v8")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3460b"]
 _data = {
 "RESET": SubResource("Animation_8mrv4"),
-"hurt_letter_block": SubResource("Animation_oqrkg")
+"hurt_dead_letter_block": SubResource("Animation_mskx5"),
+"hurt_letter_block": SubResource("Animation_oqrkg"),
+"letter_block_explode": SubResource("Animation_poxcl")
 }
 
-[node name="LetterBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "CollisionShape", "AnimationPlayer", "HitBox", "HurtComponent", "DeathSpriteEffect", "HealthComponent")]
+[node name="LetterBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "CollisionShape", "AnimationPlayer", "HitBox", "HurtComponent", "DeathSpriteEffect", "ExplosionsSprite2D", "HealthComponent")]
 position = Vector2(16, 0)
 collision_layer = 0
 collision_mask = 0
@@ -86,6 +312,7 @@ AnimationPlayer = NodePath("AnimationPlayer")
 HitBox = NodePath("HitBox")
 HurtComponent = NodePath("HurtComponent")
 DeathSpriteEffect = NodePath("Sprite2D/DeathSpriteEffect")
+ExplosionsSprite2D = NodePath("ExplosionFlashSprite2D")
 HealthComponent = NodePath("HealthComponent")
 
 [node name="HitBox" parent="." instance=ExtResource("2_0ego7")]
@@ -141,6 +368,7 @@ texture = ExtResource("4_84qg0")
 libraries = {
 "": SubResource("AnimationLibrary_3460b")
 }
+autoplay = "RESET"
 
 [node name="HurtCooldown" type="Timer" parent="."]
 wait_time = 0.1
@@ -157,3 +385,14 @@ HeathLevelSignalsIntervals = 3
 position = Vector2(20.5, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_rsj5s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -20.0
+pitch_scale = 0.6
+
+[node name="ExplosionFlashSprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(25.5556, -1.11111)
+scale = Vector2(0.167215, 0.167215)
+texture = ExtResource("12_lrlcm")
+hframes = 9

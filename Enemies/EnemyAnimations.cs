@@ -6,6 +6,9 @@ public static class EnemyAnimations
     public static StringName EnemyBugDie = new("enemy_bug_die");
     public static StringName EnemySpawn = new("enemy_spawn");
 
+    public static StringName EnemyWordDeath = new("enemy_word_death");
+    public static StringName EnemyWordDying = new("enemy_word_dying");
+
     public static StringName MeteorEnemySpin = new("meteor_enemy_spin");
 }
 

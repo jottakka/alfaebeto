@@ -19,10 +19,14 @@ public partial class LetterBlock : StaticBody2D
 	[Export]
 	public Sprite2D DeathSpriteEffect { get; set; }
 	[Export]
+	public Sprite2D ExplosionsSprite2D { get; set; }
+	[Export]
 	private HealthComponent HealthComponent { get; set; }
 
 	[Signal]
 	public delegate void OnTargetDestructedSignalEventHandler();
+	[Signal]
+	public delegate void OnReadyToDequeueSignalEventHandler();
 
 	public bool IsDead { get; private set; }
 
@@ -30,6 +34,8 @@ public partial class LetterBlock : StaticBody2D
 
 	public override void _Ready()
 	{
+
+		ExplosionsSprite2D.Frame = GD.RandRange(0, 8);
 		Sprite.Frame = _currenSpriteFrame;
 		DeathSpriteEffect.Visible = false;
 
@@ -42,6 +48,7 @@ public partial class LetterBlock : StaticBody2D
 		this.ActivateCollisionMask(CollisionLayers.Player);
 
 		SetUpHealthComponent();
+
 	}
 
 	public void SetLabel(char letter)
@@ -52,6 +59,13 @@ public partial class LetterBlock : StaticBody2D
 	public void SetPosition(Vector2 position)
 	{
 		Position = position;
+	}
+
+	public void Destroy()
+	{
+		HitBox.DeactivateCollisionMasks();
+		this.ResetCollisionLayerAndMask();
+		AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockExplode);
 	}
 
 	private void OnHealthLevelChanged(int healthLevel)
@@ -72,10 +86,13 @@ public partial class LetterBlock : StaticBody2D
 
 	private void OnHurtAnimationFinished(StringName animationName)
 	{
-		if (animationName == LetterBlockAnimations.Hurt)
+		if (animationName == LetterBlockAnimations.OnLetterBlockExplode)
 		{
-			AnimationPlayer.Play(LetterBlockAnimations.RESET);
+			_ = EmitSignal(nameof(OnReadyToDequeueSignal));
+			QueueFree();
 		}
+
+		AnimationPlayer.Play(LetterBlockAnimations.RESET);
 	}
 
 	private void OnHurt(Area2D enemyArea)
@@ -83,7 +100,11 @@ public partial class LetterBlock : StaticBody2D
 		if (IsDead is false)
 		{
 			HealthComponent.TakeDamage(10);
-			AnimationPlayer.Play(LetterBlockAnimations.Hurt);
+			AnimationPlayer.Play(LetterBlockAnimations.OnHurtLetterBlock);
+		}
+		else
+		{
+			AnimationPlayer.Play(LetterBlockAnimations.OnHurtDeadLetterBlock);
 		}
 	}
 

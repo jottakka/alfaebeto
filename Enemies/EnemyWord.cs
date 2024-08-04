@@ -19,6 +19,8 @@ public sealed partial class EnemyWord : CharacterBody2D
 	[Export]
 	public VisibleOnScreenNotifier2D VisibleOnScreenNotifierBottom { get; set; }
 	[Export]
+	public AnimationPlayer AnimationPlayer { get; set; }
+	[Export]
 	public float HorizontalSpeedModulus { get; set; } = 30.0f;
 	[Export]
 	public float VerticalVelocityModulus { get; set; } = 10.0f;
@@ -56,6 +58,20 @@ public sealed partial class EnemyWord : CharacterBody2D
 		if (what == NotificationPredelete)
 		{
 			_ = EmitSignal(nameof(OnQueueFreeSignal));
+		}
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		Vector2 velocity = _velocity * (float)delta;
+		_ = MoveAndCollide(velocity);
+	}
+
+	private void OnAnimationFinished(StringName animationName)
+	{
+		if (animationName == EnemyAnimations.EnemyWordDeath)
+		{
+			QueueFree();
 		}
 	}
 
@@ -118,13 +134,21 @@ public sealed partial class EnemyWord : CharacterBody2D
 				);
 		};
 
-		Word.OnTargetBlockDestructedSignal += QueueFree;
-	}
+		Word.OnTargetBlockDestructedSignal += () =>
+		{
+			EnemySpawnerLeft.DesallowSpawn();
+			EnemySpawnerRight.DesallowSpawn();
+			RightTurrentWing.DesallowShoot();
+			LeftTurrentWing.DesallowShoot();
+			AnimationPlayer.Play(EnemyAnimations.EnemyWordDying);
+		};
 
-	public override void _PhysicsProcess(double delta)
-	{
-		Vector2 velocity = _velocity * (float)delta;
-		_ = MoveAndCollide(velocity);
+		Word.ReadyToDequeueSignal += () =>
+		{
+			AnimationPlayer.Play(EnemyAnimations.EnemyWordDeath);
+		};
+
+		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 	}
 }
 

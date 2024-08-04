@@ -2,6 +2,8 @@
 public static class LetterBlockAnimations
 {
     public static StringName RESET = new("RESET");
-    public static StringName Hurt = new("hurt_letter_block");
+    public static StringName OnHurtLetterBlock = new("hurt_letter_block");
+    public static StringName OnHurtDeadLetterBlock = new("hurt_dead_letter_block");
+    public static StringName OnLetterBlockExplode = new("letter_block_explode");
 }
 

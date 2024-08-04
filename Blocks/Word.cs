@@ -9,6 +9,8 @@ public partial class Word : Node2D
 	public PackedScene LetterBlockPackedScene { get; set; }
 	[Signal]
 	public delegate void OnTargetBlockDestructedSignalEventHandler();
+	[Signal]
+	public delegate void ReadyToDequeueSignalEventHandler();
 
 	public WordInfo WordInfo { get; set; }
 
@@ -16,23 +18,35 @@ public partial class Word : Node2D
 
 	public int TargetIdx { get; set; }
 
-	public IList<LetterBlock> LetterBlocks { get; set; }
+	public Queue<LetterBlock> LetterBlocks { get; set; } = new();
 
 	public LetterBlock Target { get; set; }
 
 	private static LetterBlockBuilder _letterBuilder = null;
 
+	private Timer _destructionTimer = new();
 	public override void _Ready()
 	{
 		_letterBuilder ??= new LetterBlockBuilder(LetterBlockPackedScene);
+		AddChild(_destructionTimer);
 		BuildLetterBlocks();
+		_destructionTimer.Timeout += () =>
+		{
+			if (LetterBlocks.Any())
+			{
+				LetterBlocks.Dequeue().Destroy();
+			}
+			else
+			{
+				_destructionTimer.Stop();
+			}
+		};
 	}
 
 	private void BuildLetterBlocks()
 	{
 		// Start position for the first letter
 		float currentX = 0.0f;
-		LetterBlocks = new List<LetterBlock>();
 		// Aggregate function to place each letter based on the previous one's position and width
 		foreach ((char letter, int idx) in WordInfo.WithoutDiacritics.Select((letter, idx) => (letter, idx)))
 		{
@@ -52,10 +66,16 @@ public partial class Word : Node2D
 			AddChild(letterBlock);
 			CollisionShape2D collisionShape = letterBlock
 				.CollisionShape;
-			LetterBlocks.Add(letterBlock);
+			LetterBlocks.Enqueue(letterBlock);
 			RectangleShape2D shape = collisionShape.Shape as RectangleShape2D;
 			currentX += shape.Size.X * 2;
 		}
+
+		LetterBlock lastBlock = LetterBlocks.Last();
+		lastBlock.OnReadyToDequeueSignal += () =>
+		{
+			_ = EmitSignal(nameof(ReadyToDequeueSignal));
+		};
 
 		CenterOffset = currentX / 2.0f;
 		Position -= new Vector2(CenterOffset, 0);
@@ -63,7 +83,14 @@ public partial class Word : Node2D
 		Target.OnTargetDestructedSignal += () =>
 		{
 			_ = EmitSignal(nameof(OnTargetBlockDestructedSignal));
+			Destroy();
 		};
+	}
+
+	public void Destroy()
+	{
+		LetterBlocks.Dequeue().Destroy();
+		_destructionTimer.Start(0.25f);
 	}
 }
 
