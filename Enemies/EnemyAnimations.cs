@@ -10,5 +10,5 @@ public static class EnemyAnimations
     public static StringName EnemyWordDying = new("enemy_word_dying");
 
     public static StringName MeteorEnemySpin = new("meteor_enemy_spin");
+    public static StringName MeteorEnemyDeath = new("meteor_enemy_death");
 }
-

@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://82hbd68lldrd"]
+[gd_scene load_steps=11 format=3 uid="uid://82hbd68lldrd"]
 
 [ext_resource type="Texture2D" uid="uid://corgjc1shalqr" path="res://Enemies/Art/spaceStation_027.png" id="1_0sp0u"]
 [ext_resource type="Script" path="res://Enemies/Parts/EnemySpawner.cs" id="1_u1058"]
 [ext_resource type="Texture2D" uid="uid://bgpcbumwwgli2" path="res://Enemies/Art/effect_yellow.png" id="3_gk3gt"]
 [ext_resource type="PackedScene" uid="uid://c0pcej4l0r1oa" path="res://Components/enemy_spawner_controller_component.tscn" id="3_wwa65"]
+[ext_resource type="AudioStream" uid="uid://dpwaa442v5045" path="res://Enemies/Sound/Bubbling_Water_Large_Short_01.wav" id="4_bhqdm"]
+[ext_resource type="AudioStream" uid="uid://dhk2indsex1wr" path="res://Enemies/Sound/Boing_Comedic_Flexatone_01.wav" id="5_i6cx1"]
 
 [sub_resource type="Animation" id="Animation_8fmnc"]
 length = 0.001
@@ -58,7 +60,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_6lmrh"]
 resource_name = "spawn_enemy"
-length = 0.8
+length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,7 +68,7 @@ tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.5, 0.7, 0.8, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0.195225, 0.273876), Vector2(0.14, 0.33), Vector2(0.14, 0.33), Vector2(0.25, 0.21), Vector2(0.195225, 0.273876)]
@@ -78,7 +80,7 @@ tracks/1/path = NodePath("Sprite2D/JetEffect:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.8, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 18.9176, 1, 0.94902), Color(1, 18.9176, 1, 1), Color(1, 18.9176, 1, 0)]
@@ -90,7 +92,7 @@ tracks/2/path = NodePath("Sprite2D/JetEffect:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.8, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -102,13 +104,36 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"OnSpawnEnemyAnimationPointReady"
 }]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 2.19952,
+"start_offset": 3.4163,
+"stream": ExtResource("4_bhqdm")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_i6cx1")
+}],
+"times": PackedFloat32Array(0, 0.6, 0.83442)
+}
+tracks/4/use_blend = false
 
 [sub_resource type="Animation" id="Animation_vab0v"]
 resource_name = "spawner_moving"
@@ -177,3 +202,7 @@ libraries = {
 }
 
 [node name="EnemySpawnerControllerComponent" parent="." instance=ExtResource("3_wwa65")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 1.0036)
+volume_db = -15.0

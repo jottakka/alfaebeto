@@ -143,7 +143,7 @@ _data = {
 }
 
 [node name="Ammo" type="Area2D" node_paths=PackedStringArray("Sprite", "CollisionShape", "VisibleOnScreenNotifier", "AnimationPlayer", "ExplosionSprite")]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ridbi")
 Sprite = NodePath("Sprite2D")
 CollisionShape = NodePath("CollisionShape2D")

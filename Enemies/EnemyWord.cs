@@ -145,7 +145,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 
 		Word.ReadyToDequeueSignal += () =>
 		{
-			AnimationPlayer.Play(EnemyAnimations.EnemyWordDeath);
+			AnimationPlayer.Play(EnemyAnimations.EnemyWordDeath, customSpeed: 2);
 		};
 
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;

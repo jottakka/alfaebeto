@@ -28,6 +28,7 @@ public partial class MeteorEnemyBase : StaticBody2D
 	[Export]
 	public AudioStreamPlayer2D HurtSound { get; set; }
 
+	private bool _isDead = false;
 	private Vector2 _velocity;
 	private int _currenSpriteFrame = 0;
 
@@ -41,6 +42,8 @@ public partial class MeteorEnemyBase : StaticBody2D
 		_velocity = new Vector2(0, 1) * speed;
 		Scale = Vector2.One * scale;
 
+		AnimationPlayer.AnimationFinished += OnAnimationFinished;
+
 		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemy);
 
 		// Collision Masks to observe
@@ -51,7 +54,10 @@ public partial class MeteorEnemyBase : StaticBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Position += _velocity * (float)delta;
+		if (_isDead is false)
+		{
+			Position += _velocity * (float)delta;
+		}
 	}
 
 	private void SetUpSpinAnimation()
@@ -85,8 +91,20 @@ public partial class MeteorEnemyBase : StaticBody2D
 
 	private void OnHealthDepleted()
 	{
+		_isDead = true;
+		this.ResetCollisionLayerAndMask();
+		HitBox.DeactivateCollisionMasks();
+		EnemyHurtBox.DeactivateCollisionMasks();
 		RandomItemDropComponent.DropRandomItem(GlobalPosition);
-		QueueFree();
+		AnimationPlayer.Play(EnemyAnimations.MeteorEnemyDeath);
+	}
+
+	private void OnAnimationFinished(StringName animationName)
+	{
+		if (animationName == EnemyAnimations.MeteorEnemyDeath)
+		{
+			QueueFree();
+		}
 	}
 
 	private void SetUpHealthComponent()
