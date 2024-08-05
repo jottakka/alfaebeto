@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0fwxeh3fs848"]
+[gd_scene load_steps=29 format=3 uid="uid://d0fwxeh3fs848"]
 
 [ext_resource type="Script" path="res://MeteorWords/AnswerMeteor.cs" id="1_c54gp"]
 [ext_resource type="Texture2D" uid="uid://dp0hygdh6q8aj" path="res://MeteorWords/Art/spaceMeteors_003.png" id="2_wmlta"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="9_10su3"]
 [ext_resource type="AudioStream" uid="uid://byao7n28otnxl" path="res://MeteorWords/Sounds/Impact_Ice_Small_C07.wav" id="9_fp4vw"]
 [ext_resource type="AudioStream" uid="uid://vat886ukqral" path="res://MeteorWords/Sounds/explosionCrunch_001.ogg" id="9_nwyya"]
+[ext_resource type="AudioStream" uid="uid://ba1co474ax34j" path="res://MeteorWords/Sounds/error-170796.mp3" id="10_2e84m"]
 [ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="10_3nona"]
+[ext_resource type="AudioStream" uid="uid://dqqmomr62m871" path="res://MeteorWords/Sounds/success_bell-6776.mp3" id="10_bic3k"]
 [ext_resource type="Texture2D" uid="uid://cpo551sg81mqo" path="res://MeteorWords/Art/explosion_flash.png" id="13_j4kkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_au3ro"]
@@ -131,7 +133,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -180,6 +182,30 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath(".:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ev0gi"]
@@ -291,8 +317,8 @@ streams_count = 1
 stream_0/stream = ExtResource("9_nwyya")
 stream_0/weight = 1.0
 
-[sub_resource type="Animation" id="Animation_k71om"]
-resource_name = "answer_meteor_death"
+[sub_resource type="Animation" id="Animation_aejow"]
+resource_name = "answer_meteor_death_not_target"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -303,7 +329,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, true]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -368,12 +394,150 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/5/use_blend = true
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_bic3k")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/6/use_blend = true
+
+[sub_resource type="Animation" id="Animation_k71om"]
+resource_name = "answer_meteor_death_target"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExplosionFlashSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExplosionFlashSprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.917446, 0.861867, 0.962057, 1), Color(0.917647, 0.862745, 0.960784, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExplosionFlashSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.6, 0.6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainMeteor:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DebrisWood1:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_lfbtx")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.1958,
+"start_offset": 0.4599,
+"stream": ExtResource("10_2e84m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/6/use_blend = true
+
+[sub_resource type="Animation" id="Animation_hnyqx"]
+resource_name = "answer_meteor_fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uw30c"]
 _data = {
 "RESET": SubResource("Animation_3ivlj"),
 "ans_meteor_moving": SubResource("Animation_ev0gi"),
-"answer_meteor_death": SubResource("Animation_k71om")
+"answer_meteor_death_not_target": SubResource("Animation_k71om"),
+"answer_meteor_death_target": SubResource("Animation_aejow"),
+"answer_meteor_fade": SubResource("Animation_hnyqx")
 }
 
 [sub_resource type="Animation" id="Animation_43op1"]
@@ -540,6 +704,7 @@ shape = SubResource("CircleShape2D_axu2x")
 libraries = {
 "": SubResource("AnimationLibrary_uw30c")
 }
+autoplay = "ans_meteor_moving"
 
 [node name="EffectsPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -573,7 +738,11 @@ volume_db = -15.0
 pitch_scale = 0.6
 
 [node name="ExplosionFlashSprite" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(0.917446, 0.861867, 0.962057, 1)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("13_j4kkk")
 hframes = 9
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0

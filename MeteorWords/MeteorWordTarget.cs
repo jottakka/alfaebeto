@@ -20,28 +20,38 @@ public sealed partial class MeteorWordTarget : Area2D
 
 	private AnswerMeteor _targetMeteor;
 
+	private bool _isDestructionStarted = false;
+
 	public override void _Ready()
 	{
 		_xorCHWord = Global.Instance.XorChWords.Dequeue();
 
 		VisibleOnScreenNotifier2D.ScreenExited += QueueFree;
 
-		BuildAnserMeteors();
+		BuildAnswerMeteors();
 
-		_targetMeteor.OnTargetDestroiedSignal += QueueFree;
+		AnswerMeteor1.OnDestroiedSignal += OnDestructionStart;
+		AnswerMeteor2.OnDestroiedSignal += OnDestructionStart;
 
 		MainMeteor.WordFirstPart.Text = _xorCHWord.FirstPart;
 		MainMeteor.WordLastPart.Text = _xorCHWord.SecondPart;
+
+		MainMeteor.ReadyToQueueFreeSignal += QueueFree;
 
 		AnimationPlayer.Play(MeteorAnimations.MeteorWordOrbiting);
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (_isDestructionStarted)
+		{
+			return;
+		}
+
 		Position += new Vector2(0, Speed * (float)delta);
 	}
 
-	private void BuildAnserMeteors()
+	private void BuildAnswerMeteors()
 	{
 		AnswerMeteor1.OptionText.Text = "ch";
 		AnswerMeteor2.OptionText.Text = "x";
@@ -49,7 +59,14 @@ public sealed partial class MeteorWordTarget : Area2D
 			? AnswerMeteor1
 			: AnswerMeteor2;
 		_targetMeteor.IsTarget = true;
+	}
 
+	private void OnDestructionStart(bool wasTargetDestroied)
+	{
+		_isDestructionStarted = true;
+		AnswerMeteor1.DestroyCommand();
+		AnswerMeteor2.DestroyCommand();
+		MainMeteor.Destroy(wasTargetDestroied);
 	}
 }
 

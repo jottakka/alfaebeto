@@ -21,8 +21,11 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	public Timer MeteorWordSpawnTimer { get; set; }
 	[Export]
 	public Timer SpecialEnemySpawnTimer { get; set; }
+	[Export]
+	public bool IsDeactived { get; set; } = true;
 
 	[Signal]
+
 	public delegate void OnSpawnNextRequestedSignalEventHandler();
 
 	private States _currentState = States.NoSpecialEnemy;
@@ -30,7 +33,11 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 	public override void _Ready()
 	{
-		SpawnFollowPath.Rotates = false;
+		if (IsDeactived)
+		{
+			return;
+		}
+
 		SpawnFollowPath.Loop = false;
 		SpawnNextSpecial();
 		SpawnEnemy(MeteorPackedScenes);

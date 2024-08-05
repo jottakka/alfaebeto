@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=5 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://btej4fp6xwmvg" path="res://Stages/stage_a.tscn" id="2_b6ikt"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
+[ext_resource type="PackedScene" uid="uid://d37imgwwmwrhf" path="res://MeteorWords/meteor_word_target.tscn" id="4_s5mfw"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("Player", "Stage")]
 script = ExtResource("1_lo5c0")
@@ -14,3 +15,9 @@ Stage = NodePath("Stage")
 [node name="Player" parent="." instance=ExtResource("3_hhegi")]
 position = Vector2(272, 736)
 scale = Vector2(0.6, 0.6)
+
+[node name="MeteorWordTarget" parent="." instance=ExtResource("4_s5mfw")]
+position = Vector2(131, 216)
+
+[node name="MeteorWordTarget2" parent="." instance=ExtResource("4_s5mfw")]
+position = Vector2(392, 176)
