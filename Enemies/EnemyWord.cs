@@ -134,14 +134,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 				);
 		};
 
-		Word.OnTargetBlockDestructedSignal += () =>
-		{
-			EnemySpawnerLeft.DesallowSpawn();
-			EnemySpawnerRight.DesallowSpawn();
-			RightTurrentWing.DesallowShoot();
-			LeftTurrentWing.DesallowShoot();
-			AnimationPlayer.Play(EnemyAnimations.EnemyWordDying);
-		};
+		Word.OnLetterDestructedSignal += OnLetterBlockDestruct;
 
 		Word.ReadyToDequeueSignal += () =>
 		{
@@ -149,6 +142,22 @@ public sealed partial class EnemyWord : CharacterBody2D
 		};
 
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
+	}
+
+	private void OnLetterBlockDestruct(bool isTarget)
+	{
+		if (isTarget)
+		{
+			EnemySpawnerLeft.DesallowSpawn();
+			EnemySpawnerRight.DesallowSpawn();
+			RightTurrentWing.DesallowShoot();
+			LeftTurrentWing.DesallowShoot();
+			AnimationPlayer.Play(EnemyAnimations.EnemyWordDying);
+		}
+		else
+		{
+			// Do something to punish the player. A life lost, a score penalty, a strong foe spawn?.
+		}
 	}
 }
 
