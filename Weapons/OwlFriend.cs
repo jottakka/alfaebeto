@@ -3,199 +3,194 @@ using Godot;
 
 public sealed partial class OwlFriend : CharacterBody2D
 {
-	[Export]
-	public Area2D DetectionArea { get; set; }
-	[Export]
-	public Timer CooldownTimer { get; set; }
-	[Export]
-	public Area2D HurtBox { get; set; }
-	[Export]
-	public int HitPoints = 100;
-	[Export]
-	public float AttackSpeed = 400.0f;
-	[Export]
-	public float RegularSpeed = 300.0f;
+    [Export]
+    public Area2D DetectionArea { get; set; }
+    [Export]
+    public Timer CooldownTimer { get; set; }
+    [Export]
+    public Area2D HurtBox { get; set; }
+    [Export]
+    public AnimationPlayer AnimationPlayer { get; set; }
+    [Export]
+    public int HitPoints = 100;
+    [Export]
+    public float AttackSpeed = 400.0f;
+    [Export]
+    public float RegularSpeed = 300.0f;
 
-	public EnemyBase Target { get; set; } = null;
-	public bool HasTarget => Target is not null;
-	private Player _player => Global.Instance.Player;
+    public EnemyBase Target { get; private set; } = null;
 
-	private bool _isOnCooldown = false;
+    public bool HasTarget => IsInstanceValid(Target);
+    private Player _player => Global.Instance.Player;
 
-	public override void _Ready()
-	{
-		this.ResetCollisionLayerAndMask();
-		DetectionArea.ResetCollisionLayerAndMask();
-		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
+    private bool _attackReady = true;
 
-		HurtBox.ActivateCollisionLayer(CollisionLayers.PlayerRegularHurtBox);
-		HurtBox.ActivateCollisionMask(CollisionLayers.RegularEnemy);
+    public override void _Ready()
+    {
+        this.ResetCollisionLayerAndMask();
+        DetectionArea.ResetCollisionLayerAndMask();
+        this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
-		DetectionArea.ActivateCollisionMask(CollisionLayers.RegularEnemyHitBox);
+        DetectionArea.ActivateCollisionMask(CollisionLayers.RegularEnemyHitBox);
 
-		DetectionArea.AreaEntered += OnDetectionAreaEntered;
-		DetectionArea.AreaExited += OnDetectionAreaExited;
+        ActivateCollisions();
 
-		HurtBox.AreaEntered += OnHurtBoxEntered;
+        DetectionArea.AreaEntered += OnDetectionAreaEntered;
+        DetectionArea.AreaExited += OnDetectionAreaExited;
 
-		CooldownTimer.Timeout += () => _isOnCooldown = false;
-	}
+        HurtBox.AreaEntered += OnHurtBoxEntered;
 
-	public void OnHurtBoxEntered(Area2D area2D)
-	{
-		if (area2D.GetParent() is EnemyBase)
-		{
-			_isOnCooldown = true;
-			CooldownTimer.Start();
-		}
-	}
+        CooldownTimer.OneShot = true;
+        CooldownTimer.Timeout += () => _attackReady = true;
+    }
+    public override void _PhysicsProcess(double delta)
+    {
+        if (HasTarget is false)
+        {
+            DeactivateCollisions();
+            EnemyBase monster = TryGetMonsterInsideDetctionArea();
+            if (monster is not null)
+            {
+                Target = monster;
+            }
+            else
+            {
+                ProcessIfNoTarget();
+            }
 
-	public override void _PhysicsProcess(double delta)
-	{
-		if (Target is null)
-		{
-			EnemyBase monster = DetectionArea
-				.GetOverlappingAreas()
-				.OfType<EnemyHurtBox>()
-				.FirstOrDefault()
-				?.GetParent<EnemyBase>();
-			if (monster is not null)
-			{
-				Target = monster;
-			}
-			else
-			{
-				ProcessIfNoTarget();
-			}
-		}
-		else
-		{
-			if (Target.IsQueuedForDeletion())
-			{
-				DeactivateTarget();
-			}
-			else
-			{
-				ProcessIfHasTarget();
-			}
-		}
+            AnimationPlayer.Play(WeaponAnimations.RESET);
+        }
+        else
+        {
 
-		_ = MoveAndSlide();
-	}
+            ProcessIfHasTarget();
+            AnimationPlayer.Play(WeaponAnimations.OnOwlFriendEyesOnAttack);
+        }
 
-	private void ProcessIfHasTarget()
-	{
-		if (_isOnCooldown is false)
-		{
-			Vector2 direction = GlobalPosition.DirectionTo(Target.GlobalPosition);
-			Velocity = direction * AttackSpeed;
+        _ = MoveAndSlide();
+    }
 
-			LookAtCompensated(Target.GlobalPosition);
-			Rotate(Mathf.Pi / 2.0f);
+    private EnemyBase TryGetMonsterInsideDetctionArea()
+    {
+        return DetectionArea
+            .GetOverlappingAreas()
+            .OfType<HitBox>()
+            .FirstOrDefault()
+            ?.GetParent<EnemyBase>();
+    }
 
-			_ = MoveAndSlide();
+    private void OnHurtBoxEntered(Area2D area2D)
+    {
+        if (area2D.GetParent() is EnemyBase)
+        {
+            _attackReady = false;
+            DeactivateCollisions();
+            CooldownTimer.Start();
+        }
+    }
 
-		}
-		else
-		{
-			ProcessOnJustAfterAttack();
-		}
-	}
+    private void ProcessIfHasTarget()
+    {
+        if (_attackReady)
+        {
+            ActivateCollisions();
+            Vector2 direction = GlobalPosition.DirectionTo(Target.GlobalPosition);
+            Velocity = direction * AttackSpeed;
 
-	private void ProcessOnJustAfterAttack()
-	{
-		Velocity = Vector2.Zero;
-		LookAtUp();
+            LookAtCompensated(Target.GlobalPosition);
+            Rotate(Mathf.Pi / 2.0f);
 
-		if (GlobalPosition.DistanceTo(Target.GlobalPosition) <= 100.0f)
-		{
-			Vector2 direction = -GlobalPosition.DirectionTo(Target.GlobalPosition);
-			Velocity = direction * RegularSpeed;
-		}
+            _ = MoveAndSlide();
 
-		AddSinToMovement();
-	}
+        }
+        else
+        {
+            ProcessOnJustAfterAttack();
+        }
+    }
 
-	private void ProcessIfNoTarget()
-	{
-		Velocity = Vector2.Zero;
-		LookAtUp();
-		if (GlobalPosition.DistanceTo(_player.GlobalPosition) >= 100.0f)
-		{
-			Vector2 direction = GlobalPosition.DirectionTo(_player.GlobalPosition);
-			Velocity = direction * RegularSpeed;
-		}
+    private void ProcessOnJustAfterAttack()
+    {
+        Velocity = Vector2.Zero;
+        LookAtUp();
 
-		AddSinToMovement();
-	}
+        if (GlobalPosition.DistanceTo(Target.GlobalPosition) <= 100.0f)
+        {
+            Vector2 direction = -GlobalPosition.DirectionTo(Target.GlobalPosition);
+            Velocity = direction * RegularSpeed;
+        }
 
-	private void AddSinToMovement()
-	{
-		Velocity += new Vector2(
-			0,
-			20.0f * Mathf.Sin(Time.GetTicksUsec() / 500000.0f)
-		);
-	}
+        AddSinToMovement();
+    }
 
-	private void OnDetectionAreaExited(Area2D area)
-	{
-		if (area.GetParent() is EnemyBase characterBody)
-		{
-			if (Target == characterBody)
-			{
-				DeactivateTarget();
-			}
-		}
-	}
-	private void OnDetectionAreaEntered(Area2D area)
-	{
-		if (HasTarget)
-		{
-			return;
-		}
+    private void ProcessIfNoTarget()
+    {
+        Velocity = Vector2.Zero;
+        LookAtUp();
+        if (GlobalPosition.DistanceTo(_player.GlobalPosition) >= 100.0f)
+        {
+            Vector2 direction = GlobalPosition.DirectionTo(_player.GlobalPosition);
+            Velocity = direction * RegularSpeed;
+        }
 
-		if (area.GetParent() is EnemyBase characterBody)
-		{
-			Target = characterBody;
-		}
-	}
+        AddSinToMovement();
+    }
 
-	private void OnBodyExited(Node2D body)
-	{
-		if (body is EnemyBase characterBody)
-		{
-			if (Target == characterBody)
-			{
-				DeactivateTarget();
-			}
-		}
-	}
-	private void OnBodyEntered(Node2D body)
-	{
-		GD.Print(body.GetType().Name);
-		if (HasTarget)
-		{
-			return;
-		}
+    private void AddSinToMovement()
+    {
+        Velocity += new Vector2(
+            0,
+            20.0f * Mathf.Sin(Time.GetTicksUsec() / 500000.0f)
+        );
+    }
 
-		if (body is EnemyBase characterBody)
-		{
-			Target = characterBody;
-		}
-	}
+    private void OnDetectionAreaExited(Area2D area)
+    {
+        if (area.GetParent() is EnemyBase characterBody)
+        {
+            if (Target == characterBody)
+            {
+                DeactivateTarget();
+            }
+        }
+    }
+    private void OnDetectionAreaEntered(Area2D area)
+    {
+        if (HasTarget)
+        {
+            return;
+        }
 
-	private void DeactivateTarget()
-	{
-		Target = null;
-		CooldownTimer.Stop();
-	}
+        if (area.GetParent() is EnemyBase characterBody)
+        {
+            Target = characterBody;
+        }
+    }
 
-	private void LookAtUp()
-	{
-		Rotation = 0;
-	}
-	private void LookAtCompensated(Vector2 targetGlobalPosition)
-	{
-		LookAt(targetGlobalPosition);
-	}
+    private void ActivateCollisions()
+    {
+        HurtBox.ActivateCollisionLayer(CollisionLayers.PlayerRegularHurtBox);
+        HurtBox.ActivateCollisionMask(CollisionLayers.RegularEnemyHitBox);
+    }
+
+    private void DeactivateCollisions()
+    {
+        HurtBox.ResetCollisionLayerAndMask();
+        this.ResetCollisionLayerAndMask();
+    }
+
+    private void DeactivateTarget()
+    {
+        Target = null;
+    }
+
+    private void LookAtUp()
+    {
+        Rotation = 0;
+    }
+
+    private void LookAtCompensated(Vector2 targetGlobalPosition)
+    {
+        LookAt(targetGlobalPosition);
+    }
 }
