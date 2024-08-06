@@ -24,7 +24,6 @@ public sealed partial class HeartShieldUi : Control
 		{
 			HeartBeatAudioStreamPlayer.Play();
 		};
-
 	}
 
 	private void OnMainNodeReady()
@@ -60,8 +59,8 @@ public sealed partial class HeartShieldUi : Control
 	private void OnShieldChanged(int currentShieldPoints, bool isIncrease)
 	{
 		ShieldProgressBar.Value = currentShieldPoints;
-		//Hide shield progress bar if shield points are 0
-		ShieldProgressBar.Visible = currentShieldPoints is 0;
+		//Hide shield progress bar if shield points are not 0
+		ShieldProgressBar.Visible = currentShieldPoints > 0;
 	}
 
 	private void OnHealthChange(int currentHealth, bool isIncrease)

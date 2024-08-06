@@ -8,5 +8,5 @@ public static class PlayerAnimations
 
     public static StringName OnPlayerShieldHit = new("on_shield_hit");
     public static StringName OnPlayerShieldUp = new("shield_up");
-
+    public static StringName OnPlayerShieldDown = new("shield_down");
 }

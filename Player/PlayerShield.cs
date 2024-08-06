@@ -16,7 +16,6 @@ public sealed partial class PlayerShield : CharacterBody2D
 
 	public int CurrentShieldPoints { get; private set; }
 
-	private bool _isShieldUp = false;
 	private Player _player => GetParent<Player>();
 
 	public override void _Ready()
@@ -25,7 +24,7 @@ public sealed partial class PlayerShield : CharacterBody2D
 		MotionMode = MotionModeEnum.Floating;
 		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
 
-		Deactivate();
+		Visible = false;
 
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
@@ -42,14 +41,11 @@ public sealed partial class PlayerShield : CharacterBody2D
 	public void Deactivate()
 	{
 		IsActive = false;
-		Visible = false;
-		_isShieldUp = false;
-		DeactivateCollisions();
+		AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldDown);
 	}
 
 	public void Activate()
 	{
-		IsActive = true;
 		Visible = true;
 		ActivateCollisions();
 		AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldUp);
@@ -75,13 +71,14 @@ public sealed partial class PlayerShield : CharacterBody2D
 
 	public void RemoveShieldPoints(int points)
 	{
-		if (_isShieldUp is false)
+		if (IsActive is false)
 		{
 			return;
 		}
 
 		CurrentShieldPoints -= points;
 		CurrentShieldPoints = Mathf.Clamp(CurrentShieldPoints, 0, MaxShieldPoints);
+
 		if (CurrentShieldPoints == 0)
 		{
 			Deactivate();
@@ -92,6 +89,11 @@ public sealed partial class PlayerShield : CharacterBody2D
 
 	private void OnCollision()
 	{
+		if (IsActive is false)
+		{
+			return;
+		}
+
 		AnimationPlayer.Play(PlayerAnimations.OnPlayerShieldHit);
 	}
 
@@ -118,19 +120,34 @@ public sealed partial class PlayerShield : CharacterBody2D
 		if (animationName == PlayerAnimations.OnPlayerShieldUp)
 		{
 			OnShieldUpFinished();
+			AnimationPlayer.Play(PlayerAnimations.RESET);
+			return;
+		}
+
+		if (animationName == PlayerAnimations.OnPlayerShieldDown)
+		{
+			OnShieldDownFinished();
 			return;
 		}
 
 		if (animationName == PlayerAnimations.OnPlayerShieldHit)
 		{
-			RemoveShieldPoints(10);
 			AnimationPlayer.Play(PlayerAnimations.RESET);
+			RemoveShieldPoints(10);
+			return;
 		}
 	}
 
 	private void OnShieldUpFinished()
 	{
-		_isShieldUp = true;
+		IsActive = true;
 		AnimationPlayer.Play(PlayerAnimations.RESET);
+	}
+
+	private void OnShieldDownFinished()
+	{
+		IsActive = false;
+		Visible = false;
+		DeactivateCollisions();
 	}
 }

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlrbuuun6npg2"]
+[gd_scene load_steps=6 format=3 uid="uid://dlrbuuun6npg2"]
 
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://btej4fp6xwmvg" path="res://Stages/stage_a.tscn" id="2_b6ikt"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
 [ext_resource type="PackedScene" uid="uid://beikcvlyy55xx" path="res://Weapons/owl_friend.tscn" id="4_dl6tv"]
+[ext_resource type="PackedScene" uid="uid://ocjqicth11fy" path="res://Collectables/collectable_shield_item.tscn" id="5_g8qr4"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("Player", "Stage")]
 script = ExtResource("1_lo5c0")
@@ -18,3 +19,6 @@ scale = Vector2(0.6, 0.6)
 
 [node name="OwlFriend" parent="." instance=ExtResource("4_dl6tv")]
 position = Vector2(136, 664)
+
+[node name="CollectableShieldItem" parent="." instance=ExtResource("5_g8qr4")]
+position = Vector2(144, 608)
