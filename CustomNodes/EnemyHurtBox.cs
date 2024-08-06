@@ -31,7 +31,7 @@ public sealed partial class EnemyHurtBox : Area2D
 		}
 	}
 
-	public void DeactivateCollisionMasks()
+	public void DeactivateCollisions()
 	{
 		this.ResetCollisionLayerAndMask();
 	}

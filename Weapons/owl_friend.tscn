@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://beikcvlyy55xx"]
+
+[ext_resource type="Texture2D" uid="uid://d3aakvif85fsj" path="res://Enemies/Art/owl-removebg-preview.png" id="1_lt83i"]
+[ext_resource type="Script" path="res://Weapons/OwlFriend.cs" id="1_y0nxv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fg8xj"]
+radius = 17.8885
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhf07"]
+radius = 208.154
+
+[node name="OwlFriend" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "CooldownTimer", "HurtBox")]
+script = ExtResource("1_y0nxv")
+DetectionArea = NodePath("DetectionArea")
+CooldownTimer = NodePath("Timer")
+HurtBox = NodePath("HurtBox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_lt83i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fg8xj")
+debug_color = Color(0.916991, 0.183177, 0.553287, 0.42)
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_rhf07")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_fg8xj")
+debug_color = Color(0.916991, 0.183177, 0.553287, 0.42)

@@ -93,8 +93,8 @@ public partial class MeteorEnemyBase : StaticBody2D
 	{
 		_isDead = true;
 		this.ResetCollisionLayerAndMask();
-		HitBox.DeactivateCollisionMasks();
-		EnemyHurtBox.DeactivateCollisionMasks();
+		HitBox.DeactivateCollisions();
+		EnemyHurtBox.DeactivateCollisions();
 		RandomItemDropComponent.DropRandomItem(GlobalPosition);
 		AnimationPlayer.Play(EnemyAnimations.MeteorEnemyDeath);
 	}

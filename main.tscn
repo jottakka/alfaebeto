@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://MainNode.cs" id="1_lo5c0"]
 [ext_resource type="PackedScene" uid="uid://btej4fp6xwmvg" path="res://Stages/stage_a.tscn" id="2_b6ikt"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_hhegi"]
-[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="4_pfdh6"]
+[ext_resource type="PackedScene" uid="uid://beikcvlyy55xx" path="res://Weapons/owl_friend.tscn" id="4_dl6tv"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("Player", "Stage")]
 script = ExtResource("1_lo5c0")
@@ -16,5 +16,5 @@ Stage = NodePath("Stage")
 position = Vector2(272, 736)
 scale = Vector2(0.6, 0.6)
 
-[node name="WordEnemy" parent="." instance=ExtResource("4_pfdh6")]
-position = Vector2(267, 16)
+[node name="OwlFriend" parent="." instance=ExtResource("4_dl6tv")]
+position = Vector2(136, 664)

@@ -110,7 +110,7 @@ public sealed partial class PlayerShield : CharacterBody2D
 	private void DeactivateCollisions()
 	{
 		this.ResetCollisionLayerAndMask();
-		HitBox.DeactivateCollisionMasks();
+		HitBox.DeactivateCollisions();
 	}
 
 	private void OnAnimationFinished(StringName animationName)
