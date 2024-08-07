@@ -29,6 +29,8 @@ public sealed partial class Player : CharacterBody2D
 
 	[Signal]
 	public delegate void OnMoneyChangedSignalEventHandler(long money);
+	[Signal]
+	public delegate void OnPlayerDeathSignalEventHandler();
 
 	public long Money { get; private set; } = 0;
 
@@ -122,7 +124,7 @@ public sealed partial class Player : CharacterBody2D
 
 	private void OnDeath()
 	{
-		QueueFree();
+		_ = EmitSignal(nameof(OnPlayerDeathSignal));
 	}
 
 	private void OnHurt(Area2D enemyArea)

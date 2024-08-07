@@ -1,0 +1,314 @@
+[gd_scene load_steps=13 format=3 uid="uid://qke88ss7nck8"]
+
+[ext_resource type="Script" path="res://UI/GameOverUi.cs" id="1_fgyp8"]
+[ext_resource type="Texture2D" uid="uid://t0t4s1i2de5h" path="res://UI/Art/skull.png" id="1_jqdl2"]
+[ext_resource type="FontFile" uid="uid://b0g2k5rmf0pov" path="res://UI/Art/Kenney High Square.ttf" id="2_ux4w2"]
+[ext_resource type="AudioStream" uid="uid://dr20ncymaqxqb" path="res://UI/Sounds/failure-drum-sound-effect-2-7184.mp3" id="3_dokaf"]
+[ext_resource type="Texture2D" uid="uid://b8fsbs8g66xxs" path="res://UI/Art/arrow_go.png" id="4_w3q1i"]
+[ext_resource type="AudioStream" uid="uid://bpigrr2h7iu2x" path="res://UI/Sounds/bone-shell-85732.mp3" id="4_xunpj"]
+[ext_resource type="AudioStream" uid="uid://bptfvp8prr7yg" path="res://UI/Sounds/sinister-laugh-140131.mp3" id="5_tb0gj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dl5wk"]
+font = ExtResource("2_ux4w2")
+font_size = 100
+font_color = Color(0.724643, 0.724643, 0.724643, 1)
+
+[sub_resource type="Animation" id="Animation_eub1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOverPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOverPanel/SkullPanel/TextureRect:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameOverPanel/GameOverText:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+
+[sub_resource type="Animation" id="Animation_r5b25"]
+resource_name = "game_over_loop"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOverPanel/SkullPanel/TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.174533, 0.174533, -0.174533, 0.0]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 9.2334,
+"start_offset": 0.1934,
+"stream": ExtResource("4_xunpj")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_tb0gj")
+}],
+"times": PackedFloat32Array(0.4, 1.2)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOverPanel/GameOverText:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 1.6, 3.5, 5.7, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.741176, 0.831373, 1, 1), Color(1, 0.823529, 1, 1), Color(1, 0.988235, 0.886275, 1), Color(0.412022, 0.63418, 0.522159, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3.91, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.2, 4.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-30.0, -20.0]
+}
+
+[sub_resource type="Animation" id="Animation_t4r00"]
+resource_name = "on_game_over"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOverPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_dokaf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.0, -20.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7dpxw"]
+_data = {
+"RESET": SubResource("Animation_eub1l"),
+"game_over_loop": SubResource("Animation_r5b25"),
+"game_over_start": SubResource("Animation_t4r00")
+}
+
+[node name="GameOverUI" type="Control" node_paths=PackedStringArray("AnimationPlayer")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgyp8")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="SkullPanel" type="Panel" parent="GameOverPanel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -291.0
+offset_right = 148.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameOverPanel/SkullPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -141.5
+offset_right = 147.0
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(147, 141)
+texture = ExtResource("1_jqdl2")
+expand_mode = 1
+
+[node name="GameOverText" type="Label" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_dl5wk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="GameOverPanel"]
+modulate = Color(1, 0.972549, 1, 1)
+self_modulate = Color(1, 1, 0.996078, 1)
+layout_mode = 0
+offset_left = 136.0
+offset_top = 800.0
+offset_right = 384.0
+offset_bottom = 879.0
+theme_override_colors/font_color = Color(0.691357, 0.691357, 0.691357, 1)
+theme_override_colors/font_pressed_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/icon_pressed_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_fonts/font = ExtResource("2_ux4w2")
+theme_override_font_sizes/font_size = 42
+text = "Prosseguir"
+icon = ExtResource("4_w3q1i")
+icon_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7dpxw")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
