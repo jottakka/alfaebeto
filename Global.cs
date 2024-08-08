@@ -3,6 +3,7 @@ using System.IO;
 using Godot;
 using WordProcessing.Filtering;
 using WordProcessing.Models.DiacriticalMarks;
+using WordProcessing.Models.Rules;
 using WordProcessing.Models.XorCH;
 using WordProcessing.Processing;
 
@@ -18,6 +19,8 @@ public partial class Global : Node
 
 	public Queue<XorCHWord> XorChWords { get; private set; }
 
+	public IReadOnlyList<RuleSetListItemViewModel> RuleSetListItems { get; private set; }
+
 	[Signal]
 	public delegate void OnMainNodeSetupFinishedSignalEventHandler();
 
@@ -25,8 +28,9 @@ public partial class Global : Node
 	{
 		string filePath = @"C:\git\alfa_e_betto\Data\acentuação\acentos_dados.json";
 		string jsonString = File.ReadAllText(filePath);
-		MarkedWords = MarksJsonDeserializer
-			.DeserializeJsonString(jsonString)
+
+		DiactricalMarkCategories markedWords = MarksJsonDeserializer.DeserializeJsonString(jsonString);
+		MarkedWords = markedWords
 			.GetWordsShuffledByCategory(CategoryEnum.Paroxitonas);
 
 		filePath = @"C:\git\alfa_e_betto\Data\acentuação\ch_e_x_proper.json";
@@ -34,6 +38,8 @@ public partial class Global : Node
 		XorChWords = XorCHDeserializer
 			.DeserializeJsonString(jsonString)
 			.GetXorCHWordsShuffled();
+
+		RuleSetListItems = MarksWordsToListViewModel.Convert(markedWords.Categories);
 	}
 
 	public override void _Ready()

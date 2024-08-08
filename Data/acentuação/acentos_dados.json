@@ -2,198 +2,166 @@
   "Categorias": [
     {
       "Nome": "Monossílabas Tônicas",
-      "Dificuldade": 2,
-      "Frequência": "Muito Frequente",
+      "Descrição": "[center]Monossílabas tônicas são palavras de uma única sílaba com acentuação própria, pronunciadas com mais intensidade. Exemplos incluem pá, já, má.[/center]",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -a(s)",
-          "Dificuldade": 1,
-          "Frequência": "Muito Frequente",
+          "Descrição": "[center]Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás.[/center]",
           "Palavras": ["pá", "já", "má", "lá", "trás", "más", "chás"]
         },
         {
           "Nome": "Terminadas em -e(s)",
-          "Dificuldade": 1,
-          "Frequência": "Muito Frequente",
+          "Descrição": "[center]Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés.[/center]",
           "Palavras": ["pé", "fé", "sé", "mês", "três", "rés"]
         },
         {
           "Nome": "Terminadas em -o(s)",
-          "Dificuldade": 1,
-          "Frequência": "Muito Frequente",
+          "Descrição": "[center]Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós.[/center]",
           "Palavras": ["pó", "só", "dó", "cós", "sós", "nós"]
         }
       ]
     },
     {
       "Nome": "Oxítonas",
-      "Dificuldade": 3,
-      "Frequência": "Frequente",
+      "Descrição": "[center]Oxítonas são palavras cuja última sílaba é tônica. Exemplos incluem sofá, maracujá, Paraná.[/center]",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -a(s)",
-          "Dificuldade": 2,
-          "Frequência": "Frequente",
+          "Descrição": "[center]Oxítonas terminadas em -a ou -as, como sofá, maracujá, Paraná, ananás, marajás, atrás.[/center]",
           "Palavras": ["sofá", "maracujá", "Paraná", "ananás", "marajás", "atrás"]
         },
         {
           "Nome": "Terminadas em -e(s)",
-          "Dificuldade": 2,
-          "Frequência": "Frequente",
+          "Descrição": "[center]Oxítonas terminadas em -e ou -es, como Pelé, café, você, freguês, bebês.[/center]",
           "Palavras": ["Pelé", "café", "você", "freguês", "bebês"]
         },
         {
           "Nome": "Terminadas em -o(s)",
-          "Dificuldade": 2,
-          "Frequência": "Frequente",
+          "Descrição": "[center]Oxítonas terminadas em -o ou -os, como cipó, paletó, avó, dominó, pavô, vovô, chororô.[/center]",
           "Palavras": ["cipó", "paletó", "avó", "dominó", "pavô", "vovô", "chororô"]
         },
         {
           "Nome": "Terminadas em -em",
-          "Dificuldade": 3,
-          "Frequência": "Regular",
+          "Descrição": "[center]Oxítonas terminadas em -em, como amém, também, armazém, alguém.[/center]",
           "Palavras": ["amém", "também", "armazém", "alguém"]
         },
         {
           "Nome": "Terminadas em -ens",
-          "Dificuldade": 3,
-          "Frequência": "Regular",
+          "Descrição": "[center]Oxítonas terminadas em -ens, como parabéns, reféns, armazéns.[/center]",
           "Palavras": ["parabéns", "reféns", "armazéns"]
         }
       ]
     },
     {
       "Nome": "Paroxítonas",
-      "Dificuldade": 4,
-      "Frequência": "Muito Frequente",
+      "Descrição": "[center]Paroxítonas são palavras cuja penúltima sílaba é tônica. Exemplos incluem fácil, útil, fósil.[/center]",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -l",
-          "Dificuldade": 2,
-          "Frequência": "Regular",
+          "Descrição": "[center]Paroxítonas terminadas em -l, como fácil, útil, fóssil, réptil, níquel.[/center]",
           "Palavras": ["fácil", "útil", "fóssil", "réptil", "níquel"]
         },
         {
           "Nome": "Terminadas em -i(s)",
-          "Dificuldade": 3,
-          "Frequência": "Regular",
+          "Descrição": "[center]Paroxítonas terminadas em -i ou -is, como júri, lápis, tênis, biquíni.[/center]",
           "Palavras": ["júri", "lápis", "tênis", "biquíni"]
         },
         {
           "Nome": "Terminadas em -n",
-          "Dificuldade": 3,
-          "Frequência": "Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -n, como hífen, pólen, elétron, nêutron, abdômen.[/center]",
           "Palavras": ["hífen", "pólen", "elétron", "nêutron", "abdômen"]
         },
         {
           "Nome": "Terminadas em -u(s)",
-          "Dificuldade": 3,
-          "Frequência": "Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -u ou -us, como vírus, Vênus, ônus, bônus, álbum.[/center]",
           "Palavras": ["vírus", "Vênus", "ônus", "bônus", "álbum"]
         },
         {
           "Nome": "Terminadas em -r",
-          "Dificuldade": 3,
-          "Frequência": "Regular",
+          "Descrição": "[center]Paroxítonas terminadas em -r, como revólver, caráter, âmbar, repórter.[/center]",
           "Palavras": ["revólver", "caráter", "âmbar", "repórter"]
         },
         {
           "Nome": "Terminadas em -x",
-          "Dificuldade": 3,
-          "Frequência": "Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -x, como látex, fênix, tórax, fértil, órix.[/center]",
           "Palavras": ["látex", "fênix", "tórax", "fértil", "órix"]
         },
         {
           "Nome": "Terminadas em -ã(s)",
-          "Dificuldade": 2,
-          "Frequência": "Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -ã ou -ãs, como ímã, órfã, órfãs.[/center]",
           "Palavras": ["ímã", "órfã", "órfãs"]
         },
         {
           "Nome": "Terminadas em -ão(s)",
-          "Dificuldade": 2,
-          "Frequência": "Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -ão ou -ãos, como órgão, sótão, órgãos.[/center]",
           "Palavras": ["órgão", "sótão", "órgãos"]
         },
         {
           "Nome": "Terminadas em -um",
-          "Dificuldade": 3,
-          "Frequência": "Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -um, como álbum, médium, fórum.[/center]",
           "Palavras": ["álbum", "médium", "fórum"]
         },
         {
           "Nome": "Terminadas em -uns",
-          "Dificuldade": 3,
-          "Frequência": "Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -uns, como álbuns, fóruns.[/center]",
           "Palavras": ["álbuns", "fóruns"]
         },
         {
           "Nome": "Terminadas em -ps",
-          "Dificuldade": 4,
-          "Frequência": "Muito Infrequente",
+          "Descrição": "[center]Paroxítonas terminadas em -ps, como fórceps, bíceps.[/center]",
           "Palavras": ["fórceps", "bíceps"]
         },
         {
           "Nome": "Terminadas em Ditongo",
-          "Dificuldade": 2,
-          "Frequência": "Frequente",
+          "Descrição": "[center]Paroxítonas terminadas em ditongo, como água, história, série, pônei, móveis, tênue.[/center]",
           "Palavras": ["água", "história", "série", "pônei", "móveis", "tênue"]
         }
       ]
     },
     {
       "Nome": "Proparoxítonas",
-      "Dificuldade": 5,
-      "Frequência": "Regular",
+      "Descrição": "[center]Proparoxítonas são palavras cuja antepenúltima sílaba é tônica. Exemplos incluem lânguido, física, trópico.[/center]",
       "Subcategorias": [
         {
           "Nome": "Todas Proparoxítonas",
-          "Dificuldade": 5,
-          "Frequência": "Regular",
+          "Descrição": "[center]Todas as proparoxítonas, como lânguido, física, trópico, álibi, hábitat, déficit, lápide, álgebra, célula, pêndulo, amígdalas, amálgama, cúpula, análise, ânimo.[/center]",
           "Palavras": ["lânguido", "física", "trópico", "álibi", "hábitat", "déficit", "lápide", "álgebra", "célula", "pêndulo", "amígdalas", "amálgama", "cúpula", "análise", "ânimo"]
         }
       ]
     },
     {
       "Nome": "Ditongos Abertos",
-      "Dificuldade": 4,
-      "Frequência": "Regular",
+      "Descrição": "[center]Ditongos abertos são combinações de vogal e semivogal em que a vogal é pronunciada de maneira mais aberta. Exemplos incluem fiéis, papéis, pastéis.[/center]",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -éi",
-          "Dificuldade": 4,
-          "Frequência": "Regular",
+          "Descrição": "[center]Ditongos abertos terminados em -éi, como fiéis, papéis, pastéis, coronéis, anéis.[/center]",
           "Palavras": ["fiéis", "papéis", "pastéis", "coronéis", "anéis"]
         },
         {
           "Nome": "Terminadas em -éu",
-          "Dificuldade": 4,
-          "Frequência": "Regular",
+          "Descrição": "[center]Ditongos abertos terminados em -éu, como céu, chapéu, troféu, véu, réu.[/center]",
           "Palavras": ["céu", "chapéu", "troféu", "véu", "réu"]
         },
         {
           "Nome": "Terminadas em -ói",
-          "Dificuldade": 4,
-          "Frequência": "Regular",
+          "Descrição": "[center]Ditongos abertos terminados em -ói, como herói, sóis, faróis, lençóis, rói.[/center]",
           "Palavras": ["herói", "sóis", "faróis", "lençóis", "rói"]
         }
       ]
     },
     {
       "Nome": "Hiatos I e U Tônicos",
-      "Dificuldade": 4,
-      "Frequência": "Frequente",
+      "Descrição": "[center]Hiatos ocorrem quando duas vogais aparecem juntas na palavra, mas em sílabas separadas. Exemplos incluem saída, juízes, saúde.[/center]",
       "Subcategorias": [
         {
           "Nome": "Sozinhos na Sílaba",
-          "Dificuldade": 3,
-          "Frequência": "Frequente",
+          "Descrição": "[center]Hiatos em que I ou U tônicos aparecem sozinhos na sílaba, como saída, juízes, saúde, viúva, caíste, saíste.[/center]",
           "Palavras": ["saída", "juízes", "saúde", "viúva", "caíste", "saíste"]
         },
         {
           "Nome": "Precedidos de Vogais",
-          "Dificuldade": 4,
-          "Frequência": "Regular",
+          "Descrição": "[center]Hiatos em que I ou U tônicos são precedidos de vogais, como balaústre, ruído, viúvo, egoísmo, egoísta.[/center]",
           "Palavras": ["balaústre", "ruído", "viúvo", "egoísmo", "egoísta"]
         }
       ]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://boaydejku6sw8"]
+
+[ext_resource type="Script" path="res://UI/RuleSetListItem.cs" id="1_sr0dd"]
+
+[node name="RuleSetListItem" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -821.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+script = ExtResource("1_sr0dd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.266667)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="RuleNameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rule Name"
+
+[node name="SubrulesLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SubRules"
+
+[node name="TotalRulesLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "101"
+
+[node name="UnlockedRulesLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+text = "Ir para regra"
