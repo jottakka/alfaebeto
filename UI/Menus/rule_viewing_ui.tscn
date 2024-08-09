@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnx16cd8c6sgj"]
+
+[ext_resource type="Script" path="res://UI/Menus/RulesViewingUi.cs" id="1_280uq"]
+[ext_resource type="PackedScene" uid="uid://dgv4oxxsurx0j" path="res://UI/Menus/rule_list_item.tscn" id="2_ol8f2"]
+[ext_resource type="Texture2D" uid="uid://j8uf87rdj7bl" path="res://UI/Menus/Art/glassPanel_cornerTL.png" id="3_gtudm"]
+[ext_resource type="Texture2D" uid="uid://jjrtcjtr2nma" path="res://UI/Menus/Art/metalPanel.png" id="3_teiwb"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="4_23eyv"]
+[ext_resource type="Texture2D" uid="uid://vp02d1ih0iut" path="res://UI/Menus/Art/glassPanel.png" id="6_871yd"]
+[ext_resource type="Theme" uid="uid://h1f7iqhh7ycb" path="res://UI/Menus/Themes/kenneyUI-yellow.tres" id="7_auhob"]
+[ext_resource type="Texture2D" uid="uid://sjfkruom6f88" path="res://UI/Menus/Art/arrow_back.png" id="8_f4ouk"]
+
+[sub_resource type="Theme" id="Theme_rwfdp"]
+
+[node name="RuleViewingUi" type="Control" node_paths=PackedStringArray("RuleSetNameLabel", "RuleDescriptionLabel", "RuleListVBoxContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_280uq")
+RuleSetNameLabel = NodePath("MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/RuleNameLabel")
+RuleDescriptionLabel = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer3/MarginContainer/RichTextLabel")
+RuleListItemPackedScene = ExtResource("2_ol8f2")
+RuleListVBoxContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/RulesVBoxContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -461.5
+offset_right = 256.0
+offset_bottom = 461.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_rwfdp")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_teiwb")
+patch_margin_left = 15
+patch_margin_top = 30
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RuleLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_23eyv")
+theme_override_colors/font_color = Color(0.701961, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Regra: "
+
+[node name="RuleNameLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_23eyv")
+theme_override_colors/font_color = Color(1, 0, 0.980392, 1)
+theme_override_font_sizes/font_size = 18
+text = "Regra x y z"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_top = 16
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+texture = ExtResource("3_gtudm")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer3/MarginContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("4_23eyv")
+theme_override_colors/default_color = Color(0.937638, 0.026939, 3.85046e-07, 1)
+text = "asdf asdf asdf asf asdf asfd asf asdf asdfsaf asfas as fas asd fas fasf awsf asf asfd asdf asdf asfd asdf asdf asf asfd asfd asf asf asf asf asf asf asf asdf asf asf asfasf asf asf asf asf"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_top = 16
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_871yd")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+theme = ExtResource("4_23eyv")
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="RulesVBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_top = 20
+
+[node name="Button" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("7_auhob")
+text = "Voltar
+"
+icon = ExtResource("8_f4ouk")

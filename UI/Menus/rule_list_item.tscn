@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgv4oxxsurx0j"]
+
+[ext_resource type="Script" path="res://UI/Menus/RuleListItem.cs" id="1_f8x3m"]
+[ext_resource type="PackedScene" uid="uid://b8l0x6quuyu3l" path="res://UI/Menus/rule_description_ui.tscn" id="2_vvmjt"]
+[ext_resource type="Texture2D" uid="uid://c6ooclqq35b73" path="res://UI/Menus/Art/metalPanel_green.png" id="3_qkr6d"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="4_tvrhu"]
+[ext_resource type="Texture2D" uid="uid://b1440itsj6yym" path="res://UI/Menus/Art/dot_shadow.png" id="5_87eft"]
+
+[node name="RuleListItem" type="MarginContainer" node_paths=PackedStringArray("RuleNameLabel", "GoToRuleButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_right = -180.0
+offset_bottom = -884.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_f8x3m")
+RuleNameLabel = NodePath("MarginContainer/VBoxContainer/RuleNameLabel")
+GoToRuleButton = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Button")
+RuleDescriptionUiPackedScene = ExtResource("2_vvmjt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_qkr6d")
+patch_margin_left = 26
+patch_margin_top = 44
+patch_margin_right = 51
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RuleNameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_tvrhu")
+text = "Rule Name"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_87eft")
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme = ExtResource("4_tvrhu")
+theme_override_font_sizes/font_size = 12
+action_mode = 0
+text = "visualizar"
+alignment = 2
+icon_alignment = 2

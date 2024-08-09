@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceuyos1pmm88w"]
+
+[ext_resource type="Script" path="res://UI/Menus/RuleSetListItem.cs" id="1_oqid7"]
+[ext_resource type="PackedScene" uid="uid://bnx16cd8c6sgj" path="res://UI/Menus/rule_viewing_ui.tscn" id="2_e1bv6"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="3_h0klr"]
+[ext_resource type="Texture2D" uid="uid://djfg3fjs48yrj" path="res://UI/Menus/Art/metalPanel_red.png" id="3_lmmub"]
+[ext_resource type="Texture2D" uid="uid://5xaeyt47uoou" path="res://UI/Menus/Art/dotGreen.png" id="4_owyax"]
+
+[node name="RuleSetListItem" type="MarginContainer" node_paths=PackedStringArray("RuleNameLabel", "TotalRulesCountLabel", "UnlockedRulesCountLabel", "GoToRuleButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_right = -180.0
+offset_bottom = -884.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_oqid7")
+RuleNameLabel = NodePath("MarginContainer/VBoxContainer/RuleNameLabel")
+TotalRulesCountLabel = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/TotalRulesCountLabel")
+UnlockedRulesCountLabel = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/UnlockedRulesCountLabel")
+GoToRuleButton = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Button")
+RuleViewingUiPackedScene = ExtResource("2_e1bv6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_lmmub")
+patch_margin_left = 26
+patch_margin_top = 44
+patch_margin_right = 51
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RuleNameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h0klr")
+text = "Rule Name"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="SubrulesLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h0klr")
+theme_override_colors/font_color = Color(0.489622, 0.489622, 0.489622, 1)
+text = "Regras:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_owyax")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="UnlockedRulesCountLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h0klr")
+text = "100"
+
+[node name="SubrulesLabel2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h0klr")
+theme_override_colors/font_color = Color(0.625597, 0.625597, 0.625597, 1)
+text = "/"
+
+[node name="TotalRulesCountLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_h0klr")
+theme_override_colors/font_color = Color(0.625597, 0.625597, 0.625597, 1)
+text = "100"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme = ExtResource("3_h0klr")
+theme_override_font_sizes/font_size = 12
+action_mode = 0
+text = "visualizar"
+alignment = 2
+icon_alignment = 2

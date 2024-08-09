@@ -1,0 +1,181 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8l0x6quuyu3l"]
+
+[ext_resource type="Script" path="res://UI/Menus/RuleDescriptionUi.cs" id="1_lsi74"]
+[ext_resource type="Texture2D" uid="uid://jjrtcjtr2nma" path="res://UI/Menus/Art/metalPanel.png" id="2_churv"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="3_gs6bb"]
+[ext_resource type="Texture2D" uid="uid://fod4034xbu03" path="res://UI/Menus/Art/glassPanel_projection.png" id="3_mk8xi"]
+[ext_resource type="Script" path="res://csv-animations-builder-b6f38e3a2e59dcbb2f33b956fc24c92fe88077eb/animations_importer_node.gd" id="4_6f8fc"]
+[ext_resource type="Theme" uid="uid://ditq4ap7rsr0o" path="res://UI/Themes/test_theme.tres" id="4_pshnk"]
+[ext_resource type="Texture2D" uid="uid://1fpekuptwmil" path="res://UI/Menus/Art/dotRed.png" id="5_2h4e0"]
+[ext_resource type="Texture2D" uid="uid://j8uf87rdj7bl" path="res://UI/Menus/Art/glassPanel_cornerTL.png" id="5_7hxbu"]
+[ext_resource type="Theme" uid="uid://h1f7iqhh7ycb" path="res://UI/Menus/Themes/kenneyUI-yellow.tres" id="9_bw45r"]
+[ext_resource type="Texture2D" uid="uid://sjfkruom6f88" path="res://UI/Menus/Art/arrow_back.png" id="10_x6ekw"]
+
+[node name="RuleDescriptionUi" type="Control" node_paths=PackedStringArray("RuleNameLabel", "ExamplesRichTextLabel", "DescriptionRichTextLabel", "BackButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lsi74")
+RuleNameLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/RuleNameLabel")
+ExamplesRichTextLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/MarginContainer/ExampleRichTextLabel")
+DescriptionRichTextLabel = NodePath("PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/RuleDescriptionRichTextLabel")
+BackButton = NodePath("PanelContainer/MarginContainer/VBoxContainer/Button")
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="PanelContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -326.0
+offset_right = 247.5
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_churv")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RuleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_gs6bb")
+theme_override_colors/font_color = Color(0.701961, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Regra: "
+
+[node name="RuleNameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_gs6bb")
+theme_override_colors/font_color = Color(1, 0, 0.980392, 1)
+theme_override_font_sizes/font_size = 18
+text = "Regra x y z"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_mk8xi")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RuleDescriptionRichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_gs6bb")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy sdsdtext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+scroll_active = false
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("4_pshnk")
+script = ExtResource("4_6f8fc")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(144, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("5_2h4e0")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ExampleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("3_gs6bb")
+text = "Exemplos:"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_7hxbu")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ExampleRichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(450, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_gs6bb")
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 13
+text = "asdfasdf asdfasdf  asdfasdf asdfasdf"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("9_bw45r")
+text = "Voltar
+"
+icon = ExtResource("10_x6ekw")
