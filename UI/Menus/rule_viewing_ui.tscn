@@ -11,7 +11,7 @@
 
 [sub_resource type="Theme" id="Theme_rwfdp"]
 
-[node name="RuleViewingUi" type="Control" node_paths=PackedStringArray("RuleSetNameLabel", "RuleDescriptionLabel", "RuleListVBoxContainer")]
+[node name="RuleViewingUi" type="Control" node_paths=PackedStringArray("RuleSetNameLabel", "RuleDescriptionLabel", "RuleListVBoxContainer", "ExitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +23,7 @@ RuleSetNameLabel = NodePath("MarginContainer/MarginContainer/VBoxContainer/HBoxC
 RuleDescriptionLabel = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer3/MarginContainer/RichTextLabel")
 RuleListItemPackedScene = ExtResource("2_ol8f2")
 RuleListVBoxContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/RulesVBoxContainer")
+ExitButton = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer2/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

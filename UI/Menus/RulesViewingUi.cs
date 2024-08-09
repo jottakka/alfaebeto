@@ -11,6 +11,13 @@ public sealed partial class RulesViewingUi : Control
 	public PackedScene RuleListItemPackedScene { get; set; }
 	[Export]
 	public VBoxContainer RuleListVBoxContainer { get; set; }
+	[Export]
+	public Button ExitButton { get; set; }
+
+	public override void _Ready()
+	{
+		ExitButton.Pressed += QueueFree;
+	}
 
 	public void SetData(RuleSetListItemViewModel ruleSetListItemViewModel)
 	{
