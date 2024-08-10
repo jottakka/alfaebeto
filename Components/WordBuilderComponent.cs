@@ -13,7 +13,7 @@ public partial class WordBuilderComponent : Node
 		_wordBuilder ??= new WordBuilder(WordPackedScene);
 	}
 
-	public Word BuildWord(WordInfo wordInfo, Vector2 position)
+	public Word BuildWord(DiactricalMarkWordInfo wordInfo, Vector2 position)
 	{
 		Word word = _wordBuilder.BuildWord(wordInfo, position);
 		return word;

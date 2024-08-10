@@ -15,7 +15,7 @@ public partial class Word : Node2D
 	[Signal]
 	public delegate void OnDisableChildrenCollisionsInternalSingalEventHandler();
 
-	public WordInfo WordInfo { get; set; }
+	public DiactricalMarkWordInfo WordInfo { get; set; }
 
 	public float CenterOffset { get; set; } = 0.0f;
 

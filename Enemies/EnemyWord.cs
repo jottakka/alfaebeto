@@ -30,7 +30,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 
 	public Word Word { get; set; }
 
-	private WordInfo _wordInfo;
+	private DiactricalMarkWordInfo _wordInfo;
 
 	private Vector2 _velocity;
 

@@ -10,7 +10,7 @@ public sealed class WordBuilder
         _wordBlockPackedScene = packedScene;
     }
 
-    public Word BuildWord(WordInfo word, Vector2 startPosition)
+    public Word BuildWord(DiactricalMarkWordInfo word, Vector2 startPosition)
     {
         Word wordNode = _wordBlockPackedScene.Instantiate<Word>();
         wordNode.Position = startPosition;

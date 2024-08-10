@@ -1,45 +1,34 @@
 using System.Collections.Generic;
-using System.IO;
 using Godot;
-using WordProcessing.Filtering;
 using WordProcessing.Models.DiacriticalMarks;
 using WordProcessing.Models.Rules;
 using WordProcessing.Models.XorCH;
-using WordProcessing.Processing;
 
 public partial class Global : Node
 {
+	[Export]
+	public UserDataManagementComponent UserDataManagementComponent { get; set; }
+
 	public static Global Instance { get; private set; } = null;
 
 	public Player Player { get; private set; }
 
 	public StageBase Scene { get; private set; }
 
-	public Queue<WordInfo> MarkedWords { get; private set; }
+	public Queue<DiactricalMarkWordInfo> MarkedWords { get; private set; }
 
 	public Queue<XorCHWord> XorChWords { get; private set; }
 
 	public IReadOnlyList<RuleSetListItemViewModel> RuleSetListItems { get; private set; }
+
+	public WordServerManager WordServerManager { get; private set; } = new();
 
 	[Signal]
 	public delegate void OnMainNodeSetupFinishedSignalEventHandler();
 
 	public Global()
 	{
-		string filePath = @"C:\git\alfa_e_betto\Data\acentuação\acentos_dados.json";
-		string jsonString = File.ReadAllText(filePath);
-
-		DiactricalMarkCategories markedWords = MarksJsonDeserializer.DeserializeJsonString(jsonString);
-		MarkedWords = markedWords
-			.GetWordsShuffledByCategory(CategoryEnum.Paroxitonas);
-
-		filePath = @"C:\git\alfa_e_betto\Data\acentuação\ch_e_x_proper.json";
-		jsonString = File.ReadAllText(filePath);
-		XorChWords = XorCHDeserializer
-			.DeserializeJsonString(jsonString)
-			.GetXorCHWordsShuffled();
-
-		RuleSetListItems = MarksWordsToListViewModel.Convert(markedWords.Categories);
+		RuleSetListItems = new List<RuleSetListItemViewModel>();
 	}
 
 	public override void _Ready()
@@ -53,6 +42,8 @@ public partial class Global : Node
 		Instance = this;
 		// Initialize random number generator
 		GD.Randomize();
+		XorChWords = WordServerManager.GetShuffledXorCHWords();
+		MarkedWords = WordServerManager.GetShuffledDiactricalMarkWords();
 	}
 
 	public void SettingMainNodeData(Player player, StageBase stage)

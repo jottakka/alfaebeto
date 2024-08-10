@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cakt2rsoe5g55"]
+[gd_scene load_steps=3 format=3 uid="uid://cakt2rsoe5g55"]
 
 [ext_resource type="Script" path="res://Global.cs" id="1_lufq4"]
+[ext_resource type="PackedScene" uid="uid://d2urg6ymo4lv4" path="res://Components/user_data_management_component.tscn" id="2_48tst"]
 
-[node name="Global" type="Node"]
+[node name="Global" type="Node" node_paths=PackedStringArray("UserDataManagementComponent")]
 script = ExtResource("1_lufq4")
+UserDataManagementComponent = NodePath("UserDataManagementComponent")
+
+[node name="UserDataManagementComponent" parent="." instance=ExtResource("2_48tst")]

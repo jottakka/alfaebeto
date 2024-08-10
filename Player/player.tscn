@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://blpg2mfx2l1of"]
+[gd_scene load_steps=22 format=3 uid="uid://blpg2mfx2l1of"]
 
 [ext_resource type="Texture2D" uid="uid://efi2fcit068j" path="res://Player/Art/player_red.png" id="1_18mcv"]
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_mm6fq"]
@@ -50,6 +50,45 @@ _data = {
 "RESET": SubResource("Animation_2d3mu"),
 "player_hurt_blink": SubResource("Animation_4nvw0")
 }
+
+[sub_resource type="Gradient" id="Gradient_xbtx5"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.00921659, 1)
+colors = PackedColorArray(0.898039, 0.784314, 0.305882, 1, 1, 0.0156863, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k52nv"]
+gradient = SubResource("Gradient_xbtx5")
+
+[sub_resource type="Gradient" id="Gradient_3pkas"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hxywt"]
+gradient = SubResource("Gradient_3pkas")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_tw8ha"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_6kf0j"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_op3y7"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(5, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 10.588
+initial_velocity_min = 426.47
+initial_velocity_max = 544.12
+directional_velocity_min = -15.0
+directional_velocity_max = 15.0
+directional_velocity_curve = SubResource("CurveXYZTexture_tw8ha")
+gravity = Vector3(0, 98, 0)
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_hxywt")
+color_initial_ramp = SubResource("GradientTexture1D_k52nv")
+emission_curve = SubResource("CurveTexture_6kf0j")
+collision_use_scale = true
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("Sprite2D", "CollisionPolygon2D", "PlayerInputProcessor", "MuzzlePosition", "WeaponComponent", "HitBox", "HurtComponent", "HealthComponent", "PlayerShield", "EffectsPlayer", "PlayerItemCollectingComponent")]
 collision_layer = 0
@@ -129,3 +168,13 @@ libraries = {
 
 [node name="HurtCooldownTimer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(0, 38)
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_op3y7")
+lifetime = 0.3
+speed_scale = 4.0
+randomness = 0.75
+fixed_fps = 40
