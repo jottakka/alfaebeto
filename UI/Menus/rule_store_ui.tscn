@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbuc2t8piv7w1"]
+
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="1_fdmr6"]
+[ext_resource type="Texture2D" uid="uid://bp10405gjnfkq" path="res://UI/Menus/Art/metalPanel_plate.png" id="2_obs4y"]
+[ext_resource type="Script" path="res://UI/Menus/RuleStoreUi.cs" id="2_spvfn"]
+[ext_resource type="Texture2D" uid="uid://jjrtcjtr2nma" path="res://UI/Menus/Art/metalPanel.png" id="3_gg4og"]
+[ext_resource type="PackedScene" uid="uid://brvixywl1fsl4" path="res://UI/Menus/rule_store_item.tscn" id="3_qg37h"]
+[ext_resource type="Texture2D" uid="uid://cpglf677vne0p" path="res://UI/Menus/Art/jewel_pink.png" id="3_sl1ll"]
+[ext_resource type="Texture2D" uid="uid://sjfkruom6f88" path="res://UI/Menus/Art/arrow_back.png" id="5_1tw1k"]
+[ext_resource type="Theme" uid="uid://h1f7iqhh7ycb" path="res://UI/Menus/Themes/kenneyUI-yellow.tres" id="7_b8bsa"]
+
+[node name="RuleStoreUi" type="Control" node_paths=PackedStringArray("RuleItemsVBoxContainer", "TotalGemsLabel", "BackButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fdmr6")
+script = ExtResource("2_spvfn")
+RuleItemsVBoxContainer = NodePath("MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/RuleItemsVBoxContainer")
+TotalGemsLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer/TatalGemsLabel")
+BackButton = NodePath("MarginContainer/VBoxContainer/BackButton")
+StoreItemPackedScene = ExtResource("3_qg37h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 536.0
+offset_bottom = 960.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_obs4y")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.933333, 0, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "loja"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.976471, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Total:"
+
+[node name="TatalGemsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_sl1ll")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_gg4og")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+
+[node name="RuleItemsVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="RuleStoreItem" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/RuleItemsVBoxContainer" instance=ExtResource("3_qg37h")]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("7_b8bsa")
+text = "VOLTAR"
+icon = ExtResource("5_1tw1k")

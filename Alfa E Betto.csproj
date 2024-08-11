@@ -11,5 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Collectables\Resources\" />
+    <Folder Include="Data\User\" />
+    <Folder Include="SaveFiles\" />
   </ItemGroup>
 </Project>

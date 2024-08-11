@@ -1,27 +1,6 @@
 {
   "Categorias": [
     {
-      "Nome": "Monossílabas Tônicas",
-      "Descrição": "[center]Monossílabas tônicas são palavras de uma única sílaba com acentuação própria, pronunciadas com mais intensidade. Exemplos incluem pá, já, má.[/center]",
-      "Subcategorias": [
-        {
-          "Nome": "Terminadas em -a(s)",
-          "Descrição": "[center]Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás.[/center]",
-          "Palavras": ["pá", "já", "má", "lá", "trás", "más", "chás"]
-        },
-        {
-          "Nome": "Terminadas em -e(s)",
-          "Descrição": "[center]Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés.[/center]",
-          "Palavras": ["pé", "fé", "sé", "mês", "três", "rés"]
-        },
-        {
-          "Nome": "Terminadas em -o(s)",
-          "Descrição": "[center]Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós.[/center]",
-          "Palavras": ["pó", "só", "dó", "cós", "sós", "nós"]
-        }
-      ]
-    },
-    {
       "Nome": "Oxítonas",
       "Descrição": "[center]Oxítonas são palavras cuja última sílaba é tônica. Exemplos incluem sofá, maracujá, Paraná.[/center]",
       "Subcategorias": [
@@ -163,6 +142,27 @@
           "Nome": "Precedidos de Vogais",
           "Descrição": "[center]Hiatos em que I ou U tônicos são precedidos de vogais, como balaústre, ruído, viúvo, egoísmo, egoísta.[/center]",
           "Palavras": ["balaústre", "ruído", "viúvo", "egoísmo", "egoísta"]
+        }
+      ]
+    },
+	{
+      "Nome": "Monossílabas Tônicas",
+      "Descrição": "[center]Monossílabas tônicas são palavras de uma única sílaba com acentuação própria, pronunciadas com mais intensidade. Exemplos incluem pá, já, má.[/center]",
+      "Subcategorias": [
+        {
+          "Nome": "Terminadas em -a(s)",
+          "Descrição": "[center]Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás.[/center]",
+          "Palavras": ["pá", "já", "má", "lá", "trás", "más", "chás"]
+        },
+        {
+          "Nome": "Terminadas em -e(s)",
+          "Descrição": "[center]Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés.[/center]",
+          "Palavras": ["pé", "fé", "sé", "mês", "três", "rés"]
+        },
+        {
+          "Nome": "Terminadas em -o(s)",
+          "Descrição": "[center]Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós.[/center]",
+          "Palavras": ["pó", "só", "dó", "cós", "sós", "nós"]
         }
       ]
     }

@@ -3,12 +3,14 @@ using Godot;
 public sealed partial class MainNode : Node2D
 {
 	[Export]
-	public Player Player { get; set; }
+	public PackedScene StartGamePackedScene { get; set; }
 	[Export]
-	public StageBase Stage { get; set; }
+	public PackedScene StorePackedScene { get; set; }
+	[Export]
+	public PackedScene RulesPackedScene { get; set; }
 
 	public override void _Ready()
 	{
-		Global.Instance.SettingMainNodeData(Player, Stage);
+
 	}
 }

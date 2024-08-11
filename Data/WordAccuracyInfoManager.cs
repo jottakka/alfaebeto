@@ -1,43 +1,62 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
-namespace AlfaEBetto.Data;
 public sealed class WordAccuracyInfoManager
 {
-    private readonly Dictionary<string, WordAccuracyInfo> _wordAccuracyInfos = new();
+    private readonly UserDataInfoResource _userDataInfo;
 
-    public void AddWordAccuracyInfo(WordAccuracyInfo wordAccuracyInfo)
+    public WordAccuracyInfoManager(UserDataInfoResource userDataInfo)
     {
-        if (_wordAccuracyInfos.ContainsKey(wordAccuracyInfo.Word))
+        _userDataInfo = userDataInfo;
+    }
+
+    public void UpdateUserWordsResultsData(IEnumerable<WordGameResultItem> gameResults)
+    {
+        foreach (WordGameResultItem gameResult in gameResults)
         {
-            _wordAccuracyInfos[wordAccuracyInfo.Word] = wordAccuracyInfo;
+            if (_userDataInfo.WordsCategoryInfos.TryGetValue(gameResult.RuleType, out WordCategoryInfoResource wordCategoryInfo))
+            {
+                UpdateWordCategoryInfo(gameResult, wordCategoryInfo);
+            }
+            else
+            {
+                AddWordCategoryInfo(gameResult);
+            }
+        }
+    }
+
+    private void AddWordCategoryInfo(WordGameResultItem gameResult)
+    {
+        WordCategoryInfoResource newCategoryInfo = new()
+        {
+            RuleType = gameResult.RuleType,
+        };
+
+        AddNewWordAccuracyInfo(gameResult, newCategoryInfo);
+
+        _userDataInfo.WordsCategoryInfos[gameResult.RuleType] = newCategoryInfo;
+    }
+
+    private void UpdateWordCategoryInfo(WordGameResultItem gameResult, WordCategoryInfoResource wordCategoryInfo)
+    {
+        if (wordCategoryInfo.WordAccuracyInfos.TryGetValue(gameResult.Word, out WordAccuracyInfoResource wordAccuracyInfo))
+        {
+            wordAccuracyInfo.Errors += gameResult.Errors;
+            wordAccuracyInfo.Successes += gameResult.Successes;
         }
         else
         {
-            _wordAccuracyInfos.Add(wordAccuracyInfo.Word, wordAccuracyInfo);
+            AddNewWordAccuracyInfo(gameResult, wordCategoryInfo);
         }
     }
 
-    public WordAccuracyInfo GetWordAccuracyInfo(string word)
+    private void AddNewWordAccuracyInfo(WordGameResultItem gameResult, WordCategoryInfoResource newCategoryInfo)
     {
-        return _wordAccuracyInfos.ContainsKey(word) ? _wordAccuracyInfos[word] : null;
-    }
-
-    public void RemoveWordAccuracyInfo(string word)
-    {
-        if (_wordAccuracyInfos.ContainsKey(word))
+        newCategoryInfo.WordAccuracyInfos[gameResult.Word] = new()
         {
-            _ = _wordAccuracyInfos.Remove(word);
-        }
-    }
-
-    public void Clear()
-    {
-        _wordAccuracyInfos.Clear();
-    }
-
-    public List<WordAccuracyInfo> GetWordAccuracyInfos()
-    {
-        return _wordAccuracyInfos.Values.ToList();
+            Word = gameResult.Word,
+            Errors = gameResult.Errors,
+            Successes = gameResult.Successes,
+            RuleType = gameResult.RuleType,
+        };
     }
 }

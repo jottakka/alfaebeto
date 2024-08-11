@@ -9,7 +9,7 @@ using WordProcessing.Processing;
 
 public sealed class WordServerManager
 {
-    private readonly UserDataInfo _userDataInfo;
+    private readonly UserDataInfoResource _userDataInfo;
 
     private IEnumerable<DiactricalMarkWordInfo> _unlockedMarkedWords;
 
@@ -17,7 +17,7 @@ public sealed class WordServerManager
 
     public WordServerManager()
     {
-        _userDataInfo ??= new UserDataInfo();
+        _userDataInfo ??= new UserDataInfoResource();
         _userDataInfo.UnlockedDiactricalMarksSubCategories = new Godot.Collections.Array<DiactricalMarkSubCategoryType>(
             DiactricalMarkSubCategoryType
             .GetValues(typeof(DiactricalMarkSubCategoryType))

@@ -1,0 +1,249 @@
+[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=29 format=3 uid="uid://c7a4v3t0fhsmm"]
+
+[ext_resource type="Script" path="res://Data/DiactricalMarkRuleItemResource.cs" id="1_dpfjg"]
+[ext_resource type="Script" path="res://Data/UserDataInfoResource.cs" id="2_aqhrc"]
+
+[sub_resource type="Resource" id="Resource_kp8ms"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+SubRuleType = 0
+SubRule = "Terminadas em -a(s)"
+IsUnlocked = true
+KeyGemCost = 0
+
+[sub_resource type="Resource" id="Resource_tw88p"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+SubRuleType = 1
+SubRule = "Terminadas em -e(s)"
+IsUnlocked = false
+KeyGemCost = 4
+
+[sub_resource type="Resource" id="Resource_l8y0x"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+SubRuleType = 2
+SubRule = "Terminadas em -o(s)"
+IsUnlocked = false
+KeyGemCost = 8
+
+[sub_resource type="Resource" id="Resource_goo7x"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+SubRuleType = 3
+SubRule = "Terminadas em -em"
+IsUnlocked = false
+KeyGemCost = 12
+
+[sub_resource type="Resource" id="Resource_82qy3"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+SubRuleType = 4
+SubRule = "Terminadas em -ens"
+IsUnlocked = false
+KeyGemCost = 16
+
+[sub_resource type="Resource" id="Resource_tupop"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 5
+SubRule = "Terminadas em -l"
+IsUnlocked = false
+KeyGemCost = 20
+
+[sub_resource type="Resource" id="Resource_5xec1"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 6
+SubRule = "Terminadas em -i(s)"
+IsUnlocked = false
+KeyGemCost = 24
+
+[sub_resource type="Resource" id="Resource_fbts1"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 7
+SubRule = "Terminadas em -n"
+IsUnlocked = false
+KeyGemCost = 28
+
+[sub_resource type="Resource" id="Resource_gdk1d"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 8
+SubRule = "Terminadas em -u(s)"
+IsUnlocked = false
+KeyGemCost = 32
+
+[sub_resource type="Resource" id="Resource_o7a4l"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 9
+SubRule = "Terminadas em -r"
+IsUnlocked = false
+KeyGemCost = 36
+
+[sub_resource type="Resource" id="Resource_bcxjk"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 10
+SubRule = "Terminadas em -x"
+IsUnlocked = false
+KeyGemCost = 40
+
+[sub_resource type="Resource" id="Resource_vocff"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 11
+SubRule = "Terminadas em -ã(s)"
+IsUnlocked = false
+KeyGemCost = 44
+
+[sub_resource type="Resource" id="Resource_fnyto"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 12
+SubRule = "Terminadas em -ão(s)"
+IsUnlocked = false
+KeyGemCost = 48
+
+[sub_resource type="Resource" id="Resource_k8yt1"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 13
+SubRule = "Terminadas em -um"
+IsUnlocked = false
+KeyGemCost = 52
+
+[sub_resource type="Resource" id="Resource_1yg1k"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 14
+SubRule = "Terminadas em -uns"
+IsUnlocked = false
+KeyGemCost = 56
+
+[sub_resource type="Resource" id="Resource_vi5i4"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 15
+SubRule = "Terminadas em -ps"
+IsUnlocked = false
+KeyGemCost = 60
+
+[sub_resource type="Resource" id="Resource_ebci5"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+SubRuleType = 16
+SubRule = "Terminadas em Ditongo"
+IsUnlocked = false
+KeyGemCost = 64
+
+[sub_resource type="Resource" id="Resource_3hdpk"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 3
+RuleSet = "Proparoxítonas"
+SubRuleType = 17
+SubRule = "Todas Proparoxítonas"
+IsUnlocked = false
+KeyGemCost = 68
+
+[sub_resource type="Resource" id="Resource_a3g54"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 4
+RuleSet = "Ditongos Abertos"
+SubRuleType = 18
+SubRule = "Terminadas em -éi"
+IsUnlocked = false
+KeyGemCost = 72
+
+[sub_resource type="Resource" id="Resource_mq8kd"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 4
+RuleSet = "Ditongos Abertos"
+SubRuleType = 19
+SubRule = "Terminadas em -éu"
+IsUnlocked = false
+KeyGemCost = 76
+
+[sub_resource type="Resource" id="Resource_b8a1e"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 4
+RuleSet = "Ditongos Abertos"
+SubRuleType = 20
+SubRule = "Terminadas em -ói"
+IsUnlocked = false
+KeyGemCost = 80
+
+[sub_resource type="Resource" id="Resource_3278f"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 5
+RuleSet = "Hiatos I e U Tônicos"
+SubRuleType = 21
+SubRule = "Sozinhos na Sílaba"
+IsUnlocked = false
+KeyGemCost = 84
+
+[sub_resource type="Resource" id="Resource_qsnts"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 5
+RuleSet = "Hiatos I e U Tônicos"
+SubRuleType = 22
+SubRule = "Precedidos de Vogais"
+IsUnlocked = false
+KeyGemCost = 88
+
+[sub_resource type="Resource" id="Resource_kgmn0"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 0
+RuleSet = "Monossílabas Tônicas"
+SubRuleType = 0
+SubRule = "Terminadas em -a(s)"
+IsUnlocked = false
+KeyGemCost = 92
+
+[sub_resource type="Resource" id="Resource_okfcg"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 0
+RuleSet = "Monossílabas Tônicas"
+SubRuleType = 1
+SubRule = "Terminadas em -e(s)"
+IsUnlocked = false
+KeyGemCost = 96
+
+[sub_resource type="Resource" id="Resource_rh25y"]
+script = ExtResource("1_dpfjg")
+RuleSetType = 0
+RuleSet = "Monossílabas Tônicas"
+SubRuleType = 2
+SubRule = "Terminadas em -o(s)"
+IsUnlocked = false
+KeyGemCost = 100
+
+[resource]
+script = ExtResource("2_aqhrc")
+UserName = "JOGADOR"
+TotalScore = 0
+TotalMoneyAmmount = 0
+TotalGreenKeyGemsAmmount = 0
+TotalRedKeyGemsAmmount = 0
+UnlockedDiactricalMarksSubCategories = [0]
+DiactricalMarkRuleItems = [SubResource("Resource_kp8ms"), SubResource("Resource_tw88p"), SubResource("Resource_l8y0x"), SubResource("Resource_goo7x"), SubResource("Resource_82qy3"), SubResource("Resource_tupop"), SubResource("Resource_5xec1"), SubResource("Resource_fbts1"), SubResource("Resource_gdk1d"), SubResource("Resource_o7a4l"), SubResource("Resource_bcxjk"), SubResource("Resource_vocff"), SubResource("Resource_fnyto"), SubResource("Resource_k8yt1"), SubResource("Resource_1yg1k"), SubResource("Resource_vi5i4"), SubResource("Resource_ebci5"), SubResource("Resource_3hdpk"), SubResource("Resource_a3g54"), SubResource("Resource_mq8kd"), SubResource("Resource_b8a1e"), SubResource("Resource_3278f"), SubResource("Resource_qsnts"), SubResource("Resource_kgmn0"), SubResource("Resource_okfcg"), SubResource("Resource_rh25y")]
+WordsCategoryInfos = {}

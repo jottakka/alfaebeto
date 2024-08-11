@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmmfe24mog8j7"]
+
+[ext_resource type="Script" path="res://StartGame.cs" id="1_f5nfq"]
+[ext_resource type="PackedScene" uid="uid://btej4fp6xwmvg" path="res://Stages/stage_a.tscn" id="2_sitdc"]
+[ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_70pab"]
+[ext_resource type="PackedScene" uid="uid://beikcvlyy55xx" path="res://Weapons/owl_friend.tscn" id="4_va0ql"]
+[ext_resource type="PackedScene" uid="uid://qke88ss7nck8" path="res://UI/game_over_ui.tscn" id="5_3lx88"]
+
+[node name="StartGame" type="Node2D" node_paths=PackedStringArray("Player", "Stage")]
+script = ExtResource("1_f5nfq")
+Player = NodePath("Player")
+Stage = NodePath("Stage")
+
+[node name="Stage" parent="." instance=ExtResource("2_sitdc")]
+
+[node name="Player" parent="." instance=ExtResource("3_70pab")]
+position = Vector2(272, 736)
+scale = Vector2(0.6, 0.6)
+
+[node name="OwlFriend" parent="." instance=ExtResource("4_va0ql")]
+position = Vector2(136, 664)
+
+[node name="GameOverUI" parent="." instance=ExtResource("5_3lx88")]
