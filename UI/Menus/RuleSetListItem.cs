@@ -15,6 +15,7 @@ public sealed partial class RuleSetListItem : MarginContainer
 
 	public void SetData(DiactricalMarkRuleSetItemResource ruleSet)
 	{
+		ProcessMode = ProcessModeEnum.Always;
 		RuleNameLabel.Text = ruleSet.Name;
 		TotalRulesCountLabel.Text = ruleSet.TotalRulesCount.ToString();
 		UnlockedRulesCountLabel.Text = ruleSet.UnlockedRulesCount.ToString();

@@ -33,6 +33,8 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 					RuleSet = c.Name,
 					RuleType = sc.Type,
 					Name = sc.Name,
+					Description = sc.Description,
+					Examples = sc.Words.Take(3).Select(s => s.Original).ToArray(),
 					IsUnlocked = genCostMultiplier == 0,
 					KeyGemCost = startGenCost + (genCostMultiplier++ * genCostIncrement)
 				}).ToArray()

@@ -7,5 +7,6 @@ public static class UserInput
     public static readonly StringName MoveLeft = "ui_left";
     public static readonly StringName MoveRight = "ui_right";
     public static readonly StringName Attack = "ui_attack";
+    public static readonly StringName Pause = "ui_pause";
 }
 

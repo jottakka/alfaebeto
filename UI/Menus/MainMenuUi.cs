@@ -11,12 +11,11 @@ public sealed partial class MainMenuUi : Node
 	[Export]
 	public PackedScene StartGamePackedScene { get; set; }
 	[Export]
-	public PackedScene StorePackedScene { get; set; }
-	[Export]
-	public PackedScene RulesPackedScene { get; set; }
+	public UiComponent UiComponent { get; set; }
 
 	public override void _Ready()
 	{
+		ProcessMode = ProcessModeEnum.Always;
 		StartButton.Pressed += () =>
 		{
 			_ = GetTree().ChangeSceneToPacked(StartGamePackedScene);
@@ -24,10 +23,12 @@ public sealed partial class MainMenuUi : Node
 
 		StoreButton.Pressed += () =>
 		{
+			UiComponent.OpenRuleStoreUi();
 		};
 
 		RulesButton.Pressed += () =>
 		{
+			UiComponent.OpenRuleSetsViewingUi();
 		};
 	}
 }

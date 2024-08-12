@@ -12,6 +12,8 @@ public sealed partial class RuleSetsViewingUi : Control
 
 	public override void _Ready()
 	{
+		ProcessMode = ProcessModeEnum.Always;
+		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
 		BuildItens();
 		ExitButton.Pressed += QueueFree;
 	}

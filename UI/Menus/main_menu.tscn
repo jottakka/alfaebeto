@@ -1,12 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://n3viwgm8cp5"]
+[gd_scene load_steps=16 format=3 uid="uid://n3viwgm8cp5"]
 
 [ext_resource type="Texture2D" uid="uid://paatxqy1s874" path="res://UI/Menus/Art/5.png" id="1_agj4m"]
 [ext_resource type="Script" path="res://UI/Menus/MainMenuUi.cs" id="1_tu6jm"]
 [ext_resource type="PackedScene" uid="uid://cmmfe24mog8j7" path="res://start_game.tscn" id="2_41k7l"]
 [ext_resource type="FontFile" uid="uid://cvkvjua8h0866" path="res://UI/Menus/Art/Kenney High Square.ttf" id="2_egk10"]
-[ext_resource type="PackedScene" uid="uid://c7o41wb85oqjm" path="res://UI/Menus/rule_sets_viewing_ui.tscn" id="3_21j20"]
+[ext_resource type="PackedScene" uid="uid://vx4qqmcsoxwu" path="res://Components/ui_component.tscn" id="3_1q1tu"]
 [ext_resource type="FontFile" uid="uid://m8cw1p7p2u5c" path="res://UI/Menus/Art/Kenney Future.ttf" id="3_ixexg"]
-[ext_resource type="PackedScene" uid="uid://dbuc2t8piv7w1" path="res://UI/Menus/rule_store_ui.tscn" id="4_0bo3e"]
 [ext_resource type="Texture2D" uid="uid://cd2brt7w3sj85" path="res://UI/Menus/Art/target_1.png" id="4_ltmjo"]
 [ext_resource type="Texture2D" uid="uid://bngsi5msv1ku7" path="res://UI/Menus/Art/diamond.png" id="5_863kv"]
 [ext_resource type="Texture2D" uid="uid://bxaxdfjqbilsc" path="res://UI/Menus/Art/book.png" id="6_dtycb"]
@@ -133,7 +132,7 @@ _data = {
 "main_menu_loop_animation": SubResource("Animation_kfq41")
 }
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("StartButton", "StoreButton", "RulesButton")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("StartButton", "StoreButton", "RulesButton", "UiComponent")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,12 +142,13 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_tu6jm")
 StartButton = NodePath("VBoxContainer/StartButton")
-StoreButton = NodePath("VBoxContainer/RulesButton")
-RulesButton = NodePath("VBoxContainer/StoreButton")
+StoreButton = NodePath("VBoxContainer/StoreButton")
+RulesButton = NodePath("VBoxContainer/RulesButton")
 StartGamePackedScene = ExtResource("2_41k7l")
-StorePackedScene = ExtResource("3_21j20")
-RulesPackedScene = ExtResource("4_0bo3e")
+UiComponent = NodePath("UiComponent")
 metadata/_edit_use_anchors_ = true
+
+[node name="UiComponent" parent="." instance=ExtResource("3_1q1tu")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

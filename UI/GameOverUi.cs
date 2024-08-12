@@ -5,8 +5,10 @@ public sealed partial class GameOverUi : Control
 {
 	[Export]
 	public AnimationPlayer AnimationPlayer { get; set; }
-
-	private Player _player => Global.Instance.Player;
+	[Export]
+	public Button ProcceedButton { get; set; }
+	[Export]
+	public SceneManagerComponent SceneManagerComponent { get; set; }
 
 	public override void _Ready()
 	{
@@ -14,11 +16,14 @@ public sealed partial class GameOverUi : Control
 		ProcessMode = ProcessModeEnum.Always;
 		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
 		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
+		ProcceedButton.Pressed += () =>
+		{
+			SceneManagerComponent.SwitchToMainMenu();
+		};
 	}
 
 	private void OnMainNodeReady()
 	{
-		_player.OnPlayerDeathSignal += OnPlayerDeath;
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 	}
 
@@ -30,10 +35,8 @@ public sealed partial class GameOverUi : Control
 		}
 	}
 
-	private void OnPlayerDeath()
+	public void Open()
 	{
-		Show();
-		GetTree().Paused = true;
 		AnimationPlayer.Play(UiAnimations.OnGameOverStart);
 	}
 }

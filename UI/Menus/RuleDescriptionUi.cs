@@ -13,6 +13,8 @@ public sealed partial class RuleDescriptionUi : Control
 
 	public override void _Ready()
 	{
+		ProcessMode = ProcessModeEnum.Always;
+		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
 		BackButton.Pressed += QueueFree;
 	}
 

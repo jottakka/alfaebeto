@@ -15,8 +15,8 @@ public sealed partial class RuleStoreItem : MarginContainer
 
 	public override void _Ready()
 	{
+		ProcessMode = ProcessModeEnum.Always;
 		BuyButton.Pressed += () => BoughtColorRect.Show();
-
 	}
 
 	public void SetData(DiactricalMarkRuleItemResource diactricalMarkRuleItem)

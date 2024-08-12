@@ -11,6 +11,7 @@ public sealed partial class RuleListItem : MarginContainer
 
 	public void SetData(DiactricalMarkRuleItemResource detailedRule)
 	{
+		ProcessMode = ProcessModeEnum.Always;
 		RuleNameLabel.Text = detailedRule.Name;
 		GoToRuleButton.Pressed += () => BuildRuleDescriptionScene(detailedRule);
 	}

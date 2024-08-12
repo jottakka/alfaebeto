@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://vx4qqmcsoxwu"]
+
+[ext_resource type="Script" path="res://Components/UiComponent.cs" id="1_ic0rt"]
+[ext_resource type="PackedScene" uid="uid://dbuc2t8piv7w1" path="res://UI/Menus/rule_store_ui.tscn" id="2_amo25"]
+[ext_resource type="PackedScene" uid="uid://c7o41wb85oqjm" path="res://UI/Menus/rule_sets_viewing_ui.tscn" id="3_hlen4"]
+
+[node name="UiComponent" type="Node"]
+script = ExtResource("1_ic0rt")
+RuleStorePackaeScene = ExtResource("2_amo25")
+RuleSetsViewingUiPackedScene = ExtResource("3_hlen4")
