@@ -1,5 +1,4 @@
 using Godot;
-using WordProcessing.Models.Rules;
 
 public sealed partial class RuleSetListItem : MarginContainer
 {
@@ -14,18 +13,18 @@ public sealed partial class RuleSetListItem : MarginContainer
 	[Export]
 	public PackedScene RuleViewingUiPackedScene { get; set; }
 
-	public void SetData(RuleSetListItemViewModel ruleSetListItemViewModel)
+	public void SetData(DiactricalMarkRuleSetItemResource ruleSet)
 	{
-		RuleNameLabel.Text = ruleSetListItemViewModel.RuleSetName;
-		TotalRulesCountLabel.Text = ruleSetListItemViewModel.TotalCount.ToString();
-		UnlockedRulesCountLabel.Text = ruleSetListItemViewModel.UnlockedCount.ToString();
-		GoToRuleButton.Pressed += () => BuildRuleListItemScene(ruleSetListItemViewModel);
+		RuleNameLabel.Text = ruleSet.Name;
+		TotalRulesCountLabel.Text = ruleSet.TotalRulesCount.ToString();
+		UnlockedRulesCountLabel.Text = ruleSet.UnlockedRulesCount.ToString();
+		GoToRuleButton.Pressed += () => BuildRuleListItemScene(ruleSet);
 	}
 
-	private void BuildRuleListItemScene(RuleSetListItemViewModel ruleListItem)
+	private void BuildRuleListItemScene(DiactricalMarkRuleSetItemResource ruleSet)
 	{
 		RulesViewingUi rulesViewing = RuleViewingUiPackedScene.Instantiate<RulesViewingUi>();
-		rulesViewing.SetData(ruleListItem);
+		rulesViewing.SetData(ruleSet);
 		GetTree().Root.AddChild(rulesViewing);
 	}
 }

@@ -9,9 +9,13 @@ public partial class DiactricalMarkRuleItemResource : Resource
     [Export]
     public string RuleSet { get; set; }
     [Export]
-    public DiactricalMarkSubCategoryType SubRuleType { get; set; }
+    public DiactricalMarkSubCategoryType RuleType { get; set; }
     [Export]
-    public string SubRule { get; set; }
+    public string Name { get; set; }
+    [Export]
+    public string Description { get; set; }
+    [Export]
+    public string[] Examples { get; set; }
     [Export]
     public bool IsUnlocked { get; set; }
     [Export]

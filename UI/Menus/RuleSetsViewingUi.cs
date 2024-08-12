@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using Godot;
-using WordProcessing.Models.Rules;
 
 public sealed partial class RuleSetsViewingUi : Control
 {
@@ -10,7 +8,7 @@ public sealed partial class RuleSetsViewingUi : Control
 	public VBoxContainer RuleListVBoxContainer { get; set; }
 	[Export]
 	public Button ExitButton { get; set; }
-	private IReadOnlyList<RuleSetListItemViewModel> _ruleSetListItemViewModels => Global.Instance.RuleSetListItems;
+	private RulesResource _rulesResource => Global.Instance.RulesResource;
 
 	public override void _Ready()
 	{
@@ -20,16 +18,16 @@ public sealed partial class RuleSetsViewingUi : Control
 
 	private void BuildItens()
 	{
-		foreach (RuleSetListItemViewModel ruleSetListItemViewModel in _ruleSetListItemViewModels)
+		foreach (DiactricalMarkRuleSetItemResource ruleSet in _rulesResource.DiactricalMarkRuleSets)
 		{
-			AddItensToVBox(ruleSetListItemViewModel);
+			AddItensToVBox(ruleSet);
 		}
 	}
 
-	private void AddItensToVBox(RuleSetListItemViewModel ruleSetListItemViewModel)
+	private void AddItensToVBox(DiactricalMarkRuleSetItemResource ruleSet)
 	{
 		RuleSetListItem ruleListItem = RuleSetListItemPackedScene.Instantiate<RuleSetListItem>();
-		ruleListItem.SetData(ruleSetListItemViewModel);
+		ruleListItem.SetData(ruleSet);
 		RuleListVBoxContainer.AddChildDeffered(ruleListItem);
 	}
 }

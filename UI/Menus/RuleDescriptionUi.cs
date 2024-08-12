@@ -1,5 +1,4 @@
 using Godot;
-using WordProcessing.Models.Rules;
 
 public sealed partial class RuleDescriptionUi : Control
 {
@@ -17,10 +16,10 @@ public sealed partial class RuleDescriptionUi : Control
 		BackButton.Pressed += QueueFree;
 	}
 
-	public void SetData(DetailedRuleViewModel data)
+	public void SetData(DiactricalMarkRuleItemResource detailedRule)
 	{
-		RuleNameLabel.Text = data.RuleName;
-		DescriptionRichTextLabel.Text = data.RuleDescriptionRichText;
-		ExamplesRichTextLabel.Text = string.Join(", ", data.Examples);
+		RuleNameLabel.Text = detailedRule.Name;
+		DescriptionRichTextLabel.Text = detailedRule.Description;
+		ExamplesRichTextLabel.Text = string.Join(", ", detailedRule.Examples);
 	}
 }

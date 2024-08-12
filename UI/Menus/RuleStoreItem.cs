@@ -22,7 +22,7 @@ public sealed partial class RuleStoreItem : MarginContainer
 	public void SetData(DiactricalMarkRuleItemResource diactricalMarkRuleItem)
 	{
 		RuleSetLabel.Text = diactricalMarkRuleItem.RuleSet;
-		RuleLabel.Text = diactricalMarkRuleItem.SubRule;
+		RuleLabel.Text = diactricalMarkRuleItem.Name;
 		BoughtColorRect.Visible = diactricalMarkRuleItem.IsUnlocked;
 		CostLabel.Text = diactricalMarkRuleItem.KeyGemCost.ToString();
 		BuyButton.Disabled = diactricalMarkRuleItem.IsUnlocked;

@@ -5,7 +5,7 @@ using WordProcessing.Models.DiacriticalMarks;
 using WordProcessing.Models.Rules;
 
 [GlobalClass]
-public partial class UserDataInfoResource : Resource
+public sealed partial class UserDataInfoResource : BaseDataResource
 {
     [Export]
     public string UserName { get; set; } = "JOGADOR";
@@ -20,7 +20,7 @@ public partial class UserDataInfoResource : Resource
     [Export]
     public Array<DiactricalMarkSubCategoryType> UnlockedDiactricalMarksSubCategories { get; set; } = new();
     [Export]
-    public Array<DiactricalMarkRuleItemResource> DiactricalMarkRuleItems { get; set; } = new();
+    public DiactricalMarkRuleItemResource[] DiactricalMarkRuleItems { get; set; } = new DiactricalMarkRuleItemResource[0];
     [Export]
     public Dictionary<RuleType, WordCategoryInfoResource> WordsCategoryInfos { get; set; } = new();
 

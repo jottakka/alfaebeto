@@ -1,0 +1,301 @@
+[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=29 format=3]
+
+[ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_ycxtn"]
+[ext_resource type="Script" path="res://Data/UserDataInfoResource.cs" id="2_c233k"]
+
+[sub_resource type="Resource" id="Resource_uiy8g"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+RuleType = 0
+Name = "Terminadas em -a(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = true
+KeyGemCost = 3
+
+[sub_resource type="Resource" id="Resource_qjyv0"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+RuleType = 1
+Name = "Terminadas em -e(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 4
+
+[sub_resource type="Resource" id="Resource_fac6b"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+RuleType = 2
+Name = "Terminadas em -o(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 5
+
+[sub_resource type="Resource" id="Resource_2ulif"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+RuleType = 3
+Name = "Terminadas em -em"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 6
+
+[sub_resource type="Resource" id="Resource_56aov"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 1
+RuleSet = "Oxítonas"
+RuleType = 4
+Name = "Terminadas em -ens"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 7
+
+[sub_resource type="Resource" id="Resource_fxs6h"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 5
+Name = "Terminadas em -l"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 8
+
+[sub_resource type="Resource" id="Resource_4rcps"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 6
+Name = "Terminadas em -i(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 9
+
+[sub_resource type="Resource" id="Resource_x0k87"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 7
+Name = "Terminadas em -n"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 10
+
+[sub_resource type="Resource" id="Resource_a4p15"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 8
+Name = "Terminadas em -u(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 11
+
+[sub_resource type="Resource" id="Resource_spgpp"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 9
+Name = "Terminadas em -r"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 12
+
+[sub_resource type="Resource" id="Resource_a6ndk"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 10
+Name = "Terminadas em -x"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 13
+
+[sub_resource type="Resource" id="Resource_85tpr"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 11
+Name = "Terminadas em -ã(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 14
+
+[sub_resource type="Resource" id="Resource_jkl0w"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 12
+Name = "Terminadas em -ão(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 15
+
+[sub_resource type="Resource" id="Resource_2bqca"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 13
+Name = "Terminadas em -um"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 16
+
+[sub_resource type="Resource" id="Resource_lcvps"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 14
+Name = "Terminadas em -uns"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 17
+
+[sub_resource type="Resource" id="Resource_kmjh0"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 15
+Name = "Terminadas em -ps"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 18
+
+[sub_resource type="Resource" id="Resource_i6gdh"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 2
+RuleSet = "Paroxítonas"
+RuleType = 16
+Name = "Terminadas em Ditongo"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 19
+
+[sub_resource type="Resource" id="Resource_r7rdh"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 3
+RuleSet = "Proparoxítonas"
+RuleType = 17
+Name = "Todas Proparoxítonas"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 20
+
+[sub_resource type="Resource" id="Resource_ku44a"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 4
+RuleSet = "Ditongos Abertos"
+RuleType = 18
+Name = "Terminadas em -éi"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 21
+
+[sub_resource type="Resource" id="Resource_nuonw"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 4
+RuleSet = "Ditongos Abertos"
+RuleType = 19
+Name = "Terminadas em -éu"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 22
+
+[sub_resource type="Resource" id="Resource_qt3dk"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 4
+RuleSet = "Ditongos Abertos"
+RuleType = 20
+Name = "Terminadas em -ói"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 23
+
+[sub_resource type="Resource" id="Resource_6rrsp"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 5
+RuleSet = "Hiatos I e U Tônicos"
+RuleType = 21
+Name = "Sozinhos na Sílaba"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 24
+
+[sub_resource type="Resource" id="Resource_q0j3r"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 5
+RuleSet = "Hiatos I e U Tônicos"
+RuleType = 22
+Name = "Precedidos de Vogais"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 25
+
+[sub_resource type="Resource" id="Resource_g34r5"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 0
+RuleSet = "Monossílabas Tônicas"
+RuleType = 0
+Name = "Terminadas em -a(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 26
+
+[sub_resource type="Resource" id="Resource_nffo8"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 0
+RuleSet = "Monossílabas Tônicas"
+RuleType = 1
+Name = "Terminadas em -e(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 27
+
+[sub_resource type="Resource" id="Resource_f638k"]
+script = ExtResource("1_ycxtn")
+RuleSetType = 0
+RuleSet = "Monossílabas Tônicas"
+RuleType = 2
+Name = "Terminadas em -o(s)"
+Description = ""
+Examples = PackedStringArray()
+IsUnlocked = false
+KeyGemCost = 28
+
+[resource]
+script = ExtResource("2_c233k")
+UserName = "JOGADOR"
+TotalScore = 0
+TotalMoneyAmmount = 0
+TotalGreenKeyGemsAmmount = 0
+TotalRedKeyGemsAmmount = 0
+UnlockedDiactricalMarksSubCategories = [0]
+DiactricalMarkRuleItems = [SubResource("Resource_uiy8g"), SubResource("Resource_qjyv0"), SubResource("Resource_fac6b"), SubResource("Resource_2ulif"), SubResource("Resource_56aov"), SubResource("Resource_fxs6h"), SubResource("Resource_4rcps"), SubResource("Resource_x0k87"), SubResource("Resource_a4p15"), SubResource("Resource_spgpp"), SubResource("Resource_a6ndk"), SubResource("Resource_85tpr"), SubResource("Resource_jkl0w"), SubResource("Resource_2bqca"), SubResource("Resource_lcvps"), SubResource("Resource_kmjh0"), SubResource("Resource_i6gdh"), SubResource("Resource_r7rdh"), SubResource("Resource_ku44a"), SubResource("Resource_nuonw"), SubResource("Resource_qt3dk"), SubResource("Resource_6rrsp"), SubResource("Resource_q0j3r"), SubResource("Resource_g34r5"), SubResource("Resource_nffo8"), SubResource("Resource_f638k")]
+WordsCategoryInfos = {}

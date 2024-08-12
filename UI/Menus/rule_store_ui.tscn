@@ -96,9 +96,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 alignment = 1
 
-[node name="RuleStoreItem" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/RuleItemsVBoxContainer" instance=ExtResource("3_qg37h")]
-layout_mode = 2
-
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10

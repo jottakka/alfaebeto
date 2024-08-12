@@ -1,5 +1,4 @@
 using Godot;
-using WordProcessing.Models.Rules;
 
 public sealed partial class RulesViewingUi : Control
 {
@@ -19,20 +18,20 @@ public sealed partial class RulesViewingUi : Control
 		ExitButton.Pressed += QueueFree;
 	}
 
-	public void SetData(RuleSetListItemViewModel ruleSetListItemViewModel)
+	public void SetData(DiactricalMarkRuleSetItemResource ruleSet)
 	{
-		RuleSetNameLabel.Text = ruleSetListItemViewModel.RuleSetName;
-		RuleDescriptionLabel.Text = ruleSetListItemViewModel.RichTextDescription;
-		foreach (RuleListItemViewModel ruleListItemModel in ruleSetListItemViewModel.Rules)
+		RuleSetNameLabel.Text = ruleSet.Name;
+		RuleDescriptionLabel.Text = ruleSet.Description;
+		foreach (DiactricalMarkRuleItemResource ruleListItemModel in ruleSet.Rules)
 		{
 			AddItemsToVBox(ruleListItemModel);
 		}
 	}
 
-	private void AddItemsToVBox(RuleListItemViewModel ruleListItemModel)
+	private void AddItemsToVBox(DiactricalMarkRuleItemResource rule)
 	{
 		RuleListItem ruleListItem = RuleListItemPackedScene.Instantiate<RuleListItem>();
-		ruleListItem.SetData(ruleListItemModel);
+		ruleListItem.SetData(rule);
 		RuleListVBoxContainer.AddChildDeffered(ruleListItem);
 	}
 }
