@@ -8,14 +8,14 @@ public sealed partial class GemSpawnerComponent : Node
 
 	private Node _scene => Global.Instance.Scene;
 
-	public void SpawnGem(Vector2 position, GemsType gemType, int quantity = 1)
+	public void SpawnGem(Vector2 position, GemType gemType, int quantity = 1)
 	{
 		Vector2 rotationVector = quantity > 1 ? GetRandomDirection2D() : default;
 		float rotation = 2 * Mathf.Pi / quantity;
 		for (int i = 0; i < quantity; i++)
 		{
 			CollectableGem gem = CollectableGemScene.Instantiate<CollectableGem>();
-			gem.GemsType = gemType;
+			gem.GemType = gemType;
 			gem.GlobalPosition = quantity > 1
 				? position + (rotationVector.Rotated(rotation * i) * SpawnRadium)
 				: position; ;

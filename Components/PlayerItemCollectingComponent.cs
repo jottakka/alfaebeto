@@ -2,7 +2,9 @@ using Godot;
 public sealed partial class PlayerItemCollectingComponent : Node
 {
 	[Export]
-	public AudioStreamPlayer AudioStreamPlayer { get; set; }
+	public AudioStreamPlayer CoinAudioStreamPlayer { get; set; }
+	[Export]
+	public AudioStreamPlayer GemAudioStreamPlayer { get; set; }
 
 	private Player _player => GetParent<Player>();
 
@@ -18,6 +20,9 @@ public sealed partial class PlayerItemCollectingComponent : Node
 				break;
 			case CollectableCoin coin:
 				CollectCoin(coin);
+				break;
+			case CollectableGem gem:
+				CollectGem(gem.GemType);
 				break;
 			default:
 				GD.PrintErr($"Item type not recognized {item.GetType().Name}");
@@ -38,6 +43,12 @@ public sealed partial class PlayerItemCollectingComponent : Node
 	private void CollectCoin(CollectableCoin coin)
 	{
 		_player.AddMoney(coin.Value);
-		AudioStreamPlayer.Play();
+		CoinAudioStreamPlayer.Play();
+	}
+
+	private void CollectGem(GemType gemType)
+	{
+		_player.AddGem(gemType);
+		GemAudioStreamPlayer.Play();
 	}
 }

@@ -3,11 +3,11 @@ using Godot;
 public sealed partial class CollectableGem : CollectableItemBase
 {
 	[Export]
-	public GemsType GemsType { get; set; } = GemsType.Red;
+	public GemType GemType { get; set; } = GemType.Red;
 
 	public override void _Ready()
 	{
-		Sprite.Frame = (int)GemsType;
+		Sprite.Frame = (int)GemType;
 		base._Ready();
 	}
 }

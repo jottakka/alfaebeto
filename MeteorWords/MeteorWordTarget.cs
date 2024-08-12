@@ -28,6 +28,7 @@ public sealed partial class MeteorWordTarget : Area2D
 
 	public override void _Ready()
 	{
+		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
 		_xorCHWord = Global.Instance.XorChWords.Dequeue();
 
 		Speed = (float)GD.RandRange(Speed - SpeedVariation, Speed + SpeedVariation);
@@ -59,7 +60,7 @@ public sealed partial class MeteorWordTarget : Area2D
 
 	private void OnReadyToQueueFree()
 	{
-		GemSpawnerComponent.SpawnGem(Position, GemsType.Green);
+		GemSpawnerComponent.SpawnGem(Position, GemType.Green);
 		QueueFree();
 	}
 

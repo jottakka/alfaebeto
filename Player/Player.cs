@@ -30,9 +30,9 @@ public sealed partial class Player : CharacterBody2D
 	[Signal]
 	public delegate void OnMoneyChangedSignalEventHandler(long money);
 	[Signal]
+	public delegate void OnGemAddedSignalEventHandler(GemType gemType);
+	[Signal]
 	public delegate void OnPlayerDeathSignalEventHandler();
-
-	public long Money { get; private set; } = 0;
 
 	public override void _Ready()
 	{
@@ -51,8 +51,12 @@ public sealed partial class Player : CharacterBody2D
 
 	public void AddMoney(long money)
 	{
-		Money += money;
-		_ = EmitSignal(nameof(OnMoneyChangedSignal), Money);
+		_ = EmitSignal(nameof(OnMoneyChangedSignal), money);
+	}
+
+	public void AddGem(GemType gemType)
+	{
+		_ = EmitSignal(nameof(OnGemAddedSignal), (int)gemType);
 	}
 
 	private void SettingCollisions()

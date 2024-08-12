@@ -159,7 +159,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 			LeftTurrentWing.DesallowShoot();
 			GemSpawnerComponent.SpawnGem(
 				GlobalPosition,
-				GemsType.Red,
+				GemType.Red,
 				GetSpawnGemsQuantity()
 			);
 			AnimationPlayer.Play(EnemyAnimations.EnemyWordDying);

@@ -12,9 +12,13 @@ public sealed partial class StartGame : Node2D
 	[Export]
 	public PauseMenuUi PauseMenuUi { get; set; }
 
+	public GameResultManager GameResultManager { get; private set; }
+
 	public override void _Ready()
 	{
 		Global.Instance.SettingMainNodeData(Player, Stage);
+
+		GameResultManager = new GameResultManager(Player);
 
 		Player.OnPlayerDeathSignal += OnPlayerDeath;
 	}
@@ -25,6 +29,11 @@ public sealed partial class StartGame : Node2D
 		{
 			PauseMenuUi.Pause();
 		}
+	}
+
+	public override void _ExitTree()
+	{
+		GameResultManager.UpdateUserData();
 	}
 
 	private void OnPlayerDeath()
