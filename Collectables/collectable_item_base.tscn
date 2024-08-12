@@ -6,11 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8a46c"]
 radius = 8.0
 
-[node name="CollectableItemBase" type="Area2D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "AudioStreamPlayer")]
+[node name="CollectableItemBase" type="Area2D" node_paths=PackedStringArray("AnimationPlayer", "Sprite")]
 script = ExtResource("1_8gu6y")
 AnimationPlayer = NodePath("AnimationPlayer")
 Sprite = NodePath("Sprite")
-AudioStreamPlayer = NodePath("")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.365, 0.365)

@@ -14,7 +14,11 @@ public sealed partial class MeteorWordTarget : Area2D
 	[Export]
 	public VisibleOnScreenNotifier2D VisibleOnScreenNotifier2D { get; set; }
 	[Export]
+	public GemSpawnerComponent GemSpawnerComponent { get; set; }
+	[Export]
 	public float Speed { get; set; } = 50.0f;
+	[Export]
+	public float SpeedVariation { get; set; } = 10.0f;
 
 	private XorCHWord _xorCHWord;
 
@@ -26,6 +30,8 @@ public sealed partial class MeteorWordTarget : Area2D
 	{
 		_xorCHWord = Global.Instance.XorChWords.Dequeue();
 
+		Speed = (float)GD.RandRange(Speed - SpeedVariation, Speed + SpeedVariation);
+
 		VisibleOnScreenNotifier2D.ScreenExited += QueueFree;
 
 		BuildAnswerMeteors();
@@ -36,7 +42,7 @@ public sealed partial class MeteorWordTarget : Area2D
 		MainMeteor.WordFirstPart.Text = _xorCHWord.FirstPart;
 		MainMeteor.WordLastPart.Text = _xorCHWord.SecondPart;
 
-		MainMeteor.ReadyToQueueFreeSignal += QueueFree;
+		MainMeteor.ReadyToQueueFreeSignal += OnReadyToQueueFree;
 
 		AnimationPlayer.Play(MeteorAnimations.MeteorWordOrbiting);
 	}
@@ -49,6 +55,12 @@ public sealed partial class MeteorWordTarget : Area2D
 		}
 
 		Position += new Vector2(0, Speed * (float)delta);
+	}
+
+	private void OnReadyToQueueFree()
+	{
+		GemSpawnerComponent.SpawnGem(Position, GemsType.Green);
+		QueueFree();
 	}
 
 	private void BuildAnswerMeteors()

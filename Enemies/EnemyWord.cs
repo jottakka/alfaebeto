@@ -21,6 +21,8 @@ public sealed partial class EnemyWord : CharacterBody2D
 	[Export]
 	public AnimationPlayer AnimationPlayer { get; set; }
 	[Export]
+	public GemSpawnerComponent GemSpawnerComponent { get; set; }
+	[Export]
 	public float HorizontalSpeedModulus { get; set; } = 30.0f;
 	[Export]
 	public float VerticalVelocityModulus { get; set; } = 10.0f;
@@ -33,6 +35,8 @@ public sealed partial class EnemyWord : CharacterBody2D
 	private DiactricalMarkWordInfo _wordInfo;
 
 	private Vector2 _velocity;
+
+	private int _errorCount = 0;
 
 	public override void _Ready()
 	{
@@ -139,6 +143,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 		Word.ReadyToDequeueSignal += () =>
 		{
 			AnimationPlayer.Play(EnemyAnimations.EnemyWordDeath, customSpeed: 2);
+
 		};
 
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
@@ -152,12 +157,32 @@ public sealed partial class EnemyWord : CharacterBody2D
 			EnemySpawnerRight.DesallowSpawn();
 			RightTurrentWing.DesallowShoot();
 			LeftTurrentWing.DesallowShoot();
+			GemSpawnerComponent.SpawnGem(
+				GlobalPosition,
+				GemsType.Red,
+				GetSpawnGemsQuantity()
+			);
 			AnimationPlayer.Play(EnemyAnimations.EnemyWordDying);
 		}
 		else
 		{
 			// Do something to punish the player. A life lost, a score penalty, a strong foe spawn?.
+			_errorCount++;
 		}
+	}
+
+	private int GetSpawnGemsQuantity()
+	{
+		float percentage =
+			(_wordInfo.Original.Length - _errorCount) / (float)_wordInfo.Original.Length; // your float value here;
+
+		return percentage switch
+		{
+			1.0f => 4, // 1.0f represents 100% in float
+			>= 0.8f => 3,
+			>= 0.4f => 2,
+			_ => 1
+		};
 	}
 }
 
