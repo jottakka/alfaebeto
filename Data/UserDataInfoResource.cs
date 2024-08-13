@@ -37,5 +37,11 @@ public sealed partial class UserDataInfoResource : BaseDataResource
         TotalMoneyAmmount += gameResultData.MoneyAmmount;
         TotalScore += gameResultData.Score;
         _wordAccuracyInfoManager.UpdateUserWordsResultsData(gameResultData.WordResults);
+        _ = EmitSignal(nameof(OnSaveChangesSignal));
+    }
+
+    public void Update()
+    {
+        _ = EmitSignal(nameof(OnSaveChangesSignal));
     }
 }

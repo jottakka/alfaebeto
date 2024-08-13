@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brvixywl1fsl4"]
+[gd_scene load_steps=9 format=3 uid="uid://brvixywl1fsl4"]
 
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="1_nmvuq"]
 [ext_resource type="Texture2D" uid="uid://vp02d1ih0iut" path="res://UI/Menus/Art/glassPanel.png" id="2_3bxjs"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://da0q246bveamb" path="res://UI/Menus/Art/gem_1.png" id="3_iji0e"]
 [ext_resource type="Texture2D" uid="uid://burspf0chsnxu" path="res://UI/Menus/Art/dollar.png" id="4_b7y1u"]
 [ext_resource type="Texture2D" uid="uid://b0lsfdruaj74d" path="res://UI/Menus/Art/check_o.png" id="5_wac6x"]
+[ext_resource type="Texture2D" uid="uid://dotk4pixctwlr" path="res://UI/Menus/Art/diamond (2).png" id="7_li6ar"]
+[ext_resource type="Texture2D" uid="uid://rgckif5sxsh5" path="res://UI/Menus/Art/block.png" id="8_1sysb"]
 
-[node name="RuleStoreItem" type="MarginContainer" node_paths=PackedStringArray("CostLabel", "RuleSetLabel", "RuleLabel", "BoughtColorRect", "BuyButton")]
+[node name="RuleStoreItem" type="MarginContainer" node_paths=PackedStringArray("CostLabel", "RuleSetLabel", "RuleLabel", "BoughtColorRect", "BuyButton", "NotAllowed")]
 offset_right = 408.0
 offset_bottom = 120.0
 size_flags_vertical = 0
@@ -18,6 +20,7 @@ RuleSetLabel = NodePath("MarginContainer/VBoxContainer/RuleSetLabel")
 RuleLabel = NodePath("MarginContainer/VBoxContainer/RuleLabel")
 BoughtColorRect = NodePath("BoughtColorRect")
 BuyButton = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Button")
+NotAllowed = NodePath("NotAllowed")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
@@ -39,7 +42,7 @@ layout_mode = 2
 
 [node name="RuleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.0666666, 1, 0, 1)
+theme_override_colors/font_color = Color(1, 0.866, 0.33, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "adfafasdafsd"
 
@@ -86,3 +89,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_wac6x")
 expand_mode = 2
+
+[node name="NotAllowed" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.843137, 1, 0.611765, 0.67451)
+position = Vector2(175, 58)
+scale = Vector2(0.804688, 0.804688)
+texture = ExtResource("7_li6ar")
+
+[node name="Block" type="Sprite2D" parent="NotAllowed"]
+self_modulate = Color(1, 0.501961, 0.501961, 0.67451)
+position = Vector2(1.99999, -5.99999)
+scale = Vector2(1.40625, 1.40625)
+texture = ExtResource("8_1sysb")

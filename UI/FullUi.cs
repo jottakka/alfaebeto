@@ -1,3 +1,4 @@
+using AlfaEBetto.UI;
 using Godot;
 
 public sealed partial class FullUi : Control
@@ -6,4 +7,6 @@ public sealed partial class FullUi : Control
 	public MoneyCounterUi MoneyCounterUi { get; set; }
 	[Export]
 	public HeartShieldUi HeartShieldUi { get; set; }
+	[Export]
+	public GemsUi GemsUi { get; set; }
 }

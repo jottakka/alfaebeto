@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgp8fvw4ywvwv"]
+[gd_scene load_steps=5 format=3 uid="uid://dgp8fvw4ywvwv"]
 
 [ext_resource type="PackedScene" uid="uid://3mtpb57hvf86" path="res://UI/health_shield_ui.tscn" id="1_2ar0c"]
 [ext_resource type="Script" path="res://UI/FullUi.cs" id="1_nyqms"]
 [ext_resource type="PackedScene" uid="uid://2vtfkbiotoyf" path="res://UI/money_counter_ui.tscn" id="2_xs66a"]
+[ext_resource type="PackedScene" uid="uid://d110ps3ds8fe8" path="res://UI/gems_ui.tscn" id="4_sjcht"]
 
-[node name="FullUi" type="Control" node_paths=PackedStringArray("MoneyCounterUi", "HeartShieldUi")]
+[node name="FullUi" type="Control" node_paths=PackedStringArray("MoneyCounterUi", "HeartShieldUi", "GemsUi")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,19 +13,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nyqms")
-MoneyCounterUi = NodePath("PanelContainer/MoneyCounterUi")
-HeartShieldUi = NodePath("PanelContainer/HealthShieldUi")
+MoneyCounterUi = NodePath("MoneyCounterUi")
+HeartShieldUi = NodePath("HealthShieldUi")
+GemsUi = NodePath("GemsUi")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
+[node name="MoneyCounterUi" parent="." instance=ExtResource("2_xs66a")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_right = 540.0
 offset_bottom = 960.0
 
-[node name="MoneyCounterUi" parent="PanelContainer" instance=ExtResource("2_xs66a")]
+[node name="HealthShieldUi" parent="." instance=ExtResource("1_2ar0c")]
 layout_mode = 2
-
-[node name="HealthShieldUi" parent="PanelContainer" instance=ExtResource("1_2ar0c")]
-layout_mode = 2
+offset_top = 960.0
+offset_right = 540.0
+offset_bottom = 960.0
+scale = Vector2(0.75, 0.75)
 size_flags_vertical = 8
 size_flags_stretch_ratio = 8.7
+
+[node name="GemsUi" parent="." instance=ExtResource("4_sjcht")]
+modulate = Color(1, 1, 1, 0.713726)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 775.0
+offset_right = 117.0
+offset_bottom = 907.0
+scale = Vector2(0.7, 0.7)
