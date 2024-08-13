@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfgorkxxks0xb"]
+[gd_scene load_steps=8 format=3 uid="uid://dfgorkxxks0xb"]
 
 [ext_resource type="Script" path="res://Components/PlayerItemCollectingComponent.cs" id="1_gwvcd"]
 [ext_resource type="AudioStream" uid="uid://dvnbrftc7ixbg" path="res://Collectables/Sounds/coins_pickup_shake_02.ogg" id="2_5b1i8"]
 [ext_resource type="AudioStream" uid="uid://besrerpdlkswa" path="res://Collectables/Sounds/coins_pickup_shake_08.ogg" id="3_j0c3p"]
 [ext_resource type="AudioStream" uid="uid://dmq17gr51txnj" path="res://Collectables/Sounds/coins_pickup_shake_10.ogg" id="4_s6v6y"]
+[ext_resource type="AudioStream" uid="uid://dd24yk3kitja" path="res://Collectables/Sounds/snd_fragment_retrievewav-14728.mp3" id="5_b8tvs"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p61px"]
 random_pitch = 1.1
@@ -16,11 +17,22 @@ stream_1/weight = 1.0
 stream_2/stream = ExtResource("4_s6v6y")
 stream_2/weight = 1.0
 
-[node name="PlayerItemCollectingComponent" type="Node" node_paths=PackedStringArray("AudioStreamPlayer")]
-script = ExtResource("1_gwvcd")
-AudioStreamPlayer = NodePath("AudioStreamPlayer")
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e7n7g"]
+random_pitch = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("5_b8tvs")
+stream_0/weight = 1.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="PlayerItemCollectingComponent" type="Node" node_paths=PackedStringArray("CoinAudioStreamPlayer", "GemAudioStreamPlayer")]
+script = ExtResource("1_gwvcd")
+CoinAudioStreamPlayer = NodePath("CoinAudioStreamPlayer")
+GemAudioStreamPlayer = NodePath("GemAudioStreamPlayer")
+
+[node name="CoinAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_p61px")
 volume_db = -15.0
 max_polyphony = 20
+
+[node name="GemAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_e7n7g")
+max_polyphony = 10

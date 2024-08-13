@@ -7,8 +7,8 @@ public sealed partial class GameOverUi : Control
 	public AnimationPlayer AnimationPlayer { get; set; }
 	[Export]
 	public Button ProcceedButton { get; set; }
-	[Export]
-	public SceneManagerComponent SceneManagerComponent { get; set; }
+
+	private Global _global => Global.Instance;
 
 	public override void _Ready()
 	{
@@ -18,7 +18,7 @@ public sealed partial class GameOverUi : Control
 		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
 		ProcceedButton.Pressed += () =>
 		{
-			SceneManagerComponent.SwitchToMainMenu();
+			_global.SwitchToMainMenu();
 		};
 	}
 

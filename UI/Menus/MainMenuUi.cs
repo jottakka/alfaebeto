@@ -9,20 +9,20 @@ public sealed partial class MainMenuUi : Node
 	[Export]
 	public Button RulesButton { get; set; }
 	[Export]
-	public PackedScene StartGamePackedScene { get; set; }
-	[Export]
 	public UiComponent UiComponent { get; set; }
+
+	private Global _global => Global.Instance;
 
 	public override void _Ready()
 	{
 		ProcessMode = ProcessModeEnum.Always;
 		StartButton.Pressed += () =>
 		{
-			_ = GetTree().ChangeSceneToPacked(StartGamePackedScene);
+			_global.SwitchToStartGame();
 		};
 
 		StoreButton.Pressed += () =>
-		{
+		{ 
 			UiComponent.OpenRuleStoreUi();
 		};
 

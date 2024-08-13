@@ -1,5 +1,4 @@
 using Godot;
-
 public sealed partial class PauseMenuUi : Control
 {
 	[Export]
@@ -10,8 +9,8 @@ public sealed partial class PauseMenuUi : Control
 	public Button ExitButton { get; set; }
 	[Export]
 	public Button RulesButton { get; set; }
-	[Export]
-	public SceneManagerComponent SceneManagerComponent { get; set; }
+
+	private Global _global => Global.Instance;
 
 	public override void _Ready()
 	{
@@ -42,7 +41,7 @@ public sealed partial class PauseMenuUi : Control
 		{
 			GetTree().Paused = false;
 
-			SceneManagerComponent.SwitchToMainMenu();
+			_global.SwitchToMainMenu();
 		};
 	}
 }

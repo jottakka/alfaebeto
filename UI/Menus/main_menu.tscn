@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://n3viwgm8cp5"]
+[gd_scene load_steps=15 format=3 uid="uid://n3viwgm8cp5"]
 
 [ext_resource type="Texture2D" uid="uid://paatxqy1s874" path="res://UI/Menus/Art/5.png" id="1_agj4m"]
 [ext_resource type="Script" path="res://UI/Menus/MainMenuUi.cs" id="1_tu6jm"]
-[ext_resource type="PackedScene" uid="uid://cmmfe24mog8j7" path="res://start_game.tscn" id="2_41k7l"]
 [ext_resource type="FontFile" uid="uid://cvkvjua8h0866" path="res://UI/Menus/Art/Kenney High Square.ttf" id="2_egk10"]
 [ext_resource type="PackedScene" uid="uid://vx4qqmcsoxwu" path="res://Components/ui_component.tscn" id="3_1q1tu"]
 [ext_resource type="FontFile" uid="uid://m8cw1p7p2u5c" path="res://UI/Menus/Art/Kenney Future.ttf" id="3_ixexg"]
@@ -144,7 +143,6 @@ script = ExtResource("1_tu6jm")
 StartButton = NodePath("VBoxContainer/StartButton")
 StoreButton = NodePath("VBoxContainer/StoreButton")
 RulesButton = NodePath("VBoxContainer/RulesButton")
-StartGamePackedScene = ExtResource("2_41k7l")
 UiComponent = NodePath("UiComponent")
 metadata/_edit_use_anchors_ = true
 
