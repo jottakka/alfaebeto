@@ -2,169 +2,185 @@
   "Categorias": [
     {
       "Nome": "Oxítonas",
-      "Descrição": "[center]Oxítonas são palavras cuja última sílaba é tônica. Exemplos incluem sofá, maracujá, Paraná.[/center]",
+      "Descrição": "Oxítonas são palavras cuja última sílaba é tônica. Exemplos incluem sofá, maracujá, Paraná.",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -a(s)",
-          "Descrição": "[center]Oxítonas terminadas em -a ou -as, como sofá, maracujá, Paraná, ananás, marajás, atrás.[/center]",
+          "Descrição": "Oxítonas terminadas em -a ou -as, como sofá, maracujá, Paraná, ananás, marajás, atrás.",
           "Palavras": ["sofá", "maracujá", "Paraná", "ananás", "marajás", "atrás"]
         },
         {
           "Nome": "Terminadas em -e(s)",
-          "Descrição": "[center]Oxítonas terminadas em -e ou -es, como Pelé, café, você, freguês, bebês.[/center]",
+          "Descrição": "Oxítonas terminadas em -e ou -es, como Pelé, café, você, freguês, bebês.",
           "Palavras": ["Pelé", "café", "você", "freguês", "bebês"]
         },
         {
           "Nome": "Terminadas em -o(s)",
-          "Descrição": "[center]Oxítonas terminadas em -o ou -os, como cipó, paletó, avó, dominó, pavô, vovô, chororô.[/center]",
+          "Descrição": "Oxítonas terminadas em -o ou -os, como cipó, paletó, avó, dominó, pavô, vovô, chororô.",
           "Palavras": ["cipó", "paletó", "avó", "dominó", "pavô", "vovô", "chororô"]
         },
         {
           "Nome": "Terminadas em -em",
-          "Descrição": "[center]Oxítonas terminadas em -em, como amém, também, armazém, alguém.[/center]",
+          "Descrição": "Oxítonas terminadas em -em, como amém, também, armazém, alguém.",
           "Palavras": ["amém", "também", "armazém", "alguém"]
         },
         {
           "Nome": "Terminadas em -ens",
-          "Descrição": "[center]Oxítonas terminadas em -ens, como parabéns, reféns, armazéns.[/center]",
+          "Descrição": "Oxítonas terminadas em -ens, como parabéns, reféns, armazéns.",
           "Palavras": ["parabéns", "reféns", "armazéns"]
         }
       ]
     },
     {
       "Nome": "Paroxítonas",
-      "Descrição": "[center]Paroxítonas são palavras cuja penúltima sílaba é tônica. Exemplos incluem fácil, útil, fósil.[/center]",
+      "Descrição": "Paroxítonas são palavras cuja penúltima sílaba é tônica. Exemplos incluem fácil, útil, fósil.",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -l",
-          "Descrição": "[center]Paroxítonas terminadas em -l, como fácil, útil, fóssil, réptil, níquel.[/center]",
-          "Palavras": ["fácil", "útil", "fóssil", "réptil", "níquel"]
+          "Descrição": "Paroxítonas terminadas em -l, como fácil, útil, fóssil, réptil, níquel.",
+          "Palavras": ["fácil", "útil", "fóssil", "réptil", "níquel", "ignóbil", "verossímil", "estéril", "têxtil", "retrátil"]
         },
         {
           "Nome": "Terminadas em -i(s)",
-          "Descrição": "[center]Paroxítonas terminadas em -i ou -is, como júri, lápis, tênis, biquíni.[/center]",
-          "Palavras": ["júri", "lápis", "tênis", "biquíni"]
+          "Descrição": "Paroxítonas terminadas em -i ou -is, como júri, lápis, tênis, biquíni.",
+          "Palavras": ["júri", "lápis", "tênis", "biquíni", "hortifrúti", "táxi", "táxis", "cáqui"]
         },
         {
           "Nome": "Terminadas em -n",
-          "Descrição": "[center]Paroxítonas terminadas em -n, como hífen, pólen, elétron, nêutron, abdômen.[/center]",
-          "Palavras": ["hífen", "pólen", "elétron", "nêutron", "abdômen"]
+          "Descrição": "Paroxítonas terminadas em -n, como hífen, pólen, elétron, nêutron, abdômen.",
+          "Palavras": ["hífen", "pólen", "elétron", "nêutron", "abdômen", "gérmen", "glúten", "ámen", "mórmon", "fóton"]
         },
         {
           "Nome": "Terminadas em -u(s)",
-          "Descrição": "[center]Paroxítonas terminadas em -u ou -us, como vírus, Vênus, ônus, bônus, álbum.[/center]",
-          "Palavras": ["vírus", "Vênus", "ônus", "bônus", "álbum"]
+          "Descrição": "Paroxítonas terminadas em -u ou -us, como vírus, Vênus, ônus, bônus.",
+          "Palavras": ["vírus", "Vênus", "ônus", "bônus", "tônus", "húmus", "lótus", "antivírus", "célsius"]
         },
         {
           "Nome": "Terminadas em -r",
-          "Descrição": "[center]Paroxítonas terminadas em -r, como revólver, caráter, âmbar, repórter.[/center]",
-          "Palavras": ["revólver", "caráter", "âmbar", "repórter"]
+          "Descrição": "Paroxítonas terminadas em -r, como revólver, caráter, âmbar, repórter.",
+          "Palavras": ["revólver", "caráter", "âmbar", "repórter", "líder", "gêiser", "poliéster"]
         },
         {
           "Nome": "Terminadas em -x",
-          "Descrição": "[center]Paroxítonas terminadas em -x, como látex, fênix, tórax, fértil, órix.[/center]",
-          "Palavras": ["látex", "fênix", "tórax", "fértil", "órix"]
+          "Descrição": "Paroxítonas terminadas em -x, como látex, fênix, tórax, clímax.",
+          "Palavras": ["látex", "fênix", "tórax", "fértil", "clímax", "cálix", "hélix", "símplex"]
         },
         {
           "Nome": "Terminadas em -ã(s)",
-          "Descrição": "[center]Paroxítonas terminadas em -ã ou -ãs, como ímã, órfã, órfãs.[/center]",
-          "Palavras": ["ímã", "órfã", "órfãs"]
+          "Descrição": "Paroxítonas terminadas em -ã ou -ãs, como ímã, órfã, órfãs.",
+          "Palavras": ["ímã", "órfã", "órfãs", "ímãs"]
         },
         {
           "Nome": "Terminadas em -ão(s)",
-          "Descrição": "[center]Paroxítonas terminadas em -ão ou -ãos, como órgão, sótão, órgãos.[/center]",
+          "Descrição": "Paroxítonas terminadas em -ão ou -ãos, como órgão, sótão, órgãos.",
           "Palavras": ["órgão", "sótão", "órgãos"]
         },
         {
           "Nome": "Terminadas em -um",
-          "Descrição": "[center]Paroxítonas terminadas em -um, como álbum, médium, fórum.[/center]",
-          "Palavras": ["álbum", "médium", "fórum"]
+          "Descrição": "Paroxítonas terminadas em -um, como álbum, médium, fórum.",
+          "Palavras": ["álbum", "médium", "fórum", "tétum", "fálum", "sérum"]
         },
         {
           "Nome": "Terminadas em -uns",
-          "Descrição": "[center]Paroxítonas terminadas em -uns, como álbuns, fóruns.[/center]",
+          "Descrição": "Paroxítonas terminadas em -uns, como álbuns, fóruns.",
           "Palavras": ["álbuns", "fóruns"]
         },
         {
           "Nome": "Terminadas em -ps",
-          "Descrição": "[center]Paroxítonas terminadas em -ps, como fórceps, bíceps.[/center]",
-          "Palavras": ["fórceps", "bíceps"]
+          "Descrição": "Paroxítonas terminadas em -ps, como fórceps, bíceps.",
+          "Palavras": ["fórceps", "bíceps", "crísops", "uteróceps", "tríceps"]
         },
         {
           "Nome": "Terminadas em Ditongo",
-          "Descrição": "[center]Paroxítonas terminadas em ditongo, como água, história, série, pônei, móveis, tênue.[/center]",
-          "Palavras": ["água", "história", "série", "pônei", "móveis", "tênue"]
+          "Descrição": "Paroxítonas terminadas em ditongo, como água, história, série, pônei, móveis, tênue.",
+          "Palavras": ["água", "história", "série", "pônei", "móveis", "tênue", "língua", "inócua", "régua", "égua", "estátua"]
         }
       ]
     },
     {
       "Nome": "Proparoxítonas",
-      "Descrição": "[center]Proparoxítonas são palavras cuja antepenúltima sílaba é tônica. Exemplos incluem lânguido, física, trópico.[/center]",
+      "Descrição": "Proparoxítonas são palavras cuja antepenúltima sílaba é tônica. Exemplos incluem lânguido, física, trópico.",
       "Subcategorias": [
         {
           "Nome": "Todas Proparoxítonas",
-          "Descrição": "[center]Todas as proparoxítonas, como lânguido, física, trópico, álibi, hábitat, déficit, lápide, álgebra, célula, pêndulo, amígdalas, amálgama, cúpula, análise, ânimo.[/center]",
+          "Descrição": "Todas as proparoxítonas, como lânguido, física, trópico, álibi, hábitat, déficit, lápide, álgebra, célula, pêndulo, amígdalas, amálgama, cúpula, análise, ânimo.",
           "Palavras": ["lânguido", "física", "trópico", "álibi", "hábitat", "déficit", "lápide", "álgebra", "célula", "pêndulo", "amígdalas", "amálgama", "cúpula", "análise", "ânimo"]
         }
       ]
     },
     {
       "Nome": "Ditongos Abertos",
-      "Descrição": "[center]Ditongos abertos são combinações de vogal e semivogal em que a vogal é pronunciada de maneira mais aberta. Exemplos incluem fiéis, papéis, pastéis.[/center]",
+      "Descrição": "Ditongos abertos são combinações de vogal e semivogal em que a vogal é pronunciada de maneira mais aberta. Exemplos incluem fiéis, papéis, pastéis.",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -éi",
-          "Descrição": "[center]Ditongos abertos terminados em -éi, como fiéis, papéis, pastéis, coronéis, anéis.[/center]",
+          "Descrição": "Ditongos abertos terminados em -éi, como fiéis, papéis, pastéis, coronéis, anéis.",
           "Palavras": ["fiéis", "papéis", "pastéis", "coronéis", "anéis"]
         },
         {
           "Nome": "Terminadas em -éu",
-          "Descrição": "[center]Ditongos abertos terminados em -éu, como céu, chapéu, troféu, véu, réu.[/center]",
+          "Descrição": "Ditongos abertos terminados em -éu, como céu, chapéu, troféu, véu, réu.",
           "Palavras": ["céu", "chapéu", "troféu", "véu", "réu"]
         },
         {
           "Nome": "Terminadas em -ói",
-          "Descrição": "[center]Ditongos abertos terminados em -ói, como herói, sóis, faróis, lençóis, rói.[/center]",
+          "Descrição": "Ditongos abertos terminados em -ói, como herói, sóis, faróis, lençóis, rói.",
           "Palavras": ["herói", "sóis", "faróis", "lençóis", "rói"]
         }
       ]
     },
     {
       "Nome": "Hiatos I e U Tônicos",
-      "Descrição": "[center]Hiatos ocorrem quando duas vogais aparecem juntas na palavra, mas em sílabas separadas. Exemplos incluem saída, juízes, saúde.[/center]",
+      "Descrição": "Hiatos ocorrem quando duas vogais aparecem juntas na palavra, mas em sílabas separadas. Exemplos incluem saída, juízes, saúde.",
       "Subcategorias": [
         {
           "Nome": "Sozinhos na Sílaba",
-          "Descrição": "[center]Hiatos em que I ou U tônicos aparecem sozinhos na sílaba, como saída, juízes, saúde, viúva, caíste, saíste.[/center]",
+          "Descrição": "Hiatos em que I ou U tônicos aparecem sozinhos na sílaba, como saída, juízes, saúde, viúva, caíste, saíste.",
           "Palavras": ["saída", "juízes", "saúde", "viúva", "caíste", "saíste"]
         },
         {
           "Nome": "Precedidos de Vogais",
-          "Descrição": "[center]Hiatos em que I ou U tônicos são precedidos de vogais, como balaústre, ruído, viúvo, egoísmo, egoísta.[/center]",
+          "Descrição": "Hiatos em que I ou U tônicos são precedidos de vogais, como balaústre, ruído, viúvo, egoísmo, egoísta.",
           "Palavras": ["balaústre", "ruído", "viúvo", "egoísmo", "egoísta"]
         }
       ]
     },
 	{
       "Nome": "Monossílabas Tônicas",
-      "Descrição": "[center]Monossílabas tônicas são palavras de uma única sílaba com acentuação própria, pronunciadas com mais intensidade. Exemplos incluem pá, já, má.[/center]",
+      "Descrição": "Monossílabas tônicas são palavras de uma única sílaba com acentuação própria, pronunciadas com mais intensidade. Exemplos incluem pá, já, má.",
       "Subcategorias": [
         {
           "Nome": "Terminadas em -a(s)",
-          "Descrição": "[center]Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás.[/center]",
+          "Descrição": "Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás.",
           "Palavras": ["pá", "já", "má", "lá", "trás", "más", "chás"]
         },
         {
           "Nome": "Terminadas em -e(s)",
-          "Descrição": "[center]Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés.[/center]",
+          "Descrição": "Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés.",
           "Palavras": ["pé", "fé", "sé", "mês", "três", "rés"]
         },
         {
           "Nome": "Terminadas em -o(s)",
-          "Descrição": "[center]Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós.[/center]",
+          "Descrição": "Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós.",
           "Palavras": ["pó", "só", "dó", "cós", "sós", "nós"]
         }
       ]
     }
+  ],
+  "PalavrasSem": [
+    "mesa", "cana", "alga", "nada", "casa", "pare", "pape", "doce", "nome", "luze",
+    "jogo", "pano", "bolo", "cano", "galo", "alem", "item", "harem", "trem", "bem", 
+    "convergem", "aprendizagem", "jovens", "homens", "libidinagens", "adens", "lembrens", 
+    "animal", "final", "neutral", "local", "legal", "pastoril", "anil", "pari", "mari", 
+    "anis", "biquini", "finis", "zumbis", "nenen", "megaton", "neon", "champignon", "Nelson", 
+    "parkinson", "corpus", "campus", "museus", "opus", "perizeus", "colar", "lembrar", "raspar", 
+    "cortar", "entrar", "qualquer", "sax", "telex", "xerox", "unissex", "lux", "pirex", "talismã", 
+    "anfitriã", "amanhã", "maçã", "lembrarão", "dirão", "alcançarão", "entrarão", "cantarão", 
+    "nenhum", "atum", "premium", "desjejum", "quantum", "unicos", "foruns", "varuns", "muns", 
+    "lunis", "abstrai", "Uruguai", "bonsai", "distingua", "chihuahua",
+    "livro", "carro", "porta", "arroz", "feijão", "batata", "tela", "tecla", "janela", 
+    "parede", "carne", "fruta", "prato", "copo", "garfo", "faca", "colher", "peixe", "toalha", 
+    "sapato", "bola", "camisa", "calca", "banco", "rua", "estrada", "cidade", "bairro", 
+    "tempo", "vento", "chuva", "sol", "lua", "estrela", "flor", "arvore", "campo", "rio"
   ]
 }

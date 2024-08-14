@@ -12,6 +12,7 @@ public sealed class WordServerManager
     private readonly UserDataInfoResource _userDataInfo;
 
     private IEnumerable<DiactricalMarkWordInfo> _unlockedMarkedWords;
+    private IEnumerable<DiactricalMarkWordInfo> _noMarksWords;
 
     private IEnumerable<XorCHWord> _unlockedXorChWords;
 
@@ -41,23 +42,29 @@ public sealed class WordServerManager
         _unlockedXorChWords = XorCHDeserializer
             .DeserializeJsonString(jsonString)
             .GetWordInfosByCategories();
+        _noMarksWords = markedWords.NotMarkedWords;
     }
 
     public Queue<XorCHWord> GetShuffledXorCHWords(int take = 10)
     {
-        return GetShuffledWords(_unlockedXorChWords, take);
+        IEnumerable<XorCHWord> shuffledWords = GetShuffledWords(_unlockedXorChWords, take);
+        return new Queue<XorCHWord>(shuffledWords);
     }
 
     public Queue<DiactricalMarkWordInfo> GetShuffledDiactricalMarkWords(int take = 10)
     {
-        return GetShuffledWords(_unlockedMarkedWords, take);
+        IEnumerable<DiactricalMarkWordInfo> shuffledNotMarkedWords = GetShuffledWords(_noMarksWords, take / 2);
+        IEnumerable<DiactricalMarkWordInfo> shuffledMarkedWords = GetShuffledWords(_unlockedMarkedWords, (take + 1) / 2);
+
+        IOrderedEnumerable<DiactricalMarkWordInfo> concatedLists = shuffledNotMarkedWords
+            .Concat(shuffledMarkedWords)
+            .OrderBy(w => Random.Shared.Next());
+        return new Queue<DiactricalMarkWordInfo>(concatedLists);
     }
-    private Queue<TWord> GetShuffledWords<TWord>(IEnumerable<TWord> words, int take)
+    private IEnumerable<TWord> GetShuffledWords<TWord>(IEnumerable<TWord> words, int take)
     {
-        IEnumerable<TWord> shuffedWords = words
+        return words
             .OrderBy(w => Random.Shared.Next())
             .Take(take);
-
-        return new Queue<TWord>(shuffedWords);
     }
 }
