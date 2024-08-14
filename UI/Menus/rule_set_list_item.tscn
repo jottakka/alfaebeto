@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djfg3fjs48yrj" path="res://UI/Menus/Art/metalPanel_red.png" id="3_lmmub"]
 [ext_resource type="Texture2D" uid="uid://5xaeyt47uoou" path="res://UI/Menus/Art/dotGreen.png" id="4_owyax"]
 
-[node name="RuleSetListItem" type="MarginContainer" node_paths=PackedStringArray("RuleNameLabel", "TotalRulesCountLabel", "UnlockedRulesCountLabel", "GoToRuleButton")]
+[node name="RuleSetListItem" type="MarginContainer" node_paths=PackedStringArray("RuleNameLabel", "TotalRulesCountLabel", "UnlockedRulesCountLabel", "GoToRuleButton", "LockedColorRect", "LockTextureRect")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,6 +23,10 @@ TotalRulesCountLabel = NodePath("MarginContainer/VBoxContainer/MarginContainer/H
 UnlockedRulesCountLabel = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/UnlockedRulesCountLabel")
 GoToRuleButton = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Button")
 RuleViewingUiPackedScene = ExtResource("2_e1bv6")
+LockedColorRect = NodePath("ColorRect")
+LockTextureRect = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer/TextureRect")
+UnlockedIconTexture = "res://UI/Menus/Art/squareGreen.png"
+LockedIconTexture = "res://UI/Menus/Art/square_shadow.png"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
@@ -98,3 +102,7 @@ action_mode = 0
 text = "visualizar"
 alignment = 2
 icon_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.356863, 0.356863, 0.356863, 0.388235)

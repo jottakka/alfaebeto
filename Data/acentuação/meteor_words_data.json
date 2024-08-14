@@ -1,0 +1,1768 @@
+{
+  "RuleSets": [
+    {
+      "RuleSetType": "SOrZ",
+      "Name": "Uso de S ou Z",
+      "Description": "Regras para a utilização de S ou Z em palavras na língua portuguesa.",
+      "Rules": [
+        {
+          "RuleType": "SemRegraS",
+          "Name": "Sem regra específica (S)",
+          "Description": "Palavras com S sem uma regra específica aplicável.",
+          "Words": [
+            {
+              "Word": "alisar",
+              "RightOption": "s",
+              "FirstPart": "ali",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "atrás",
+              "RightOption": "s",
+              "FirstPart": "atrá",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "através",
+              "RightOption": "s",
+              "FirstPart": "atravé",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "aviso",
+              "RightOption": "s",
+              "FirstPart": "avi",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "gás",
+              "RightOption": "s",
+              "FirstPart": "gá",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "groselha",
+              "RightOption": "s",
+              "FirstPart": "gro",
+              "SecondPart": "elha",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "invés",
+              "RightOption": "s",
+              "FirstPart": "invé",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "jus",
+              "RightOption": "s",
+              "FirstPart": "ju",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "uso",
+              "RightOption": "s",
+              "FirstPart": "u",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            }
+          ]
+        },
+        {
+          "RuleType": "SufixosOrigem",
+          "Name": "Sufixos -ês, -esa, -ense, -isa",
+          "Description": "Uso de S para formar sufixos que indicam origem, título ou profissão.",
+          "Words": [
+            {
+              "Word": "portuguesa",
+              "RightOption": "s",
+              "FirstPart": "portugue",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "francesa",
+              "RightOption": "s",
+              "FirstPart": "france",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "chinesa",
+              "RightOption": "s",
+              "FirstPart": "chine",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "japonesa",
+              "RightOption": "s",
+              "FirstPart": "japone",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "gaulesa",
+              "RightOption": "s",
+              "FirstPart": "gau",
+              "SecondPart": "esa",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "marquesa",
+              "RightOption": "s",
+              "FirstPart": "marque",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "poetisa",
+              "RightOption": "s",
+              "FirstPart": "poeti",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "profetisa",
+              "RightOption": "s",
+              "FirstPart": "profeti",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "sacerdotisa",
+              "RightOption": "s",
+              "FirstPart": "sacerdoti",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [10]
+            },
+            {
+              "Word": "druidisa",
+              "RightOption": "s",
+              "FirstPart": "druidi",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "circense",
+              "RightOption": "s",
+              "FirstPart": "circen",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "paraense",
+              "RightOption": "s",
+              "FirstPart": "paraen",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "israelense",
+              "RightOption": "s",
+              "FirstPart": "israelen",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "recifense",
+              "RightOption": "s",
+              "FirstPart": "recifen",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            }
+          ]
+        },
+        {
+          "RuleType": "PrefixoDes",
+          "Name": "Prefixo des-",
+          "Description": "Uso de S em palavras iniciadas pelo prefixo des-.",
+          "Words": [
+            {
+              "Word": "desamor",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "amor",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desolado",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "olado",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desapego",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "apego",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desonra",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "onra",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desigual",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "igual",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desordem",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "ordem",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desimpedir",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "impedir",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desovar",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "ovar",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desinibido",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "inibido",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desumilde",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "umilde",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desodorante",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "odorante",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desunir",
+              "RightOption": "s",
+              "FirstPart": "de",
+              "SecondPart": "unir",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            }
+          ]
+        },
+        {
+          "RuleType": "SufixosOso",
+          "Name": "Sufixos -oso, -osa, -ase, -ese, -isa, -ose",
+          "Description": "Uso de S em sufixos indicando grande quantidade, estado ou circunstância.",
+          "Words": [
+            {
+              "Word": "bondoso",
+              "RightOption": "s",
+              "FirstPart": "bondo",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "feiosa",
+              "RightOption": "s",
+              "FirstPart": "feio",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "oleoso",
+              "RightOption": "s",
+              "FirstPart": "oleo",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "presunçoso",
+              "RightOption": "s",
+              "FirstPart": "presunço",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "vigoroso",
+              "RightOption": "s",
+              "FirstPart": "vigoro",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "maravilhoso",
+              "RightOption": "s",
+              "FirstPart": "maravilho",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "curioso",
+              "RightOption": "s",
+              "FirstPart": "curio",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "hipótese",
+              "RightOption": "s",
+              "FirstPart": "hipóte",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "camisa",
+              "RightOption": "s",
+              "FirstPart": "cami",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "metamorfose",
+              "RightOption": "s",
+              "FirstPart": "metamorfo",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [10]
+            },
+            {
+              "Word": "base",
+              "RightOption": "s",
+              "FirstPart": "ba",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "tosa",
+              "RightOption": "s",
+              "FirstPart": "to",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "raposa",
+              "RightOption": "s",
+              "FirstPart": "rapo",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "pose",
+              "RightOption": "s",
+              "FirstPart": "po",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            }
+          ]
+        },
+        {
+          "RuleType": "VerbosPorQuerer",
+          "Name": "Conjugação dos verbos pôr e querer",
+          "Description": "Uso de S na conjugação dos verbos pôr e querer.",
+          "Words": [
+            {
+              "Word": "pôs",
+              "RightOption": "s",
+              "FirstPart": "pô",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "quis",
+              "RightOption": "s",
+              "FirstPart": "qui",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "quiseram",
+              "RightOption": "s",
+              "FirstPart": "quiser",
+              "SecondPart": "am",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "pus",
+              "RightOption": "s",
+              "FirstPart": "pu",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "puseram",
+              "RightOption": "s",
+              "FirstPart": "puser",
+              "SecondPart": "am",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "quisesse",
+              "RightOption": "s",
+              "FirstPart": "quise",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "quisera",
+              "RightOption": "s",
+              "FirstPart": "quise",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "quiser",
+              "RightOption": "s",
+              "FirstPart": "quise",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "quisermos",
+              "RightOption": "s",
+              "FirstPart": "quiserm",
+              "SecondPart": "os",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "quiserdes",
+              "RightOption": "s",
+              "FirstPart": "quiserde",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "puser",
+              "RightOption": "s",
+              "FirstPart": "puse",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "pusermos",
+              "RightOption": "s",
+              "FirstPart": "puserm",
+              "SecondPart": "os",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "puserdes",
+              "RightOption": "s",
+              "FirstPart": "puserde",
+              "SecondPart": "s",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            }
+          ]
+        },
+        {
+          "RuleType": "VerbosComS",
+          "Name": "Verbos e derivados com S",
+          "Description": "Uso de S em verbos e derivados de palavras escritas com S.",
+          "Words": [
+            {
+              "Word": "análise",
+              "RightOption": "s",
+              "FirstPart": "análise",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "analisar",
+              "RightOption": "s",
+              "FirstPart": "anali",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "aviso",
+              "RightOption": "s",
+              "FirstPart": "avi",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "avisar",
+              "RightOption": "s",
+              "FirstPart": "avi",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "improviso",
+              "RightOption": "s",
+              "FirstPart": "improvi",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "improvisar",
+              "RightOption": "s",
+              "FirstPart": "improvi",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "liso",
+              "RightOption": "s",
+              "FirstPart": "li",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "alisar",
+              "RightOption": "s",
+              "FirstPart": "ali",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "pesquisa",
+              "RightOption": "s",
+              "FirstPart": "pesqui",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "pesquisar",
+              "RightOption": "s",
+              "FirstPart": "pesqui",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "piso",
+              "RightOption": "s",
+              "FirstPart": "pi",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "pisar",
+              "RightOption": "s",
+              "FirstPart": "pi",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            }
+          ]
+        },
+        {
+          "RuleType": "SemRegraZ",
+          "Name": "Sem regra específica (Z)",
+          "Description": "Palavras com Z sem uma regra específica aplicável.",
+          "Words": [
+            {
+              "Word": "amizade",
+              "RightOption": "z",
+              "FirstPart": "ami",
+              "SecondPart": "ade",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "aprazível",
+              "RightOption": "z",
+              "FirstPart": "aprazi",
+              "SecondPart": "vel",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "azar",
+              "RightOption": "z",
+              "FirstPart": "a",
+              "SecondPart": "ar",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "azia",
+              "RightOption": "z",
+              "FirstPart": "a",
+              "SecondPart": "ia",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "desprezo",
+              "RightOption": "z",
+              "FirstPart": "despre",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "giz",
+              "RightOption": "z",
+              "FirstPart": "gi",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "prazer",
+              "RightOption": "z",
+              "FirstPart": "praze",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "rodízio",
+              "RightOption": "z",
+              "FirstPart": "rodí",
+              "SecondPart": "io",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "talvez",
+              "RightOption": "z",
+              "FirstPart": "talve",
+              "SecondPart": "z",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "verniz",
+              "RightOption": "z",
+              "FirstPart": "verni",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "arroz",
+              "RightOption": "z",
+              "FirstPart": "arro",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "rapaz",
+              "RightOption": "z",
+              "FirstPart": "rapa",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "capaz",
+              "RightOption": "z",
+              "FirstPart": "capa",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "vez",
+              "RightOption": "z",
+              "FirstPart": "ve",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "vezes",
+              "RightOption": "z",
+              "FirstPart": "ve",
+              "SecondPart": "es",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            }
+          ]
+        },
+        {
+          "RuleType": "ExcecoesRegraS",
+          "Name": "Exceções para regras de S",
+          "Description": "Palavras com Z que são exceções às regras do S.",
+          "Words": [
+            {
+              "Word": "gaze",
+              "RightOption": "z",
+              "FirstPart": "ga",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "treze",
+              "RightOption": "z",
+              "FirstPart": "tre",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "baliza",
+              "RightOption": "z",
+              "FirstPart": "bali",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [4]
+            },
+            {
+              "Word": "ojeriza",
+              "RightOption": "z",
+              "FirstPart": "ojeri",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "doze",
+              "RightOption": "z",
+              "FirstPart": "do",
+              "SecondPart": "e",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            },
+            {
+              "Word": "gozo",
+              "RightOption": "z",
+              "FirstPart": "go",
+              "SecondPart": "o",
+              "Options": ["s", "z"],
+              "Indices": [3]
+            }
+          ]
+        },
+        {
+          "RuleType": "SufixosIzar",
+          "Name": "Sufixos -izar",
+          "Description": "Uso de Z em palavras derivadas com o sufixo -izar e suas derivações.",
+          "Words": [
+            {
+              "Word": "civilizar",
+              "RightOption": "z",
+              "FirstPart": "civiliza",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "realizar",
+              "RightOption": "z",
+              "FirstPart": "realiza",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "organizar",
+              "RightOption": "z",
+              "FirstPart": "organiza",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "utilizar",
+              "RightOption": "z",
+              "FirstPart": "utiliza",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "sensibilizar",
+              "RightOption": "z",
+              "FirstPart": "sensibiliza",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [10]
+            },
+            {
+              "Word": "sistematizar",
+              "RightOption": "z",
+              "FirstPart": "sistematiza",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [10]
+            },
+            {
+              "Word": "sintetizar",
+              "RightOption": "z",
+              "FirstPart": "sintetiza",
+              "SecondPart": "r",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "sintetizador",
+              "RightOption": "z",
+              "FirstPart": "sintetiza",
+              "SecondPart": "dor",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "sintetização",
+              "RightOption": "z",
+              "FirstPart": "sintetiza",
+              "SecondPart": "ção",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "sintetizável",
+              "RightOption": "z",
+              "FirstPart": "sintetiza",
+              "SecondPart": "vel",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "civilização",
+              "RightOption": "z",
+              "FirstPart": "civiliza",
+              "SecondPart": "ção",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "realização",
+              "RightOption": "z",
+              "FirstPart": "realiza",
+              "SecondPart": "ção",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "organização",
+              "RightOption": "z",
+              "FirstPart": "organiza",
+              "SecondPart": "ção",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "utilização",
+              "RightOption": "z",
+              "FirstPart": "utiliza",
+              "SecondPart": "ção",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "sensibilização",
+              "RightOption": "z",
+              "FirstPart": "sensibiliza",
+              "SecondPart": "ção",
+              "Options": ["s", "z"],
+              "Indices": [10]
+            },
+            {
+              "Word": "sistematização",
+              "RightOption": "z",
+              "FirstPart": "sistematiza",
+              "SecondPart": "ção",
+              "Options": ["s", "z"],
+              "Indices": [10]
+            },
+            {
+              "Word": "sistematizador",
+              "RightOption": "z",
+              "FirstPart": "sistematiza",
+              "SecondPart": "dor",
+              "Options": ["s", "z"],
+              "Indices": [10]
+            }
+          ]
+        },
+        {
+          "RuleType": "SufixosEzEza",
+          "Name": "Substantivos abstratos com -ez, -eza",
+          "Description": "Uso de Z em substantivos abstratos formados a partir de adjetivos terminados em -ez, -eza.",
+          "Words": [
+            {
+              "Word": "vez",
+              "RightOption": "z",
+              "FirstPart": "ve",
+              "SecondPart": "",
+              "Options": ["s", "z"],
+              "Indices": [2]
+            },
+            {
+              "Word": "rigidez",
+              "RightOption": "z",
+              "FirstPart": "rigide",
+              "SecondPart": "z",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "certeza",
+              "RightOption": "z",
+              "FirstPart": "certe",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "beleza",
+              "RightOption": "z",
+              "FirstPart": "bele",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [5]
+            },
+            {
+              "Word": "avareza",
+              "RightOption": "z",
+              "FirstPart": "avare",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "estupidez",
+              "RightOption": "z",
+              "FirstPart": "estupide",
+              "SecondPart": "z",
+              "Options": ["s", "z"],
+              "Indices": [8]
+            },
+            {
+              "Word": "mesquinhez",
+              "RightOption": "z",
+              "FirstPart": "mesquinhe",
+              "SecondPart": "z",
+              "Options": ["s", "z"],
+              "Indices": [9]
+            },
+            {
+              "Word": "rapidez",
+              "RightOption": "z",
+              "FirstPart": "rapide",
+              "SecondPart": "z",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "tristeza",
+              "RightOption": "z",
+              "FirstPart": "triste",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [7]
+            },
+            {
+              "Word": "riqueza",
+              "RightOption": "z",
+              "FirstPart": "rique",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "pobreza",
+              "RightOption": "z",
+              "FirstPart": "pobre",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            },
+            {
+              "Word": "nobreza",
+              "RightOption": "z",
+              "FirstPart": "nobre",
+              "SecondPart": "a",
+              "Options": ["s", "z"],
+              "Indices": [6]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "RuleSetType": "XouCH",
+      "Name": "Uso de X ou CH",
+      "Description": "Regras para a utilização de X ou CH em palavras na língua portuguesa.",
+      "Rules": [
+        {
+          "RuleType": "SemRegraX",
+          "Name": "Sem regra específica (X)",
+          "Description": "Palavras com X sem uma regra específica aplicável.",
+          "Words": [
+            {
+              "Word": "abacaxi",
+              "RightOption": "x",
+              "FirstPart": "abaca",
+              "SecondPart": "i",
+              "Options": ["x", "ch"],
+              "Indices": [5]
+            },
+            {
+              "Word": "bexiga",
+              "RightOption": "x",
+              "FirstPart": "be",
+              "SecondPart": "iga",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "bruxa",
+              "RightOption": "x",
+              "FirstPart": "bru",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "caxumba",
+              "RightOption": "x",
+              "FirstPart": "ca",
+              "SecondPart": "umba",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "elixir",
+              "RightOption": "x",
+              "FirstPart": "eli",
+              "SecondPart": "ir",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "faxina",
+              "RightOption": "x",
+              "FirstPart": "fa",
+              "SecondPart": "ina",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "graxa",
+              "RightOption": "x",
+              "FirstPart": "gra",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "lagartixa",
+              "RightOption": "x",
+              "FirstPart": "lagarti",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [7]
+            },
+            {
+              "Word": "mexerico",
+              "RightOption": "x",
+              "FirstPart": "me",
+              "SecondPart": "erico",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "xote",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "ote",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            },
+            {
+              "Word": "xarope",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "arope",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            },
+            {
+              "Word": "xadrez",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "adrez",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            }
+          ]
+        },
+        {
+          "RuleType": "DitongoX",
+          "Name": "X após ditongos",
+          "Description": "Uso de X geralmente após ditongos.",
+          "Words": [
+            {
+              "Word": "caixa",
+              "RightOption": "x",
+              "FirstPart": "cai",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "peixe",
+              "RightOption": "x",
+              "FirstPart": "pei",
+              "SecondPart": "e",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "feixe",
+              "RightOption": "x",
+              "FirstPart": "fei",
+              "SecondPart": "e",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "meixa",
+              "RightOption": "x",
+              "FirstPart": "mei",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "baixa",
+              "RightOption": "x",
+              "FirstPart": "bai",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "faixa",
+              "RightOption": "x",
+              "FirstPart": "fai",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "faixada",
+              "RightOption": "x",
+              "FirstPart": "faixa",
+              "SecondPart": "da",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "ameixa",
+              "RightOption": "x",
+              "FirstPart": "amei",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "baixela",
+              "RightOption": "x",
+              "FirstPart": "bai",
+              "SecondPart": "ela",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "baixaria",
+              "RightOption": "x",
+              "FirstPart": "bai",
+              "SecondPart": "aria",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "peixaria",
+              "RightOption": "x",
+              "FirstPart": "pei",
+              "SecondPart": "aria",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "peixinho",
+              "RightOption": "x",
+              "FirstPart": "pei",
+              "SecondPart": "inho",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "peixoto",
+              "RightOption": "x",
+              "FirstPart": "pei",
+              "SecondPart": "oto",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "enfaixar",
+              "RightOption": "x",
+              "FirstPart": "enfai",
+              "SecondPart": "ar",
+              "Options": ["x", "ch"],
+              "Indices": [4]
+            },
+            {
+              "Word": "enfaixado",
+              "RightOption": "x",
+              "FirstPart": "enfai",
+              "SecondPart": "ado",
+              "Options": ["x", "ch"],
+              "Indices": [4]
+            },
+            {
+              "Word": "enfaixamento",
+              "RightOption": "x",
+              "FirstPart": "enfai",
+              "SecondPart": "amento",
+              "Options": ["x", "ch"],
+              "Indices": [4]
+            }
+          ]
+        },
+        {
+          "RuleType": "OrigemIndigenaAfricanaInglesa",
+          "Name": "X em palavras de origem indígena, africana ou inglesa",
+          "Description": "Uso de X em palavras de origem indígena, africana ou inglesa.",
+          "Words": [
+            {
+              "Word": "xará",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "ará",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            },
+            {
+              "Word": "xampu",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "ampu",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            },
+            {
+              "Word": "xerife",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "erife",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            },
+            {
+              "Word": "xícara",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "ícara",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            },
+            {
+              "Word": "xavante",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "avante",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            },
+            {
+              "Word": "xilindró",
+              "RightOption": "x",
+              "FirstPart": "",
+              "SecondPart": "ilindró",
+              "Options": ["x", "ch"],
+              "Indices": [0]
+            }
+          ]
+        },
+        {
+          "RuleType": "EnX",
+          "Name": "X após a sílaba inicial 'en-'",
+          "Description": "Uso de X após a sílaba inicial 'en-' em palavras.",
+          "Words": [
+            {
+              "Word": "enxame",
+              "RightOption": "x",
+              "FirstPart": "en",
+              "SecondPart": "ame",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "enxada",
+              "RightOption": "x",
+              "FirstPart": "en",
+              "SecondPart": "ada",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "enxergar",
+              "RightOption": "x",
+              "FirstPart": "en",
+              "SecondPart": "ergar",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "enxurrada",
+              "RightOption": "x",
+              "FirstPart": "en",
+              "SecondPart": "urrada",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "enxoval",
+              "RightOption": "x",
+              "FirstPart": "en",
+              "SecondPart": "oval",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "enxofre",
+              "RightOption": "x",
+              "FirstPart": "en",
+              "SecondPart": "ofre",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "enxuto",
+              "RightOption": "x",
+              "FirstPart": "en",
+              "SecondPart": "uto",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            }
+          ]
+        },
+        {
+          "RuleType": "MeX",
+          "Name": "X após a sílaba '-me'",
+          "Description": "Uso de X após a sílaba '-me' em palavras.",
+          "Words": [
+            {
+              "Word": "mexer",
+              "RightOption": "x",
+              "FirstPart": "me",
+              "SecondPart": "er",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "mexido",
+              "RightOption": "x",
+              "FirstPart": "me",
+              "SecondPart": "ido",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "mexicano",
+              "RightOption": "x",
+              "FirstPart": "me",
+              "SecondPart": "icano",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "mexerica",
+              "RightOption": "x",
+              "FirstPart": "me",
+              "SecondPart": "erica",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "samexunga",
+              "RightOption": "x",
+              "FirstPart": "same",
+              "SecondPart": "unga",
+              "Options": ["x", "ch"],
+              "Indices": [4]
+            },
+            {
+              "Word": "emexo",
+              "RightOption": "x",
+              "FirstPart": "eme",
+              "SecondPart": "o",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "remexer",
+              "RightOption": "x",
+              "FirstPart": "reme",
+              "SecondPart": "er",
+              "Options": ["x", "ch"],
+              "Indices": [4]
+            },
+            {
+              "Word": "imexível",
+              "RightOption": "x",
+              "FirstPart": "ime",
+              "SecondPart": "ível",
+              "Options": ["x", "ch"],
+              "Indices": [3]
+            },
+            {
+              "Word": "mexerico",
+              "RightOption": "x",
+              "FirstPart": "me",
+              "SecondPart": "erico",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            },
+            {
+              "Word": "mexeriqueiro",
+              "RightOption": "x",
+              "FirstPart": "me",
+              "SecondPart": "eriqueiro",
+              "Options": ["x", "ch"],
+              "Indices": [2]
+            }
+          ]
+        },
+        {
+          "RuleType": "SemRegraCH",
+          "Name": "Sem regra específica (CH)",
+          "Description": "Palavras com CH sem uma regra específica aplicável.",
+          "Words": [
+            {
+              "Word": "bochecha",
+              "RightOption": "ch",
+              "FirstPart": "bo",
+              "SecondPart": "echa",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            },
+            {
+              "Word": "boliche",
+              "RightOption": "ch",
+              "FirstPart": "boli",
+              "SecondPart": "e",
+              "Options": ["x", "ch"],
+              "Indices": [4, 5]
+            },
+            {
+              "Word": "broche",
+              "RightOption": "ch",
+              "FirstPart": "bro",
+              "SecondPart": "e",
+              "Options": ["x", "ch"],
+              "Indices": [3, 4]
+            },
+            {
+              "Word": "cachaça",
+              "RightOption": "ch",
+              "FirstPart": "ca",
+              "SecondPart": "aça",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            },
+            {
+              "Word": "chuchu",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "uchu",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "colcha",
+              "RightOption": "ch",
+              "FirstPart": "col",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3, 4]
+            },
+            {
+              "Word": "fachada",
+              "RightOption": "ch",
+              "FirstPart": "fa",
+              "SecondPart": "ada",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            },
+            {
+              "Word": "mochila",
+              "RightOption": "ch",
+              "FirstPart": "mo",
+              "SecondPart": "ila",
+              "Options": ["x", "ch"],
+              "Indices": [3, 4]
+            },
+            {
+              "Word": "salsicha",
+              "RightOption": "ch",
+              "FirstPart": "salsi",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [5, 6]
+            },
+            {
+              "Word": "tocha",
+              "RightOption": "ch",
+              "FirstPart": "to",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [3, 4]
+            }
+          ]
+        },
+        {
+          "RuleType": "EstrangeirismoCH",
+          "Name": "CH em palavras de origem estrangeira",
+          "Description": "Uso de CH em palavras de origem estrangeira adaptadas ao português.",
+          "Words": [
+            {
+              "Word": "choque",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "oque",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "chique",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "ique",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "chalé",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "alé",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "chefe",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "efe",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "champanhe",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "ampanhe",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "chassi",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "assi",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "chip",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "ip",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "chop",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "op",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "chucrute",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "ucrute",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "churros",
+              "RightOption": "ch",
+              "FirstPart": "",
+              "SecondPart": "urros",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            }
+          ]
+        },
+        {
+          "RuleType": "MechaCH",
+          "Name": "CH em 'mecha'",
+          "Description": "A palavra 'mecha' (porção de cabelo) escreve-se com ch.",
+          "Words": [
+            {
+              "Word": "mecha",
+              "RightOption": "ch",
+              "FirstPart": "me",
+              "SecondPart": "a",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            }
+          ]
+        },
+        {
+          "RuleType": "VerboEncherCH",
+          "Name": "CH no verbo encher",
+          "Description": "Uso de 'ch' em formas do verbo 'encher' e seus derivados.",
+          "Words": [
+            {
+              "Word": "encher",
+              "RightOption": "ch",
+              "FirstPart": "en",
+              "SecondPart": "er",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            },
+            {
+              "Word": "cheio",
+              "RightOption": "ch",
+              "FirstPart": "che",
+              "SecondPart": "io",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "encheu",
+              "RightOption": "ch",
+              "FirstPart": "en",
+              "SecondPart": "eu",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            },
+            {
+              "Word": "cheia",
+              "RightOption": "ch",
+              "FirstPart": "che",
+              "SecondPart": "ia",
+              "Options": ["x", "ch"],
+              "Indices": [0, 1]
+            },
+            {
+              "Word": "enchente",
+              "RightOption": "ch",
+              "FirstPart": "en",
+              "SecondPart": "ente",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            },
+            {
+              "Word": "enchimento",
+              "RightOption": "ch",
+              "FirstPart": "en",
+              "SecondPart": "imento",
+              "Options": ["x", "ch"],
+              "Indices": [2, 3]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

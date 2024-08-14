@@ -77,8 +77,11 @@ text = "Regra: "
 [node name="RuleNameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_gs6bb")
-theme_override_colors/font_color = Color(1, 0, 0.980392, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.7, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 20
 text = "Regra x y z"
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
@@ -109,7 +112,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_gs6bb")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/normal_font_size = 23
 text = "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy sdsdtext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 scroll_active = false
 

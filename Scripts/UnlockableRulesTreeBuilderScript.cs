@@ -112,7 +112,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 
 		foreach ((DiactricalMarkSubCategoryType type, DiactricalMarkWordResource[] words) in markedWords)
 		{
-			wordsResource.MarkedWordsByRule.Add((int)type, new Array<DiactricalMarkWordResource>(words));
+			wordsResource.MarkedWordsByRule.Add(type, new Array<DiactricalMarkWordResource>(words));
 		}
 		// Save the resource to a .tres file
 		string userDataSavePath = "res://SaveFiles/words_data.tres";

@@ -20,20 +20,23 @@ public sealed partial class RuleStoreItem : MarginContainer
 	public delegate void RuleBoughtSignalEventHandler(int gems);
 
 	private int _availabeGems;
-
+	private DiactricalMarkRuleItemResource _diactricalMarkRuleItemResource;
 	public override void _Ready()
 	{
 		ProcessMode = ProcessModeEnum.Always;
-		BuyButton.Pressed += () =>
-		{
-			if (_availabeGems < _gemsCost)
-			{
-				return;
-			}
+		BuyButton.Pressed += BuyRule;
+	}
 
-			BoughtColorRect.Show();
-			_ = EmitSignal(nameof(RuleBoughtSignal), _gemsCost);
-		};
+	private void BuyRule()
+	{
+		if (_availabeGems < _gemsCost)
+		{
+			return;
+		}
+
+		BoughtColorRect.Show();
+		_diactricalMarkRuleItemResource.Unlock();
+		_ = EmitSignal(nameof(RuleBoughtSignal), _gemsCost);
 	}
 
 	public void SetData(DiactricalMarkRuleItemResource diactricalMarkRuleItem, int totalGems)
@@ -45,7 +48,7 @@ public sealed partial class RuleStoreItem : MarginContainer
 		_gemsCost = diactricalMarkRuleItem.KeyGemCost;
 		CostLabel.Text = _gemsCost.ToString();
 		_availabeGems = totalGems;
-
+		_diactricalMarkRuleItemResource = diactricalMarkRuleItem;
 		VerifyIfEnoughtGems(totalGems);
 	}
 

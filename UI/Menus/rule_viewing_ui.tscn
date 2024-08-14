@@ -72,8 +72,13 @@ text = "Regra: "
 [node name="RuleNameLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_23eyv")
-theme_override_colors/font_color = Color(1, 0, 0.980392, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.78736, 0.84, 0.0504, 1)
+theme_override_colors/font_shadow_color = Color(0.303233, 0.303233, 0.303233, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 23
 text = "Regra x y z"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
@@ -101,6 +106,7 @@ custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme = ExtResource("4_23eyv")
 theme_override_colors/default_color = Color(0.937638, 0.026939, 3.85046e-07, 1)
+theme_override_font_sizes/normal_font_size = 20
 text = "asdf asdf asdf asf asdf asfd asf asdf asdfsaf asfas as fas asd fas fasf awsf asf asfd asdf asdf asfd asdf asdf asf asfd asfd asf asf asf asf asf asf asf asdf asf asf asfasf asf asf asf asf"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]

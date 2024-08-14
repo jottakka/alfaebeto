@@ -1,62 +1,326 @@
 {
-  "UsoDeS": {
-    "Regras": [
-      {
-        "Regra": "Usado para representar o som /s/ no início de sílabas",
-        "Exemplos": ["sapo", "sala", "soma", "seda", "sino"]
-      },
-      {
-        "Regra": "Usado após consoantes",
-        "Exemplos": ["pasta", "cansar", "pensar", "respeito", "transporte"]
-      },
-      {
-        "Regra": "Usado para representar o som /z/ entre vogais",
-        "Exemplos": ["casa", "mesa", "vaso", "musica", "analisar"]
-      },
-      {
-        "Regra": "Usado para formar sufixos -ês, -esa, -ense",
-        "Exemplos": ["português", "francesa", "chinês", "paulista", "japonês"]
+  "Regras": [
+    {
+      "Nome": "Utilização de S ou Z.",
+      "Regras": {
+        "UsoDeS": {
+          "Regras": [
+            {
+              "Regra": "Sem regra especifica.",
+              "Exemplos": [
+                "alisar",
+                "atrás",
+                "através",
+                "aviso",
+                "gás",
+                "groselha",
+                "invés",
+                "jus",
+                "uso"
+              ]
+            },
+            {
+              "Regra": "Usado para formar sufixos -ês, -esa, -ense, -isa q indicam origem, título ou profissão:",
+              "Exemplos": [
+                "portuguêsa",
+                "frances",
+                "chinêsa",
+                "japonês",
+                "gaules",
+                "marquês",
+                "poetisa",
+                "profetisa",
+                "sacerdotisa",
+                "druidisa",
+                "circense",
+                "paraense",
+                "israelense",
+                "recifense"
+              ]
+            },
+            {
+              "Regra": "Usado em palavras iniciadas pelo prefixo des-",
+              "Exemplos": [
+                "desamor",
+                "desolado",
+                "desapego",
+                "desonra",
+                "desigual",
+                "desordem",
+                "desimpedir",
+                "desovar",
+                "desinibido",
+                "desumilde",
+                "desodorante",
+                "desunir"
+              ]
+            },
+            {
+              "Regra": "Em geral usado em palavras terminadas em -oso, -osa, -ase, -ese, -isa, -ose. Epecialment quando adjetivos indicando grande quantidade, estado ou circunstância",
+
+              "Exemplos": [
+                "bondoso",
+                "feiosa",
+                "oleoso",
+                "presunçoso",
+                "vigoroso",
+                "maravilhoso",
+                "curioso",
+                "hipótese",
+                "camisa",
+                "metamorfose",
+                "base",
+                "tosa",
+                "raposa",
+                "pose"
+              ]
+            },
+            {
+              "Regra": "Usado na conjugação dos verbos pôr e querer",
+              "Exemplos": [
+                "pôs",
+                "quis",
+                "quiseram",
+                "pus",
+                "puseram",
+                "quisesse",
+                "quisera",
+                "quiser",
+                "quisermos",
+                "quiserdes",
+                "puser",
+                "pusermos",
+                "puserdes"
+              ]
+            },
+            {
+              "Regra": "Usado em verbos e derivados de palavras escritas com S",
+              "palavras": [
+                "análise",
+                "analisar",
+                "aviso",
+                "avisar",
+                "improviso",
+                "improvisar",
+                "liso",
+                "alisar",
+                "pesquisa",
+                "pesquisar",
+                "piso",
+                "pisar"
+              ]
+            }
+          ]
+        },
+        "UsoDeZ": {
+          "Regras": [
+            {
+              "Regra": "Sem regra especifica.",
+              "Exemplos": [
+                "amizade",
+                "aprazível",
+                "azar",
+                "azia",
+                "desprezo",
+                "giz",
+                "prazer",
+                "rodízio",
+                "talvez",
+                "verniz",
+                "arroz",
+                "rapaz",
+                "capaz",
+                "vez",
+                "vezes"
+              ]
+            },
+            {
+              "Regra": "Exceções para regras de S",
+              "Exemplos": [
+                "gaze",
+                "treze",
+                "baliza",
+                "ojeriza",
+                "doze",
+                "gozo"
+              ]
+            },
+            {
+              "Regra": "Usado em palavras derivadas com sufixo -izar e em suas derivações",
+              "Exemplos": [
+                "civilizar",
+                "realizar",
+                "organizar",
+                "utilizar",
+                "sensibilizar",
+                "sistematizar",
+                "sintetizar",
+                "sintetizador",
+                "sintetização",
+                "sintetizável",
+                "civilização",
+                "realização",
+                "organização",
+                "utilização",
+                "sensibilização",
+                "sistematização",
+                "sistematizador"
+              ]
+            },
+            {
+              "Regra": "Usado em substantivos abstratos, formados a partir de ajdetivos,  terminados em -ez, -eza. Geralmente tendem a ser grafados com Z",
+              "Exemplos": [
+                "vez",
+                "rigidez",
+                "certeza",
+                "beleza",
+                "avareza",
+                "estupidez",
+                "mesquinhez",
+                "rapidez",
+                "tristeza",
+                "riqueza",
+                "pobreza",
+                "nobreza"
+              ]
+            }
+          ]
+        }
       }
-    ],
-    "Exceções": [
-      {
-        "Regra": "Palavras que não seguem a regra de som /s/ no início de sílabas",
-        "Exemplos": ["excesso", "crescer", "descer", "nascimento", "ascender"]
-      },
-      {
-        "Regra": "Palavras que não seguem a regra de som /z/ entre vogais",
-        "Exemplos": ["exame", "exato", "executar", "exagerar", "exemplo"]
+    },
+    {
+      "Nome": "Utilização de X ou CH",
+      "Regras": {
+        "UsoDeX": {
+          "Regras": [
+            {
+              "Regra": "Sem regra especifica",
+              "Exemplos": [
+                "abacaxi",
+                "bexiga",
+                "bruxa",
+                "caxumba",
+                "elixir",
+                "faxina",
+                "graxa",
+                "lagartixa",
+                "mexerico",
+                "xote",
+                "xarope",
+                "xadrez"
+              ]
+            },
+            {
+              "Regra": "Geralmente usado após ditongos",
+              "Exemplos": [
+                "caixa",
+                "peixe",
+                "feixe",
+                "meixa",
+                "baixa",
+                "faixa",
+                "faixada",
+                "ameixa",
+                "baixela",
+                "baixaria",
+                "peixaria",
+                "peixinho",
+                "peixoto",
+                "enfaixar",
+                "enfaixado",
+                "enfaixamento"
+              ]
+            },
+            {
+              "Regra": "Usado nas palavras de origem indígena, africana ou inglesa",
+              "Exemplos": [
+                "xará",
+                "xampu",
+                "xerife",
+                "xícara",
+                "xavante",
+                "xilindró"
+              ]
+            },
+            {
+              "Regra": "Usado após a sílaba inicial 'en-'",
+              "Exemplos": [
+                "enxame",
+                "enxada",
+                "enxergar",
+                "enxurrada",
+                "enxoval",
+                "enxofre",
+                "enxuto"
+              ]
+            },
+            {
+              "Regra": "Usado após da sílaba -me",
+              "Exemplos": [
+                "mexer",
+                "mexido",
+                "mexicano",
+                "mexerica",
+                "samexunga",
+                "emexo",
+                "remexer",
+                "imexível",
+                "mexerico",
+                "mexeriqueiro"
+              ]
+            }
+          ]
+        },
+        "UsoDeCh": {
+          "Regras": [
+            {
+              "Regra": "Sem regra especifica.",
+              "Exemplos": [
+                "bochecha",
+                "boliche",
+                "broche",
+                "cachaça",
+                "chuchu",
+                "colcha",
+                "fachada",
+                "mochila",
+                "salsicha",
+                "tocha"
+              ]
+            },
+            {
+              "Regra": "Usado em palavras de origem estrangeira adaptadas ao português",
+              "Exemplos": [
+                "choque",
+                "chique",
+                "chalé",
+                "chefe",
+                "champanhe",
+                "chassi",
+                "chip",
+                "chop",
+                "chucrute",
+                "churros"
+              ]
+            },
+            {
+              "Regra": "A palavra 'mecha' (porção de cabelo) escreve-se com ch",
+              "Exemplos": [ "mecha" ]
+            },
+            {
+              "Regra": "Usado em formas do verbo 'encher' e seus derivados",
+              "Exemplos": [
+                "encher",
+                "cheio",
+                "encheu",
+                "cheia",
+                "enchente",
+                "enchimento"
+              ]
+            }
+          ]
+        }
       }
-    ]
-  },
-  "UsoDeZ": {
-    "Regras": [
-      {
-        "Regra": "Usado para representar o som /z/ no final de sílabas",
-        "Exemplos": ["azul", "fuzil", "luz", "feliz", "paz"]
-      },
-      {
-        "Regra": "Usado em palavras derivadas com sufixo -izar",
-        "Exemplos": ["civilizar", "realizar", "organizar", "analisar", "utilizar"]
-      },
-      {
-        "Regra": "Usado em palavras terminadas em -ez e -eza",
-        "Exemplos": ["vez", "vezes", "rigidez", "certeza", "beleza"]
-      },
-      {
-        "Regra": "Usado em sufixos -z e -ez",
-        "Exemplos": ["arroz", "rapaz", "capaz", "vez", "vezes"]
-      }
-    ],
-    "Exceções": [
-      {
-        "Regra": "Palavras que não seguem a regra de som /z/ no final de sílabas",
-        "Exemplos": ["cruz", "arroz", "rapaz", "efemérides", "xerez"]
-      },
-      {
-        "Regra": "Palavras que não seguem a regra de palavras derivadas com sufixo -izar",
-        "Exemplos": ["frisar", "paralisar", "denunciar", "priorizar", "minimizar"]
-      }
-    ]
-  }
+    }
+  ]
 }

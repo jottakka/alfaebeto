@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=296 format=3]
+[gd_resource type="Resource" load_steps=296 format=3 uid="uid://db0jbnki84y0e"]
 
 [ext_resource type="Script" path="res://Data/Words/DiactricalMarkWordResource.cs" id="1_vr2f8"]
 [ext_resource type="Script" path="res://Data/Words/DiactricalMarkWordsDataResource.cs" id="2_oxd3r"]
 
-[sub_resource type="Resource" id="Resource_3bbjc"]
+[sub_resource type="Resource" id="Resource_05gxj"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "sofá"
@@ -11,7 +11,7 @@ WithoutMark = "sofa"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_kawtq"]
+[sub_resource type="Resource" id="Resource_abytr"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "maracujá"
@@ -19,7 +19,7 @@ WithoutMark = "maracuja"
 HasMark = true
 MarkIndex = 7
 
-[sub_resource type="Resource" id="Resource_57ubd"]
+[sub_resource type="Resource" id="Resource_25dat"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "Paraná"
@@ -27,7 +27,7 @@ WithoutMark = "parana"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_0w871"]
+[sub_resource type="Resource" id="Resource_3j67q"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "ananás"
@@ -35,7 +35,7 @@ WithoutMark = "ananas"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_x146a"]
+[sub_resource type="Resource" id="Resource_ti1uk"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "marajás"
@@ -43,7 +43,7 @@ WithoutMark = "marajas"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_mlygy"]
+[sub_resource type="Resource" id="Resource_tvrl1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "atrás"
@@ -51,7 +51,7 @@ WithoutMark = "atras"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_xu801"]
+[sub_resource type="Resource" id="Resource_7c44e"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "pá"
@@ -59,7 +59,7 @@ WithoutMark = "pa"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_o1k37"]
+[sub_resource type="Resource" id="Resource_ui66w"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "já"
@@ -67,7 +67,7 @@ WithoutMark = "ja"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_mmstl"]
+[sub_resource type="Resource" id="Resource_cvc4w"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "má"
@@ -75,7 +75,7 @@ WithoutMark = "ma"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_q17yg"]
+[sub_resource type="Resource" id="Resource_b8gec"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "lá"
@@ -83,7 +83,7 @@ WithoutMark = "la"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_lc82w"]
+[sub_resource type="Resource" id="Resource_kd8tp"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "trás"
@@ -91,7 +91,7 @@ WithoutMark = "tras"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_1umc3"]
+[sub_resource type="Resource" id="Resource_qq3dd"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "más"
@@ -99,7 +99,7 @@ WithoutMark = "mas"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_urfiq"]
+[sub_resource type="Resource" id="Resource_dxifg"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 0
 Original = "chás"
@@ -107,7 +107,7 @@ WithoutMark = "chas"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_nmbfg"]
+[sub_resource type="Resource" id="Resource_y6x0x"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "Pelé"
@@ -115,7 +115,7 @@ WithoutMark = "pele"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_2a30p"]
+[sub_resource type="Resource" id="Resource_rgnx4"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "café"
@@ -123,7 +123,7 @@ WithoutMark = "cafe"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_5pnhk"]
+[sub_resource type="Resource" id="Resource_k1hl6"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "você"
@@ -131,7 +131,7 @@ WithoutMark = "voce"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_muw2f"]
+[sub_resource type="Resource" id="Resource_senpc"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "freguês"
@@ -139,7 +139,7 @@ WithoutMark = "fregues"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_5anfk"]
+[sub_resource type="Resource" id="Resource_cn06i"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "bebês"
@@ -147,7 +147,7 @@ WithoutMark = "bebes"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_nl03t"]
+[sub_resource type="Resource" id="Resource_uo26f"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "pé"
@@ -155,7 +155,7 @@ WithoutMark = "pe"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_2hfdg"]
+[sub_resource type="Resource" id="Resource_b281y"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "fé"
@@ -163,7 +163,7 @@ WithoutMark = "fe"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_2o2gx"]
+[sub_resource type="Resource" id="Resource_kla2i"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "sé"
@@ -171,7 +171,7 @@ WithoutMark = "se"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_8d0hm"]
+[sub_resource type="Resource" id="Resource_uurmb"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "mês"
@@ -179,7 +179,7 @@ WithoutMark = "mes"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_gepb8"]
+[sub_resource type="Resource" id="Resource_nvy4b"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "três"
@@ -187,7 +187,7 @@ WithoutMark = "tres"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_e5x20"]
+[sub_resource type="Resource" id="Resource_1wi7v"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 1
 Original = "rés"
@@ -195,7 +195,7 @@ WithoutMark = "res"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_y4w7k"]
+[sub_resource type="Resource" id="Resource_f4eu3"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "cipó"
@@ -203,7 +203,7 @@ WithoutMark = "cipo"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_w4bfc"]
+[sub_resource type="Resource" id="Resource_8hkcf"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "paletó"
@@ -211,7 +211,7 @@ WithoutMark = "paleto"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_mhyek"]
+[sub_resource type="Resource" id="Resource_s3arx"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "avó"
@@ -219,7 +219,7 @@ WithoutMark = "avo"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_s0qg5"]
+[sub_resource type="Resource" id="Resource_32awe"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "dominó"
@@ -227,7 +227,7 @@ WithoutMark = "domino"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_dyfb7"]
+[sub_resource type="Resource" id="Resource_aqlpm"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "pavô"
@@ -235,7 +235,7 @@ WithoutMark = "pavo"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_0bt8g"]
+[sub_resource type="Resource" id="Resource_l62ql"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "vovô"
@@ -243,7 +243,7 @@ WithoutMark = "vovo"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_x0mdh"]
+[sub_resource type="Resource" id="Resource_sknhm"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "chororô"
@@ -251,7 +251,7 @@ WithoutMark = "chororo"
 HasMark = true
 MarkIndex = 6
 
-[sub_resource type="Resource" id="Resource_nrmj4"]
+[sub_resource type="Resource" id="Resource_i3ns3"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "pó"
@@ -259,7 +259,7 @@ WithoutMark = "po"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_7227j"]
+[sub_resource type="Resource" id="Resource_isooo"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "só"
@@ -267,7 +267,7 @@ WithoutMark = "so"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_6pnle"]
+[sub_resource type="Resource" id="Resource_hwooi"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "dó"
@@ -275,7 +275,7 @@ WithoutMark = "do"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_unvu4"]
+[sub_resource type="Resource" id="Resource_bamxa"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "cós"
@@ -283,7 +283,7 @@ WithoutMark = "cos"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_1bbcl"]
+[sub_resource type="Resource" id="Resource_y6ehq"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "sós"
@@ -291,7 +291,7 @@ WithoutMark = "sos"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_2dk47"]
+[sub_resource type="Resource" id="Resource_jr37w"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 2
 Original = "nós"
@@ -299,7 +299,7 @@ WithoutMark = "nos"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_h2okv"]
+[sub_resource type="Resource" id="Resource_x1fep"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 3
 Original = "amém"
@@ -307,7 +307,7 @@ WithoutMark = "amem"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_v8p3p"]
+[sub_resource type="Resource" id="Resource_ixwpb"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 3
 Original = "também"
@@ -315,7 +315,7 @@ WithoutMark = "tambem"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_7ldmp"]
+[sub_resource type="Resource" id="Resource_4hmtl"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 3
 Original = "armazém"
@@ -323,7 +323,7 @@ WithoutMark = "armazem"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_sualo"]
+[sub_resource type="Resource" id="Resource_yrg0q"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 3
 Original = "alguém"
@@ -331,7 +331,7 @@ WithoutMark = "alguem"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_h0c2c"]
+[sub_resource type="Resource" id="Resource_g3q06"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 4
 Original = "parabéns"
@@ -339,7 +339,7 @@ WithoutMark = "parabens"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_0151u"]
+[sub_resource type="Resource" id="Resource_yjfbr"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 4
 Original = "reféns"
@@ -347,7 +347,7 @@ WithoutMark = "refens"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_slvd2"]
+[sub_resource type="Resource" id="Resource_tnph5"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 4
 Original = "armazéns"
@@ -355,7 +355,7 @@ WithoutMark = "armazens"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_aalny"]
+[sub_resource type="Resource" id="Resource_jwu0r"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "fácil"
@@ -363,7 +363,7 @@ WithoutMark = "facil"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_iywoj"]
+[sub_resource type="Resource" id="Resource_yux1h"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "útil"
@@ -371,7 +371,7 @@ WithoutMark = "util"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_4lj2x"]
+[sub_resource type="Resource" id="Resource_va5bp"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "fóssil"
@@ -379,7 +379,7 @@ WithoutMark = "fossil"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_qv6b7"]
+[sub_resource type="Resource" id="Resource_qpmkm"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "réptil"
@@ -387,7 +387,7 @@ WithoutMark = "reptil"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_pbp01"]
+[sub_resource type="Resource" id="Resource_mri5m"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "níquel"
@@ -395,7 +395,7 @@ WithoutMark = "niquel"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_po88c"]
+[sub_resource type="Resource" id="Resource_5r7a2"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "ignóbil"
@@ -403,7 +403,7 @@ WithoutMark = "ignobil"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_jr22t"]
+[sub_resource type="Resource" id="Resource_4006g"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "verossímil"
@@ -411,7 +411,7 @@ WithoutMark = "verossimil"
 HasMark = true
 MarkIndex = 6
 
-[sub_resource type="Resource" id="Resource_ikkj5"]
+[sub_resource type="Resource" id="Resource_crioc"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "estéril"
@@ -419,7 +419,7 @@ WithoutMark = "esteril"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_qfytf"]
+[sub_resource type="Resource" id="Resource_1ygpv"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "têxtil"
@@ -427,7 +427,7 @@ WithoutMark = "textil"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_y1811"]
+[sub_resource type="Resource" id="Resource_khb50"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 5
 Original = "retrátil"
@@ -435,7 +435,7 @@ WithoutMark = "retratil"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_jngrp"]
+[sub_resource type="Resource" id="Resource_frn2n"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "júri"
@@ -443,7 +443,7 @@ WithoutMark = "juri"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_vm7dh"]
+[sub_resource type="Resource" id="Resource_k6eap"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "lápis"
@@ -451,7 +451,7 @@ WithoutMark = "lapis"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_j6arm"]
+[sub_resource type="Resource" id="Resource_uwyrw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "tênis"
@@ -459,7 +459,7 @@ WithoutMark = "tenis"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_t3vgl"]
+[sub_resource type="Resource" id="Resource_h3pjx"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "biquíni"
@@ -467,7 +467,7 @@ WithoutMark = "biquini"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_uj50l"]
+[sub_resource type="Resource" id="Resource_lisjw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "hortifrúti"
@@ -475,7 +475,7 @@ WithoutMark = "hortifruti"
 HasMark = true
 MarkIndex = 7
 
-[sub_resource type="Resource" id="Resource_6l36h"]
+[sub_resource type="Resource" id="Resource_hlixi"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "táxi"
@@ -483,7 +483,7 @@ WithoutMark = "taxi"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_jic8y"]
+[sub_resource type="Resource" id="Resource_ry3m1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "táxis"
@@ -491,7 +491,7 @@ WithoutMark = "taxis"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_fjqv6"]
+[sub_resource type="Resource" id="Resource_can4e"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 6
 Original = "cáqui"
@@ -499,7 +499,7 @@ WithoutMark = "caqui"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_mew0b"]
+[sub_resource type="Resource" id="Resource_wudy1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "hífen"
@@ -507,7 +507,7 @@ WithoutMark = "hifen"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_uctpv"]
+[sub_resource type="Resource" id="Resource_7qhsg"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "pólen"
@@ -515,7 +515,7 @@ WithoutMark = "polen"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_is6lt"]
+[sub_resource type="Resource" id="Resource_rnpt3"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "elétron"
@@ -523,7 +523,7 @@ WithoutMark = "eletron"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_5pq6f"]
+[sub_resource type="Resource" id="Resource_8djp1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "nêutron"
@@ -531,7 +531,7 @@ WithoutMark = "neutron"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_cmgsr"]
+[sub_resource type="Resource" id="Resource_4k0kw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "abdômen"
@@ -539,7 +539,7 @@ WithoutMark = "abdomen"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_lutlw"]
+[sub_resource type="Resource" id="Resource_mfiwr"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "gérmen"
@@ -547,7 +547,7 @@ WithoutMark = "germen"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_jfuwp"]
+[sub_resource type="Resource" id="Resource_gni4k"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "glúten"
@@ -555,7 +555,7 @@ WithoutMark = "gluten"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_rb87p"]
+[sub_resource type="Resource" id="Resource_v1s7i"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "ámen"
@@ -563,7 +563,7 @@ WithoutMark = "amen"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_h6y8u"]
+[sub_resource type="Resource" id="Resource_lkvat"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "mórmon"
@@ -571,7 +571,7 @@ WithoutMark = "mormon"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_24myy"]
+[sub_resource type="Resource" id="Resource_pt15q"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 7
 Original = "fóton"
@@ -579,7 +579,7 @@ WithoutMark = "foton"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_ioa8r"]
+[sub_resource type="Resource" id="Resource_vbtrq"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "vírus"
@@ -587,7 +587,7 @@ WithoutMark = "virus"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_cguef"]
+[sub_resource type="Resource" id="Resource_b6rkp"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "Vênus"
@@ -595,7 +595,7 @@ WithoutMark = "venus"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_m62kr"]
+[sub_resource type="Resource" id="Resource_ik6ij"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "ônus"
@@ -603,7 +603,7 @@ WithoutMark = "onus"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_7cx4i"]
+[sub_resource type="Resource" id="Resource_vxu5x"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "bônus"
@@ -611,7 +611,7 @@ WithoutMark = "bonus"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_l7wf6"]
+[sub_resource type="Resource" id="Resource_q6aw6"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "tônus"
@@ -619,7 +619,7 @@ WithoutMark = "tonus"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_6t45v"]
+[sub_resource type="Resource" id="Resource_1xl3d"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "húmus"
@@ -627,7 +627,7 @@ WithoutMark = "humus"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_3grld"]
+[sub_resource type="Resource" id="Resource_baus6"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "lótus"
@@ -635,7 +635,7 @@ WithoutMark = "lotus"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_884n7"]
+[sub_resource type="Resource" id="Resource_d6fei"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "antivírus"
@@ -643,7 +643,7 @@ WithoutMark = "antivirus"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_onhi4"]
+[sub_resource type="Resource" id="Resource_7vysv"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 8
 Original = "célsius"
@@ -651,7 +651,7 @@ WithoutMark = "celsius"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_qbebu"]
+[sub_resource type="Resource" id="Resource_y85g0"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 9
 Original = "revólver"
@@ -659,7 +659,7 @@ WithoutMark = "revolver"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_valg4"]
+[sub_resource type="Resource" id="Resource_lghjk"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 9
 Original = "caráter"
@@ -667,7 +667,7 @@ WithoutMark = "carater"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_lhrtq"]
+[sub_resource type="Resource" id="Resource_3r02k"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 9
 Original = "âmbar"
@@ -675,7 +675,7 @@ WithoutMark = "ambar"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_8q3fx"]
+[sub_resource type="Resource" id="Resource_6vvgt"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 9
 Original = "repórter"
@@ -683,7 +683,7 @@ WithoutMark = "reporter"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_uq8q0"]
+[sub_resource type="Resource" id="Resource_fdnw5"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 9
 Original = "líder"
@@ -691,7 +691,7 @@ WithoutMark = "lider"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_6b78c"]
+[sub_resource type="Resource" id="Resource_15ndn"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 9
 Original = "gêiser"
@@ -699,7 +699,7 @@ WithoutMark = "geiser"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_3noh6"]
+[sub_resource type="Resource" id="Resource_n8c28"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 9
 Original = "poliéster"
@@ -707,7 +707,7 @@ WithoutMark = "poliester"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_uupmx"]
+[sub_resource type="Resource" id="Resource_7vc7y"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "látex"
@@ -715,7 +715,7 @@ WithoutMark = "latex"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_gv0p0"]
+[sub_resource type="Resource" id="Resource_3rcm7"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "fênix"
@@ -723,7 +723,7 @@ WithoutMark = "fenix"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_8kwh5"]
+[sub_resource type="Resource" id="Resource_0sfjh"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "tórax"
@@ -731,7 +731,7 @@ WithoutMark = "torax"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_tu4g0"]
+[sub_resource type="Resource" id="Resource_ex6ex"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "fértil"
@@ -739,7 +739,7 @@ WithoutMark = "fertil"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_ie8md"]
+[sub_resource type="Resource" id="Resource_y2yqj"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "clímax"
@@ -747,7 +747,7 @@ WithoutMark = "climax"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_33a44"]
+[sub_resource type="Resource" id="Resource_npb6q"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "cálix"
@@ -755,7 +755,7 @@ WithoutMark = "calix"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_dkiev"]
+[sub_resource type="Resource" id="Resource_oe48b"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "hélix"
@@ -763,7 +763,7 @@ WithoutMark = "helix"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_ino4j"]
+[sub_resource type="Resource" id="Resource_rqcyo"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 10
 Original = "símplex"
@@ -771,7 +771,7 @@ WithoutMark = "simplex"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_0xjab"]
+[sub_resource type="Resource" id="Resource_sglyh"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 11
 Original = "ímã"
@@ -779,7 +779,7 @@ WithoutMark = "imã"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_gav44"]
+[sub_resource type="Resource" id="Resource_wmmu7"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 11
 Original = "órfã"
@@ -787,7 +787,7 @@ WithoutMark = "orfã"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_cmjwn"]
+[sub_resource type="Resource" id="Resource_h7dvg"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 11
 Original = "órfãs"
@@ -795,7 +795,7 @@ WithoutMark = "orfãs"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_qcti5"]
+[sub_resource type="Resource" id="Resource_yt8y5"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 11
 Original = "ímãs"
@@ -803,7 +803,7 @@ WithoutMark = "imãs"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_2oycr"]
+[sub_resource type="Resource" id="Resource_grhqa"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 12
 Original = "órgão"
@@ -811,7 +811,7 @@ WithoutMark = "orgão"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_atrqx"]
+[sub_resource type="Resource" id="Resource_rojmd"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 12
 Original = "sótão"
@@ -819,7 +819,7 @@ WithoutMark = "sotão"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_nlfgn"]
+[sub_resource type="Resource" id="Resource_owrm1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 12
 Original = "órgãos"
@@ -827,7 +827,7 @@ WithoutMark = "orgãos"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_g0oy6"]
+[sub_resource type="Resource" id="Resource_r2kjb"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 13
 Original = "álbum"
@@ -835,7 +835,7 @@ WithoutMark = "album"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_whb3h"]
+[sub_resource type="Resource" id="Resource_tb66k"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 13
 Original = "médium"
@@ -843,7 +843,7 @@ WithoutMark = "medium"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_l8mcu"]
+[sub_resource type="Resource" id="Resource_xvjrw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 13
 Original = "fórum"
@@ -851,7 +851,7 @@ WithoutMark = "forum"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_qdvj7"]
+[sub_resource type="Resource" id="Resource_0t872"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 13
 Original = "tétum"
@@ -859,7 +859,7 @@ WithoutMark = "tetum"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_w5x6w"]
+[sub_resource type="Resource" id="Resource_ei4t2"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 13
 Original = "fálum"
@@ -867,7 +867,7 @@ WithoutMark = "falum"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_41maq"]
+[sub_resource type="Resource" id="Resource_wresa"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 13
 Original = "sérum"
@@ -875,7 +875,7 @@ WithoutMark = "serum"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_qrlxm"]
+[sub_resource type="Resource" id="Resource_uvv2u"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 14
 Original = "álbuns"
@@ -883,7 +883,7 @@ WithoutMark = "albuns"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_2cjbe"]
+[sub_resource type="Resource" id="Resource_rmi81"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 14
 Original = "fóruns"
@@ -891,7 +891,7 @@ WithoutMark = "foruns"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_cjlxx"]
+[sub_resource type="Resource" id="Resource_w4p5u"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 15
 Original = "fórceps"
@@ -899,7 +899,7 @@ WithoutMark = "forceps"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_1g7ca"]
+[sub_resource type="Resource" id="Resource_cc62j"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 15
 Original = "bíceps"
@@ -907,7 +907,7 @@ WithoutMark = "biceps"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_44nak"]
+[sub_resource type="Resource" id="Resource_6w2fw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 15
 Original = "crísops"
@@ -915,7 +915,7 @@ WithoutMark = "crisops"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_tnscm"]
+[sub_resource type="Resource" id="Resource_gysjq"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 15
 Original = "uteróceps"
@@ -923,7 +923,7 @@ WithoutMark = "uteroceps"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_4svtk"]
+[sub_resource type="Resource" id="Resource_c311l"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 15
 Original = "tríceps"
@@ -931,7 +931,7 @@ WithoutMark = "triceps"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_ldstn"]
+[sub_resource type="Resource" id="Resource_agn5q"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "água"
@@ -939,7 +939,7 @@ WithoutMark = "agua"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_newge"]
+[sub_resource type="Resource" id="Resource_01285"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "história"
@@ -947,7 +947,7 @@ WithoutMark = "historia"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_yyrnm"]
+[sub_resource type="Resource" id="Resource_mlos8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "série"
@@ -955,7 +955,7 @@ WithoutMark = "serie"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_ja8cy"]
+[sub_resource type="Resource" id="Resource_5lp2p"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "pônei"
@@ -963,7 +963,7 @@ WithoutMark = "ponei"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_7lmam"]
+[sub_resource type="Resource" id="Resource_moj8y"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "móveis"
@@ -971,7 +971,7 @@ WithoutMark = "moveis"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_4jai4"]
+[sub_resource type="Resource" id="Resource_ncqx8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "tênue"
@@ -979,7 +979,7 @@ WithoutMark = "tenue"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_2blm1"]
+[sub_resource type="Resource" id="Resource_0o2as"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "língua"
@@ -987,7 +987,7 @@ WithoutMark = "lingua"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_nbgkd"]
+[sub_resource type="Resource" id="Resource_umqqe"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "inócua"
@@ -995,7 +995,7 @@ WithoutMark = "inocua"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_6s0yi"]
+[sub_resource type="Resource" id="Resource_d5yy2"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "régua"
@@ -1003,7 +1003,7 @@ WithoutMark = "regua"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_70ieq"]
+[sub_resource type="Resource" id="Resource_tyuqm"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "égua"
@@ -1011,7 +1011,7 @@ WithoutMark = "egua"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_rkdb2"]
+[sub_resource type="Resource" id="Resource_wnb21"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 16
 Original = "estátua"
@@ -1019,7 +1019,7 @@ WithoutMark = "estatua"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_m0k3r"]
+[sub_resource type="Resource" id="Resource_5gbvs"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "lânguido"
@@ -1027,7 +1027,7 @@ WithoutMark = "languido"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_0yesf"]
+[sub_resource type="Resource" id="Resource_clqaw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "física"
@@ -1035,7 +1035,7 @@ WithoutMark = "fisica"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_12f38"]
+[sub_resource type="Resource" id="Resource_74a8c"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "trópico"
@@ -1043,7 +1043,7 @@ WithoutMark = "tropico"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_tjd21"]
+[sub_resource type="Resource" id="Resource_5tpvg"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "álibi"
@@ -1051,7 +1051,7 @@ WithoutMark = "alibi"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_6g606"]
+[sub_resource type="Resource" id="Resource_28ecy"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "hábitat"
@@ -1059,7 +1059,7 @@ WithoutMark = "habitat"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_881sa"]
+[sub_resource type="Resource" id="Resource_ihaac"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "déficit"
@@ -1067,7 +1067,7 @@ WithoutMark = "deficit"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_85kg3"]
+[sub_resource type="Resource" id="Resource_fpn21"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "lápide"
@@ -1075,7 +1075,7 @@ WithoutMark = "lapide"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_oop6e"]
+[sub_resource type="Resource" id="Resource_ns1pu"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "álgebra"
@@ -1083,7 +1083,7 @@ WithoutMark = "algebra"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_ef3n2"]
+[sub_resource type="Resource" id="Resource_ao4yo"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "célula"
@@ -1091,7 +1091,7 @@ WithoutMark = "celula"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_m3mcr"]
+[sub_resource type="Resource" id="Resource_qv3mp"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "pêndulo"
@@ -1099,7 +1099,7 @@ WithoutMark = "pendulo"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_4x4ex"]
+[sub_resource type="Resource" id="Resource_t0pgy"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "amígdalas"
@@ -1107,7 +1107,7 @@ WithoutMark = "amigdalas"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_hql65"]
+[sub_resource type="Resource" id="Resource_gcn03"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "amálgama"
@@ -1115,7 +1115,7 @@ WithoutMark = "amalgama"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_jq4hq"]
+[sub_resource type="Resource" id="Resource_4molw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "cúpula"
@@ -1123,7 +1123,7 @@ WithoutMark = "cupula"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_sunxu"]
+[sub_resource type="Resource" id="Resource_x6xih"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "análise"
@@ -1131,7 +1131,7 @@ WithoutMark = "analise"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_ogtiv"]
+[sub_resource type="Resource" id="Resource_ajrvo"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 17
 Original = "ânimo"
@@ -1139,7 +1139,7 @@ WithoutMark = "animo"
 HasMark = true
 MarkIndex = 0
 
-[sub_resource type="Resource" id="Resource_7p3wi"]
+[sub_resource type="Resource" id="Resource_mte4r"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 18
 Original = "fiéis"
@@ -1147,7 +1147,7 @@ WithoutMark = "fieis"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_rdaoc"]
+[sub_resource type="Resource" id="Resource_6c2bf"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 18
 Original = "papéis"
@@ -1155,7 +1155,7 @@ WithoutMark = "papeis"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_fl4q5"]
+[sub_resource type="Resource" id="Resource_qoimc"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 18
 Original = "pastéis"
@@ -1163,7 +1163,7 @@ WithoutMark = "pasteis"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_mkgow"]
+[sub_resource type="Resource" id="Resource_6yfgf"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 18
 Original = "coronéis"
@@ -1171,7 +1171,7 @@ WithoutMark = "coroneis"
 HasMark = true
 MarkIndex = 5
 
-[sub_resource type="Resource" id="Resource_be5my"]
+[sub_resource type="Resource" id="Resource_qayjv"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 18
 Original = "anéis"
@@ -1179,7 +1179,7 @@ WithoutMark = "aneis"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_uyaf6"]
+[sub_resource type="Resource" id="Resource_5q7av"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 19
 Original = "céu"
@@ -1187,7 +1187,7 @@ WithoutMark = "ceu"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_2u4n4"]
+[sub_resource type="Resource" id="Resource_5xg0v"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 19
 Original = "chapéu"
@@ -1195,7 +1195,7 @@ WithoutMark = "chapeu"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_15w34"]
+[sub_resource type="Resource" id="Resource_c62an"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 19
 Original = "troféu"
@@ -1203,7 +1203,7 @@ WithoutMark = "trofeu"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_4o2dh"]
+[sub_resource type="Resource" id="Resource_prxom"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 19
 Original = "véu"
@@ -1211,7 +1211,7 @@ WithoutMark = "veu"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_ceqcm"]
+[sub_resource type="Resource" id="Resource_ytvpo"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 19
 Original = "réu"
@@ -1219,7 +1219,7 @@ WithoutMark = "reu"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_ub22k"]
+[sub_resource type="Resource" id="Resource_wbx0g"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 20
 Original = "herói"
@@ -1227,7 +1227,7 @@ WithoutMark = "heroi"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_ti3vr"]
+[sub_resource type="Resource" id="Resource_iyk6h"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 20
 Original = "sóis"
@@ -1235,7 +1235,7 @@ WithoutMark = "sois"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_e1x4q"]
+[sub_resource type="Resource" id="Resource_ufll4"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 20
 Original = "faróis"
@@ -1243,7 +1243,7 @@ WithoutMark = "farois"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_ixd62"]
+[sub_resource type="Resource" id="Resource_0wvbm"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 20
 Original = "lençóis"
@@ -1251,7 +1251,7 @@ WithoutMark = "lençois"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_7crij"]
+[sub_resource type="Resource" id="Resource_cfbg1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 20
 Original = "rói"
@@ -1259,7 +1259,7 @@ WithoutMark = "roi"
 HasMark = true
 MarkIndex = 1
 
-[sub_resource type="Resource" id="Resource_2mdo7"]
+[sub_resource type="Resource" id="Resource_xtvga"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 21
 Original = "saída"
@@ -1267,7 +1267,7 @@ WithoutMark = "saida"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_wfyqr"]
+[sub_resource type="Resource" id="Resource_lwbch"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 21
 Original = "juízes"
@@ -1275,7 +1275,7 @@ WithoutMark = "juizes"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_a2a3t"]
+[sub_resource type="Resource" id="Resource_rdva8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 21
 Original = "saúde"
@@ -1283,7 +1283,7 @@ WithoutMark = "saude"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_pjdt2"]
+[sub_resource type="Resource" id="Resource_dx4x7"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 21
 Original = "viúva"
@@ -1291,7 +1291,7 @@ WithoutMark = "viuva"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_nvora"]
+[sub_resource type="Resource" id="Resource_ajevd"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 21
 Original = "caíste"
@@ -1299,7 +1299,7 @@ WithoutMark = "caiste"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_valga"]
+[sub_resource type="Resource" id="Resource_c0fhf"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 21
 Original = "saíste"
@@ -1307,7 +1307,7 @@ WithoutMark = "saiste"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_wgkid"]
+[sub_resource type="Resource" id="Resource_pxduy"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 22
 Original = "balaústre"
@@ -1315,7 +1315,7 @@ WithoutMark = "balaustre"
 HasMark = true
 MarkIndex = 4
 
-[sub_resource type="Resource" id="Resource_4nbm4"]
+[sub_resource type="Resource" id="Resource_we5be"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 22
 Original = "ruído"
@@ -1323,7 +1323,7 @@ WithoutMark = "ruido"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_7pm0j"]
+[sub_resource type="Resource" id="Resource_c4iak"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 22
 Original = "viúvo"
@@ -1331,7 +1331,7 @@ WithoutMark = "viuvo"
 HasMark = true
 MarkIndex = 2
 
-[sub_resource type="Resource" id="Resource_caacj"]
+[sub_resource type="Resource" id="Resource_2578h"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 22
 Original = "egoísmo"
@@ -1339,7 +1339,7 @@ WithoutMark = "egoismo"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_nvttp"]
+[sub_resource type="Resource" id="Resource_hfaxo"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 22
 Original = "egoísta"
@@ -1347,7 +1347,7 @@ WithoutMark = "egoista"
 HasMark = true
 MarkIndex = 3
 
-[sub_resource type="Resource" id="Resource_yr36r"]
+[sub_resource type="Resource" id="Resource_povno"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "mesa"
@@ -1355,7 +1355,7 @@ WithoutMark = "mesa"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_iwv1h"]
+[sub_resource type="Resource" id="Resource_n0htq"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "cana"
@@ -1363,7 +1363,7 @@ WithoutMark = "cana"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_kqn8d"]
+[sub_resource type="Resource" id="Resource_bnc3i"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "alga"
@@ -1371,7 +1371,7 @@ WithoutMark = "alga"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_mv5b3"]
+[sub_resource type="Resource" id="Resource_2uxsv"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "nada"
@@ -1379,7 +1379,7 @@ WithoutMark = "nada"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_6qqe5"]
+[sub_resource type="Resource" id="Resource_4y54j"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "casa"
@@ -1387,7 +1387,7 @@ WithoutMark = "casa"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_6l45p"]
+[sub_resource type="Resource" id="Resource_gprrf"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "pare"
@@ -1395,7 +1395,7 @@ WithoutMark = "pare"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_vapak"]
+[sub_resource type="Resource" id="Resource_jmiic"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "pape"
@@ -1403,7 +1403,7 @@ WithoutMark = "pape"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_t528b"]
+[sub_resource type="Resource" id="Resource_yocim"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "doce"
@@ -1411,7 +1411,7 @@ WithoutMark = "doce"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_y5c37"]
+[sub_resource type="Resource" id="Resource_l4q8c"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "nome"
@@ -1419,7 +1419,7 @@ WithoutMark = "nome"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_f41cg"]
+[sub_resource type="Resource" id="Resource_b3ts0"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "luze"
@@ -1427,7 +1427,7 @@ WithoutMark = "luze"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_q3nhy"]
+[sub_resource type="Resource" id="Resource_leh0s"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "jogo"
@@ -1435,7 +1435,7 @@ WithoutMark = "jogo"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_84vqw"]
+[sub_resource type="Resource" id="Resource_jbj7k"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "pano"
@@ -1443,7 +1443,7 @@ WithoutMark = "pano"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_8hj6m"]
+[sub_resource type="Resource" id="Resource_uueeu"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "bolo"
@@ -1451,7 +1451,7 @@ WithoutMark = "bolo"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_m7fhj"]
+[sub_resource type="Resource" id="Resource_ftk3i"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "cano"
@@ -1459,7 +1459,7 @@ WithoutMark = "cano"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_rfcfg"]
+[sub_resource type="Resource" id="Resource_fs4q4"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "galo"
@@ -1467,7 +1467,7 @@ WithoutMark = "galo"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_1qkcd"]
+[sub_resource type="Resource" id="Resource_nfgkg"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "alem"
@@ -1475,7 +1475,7 @@ WithoutMark = "alem"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_lc5an"]
+[sub_resource type="Resource" id="Resource_e05jw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "item"
@@ -1483,7 +1483,7 @@ WithoutMark = "item"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_b62dt"]
+[sub_resource type="Resource" id="Resource_ntwlp"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "harem"
@@ -1491,7 +1491,7 @@ WithoutMark = "harem"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_an5xp"]
+[sub_resource type="Resource" id="Resource_6qphw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "trem"
@@ -1499,7 +1499,7 @@ WithoutMark = "trem"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_pdb7p"]
+[sub_resource type="Resource" id="Resource_bb32q"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "bem"
@@ -1507,7 +1507,7 @@ WithoutMark = "bem"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_obkth"]
+[sub_resource type="Resource" id="Resource_fxmpq"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "convergem"
@@ -1515,7 +1515,7 @@ WithoutMark = "convergem"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_q7vj7"]
+[sub_resource type="Resource" id="Resource_jx8br"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "aprendizagem"
@@ -1523,7 +1523,7 @@ WithoutMark = "aprendizagem"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_8b30c"]
+[sub_resource type="Resource" id="Resource_wtho7"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "jovens"
@@ -1531,7 +1531,7 @@ WithoutMark = "jovens"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_nydn2"]
+[sub_resource type="Resource" id="Resource_5ffsy"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "homens"
@@ -1539,7 +1539,7 @@ WithoutMark = "homens"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_angxj"]
+[sub_resource type="Resource" id="Resource_onj42"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "libidinagens"
@@ -1547,7 +1547,7 @@ WithoutMark = "libidinagens"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ishbh"]
+[sub_resource type="Resource" id="Resource_xp4y8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "adens"
@@ -1555,7 +1555,7 @@ WithoutMark = "adens"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_uorsy"]
+[sub_resource type="Resource" id="Resource_oynau"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "lembrens"
@@ -1563,7 +1563,7 @@ WithoutMark = "lembrens"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_qymbw"]
+[sub_resource type="Resource" id="Resource_x8w8r"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "animal"
@@ -1571,7 +1571,7 @@ WithoutMark = "animal"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_2526b"]
+[sub_resource type="Resource" id="Resource_g6cwx"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "final"
@@ -1579,7 +1579,7 @@ WithoutMark = "final"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ivy2h"]
+[sub_resource type="Resource" id="Resource_ui1jx"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "neutral"
@@ -1587,7 +1587,7 @@ WithoutMark = "neutral"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_dikp0"]
+[sub_resource type="Resource" id="Resource_umqb1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "local"
@@ -1595,7 +1595,7 @@ WithoutMark = "local"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_i7fug"]
+[sub_resource type="Resource" id="Resource_xp614"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "legal"
@@ -1603,7 +1603,7 @@ WithoutMark = "legal"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_vuilt"]
+[sub_resource type="Resource" id="Resource_gxxvj"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "pastoril"
@@ -1611,7 +1611,7 @@ WithoutMark = "pastoril"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ok7it"]
+[sub_resource type="Resource" id="Resource_3kdal"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "anil"
@@ -1619,7 +1619,7 @@ WithoutMark = "anil"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_lbhol"]
+[sub_resource type="Resource" id="Resource_t7rd8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "pari"
@@ -1627,7 +1627,7 @@ WithoutMark = "pari"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_di5ya"]
+[sub_resource type="Resource" id="Resource_qraay"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "mari"
@@ -1635,7 +1635,7 @@ WithoutMark = "mari"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_y0qo5"]
+[sub_resource type="Resource" id="Resource_gmk35"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "anis"
@@ -1643,7 +1643,7 @@ WithoutMark = "anis"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_yo3yw"]
+[sub_resource type="Resource" id="Resource_xutdl"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "biquini"
@@ -1651,7 +1651,7 @@ WithoutMark = "biquini"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_7h5yt"]
+[sub_resource type="Resource" id="Resource_fw6t2"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "finis"
@@ -1659,7 +1659,7 @@ WithoutMark = "finis"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_85xhr"]
+[sub_resource type="Resource" id="Resource_o74mt"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "zumbis"
@@ -1667,7 +1667,7 @@ WithoutMark = "zumbis"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_pc146"]
+[sub_resource type="Resource" id="Resource_cm3ax"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "nenen"
@@ -1675,7 +1675,7 @@ WithoutMark = "nenen"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_tttyk"]
+[sub_resource type="Resource" id="Resource_ogk84"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "megaton"
@@ -1683,7 +1683,7 @@ WithoutMark = "megaton"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_30dmv"]
+[sub_resource type="Resource" id="Resource_ox8f4"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "neon"
@@ -1691,7 +1691,7 @@ WithoutMark = "neon"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ba73l"]
+[sub_resource type="Resource" id="Resource_k2ac0"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "champignon"
@@ -1699,7 +1699,7 @@ WithoutMark = "champignon"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ajxlk"]
+[sub_resource type="Resource" id="Resource_osbrd"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "Nelson"
@@ -1707,7 +1707,7 @@ WithoutMark = "Nelson"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_1aiuk"]
+[sub_resource type="Resource" id="Resource_c0xyi"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "parkinson"
@@ -1715,7 +1715,7 @@ WithoutMark = "parkinson"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_1g4a1"]
+[sub_resource type="Resource" id="Resource_o21vt"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "corpus"
@@ -1723,7 +1723,7 @@ WithoutMark = "corpus"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_0lv5t"]
+[sub_resource type="Resource" id="Resource_w0l3h"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "campus"
@@ -1731,7 +1731,7 @@ WithoutMark = "campus"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_l6mi0"]
+[sub_resource type="Resource" id="Resource_m4ays"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "museus"
@@ -1739,7 +1739,7 @@ WithoutMark = "museus"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_dal8p"]
+[sub_resource type="Resource" id="Resource_ukc35"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "opus"
@@ -1747,7 +1747,7 @@ WithoutMark = "opus"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_rug3j"]
+[sub_resource type="Resource" id="Resource_5gglt"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "perizeus"
@@ -1755,7 +1755,7 @@ WithoutMark = "perizeus"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_qoiqp"]
+[sub_resource type="Resource" id="Resource_ijsmo"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "colar"
@@ -1763,7 +1763,7 @@ WithoutMark = "colar"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_k2lf1"]
+[sub_resource type="Resource" id="Resource_haqvj"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "lembrar"
@@ -1771,7 +1771,7 @@ WithoutMark = "lembrar"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_xnobo"]
+[sub_resource type="Resource" id="Resource_dg5l0"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "raspar"
@@ -1779,7 +1779,7 @@ WithoutMark = "raspar"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_5fjbt"]
+[sub_resource type="Resource" id="Resource_rrk82"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "cortar"
@@ -1787,7 +1787,7 @@ WithoutMark = "cortar"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_dobe8"]
+[sub_resource type="Resource" id="Resource_e1hls"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "entrar"
@@ -1795,7 +1795,7 @@ WithoutMark = "entrar"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_6hwrx"]
+[sub_resource type="Resource" id="Resource_fon8c"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "qualquer"
@@ -1803,7 +1803,7 @@ WithoutMark = "qualquer"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_f8vs0"]
+[sub_resource type="Resource" id="Resource_xl6v4"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "sax"
@@ -1811,7 +1811,7 @@ WithoutMark = "sax"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_xisdn"]
+[sub_resource type="Resource" id="Resource_xa7qj"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "telex"
@@ -1819,7 +1819,7 @@ WithoutMark = "telex"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_exu3m"]
+[sub_resource type="Resource" id="Resource_b20ik"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "xerox"
@@ -1827,7 +1827,7 @@ WithoutMark = "xerox"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_1j8tg"]
+[sub_resource type="Resource" id="Resource_a8o73"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "unissex"
@@ -1835,7 +1835,7 @@ WithoutMark = "unissex"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_8hhyc"]
+[sub_resource type="Resource" id="Resource_qmx1g"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "lux"
@@ -1843,7 +1843,7 @@ WithoutMark = "lux"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_p6k0r"]
+[sub_resource type="Resource" id="Resource_q43x8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "pirex"
@@ -1851,7 +1851,7 @@ WithoutMark = "pirex"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_k1klk"]
+[sub_resource type="Resource" id="Resource_hk4p8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "talismã"
@@ -1859,7 +1859,7 @@ WithoutMark = "talismã"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_jgt4k"]
+[sub_resource type="Resource" id="Resource_s5yrn"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "anfitriã"
@@ -1867,7 +1867,7 @@ WithoutMark = "anfitriã"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_2olkt"]
+[sub_resource type="Resource" id="Resource_x3c20"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "amanhã"
@@ -1875,7 +1875,7 @@ WithoutMark = "amanhã"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_u556p"]
+[sub_resource type="Resource" id="Resource_h8oh8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "maçã"
@@ -1883,7 +1883,7 @@ WithoutMark = "maçã"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_xfg8i"]
+[sub_resource type="Resource" id="Resource_bavny"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "lembrarão"
@@ -1891,7 +1891,7 @@ WithoutMark = "lembrarão"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_6sjf4"]
+[sub_resource type="Resource" id="Resource_pwpq5"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "dirão"
@@ -1899,7 +1899,7 @@ WithoutMark = "dirão"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_t8f37"]
+[sub_resource type="Resource" id="Resource_y3ox4"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "alcançarão"
@@ -1907,7 +1907,7 @@ WithoutMark = "alcançarão"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_aherc"]
+[sub_resource type="Resource" id="Resource_dvas0"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "entrarão"
@@ -1915,7 +1915,7 @@ WithoutMark = "entrarão"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_opkvy"]
+[sub_resource type="Resource" id="Resource_4k6pu"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "cantarão"
@@ -1923,7 +1923,7 @@ WithoutMark = "cantarão"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_poskc"]
+[sub_resource type="Resource" id="Resource_b3sv5"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "nenhum"
@@ -1931,7 +1931,7 @@ WithoutMark = "nenhum"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_qnjkp"]
+[sub_resource type="Resource" id="Resource_8fbnu"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "atum"
@@ -1939,7 +1939,7 @@ WithoutMark = "atum"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_2ml03"]
+[sub_resource type="Resource" id="Resource_526jc"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "premium"
@@ -1947,7 +1947,7 @@ WithoutMark = "premium"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_2smp2"]
+[sub_resource type="Resource" id="Resource_27upk"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "desjejum"
@@ -1955,7 +1955,7 @@ WithoutMark = "desjejum"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_qb5fe"]
+[sub_resource type="Resource" id="Resource_gbbgk"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "quantum"
@@ -1963,7 +1963,7 @@ WithoutMark = "quantum"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_2vp4m"]
+[sub_resource type="Resource" id="Resource_sjqeu"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "unicos"
@@ -1971,7 +1971,7 @@ WithoutMark = "unicos"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_nswch"]
+[sub_resource type="Resource" id="Resource_d7mo7"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "foruns"
@@ -1979,7 +1979,7 @@ WithoutMark = "foruns"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_h2383"]
+[sub_resource type="Resource" id="Resource_0ohj2"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "varuns"
@@ -1987,7 +1987,7 @@ WithoutMark = "varuns"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_gmkxc"]
+[sub_resource type="Resource" id="Resource_8fb7j"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "muns"
@@ -1995,7 +1995,7 @@ WithoutMark = "muns"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_c2hkp"]
+[sub_resource type="Resource" id="Resource_2r8mf"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "lunis"
@@ -2003,7 +2003,7 @@ WithoutMark = "lunis"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ng65l"]
+[sub_resource type="Resource" id="Resource_6cuq7"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "abstrai"
@@ -2011,7 +2011,7 @@ WithoutMark = "abstrai"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_wfi5w"]
+[sub_resource type="Resource" id="Resource_uk3ip"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "Uruguai"
@@ -2019,7 +2019,7 @@ WithoutMark = "Uruguai"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_c0s3t"]
+[sub_resource type="Resource" id="Resource_r3lry"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "bonsai"
@@ -2027,7 +2027,7 @@ WithoutMark = "bonsai"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_0ohc6"]
+[sub_resource type="Resource" id="Resource_4uaud"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "distingua"
@@ -2035,7 +2035,7 @@ WithoutMark = "distingua"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_3m364"]
+[sub_resource type="Resource" id="Resource_v67tt"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "chihuahua"
@@ -2043,7 +2043,7 @@ WithoutMark = "chihuahua"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_k5808"]
+[sub_resource type="Resource" id="Resource_lxntu"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "livro"
@@ -2051,7 +2051,7 @@ WithoutMark = "livro"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_fqs1b"]
+[sub_resource type="Resource" id="Resource_6ey88"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "carro"
@@ -2059,7 +2059,7 @@ WithoutMark = "carro"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ooogq"]
+[sub_resource type="Resource" id="Resource_qif84"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "porta"
@@ -2067,7 +2067,7 @@ WithoutMark = "porta"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_f3wde"]
+[sub_resource type="Resource" id="Resource_usvpg"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "arroz"
@@ -2075,7 +2075,7 @@ WithoutMark = "arroz"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ioo2d"]
+[sub_resource type="Resource" id="Resource_71igh"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "feijão"
@@ -2083,7 +2083,7 @@ WithoutMark = "feijão"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_s14kx"]
+[sub_resource type="Resource" id="Resource_kbe8b"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "batata"
@@ -2091,7 +2091,7 @@ WithoutMark = "batata"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_3n20c"]
+[sub_resource type="Resource" id="Resource_ye1d8"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "tela"
@@ -2099,7 +2099,7 @@ WithoutMark = "tela"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_dxd0v"]
+[sub_resource type="Resource" id="Resource_d06uw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "tecla"
@@ -2107,7 +2107,7 @@ WithoutMark = "tecla"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_5jdyt"]
+[sub_resource type="Resource" id="Resource_7irrd"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "janela"
@@ -2115,7 +2115,7 @@ WithoutMark = "janela"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_yjxlb"]
+[sub_resource type="Resource" id="Resource_gib1g"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "parede"
@@ -2123,7 +2123,7 @@ WithoutMark = "parede"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_hos3r"]
+[sub_resource type="Resource" id="Resource_ypglq"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "carne"
@@ -2131,7 +2131,7 @@ WithoutMark = "carne"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_8mb13"]
+[sub_resource type="Resource" id="Resource_1tcl5"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "fruta"
@@ -2139,7 +2139,7 @@ WithoutMark = "fruta"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_gmdxg"]
+[sub_resource type="Resource" id="Resource_xnjic"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "prato"
@@ -2147,7 +2147,7 @@ WithoutMark = "prato"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ydgki"]
+[sub_resource type="Resource" id="Resource_lcu8e"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "copo"
@@ -2155,7 +2155,7 @@ WithoutMark = "copo"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_14e06"]
+[sub_resource type="Resource" id="Resource_xf4as"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "garfo"
@@ -2163,7 +2163,7 @@ WithoutMark = "garfo"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_qjxym"]
+[sub_resource type="Resource" id="Resource_2qgnm"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "faca"
@@ -2171,7 +2171,7 @@ WithoutMark = "faca"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_pcd3p"]
+[sub_resource type="Resource" id="Resource_fld55"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "colher"
@@ -2179,7 +2179,7 @@ WithoutMark = "colher"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_mky36"]
+[sub_resource type="Resource" id="Resource_4i6jm"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "peixe"
@@ -2187,7 +2187,7 @@ WithoutMark = "peixe"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_0e0ob"]
+[sub_resource type="Resource" id="Resource_jsd7p"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "toalha"
@@ -2195,7 +2195,7 @@ WithoutMark = "toalha"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_q1cwx"]
+[sub_resource type="Resource" id="Resource_pgk00"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "sapato"
@@ -2203,7 +2203,7 @@ WithoutMark = "sapato"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_pgfkj"]
+[sub_resource type="Resource" id="Resource_3vhl0"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "bola"
@@ -2211,7 +2211,7 @@ WithoutMark = "bola"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_r88ga"]
+[sub_resource type="Resource" id="Resource_8el2f"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "camisa"
@@ -2219,7 +2219,7 @@ WithoutMark = "camisa"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_pnky3"]
+[sub_resource type="Resource" id="Resource_c4nxf"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "calca"
@@ -2227,7 +2227,7 @@ WithoutMark = "calca"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_74yed"]
+[sub_resource type="Resource" id="Resource_8etw6"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "banco"
@@ -2235,7 +2235,7 @@ WithoutMark = "banco"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_3jbt1"]
+[sub_resource type="Resource" id="Resource_y0icc"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "rua"
@@ -2243,7 +2243,7 @@ WithoutMark = "rua"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_67he2"]
+[sub_resource type="Resource" id="Resource_xli2t"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "estrada"
@@ -2251,7 +2251,7 @@ WithoutMark = "estrada"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_vc4mi"]
+[sub_resource type="Resource" id="Resource_pns65"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "cidade"
@@ -2259,7 +2259,7 @@ WithoutMark = "cidade"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_aahsv"]
+[sub_resource type="Resource" id="Resource_m01k7"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "bairro"
@@ -2267,7 +2267,7 @@ WithoutMark = "bairro"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_ohtd4"]
+[sub_resource type="Resource" id="Resource_3qfh1"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "tempo"
@@ -2275,7 +2275,7 @@ WithoutMark = "tempo"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_7k4cr"]
+[sub_resource type="Resource" id="Resource_15d4m"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "vento"
@@ -2283,7 +2283,7 @@ WithoutMark = "vento"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_3m46i"]
+[sub_resource type="Resource" id="Resource_k85lh"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "chuva"
@@ -2291,7 +2291,7 @@ WithoutMark = "chuva"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_tyisl"]
+[sub_resource type="Resource" id="Resource_ui4cc"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "sol"
@@ -2299,7 +2299,7 @@ WithoutMark = "sol"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_jyjxw"]
+[sub_resource type="Resource" id="Resource_3ce4w"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "lua"
@@ -2307,7 +2307,7 @@ WithoutMark = "lua"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_du02o"]
+[sub_resource type="Resource" id="Resource_qa34m"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "estrela"
@@ -2315,7 +2315,7 @@ WithoutMark = "estrela"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_rf00e"]
+[sub_resource type="Resource" id="Resource_7sl6y"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "flor"
@@ -2323,7 +2323,7 @@ WithoutMark = "flor"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_rjcvh"]
+[sub_resource type="Resource" id="Resource_io8hw"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "arvore"
@@ -2331,7 +2331,7 @@ WithoutMark = "arvore"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_wd7hw"]
+[sub_resource type="Resource" id="Resource_kdxgv"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "campo"
@@ -2339,7 +2339,7 @@ WithoutMark = "campo"
 HasMark = false
 MarkIndex = -1
 
-[sub_resource type="Resource" id="Resource_5kxks"]
+[sub_resource type="Resource" id="Resource_aeyed"]
 script = ExtResource("1_vr2f8")
 DiactricalMarkSubCategoryType = 23
 Original = "rio"
@@ -2350,28 +2350,28 @@ MarkIndex = -1
 [resource]
 script = ExtResource("2_oxd3r")
 MarkedWordsByRule = {
-0: [SubResource("Resource_3bbjc"), SubResource("Resource_kawtq"), SubResource("Resource_57ubd"), SubResource("Resource_0w871"), SubResource("Resource_x146a"), SubResource("Resource_mlygy"), SubResource("Resource_xu801"), SubResource("Resource_o1k37"), SubResource("Resource_mmstl"), SubResource("Resource_q17yg"), SubResource("Resource_lc82w"), SubResource("Resource_1umc3"), SubResource("Resource_urfiq")],
-1: [SubResource("Resource_nmbfg"), SubResource("Resource_2a30p"), SubResource("Resource_5pnhk"), SubResource("Resource_muw2f"), SubResource("Resource_5anfk"), SubResource("Resource_nl03t"), SubResource("Resource_2hfdg"), SubResource("Resource_2o2gx"), SubResource("Resource_8d0hm"), SubResource("Resource_gepb8"), SubResource("Resource_e5x20")],
-2: [SubResource("Resource_y4w7k"), SubResource("Resource_w4bfc"), SubResource("Resource_mhyek"), SubResource("Resource_s0qg5"), SubResource("Resource_dyfb7"), SubResource("Resource_0bt8g"), SubResource("Resource_x0mdh"), SubResource("Resource_nrmj4"), SubResource("Resource_7227j"), SubResource("Resource_6pnle"), SubResource("Resource_unvu4"), SubResource("Resource_1bbcl"), SubResource("Resource_2dk47")],
-3: [SubResource("Resource_h2okv"), SubResource("Resource_v8p3p"), SubResource("Resource_7ldmp"), SubResource("Resource_sualo")],
-4: [SubResource("Resource_h0c2c"), SubResource("Resource_0151u"), SubResource("Resource_slvd2")],
-5: [SubResource("Resource_aalny"), SubResource("Resource_iywoj"), SubResource("Resource_4lj2x"), SubResource("Resource_qv6b7"), SubResource("Resource_pbp01"), SubResource("Resource_po88c"), SubResource("Resource_jr22t"), SubResource("Resource_ikkj5"), SubResource("Resource_qfytf"), SubResource("Resource_y1811")],
-6: [SubResource("Resource_jngrp"), SubResource("Resource_vm7dh"), SubResource("Resource_j6arm"), SubResource("Resource_t3vgl"), SubResource("Resource_uj50l"), SubResource("Resource_6l36h"), SubResource("Resource_jic8y"), SubResource("Resource_fjqv6")],
-7: [SubResource("Resource_mew0b"), SubResource("Resource_uctpv"), SubResource("Resource_is6lt"), SubResource("Resource_5pq6f"), SubResource("Resource_cmgsr"), SubResource("Resource_lutlw"), SubResource("Resource_jfuwp"), SubResource("Resource_rb87p"), SubResource("Resource_h6y8u"), SubResource("Resource_24myy")],
-8: [SubResource("Resource_ioa8r"), SubResource("Resource_cguef"), SubResource("Resource_m62kr"), SubResource("Resource_7cx4i"), SubResource("Resource_l7wf6"), SubResource("Resource_6t45v"), SubResource("Resource_3grld"), SubResource("Resource_884n7"), SubResource("Resource_onhi4")],
-9: [SubResource("Resource_qbebu"), SubResource("Resource_valg4"), SubResource("Resource_lhrtq"), SubResource("Resource_8q3fx"), SubResource("Resource_uq8q0"), SubResource("Resource_6b78c"), SubResource("Resource_3noh6")],
-10: [SubResource("Resource_uupmx"), SubResource("Resource_gv0p0"), SubResource("Resource_8kwh5"), SubResource("Resource_tu4g0"), SubResource("Resource_ie8md"), SubResource("Resource_33a44"), SubResource("Resource_dkiev"), SubResource("Resource_ino4j")],
-11: [SubResource("Resource_0xjab"), SubResource("Resource_gav44"), SubResource("Resource_cmjwn"), SubResource("Resource_qcti5")],
-12: [SubResource("Resource_2oycr"), SubResource("Resource_atrqx"), SubResource("Resource_nlfgn")],
-13: [SubResource("Resource_g0oy6"), SubResource("Resource_whb3h"), SubResource("Resource_l8mcu"), SubResource("Resource_qdvj7"), SubResource("Resource_w5x6w"), SubResource("Resource_41maq")],
-14: [SubResource("Resource_qrlxm"), SubResource("Resource_2cjbe")],
-15: [SubResource("Resource_cjlxx"), SubResource("Resource_1g7ca"), SubResource("Resource_44nak"), SubResource("Resource_tnscm"), SubResource("Resource_4svtk")],
-16: [SubResource("Resource_ldstn"), SubResource("Resource_newge"), SubResource("Resource_yyrnm"), SubResource("Resource_ja8cy"), SubResource("Resource_7lmam"), SubResource("Resource_4jai4"), SubResource("Resource_2blm1"), SubResource("Resource_nbgkd"), SubResource("Resource_6s0yi"), SubResource("Resource_70ieq"), SubResource("Resource_rkdb2")],
-17: [SubResource("Resource_m0k3r"), SubResource("Resource_0yesf"), SubResource("Resource_12f38"), SubResource("Resource_tjd21"), SubResource("Resource_6g606"), SubResource("Resource_881sa"), SubResource("Resource_85kg3"), SubResource("Resource_oop6e"), SubResource("Resource_ef3n2"), SubResource("Resource_m3mcr"), SubResource("Resource_4x4ex"), SubResource("Resource_hql65"), SubResource("Resource_jq4hq"), SubResource("Resource_sunxu"), SubResource("Resource_ogtiv")],
-18: [SubResource("Resource_7p3wi"), SubResource("Resource_rdaoc"), SubResource("Resource_fl4q5"), SubResource("Resource_mkgow"), SubResource("Resource_be5my")],
-19: [SubResource("Resource_uyaf6"), SubResource("Resource_2u4n4"), SubResource("Resource_15w34"), SubResource("Resource_4o2dh"), SubResource("Resource_ceqcm")],
-20: [SubResource("Resource_ub22k"), SubResource("Resource_ti3vr"), SubResource("Resource_e1x4q"), SubResource("Resource_ixd62"), SubResource("Resource_7crij")],
-21: [SubResource("Resource_2mdo7"), SubResource("Resource_wfyqr"), SubResource("Resource_a2a3t"), SubResource("Resource_pjdt2"), SubResource("Resource_nvora"), SubResource("Resource_valga")],
-22: [SubResource("Resource_wgkid"), SubResource("Resource_4nbm4"), SubResource("Resource_7pm0j"), SubResource("Resource_caacj"), SubResource("Resource_nvttp")]
+0: [SubResource("Resource_05gxj"), SubResource("Resource_abytr"), SubResource("Resource_25dat"), SubResource("Resource_3j67q"), SubResource("Resource_ti1uk"), SubResource("Resource_tvrl1"), SubResource("Resource_7c44e"), SubResource("Resource_ui66w"), SubResource("Resource_cvc4w"), SubResource("Resource_b8gec"), SubResource("Resource_kd8tp"), SubResource("Resource_qq3dd"), SubResource("Resource_dxifg")],
+1: [SubResource("Resource_y6x0x"), SubResource("Resource_rgnx4"), SubResource("Resource_k1hl6"), SubResource("Resource_senpc"), SubResource("Resource_cn06i"), SubResource("Resource_uo26f"), SubResource("Resource_b281y"), SubResource("Resource_kla2i"), SubResource("Resource_uurmb"), SubResource("Resource_nvy4b"), SubResource("Resource_1wi7v")],
+2: [SubResource("Resource_f4eu3"), SubResource("Resource_8hkcf"), SubResource("Resource_s3arx"), SubResource("Resource_32awe"), SubResource("Resource_aqlpm"), SubResource("Resource_l62ql"), SubResource("Resource_sknhm"), SubResource("Resource_i3ns3"), SubResource("Resource_isooo"), SubResource("Resource_hwooi"), SubResource("Resource_bamxa"), SubResource("Resource_y6ehq"), SubResource("Resource_jr37w")],
+3: [SubResource("Resource_x1fep"), SubResource("Resource_ixwpb"), SubResource("Resource_4hmtl"), SubResource("Resource_yrg0q")],
+4: [SubResource("Resource_g3q06"), SubResource("Resource_yjfbr"), SubResource("Resource_tnph5")],
+5: [SubResource("Resource_jwu0r"), SubResource("Resource_yux1h"), SubResource("Resource_va5bp"), SubResource("Resource_qpmkm"), SubResource("Resource_mri5m"), SubResource("Resource_5r7a2"), SubResource("Resource_4006g"), SubResource("Resource_crioc"), SubResource("Resource_1ygpv"), SubResource("Resource_khb50")],
+6: [SubResource("Resource_frn2n"), SubResource("Resource_k6eap"), SubResource("Resource_uwyrw"), SubResource("Resource_h3pjx"), SubResource("Resource_lisjw"), SubResource("Resource_hlixi"), SubResource("Resource_ry3m1"), SubResource("Resource_can4e")],
+7: [SubResource("Resource_wudy1"), SubResource("Resource_7qhsg"), SubResource("Resource_rnpt3"), SubResource("Resource_8djp1"), SubResource("Resource_4k0kw"), SubResource("Resource_mfiwr"), SubResource("Resource_gni4k"), SubResource("Resource_v1s7i"), SubResource("Resource_lkvat"), SubResource("Resource_pt15q")],
+8: [SubResource("Resource_vbtrq"), SubResource("Resource_b6rkp"), SubResource("Resource_ik6ij"), SubResource("Resource_vxu5x"), SubResource("Resource_q6aw6"), SubResource("Resource_1xl3d"), SubResource("Resource_baus6"), SubResource("Resource_d6fei"), SubResource("Resource_7vysv")],
+9: [SubResource("Resource_y85g0"), SubResource("Resource_lghjk"), SubResource("Resource_3r02k"), SubResource("Resource_6vvgt"), SubResource("Resource_fdnw5"), SubResource("Resource_15ndn"), SubResource("Resource_n8c28")],
+10: [SubResource("Resource_7vc7y"), SubResource("Resource_3rcm7"), SubResource("Resource_0sfjh"), SubResource("Resource_ex6ex"), SubResource("Resource_y2yqj"), SubResource("Resource_npb6q"), SubResource("Resource_oe48b"), SubResource("Resource_rqcyo")],
+11: [SubResource("Resource_sglyh"), SubResource("Resource_wmmu7"), SubResource("Resource_h7dvg"), SubResource("Resource_yt8y5")],
+12: [SubResource("Resource_grhqa"), SubResource("Resource_rojmd"), SubResource("Resource_owrm1")],
+13: [SubResource("Resource_r2kjb"), SubResource("Resource_tb66k"), SubResource("Resource_xvjrw"), SubResource("Resource_0t872"), SubResource("Resource_ei4t2"), SubResource("Resource_wresa")],
+14: [SubResource("Resource_uvv2u"), SubResource("Resource_rmi81")],
+15: [SubResource("Resource_w4p5u"), SubResource("Resource_cc62j"), SubResource("Resource_6w2fw"), SubResource("Resource_gysjq"), SubResource("Resource_c311l")],
+16: [SubResource("Resource_agn5q"), SubResource("Resource_01285"), SubResource("Resource_mlos8"), SubResource("Resource_5lp2p"), SubResource("Resource_moj8y"), SubResource("Resource_ncqx8"), SubResource("Resource_0o2as"), SubResource("Resource_umqqe"), SubResource("Resource_d5yy2"), SubResource("Resource_tyuqm"), SubResource("Resource_wnb21")],
+17: [SubResource("Resource_5gbvs"), SubResource("Resource_clqaw"), SubResource("Resource_74a8c"), SubResource("Resource_5tpvg"), SubResource("Resource_28ecy"), SubResource("Resource_ihaac"), SubResource("Resource_fpn21"), SubResource("Resource_ns1pu"), SubResource("Resource_ao4yo"), SubResource("Resource_qv3mp"), SubResource("Resource_t0pgy"), SubResource("Resource_gcn03"), SubResource("Resource_4molw"), SubResource("Resource_x6xih"), SubResource("Resource_ajrvo")],
+18: [SubResource("Resource_mte4r"), SubResource("Resource_6c2bf"), SubResource("Resource_qoimc"), SubResource("Resource_6yfgf"), SubResource("Resource_qayjv")],
+19: [SubResource("Resource_5q7av"), SubResource("Resource_5xg0v"), SubResource("Resource_c62an"), SubResource("Resource_prxom"), SubResource("Resource_ytvpo")],
+20: [SubResource("Resource_wbx0g"), SubResource("Resource_iyk6h"), SubResource("Resource_ufll4"), SubResource("Resource_0wvbm"), SubResource("Resource_cfbg1")],
+21: [SubResource("Resource_xtvga"), SubResource("Resource_lwbch"), SubResource("Resource_rdva8"), SubResource("Resource_dx4x7"), SubResource("Resource_ajevd"), SubResource("Resource_c0fhf")],
+22: [SubResource("Resource_pxduy"), SubResource("Resource_we5be"), SubResource("Resource_c4iak"), SubResource("Resource_2578h"), SubResource("Resource_hfaxo")]
 }
-NotMarkedWords = [SubResource("Resource_yr36r"), SubResource("Resource_iwv1h"), SubResource("Resource_kqn8d"), SubResource("Resource_mv5b3"), SubResource("Resource_6qqe5"), SubResource("Resource_6l45p"), SubResource("Resource_vapak"), SubResource("Resource_t528b"), SubResource("Resource_y5c37"), SubResource("Resource_f41cg"), SubResource("Resource_q3nhy"), SubResource("Resource_84vqw"), SubResource("Resource_8hj6m"), SubResource("Resource_m7fhj"), SubResource("Resource_rfcfg"), SubResource("Resource_1qkcd"), SubResource("Resource_lc5an"), SubResource("Resource_b62dt"), SubResource("Resource_an5xp"), SubResource("Resource_pdb7p"), SubResource("Resource_obkth"), SubResource("Resource_q7vj7"), SubResource("Resource_8b30c"), SubResource("Resource_nydn2"), SubResource("Resource_angxj"), SubResource("Resource_ishbh"), SubResource("Resource_uorsy"), SubResource("Resource_qymbw"), SubResource("Resource_2526b"), SubResource("Resource_ivy2h"), SubResource("Resource_dikp0"), SubResource("Resource_i7fug"), SubResource("Resource_vuilt"), SubResource("Resource_ok7it"), SubResource("Resource_lbhol"), SubResource("Resource_di5ya"), SubResource("Resource_y0qo5"), SubResource("Resource_yo3yw"), SubResource("Resource_7h5yt"), SubResource("Resource_85xhr"), SubResource("Resource_pc146"), SubResource("Resource_tttyk"), SubResource("Resource_30dmv"), SubResource("Resource_ba73l"), SubResource("Resource_ajxlk"), SubResource("Resource_1aiuk"), SubResource("Resource_1g4a1"), SubResource("Resource_0lv5t"), SubResource("Resource_l6mi0"), SubResource("Resource_dal8p"), SubResource("Resource_rug3j"), SubResource("Resource_qoiqp"), SubResource("Resource_k2lf1"), SubResource("Resource_xnobo"), SubResource("Resource_5fjbt"), SubResource("Resource_dobe8"), SubResource("Resource_6hwrx"), SubResource("Resource_f8vs0"), SubResource("Resource_xisdn"), SubResource("Resource_exu3m"), SubResource("Resource_1j8tg"), SubResource("Resource_8hhyc"), SubResource("Resource_p6k0r"), SubResource("Resource_k1klk"), SubResource("Resource_jgt4k"), SubResource("Resource_2olkt"), SubResource("Resource_u556p"), SubResource("Resource_xfg8i"), SubResource("Resource_6sjf4"), SubResource("Resource_t8f37"), SubResource("Resource_aherc"), SubResource("Resource_opkvy"), SubResource("Resource_poskc"), SubResource("Resource_qnjkp"), SubResource("Resource_2ml03"), SubResource("Resource_2smp2"), SubResource("Resource_qb5fe"), SubResource("Resource_2vp4m"), SubResource("Resource_nswch"), SubResource("Resource_h2383"), SubResource("Resource_gmkxc"), SubResource("Resource_c2hkp"), SubResource("Resource_ng65l"), SubResource("Resource_wfi5w"), SubResource("Resource_c0s3t"), SubResource("Resource_0ohc6"), SubResource("Resource_3m364"), SubResource("Resource_k5808"), SubResource("Resource_fqs1b"), SubResource("Resource_ooogq"), SubResource("Resource_f3wde"), SubResource("Resource_ioo2d"), SubResource("Resource_s14kx"), SubResource("Resource_3n20c"), SubResource("Resource_dxd0v"), SubResource("Resource_5jdyt"), SubResource("Resource_yjxlb"), SubResource("Resource_hos3r"), SubResource("Resource_8mb13"), SubResource("Resource_gmdxg"), SubResource("Resource_ydgki"), SubResource("Resource_14e06"), SubResource("Resource_qjxym"), SubResource("Resource_pcd3p"), SubResource("Resource_mky36"), SubResource("Resource_0e0ob"), SubResource("Resource_q1cwx"), SubResource("Resource_pgfkj"), SubResource("Resource_r88ga"), SubResource("Resource_pnky3"), SubResource("Resource_74yed"), SubResource("Resource_3jbt1"), SubResource("Resource_67he2"), SubResource("Resource_vc4mi"), SubResource("Resource_aahsv"), SubResource("Resource_ohtd4"), SubResource("Resource_7k4cr"), SubResource("Resource_3m46i"), SubResource("Resource_tyisl"), SubResource("Resource_jyjxw"), SubResource("Resource_du02o"), SubResource("Resource_rf00e"), SubResource("Resource_rjcvh"), SubResource("Resource_wd7hw"), SubResource("Resource_5kxks")]
+NotMarkedWords = [SubResource("Resource_povno"), SubResource("Resource_n0htq"), SubResource("Resource_bnc3i"), SubResource("Resource_2uxsv"), SubResource("Resource_4y54j"), SubResource("Resource_gprrf"), SubResource("Resource_jmiic"), SubResource("Resource_yocim"), SubResource("Resource_l4q8c"), SubResource("Resource_b3ts0"), SubResource("Resource_leh0s"), SubResource("Resource_jbj7k"), SubResource("Resource_uueeu"), SubResource("Resource_ftk3i"), SubResource("Resource_fs4q4"), SubResource("Resource_nfgkg"), SubResource("Resource_e05jw"), SubResource("Resource_ntwlp"), SubResource("Resource_6qphw"), SubResource("Resource_bb32q"), SubResource("Resource_fxmpq"), SubResource("Resource_jx8br"), SubResource("Resource_wtho7"), SubResource("Resource_5ffsy"), SubResource("Resource_onj42"), SubResource("Resource_xp4y8"), SubResource("Resource_oynau"), SubResource("Resource_x8w8r"), SubResource("Resource_g6cwx"), SubResource("Resource_ui1jx"), SubResource("Resource_umqb1"), SubResource("Resource_xp614"), SubResource("Resource_gxxvj"), SubResource("Resource_3kdal"), SubResource("Resource_t7rd8"), SubResource("Resource_qraay"), SubResource("Resource_gmk35"), SubResource("Resource_xutdl"), SubResource("Resource_fw6t2"), SubResource("Resource_o74mt"), SubResource("Resource_cm3ax"), SubResource("Resource_ogk84"), SubResource("Resource_ox8f4"), SubResource("Resource_k2ac0"), SubResource("Resource_osbrd"), SubResource("Resource_c0xyi"), SubResource("Resource_o21vt"), SubResource("Resource_w0l3h"), SubResource("Resource_m4ays"), SubResource("Resource_ukc35"), SubResource("Resource_5gglt"), SubResource("Resource_ijsmo"), SubResource("Resource_haqvj"), SubResource("Resource_dg5l0"), SubResource("Resource_rrk82"), SubResource("Resource_e1hls"), SubResource("Resource_fon8c"), SubResource("Resource_xl6v4"), SubResource("Resource_xa7qj"), SubResource("Resource_b20ik"), SubResource("Resource_a8o73"), SubResource("Resource_qmx1g"), SubResource("Resource_q43x8"), SubResource("Resource_hk4p8"), SubResource("Resource_s5yrn"), SubResource("Resource_x3c20"), SubResource("Resource_h8oh8"), SubResource("Resource_bavny"), SubResource("Resource_pwpq5"), SubResource("Resource_y3ox4"), SubResource("Resource_dvas0"), SubResource("Resource_4k6pu"), SubResource("Resource_b3sv5"), SubResource("Resource_8fbnu"), SubResource("Resource_526jc"), SubResource("Resource_27upk"), SubResource("Resource_gbbgk"), SubResource("Resource_sjqeu"), SubResource("Resource_d7mo7"), SubResource("Resource_0ohj2"), SubResource("Resource_8fb7j"), SubResource("Resource_2r8mf"), SubResource("Resource_6cuq7"), SubResource("Resource_uk3ip"), SubResource("Resource_r3lry"), SubResource("Resource_4uaud"), SubResource("Resource_v67tt"), SubResource("Resource_lxntu"), SubResource("Resource_6ey88"), SubResource("Resource_qif84"), SubResource("Resource_usvpg"), SubResource("Resource_71igh"), SubResource("Resource_kbe8b"), SubResource("Resource_ye1d8"), SubResource("Resource_d06uw"), SubResource("Resource_7irrd"), SubResource("Resource_gib1g"), SubResource("Resource_ypglq"), SubResource("Resource_1tcl5"), SubResource("Resource_xnjic"), SubResource("Resource_lcu8e"), SubResource("Resource_xf4as"), SubResource("Resource_2qgnm"), SubResource("Resource_fld55"), SubResource("Resource_4i6jm"), SubResource("Resource_jsd7p"), SubResource("Resource_pgk00"), SubResource("Resource_3vhl0"), SubResource("Resource_8el2f"), SubResource("Resource_c4nxf"), SubResource("Resource_8etw6"), SubResource("Resource_y0icc"), SubResource("Resource_xli2t"), SubResource("Resource_pns65"), SubResource("Resource_m01k7"), SubResource("Resource_3qfh1"), SubResource("Resource_15d4m"), SubResource("Resource_k85lh"), SubResource("Resource_ui4cc"), SubResource("Resource_3ce4w"), SubResource("Resource_qa34m"), SubResource("Resource_7sl6y"), SubResource("Resource_io8hw"), SubResource("Resource_kdxgv"), SubResource("Resource_aeyed")]

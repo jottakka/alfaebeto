@@ -2,52 +2,129 @@
   "UsoDeX": {
     "Regras": [
       {
-        "Regra": "Usado após ditongos",
-        "Exemplos": ["caixa", "peixe", "trouxer", "feixe", "meixa"]
+        "Regra": "Sem regra especifica",
+        "Exemplos": [
+          "abacaxi",
+          "bexiga",
+          "bruxa",
+          "caxumba",
+          "elixir",
+          "faxina",
+          "graxa",
+          "lagartixa",
+          "mexerico",
+          "xote",
+          "xarope",
+          "xadrez",
+        ]
+      },
+      {
+        "Regra": "Geralmente usado após ditongos",
+        "Exemplos": [
+          "caixa",
+          "peixe",
+          "feixe",
+          "meixa",
+          "baixa",
+          "faixa",
+          "faixada",
+          "ameixa",
+          "baixela",
+          "baixaria",
+          "peixaria",
+          "peixinho",
+          "peixoto",
+          "enfaixar",
+          "enfaixado",
+        "enfaixamento",
+        ]
       },
       {
         "Regra": "Usado nas palavras de origem indígena, africana ou inglesa",
-        "Exemplos": ["abacaxi", "xará", "xampu", "xerife", "xícara"]
+        "Exemplos": [
+          "xará",
+          "xampu",
+          "xerife",
+          "xícara",
+          "xavante",
+          "xilindró",
+        ]
       },
       {
         "Regra": "Usado após a sílaba inicial 'en-'",
-        "Exemplos": ["enxame", "enxada", "enxergar", "enxurrada", "enxoval"]
+        "Exemplos": [
+          "enxame",
+          "enxada",
+          "enxergar",
+          "enxurrada",
+          "enxoval",
+          "enxofre",
+          "enxuto"
+        ]
       },
       {
-        "Regra": "Usado para representar o som /ks/ entre vogais",
-        "Exemplos": ["exame", "exato", "texto", "complexo", "táxi"]
-      }
-    ],
-    "Exceções": [
-      {
-        "Regra": "Palavras que não seguem a regra de 'x' após ditongos",
-        "Exemplos": ["deixar", "baixar", "feixe", "trouxeram", "trouxesse"]
-      },
-      {
-        "Regra": "Palavras que não seguem a regra de 'x' após a sílaba inicial 'en-'",
-        "Exemplos": ["encher", "encharcar", "encheu", "encharcado", "encheram"]
+        "Regra": "Usado após da sílaba -me",
+        "Exemplos": [
+          "mexer",
+          "mexido",
+          "mexicano",
+          "mexerica",
+          "samexunga",
+          "emexo",
+          "remexer",
+          "imexível",
+          "mexerico",
+          "mexeriqueiro"
+        ]
       }
     ]
   },
   "UsoDeCh": {
     "Regras": [
       {
-        "Regra": "Usado para representar o som /ʃ/ (ch)",
-        "Exemplos": ["chão", "chave", "chocolate", "chuva", "chamar"]
+        "Regra": "Sem regra especifica.",
+        "Exemplos": [
+          "bochecha",
+          "boliche",
+          "broche",
+          "cachaça",
+          "chuchu",
+          "colcha",
+          "fachada",
+          "mochila",
+          "salsicha",
+          "tocha"
+        ]
       },
       {
         "Regra": "Usado em palavras de origem estrangeira adaptadas ao português",
-        "Exemplos": ["choque", "chique", "chalé", "chefe", "champanhe"]
+        "Exemplos": [
+          "choque",
+          "chique",
+          "chalé",
+          "chefe",
+          "champanhe",
+          "chassi",
+          "chip",
+          "chop",
+          "chucrute",
+          "churros"
+        ]
+      },
+      {
+        "Regra": "A palavra 'mecha' (porção de cabelo) escreve-se com ch",
+        "Exemplos": [ "mecha" ]
       },
       {
         "Regra": "Usado em formas do verbo 'encher' e seus derivados",
-        "Exemplos": ["encher", "cheio", "encheu", "cheia", "enchente"]
-      }
-    ],
-    "Exceções": [
-      {
-        "Regra": "Palavras que não seguem a regra de 'ch' representando o som /ʃ/",
-        "Exemplos": ["mexer", "enxergar", "exagerar", "exame", "exato"]
+        "Exemplos": [
+          "encher",
+          "cheio",
+          "encheu",
+          "cheia",
+          "enchente",
+          "enchimento",
+        ]
       }
     ]
   }
@@ -63,11 +140,13 @@ Tendo esses dados acima cria um json seguindo modelo abaixo [corrija qualquer er
     "Description": "verbos encher",
     "words": [
       {
+
       "Word":"encher",
       "RightOption":"ch",
       "Indices":[ 2, 3 ],
       "FirstPArt":"en", <- first part without X or ch
       "SecondPart":"er" <- second part without X or ch
+        "Options": [ "x", "ch" ],
       }
   ]
 }

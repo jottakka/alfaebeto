@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgv4oxxsurx0j"]
+[gd_scene load_steps=7 format=3 uid="uid://dgv4oxxsurx0j"]
 
 [ext_resource type="Script" path="res://UI/Menus/RuleListItem.cs" id="1_f8x3m"]
 [ext_resource type="PackedScene" uid="uid://b8l0x6quuyu3l" path="res://UI/Menus/rule_description_ui.tscn" id="2_vvmjt"]
@@ -6,7 +6,11 @@
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="4_tvrhu"]
 [ext_resource type="Texture2D" uid="uid://b1440itsj6yym" path="res://UI/Menus/Art/dot_shadow.png" id="5_87eft"]
 
-[node name="RuleListItem" type="MarginContainer" node_paths=PackedStringArray("RuleNameLabel", "GoToRuleButton")]
+[sub_resource type="LabelSettings" id="LabelSettings_v14va"]
+font_size = 10
+font_color = Color(0.581033, 0.581033, 0.581033, 1)
+
+[node name="RuleListItem" type="MarginContainer" node_paths=PackedStringArray("RuleNameLabel", "GoToRuleButton", "LockedColorRect", "LockInfoLabel", "LockTextureRect")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,6 +25,11 @@ script = ExtResource("1_f8x3m")
 RuleNameLabel = NodePath("MarginContainer/VBoxContainer/RuleNameLabel")
 GoToRuleButton = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Button")
 RuleDescriptionUiPackedScene = ExtResource("2_vvmjt")
+LockedColorRect = NodePath("LockedColorRect")
+LockInfoLabel = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/LockInfoLabel")
+LockTextureRect = NodePath("MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/TextureRect")
+UnlockedIconTexture = "res://UI/Menus/Art/dotGreen.png"
+LockedIconTexture = "res://UI/Menus/Art/dot_shadow.png"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
@@ -57,6 +66,11 @@ layout_mode = 2
 texture = ExtResource("5_87eft")
 stretch_mode = 5
 
+[node name="LockInfoLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "BLOQUEADO"
+label_settings = SubResource("LabelSettings_v14va")
+
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
@@ -67,3 +81,7 @@ action_mode = 0
 text = "visualizar"
 alignment = 2
 icon_alignment = 2
+
+[node name="LockedColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.341176, 0.341176, 0.341176, 0.356863)

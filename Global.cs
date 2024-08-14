@@ -1,103 +1,101 @@
 using System.Collections.Generic;
 using Godot;
-using WordProcessing.Models.DiacriticalMarks;
 using WordProcessing.Models.XorCH;
 
 public partial class Global : Node
 {
-	public static Global Instance { get; private set; } = null;
+    public static Global Instance { get; private set; } = null;
 
-	public UserDataManagementComponent UserDataManagementComponent { get; set; }
-	public UserDataInfoResource UserDataInfoResource => _dataResourceManager.UserDataInfoResource;
+    public UserDataManagementComponent UserDataManagementComponent { get; set; }
 
-	public RulesResource RulesResource => _dataResourceManager.RulesResource;
+    public UserDataInfoResource UserDataInfoResource => _dataResourceManager.UserDataInfoResource;
 
-	public Player Player { get; private set; }
+    public RulesResource RulesResource => _dataResourceManager.RulesResource;
 
-	public StageBase Scene { get; private set; }
+    public DiactricalMarkWordsDataResource DiactricalMarkWordsDataResource => _dataResourceManager.DiactricalMarkWordsDataResource;
 
-	public Queue<DiactricalMarkWordInfo> MarkedWords { get; private set; }
+    public Player Player { get; private set; }
 
-	public Queue<XorCHWord> XorChWords { get; private set; }
+    public StageBase Scene { get; private set; }
 
-	public Node CurrentScene { get; private set; }
+    public Node CurrentScene { get; private set; }
 
-	public WordServerManager WordServerManager { get; } = new();
+    public Queue<XorCHWord> XorChWords => _wordServerManager.GetShuffledXorCHWords(10);
+    public Queue<DiactricalMarkWordResource> MarkedWords => _wordServerManager.GetShuffledDiactricalMarkWords(10);
 
-	[Signal]
-	public delegate void OnMainNodeSetupFinishedSignalEventHandler();
+    [Signal]
+    public delegate void OnMainNodeSetupFinishedSignalEventHandler();
 
-	private DataResourceManager _dataResourceManager { get; } = new();
+    private WordServerManager _wordServerManager { get; } = new();
+    private DataResourceManager _dataResourceManager { get; } = new();
 
-	public override void _Ready()
-	{
-		if (Instance is not null)
-		{
-			if (Instance != this)
-			{
-				GD.Print("Global instance already exists, destroying duplicate instance.");
-			}
+    public override void _Ready()
+    {
+        if (Instance is not null)
+        {
+            if (Instance != this)
+            {
+                GD.Print("Global instance already exists, destroying duplicate instance.");
+            }
 
-			QueueFree();
+            QueueFree();
 
-			return;
-		}
+            return;
+        }
 
-		Instance = this;
-		// Initialize random number generator
-		GD.Randomize();
-		XorChWords = WordServerManager.GetShuffledXorCHWords();
-		MarkedWords = WordServerManager.GetShuffledDiactricalMarkWords();
-		Viewport root = GetTree().Root;
-		CurrentScene = root.GetChild(root.GetChildCount() - 1);
-	}
+        Instance = this;
+        // Initialize random number generator
+        GD.Randomize();
+        Viewport root = GetTree().Root;
+        CurrentScene = root.GetChild(root.GetChildCount() - 1);
+    }
 
-	public void SettingMainNodeData(Player player, StageBase stage)
-	{
-		Player = player;
-		Scene = stage;
-		_ = EmitSignal(nameof(OnMainNodeSetupFinishedSignal));
-	}
+    public void SettingMainNodeData(Player player, StageBase stage)
+    {
+        Player = player;
+        Scene = stage;
+        _ = EmitSignal(nameof(OnMainNodeSetupFinishedSignal));
+    }
 
-	public void SwitchToMainMenu()
-	{
-		GotoScene("res://UI/Menus/main_menu.tscn");
-	}
+    public void SwitchToMainMenu()
+    {
+        GotoScene("res://UI/Menus/main_menu.tscn");
+    }
 
-	public void SwitchToStartGame()
-	{
-		GotoScene("res://start_game.tscn");
-	}
+    public void SwitchToStartGame()
+    {
+        GotoScene("res://start_game.tscn");
+    }
 
-	private void GotoScene(string path)
-	{
-		// This function will usually be called from a signal callback,
-		// or some other function from the current scene.
-		// Deleting the current scene at this point is
-		// a bad idea, because it may still be executing code.
-		// This will result in a crash or unexpected behavior.
+    private void GotoScene(string path)
+    {
+        // This function will usually be called from a signal callback,
+        // or some other function from the current scene.
+        // Deleting the current scene at this point is
+        // a bad idea, because it may still be executing code.
+        // This will result in a crash or unexpected behavior.
 
-		// The solution is to defer the load to a later time, when
-		// we can be sure that no code from the current scene is running:
+        // The solution is to defer the load to a later time, when
+        // we can be sure that no code from the current scene is running:
 
-		_ = CallDeferred(MethodName.DeferredGotoScene, path);
-	}
+        _ = CallDeferred(MethodName.DeferredGotoScene, path);
+    }
 
-	private void DeferredGotoScene(string path)
-	{
-		// It is now safe to remove the current scene.
-		CurrentScene.Free();
+    private void DeferredGotoScene(string path)
+    {
+        // It is now safe to remove the current scene.
+        CurrentScene.Free();
 
-		// Load a new scene.
-		PackedScene nextScene = GD.Load<PackedScene>(path);
+        // Load a new scene.
+        PackedScene nextScene = GD.Load<PackedScene>(path);
 
-		// Instance the new scene.
-		CurrentScene = nextScene.Instantiate();
+        // Instance the new scene.
+        CurrentScene = nextScene.Instantiate();
 
-		// Add it to the active scene, as child of root.
-		GetTree().Root.AddChild(CurrentScene);
+        // Add it to the active scene, as child of root.
+        GetTree().Root.AddChild(CurrentScene);
 
-		// Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
-		GetTree().CurrentScene = CurrentScene;
-	}
+        // Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
+        GetTree().CurrentScene = CurrentScene;
+    }
 }

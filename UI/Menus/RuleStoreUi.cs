@@ -11,8 +11,6 @@ public sealed partial class RuleStoreUi : Control
 	[Export]
 	public PackedScene StoreItemPackedScene { get; set; }
 	[Export]
-	public AnimationPlayer AnimationPlayer { get; set; }
-	[Export]
 	public AudioStreamPlayer AudioStreamPlayer { get; set; }
 
 	public int TotalGems { get; private set; }
@@ -45,7 +43,7 @@ public sealed partial class RuleStoreUi : Control
 
 		TotalGems = _userData.TotalRedKeyGemsAmmount;
 		TotalGemsLabel.Text = TotalGems.ToString();
-		AnimationPlayer.Play(UiAnimations.OnRuleBought);
+		AudioStreamPlayer.Play();
 		_ = EmitSignal(nameof(TotalGemsChangeSignal), TotalGems);
 	}
 }

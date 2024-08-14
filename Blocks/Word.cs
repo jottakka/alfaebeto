@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
-using WordProcessing.Models.DiacriticalMarks;
 
 public partial class Word : Node2D
 {
@@ -17,7 +16,7 @@ public partial class Word : Node2D
 	[Signal]
 	public delegate void OnDisableChildrenCollisionsInternalSingalEventHandler();
 
-	public DiactricalMarkWordInfo WordInfo { get; set; }
+	public DiactricalMarkWordResource WordInfo { get; set; }
 
 	public float CenterOffset { get; set; } = 0.0f;
 
@@ -52,7 +51,7 @@ public partial class Word : Node2D
 	{
 		float currentX = AddNoLetterBlock();
 
-		foreach ((char letter, int idx) in WordInfo.WithoutDiacritics.Select((letter, idx) => (letter, idx)))
+		foreach ((char letter, int idx) in WordInfo.WithoutMark.Select((letter, idx) => (letter, idx)))
 		{
 			currentX = BuildLetterBlock(currentX, letter, idx);
 		}
@@ -87,7 +86,7 @@ public partial class Word : Node2D
 
 	private float BuildLetterBlock(float currentX, char letter, int idx)
 	{
-		bool isTarget = WordInfo.HasMark && WordInfo.DiacriticIndex == idx;
+		bool isTarget = WordInfo.HasMark && WordInfo.MarkIndex == idx;
 
 		LetterBlock letterBlock = _letterBuilder.BuildLetterBlock(
 			letter,

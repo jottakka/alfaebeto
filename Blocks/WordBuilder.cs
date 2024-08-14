@@ -1,5 +1,4 @@
 ﻿using Godot;
-using WordProcessing.Models.DiacriticalMarks;
 
 public sealed class WordBuilder
 {
@@ -10,7 +9,7 @@ public sealed class WordBuilder
         _wordBlockPackedScene = packedScene;
     }
 
-    public Word BuildWord(DiactricalMarkWordInfo word, Vector2 startPosition)
+    public Word BuildWord(DiactricalMarkWordResource word, Vector2 startPosition)
     {
         Word wordNode = _wordBlockPackedScene.Instantiate<Word>();
         wordNode.Position = startPosition;

@@ -24,7 +24,6 @@ Global="*res://Global.cs"
 window/size/viewport_width=540
 window/size/viewport_height=960
 window/size/resizable=false
-window/size/always_on_top=true
 window/size/transparent=true
 window/stretch/mode="canvas_items"
 
