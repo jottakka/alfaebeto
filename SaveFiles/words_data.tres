@@ -1,0 +1,2377 @@
+[gd_resource type="Resource" load_steps=296 format=3]
+
+[ext_resource type="Script" path="res://Data/Words/DiactricalMarkWordResource.cs" id="1_vr2f8"]
+[ext_resource type="Script" path="res://Data/Words/DiactricalMarkWordsDataResource.cs" id="2_oxd3r"]
+
+[sub_resource type="Resource" id="Resource_3bbjc"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "sofá"
+WithoutMark = "sofa"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_kawtq"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "maracujá"
+WithoutMark = "maracuja"
+HasMark = true
+MarkIndex = 7
+
+[sub_resource type="Resource" id="Resource_57ubd"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "Paraná"
+WithoutMark = "parana"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_0w871"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "ananás"
+WithoutMark = "ananas"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_x146a"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "marajás"
+WithoutMark = "marajas"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_mlygy"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "atrás"
+WithoutMark = "atras"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_xu801"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "pá"
+WithoutMark = "pa"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_o1k37"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "já"
+WithoutMark = "ja"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_mmstl"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "má"
+WithoutMark = "ma"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_q17yg"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "lá"
+WithoutMark = "la"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_lc82w"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "trás"
+WithoutMark = "tras"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_1umc3"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "más"
+WithoutMark = "mas"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_urfiq"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 0
+Original = "chás"
+WithoutMark = "chas"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_nmbfg"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "Pelé"
+WithoutMark = "pele"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_2a30p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "café"
+WithoutMark = "cafe"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_5pnhk"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "você"
+WithoutMark = "voce"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_muw2f"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "freguês"
+WithoutMark = "fregues"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_5anfk"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "bebês"
+WithoutMark = "bebes"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_nl03t"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "pé"
+WithoutMark = "pe"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_2hfdg"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "fé"
+WithoutMark = "fe"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_2o2gx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "sé"
+WithoutMark = "se"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_8d0hm"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "mês"
+WithoutMark = "mes"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_gepb8"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "três"
+WithoutMark = "tres"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_e5x20"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 1
+Original = "rés"
+WithoutMark = "res"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_y4w7k"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "cipó"
+WithoutMark = "cipo"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_w4bfc"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "paletó"
+WithoutMark = "paleto"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_mhyek"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "avó"
+WithoutMark = "avo"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_s0qg5"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "dominó"
+WithoutMark = "domino"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_dyfb7"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "pavô"
+WithoutMark = "pavo"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_0bt8g"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "vovô"
+WithoutMark = "vovo"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_x0mdh"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "chororô"
+WithoutMark = "chororo"
+HasMark = true
+MarkIndex = 6
+
+[sub_resource type="Resource" id="Resource_nrmj4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "pó"
+WithoutMark = "po"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_7227j"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "só"
+WithoutMark = "so"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_6pnle"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "dó"
+WithoutMark = "do"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_unvu4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "cós"
+WithoutMark = "cos"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_1bbcl"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "sós"
+WithoutMark = "sos"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_2dk47"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 2
+Original = "nós"
+WithoutMark = "nos"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_h2okv"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 3
+Original = "amém"
+WithoutMark = "amem"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_v8p3p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 3
+Original = "também"
+WithoutMark = "tambem"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_7ldmp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 3
+Original = "armazém"
+WithoutMark = "armazem"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_sualo"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 3
+Original = "alguém"
+WithoutMark = "alguem"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_h0c2c"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 4
+Original = "parabéns"
+WithoutMark = "parabens"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_0151u"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 4
+Original = "reféns"
+WithoutMark = "refens"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_slvd2"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 4
+Original = "armazéns"
+WithoutMark = "armazens"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_aalny"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "fácil"
+WithoutMark = "facil"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_iywoj"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "útil"
+WithoutMark = "util"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_4lj2x"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "fóssil"
+WithoutMark = "fossil"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_qv6b7"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "réptil"
+WithoutMark = "reptil"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_pbp01"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "níquel"
+WithoutMark = "niquel"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_po88c"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "ignóbil"
+WithoutMark = "ignobil"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_jr22t"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "verossímil"
+WithoutMark = "verossimil"
+HasMark = true
+MarkIndex = 6
+
+[sub_resource type="Resource" id="Resource_ikkj5"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "estéril"
+WithoutMark = "esteril"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_qfytf"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "têxtil"
+WithoutMark = "textil"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_y1811"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 5
+Original = "retrátil"
+WithoutMark = "retratil"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_jngrp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "júri"
+WithoutMark = "juri"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_vm7dh"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "lápis"
+WithoutMark = "lapis"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_j6arm"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "tênis"
+WithoutMark = "tenis"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_t3vgl"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "biquíni"
+WithoutMark = "biquini"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_uj50l"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "hortifrúti"
+WithoutMark = "hortifruti"
+HasMark = true
+MarkIndex = 7
+
+[sub_resource type="Resource" id="Resource_6l36h"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "táxi"
+WithoutMark = "taxi"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_jic8y"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "táxis"
+WithoutMark = "taxis"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_fjqv6"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 6
+Original = "cáqui"
+WithoutMark = "caqui"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_mew0b"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "hífen"
+WithoutMark = "hifen"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_uctpv"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "pólen"
+WithoutMark = "polen"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_is6lt"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "elétron"
+WithoutMark = "eletron"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_5pq6f"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "nêutron"
+WithoutMark = "neutron"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_cmgsr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "abdômen"
+WithoutMark = "abdomen"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_lutlw"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "gérmen"
+WithoutMark = "germen"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_jfuwp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "glúten"
+WithoutMark = "gluten"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_rb87p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "ámen"
+WithoutMark = "amen"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_h6y8u"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "mórmon"
+WithoutMark = "mormon"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_24myy"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 7
+Original = "fóton"
+WithoutMark = "foton"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_ioa8r"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "vírus"
+WithoutMark = "virus"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_cguef"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "Vênus"
+WithoutMark = "venus"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_m62kr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "ônus"
+WithoutMark = "onus"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_7cx4i"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "bônus"
+WithoutMark = "bonus"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_l7wf6"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "tônus"
+WithoutMark = "tonus"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_6t45v"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "húmus"
+WithoutMark = "humus"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_3grld"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "lótus"
+WithoutMark = "lotus"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_884n7"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "antivírus"
+WithoutMark = "antivirus"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_onhi4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 8
+Original = "célsius"
+WithoutMark = "celsius"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_qbebu"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 9
+Original = "revólver"
+WithoutMark = "revolver"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_valg4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 9
+Original = "caráter"
+WithoutMark = "carater"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_lhrtq"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 9
+Original = "âmbar"
+WithoutMark = "ambar"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_8q3fx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 9
+Original = "repórter"
+WithoutMark = "reporter"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_uq8q0"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 9
+Original = "líder"
+WithoutMark = "lider"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_6b78c"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 9
+Original = "gêiser"
+WithoutMark = "geiser"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_3noh6"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 9
+Original = "poliéster"
+WithoutMark = "poliester"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_uupmx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "látex"
+WithoutMark = "latex"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_gv0p0"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "fênix"
+WithoutMark = "fenix"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_8kwh5"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "tórax"
+WithoutMark = "torax"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_tu4g0"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "fértil"
+WithoutMark = "fertil"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_ie8md"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "clímax"
+WithoutMark = "climax"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_33a44"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "cálix"
+WithoutMark = "calix"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_dkiev"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "hélix"
+WithoutMark = "helix"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_ino4j"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 10
+Original = "símplex"
+WithoutMark = "simplex"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_0xjab"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 11
+Original = "ímã"
+WithoutMark = "imã"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_gav44"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 11
+Original = "órfã"
+WithoutMark = "orfã"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_cmjwn"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 11
+Original = "órfãs"
+WithoutMark = "orfãs"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_qcti5"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 11
+Original = "ímãs"
+WithoutMark = "imãs"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_2oycr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 12
+Original = "órgão"
+WithoutMark = "orgão"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_atrqx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 12
+Original = "sótão"
+WithoutMark = "sotão"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_nlfgn"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 12
+Original = "órgãos"
+WithoutMark = "orgãos"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_g0oy6"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 13
+Original = "álbum"
+WithoutMark = "album"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_whb3h"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 13
+Original = "médium"
+WithoutMark = "medium"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_l8mcu"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 13
+Original = "fórum"
+WithoutMark = "forum"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_qdvj7"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 13
+Original = "tétum"
+WithoutMark = "tetum"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_w5x6w"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 13
+Original = "fálum"
+WithoutMark = "falum"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_41maq"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 13
+Original = "sérum"
+WithoutMark = "serum"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_qrlxm"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 14
+Original = "álbuns"
+WithoutMark = "albuns"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_2cjbe"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 14
+Original = "fóruns"
+WithoutMark = "foruns"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_cjlxx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 15
+Original = "fórceps"
+WithoutMark = "forceps"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_1g7ca"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 15
+Original = "bíceps"
+WithoutMark = "biceps"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_44nak"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 15
+Original = "crísops"
+WithoutMark = "crisops"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_tnscm"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 15
+Original = "uteróceps"
+WithoutMark = "uteroceps"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_4svtk"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 15
+Original = "tríceps"
+WithoutMark = "triceps"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_ldstn"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "água"
+WithoutMark = "agua"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_newge"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "história"
+WithoutMark = "historia"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_yyrnm"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "série"
+WithoutMark = "serie"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_ja8cy"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "pônei"
+WithoutMark = "ponei"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_7lmam"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "móveis"
+WithoutMark = "moveis"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_4jai4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "tênue"
+WithoutMark = "tenue"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_2blm1"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "língua"
+WithoutMark = "lingua"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_nbgkd"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "inócua"
+WithoutMark = "inocua"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_6s0yi"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "régua"
+WithoutMark = "regua"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_70ieq"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "égua"
+WithoutMark = "egua"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_rkdb2"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 16
+Original = "estátua"
+WithoutMark = "estatua"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_m0k3r"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "lânguido"
+WithoutMark = "languido"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_0yesf"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "física"
+WithoutMark = "fisica"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_12f38"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "trópico"
+WithoutMark = "tropico"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_tjd21"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "álibi"
+WithoutMark = "alibi"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_6g606"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "hábitat"
+WithoutMark = "habitat"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_881sa"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "déficit"
+WithoutMark = "deficit"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_85kg3"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "lápide"
+WithoutMark = "lapide"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_oop6e"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "álgebra"
+WithoutMark = "algebra"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_ef3n2"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "célula"
+WithoutMark = "celula"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_m3mcr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "pêndulo"
+WithoutMark = "pendulo"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_4x4ex"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "amígdalas"
+WithoutMark = "amigdalas"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_hql65"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "amálgama"
+WithoutMark = "amalgama"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_jq4hq"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "cúpula"
+WithoutMark = "cupula"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_sunxu"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "análise"
+WithoutMark = "analise"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_ogtiv"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 17
+Original = "ânimo"
+WithoutMark = "animo"
+HasMark = true
+MarkIndex = 0
+
+[sub_resource type="Resource" id="Resource_7p3wi"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 18
+Original = "fiéis"
+WithoutMark = "fieis"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_rdaoc"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 18
+Original = "papéis"
+WithoutMark = "papeis"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_fl4q5"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 18
+Original = "pastéis"
+WithoutMark = "pasteis"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_mkgow"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 18
+Original = "coronéis"
+WithoutMark = "coroneis"
+HasMark = true
+MarkIndex = 5
+
+[sub_resource type="Resource" id="Resource_be5my"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 18
+Original = "anéis"
+WithoutMark = "aneis"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_uyaf6"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 19
+Original = "céu"
+WithoutMark = "ceu"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_2u4n4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 19
+Original = "chapéu"
+WithoutMark = "chapeu"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_15w34"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 19
+Original = "troféu"
+WithoutMark = "trofeu"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_4o2dh"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 19
+Original = "véu"
+WithoutMark = "veu"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_ceqcm"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 19
+Original = "réu"
+WithoutMark = "reu"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_ub22k"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 20
+Original = "herói"
+WithoutMark = "heroi"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_ti3vr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 20
+Original = "sóis"
+WithoutMark = "sois"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_e1x4q"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 20
+Original = "faróis"
+WithoutMark = "farois"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_ixd62"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 20
+Original = "lençóis"
+WithoutMark = "lençois"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_7crij"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 20
+Original = "rói"
+WithoutMark = "roi"
+HasMark = true
+MarkIndex = 1
+
+[sub_resource type="Resource" id="Resource_2mdo7"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 21
+Original = "saída"
+WithoutMark = "saida"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_wfyqr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 21
+Original = "juízes"
+WithoutMark = "juizes"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_a2a3t"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 21
+Original = "saúde"
+WithoutMark = "saude"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_pjdt2"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 21
+Original = "viúva"
+WithoutMark = "viuva"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_nvora"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 21
+Original = "caíste"
+WithoutMark = "caiste"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_valga"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 21
+Original = "saíste"
+WithoutMark = "saiste"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_wgkid"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 22
+Original = "balaústre"
+WithoutMark = "balaustre"
+HasMark = true
+MarkIndex = 4
+
+[sub_resource type="Resource" id="Resource_4nbm4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 22
+Original = "ruído"
+WithoutMark = "ruido"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_7pm0j"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 22
+Original = "viúvo"
+WithoutMark = "viuvo"
+HasMark = true
+MarkIndex = 2
+
+[sub_resource type="Resource" id="Resource_caacj"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 22
+Original = "egoísmo"
+WithoutMark = "egoismo"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_nvttp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 22
+Original = "egoísta"
+WithoutMark = "egoista"
+HasMark = true
+MarkIndex = 3
+
+[sub_resource type="Resource" id="Resource_yr36r"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "mesa"
+WithoutMark = "mesa"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_iwv1h"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "cana"
+WithoutMark = "cana"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_kqn8d"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "alga"
+WithoutMark = "alga"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_mv5b3"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "nada"
+WithoutMark = "nada"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_6qqe5"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "casa"
+WithoutMark = "casa"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_6l45p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "pare"
+WithoutMark = "pare"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_vapak"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "pape"
+WithoutMark = "pape"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_t528b"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "doce"
+WithoutMark = "doce"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_y5c37"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "nome"
+WithoutMark = "nome"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_f41cg"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "luze"
+WithoutMark = "luze"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_q3nhy"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "jogo"
+WithoutMark = "jogo"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_84vqw"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "pano"
+WithoutMark = "pano"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_8hj6m"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "bolo"
+WithoutMark = "bolo"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_m7fhj"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "cano"
+WithoutMark = "cano"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_rfcfg"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "galo"
+WithoutMark = "galo"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_1qkcd"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "alem"
+WithoutMark = "alem"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_lc5an"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "item"
+WithoutMark = "item"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_b62dt"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "harem"
+WithoutMark = "harem"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_an5xp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "trem"
+WithoutMark = "trem"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_pdb7p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "bem"
+WithoutMark = "bem"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_obkth"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "convergem"
+WithoutMark = "convergem"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_q7vj7"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "aprendizagem"
+WithoutMark = "aprendizagem"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_8b30c"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "jovens"
+WithoutMark = "jovens"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_nydn2"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "homens"
+WithoutMark = "homens"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_angxj"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "libidinagens"
+WithoutMark = "libidinagens"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ishbh"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "adens"
+WithoutMark = "adens"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_uorsy"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "lembrens"
+WithoutMark = "lembrens"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_qymbw"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "animal"
+WithoutMark = "animal"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_2526b"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "final"
+WithoutMark = "final"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ivy2h"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "neutral"
+WithoutMark = "neutral"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_dikp0"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "local"
+WithoutMark = "local"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_i7fug"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "legal"
+WithoutMark = "legal"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_vuilt"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "pastoril"
+WithoutMark = "pastoril"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ok7it"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "anil"
+WithoutMark = "anil"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_lbhol"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "pari"
+WithoutMark = "pari"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_di5ya"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "mari"
+WithoutMark = "mari"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_y0qo5"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "anis"
+WithoutMark = "anis"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_yo3yw"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "biquini"
+WithoutMark = "biquini"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_7h5yt"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "finis"
+WithoutMark = "finis"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_85xhr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "zumbis"
+WithoutMark = "zumbis"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_pc146"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "nenen"
+WithoutMark = "nenen"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_tttyk"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "megaton"
+WithoutMark = "megaton"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_30dmv"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "neon"
+WithoutMark = "neon"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ba73l"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "champignon"
+WithoutMark = "champignon"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ajxlk"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "Nelson"
+WithoutMark = "Nelson"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_1aiuk"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "parkinson"
+WithoutMark = "parkinson"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_1g4a1"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "corpus"
+WithoutMark = "corpus"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_0lv5t"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "campus"
+WithoutMark = "campus"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_l6mi0"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "museus"
+WithoutMark = "museus"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_dal8p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "opus"
+WithoutMark = "opus"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_rug3j"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "perizeus"
+WithoutMark = "perizeus"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_qoiqp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "colar"
+WithoutMark = "colar"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_k2lf1"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "lembrar"
+WithoutMark = "lembrar"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_xnobo"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "raspar"
+WithoutMark = "raspar"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_5fjbt"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "cortar"
+WithoutMark = "cortar"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_dobe8"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "entrar"
+WithoutMark = "entrar"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_6hwrx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "qualquer"
+WithoutMark = "qualquer"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_f8vs0"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "sax"
+WithoutMark = "sax"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_xisdn"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "telex"
+WithoutMark = "telex"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_exu3m"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "xerox"
+WithoutMark = "xerox"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_1j8tg"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "unissex"
+WithoutMark = "unissex"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_8hhyc"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "lux"
+WithoutMark = "lux"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_p6k0r"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "pirex"
+WithoutMark = "pirex"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_k1klk"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "talismã"
+WithoutMark = "talismã"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_jgt4k"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "anfitriã"
+WithoutMark = "anfitriã"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_2olkt"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "amanhã"
+WithoutMark = "amanhã"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_u556p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "maçã"
+WithoutMark = "maçã"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_xfg8i"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "lembrarão"
+WithoutMark = "lembrarão"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_6sjf4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "dirão"
+WithoutMark = "dirão"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_t8f37"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "alcançarão"
+WithoutMark = "alcançarão"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_aherc"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "entrarão"
+WithoutMark = "entrarão"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_opkvy"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "cantarão"
+WithoutMark = "cantarão"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_poskc"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "nenhum"
+WithoutMark = "nenhum"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_qnjkp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "atum"
+WithoutMark = "atum"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_2ml03"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "premium"
+WithoutMark = "premium"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_2smp2"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "desjejum"
+WithoutMark = "desjejum"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_qb5fe"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "quantum"
+WithoutMark = "quantum"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_2vp4m"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "unicos"
+WithoutMark = "unicos"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_nswch"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "foruns"
+WithoutMark = "foruns"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_h2383"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "varuns"
+WithoutMark = "varuns"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_gmkxc"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "muns"
+WithoutMark = "muns"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_c2hkp"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "lunis"
+WithoutMark = "lunis"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ng65l"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "abstrai"
+WithoutMark = "abstrai"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_wfi5w"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "Uruguai"
+WithoutMark = "Uruguai"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_c0s3t"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "bonsai"
+WithoutMark = "bonsai"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_0ohc6"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "distingua"
+WithoutMark = "distingua"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_3m364"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "chihuahua"
+WithoutMark = "chihuahua"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_k5808"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "livro"
+WithoutMark = "livro"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_fqs1b"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "carro"
+WithoutMark = "carro"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ooogq"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "porta"
+WithoutMark = "porta"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_f3wde"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "arroz"
+WithoutMark = "arroz"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ioo2d"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "feijão"
+WithoutMark = "feijão"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_s14kx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "batata"
+WithoutMark = "batata"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_3n20c"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "tela"
+WithoutMark = "tela"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_dxd0v"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "tecla"
+WithoutMark = "tecla"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_5jdyt"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "janela"
+WithoutMark = "janela"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_yjxlb"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "parede"
+WithoutMark = "parede"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_hos3r"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "carne"
+WithoutMark = "carne"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_8mb13"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "fruta"
+WithoutMark = "fruta"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_gmdxg"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "prato"
+WithoutMark = "prato"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ydgki"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "copo"
+WithoutMark = "copo"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_14e06"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "garfo"
+WithoutMark = "garfo"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_qjxym"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "faca"
+WithoutMark = "faca"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_pcd3p"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "colher"
+WithoutMark = "colher"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_mky36"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "peixe"
+WithoutMark = "peixe"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_0e0ob"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "toalha"
+WithoutMark = "toalha"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_q1cwx"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "sapato"
+WithoutMark = "sapato"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_pgfkj"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "bola"
+WithoutMark = "bola"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_r88ga"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "camisa"
+WithoutMark = "camisa"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_pnky3"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "calca"
+WithoutMark = "calca"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_74yed"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "banco"
+WithoutMark = "banco"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_3jbt1"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "rua"
+WithoutMark = "rua"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_67he2"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "estrada"
+WithoutMark = "estrada"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_vc4mi"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "cidade"
+WithoutMark = "cidade"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_aahsv"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "bairro"
+WithoutMark = "bairro"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_ohtd4"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "tempo"
+WithoutMark = "tempo"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_7k4cr"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "vento"
+WithoutMark = "vento"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_3m46i"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "chuva"
+WithoutMark = "chuva"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_tyisl"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "sol"
+WithoutMark = "sol"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_jyjxw"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "lua"
+WithoutMark = "lua"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_du02o"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "estrela"
+WithoutMark = "estrela"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_rf00e"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "flor"
+WithoutMark = "flor"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_rjcvh"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "arvore"
+WithoutMark = "arvore"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_wd7hw"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "campo"
+WithoutMark = "campo"
+HasMark = false
+MarkIndex = -1
+
+[sub_resource type="Resource" id="Resource_5kxks"]
+script = ExtResource("1_vr2f8")
+DiactricalMarkSubCategoryType = 23
+Original = "rio"
+WithoutMark = "rio"
+HasMark = false
+MarkIndex = -1
+
+[resource]
+script = ExtResource("2_oxd3r")
+MarkedWordsByRule = {
+0: [SubResource("Resource_3bbjc"), SubResource("Resource_kawtq"), SubResource("Resource_57ubd"), SubResource("Resource_0w871"), SubResource("Resource_x146a"), SubResource("Resource_mlygy"), SubResource("Resource_xu801"), SubResource("Resource_o1k37"), SubResource("Resource_mmstl"), SubResource("Resource_q17yg"), SubResource("Resource_lc82w"), SubResource("Resource_1umc3"), SubResource("Resource_urfiq")],
+1: [SubResource("Resource_nmbfg"), SubResource("Resource_2a30p"), SubResource("Resource_5pnhk"), SubResource("Resource_muw2f"), SubResource("Resource_5anfk"), SubResource("Resource_nl03t"), SubResource("Resource_2hfdg"), SubResource("Resource_2o2gx"), SubResource("Resource_8d0hm"), SubResource("Resource_gepb8"), SubResource("Resource_e5x20")],
+2: [SubResource("Resource_y4w7k"), SubResource("Resource_w4bfc"), SubResource("Resource_mhyek"), SubResource("Resource_s0qg5"), SubResource("Resource_dyfb7"), SubResource("Resource_0bt8g"), SubResource("Resource_x0mdh"), SubResource("Resource_nrmj4"), SubResource("Resource_7227j"), SubResource("Resource_6pnle"), SubResource("Resource_unvu4"), SubResource("Resource_1bbcl"), SubResource("Resource_2dk47")],
+3: [SubResource("Resource_h2okv"), SubResource("Resource_v8p3p"), SubResource("Resource_7ldmp"), SubResource("Resource_sualo")],
+4: [SubResource("Resource_h0c2c"), SubResource("Resource_0151u"), SubResource("Resource_slvd2")],
+5: [SubResource("Resource_aalny"), SubResource("Resource_iywoj"), SubResource("Resource_4lj2x"), SubResource("Resource_qv6b7"), SubResource("Resource_pbp01"), SubResource("Resource_po88c"), SubResource("Resource_jr22t"), SubResource("Resource_ikkj5"), SubResource("Resource_qfytf"), SubResource("Resource_y1811")],
+6: [SubResource("Resource_jngrp"), SubResource("Resource_vm7dh"), SubResource("Resource_j6arm"), SubResource("Resource_t3vgl"), SubResource("Resource_uj50l"), SubResource("Resource_6l36h"), SubResource("Resource_jic8y"), SubResource("Resource_fjqv6")],
+7: [SubResource("Resource_mew0b"), SubResource("Resource_uctpv"), SubResource("Resource_is6lt"), SubResource("Resource_5pq6f"), SubResource("Resource_cmgsr"), SubResource("Resource_lutlw"), SubResource("Resource_jfuwp"), SubResource("Resource_rb87p"), SubResource("Resource_h6y8u"), SubResource("Resource_24myy")],
+8: [SubResource("Resource_ioa8r"), SubResource("Resource_cguef"), SubResource("Resource_m62kr"), SubResource("Resource_7cx4i"), SubResource("Resource_l7wf6"), SubResource("Resource_6t45v"), SubResource("Resource_3grld"), SubResource("Resource_884n7"), SubResource("Resource_onhi4")],
+9: [SubResource("Resource_qbebu"), SubResource("Resource_valg4"), SubResource("Resource_lhrtq"), SubResource("Resource_8q3fx"), SubResource("Resource_uq8q0"), SubResource("Resource_6b78c"), SubResource("Resource_3noh6")],
+10: [SubResource("Resource_uupmx"), SubResource("Resource_gv0p0"), SubResource("Resource_8kwh5"), SubResource("Resource_tu4g0"), SubResource("Resource_ie8md"), SubResource("Resource_33a44"), SubResource("Resource_dkiev"), SubResource("Resource_ino4j")],
+11: [SubResource("Resource_0xjab"), SubResource("Resource_gav44"), SubResource("Resource_cmjwn"), SubResource("Resource_qcti5")],
+12: [SubResource("Resource_2oycr"), SubResource("Resource_atrqx"), SubResource("Resource_nlfgn")],
+13: [SubResource("Resource_g0oy6"), SubResource("Resource_whb3h"), SubResource("Resource_l8mcu"), SubResource("Resource_qdvj7"), SubResource("Resource_w5x6w"), SubResource("Resource_41maq")],
+14: [SubResource("Resource_qrlxm"), SubResource("Resource_2cjbe")],
+15: [SubResource("Resource_cjlxx"), SubResource("Resource_1g7ca"), SubResource("Resource_44nak"), SubResource("Resource_tnscm"), SubResource("Resource_4svtk")],
+16: [SubResource("Resource_ldstn"), SubResource("Resource_newge"), SubResource("Resource_yyrnm"), SubResource("Resource_ja8cy"), SubResource("Resource_7lmam"), SubResource("Resource_4jai4"), SubResource("Resource_2blm1"), SubResource("Resource_nbgkd"), SubResource("Resource_6s0yi"), SubResource("Resource_70ieq"), SubResource("Resource_rkdb2")],
+17: [SubResource("Resource_m0k3r"), SubResource("Resource_0yesf"), SubResource("Resource_12f38"), SubResource("Resource_tjd21"), SubResource("Resource_6g606"), SubResource("Resource_881sa"), SubResource("Resource_85kg3"), SubResource("Resource_oop6e"), SubResource("Resource_ef3n2"), SubResource("Resource_m3mcr"), SubResource("Resource_4x4ex"), SubResource("Resource_hql65"), SubResource("Resource_jq4hq"), SubResource("Resource_sunxu"), SubResource("Resource_ogtiv")],
+18: [SubResource("Resource_7p3wi"), SubResource("Resource_rdaoc"), SubResource("Resource_fl4q5"), SubResource("Resource_mkgow"), SubResource("Resource_be5my")],
+19: [SubResource("Resource_uyaf6"), SubResource("Resource_2u4n4"), SubResource("Resource_15w34"), SubResource("Resource_4o2dh"), SubResource("Resource_ceqcm")],
+20: [SubResource("Resource_ub22k"), SubResource("Resource_ti3vr"), SubResource("Resource_e1x4q"), SubResource("Resource_ixd62"), SubResource("Resource_7crij")],
+21: [SubResource("Resource_2mdo7"), SubResource("Resource_wfyqr"), SubResource("Resource_a2a3t"), SubResource("Resource_pjdt2"), SubResource("Resource_nvora"), SubResource("Resource_valga")],
+22: [SubResource("Resource_wgkid"), SubResource("Resource_4nbm4"), SubResource("Resource_7pm0j"), SubResource("Resource_caacj"), SubResource("Resource_nvttp")]
+}
+NotMarkedWords = [SubResource("Resource_yr36r"), SubResource("Resource_iwv1h"), SubResource("Resource_kqn8d"), SubResource("Resource_mv5b3"), SubResource("Resource_6qqe5"), SubResource("Resource_6l45p"), SubResource("Resource_vapak"), SubResource("Resource_t528b"), SubResource("Resource_y5c37"), SubResource("Resource_f41cg"), SubResource("Resource_q3nhy"), SubResource("Resource_84vqw"), SubResource("Resource_8hj6m"), SubResource("Resource_m7fhj"), SubResource("Resource_rfcfg"), SubResource("Resource_1qkcd"), SubResource("Resource_lc5an"), SubResource("Resource_b62dt"), SubResource("Resource_an5xp"), SubResource("Resource_pdb7p"), SubResource("Resource_obkth"), SubResource("Resource_q7vj7"), SubResource("Resource_8b30c"), SubResource("Resource_nydn2"), SubResource("Resource_angxj"), SubResource("Resource_ishbh"), SubResource("Resource_uorsy"), SubResource("Resource_qymbw"), SubResource("Resource_2526b"), SubResource("Resource_ivy2h"), SubResource("Resource_dikp0"), SubResource("Resource_i7fug"), SubResource("Resource_vuilt"), SubResource("Resource_ok7it"), SubResource("Resource_lbhol"), SubResource("Resource_di5ya"), SubResource("Resource_y0qo5"), SubResource("Resource_yo3yw"), SubResource("Resource_7h5yt"), SubResource("Resource_85xhr"), SubResource("Resource_pc146"), SubResource("Resource_tttyk"), SubResource("Resource_30dmv"), SubResource("Resource_ba73l"), SubResource("Resource_ajxlk"), SubResource("Resource_1aiuk"), SubResource("Resource_1g4a1"), SubResource("Resource_0lv5t"), SubResource("Resource_l6mi0"), SubResource("Resource_dal8p"), SubResource("Resource_rug3j"), SubResource("Resource_qoiqp"), SubResource("Resource_k2lf1"), SubResource("Resource_xnobo"), SubResource("Resource_5fjbt"), SubResource("Resource_dobe8"), SubResource("Resource_6hwrx"), SubResource("Resource_f8vs0"), SubResource("Resource_xisdn"), SubResource("Resource_exu3m"), SubResource("Resource_1j8tg"), SubResource("Resource_8hhyc"), SubResource("Resource_p6k0r"), SubResource("Resource_k1klk"), SubResource("Resource_jgt4k"), SubResource("Resource_2olkt"), SubResource("Resource_u556p"), SubResource("Resource_xfg8i"), SubResource("Resource_6sjf4"), SubResource("Resource_t8f37"), SubResource("Resource_aherc"), SubResource("Resource_opkvy"), SubResource("Resource_poskc"), SubResource("Resource_qnjkp"), SubResource("Resource_2ml03"), SubResource("Resource_2smp2"), SubResource("Resource_qb5fe"), SubResource("Resource_2vp4m"), SubResource("Resource_nswch"), SubResource("Resource_h2383"), SubResource("Resource_gmkxc"), SubResource("Resource_c2hkp"), SubResource("Resource_ng65l"), SubResource("Resource_wfi5w"), SubResource("Resource_c0s3t"), SubResource("Resource_0ohc6"), SubResource("Resource_3m364"), SubResource("Resource_k5808"), SubResource("Resource_fqs1b"), SubResource("Resource_ooogq"), SubResource("Resource_f3wde"), SubResource("Resource_ioo2d"), SubResource("Resource_s14kx"), SubResource("Resource_3n20c"), SubResource("Resource_dxd0v"), SubResource("Resource_5jdyt"), SubResource("Resource_yjxlb"), SubResource("Resource_hos3r"), SubResource("Resource_8mb13"), SubResource("Resource_gmdxg"), SubResource("Resource_ydgki"), SubResource("Resource_14e06"), SubResource("Resource_qjxym"), SubResource("Resource_pcd3p"), SubResource("Resource_mky36"), SubResource("Resource_0e0ob"), SubResource("Resource_q1cwx"), SubResource("Resource_pgfkj"), SubResource("Resource_r88ga"), SubResource("Resource_pnky3"), SubResource("Resource_74yed"), SubResource("Resource_3jbt1"), SubResource("Resource_67he2"), SubResource("Resource_vc4mi"), SubResource("Resource_aahsv"), SubResource("Resource_ohtd4"), SubResource("Resource_7k4cr"), SubResource("Resource_3m46i"), SubResource("Resource_tyisl"), SubResource("Resource_jyjxw"), SubResource("Resource_du02o"), SubResource("Resource_rf00e"), SubResource("Resource_rjcvh"), SubResource("Resource_wd7hw"), SubResource("Resource_5kxks")]

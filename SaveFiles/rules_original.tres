@@ -1,337 +1,337 @@
-[gd_resource type="Resource" script_class="RulesResource" load_steps=36 format=3 uid="uid://cs3ktau5oasf8"]
+[gd_resource type="Resource" script_class="RulesResource" load_steps=36 format=3]
 
 [ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_jph6o"]
 [ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleSetItemResource.cs" id="2_1o40p"]
 [ext_resource type="Script" path="res://Data/Rules/RulesResource.cs" id="3_0f6fs"]
 
-[sub_resource type="Resource" id="Resource_skrqp"]
+[sub_resource type="Resource" id="Resource_wwoca"]
 script = ExtResource("1_jph6o")
 RuleSetType = 1
 RuleSet = "Oxítonas"
 RuleType = 0
 Name = "Terminadas em -a(s)"
-Description = "[center]Oxítonas terminadas em -a ou -as, como sofá, maracujá, Paraná, ananás, marajás, atrás.[/center]"
+Description = "Oxítonas terminadas em -a ou -as, como sofá, maracujá, Paraná, ananás, marajás, atrás."
 Examples = PackedStringArray("sofá", "maracujá", "Paraná")
 IsUnlocked = true
 KeyGemCost = 3
 
-[sub_resource type="Resource" id="Resource_g5m7x"]
+[sub_resource type="Resource" id="Resource_ds5o0"]
 script = ExtResource("1_jph6o")
 RuleSetType = 1
 RuleSet = "Oxítonas"
 RuleType = 1
 Name = "Terminadas em -e(s)"
-Description = "[center]Oxítonas terminadas em -e ou -es, como Pelé, café, você, freguês, bebês.[/center]"
+Description = "Oxítonas terminadas em -e ou -es, como Pelé, café, você, freguês, bebês."
 Examples = PackedStringArray("Pelé", "café", "você")
 IsUnlocked = false
 KeyGemCost = 4
 
-[sub_resource type="Resource" id="Resource_x7051"]
+[sub_resource type="Resource" id="Resource_shtck"]
 script = ExtResource("1_jph6o")
 RuleSetType = 1
 RuleSet = "Oxítonas"
 RuleType = 2
 Name = "Terminadas em -o(s)"
-Description = "[center]Oxítonas terminadas em -o ou -os, como cipó, paletó, avó, dominó, pavô, vovô, chororô.[/center]"
+Description = "Oxítonas terminadas em -o ou -os, como cipó, paletó, avó, dominó, pavô, vovô, chororô."
 Examples = PackedStringArray("cipó", "paletó", "avó")
 IsUnlocked = false
 KeyGemCost = 5
 
-[sub_resource type="Resource" id="Resource_ixp3g"]
+[sub_resource type="Resource" id="Resource_cjrd2"]
 script = ExtResource("1_jph6o")
 RuleSetType = 1
 RuleSet = "Oxítonas"
 RuleType = 3
 Name = "Terminadas em -em"
-Description = "[center]Oxítonas terminadas em -em, como amém, também, armazém, alguém.[/center]"
+Description = "Oxítonas terminadas em -em, como amém, também, armazém, alguém."
 Examples = PackedStringArray("amém", "também", "armazém")
 IsUnlocked = false
 KeyGemCost = 6
 
-[sub_resource type="Resource" id="Resource_tbrcb"]
+[sub_resource type="Resource" id="Resource_kvabk"]
 script = ExtResource("1_jph6o")
 RuleSetType = 1
 RuleSet = "Oxítonas"
 RuleType = 4
 Name = "Terminadas em -ens"
-Description = "[center]Oxítonas terminadas em -ens, como parabéns, reféns, armazéns.[/center]"
+Description = "Oxítonas terminadas em -ens, como parabéns, reféns, armazéns."
 Examples = PackedStringArray("parabéns", "reféns", "armazéns")
 IsUnlocked = false
 KeyGemCost = 7
 
-[sub_resource type="Resource" id="Resource_886g0"]
+[sub_resource type="Resource" id="Resource_5agbs"]
 script = ExtResource("2_1o40p")
 RuleSetType = 1
 Name = "Oxítonas"
-Rules = [SubResource("Resource_skrqp"), SubResource("Resource_g5m7x"), SubResource("Resource_x7051"), SubResource("Resource_ixp3g"), SubResource("Resource_tbrcb")]
-Description = "[center]Oxítonas são palavras cuja última sílaba é tônica. Exemplos incluem sofá, maracujá, Paraná.[/center]"
+Rules = [SubResource("Resource_wwoca"), SubResource("Resource_ds5o0"), SubResource("Resource_shtck"), SubResource("Resource_cjrd2"), SubResource("Resource_kvabk")]
+Description = "Oxítonas são palavras cuja última sílaba é tônica. Exemplos incluem sofá, maracujá, Paraná."
 
-[sub_resource type="Resource" id="Resource_jrufi"]
+[sub_resource type="Resource" id="Resource_ho1wy"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 5
 Name = "Terminadas em -l"
-Description = "[center]Paroxítonas terminadas em -l, como fácil, útil, fóssil, réptil, níquel.[/center]"
+Description = "Paroxítonas terminadas em -l, como fácil, útil, fóssil, réptil, níquel."
 Examples = PackedStringArray("fácil", "útil", "fóssil")
 IsUnlocked = false
 KeyGemCost = 8
 
-[sub_resource type="Resource" id="Resource_g3b53"]
+[sub_resource type="Resource" id="Resource_1gsgb"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 6
 Name = "Terminadas em -i(s)"
-Description = "[center]Paroxítonas terminadas em -i ou -is, como júri, lápis, tênis, biquíni.[/center]"
+Description = "Paroxítonas terminadas em -i ou -is, como júri, lápis, tênis, biquíni."
 Examples = PackedStringArray("júri", "lápis", "tênis")
 IsUnlocked = false
 KeyGemCost = 9
 
-[sub_resource type="Resource" id="Resource_8yj3r"]
+[sub_resource type="Resource" id="Resource_l56vp"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 7
 Name = "Terminadas em -n"
-Description = "[center]Paroxítonas terminadas em -n, como hífen, pólen, elétron, nêutron, abdômen.[/center]"
+Description = "Paroxítonas terminadas em -n, como hífen, pólen, elétron, nêutron, abdômen."
 Examples = PackedStringArray("hífen", "pólen", "elétron")
 IsUnlocked = false
 KeyGemCost = 10
 
-[sub_resource type="Resource" id="Resource_s4ynw"]
+[sub_resource type="Resource" id="Resource_t8dyu"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 8
 Name = "Terminadas em -u(s)"
-Description = "[center]Paroxítonas terminadas em -u ou -us, como vírus, Vênus, ônus, bônus, álbum.[/center]"
+Description = "Paroxítonas terminadas em -u ou -us, como vírus, Vênus, ônus, bônus."
 Examples = PackedStringArray("vírus", "Vênus", "ônus")
 IsUnlocked = false
 KeyGemCost = 11
 
-[sub_resource type="Resource" id="Resource_3ynku"]
+[sub_resource type="Resource" id="Resource_8fbik"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 9
 Name = "Terminadas em -r"
-Description = "[center]Paroxítonas terminadas em -r, como revólver, caráter, âmbar, repórter.[/center]"
+Description = "Paroxítonas terminadas em -r, como revólver, caráter, âmbar, repórter."
 Examples = PackedStringArray("revólver", "caráter", "âmbar")
 IsUnlocked = false
 KeyGemCost = 12
 
-[sub_resource type="Resource" id="Resource_nfk35"]
+[sub_resource type="Resource" id="Resource_gg0s1"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 10
 Name = "Terminadas em -x"
-Description = "[center]Paroxítonas terminadas em -x, como látex, fênix, tórax, fértil, órix.[/center]"
+Description = "Paroxítonas terminadas em -x, como látex, fênix, tórax, clímax."
 Examples = PackedStringArray("látex", "fênix", "tórax")
 IsUnlocked = false
 KeyGemCost = 13
 
-[sub_resource type="Resource" id="Resource_5weof"]
+[sub_resource type="Resource" id="Resource_mypcm"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 11
 Name = "Terminadas em -ã(s)"
-Description = "[center]Paroxítonas terminadas em -ã ou -ãs, como ímã, órfã, órfãs.[/center]"
+Description = "Paroxítonas terminadas em -ã ou -ãs, como ímã, órfã, órfãs."
 Examples = PackedStringArray("ímã", "órfã", "órfãs")
 IsUnlocked = false
 KeyGemCost = 14
 
-[sub_resource type="Resource" id="Resource_135n1"]
+[sub_resource type="Resource" id="Resource_3eb45"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 12
 Name = "Terminadas em -ão(s)"
-Description = "[center]Paroxítonas terminadas em -ão ou -ãos, como órgão, sótão, órgãos.[/center]"
+Description = "Paroxítonas terminadas em -ão ou -ãos, como órgão, sótão, órgãos."
 Examples = PackedStringArray("órgão", "sótão", "órgãos")
 IsUnlocked = false
 KeyGemCost = 15
 
-[sub_resource type="Resource" id="Resource_q6cwd"]
+[sub_resource type="Resource" id="Resource_lovgu"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 13
 Name = "Terminadas em -um"
-Description = "[center]Paroxítonas terminadas em -um, como álbum, médium, fórum.[/center]"
+Description = "Paroxítonas terminadas em -um, como álbum, médium, fórum."
 Examples = PackedStringArray("álbum", "médium", "fórum")
 IsUnlocked = false
 KeyGemCost = 16
 
-[sub_resource type="Resource" id="Resource_rye4m"]
+[sub_resource type="Resource" id="Resource_acqne"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 14
 Name = "Terminadas em -uns"
-Description = "[center]Paroxítonas terminadas em -uns, como álbuns, fóruns.[/center]"
+Description = "Paroxítonas terminadas em -uns, como álbuns, fóruns."
 Examples = PackedStringArray("álbuns", "fóruns")
 IsUnlocked = false
 KeyGemCost = 17
 
-[sub_resource type="Resource" id="Resource_xbi5u"]
+[sub_resource type="Resource" id="Resource_82je7"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 15
 Name = "Terminadas em -ps"
-Description = "[center]Paroxítonas terminadas em -ps, como fórceps, bíceps.[/center]"
-Examples = PackedStringArray("fórceps", "bíceps")
+Description = "Paroxítonas terminadas em -ps, como fórceps, bíceps."
+Examples = PackedStringArray("fórceps", "bíceps", "crísops")
 IsUnlocked = false
 KeyGemCost = 18
 
-[sub_resource type="Resource" id="Resource_livni"]
+[sub_resource type="Resource" id="Resource_13pwg"]
 script = ExtResource("1_jph6o")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
 RuleType = 16
 Name = "Terminadas em Ditongo"
-Description = "[center]Paroxítonas terminadas em ditongo, como água, história, série, pônei, móveis, tênue.[/center]"
+Description = "Paroxítonas terminadas em ditongo, como água, história, série, pônei, móveis, tênue."
 Examples = PackedStringArray("água", "história", "série")
 IsUnlocked = false
 KeyGemCost = 19
 
-[sub_resource type="Resource" id="Resource_710qb"]
+[sub_resource type="Resource" id="Resource_j7xus"]
 script = ExtResource("2_1o40p")
 RuleSetType = 2
 Name = "Paroxítonas"
-Rules = [SubResource("Resource_jrufi"), SubResource("Resource_g3b53"), SubResource("Resource_8yj3r"), SubResource("Resource_s4ynw"), SubResource("Resource_3ynku"), SubResource("Resource_nfk35"), SubResource("Resource_5weof"), SubResource("Resource_135n1"), SubResource("Resource_q6cwd"), SubResource("Resource_rye4m"), SubResource("Resource_xbi5u"), SubResource("Resource_livni")]
-Description = "[center]Paroxítonas são palavras cuja penúltima sílaba é tônica. Exemplos incluem fácil, útil, fósil.[/center]"
+Rules = [SubResource("Resource_ho1wy"), SubResource("Resource_1gsgb"), SubResource("Resource_l56vp"), SubResource("Resource_t8dyu"), SubResource("Resource_8fbik"), SubResource("Resource_gg0s1"), SubResource("Resource_mypcm"), SubResource("Resource_3eb45"), SubResource("Resource_lovgu"), SubResource("Resource_acqne"), SubResource("Resource_82je7"), SubResource("Resource_13pwg")]
+Description = "Paroxítonas são palavras cuja penúltima sílaba é tônica. Exemplos incluem fácil, útil, fósil."
 
-[sub_resource type="Resource" id="Resource_th7gu"]
+[sub_resource type="Resource" id="Resource_v4p2q"]
 script = ExtResource("1_jph6o")
 RuleSetType = 3
 RuleSet = "Proparoxítonas"
 RuleType = 17
 Name = "Todas Proparoxítonas"
-Description = "[center]Todas as proparoxítonas, como lânguido, física, trópico, álibi, hábitat, déficit, lápide, álgebra, célula, pêndulo, amígdalas, amálgama, cúpula, análise, ânimo.[/center]"
+Description = "Todas as proparoxítonas, como lânguido, física, trópico, álibi, hábitat, déficit, lápide, álgebra, célula, pêndulo, amígdalas, amálgama, cúpula, análise, ânimo."
 Examples = PackedStringArray("lânguido", "física", "trópico")
 IsUnlocked = false
 KeyGemCost = 20
 
-[sub_resource type="Resource" id="Resource_68a7e"]
+[sub_resource type="Resource" id="Resource_ybsxu"]
 script = ExtResource("2_1o40p")
 RuleSetType = 3
 Name = "Proparoxítonas"
-Rules = [SubResource("Resource_th7gu")]
-Description = "[center]Proparoxítonas são palavras cuja antepenúltima sílaba é tônica. Exemplos incluem lânguido, física, trópico.[/center]"
+Rules = [SubResource("Resource_v4p2q")]
+Description = "Proparoxítonas são palavras cuja antepenúltima sílaba é tônica. Exemplos incluem lânguido, física, trópico."
 
-[sub_resource type="Resource" id="Resource_0u8km"]
+[sub_resource type="Resource" id="Resource_kkqfu"]
 script = ExtResource("1_jph6o")
 RuleSetType = 4
 RuleSet = "Ditongos Abertos"
 RuleType = 18
 Name = "Terminadas em -éi"
-Description = "[center]Ditongos abertos terminados em -éi, como fiéis, papéis, pastéis, coronéis, anéis.[/center]"
+Description = "Ditongos abertos terminados em -éi, como fiéis, papéis, pastéis, coronéis, anéis."
 Examples = PackedStringArray("fiéis", "papéis", "pastéis")
 IsUnlocked = false
 KeyGemCost = 21
 
-[sub_resource type="Resource" id="Resource_qamu1"]
+[sub_resource type="Resource" id="Resource_34g10"]
 script = ExtResource("1_jph6o")
 RuleSetType = 4
 RuleSet = "Ditongos Abertos"
 RuleType = 19
 Name = "Terminadas em -éu"
-Description = "[center]Ditongos abertos terminados em -éu, como céu, chapéu, troféu, véu, réu.[/center]"
+Description = "Ditongos abertos terminados em -éu, como céu, chapéu, troféu, véu, réu."
 Examples = PackedStringArray("céu", "chapéu", "troféu")
 IsUnlocked = false
 KeyGemCost = 22
 
-[sub_resource type="Resource" id="Resource_kmluo"]
+[sub_resource type="Resource" id="Resource_hkkfk"]
 script = ExtResource("1_jph6o")
 RuleSetType = 4
 RuleSet = "Ditongos Abertos"
 RuleType = 20
 Name = "Terminadas em -ói"
-Description = "[center]Ditongos abertos terminados em -ói, como herói, sóis, faróis, lençóis, rói.[/center]"
+Description = "Ditongos abertos terminados em -ói, como herói, sóis, faróis, lençóis, rói."
 Examples = PackedStringArray("herói", "sóis", "faróis")
 IsUnlocked = false
 KeyGemCost = 23
 
-[sub_resource type="Resource" id="Resource_y0024"]
+[sub_resource type="Resource" id="Resource_rxi3b"]
 script = ExtResource("2_1o40p")
 RuleSetType = 4
 Name = "Ditongos Abertos"
-Rules = [SubResource("Resource_0u8km"), SubResource("Resource_qamu1"), SubResource("Resource_kmluo")]
-Description = "[center]Ditongos abertos são combinações de vogal e semivogal em que a vogal é pronunciada de maneira mais aberta. Exemplos incluem fiéis, papéis, pastéis.[/center]"
+Rules = [SubResource("Resource_kkqfu"), SubResource("Resource_34g10"), SubResource("Resource_hkkfk")]
+Description = "Ditongos abertos são combinações de vogal e semivogal em que a vogal é pronunciada de maneira mais aberta. Exemplos incluem fiéis, papéis, pastéis."
 
-[sub_resource type="Resource" id="Resource_35i6j"]
+[sub_resource type="Resource" id="Resource_4ssb5"]
 script = ExtResource("1_jph6o")
 RuleSetType = 5
 RuleSet = "Hiatos I e U Tônicos"
 RuleType = 21
 Name = "Sozinhos na Sílaba"
-Description = "[center]Hiatos em que I ou U tônicos aparecem sozinhos na sílaba, como saída, juízes, saúde, viúva, caíste, saíste.[/center]"
+Description = "Hiatos em que I ou U tônicos aparecem sozinhos na sílaba, como saída, juízes, saúde, viúva, caíste, saíste."
 Examples = PackedStringArray("saída", "juízes", "saúde")
 IsUnlocked = false
 KeyGemCost = 24
 
-[sub_resource type="Resource" id="Resource_u01un"]
+[sub_resource type="Resource" id="Resource_dsgty"]
 script = ExtResource("1_jph6o")
 RuleSetType = 5
 RuleSet = "Hiatos I e U Tônicos"
 RuleType = 22
 Name = "Precedidos de Vogais"
-Description = "[center]Hiatos em que I ou U tônicos são precedidos de vogais, como balaústre, ruído, viúvo, egoísmo, egoísta.[/center]"
+Description = "Hiatos em que I ou U tônicos são precedidos de vogais, como balaústre, ruído, viúvo, egoísmo, egoísta."
 Examples = PackedStringArray("balaústre", "ruído", "viúvo")
 IsUnlocked = false
 KeyGemCost = 25
 
-[sub_resource type="Resource" id="Resource_fkgko"]
+[sub_resource type="Resource" id="Resource_25f2l"]
 script = ExtResource("2_1o40p")
 RuleSetType = 5
 Name = "Hiatos I e U Tônicos"
-Rules = [SubResource("Resource_35i6j"), SubResource("Resource_u01un")]
-Description = "[center]Hiatos ocorrem quando duas vogais aparecem juntas na palavra, mas em sílabas separadas. Exemplos incluem saída, juízes, saúde.[/center]"
+Rules = [SubResource("Resource_4ssb5"), SubResource("Resource_dsgty")]
+Description = "Hiatos ocorrem quando duas vogais aparecem juntas na palavra, mas em sílabas separadas. Exemplos incluem saída, juízes, saúde."
 
-[sub_resource type="Resource" id="Resource_k81c0"]
+[sub_resource type="Resource" id="Resource_busa4"]
 script = ExtResource("1_jph6o")
 RuleSetType = 0
 RuleSet = "Monossílabas Tônicas"
 RuleType = 0
 Name = "Terminadas em -a(s)"
-Description = "[center]Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás.[/center]"
+Description = "Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás."
 Examples = PackedStringArray("pá", "já", "má")
 IsUnlocked = false
 KeyGemCost = 26
 
-[sub_resource type="Resource" id="Resource_8ufky"]
+[sub_resource type="Resource" id="Resource_vgngf"]
 script = ExtResource("1_jph6o")
 RuleSetType = 0
 RuleSet = "Monossílabas Tônicas"
 RuleType = 1
 Name = "Terminadas em -e(s)"
-Description = "[center]Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés.[/center]"
+Description = "Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés."
 Examples = PackedStringArray("pé", "fé", "sé")
 IsUnlocked = false
 KeyGemCost = 27
 
-[sub_resource type="Resource" id="Resource_fqw2f"]
+[sub_resource type="Resource" id="Resource_1trjk"]
 script = ExtResource("1_jph6o")
 RuleSetType = 0
 RuleSet = "Monossílabas Tônicas"
 RuleType = 2
 Name = "Terminadas em -o(s)"
-Description = "[center]Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós.[/center]"
+Description = "Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós."
 Examples = PackedStringArray("pó", "só", "dó")
 IsUnlocked = false
 KeyGemCost = 28
 
-[sub_resource type="Resource" id="Resource_j8w7a"]
+[sub_resource type="Resource" id="Resource_ea5yv"]
 script = ExtResource("2_1o40p")
 RuleSetType = 0
 Name = "Monossílabas Tônicas"
-Rules = [SubResource("Resource_k81c0"), SubResource("Resource_8ufky"), SubResource("Resource_fqw2f")]
-Description = "[center]Monossílabas tônicas são palavras de uma única sílaba com acentuação própria, pronunciadas com mais intensidade. Exemplos incluem pá, já, má.[/center]"
+Rules = [SubResource("Resource_busa4"), SubResource("Resource_vgngf"), SubResource("Resource_1trjk")]
+Description = "Monossílabas tônicas são palavras de uma única sílaba com acentuação própria, pronunciadas com mais intensidade. Exemplos incluem pá, já, má."
 
 [resource]
 script = ExtResource("3_0f6fs")
-DiactricalMarkRuleSets = [SubResource("Resource_886g0"), SubResource("Resource_710qb"), SubResource("Resource_68a7e"), SubResource("Resource_y0024"), SubResource("Resource_fkgko"), SubResource("Resource_j8w7a")]
+DiactricalMarkRuleSets = [SubResource("Resource_5agbs"), SubResource("Resource_j7xus"), SubResource("Resource_ybsxu"), SubResource("Resource_rxi3b"), SubResource("Resource_25f2l"), SubResource("Resource_ea5yv")]

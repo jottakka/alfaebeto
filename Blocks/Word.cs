@@ -5,139 +5,142 @@ using WordProcessing.Models.DiacriticalMarks;
 
 public partial class Word : Node2D
 {
-    [Export]
-    public PackedScene LetterBlockPackedScene { get; set; }
-    [Export]
-    public PackedScene NoLetterBlockPackedScene { get; set; }
-    [Signal]
-    public delegate void ReadyToDequeueSignalEventHandler();
-    [Signal]
-    public delegate void OnLetterDestructedSignalEventHandler(bool isTarget);
+	[Export]
+	public PackedScene LetterBlockPackedScene { get; set; }
+	[Export]
+	public PackedScene NoLetterBlockPackedScene { get; set; }
 
-    [Signal]
-    public delegate void OnDisableChildrenCollisionsInternalSingalEventHandler();
+	[Signal]
+	public delegate void ReadyToDequeueSignalEventHandler();
+	[Signal]
+	public delegate void OnLetterDestructedSignalEventHandler(bool isTarget);
+	[Signal]
+	public delegate void OnDisableChildrenCollisionsInternalSingalEventHandler();
 
-    public DiactricalMarkWordInfo WordInfo { get; set; }
+	public DiactricalMarkWordInfo WordInfo { get; set; }
 
-    public float CenterOffset { get; set; } = 0.0f;
+	public float CenterOffset { get; set; } = 0.0f;
 
-    public int TargetIdx { get; set; }
+	public int TargetIdx { get; set; }
 
-    public Queue<LetterBlock> LetterBlocks { get; set; } = new();
+	public Queue<LetterBlock> LetterBlocks { get; set; } = new();
 
-    public LetterBlock Target { get; set; }
+	public LetterBlock Target { get; set; }
 
-    private static LetterBlockBuilder _letterBuilder = null;
+	private static LetterBlockBuilder _letterBuilder = null;
 
-    private Timer _destructionTimer = new();
-    public override void _Ready()
-    {
-        _letterBuilder ??= new LetterBlockBuilder(LetterBlockPackedScene, NoLetterBlockPackedScene);
-        AddChild(_destructionTimer);
-        BuildLetterBlocks();
-        _destructionTimer.Timeout += () =>
-        {
-            if (LetterBlocks.Any())
-            {
-                LetterBlocks.Dequeue().Destroy();
-            }
-            else
-            {
-                _destructionTimer.Stop();
-            }
-        };
-    }
+	private Timer _destructionTimer = new();
+	public override void _Ready()
+	{
+		_letterBuilder ??= new LetterBlockBuilder(LetterBlockPackedScene, NoLetterBlockPackedScene);
+		AddChild(_destructionTimer);
+		BuildLetterBlocks();
+		_destructionTimer.Timeout += () =>
+		{
+			if (LetterBlocks.Any())
+			{
+				LetterBlocks.Dequeue().Destroy();
+			}
+			else
+			{
+				_destructionTimer.Stop();
+			}
+		};
+	}
 
-    private void BuildLetterBlocks()
-    {
-        float currentX = AddNoLetterBlock();
+	private void BuildLetterBlocks()
+	{
+		float currentX = AddNoLetterBlock();
 
-        foreach ((char letter, int idx) in WordInfo.WithoutDiacritics.Select((letter, idx) => (letter, idx)))
-        {
-            currentX = BuildLetterBlock(currentX, letter, idx);
-        }
+		foreach ((char letter, int idx) in WordInfo.WithoutDiacritics.Select((letter, idx) => (letter, idx)))
+		{
+			currentX = BuildLetterBlock(currentX, letter, idx);
+		}
 
-        Target.OnTargetBlockCalledDestructionSignal += Destroy;
-        CenterWordPositionOn(currentX);
-    }
+		Target.OnTargetBlockCalledDestructionSignal += Destroy;
+		CenterWordPositionOn(currentX);
+	}
 
-    private void CenterWordPositionOn(float currentX)
-    {
-        CenterOffset = currentX / 2.0f;
+	private void CenterWordPositionOn(float currentX)
+	{
+		CenterOffset = currentX / 2.0f;
 
-        Position -= new Vector2(CenterOffset, 0);
-    }
+		Position -= new Vector2(CenterOffset, 0);
+	}
 
-    private float AddNoLetterBlock()
-    {
-        NoLetterBlock noLetterBlock = _letterBuilder.BuildNoLetterBlock(
-            new Vector2(0.0f, 0.0f),
-            isTarget: WordInfo.HasMark is false
-        );
+	private float AddNoLetterBlock()
+	{
+		NoLetterBlock noLetterBlock = _letterBuilder.BuildNoLetterBlock(
+			new Vector2(0.0f, 0.0f),
+			isTarget: WordInfo.HasMark is false
+		);
 
-        // always being the last to be destroyed
-        noLetterBlock.OnReadyToDequeueSignal += () =>
-        {
-            _ = EmitSignal(nameof(ReadyToDequeueSignal));
-        };
+		// always being the last to be destroyed
+		noLetterBlock.OnReadyToDequeueSignal += () =>
+		{
+			_ = EmitSignal(nameof(ReadyToDequeueSignal));
+		};
 
-        float currentX = SetBlock(noLetterBlock, 0.0f);
-        return currentX;
-    }
+		float currentX = SetBlock(noLetterBlock, 0.0f);
+		return currentX;
+	}
 
-    private float BuildLetterBlock(float currentX, char letter, int idx)
-    {
-        bool isTarget = WordInfo.HasMark && WordInfo.DiacriticIndex == idx;
+	private float BuildLetterBlock(float currentX, char letter, int idx)
+	{
+		bool isTarget = WordInfo.HasMark && WordInfo.DiacriticIndex == idx;
 
-        LetterBlock letterBlock = _letterBuilder.BuildLetterBlock(
-            letter,
-            new Vector2(currentX, 0),
-            isTarget: isTarget
-        );
+		LetterBlock letterBlock = _letterBuilder.BuildLetterBlock(
+			letter,
+			new Vector2(currentX, 0),
+			isTarget: isTarget
+		);
 
-        return SetBlock(letterBlock, currentX);
-    }
+		return SetBlock(letterBlock, currentX);
+	}
 
-    private float SetBlock(LetterBlock letterBlock, float currentX)
-    {
-        if (letterBlock.IsTarget)
-        {
-            Target = letterBlock;
-        }
-        else
-        {
-            OnDisableChildrenCollisionsInternalSingal += letterBlock.DisableCollisions;
-        }
+	private float SetBlock(LetterBlock letterBlock, float currentX)
+	{
+		if (letterBlock.IsTarget)
+		{
+			Target = letterBlock;
+		}
+		else
+		{
+			OnDisableChildrenCollisionsInternalSingal += letterBlock.DisableCollisions;
+		}
 
-        letterBlock.OnLetterDestructedSignal += OnLetterDestroyed;
+		letterBlock.OnLetterDestructedSignal += OnLetterDestroyed;
 
-        CollisionShape2D collisionShape = letterBlock.CollisionShape;
+		LetterBlocks.Enqueue(letterBlock);
+		AddChild(letterBlock);
 
-        LetterBlocks.Enqueue(letterBlock);
+		return CalculateNextLetterPosition(letterBlock, currentX);
+	}
 
-        RectangleShape2D shape = collisionShape.Shape as RectangleShape2D;
+	private static float CalculateNextLetterPosition(LetterBlock letterBlock, float currentX)
+	{
+		CollisionShape2D collisionShape = letterBlock.CollisionShape;
 
-        float nextXPosition = currentX + (shape.Size.X * 2);
+		RectangleShape2D shape = collisionShape.Shape as RectangleShape2D;
 
-        AddChild(letterBlock);
+		float nextXPosition = currentX + (shape.Size.X * 2);
+		return nextXPosition;
+	}
 
-        return nextXPosition;
-    }
+	private void OnLetterDestroyed(bool isTarget)
+	{
+		if (isTarget)
+		{
+			_ = EmitSignal(nameof(OnDisableChildrenCollisionsInternalSingal));
+		}
 
-    private void OnLetterDestroyed(bool isTarget)
-    {
-        if (isTarget)
-        {
-            _ = EmitSignal(nameof(OnDisableChildrenCollisionsInternalSingal));
-        }
+		_ = EmitSignal(nameof(OnLetterDestructedSignal), isTarget);
+	}
 
-        _ = EmitSignal(nameof(OnLetterDestructedSignal), isTarget);
-    }
-
-    public void Destroy()
-    {
-        LetterBlocks.Dequeue().Destroy();
-        _destructionTimer.Start(0.25f);
-    }
+	public void Destroy()
+	{
+		LetterBlocks.Dequeue().Destroy();
+		_destructionTimer.Start(0.25f);
+	}
 }
 
