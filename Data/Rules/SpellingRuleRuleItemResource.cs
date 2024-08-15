@@ -2,7 +2,7 @@ using Godot;
 using WordProcessing.Models.SpellingRules;
 
 [GlobalClass]
-public sealed partial class SpellingRuleItemResource : BaseRuleItemResource
+public partial class SpellingRuleRuleItemResource : BaseRuleItemResource
 {
 	[Export]
 	public SpellingRuleRuleSetType RuleSetType { get; set; }

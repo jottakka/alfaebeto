@@ -18,9 +18,9 @@ public sealed partial class RuleDescriptionUi : Control
 		BackButton.Pressed += QueueFree;
 	}
 
-	public void SetData(DiactricalMarkRuleItemResource detailedRule)
+	public void SetData(BaseRuleItemResource detailedRule)
 	{
-		RuleNameLabel.Text = detailedRule.Name;
+		RuleNameLabel.Text = detailedRule.Rule;
 		DescriptionRichTextLabel.Text = detailedRule.Description;
 		ExamplesRichTextLabel.Text = string.Join(", ", detailedRule.Examples);
 	}

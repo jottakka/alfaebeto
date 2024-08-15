@@ -15,12 +15,12 @@ public sealed partial class RuleStoreItem : MarginContainer
 	[Export]
 	public Sprite2D NotAllowed { get; set; }
 
-	private int _gemsCost;
 	[Signal]
 	public delegate void RuleBoughtSignalEventHandler(int gems);
 
+	private int _gemsCost;
 	private int _availabeGems;
-	private DiactricalMarkRuleItemResource _diactricalMarkRuleItemResource;
+	private BaseRuleItemResource _ruleItemResource;
 	public override void _Ready()
 	{
 		ProcessMode = ProcessModeEnum.Always;
@@ -35,22 +35,35 @@ public sealed partial class RuleStoreItem : MarginContainer
 		}
 
 		BoughtColorRect.Show();
-		_diactricalMarkRuleItemResource.Unlock();
+		_ruleItemResource.Unlock();
 		_ = EmitSignal(nameof(RuleBoughtSignal), _gemsCost);
 	}
 
-	public void SetData(DiactricalMarkRuleItemResource diactricalMarkRuleItem, int totalGems)
+	public void SetData(BaseRuleItemResource ruleItemResource, int totalGems)
 	{
-		RuleSetLabel.Text = diactricalMarkRuleItem.RuleSet;
-		RuleLabel.Text = diactricalMarkRuleItem.Name;
-		BoughtColorRect.Visible = diactricalMarkRuleItem.IsUnlocked;
-		BuyButton.Disabled = diactricalMarkRuleItem.IsUnlocked;
-		_gemsCost = diactricalMarkRuleItem.KeyGemCost;
+		RuleSetLabel.Text = ruleItemResource.RuleSet;
+		RuleLabel.Text = ruleItemResource.Rule;
+		BoughtColorRect.Visible = ruleItemResource.IsUnlocked;
+		BuyButton.Disabled = ruleItemResource.IsUnlocked;
+		_gemsCost = ruleItemResource.KeyGemCost;
 		CostLabel.Text = _gemsCost.ToString();
 		_availabeGems = totalGems;
-		_diactricalMarkRuleItemResource = diactricalMarkRuleItem;
+		_ruleItemResource = ruleItemResource;
 		VerifyIfEnoughtGems(totalGems);
 	}
+
+	//public void SetData(SpellingRuleRuleItemResource spellingRuleItem, int totalGems)
+	//{
+	//	RuleSetLabel.Text = spellingRuleItem.RuleSet;
+	//	RuleLabel.Text = spellingRuleItem.Rule;
+	//	BoughtColorRect.Visible = spellingRuleItem.IsUnlocked;
+	//	BuyButton.Disabled = spellingRuleItem.IsUnlocked;
+	//	_gemsCost = spellingRuleItem.KeyGemCost;
+	//	CostLabel.Text = _gemsCost.ToString();
+	//	_availabeGems = totalGems;
+	//	_ruleItemResource = spellingRuleItem;
+	//	VerifyIfEnoughtGems(totalGems);
+	//}
 
 	public void OnMaxGemsAvailableAmmountChanged(int totalGems)
 	{

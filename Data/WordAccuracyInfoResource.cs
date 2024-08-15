@@ -5,7 +5,7 @@ using WordProcessing.Models.Rules;
 public partial class WordAccuracyInfoResource : Resource
 {
     [Export]
-    public RuleType RuleType { get; set; }
+    public CategoryType RuleType { get; set; }
     [Export]
     public string Word { get; set; }
     [Export]

@@ -8,6 +8,7 @@ public sealed class DataResourceManager
     private const string _rulesFileName = "rules.tres";
     private const string _userDataOriginalFileName = "user_data_original.tres";
     private const string _rulesOriginalFileName = "rules_original.tres";
+    private const string _spellingRuleWordsDataFileName = "spelling_rule_words_data.tres";
 
     private const string _wordsDataFileName = "words_data.tres";
 
@@ -16,6 +17,7 @@ public sealed class DataResourceManager
     private string _rulesOriginalFilePath => Path.Combine(_saveDataBasePath, _rulesOriginalFileName);
     private string _userDataOriginalFilePath => Path.Combine(_saveDataBasePath, _userDataOriginalFileName);
     private string _wordsDataOriginalFilePath => Path.Combine(_saveDataBasePath, _wordsDataFileName);
+    private string _spellingRuleWordsDataFilePath => Path.Combine(_saveDataBasePath, _spellingRuleWordsDataFileName);
 
     private readonly RulesResource _rulesOriginalResource;
     private readonly UserDataInfoResource _userDataOriginalInfoResource;
@@ -23,6 +25,8 @@ public sealed class DataResourceManager
     public RulesResource RulesResource { get; }
 
     public UserDataInfoResource UserDataInfoResource { get; }
+
+    public SpellingRulesResource SpellingRulesResource { get; }
 
     public DiactricalMarkWordsDataResource DiactricalMarkWordsDataResource { get; }
 
@@ -33,11 +37,14 @@ public sealed class DataResourceManager
 
         DiactricalMarkWordsDataResource = ResourceLoader.Load<DiactricalMarkWordsDataResource>(_wordsDataOriginalFilePath);
 
+        SpellingRulesResource = ResourceLoader.Load<SpellingRulesResource>(_spellingRuleWordsDataFilePath);
+
         RulesResource = LoadRuleResource();
         UserDataInfoResource = LoadUserDataResource();
 
         RulesResource.OnSaveChangesSignal += () => SaveResource(RulesResource, _rulesFilePath);
         UserDataInfoResource.OnSaveChangesSignal += () => SaveResource(UserDataInfoResource, _userDataFilePath);
+
     }
 
     private RulesResource LoadRuleResource()

@@ -1,30 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using WordProcessing.Filtering;
-using WordProcessing.Models.XorCH;
-using WordProcessing.Processing;
 
 public sealed class WordServerManager
 {
-    private readonly IEnumerable<XorCHWord> _unlockedXorChWords;
     private DiactricalMarkWordsDataResource _diactricalMarkWordResource => Global.Instance.DiactricalMarkWordsDataResource;
     private UserDataInfoResource _userDataInfo => Global.Instance.UserDataInfoResource;
+    private SpellingRulesResource _spellingRulesResource => Global.Instance.SpellingRulesResource;
 
-    public WordServerManager()
+    public Queue<SpellingRuleWordResource> GetShuffledSpellingRuleWords(int take = 10)
     {
-        string filePath = @"C:\git\alfa_e_betto\Data\acentuação\ch_e_x_proper.json";
-        string jsonString = File.ReadAllText(filePath);
-        _unlockedXorChWords = XorCHDeserializer
-            .DeserializeJsonString(jsonString)
-            .GetWordInfosByCategories();
-    }
+        IEnumerable<SpellingRuleWordResource> unlockedSpellingRulesWords =
+            GetUnlockedSpellingRuleWordsForUser();
 
-    public Queue<XorCHWord> GetShuffledXorCHWords(int take = 10)
-    {
-        IEnumerable<XorCHWord> shuffledWords = GetShuffledWords(_unlockedXorChWords, take);
-        return new Queue<XorCHWord>(shuffledWords);
+        IEnumerable<SpellingRuleWordResource> shuffledWords =
+            GetShuffledWords(unlockedSpellingRulesWords, take);
+
+        return new Queue<SpellingRuleWordResource>(shuffledWords);
     }
 
     public Queue<DiactricalMarkWordResource> GetShuffledDiactricalMarkWords(int take = 10)
@@ -61,6 +53,14 @@ public sealed class WordServerManager
         return _userDataInfo.UnlockedDiactricalMarksSubCategories.SelectMany(
             subCatType => _diactricalMarkWordResource.MarkedWordsByRule[subCatType]);
     }
+
+    private IEnumerable<SpellingRuleWordResource> GetUnlockedSpellingRuleWordsForUser()
+    {
+        //return _userDataInfo.UnlockedSpellingRuleRuleTypes.SelectMany(
+        //    ruleType => _spellingRulesResource.WordsByRule[ruleType]);
+        return _spellingRulesResource.WordsByRule.Values.SelectMany(v => v);
+    }
+
     private IEnumerable<TWord> GetShuffledWords<TWord>(IEnumerable<TWord> words, int take)
     {
         return words

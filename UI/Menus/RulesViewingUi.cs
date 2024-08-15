@@ -20,11 +20,11 @@ public sealed partial class RulesViewingUi : Control
 		ExitButton.Pressed += QueueFree;
 	}
 
-	public void SetData(DiactricalMarkRuleSetItemResource ruleSet)
+	public void SetData(BaseRuleSetItemResource ruleSet)
 	{
-		RuleSetNameLabel.Text = ruleSet.Name;
+		RuleSetNameLabel.Text = ruleSet.RuleSet;
 		RuleDescriptionLabel.Text = ruleSet.Description;
-		foreach (DiactricalMarkRuleItemResource ruleListItemModel in ruleSet.Rules)
+		foreach (BaseRuleItemResource ruleListItemModel in ruleSet.Rules)
 		{
 			AddItemsToVBox(ruleListItemModel);
 		}

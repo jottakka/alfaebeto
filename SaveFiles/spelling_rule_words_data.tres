@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Data/Words/SpellingRuleWordResource.cs" id="1_c3ak6"]
 [ext_resource type="Script" path="res://Data/Words/SpellingRulesResource.cs" id="2_og4oq"]
 
-[sub_resource type="Resource" id="Resource_p1frx"]
+[sub_resource type="Resource" id="Resource_hq8iv"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "alisar"
 Options = PackedStringArray("s", "z")
@@ -13,29 +13,29 @@ RightOption = "s"
 FirstPart = "ali"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_rdae7"]
+[sub_resource type="Resource" id="Resource_x4i53"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "atrás"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
 FirstPart = "atrá"
-SecondPart = "s"
+SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_ejqq1"]
+[sub_resource type="Resource" id="Resource_edr04"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "através"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
 FirstPart = "atravé"
-SecondPart = "s"
+SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_r01so"]
+[sub_resource type="Resource" id="Resource_ynevq"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "aviso"
 Options = PackedStringArray("s", "z")
@@ -43,19 +43,19 @@ RightOption = "s"
 FirstPart = "avi"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_hqp5x"]
+[sub_resource type="Resource" id="Resource_7po7s"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "gás"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
 FirstPart = "gá"
-SecondPart = "s"
+SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_jcbub"]
+[sub_resource type="Resource" id="Resource_r3ora"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "groselha"
 Options = PackedStringArray("s", "z")
@@ -63,29 +63,29 @@ RightOption = "s"
 FirstPart = "gro"
 SecondPart = "elha"
 
-[sub_resource type="Resource" id="Resource_u3fl2"]
+[sub_resource type="Resource" id="Resource_urm34"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "invés"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
 FirstPart = "invé"
-SecondPart = "s"
+SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_wng44"]
+[sub_resource type="Resource" id="Resource_j2p30"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "jus"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
 FirstPart = "ju"
-SecondPart = "s"
+SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_042re"]
+[sub_resource type="Resource" id="Resource_nfk36"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 0
 Original = "uso"
 Options = PackedStringArray("s", "z")
@@ -93,9 +93,9 @@ RightOption = "s"
 FirstPart = "u"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_tym2o"]
+[sub_resource type="Resource" id="Resource_sr5bn"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "portuguesa"
 Options = PackedStringArray("s", "z")
@@ -103,9 +103,9 @@ RightOption = "s"
 FirstPart = "portugue"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_diov0"]
+[sub_resource type="Resource" id="Resource_yjlpu"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "francesa"
 Options = PackedStringArray("s", "z")
@@ -113,9 +113,9 @@ RightOption = "s"
 FirstPart = "france"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_cjts6"]
+[sub_resource type="Resource" id="Resource_wdtue"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "chinesa"
 Options = PackedStringArray("s", "z")
@@ -123,9 +123,9 @@ RightOption = "s"
 FirstPart = "chine"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_hp703"]
+[sub_resource type="Resource" id="Resource_52ok5"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "japonesa"
 Options = PackedStringArray("s", "z")
@@ -133,19 +133,19 @@ RightOption = "s"
 FirstPart = "japone"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_c7dr2"]
+[sub_resource type="Resource" id="Resource_hrjnp"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "gaulesa"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "gau"
-SecondPart = "esa"
+FirstPart = "gaule"
+SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_518f2"]
+[sub_resource type="Resource" id="Resource_evhdp"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "marquesa"
 Options = PackedStringArray("s", "z")
@@ -153,9 +153,9 @@ RightOption = "s"
 FirstPart = "marque"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_jigp0"]
+[sub_resource type="Resource" id="Resource_5irmj"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "poetisa"
 Options = PackedStringArray("s", "z")
@@ -163,9 +163,9 @@ RightOption = "s"
 FirstPart = "poeti"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_33thp"]
+[sub_resource type="Resource" id="Resource_6j67c"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "profetisa"
 Options = PackedStringArray("s", "z")
@@ -173,9 +173,9 @@ RightOption = "s"
 FirstPart = "profeti"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_lqll1"]
+[sub_resource type="Resource" id="Resource_eeyi2"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "sacerdotisa"
 Options = PackedStringArray("s", "z")
@@ -183,9 +183,9 @@ RightOption = "s"
 FirstPart = "sacerdoti"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_2tv2o"]
+[sub_resource type="Resource" id="Resource_5u5du"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "druidisa"
 Options = PackedStringArray("s", "z")
@@ -193,9 +193,9 @@ RightOption = "s"
 FirstPart = "druidi"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_d52ex"]
+[sub_resource type="Resource" id="Resource_gc1hf"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "circense"
 Options = PackedStringArray("s", "z")
@@ -203,9 +203,9 @@ RightOption = "s"
 FirstPart = "circen"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_iq6oo"]
+[sub_resource type="Resource" id="Resource_wohna"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "paraense"
 Options = PackedStringArray("s", "z")
@@ -213,9 +213,9 @@ RightOption = "s"
 FirstPart = "paraen"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_p4gg5"]
+[sub_resource type="Resource" id="Resource_sfq0o"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "israelense"
 Options = PackedStringArray("s", "z")
@@ -223,9 +223,9 @@ RightOption = "s"
 FirstPart = "israelen"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_c3bas"]
+[sub_resource type="Resource" id="Resource_majc0"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 1
 Original = "recifense"
 Options = PackedStringArray("s", "z")
@@ -233,9 +233,9 @@ RightOption = "s"
 FirstPart = "recifen"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_uv5ww"]
+[sub_resource type="Resource" id="Resource_p3rgd"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desamor"
 Options = PackedStringArray("s", "z")
@@ -243,9 +243,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "amor"
 
-[sub_resource type="Resource" id="Resource_t1vgh"]
+[sub_resource type="Resource" id="Resource_f0k51"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desolado"
 Options = PackedStringArray("s", "z")
@@ -253,9 +253,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "olado"
 
-[sub_resource type="Resource" id="Resource_mlt3d"]
+[sub_resource type="Resource" id="Resource_8uuwd"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desapego"
 Options = PackedStringArray("s", "z")
@@ -263,9 +263,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "apego"
 
-[sub_resource type="Resource" id="Resource_dq8ji"]
+[sub_resource type="Resource" id="Resource_fmn55"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desonra"
 Options = PackedStringArray("s", "z")
@@ -273,9 +273,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "onra"
 
-[sub_resource type="Resource" id="Resource_oj3l1"]
+[sub_resource type="Resource" id="Resource_jxr2f"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desigual"
 Options = PackedStringArray("s", "z")
@@ -283,9 +283,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "igual"
 
-[sub_resource type="Resource" id="Resource_1828f"]
+[sub_resource type="Resource" id="Resource_ptlrh"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desordem"
 Options = PackedStringArray("s", "z")
@@ -293,9 +293,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "ordem"
 
-[sub_resource type="Resource" id="Resource_xfcuu"]
+[sub_resource type="Resource" id="Resource_er0ib"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desimpedir"
 Options = PackedStringArray("s", "z")
@@ -303,9 +303,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "impedir"
 
-[sub_resource type="Resource" id="Resource_7h44u"]
+[sub_resource type="Resource" id="Resource_wovm0"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desovar"
 Options = PackedStringArray("s", "z")
@@ -313,9 +313,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "ovar"
 
-[sub_resource type="Resource" id="Resource_ry6up"]
+[sub_resource type="Resource" id="Resource_1d38v"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desinibido"
 Options = PackedStringArray("s", "z")
@@ -323,9 +323,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "inibido"
 
-[sub_resource type="Resource" id="Resource_q4v5m"]
+[sub_resource type="Resource" id="Resource_x6uub"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desumilde"
 Options = PackedStringArray("s", "z")
@@ -333,9 +333,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "umilde"
 
-[sub_resource type="Resource" id="Resource_ud33c"]
+[sub_resource type="Resource" id="Resource_g1is5"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desodorante"
 Options = PackedStringArray("s", "z")
@@ -343,9 +343,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "odorante"
 
-[sub_resource type="Resource" id="Resource_gskb8"]
+[sub_resource type="Resource" id="Resource_r2y0r"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 2
 Original = "desunir"
 Options = PackedStringArray("s", "z")
@@ -353,9 +353,9 @@ RightOption = "s"
 FirstPart = "de"
 SecondPart = "unir"
 
-[sub_resource type="Resource" id="Resource_3ht6y"]
+[sub_resource type="Resource" id="Resource_y5v4l"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "bondoso"
 Options = PackedStringArray("s", "z")
@@ -363,9 +363,9 @@ RightOption = "s"
 FirstPart = "bondo"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_82r42"]
+[sub_resource type="Resource" id="Resource_e430y"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "feiosa"
 Options = PackedStringArray("s", "z")
@@ -373,9 +373,9 @@ RightOption = "s"
 FirstPart = "feio"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_3vq3d"]
+[sub_resource type="Resource" id="Resource_pw6iq"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "oleoso"
 Options = PackedStringArray("s", "z")
@@ -383,9 +383,9 @@ RightOption = "s"
 FirstPart = "oleo"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_nf87a"]
+[sub_resource type="Resource" id="Resource_7bpfw"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "presunçoso"
 Options = PackedStringArray("s", "z")
@@ -393,9 +393,9 @@ RightOption = "s"
 FirstPart = "presunço"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_y81ah"]
+[sub_resource type="Resource" id="Resource_6g51s"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "vigoroso"
 Options = PackedStringArray("s", "z")
@@ -403,9 +403,9 @@ RightOption = "s"
 FirstPart = "vigoro"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_bwm3m"]
+[sub_resource type="Resource" id="Resource_6hsf6"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "maravilhoso"
 Options = PackedStringArray("s", "z")
@@ -413,9 +413,9 @@ RightOption = "s"
 FirstPart = "maravilho"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_5ycd2"]
+[sub_resource type="Resource" id="Resource_iwkbm"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "curioso"
 Options = PackedStringArray("s", "z")
@@ -423,9 +423,9 @@ RightOption = "s"
 FirstPart = "curio"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_pix3s"]
+[sub_resource type="Resource" id="Resource_pmw7r"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "hipótese"
 Options = PackedStringArray("s", "z")
@@ -433,9 +433,9 @@ RightOption = "s"
 FirstPart = "hipóte"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_g2nd0"]
+[sub_resource type="Resource" id="Resource_prdok"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "camisa"
 Options = PackedStringArray("s", "z")
@@ -443,9 +443,9 @@ RightOption = "s"
 FirstPart = "cami"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_qlbsp"]
+[sub_resource type="Resource" id="Resource_8lg55"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "metamorfose"
 Options = PackedStringArray("s", "z")
@@ -453,9 +453,9 @@ RightOption = "s"
 FirstPart = "metamorfo"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_fo1gu"]
+[sub_resource type="Resource" id="Resource_ddsjp"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "base"
 Options = PackedStringArray("s", "z")
@@ -463,9 +463,9 @@ RightOption = "s"
 FirstPart = "ba"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_bjp8h"]
+[sub_resource type="Resource" id="Resource_7gm6l"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "tosa"
 Options = PackedStringArray("s", "z")
@@ -473,9 +473,9 @@ RightOption = "s"
 FirstPart = "to"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_rqf2r"]
+[sub_resource type="Resource" id="Resource_2sxq7"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "raposa"
 Options = PackedStringArray("s", "z")
@@ -483,9 +483,9 @@ RightOption = "s"
 FirstPart = "rapo"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_yp8jt"]
+[sub_resource type="Resource" id="Resource_qsgyt"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 3
 Original = "pose"
 Options = PackedStringArray("s", "z")
@@ -493,39 +493,39 @@ RightOption = "s"
 FirstPart = "po"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_58asa"]
+[sub_resource type="Resource" id="Resource_bu0et"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "pôs"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
 FirstPart = "pô"
-SecondPart = "s"
+SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_6kjl4"]
+[sub_resource type="Resource" id="Resource_mjqai"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "quis"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
 FirstPart = "qui"
-SecondPart = "s"
+SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_kt56l"]
+[sub_resource type="Resource" id="Resource_8hnd6"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "quiseram"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "quiser"
-SecondPart = "am"
+FirstPart = "qui"
+SecondPart = "eram"
 
-[sub_resource type="Resource" id="Resource_7ufvw"]
+[sub_resource type="Resource" id="Resource_owyrw"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "pus"
 Options = PackedStringArray("s", "z")
@@ -533,109 +533,109 @@ RightOption = "s"
 FirstPart = "pu"
 SecondPart = "s"
 
-[sub_resource type="Resource" id="Resource_01rch"]
+[sub_resource type="Resource" id="Resource_26twb"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "puseram"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "puser"
-SecondPart = "am"
+FirstPart = "pu"
+SecondPart = "eram"
 
-[sub_resource type="Resource" id="Resource_y1x8v"]
+[sub_resource type="Resource" id="Resource_wl8e7"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "quisesse"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "quise"
-SecondPart = "e"
+FirstPart = "qui"
+SecondPart = "esse"
 
-[sub_resource type="Resource" id="Resource_iuoym"]
+[sub_resource type="Resource" id="Resource_xessr"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "quisera"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "quise"
-SecondPart = "a"
+FirstPart = "qui"
+SecondPart = "era"
 
-[sub_resource type="Resource" id="Resource_u5dr5"]
+[sub_resource type="Resource" id="Resource_dcsjo"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "quiser"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "quise"
-SecondPart = "r"
+FirstPart = "qui"
+SecondPart = "er"
 
-[sub_resource type="Resource" id="Resource_fem5f"]
+[sub_resource type="Resource" id="Resource_vysa8"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "quisermos"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "quiserm"
-SecondPart = "os"
+FirstPart = "qui"
+SecondPart = "ermos"
 
-[sub_resource type="Resource" id="Resource_b1evi"]
+[sub_resource type="Resource" id="Resource_mpca4"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "quiserdes"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "quiserde"
-SecondPart = "s"
+FirstPart = "qui"
+SecondPart = "erdes"
 
-[sub_resource type="Resource" id="Resource_r3ona"]
+[sub_resource type="Resource" id="Resource_bedxm"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "puser"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "puse"
-SecondPart = "r"
+FirstPart = "pu"
+SecondPart = "er"
 
-[sub_resource type="Resource" id="Resource_cjdgf"]
+[sub_resource type="Resource" id="Resource_oswco"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "pusermos"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "puserm"
-SecondPart = "os"
+FirstPart = "pu"
+SecondPart = "ermos"
 
-[sub_resource type="Resource" id="Resource_6dtpe"]
+[sub_resource type="Resource" id="Resource_t038p"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 4
 Original = "puserdes"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "puserde"
-SecondPart = "s"
+FirstPart = "pu"
+SecondPart = "erdes"
 
-[sub_resource type="Resource" id="Resource_ojv7j"]
+[sub_resource type="Resource" id="Resource_66cpl"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "análise"
 Options = PackedStringArray("s", "z")
 RightOption = "s"
-FirstPart = "análise"
-SecondPart = ""
+FirstPart = "análi"
+SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_aji5c"]
+[sub_resource type="Resource" id="Resource_cyj81"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "analisar"
 Options = PackedStringArray("s", "z")
@@ -643,9 +643,9 @@ RightOption = "s"
 FirstPart = "anali"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_4ymts"]
+[sub_resource type="Resource" id="Resource_51yvy"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "aviso"
 Options = PackedStringArray("s", "z")
@@ -653,9 +653,9 @@ RightOption = "s"
 FirstPart = "avi"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_15vwy"]
+[sub_resource type="Resource" id="Resource_2b1op"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "avisar"
 Options = PackedStringArray("s", "z")
@@ -663,9 +663,9 @@ RightOption = "s"
 FirstPart = "avi"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_lv04h"]
+[sub_resource type="Resource" id="Resource_bsaak"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "improviso"
 Options = PackedStringArray("s", "z")
@@ -673,9 +673,9 @@ RightOption = "s"
 FirstPart = "improvi"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_b72xv"]
+[sub_resource type="Resource" id="Resource_2h1tl"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "improvisar"
 Options = PackedStringArray("s", "z")
@@ -683,9 +683,9 @@ RightOption = "s"
 FirstPart = "improvi"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_fadq1"]
+[sub_resource type="Resource" id="Resource_1f8vw"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "liso"
 Options = PackedStringArray("s", "z")
@@ -693,9 +693,9 @@ RightOption = "s"
 FirstPart = "li"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_cqhb4"]
+[sub_resource type="Resource" id="Resource_t8ets"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "alisar"
 Options = PackedStringArray("s", "z")
@@ -703,9 +703,9 @@ RightOption = "s"
 FirstPart = "ali"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_3n0rs"]
+[sub_resource type="Resource" id="Resource_tyukx"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "pesquisa"
 Options = PackedStringArray("s", "z")
@@ -713,9 +713,9 @@ RightOption = "s"
 FirstPart = "pesqui"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_cu3mj"]
+[sub_resource type="Resource" id="Resource_4vir7"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "pesquisar"
 Options = PackedStringArray("s", "z")
@@ -723,9 +723,9 @@ RightOption = "s"
 FirstPart = "pesqui"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_p0wjv"]
+[sub_resource type="Resource" id="Resource_0ee0w"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "piso"
 Options = PackedStringArray("s", "z")
@@ -733,9 +733,9 @@ RightOption = "s"
 FirstPart = "pi"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_nuj3t"]
+[sub_resource type="Resource" id="Resource_3f5xw"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 5
 Original = "pisar"
 Options = PackedStringArray("s", "z")
@@ -743,9 +743,9 @@ RightOption = "s"
 FirstPart = "pi"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_1sue8"]
+[sub_resource type="Resource" id="Resource_ycke4"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "amizade"
 Options = PackedStringArray("s", "z")
@@ -753,19 +753,19 @@ RightOption = "z"
 FirstPart = "ami"
 SecondPart = "ade"
 
-[sub_resource type="Resource" id="Resource_71fu3"]
+[sub_resource type="Resource" id="Resource_xlcj8"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "aprazível"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "aprazi"
-SecondPart = "vel"
+FirstPart = "apra"
+SecondPart = "ivel"
 
-[sub_resource type="Resource" id="Resource_1ge1f"]
+[sub_resource type="Resource" id="Resource_0cjna"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "azar"
 Options = PackedStringArray("s", "z")
@@ -773,9 +773,9 @@ RightOption = "z"
 FirstPart = "a"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_08k6c"]
+[sub_resource type="Resource" id="Resource_m4n6h"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "azia"
 Options = PackedStringArray("s", "z")
@@ -783,9 +783,9 @@ RightOption = "z"
 FirstPart = "a"
 SecondPart = "ia"
 
-[sub_resource type="Resource" id="Resource_fq4fh"]
+[sub_resource type="Resource" id="Resource_74xcs"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "desprezo"
 Options = PackedStringArray("s", "z")
@@ -793,9 +793,9 @@ RightOption = "z"
 FirstPart = "despre"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_ru346"]
+[sub_resource type="Resource" id="Resource_jsga5"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "giz"
 Options = PackedStringArray("s", "z")
@@ -803,19 +803,19 @@ RightOption = "z"
 FirstPart = "gi"
 SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_ub1is"]
+[sub_resource type="Resource" id="Resource_4mbe3"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "prazer"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "praze"
-SecondPart = "r"
+FirstPart = "pra"
+SecondPart = "er"
 
-[sub_resource type="Resource" id="Resource_gs1lu"]
+[sub_resource type="Resource" id="Resource_abj4t"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "rodízio"
 Options = PackedStringArray("s", "z")
@@ -823,9 +823,9 @@ RightOption = "z"
 FirstPart = "rodí"
 SecondPart = "io"
 
-[sub_resource type="Resource" id="Resource_4hnar"]
+[sub_resource type="Resource" id="Resource_xg77a"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "talvez"
 Options = PackedStringArray("s", "z")
@@ -833,9 +833,9 @@ RightOption = "z"
 FirstPart = "talve"
 SecondPart = "z"
 
-[sub_resource type="Resource" id="Resource_37pit"]
+[sub_resource type="Resource" id="Resource_gflrl"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "verniz"
 Options = PackedStringArray("s", "z")
@@ -843,9 +843,9 @@ RightOption = "z"
 FirstPart = "verni"
 SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_aevy2"]
+[sub_resource type="Resource" id="Resource_byxyl"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "arroz"
 Options = PackedStringArray("s", "z")
@@ -853,9 +853,9 @@ RightOption = "z"
 FirstPart = "arro"
 SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_mt1va"]
+[sub_resource type="Resource" id="Resource_4dhr7"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "rapaz"
 Options = PackedStringArray("s", "z")
@@ -863,9 +863,9 @@ RightOption = "z"
 FirstPart = "rapa"
 SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_6w4bl"]
+[sub_resource type="Resource" id="Resource_4kukj"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "capaz"
 Options = PackedStringArray("s", "z")
@@ -873,9 +873,9 @@ RightOption = "z"
 FirstPart = "capa"
 SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_rqpem"]
+[sub_resource type="Resource" id="Resource_dw53n"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "vez"
 Options = PackedStringArray("s", "z")
@@ -883,9 +883,9 @@ RightOption = "z"
 FirstPart = "ve"
 SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_tq2ib"]
+[sub_resource type="Resource" id="Resource_lvyyn"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 6
 Original = "vezes"
 Options = PackedStringArray("s", "z")
@@ -893,9 +893,9 @@ RightOption = "z"
 FirstPart = "ve"
 SecondPart = "es"
 
-[sub_resource type="Resource" id="Resource_by3aq"]
+[sub_resource type="Resource" id="Resource_iolgy"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 7
 Original = "gaze"
 Options = PackedStringArray("s", "z")
@@ -903,9 +903,9 @@ RightOption = "z"
 FirstPart = "ga"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_5n5gq"]
+[sub_resource type="Resource" id="Resource_cid7w"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 7
 Original = "treze"
 Options = PackedStringArray("s", "z")
@@ -913,9 +913,9 @@ RightOption = "z"
 FirstPart = "tre"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_y6qc2"]
+[sub_resource type="Resource" id="Resource_w1jjm"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 7
 Original = "baliza"
 Options = PackedStringArray("s", "z")
@@ -923,9 +923,9 @@ RightOption = "z"
 FirstPart = "bali"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_t7kcg"]
+[sub_resource type="Resource" id="Resource_fhpqy"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 7
 Original = "ojeriza"
 Options = PackedStringArray("s", "z")
@@ -933,9 +933,9 @@ RightOption = "z"
 FirstPart = "ojeri"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_cw4jg"]
+[sub_resource type="Resource" id="Resource_opvtl"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 7
 Original = "doze"
 Options = PackedStringArray("s", "z")
@@ -943,9 +943,9 @@ RightOption = "z"
 FirstPart = "do"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_7as77"]
+[sub_resource type="Resource" id="Resource_wdg0j"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 7
 Original = "gozo"
 Options = PackedStringArray("s", "z")
@@ -953,179 +953,179 @@ RightOption = "z"
 FirstPart = "go"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_3piy4"]
+[sub_resource type="Resource" id="Resource_ecawi"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "civilizar"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "civiliza"
-SecondPart = "r"
+FirstPart = "civili"
+SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_yg3f0"]
+[sub_resource type="Resource" id="Resource_hpouh"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "realizar"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "realiza"
-SecondPart = "r"
+FirstPart = "reali"
+SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_p5eul"]
+[sub_resource type="Resource" id="Resource_n14dt"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "organizar"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "organiza"
-SecondPart = "r"
+FirstPart = "organi"
+SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_nqdhb"]
+[sub_resource type="Resource" id="Resource_ae3cs"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "utilizar"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "utiliza"
-SecondPart = "r"
+FirstPart = "utili"
+SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_vowjx"]
+[sub_resource type="Resource" id="Resource_hd6wr"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sensibilizar"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sensibiliza"
-SecondPart = "r"
+FirstPart = "sensibili"
+SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_08lm3"]
+[sub_resource type="Resource" id="Resource_2xjt5"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sistematizar"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sistematiza"
-SecondPart = "r"
+FirstPart = "sistemati"
+SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_557r7"]
+[sub_resource type="Resource" id="Resource_vpxlj"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sintetizar"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sintetiza"
-SecondPart = "r"
+FirstPart = "sinteti"
+SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_5wudq"]
+[sub_resource type="Resource" id="Resource_wi15l"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sintetizador"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sintetiza"
-SecondPart = "dor"
+FirstPart = "sinteti"
+SecondPart = "ador"
 
-[sub_resource type="Resource" id="Resource_0ql24"]
+[sub_resource type="Resource" id="Resource_r1uf6"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sintetização"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sintetiza"
-SecondPart = "ção"
+FirstPart = "sinteti"
+SecondPart = "ação"
 
-[sub_resource type="Resource" id="Resource_nvsc6"]
+[sub_resource type="Resource" id="Resource_kq3es"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sintetizável"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sintetiza"
-SecondPart = "vel"
+FirstPart = "sinteti"
+SecondPart = "avel"
 
-[sub_resource type="Resource" id="Resource_pehlh"]
+[sub_resource type="Resource" id="Resource_bxs7g"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "civilização"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "civiliza"
-SecondPart = "ção"
+FirstPart = "civili"
+SecondPart = "ação"
 
-[sub_resource type="Resource" id="Resource_jpgd6"]
+[sub_resource type="Resource" id="Resource_5sayb"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "realização"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "realiza"
-SecondPart = "ção"
+FirstPart = "reali"
+SecondPart = "ação"
 
-[sub_resource type="Resource" id="Resource_w7kxc"]
+[sub_resource type="Resource" id="Resource_sov14"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "organização"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "organiza"
-SecondPart = "ção"
+FirstPart = "organi"
+SecondPart = "ação"
 
-[sub_resource type="Resource" id="Resource_pk67x"]
+[sub_resource type="Resource" id="Resource_10hu4"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "utilização"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "utiliza"
-SecondPart = "ção"
+FirstPart = "utili"
+SecondPart = "ação"
 
-[sub_resource type="Resource" id="Resource_sy1ns"]
+[sub_resource type="Resource" id="Resource_ewmog"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sensibilização"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sensibiliza"
-SecondPart = "ção"
+FirstPart = "sensibili"
+SecondPart = "ação"
 
-[sub_resource type="Resource" id="Resource_w2nod"]
+[sub_resource type="Resource" id="Resource_a8vmd"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sistematização"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sistematiza"
-SecondPart = "ção"
+FirstPart = "sistemati"
+SecondPart = "ação"
 
-[sub_resource type="Resource" id="Resource_urm57"]
+[sub_resource type="Resource" id="Resource_k2ibf"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 8
 Original = "sistematizador"
 Options = PackedStringArray("s", "z")
 RightOption = "z"
-FirstPart = "sistematiza"
-SecondPart = "dor"
+FirstPart = "sistemati"
+SecondPart = "ador"
 
-[sub_resource type="Resource" id="Resource_1q28r"]
+[sub_resource type="Resource" id="Resource_tcfy7"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "vez"
 Options = PackedStringArray("s", "z")
@@ -1133,9 +1133,9 @@ RightOption = "z"
 FirstPart = "ve"
 SecondPart = ""
 
-[sub_resource type="Resource" id="Resource_7octt"]
+[sub_resource type="Resource" id="Resource_xq1v5"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "rigidez"
 Options = PackedStringArray("s", "z")
@@ -1143,9 +1143,9 @@ RightOption = "z"
 FirstPart = "rigide"
 SecondPart = "z"
 
-[sub_resource type="Resource" id="Resource_4ix4h"]
+[sub_resource type="Resource" id="Resource_giey6"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "certeza"
 Options = PackedStringArray("s", "z")
@@ -1153,9 +1153,9 @@ RightOption = "z"
 FirstPart = "certe"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_hlk2i"]
+[sub_resource type="Resource" id="Resource_x0d40"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "beleza"
 Options = PackedStringArray("s", "z")
@@ -1163,9 +1163,9 @@ RightOption = "z"
 FirstPart = "bele"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_ccmo5"]
+[sub_resource type="Resource" id="Resource_bl6ls"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "avareza"
 Options = PackedStringArray("s", "z")
@@ -1173,9 +1173,9 @@ RightOption = "z"
 FirstPart = "avare"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_am7hg"]
+[sub_resource type="Resource" id="Resource_1sqmy"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "estupidez"
 Options = PackedStringArray("s", "z")
@@ -1183,9 +1183,9 @@ RightOption = "z"
 FirstPart = "estupide"
 SecondPart = "z"
 
-[sub_resource type="Resource" id="Resource_0o4yr"]
+[sub_resource type="Resource" id="Resource_xtnk8"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "mesquinhez"
 Options = PackedStringArray("s", "z")
@@ -1193,9 +1193,9 @@ RightOption = "z"
 FirstPart = "mesquinhe"
 SecondPart = "z"
 
-[sub_resource type="Resource" id="Resource_l6v63"]
+[sub_resource type="Resource" id="Resource_y583v"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "rapidez"
 Options = PackedStringArray("s", "z")
@@ -1203,9 +1203,9 @@ RightOption = "z"
 FirstPart = "rapide"
 SecondPart = "z"
 
-[sub_resource type="Resource" id="Resource_u23al"]
+[sub_resource type="Resource" id="Resource_tfgrj"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "tristeza"
 Options = PackedStringArray("s", "z")
@@ -1213,9 +1213,9 @@ RightOption = "z"
 FirstPart = "triste"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_uapm6"]
+[sub_resource type="Resource" id="Resource_kch4j"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "riqueza"
 Options = PackedStringArray("s", "z")
@@ -1223,9 +1223,9 @@ RightOption = "z"
 FirstPart = "rique"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_b46s0"]
+[sub_resource type="Resource" id="Resource_xhpq6"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "pobreza"
 Options = PackedStringArray("s", "z")
@@ -1233,9 +1233,9 @@ RightOption = "z"
 FirstPart = "pobre"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_coh6q"]
+[sub_resource type="Resource" id="Resource_weqoj"]
 script = ExtResource("1_c3ak6")
-RuleType = 3
+CategoryType = 3
 SpellingRuleType = 9
 Original = "nobreza"
 Options = PackedStringArray("s", "z")
@@ -1243,9 +1243,9 @@ RightOption = "z"
 FirstPart = "nobre"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_4v81a"]
+[sub_resource type="Resource" id="Resource_jww70"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "abacaxi"
 Options = PackedStringArray("x", "ch")
@@ -1253,9 +1253,9 @@ RightOption = "x"
 FirstPart = "abaca"
 SecondPart = "i"
 
-[sub_resource type="Resource" id="Resource_flboi"]
+[sub_resource type="Resource" id="Resource_xphr6"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "bexiga"
 Options = PackedStringArray("x", "ch")
@@ -1263,9 +1263,9 @@ RightOption = "x"
 FirstPart = "be"
 SecondPart = "iga"
 
-[sub_resource type="Resource" id="Resource_pomov"]
+[sub_resource type="Resource" id="Resource_15qmy"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "bruxa"
 Options = PackedStringArray("x", "ch")
@@ -1273,9 +1273,9 @@ RightOption = "x"
 FirstPart = "bru"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_ymtpr"]
+[sub_resource type="Resource" id="Resource_a02qp"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "caxumba"
 Options = PackedStringArray("x", "ch")
@@ -1283,9 +1283,9 @@ RightOption = "x"
 FirstPart = "ca"
 SecondPart = "umba"
 
-[sub_resource type="Resource" id="Resource_eclvd"]
+[sub_resource type="Resource" id="Resource_h1b0i"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "elixir"
 Options = PackedStringArray("x", "ch")
@@ -1293,9 +1293,9 @@ RightOption = "x"
 FirstPart = "eli"
 SecondPart = "ir"
 
-[sub_resource type="Resource" id="Resource_r5olx"]
+[sub_resource type="Resource" id="Resource_4u47m"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "faxina"
 Options = PackedStringArray("x", "ch")
@@ -1303,9 +1303,9 @@ RightOption = "x"
 FirstPart = "fa"
 SecondPart = "ina"
 
-[sub_resource type="Resource" id="Resource_ykd0n"]
+[sub_resource type="Resource" id="Resource_snlfa"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "graxa"
 Options = PackedStringArray("x", "ch")
@@ -1313,9 +1313,9 @@ RightOption = "x"
 FirstPart = "gra"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_7snvx"]
+[sub_resource type="Resource" id="Resource_8ybi3"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "lagartixa"
 Options = PackedStringArray("x", "ch")
@@ -1323,9 +1323,9 @@ RightOption = "x"
 FirstPart = "lagarti"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_1l8hg"]
+[sub_resource type="Resource" id="Resource_igr7j"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "mexerico"
 Options = PackedStringArray("x", "ch")
@@ -1333,9 +1333,9 @@ RightOption = "x"
 FirstPart = "me"
 SecondPart = "erico"
 
-[sub_resource type="Resource" id="Resource_qnrty"]
+[sub_resource type="Resource" id="Resource_e1j5i"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "xote"
 Options = PackedStringArray("x", "ch")
@@ -1343,9 +1343,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "ote"
 
-[sub_resource type="Resource" id="Resource_06inf"]
+[sub_resource type="Resource" id="Resource_mk6dd"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "xarope"
 Options = PackedStringArray("x", "ch")
@@ -1353,9 +1353,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "arope"
 
-[sub_resource type="Resource" id="Resource_uoj8e"]
+[sub_resource type="Resource" id="Resource_a5sv1"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 10
 Original = "xadrez"
 Options = PackedStringArray("x", "ch")
@@ -1363,9 +1363,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "adrez"
 
-[sub_resource type="Resource" id="Resource_28r6r"]
+[sub_resource type="Resource" id="Resource_smq5y"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "caixa"
 Options = PackedStringArray("x", "ch")
@@ -1373,9 +1373,9 @@ RightOption = "x"
 FirstPart = "cai"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_ii5s6"]
+[sub_resource type="Resource" id="Resource_yej5s"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "peixe"
 Options = PackedStringArray("x", "ch")
@@ -1383,9 +1383,9 @@ RightOption = "x"
 FirstPart = "pei"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_e2j5x"]
+[sub_resource type="Resource" id="Resource_qg2qs"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "feixe"
 Options = PackedStringArray("x", "ch")
@@ -1393,9 +1393,9 @@ RightOption = "x"
 FirstPart = "fei"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_iud7k"]
+[sub_resource type="Resource" id="Resource_ev8ca"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "meixa"
 Options = PackedStringArray("x", "ch")
@@ -1403,9 +1403,9 @@ RightOption = "x"
 FirstPart = "mei"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_ocdym"]
+[sub_resource type="Resource" id="Resource_nk7a0"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "baixa"
 Options = PackedStringArray("x", "ch")
@@ -1413,9 +1413,9 @@ RightOption = "x"
 FirstPart = "bai"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_2kush"]
+[sub_resource type="Resource" id="Resource_sryp1"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "faixa"
 Options = PackedStringArray("x", "ch")
@@ -1423,9 +1423,9 @@ RightOption = "x"
 FirstPart = "fai"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_w7kkt"]
+[sub_resource type="Resource" id="Resource_k1f40"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "faixada"
 Options = PackedStringArray("x", "ch")
@@ -1433,9 +1433,9 @@ RightOption = "x"
 FirstPart = "faixa"
 SecondPart = "da"
 
-[sub_resource type="Resource" id="Resource_slb5h"]
+[sub_resource type="Resource" id="Resource_t8met"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "ameixa"
 Options = PackedStringArray("x", "ch")
@@ -1443,9 +1443,9 @@ RightOption = "x"
 FirstPart = "amei"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_yeoqa"]
+[sub_resource type="Resource" id="Resource_ilg2j"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "baixela"
 Options = PackedStringArray("x", "ch")
@@ -1453,9 +1453,9 @@ RightOption = "x"
 FirstPart = "bai"
 SecondPart = "ela"
 
-[sub_resource type="Resource" id="Resource_15lsd"]
+[sub_resource type="Resource" id="Resource_nughm"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "baixaria"
 Options = PackedStringArray("x", "ch")
@@ -1463,9 +1463,9 @@ RightOption = "x"
 FirstPart = "bai"
 SecondPart = "aria"
 
-[sub_resource type="Resource" id="Resource_5r15q"]
+[sub_resource type="Resource" id="Resource_qhdkq"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "peixaria"
 Options = PackedStringArray("x", "ch")
@@ -1473,9 +1473,9 @@ RightOption = "x"
 FirstPart = "pei"
 SecondPart = "aria"
 
-[sub_resource type="Resource" id="Resource_qumyt"]
+[sub_resource type="Resource" id="Resource_a2jpa"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "peixinho"
 Options = PackedStringArray("x", "ch")
@@ -1483,9 +1483,9 @@ RightOption = "x"
 FirstPart = "pei"
 SecondPart = "inho"
 
-[sub_resource type="Resource" id="Resource_gec6w"]
+[sub_resource type="Resource" id="Resource_q4od1"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "peixoto"
 Options = PackedStringArray("x", "ch")
@@ -1493,9 +1493,9 @@ RightOption = "x"
 FirstPart = "pei"
 SecondPart = "oto"
 
-[sub_resource type="Resource" id="Resource_rnwon"]
+[sub_resource type="Resource" id="Resource_i0r5k"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "enfaixar"
 Options = PackedStringArray("x", "ch")
@@ -1503,9 +1503,9 @@ RightOption = "x"
 FirstPart = "enfai"
 SecondPart = "ar"
 
-[sub_resource type="Resource" id="Resource_kxwxa"]
+[sub_resource type="Resource" id="Resource_di8cq"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "enfaixado"
 Options = PackedStringArray("x", "ch")
@@ -1513,9 +1513,9 @@ RightOption = "x"
 FirstPart = "enfai"
 SecondPart = "ado"
 
-[sub_resource type="Resource" id="Resource_to57m"]
+[sub_resource type="Resource" id="Resource_i818o"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 11
 Original = "enfaixamento"
 Options = PackedStringArray("x", "ch")
@@ -1523,9 +1523,9 @@ RightOption = "x"
 FirstPart = "enfai"
 SecondPart = "amento"
 
-[sub_resource type="Resource" id="Resource_7tir4"]
+[sub_resource type="Resource" id="Resource_d8n2y"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 12
 Original = "xará"
 Options = PackedStringArray("x", "ch")
@@ -1533,9 +1533,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "ará"
 
-[sub_resource type="Resource" id="Resource_n5oxk"]
+[sub_resource type="Resource" id="Resource_m8wtu"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 12
 Original = "xampu"
 Options = PackedStringArray("x", "ch")
@@ -1543,9 +1543,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "ampu"
 
-[sub_resource type="Resource" id="Resource_5nyyw"]
+[sub_resource type="Resource" id="Resource_5uor7"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 12
 Original = "xerife"
 Options = PackedStringArray("x", "ch")
@@ -1553,9 +1553,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "erife"
 
-[sub_resource type="Resource" id="Resource_nxbig"]
+[sub_resource type="Resource" id="Resource_ibbk8"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 12
 Original = "xícara"
 Options = PackedStringArray("x", "ch")
@@ -1563,9 +1563,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "ícara"
 
-[sub_resource type="Resource" id="Resource_kkty0"]
+[sub_resource type="Resource" id="Resource_3s7xp"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 12
 Original = "xavante"
 Options = PackedStringArray("x", "ch")
@@ -1573,9 +1573,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "avante"
 
-[sub_resource type="Resource" id="Resource_7iinm"]
+[sub_resource type="Resource" id="Resource_mgu3u"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 12
 Original = "xilindró"
 Options = PackedStringArray("x", "ch")
@@ -1583,9 +1583,9 @@ RightOption = "x"
 FirstPart = ""
 SecondPart = "ilindró"
 
-[sub_resource type="Resource" id="Resource_8oa0a"]
+[sub_resource type="Resource" id="Resource_q57ku"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 13
 Original = "enxame"
 Options = PackedStringArray("x", "ch")
@@ -1593,9 +1593,9 @@ RightOption = "x"
 FirstPart = "en"
 SecondPart = "ame"
 
-[sub_resource type="Resource" id="Resource_vgxwq"]
+[sub_resource type="Resource" id="Resource_yofip"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 13
 Original = "enxada"
 Options = PackedStringArray("x", "ch")
@@ -1603,9 +1603,9 @@ RightOption = "x"
 FirstPart = "en"
 SecondPart = "ada"
 
-[sub_resource type="Resource" id="Resource_x7pgb"]
+[sub_resource type="Resource" id="Resource_3an6q"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 13
 Original = "enxergar"
 Options = PackedStringArray("x", "ch")
@@ -1613,9 +1613,9 @@ RightOption = "x"
 FirstPart = "en"
 SecondPart = "ergar"
 
-[sub_resource type="Resource" id="Resource_0ytt1"]
+[sub_resource type="Resource" id="Resource_lap3m"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 13
 Original = "enxurrada"
 Options = PackedStringArray("x", "ch")
@@ -1623,9 +1623,9 @@ RightOption = "x"
 FirstPart = "en"
 SecondPart = "urrada"
 
-[sub_resource type="Resource" id="Resource_mqsnv"]
+[sub_resource type="Resource" id="Resource_ymveo"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 13
 Original = "enxoval"
 Options = PackedStringArray("x", "ch")
@@ -1633,9 +1633,9 @@ RightOption = "x"
 FirstPart = "en"
 SecondPart = "oval"
 
-[sub_resource type="Resource" id="Resource_4e7sk"]
+[sub_resource type="Resource" id="Resource_6tmd5"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 13
 Original = "enxofre"
 Options = PackedStringArray("x", "ch")
@@ -1643,9 +1643,9 @@ RightOption = "x"
 FirstPart = "en"
 SecondPart = "ofre"
 
-[sub_resource type="Resource" id="Resource_41i1n"]
+[sub_resource type="Resource" id="Resource_x5vwa"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 13
 Original = "enxuto"
 Options = PackedStringArray("x", "ch")
@@ -1653,9 +1653,9 @@ RightOption = "x"
 FirstPart = "en"
 SecondPart = "uto"
 
-[sub_resource type="Resource" id="Resource_wrrkx"]
+[sub_resource type="Resource" id="Resource_w1sbl"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "mexer"
 Options = PackedStringArray("x", "ch")
@@ -1663,9 +1663,9 @@ RightOption = "x"
 FirstPart = "me"
 SecondPart = "er"
 
-[sub_resource type="Resource" id="Resource_meed6"]
+[sub_resource type="Resource" id="Resource_b0cam"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "mexido"
 Options = PackedStringArray("x", "ch")
@@ -1673,9 +1673,9 @@ RightOption = "x"
 FirstPart = "me"
 SecondPart = "ido"
 
-[sub_resource type="Resource" id="Resource_i1jm6"]
+[sub_resource type="Resource" id="Resource_8sqw3"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "mexicano"
 Options = PackedStringArray("x", "ch")
@@ -1683,9 +1683,9 @@ RightOption = "x"
 FirstPart = "me"
 SecondPart = "icano"
 
-[sub_resource type="Resource" id="Resource_7iwyk"]
+[sub_resource type="Resource" id="Resource_2s8s0"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "mexerica"
 Options = PackedStringArray("x", "ch")
@@ -1693,9 +1693,9 @@ RightOption = "x"
 FirstPart = "me"
 SecondPart = "erica"
 
-[sub_resource type="Resource" id="Resource_nybla"]
+[sub_resource type="Resource" id="Resource_pnp8e"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "samexunga"
 Options = PackedStringArray("x", "ch")
@@ -1703,9 +1703,9 @@ RightOption = "x"
 FirstPart = "same"
 SecondPart = "unga"
 
-[sub_resource type="Resource" id="Resource_3i15d"]
+[sub_resource type="Resource" id="Resource_jafn6"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "emexo"
 Options = PackedStringArray("x", "ch")
@@ -1713,9 +1713,9 @@ RightOption = "x"
 FirstPart = "eme"
 SecondPart = "o"
 
-[sub_resource type="Resource" id="Resource_5iwa4"]
+[sub_resource type="Resource" id="Resource_ksceh"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "remexer"
 Options = PackedStringArray("x", "ch")
@@ -1723,9 +1723,9 @@ RightOption = "x"
 FirstPart = "reme"
 SecondPart = "er"
 
-[sub_resource type="Resource" id="Resource_qp6i7"]
+[sub_resource type="Resource" id="Resource_3m5o0"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "imexível"
 Options = PackedStringArray("x", "ch")
@@ -1733,9 +1733,9 @@ RightOption = "x"
 FirstPart = "ime"
 SecondPart = "ível"
 
-[sub_resource type="Resource" id="Resource_ew1lj"]
+[sub_resource type="Resource" id="Resource_nrjtn"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "mexerico"
 Options = PackedStringArray("x", "ch")
@@ -1743,9 +1743,9 @@ RightOption = "x"
 FirstPart = "me"
 SecondPart = "erico"
 
-[sub_resource type="Resource" id="Resource_dj85u"]
+[sub_resource type="Resource" id="Resource_ktyp8"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 14
 Original = "mexeriqueiro"
 Options = PackedStringArray("x", "ch")
@@ -1753,9 +1753,9 @@ RightOption = "x"
 FirstPart = "me"
 SecondPart = "eriqueiro"
 
-[sub_resource type="Resource" id="Resource_x1uqa"]
+[sub_resource type="Resource" id="Resource_utcc8"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "bochecha"
 Options = PackedStringArray("x", "ch")
@@ -1763,9 +1763,9 @@ RightOption = "ch"
 FirstPart = "bo"
 SecondPart = "echa"
 
-[sub_resource type="Resource" id="Resource_r4v3a"]
+[sub_resource type="Resource" id="Resource_8sm5p"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "boliche"
 Options = PackedStringArray("x", "ch")
@@ -1773,9 +1773,9 @@ RightOption = "ch"
 FirstPart = "boli"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_7hqrc"]
+[sub_resource type="Resource" id="Resource_j5ews"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "broche"
 Options = PackedStringArray("x", "ch")
@@ -1783,9 +1783,9 @@ RightOption = "ch"
 FirstPart = "bro"
 SecondPart = "e"
 
-[sub_resource type="Resource" id="Resource_oqyl7"]
+[sub_resource type="Resource" id="Resource_xjxc1"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "cachaça"
 Options = PackedStringArray("x", "ch")
@@ -1793,9 +1793,9 @@ RightOption = "ch"
 FirstPart = "ca"
 SecondPart = "aça"
 
-[sub_resource type="Resource" id="Resource_8ie6y"]
+[sub_resource type="Resource" id="Resource_rw60v"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "chuchu"
 Options = PackedStringArray("x", "ch")
@@ -1803,9 +1803,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "uchu"
 
-[sub_resource type="Resource" id="Resource_dlwoc"]
+[sub_resource type="Resource" id="Resource_3wxne"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "colcha"
 Options = PackedStringArray("x", "ch")
@@ -1813,9 +1813,9 @@ RightOption = "ch"
 FirstPart = "col"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_3n71b"]
+[sub_resource type="Resource" id="Resource_niewk"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "fachada"
 Options = PackedStringArray("x", "ch")
@@ -1823,9 +1823,9 @@ RightOption = "ch"
 FirstPart = "fa"
 SecondPart = "ada"
 
-[sub_resource type="Resource" id="Resource_fqqx6"]
+[sub_resource type="Resource" id="Resource_0j7lr"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "mochila"
 Options = PackedStringArray("x", "ch")
@@ -1833,9 +1833,9 @@ RightOption = "ch"
 FirstPart = "mo"
 SecondPart = "ila"
 
-[sub_resource type="Resource" id="Resource_pye33"]
+[sub_resource type="Resource" id="Resource_s0uwl"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "salsicha"
 Options = PackedStringArray("x", "ch")
@@ -1843,9 +1843,9 @@ RightOption = "ch"
 FirstPart = "salsi"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_u186d"]
+[sub_resource type="Resource" id="Resource_csahc"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 15
 Original = "tocha"
 Options = PackedStringArray("x", "ch")
@@ -1853,9 +1853,9 @@ RightOption = "ch"
 FirstPart = "to"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_0g468"]
+[sub_resource type="Resource" id="Resource_2f7to"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "choque"
 Options = PackedStringArray("x", "ch")
@@ -1863,9 +1863,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "oque"
 
-[sub_resource type="Resource" id="Resource_ywpro"]
+[sub_resource type="Resource" id="Resource_rvm6d"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "chique"
 Options = PackedStringArray("x", "ch")
@@ -1873,9 +1873,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "ique"
 
-[sub_resource type="Resource" id="Resource_vpwr1"]
+[sub_resource type="Resource" id="Resource_832ye"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "chalé"
 Options = PackedStringArray("x", "ch")
@@ -1883,9 +1883,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "alé"
 
-[sub_resource type="Resource" id="Resource_e06pm"]
+[sub_resource type="Resource" id="Resource_tl7oq"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "chefe"
 Options = PackedStringArray("x", "ch")
@@ -1893,9 +1893,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "efe"
 
-[sub_resource type="Resource" id="Resource_wflf8"]
+[sub_resource type="Resource" id="Resource_82pom"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "champanhe"
 Options = PackedStringArray("x", "ch")
@@ -1903,9 +1903,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "ampanhe"
 
-[sub_resource type="Resource" id="Resource_osejo"]
+[sub_resource type="Resource" id="Resource_s80wt"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "chassi"
 Options = PackedStringArray("x", "ch")
@@ -1913,9 +1913,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "assi"
 
-[sub_resource type="Resource" id="Resource_y6obg"]
+[sub_resource type="Resource" id="Resource_4rbhf"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "chip"
 Options = PackedStringArray("x", "ch")
@@ -1923,9 +1923,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "ip"
 
-[sub_resource type="Resource" id="Resource_gsjtm"]
+[sub_resource type="Resource" id="Resource_r5ce0"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "chop"
 Options = PackedStringArray("x", "ch")
@@ -1933,9 +1933,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "op"
 
-[sub_resource type="Resource" id="Resource_4extm"]
+[sub_resource type="Resource" id="Resource_dlhli"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "chucrute"
 Options = PackedStringArray("x", "ch")
@@ -1943,9 +1943,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "ucrute"
 
-[sub_resource type="Resource" id="Resource_bpkfw"]
+[sub_resource type="Resource" id="Resource_bjggy"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 16
 Original = "churros"
 Options = PackedStringArray("x", "ch")
@@ -1953,9 +1953,9 @@ RightOption = "ch"
 FirstPart = ""
 SecondPart = "urros"
 
-[sub_resource type="Resource" id="Resource_6b7un"]
+[sub_resource type="Resource" id="Resource_58r1m"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 17
 Original = "mecha"
 Options = PackedStringArray("x", "ch")
@@ -1963,9 +1963,9 @@ RightOption = "ch"
 FirstPart = "me"
 SecondPart = "a"
 
-[sub_resource type="Resource" id="Resource_qqeqm"]
+[sub_resource type="Resource" id="Resource_jamxe"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 18
 Original = "encher"
 Options = PackedStringArray("x", "ch")
@@ -1973,9 +1973,9 @@ RightOption = "ch"
 FirstPart = "en"
 SecondPart = "er"
 
-[sub_resource type="Resource" id="Resource_j0niu"]
+[sub_resource type="Resource" id="Resource_nuc4c"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 18
 Original = "cheio"
 Options = PackedStringArray("x", "ch")
@@ -1983,9 +1983,9 @@ RightOption = "ch"
 FirstPart = "che"
 SecondPart = "io"
 
-[sub_resource type="Resource" id="Resource_58vxt"]
+[sub_resource type="Resource" id="Resource_gqogu"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 18
 Original = "encheu"
 Options = PackedStringArray("x", "ch")
@@ -1993,9 +1993,9 @@ RightOption = "ch"
 FirstPart = "en"
 SecondPart = "eu"
 
-[sub_resource type="Resource" id="Resource_7nucv"]
+[sub_resource type="Resource" id="Resource_fs2pg"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 18
 Original = "cheia"
 Options = PackedStringArray("x", "ch")
@@ -2003,9 +2003,9 @@ RightOption = "ch"
 FirstPart = "che"
 SecondPart = "ia"
 
-[sub_resource type="Resource" id="Resource_vlbek"]
+[sub_resource type="Resource" id="Resource_22vft"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 18
 Original = "enchente"
 Options = PackedStringArray("x", "ch")
@@ -2013,9 +2013,9 @@ RightOption = "ch"
 FirstPart = "en"
 SecondPart = "ente"
 
-[sub_resource type="Resource" id="Resource_17yp7"]
+[sub_resource type="Resource" id="Resource_jmxng"]
 script = ExtResource("1_c3ak6")
-RuleType = 1
+CategoryType = 1
 SpellingRuleType = 18
 Original = "enchimento"
 Options = PackedStringArray("x", "ch")
@@ -2026,23 +2026,23 @@ SecondPart = "imento"
 [resource]
 script = ExtResource("2_og4oq")
 WordsByRule = {
-0: [SubResource("Resource_p1frx"), SubResource("Resource_rdae7"), SubResource("Resource_ejqq1"), SubResource("Resource_r01so"), SubResource("Resource_hqp5x"), SubResource("Resource_jcbub"), SubResource("Resource_u3fl2"), SubResource("Resource_wng44"), SubResource("Resource_042re")],
-1: [SubResource("Resource_tym2o"), SubResource("Resource_diov0"), SubResource("Resource_cjts6"), SubResource("Resource_hp703"), SubResource("Resource_c7dr2"), SubResource("Resource_518f2"), SubResource("Resource_jigp0"), SubResource("Resource_33thp"), SubResource("Resource_lqll1"), SubResource("Resource_2tv2o"), SubResource("Resource_d52ex"), SubResource("Resource_iq6oo"), SubResource("Resource_p4gg5"), SubResource("Resource_c3bas")],
-2: [SubResource("Resource_uv5ww"), SubResource("Resource_t1vgh"), SubResource("Resource_mlt3d"), SubResource("Resource_dq8ji"), SubResource("Resource_oj3l1"), SubResource("Resource_1828f"), SubResource("Resource_xfcuu"), SubResource("Resource_7h44u"), SubResource("Resource_ry6up"), SubResource("Resource_q4v5m"), SubResource("Resource_ud33c"), SubResource("Resource_gskb8")],
-3: [SubResource("Resource_3ht6y"), SubResource("Resource_82r42"), SubResource("Resource_3vq3d"), SubResource("Resource_nf87a"), SubResource("Resource_y81ah"), SubResource("Resource_bwm3m"), SubResource("Resource_5ycd2"), SubResource("Resource_pix3s"), SubResource("Resource_g2nd0"), SubResource("Resource_qlbsp"), SubResource("Resource_fo1gu"), SubResource("Resource_bjp8h"), SubResource("Resource_rqf2r"), SubResource("Resource_yp8jt")],
-4: [SubResource("Resource_58asa"), SubResource("Resource_6kjl4"), SubResource("Resource_kt56l"), SubResource("Resource_7ufvw"), SubResource("Resource_01rch"), SubResource("Resource_y1x8v"), SubResource("Resource_iuoym"), SubResource("Resource_u5dr5"), SubResource("Resource_fem5f"), SubResource("Resource_b1evi"), SubResource("Resource_r3ona"), SubResource("Resource_cjdgf"), SubResource("Resource_6dtpe")],
-5: [SubResource("Resource_ojv7j"), SubResource("Resource_aji5c"), SubResource("Resource_4ymts"), SubResource("Resource_15vwy"), SubResource("Resource_lv04h"), SubResource("Resource_b72xv"), SubResource("Resource_fadq1"), SubResource("Resource_cqhb4"), SubResource("Resource_3n0rs"), SubResource("Resource_cu3mj"), SubResource("Resource_p0wjv"), SubResource("Resource_nuj3t")],
-6: [SubResource("Resource_1sue8"), SubResource("Resource_71fu3"), SubResource("Resource_1ge1f"), SubResource("Resource_08k6c"), SubResource("Resource_fq4fh"), SubResource("Resource_ru346"), SubResource("Resource_ub1is"), SubResource("Resource_gs1lu"), SubResource("Resource_4hnar"), SubResource("Resource_37pit"), SubResource("Resource_aevy2"), SubResource("Resource_mt1va"), SubResource("Resource_6w4bl"), SubResource("Resource_rqpem"), SubResource("Resource_tq2ib")],
-7: [SubResource("Resource_by3aq"), SubResource("Resource_5n5gq"), SubResource("Resource_y6qc2"), SubResource("Resource_t7kcg"), SubResource("Resource_cw4jg"), SubResource("Resource_7as77")],
-8: [SubResource("Resource_3piy4"), SubResource("Resource_yg3f0"), SubResource("Resource_p5eul"), SubResource("Resource_nqdhb"), SubResource("Resource_vowjx"), SubResource("Resource_08lm3"), SubResource("Resource_557r7"), SubResource("Resource_5wudq"), SubResource("Resource_0ql24"), SubResource("Resource_nvsc6"), SubResource("Resource_pehlh"), SubResource("Resource_jpgd6"), SubResource("Resource_w7kxc"), SubResource("Resource_pk67x"), SubResource("Resource_sy1ns"), SubResource("Resource_w2nod"), SubResource("Resource_urm57")],
-9: [SubResource("Resource_1q28r"), SubResource("Resource_7octt"), SubResource("Resource_4ix4h"), SubResource("Resource_hlk2i"), SubResource("Resource_ccmo5"), SubResource("Resource_am7hg"), SubResource("Resource_0o4yr"), SubResource("Resource_l6v63"), SubResource("Resource_u23al"), SubResource("Resource_uapm6"), SubResource("Resource_b46s0"), SubResource("Resource_coh6q")],
-10: [SubResource("Resource_4v81a"), SubResource("Resource_flboi"), SubResource("Resource_pomov"), SubResource("Resource_ymtpr"), SubResource("Resource_eclvd"), SubResource("Resource_r5olx"), SubResource("Resource_ykd0n"), SubResource("Resource_7snvx"), SubResource("Resource_1l8hg"), SubResource("Resource_qnrty"), SubResource("Resource_06inf"), SubResource("Resource_uoj8e")],
-11: [SubResource("Resource_28r6r"), SubResource("Resource_ii5s6"), SubResource("Resource_e2j5x"), SubResource("Resource_iud7k"), SubResource("Resource_ocdym"), SubResource("Resource_2kush"), SubResource("Resource_w7kkt"), SubResource("Resource_slb5h"), SubResource("Resource_yeoqa"), SubResource("Resource_15lsd"), SubResource("Resource_5r15q"), SubResource("Resource_qumyt"), SubResource("Resource_gec6w"), SubResource("Resource_rnwon"), SubResource("Resource_kxwxa"), SubResource("Resource_to57m")],
-12: [SubResource("Resource_7tir4"), SubResource("Resource_n5oxk"), SubResource("Resource_5nyyw"), SubResource("Resource_nxbig"), SubResource("Resource_kkty0"), SubResource("Resource_7iinm")],
-13: [SubResource("Resource_8oa0a"), SubResource("Resource_vgxwq"), SubResource("Resource_x7pgb"), SubResource("Resource_0ytt1"), SubResource("Resource_mqsnv"), SubResource("Resource_4e7sk"), SubResource("Resource_41i1n")],
-14: [SubResource("Resource_wrrkx"), SubResource("Resource_meed6"), SubResource("Resource_i1jm6"), SubResource("Resource_7iwyk"), SubResource("Resource_nybla"), SubResource("Resource_3i15d"), SubResource("Resource_5iwa4"), SubResource("Resource_qp6i7"), SubResource("Resource_ew1lj"), SubResource("Resource_dj85u")],
-15: [SubResource("Resource_x1uqa"), SubResource("Resource_r4v3a"), SubResource("Resource_7hqrc"), SubResource("Resource_oqyl7"), SubResource("Resource_8ie6y"), SubResource("Resource_dlwoc"), SubResource("Resource_3n71b"), SubResource("Resource_fqqx6"), SubResource("Resource_pye33"), SubResource("Resource_u186d")],
-16: [SubResource("Resource_0g468"), SubResource("Resource_ywpro"), SubResource("Resource_vpwr1"), SubResource("Resource_e06pm"), SubResource("Resource_wflf8"), SubResource("Resource_osejo"), SubResource("Resource_y6obg"), SubResource("Resource_gsjtm"), SubResource("Resource_4extm"), SubResource("Resource_bpkfw")],
-17: [SubResource("Resource_6b7un")],
-18: [SubResource("Resource_qqeqm"), SubResource("Resource_j0niu"), SubResource("Resource_58vxt"), SubResource("Resource_7nucv"), SubResource("Resource_vlbek"), SubResource("Resource_17yp7")]
+0: [SubResource("Resource_hq8iv"), SubResource("Resource_x4i53"), SubResource("Resource_edr04"), SubResource("Resource_ynevq"), SubResource("Resource_7po7s"), SubResource("Resource_r3ora"), SubResource("Resource_urm34"), SubResource("Resource_j2p30"), SubResource("Resource_nfk36")],
+1: [SubResource("Resource_sr5bn"), SubResource("Resource_yjlpu"), SubResource("Resource_wdtue"), SubResource("Resource_52ok5"), SubResource("Resource_hrjnp"), SubResource("Resource_evhdp"), SubResource("Resource_5irmj"), SubResource("Resource_6j67c"), SubResource("Resource_eeyi2"), SubResource("Resource_5u5du"), SubResource("Resource_gc1hf"), SubResource("Resource_wohna"), SubResource("Resource_sfq0o"), SubResource("Resource_majc0")],
+2: [SubResource("Resource_p3rgd"), SubResource("Resource_f0k51"), SubResource("Resource_8uuwd"), SubResource("Resource_fmn55"), SubResource("Resource_jxr2f"), SubResource("Resource_ptlrh"), SubResource("Resource_er0ib"), SubResource("Resource_wovm0"), SubResource("Resource_1d38v"), SubResource("Resource_x6uub"), SubResource("Resource_g1is5"), SubResource("Resource_r2y0r")],
+3: [SubResource("Resource_y5v4l"), SubResource("Resource_e430y"), SubResource("Resource_pw6iq"), SubResource("Resource_7bpfw"), SubResource("Resource_6g51s"), SubResource("Resource_6hsf6"), SubResource("Resource_iwkbm"), SubResource("Resource_pmw7r"), SubResource("Resource_prdok"), SubResource("Resource_8lg55"), SubResource("Resource_ddsjp"), SubResource("Resource_7gm6l"), SubResource("Resource_2sxq7"), SubResource("Resource_qsgyt")],
+4: [SubResource("Resource_bu0et"), SubResource("Resource_mjqai"), SubResource("Resource_8hnd6"), SubResource("Resource_owyrw"), SubResource("Resource_26twb"), SubResource("Resource_wl8e7"), SubResource("Resource_xessr"), SubResource("Resource_dcsjo"), SubResource("Resource_vysa8"), SubResource("Resource_mpca4"), SubResource("Resource_bedxm"), SubResource("Resource_oswco"), SubResource("Resource_t038p")],
+5: [SubResource("Resource_66cpl"), SubResource("Resource_cyj81"), SubResource("Resource_51yvy"), SubResource("Resource_2b1op"), SubResource("Resource_bsaak"), SubResource("Resource_2h1tl"), SubResource("Resource_1f8vw"), SubResource("Resource_t8ets"), SubResource("Resource_tyukx"), SubResource("Resource_4vir7"), SubResource("Resource_0ee0w"), SubResource("Resource_3f5xw")],
+6: [SubResource("Resource_ycke4"), SubResource("Resource_xlcj8"), SubResource("Resource_0cjna"), SubResource("Resource_m4n6h"), SubResource("Resource_74xcs"), SubResource("Resource_jsga5"), SubResource("Resource_4mbe3"), SubResource("Resource_abj4t"), SubResource("Resource_xg77a"), SubResource("Resource_gflrl"), SubResource("Resource_byxyl"), SubResource("Resource_4dhr7"), SubResource("Resource_4kukj"), SubResource("Resource_dw53n"), SubResource("Resource_lvyyn")],
+7: [SubResource("Resource_iolgy"), SubResource("Resource_cid7w"), SubResource("Resource_w1jjm"), SubResource("Resource_fhpqy"), SubResource("Resource_opvtl"), SubResource("Resource_wdg0j")],
+8: [SubResource("Resource_ecawi"), SubResource("Resource_hpouh"), SubResource("Resource_n14dt"), SubResource("Resource_ae3cs"), SubResource("Resource_hd6wr"), SubResource("Resource_2xjt5"), SubResource("Resource_vpxlj"), SubResource("Resource_wi15l"), SubResource("Resource_r1uf6"), SubResource("Resource_kq3es"), SubResource("Resource_bxs7g"), SubResource("Resource_5sayb"), SubResource("Resource_sov14"), SubResource("Resource_10hu4"), SubResource("Resource_ewmog"), SubResource("Resource_a8vmd"), SubResource("Resource_k2ibf")],
+9: [SubResource("Resource_tcfy7"), SubResource("Resource_xq1v5"), SubResource("Resource_giey6"), SubResource("Resource_x0d40"), SubResource("Resource_bl6ls"), SubResource("Resource_1sqmy"), SubResource("Resource_xtnk8"), SubResource("Resource_y583v"), SubResource("Resource_tfgrj"), SubResource("Resource_kch4j"), SubResource("Resource_xhpq6"), SubResource("Resource_weqoj")],
+10: [SubResource("Resource_jww70"), SubResource("Resource_xphr6"), SubResource("Resource_15qmy"), SubResource("Resource_a02qp"), SubResource("Resource_h1b0i"), SubResource("Resource_4u47m"), SubResource("Resource_snlfa"), SubResource("Resource_8ybi3"), SubResource("Resource_igr7j"), SubResource("Resource_e1j5i"), SubResource("Resource_mk6dd"), SubResource("Resource_a5sv1")],
+11: [SubResource("Resource_smq5y"), SubResource("Resource_yej5s"), SubResource("Resource_qg2qs"), SubResource("Resource_ev8ca"), SubResource("Resource_nk7a0"), SubResource("Resource_sryp1"), SubResource("Resource_k1f40"), SubResource("Resource_t8met"), SubResource("Resource_ilg2j"), SubResource("Resource_nughm"), SubResource("Resource_qhdkq"), SubResource("Resource_a2jpa"), SubResource("Resource_q4od1"), SubResource("Resource_i0r5k"), SubResource("Resource_di8cq"), SubResource("Resource_i818o")],
+12: [SubResource("Resource_d8n2y"), SubResource("Resource_m8wtu"), SubResource("Resource_5uor7"), SubResource("Resource_ibbk8"), SubResource("Resource_3s7xp"), SubResource("Resource_mgu3u")],
+13: [SubResource("Resource_q57ku"), SubResource("Resource_yofip"), SubResource("Resource_3an6q"), SubResource("Resource_lap3m"), SubResource("Resource_ymveo"), SubResource("Resource_6tmd5"), SubResource("Resource_x5vwa")],
+14: [SubResource("Resource_w1sbl"), SubResource("Resource_b0cam"), SubResource("Resource_8sqw3"), SubResource("Resource_2s8s0"), SubResource("Resource_pnp8e"), SubResource("Resource_jafn6"), SubResource("Resource_ksceh"), SubResource("Resource_3m5o0"), SubResource("Resource_nrjtn"), SubResource("Resource_ktyp8")],
+15: [SubResource("Resource_utcc8"), SubResource("Resource_8sm5p"), SubResource("Resource_j5ews"), SubResource("Resource_xjxc1"), SubResource("Resource_rw60v"), SubResource("Resource_3wxne"), SubResource("Resource_niewk"), SubResource("Resource_0j7lr"), SubResource("Resource_s0uwl"), SubResource("Resource_csahc")],
+16: [SubResource("Resource_2f7to"), SubResource("Resource_rvm6d"), SubResource("Resource_832ye"), SubResource("Resource_tl7oq"), SubResource("Resource_82pom"), SubResource("Resource_s80wt"), SubResource("Resource_4rbhf"), SubResource("Resource_r5ce0"), SubResource("Resource_dlhli"), SubResource("Resource_bjggy")],
+17: [SubResource("Resource_58r1m")],
+18: [SubResource("Resource_jamxe"), SubResource("Resource_nuc4c"), SubResource("Resource_gqogu"), SubResource("Resource_fs2pg"), SubResource("Resource_22vft"), SubResource("Resource_jmxng")]
 }

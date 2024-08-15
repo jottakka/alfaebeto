@@ -1,20 +1,17 @@
 ﻿using System.Linq;
 using Godot;
+using Godot.Collections;
 using WordProcessing.Models.DiacriticalMarks;
 
 [GlobalClass]
-public partial class DiactricalMarkRuleSetItemResource : Resource
+public partial class DiactricalMarkRuleSetItemResource : BaseRuleSetItemResource
 {
-    [Export]
-    public DiactricalMarkCategoryType RuleSetType { get; set; }
-    [Export]
-    public string Name { get; set; }
-    [Export]
-    public DiactricalMarkRuleItemResource[] Rules { get; set; }
-    [Export]
-    public string Description { get; set; }
+	[Export]
+	public DiactricalMarkRuleSetType RuleSetType { get; set; }
+	[Export]
+	public Array<DiactricalMarkRuleItemResource> Rules { get; set; }
 
-    public int UnlockedRulesCount => Rules.Count(rule => rule.IsUnlocked);
+	public int UnlockedRulesCount => Rules.Count(rule => rule.IsUnlocked);
 
-    public int TotalRulesCount => Rules.Count();
+	public int TotalRulesCount => Rules.Count();
 }

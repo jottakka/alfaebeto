@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Godot;
-using WordProcessing.Models.XorCH;
 
 public partial class Global : Node
 {
@@ -13,6 +12,7 @@ public partial class Global : Node
     public RulesResource RulesResource => _dataResourceManager.RulesResource;
 
     public DiactricalMarkWordsDataResource DiactricalMarkWordsDataResource => _dataResourceManager.DiactricalMarkWordsDataResource;
+    public SpellingRulesResource SpellingRulesResource => _dataResourceManager.SpellingRulesResource;
 
     public Player Player { get; private set; }
 
@@ -20,7 +20,7 @@ public partial class Global : Node
 
     public Node CurrentScene { get; private set; }
 
-    public Queue<XorCHWord> XorChWords => _wordServerManager.GetShuffledXorCHWords(10);
+    public Queue<SpellingRuleWordResource> SpellingRuleWords => _wordServerManager.GetShuffledSpellingRuleWords(10);
     public Queue<DiactricalMarkWordResource> MarkedWords => _wordServerManager.GetShuffledDiactricalMarkWords(10);
 
     [Signal]

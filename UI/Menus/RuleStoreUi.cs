@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Godot;
 
 public sealed partial class RuleStoreUi : Control
@@ -12,6 +13,14 @@ public sealed partial class RuleStoreUi : Control
 	public PackedScene StoreItemPackedScene { get; set; }
 	[Export]
 	public AudioStreamPlayer AudioStreamPlayer { get; set; }
+	[Export]
+	public bool IsDiactricalMarkMenu { get; set; }
+	[Export]
+	public TextureRect GemTextureRect { get; set; }
+	[Export(PropertyHint.File)]
+	public string RedGemTexture { get; set; }
+	[Export(PropertyHint.File)]
+	public string GreenGemTexture { get; set; }
 
 	public int TotalGems { get; private set; }
 
@@ -26,7 +35,25 @@ public sealed partial class RuleStoreUi : Control
 		TotalGems = _userData.TotalRedKeyGemsAmmount;
 		TotalGemsLabel.Text = _userData.TotalRedKeyGemsAmmount.ToString();
 
-		foreach (DiactricalMarkRuleItemResource item in _userData.DiactricalMarkRuleItems)
+		if (IsDiactricalMarkMenu)
+		{
+			TotalGems = _userData.TotalRedKeyGemsAmmount;
+			TotalGemsLabel.Text = TotalGems.ToString();
+			SetResourceData(_userData.DiactricalMarkRuleItems);
+			GemTextureRect.Texture = GD.Load<Texture2D>(RedGemTexture);
+		}
+		else
+		{
+			TotalGems = _userData.TotalGreenKeyGemsAmmount;
+			TotalGemsLabel.Text = TotalGems.ToString();
+			SetResourceData(_userData.SpellingRuleRuleItems);
+			GemTextureRect.Texture = GD.Load<Texture2D>(GreenGemTexture);
+		}
+	}
+
+	private void SetResourceData(IEnumerable<BaseRuleItemResource> itemResources)
+	{
+		foreach (BaseRuleItemResource item in itemResources)
 		{
 			RuleStoreItem storeItem = StoreItemPackedScene.Instantiate<RuleStoreItem>();
 			storeItem.SetData(item, TotalGems);
@@ -38,10 +65,19 @@ public sealed partial class RuleStoreUi : Control
 
 	private void OnRuleBoutght(int gems)
 	{
-		_userData.TotalRedKeyGemsAmmount -= gems;
+		if (IsDiactricalMarkMenu)
+		{
+			_userData.TotalRedKeyGemsAmmount -= gems;
+			TotalGems = _userData.TotalRedKeyGemsAmmount;
+		}
+		else
+		{
+			_userData.TotalGreenKeyGemsAmmount -= gems;
+			TotalGems = _userData.TotalGreenKeyGemsAmmount;
+		}
+
 		_userData.Update();
 
-		TotalGems = _userData.TotalRedKeyGemsAmmount;
 		TotalGemsLabel.Text = TotalGems.ToString();
 		AudioStreamPlayer.Play();
 		_ = EmitSignal(nameof(TotalGemsChangeSignal), TotalGems);

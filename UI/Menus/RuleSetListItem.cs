@@ -2,6 +2,7 @@ using System.Linq;
 using Godot;
 using Godot.Collections;
 using WordProcessing.Models.DiacriticalMarks;
+using WordProcessing.Models.SpellingRules;
 
 public sealed partial class RuleSetListItem : MarginContainer
 {
@@ -24,17 +25,19 @@ public sealed partial class RuleSetListItem : MarginContainer
 	[Export(PropertyHint.File)]
 	public string LockedIconTexture { get; set; }
 
-	private DiactricalMarkRuleSetItemResource _ruleSet;
-	private Array<DiactricalMarkSubCategoryType> _unlockedRules => Global.Instance.UserDataInfoResource.UnlockedDiactricalMarksSubCategories;
-
-	public void SetData(DiactricalMarkRuleSetItemResource ruleSet)
+	private BaseRuleSetItemResource _ruleSet;
+	private Array<DiactricalMarkRuleType> _unlockedDiactricalMarkRules =>
+		Global.Instance.UserDataInfoResource.UnlockedDiactricalMarksSubCategories;
+	private Array<SpellingRuleRuleType> _unlockedSpellingRuleRules =>
+		Global.Instance.UserDataInfoResource.UnlockedSpellingRuleRuleTypes;
+	public void SetData(BaseRuleSetItemResource ruleSet)
 	{
 		_ruleSet = ruleSet;
 
 		int unlockedCount = GetUnlockedCount();
 
 		ProcessMode = ProcessModeEnum.Always;
-		RuleNameLabel.Text = ruleSet.Name;
+		RuleNameLabel.Text = ruleSet.RuleSet;
 		LockedColorRect.Visible = unlockedCount == 0;
 		LockTextureRect.Texture = unlockedCount > 0
 			? GD.Load<Texture2D>(UnlockedIconTexture)
@@ -44,7 +47,7 @@ public sealed partial class RuleSetListItem : MarginContainer
 		GoToRuleButton.Pressed += () => BuildRuleListItemScene(ruleSet);
 	}
 
-	private void BuildRuleListItemScene(DiactricalMarkRuleSetItemResource ruleSet)
+	private void BuildRuleListItemScene(BaseRuleSetItemResource ruleSet)
 	{
 		RulesViewingUi rulesViewing = RuleViewingUiPackedScene.Instantiate<RulesViewingUi>();
 		rulesViewing.SetData(ruleSet);
@@ -53,6 +56,13 @@ public sealed partial class RuleSetListItem : MarginContainer
 
 	private int GetUnlockedCount()
 	{
-		return _ruleSet.Rules.Count(r => _unlockedRules.Contains(r.RuleType));
+		return _ruleSet switch
+		{
+			DiactricalMarkRuleSetItemResource diactricalMarkRuleSetItemResource =>
+				diactricalMarkRuleSetItemResource.Rules.Count(r => _unlockedDiactricalMarkRules.Contains(r.RuleType)),
+			SpellingRuleRuleSetItemResource spellingRuleRuleSetItemResource =>
+				spellingRuleRuleSetItemResource.Rules.Count(r => _unlockedSpellingRuleRules.Contains(r.RuleType)),
+			_ => 0,
+		};
 	}
 }

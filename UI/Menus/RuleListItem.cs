@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using WordProcessing.Models.DiacriticalMarks;
+using WordProcessing.Models.SpellingRules;
 
 public sealed partial class RuleListItem : MarginContainer
 {
@@ -21,12 +22,24 @@ public sealed partial class RuleListItem : MarginContainer
 	[Export(PropertyHint.File)]
 	public string LockedIconTexture { get; set; }
 
-	private Array<DiactricalMarkSubCategoryType> _unlockedRules => Global.Instance.UserDataInfoResource.UnlockedDiactricalMarksSubCategories;
+	private Array<DiactricalMarkRuleType> _unlockedDiactricalMarkRules =>
+		Global.Instance.UserDataInfoResource.UnlockedDiactricalMarksSubCategories;
+	private Array<SpellingRuleRuleType> _unlockedSpellingRuleRules =>
+		Global.Instance.UserDataInfoResource.UnlockedSpellingRuleRuleTypes;
 
-	public void SetData(DiactricalMarkRuleItemResource detailedRule)
+	public void SetData(BaseRuleItemResource detailedRule)
 	{
+		bool isUnlocked = false;
 
-		bool isUnlocked = _unlockedRules.Contains(detailedRule.RuleType);
+		switch (detailedRule)
+		{
+			case DiactricalMarkRuleItemResource diactricalMarkRuleItemResource:
+				isUnlocked = _unlockedDiactricalMarkRules.Contains(diactricalMarkRuleItemResource.RuleType);
+				break;
+			case SpellingRuleItemResource spellingRuleItemResource:
+				isUnlocked = _unlockedSpellingRuleRules.Contains(spellingRuleItemResource.RuleType);
+				break;
+		}
 
 		LockInfoLabel.Text = isUnlocked
 			? "Desbloqueada"
@@ -36,11 +49,11 @@ public sealed partial class RuleListItem : MarginContainer
 			? GD.Load<Texture2D>(UnlockedIconTexture)
 			: GD.Load<Texture2D>(LockedIconTexture);
 		ProcessMode = ProcessModeEnum.Always;
-		RuleNameLabel.Text = detailedRule.Name;
+		RuleNameLabel.Text = detailedRule.Rule;
 		GoToRuleButton.Pressed += () => BuildRuleDescriptionScene(detailedRule);
 	}
 
-	private void BuildRuleDescriptionScene(DiactricalMarkRuleItemResource detailedRule)
+	private void BuildRuleDescriptionScene(BaseRuleItemResource detailedRule)
 	{
 		RuleDescriptionUi detailedRuleUi = RuleDescriptionUiPackedScene.Instantiate<RuleDescriptionUi>();
 		detailedRuleUi.SetData(detailedRule);

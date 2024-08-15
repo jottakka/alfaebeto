@@ -1,293 +1,593 @@
-[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=29 format=3]
+[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=49 format=3]
 
 [ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_uiivc"]
+[ext_resource type="Script" path="res://Data/Rules/SpellingRuleRuleItemResource.cs" id="2_iapw3"]
 [ext_resource type="Script" path="res://Data/UserDataInfoResource.cs" id="2_rn6wa"]
 
-[sub_resource type="Resource" id="Resource_sqkc3"]
+[sub_resource type="Resource" id="Resource_a2qig"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
-RuleSet = "Oxítonas"
 RuleType = 0
-Name = "Terminadas em -a(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Oxítonas"
+Rule = "Terminadas em -a(s)"
 Description = "Oxítonas terminadas em -a ou -as, como sofá, maracujá, Paraná, ananás, marajás, atrás."
 Examples = PackedStringArray("sofá", "maracujá", "Paraná")
 IsUnlocked = true
 KeyGemCost = 3
 
-[sub_resource type="Resource" id="Resource_mbufs"]
+[sub_resource type="Resource" id="Resource_cwifn"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
-RuleSet = "Oxítonas"
 RuleType = 1
-Name = "Terminadas em -e(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Oxítonas"
+Rule = "Terminadas em -e(s)"
 Description = "Oxítonas terminadas em -e ou -es, como Pelé, café, você, freguês, bebês."
 Examples = PackedStringArray("Pelé", "café", "você")
 IsUnlocked = false
-KeyGemCost = 4
+KeyGemCost = 5
 
-[sub_resource type="Resource" id="Resource_0x0x8"]
+[sub_resource type="Resource" id="Resource_b4skn"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
-RuleSet = "Oxítonas"
 RuleType = 2
-Name = "Terminadas em -o(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Oxítonas"
+Rule = "Terminadas em -o(s)"
 Description = "Oxítonas terminadas em -o ou -os, como cipó, paletó, avó, dominó, pavô, vovô, chororô."
 Examples = PackedStringArray("cipó", "paletó", "avó")
 IsUnlocked = false
-KeyGemCost = 5
+KeyGemCost = 7
 
-[sub_resource type="Resource" id="Resource_vaj7c"]
+[sub_resource type="Resource" id="Resource_nb31t"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
-RuleSet = "Oxítonas"
 RuleType = 3
-Name = "Terminadas em -em"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Oxítonas"
+Rule = "Terminadas em -em"
 Description = "Oxítonas terminadas em -em, como amém, também, armazém, alguém."
 Examples = PackedStringArray("amém", "também", "armazém")
 IsUnlocked = false
-KeyGemCost = 6
+KeyGemCost = 9
 
-[sub_resource type="Resource" id="Resource_f6n2h"]
+[sub_resource type="Resource" id="Resource_x68yg"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
-RuleSet = "Oxítonas"
 RuleType = 4
-Name = "Terminadas em -ens"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Oxítonas"
+Rule = "Terminadas em -ens"
 Description = "Oxítonas terminadas em -ens, como parabéns, reféns, armazéns."
 Examples = PackedStringArray("parabéns", "reféns", "armazéns")
 IsUnlocked = false
-KeyGemCost = 7
+KeyGemCost = 11
 
-[sub_resource type="Resource" id="Resource_nj00s"]
+[sub_resource type="Resource" id="Resource_db6n7"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 5
-Name = "Terminadas em -l"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -l"
 Description = "Paroxítonas terminadas em -l, como fácil, útil, fóssil, réptil, níquel."
 Examples = PackedStringArray("fácil", "útil", "fóssil")
 IsUnlocked = false
-KeyGemCost = 8
+KeyGemCost = 13
 
-[sub_resource type="Resource" id="Resource_r2yhg"]
+[sub_resource type="Resource" id="Resource_66ddu"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 6
-Name = "Terminadas em -i(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -i(s)"
 Description = "Paroxítonas terminadas em -i ou -is, como júri, lápis, tênis, biquíni."
 Examples = PackedStringArray("júri", "lápis", "tênis")
 IsUnlocked = false
-KeyGemCost = 9
+KeyGemCost = 15
 
-[sub_resource type="Resource" id="Resource_ioofg"]
+[sub_resource type="Resource" id="Resource_iegc7"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 7
-Name = "Terminadas em -n"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -n"
 Description = "Paroxítonas terminadas em -n, como hífen, pólen, elétron, nêutron, abdômen."
 Examples = PackedStringArray("hífen", "pólen", "elétron")
 IsUnlocked = false
-KeyGemCost = 10
+KeyGemCost = 17
 
-[sub_resource type="Resource" id="Resource_f3w24"]
+[sub_resource type="Resource" id="Resource_lsrvd"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 8
-Name = "Terminadas em -u(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -u(s)"
 Description = "Paroxítonas terminadas em -u ou -us, como vírus, Vênus, ônus, bônus."
 Examples = PackedStringArray("vírus", "Vênus", "ônus")
 IsUnlocked = false
-KeyGemCost = 11
+KeyGemCost = 19
 
-[sub_resource type="Resource" id="Resource_io0b5"]
+[sub_resource type="Resource" id="Resource_yw0cx"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 9
-Name = "Terminadas em -r"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -r"
 Description = "Paroxítonas terminadas em -r, como revólver, caráter, âmbar, repórter."
 Examples = PackedStringArray("revólver", "caráter", "âmbar")
 IsUnlocked = false
-KeyGemCost = 12
+KeyGemCost = 21
 
-[sub_resource type="Resource" id="Resource_rmyul"]
+[sub_resource type="Resource" id="Resource_r0gvy"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 10
-Name = "Terminadas em -x"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -x"
 Description = "Paroxítonas terminadas em -x, como látex, fênix, tórax, clímax."
 Examples = PackedStringArray("látex", "fênix", "tórax")
 IsUnlocked = false
-KeyGemCost = 13
+KeyGemCost = 23
 
-[sub_resource type="Resource" id="Resource_0w1fk"]
+[sub_resource type="Resource" id="Resource_cqkyj"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 11
-Name = "Terminadas em -ã(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -ã(s)"
 Description = "Paroxítonas terminadas em -ã ou -ãs, como ímã, órfã, órfãs."
 Examples = PackedStringArray("ímã", "órfã", "órfãs")
 IsUnlocked = false
-KeyGemCost = 14
+KeyGemCost = 25
 
-[sub_resource type="Resource" id="Resource_y0hh7"]
+[sub_resource type="Resource" id="Resource_br36a"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 12
-Name = "Terminadas em -ão(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -ão(s)"
 Description = "Paroxítonas terminadas em -ão ou -ãos, como órgão, sótão, órgãos."
 Examples = PackedStringArray("órgão", "sótão", "órgãos")
 IsUnlocked = false
-KeyGemCost = 15
+KeyGemCost = 27
 
-[sub_resource type="Resource" id="Resource_wqfb1"]
+[sub_resource type="Resource" id="Resource_pprxj"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 13
-Name = "Terminadas em -um"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -um"
 Description = "Paroxítonas terminadas em -um, como álbum, médium, fórum."
 Examples = PackedStringArray("álbum", "médium", "fórum")
 IsUnlocked = false
-KeyGemCost = 16
+KeyGemCost = 29
 
-[sub_resource type="Resource" id="Resource_6v8le"]
+[sub_resource type="Resource" id="Resource_b07go"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 14
-Name = "Terminadas em -uns"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -uns"
 Description = "Paroxítonas terminadas em -uns, como álbuns, fóruns."
 Examples = PackedStringArray("álbuns", "fóruns")
 IsUnlocked = false
-KeyGemCost = 17
+KeyGemCost = 31
 
-[sub_resource type="Resource" id="Resource_u60r6"]
+[sub_resource type="Resource" id="Resource_m0qkq"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 15
-Name = "Terminadas em -ps"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em -ps"
 Description = "Paroxítonas terminadas em -ps, como fórceps, bíceps."
 Examples = PackedStringArray("fórceps", "bíceps", "crísops")
 IsUnlocked = false
-KeyGemCost = 18
+KeyGemCost = 33
 
-[sub_resource type="Resource" id="Resource_rrn7a"]
+[sub_resource type="Resource" id="Resource_5rt5x"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
-RuleSet = "Paroxítonas"
 RuleType = 16
-Name = "Terminadas em Ditongo"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Paroxítonas"
+Rule = "Terminadas em Ditongo"
 Description = "Paroxítonas terminadas em ditongo, como água, história, série, pônei, móveis, tênue."
 Examples = PackedStringArray("água", "história", "série")
 IsUnlocked = false
-KeyGemCost = 19
+KeyGemCost = 35
 
-[sub_resource type="Resource" id="Resource_f248a"]
+[sub_resource type="Resource" id="Resource_x05tk"]
 script = ExtResource("1_uiivc")
 RuleSetType = 3
-RuleSet = "Proparoxítonas"
 RuleType = 17
-Name = "Todas Proparoxítonas"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Proparoxítonas"
+Rule = "Todas Proparoxítonas"
 Description = "Todas as proparoxítonas, como lânguido, física, trópico, álibi, hábitat, déficit, lápide, álgebra, célula, pêndulo, amígdalas, amálgama, cúpula, análise, ânimo."
 Examples = PackedStringArray("lânguido", "física", "trópico")
 IsUnlocked = false
-KeyGemCost = 20
+KeyGemCost = 37
 
-[sub_resource type="Resource" id="Resource_r07ef"]
+[sub_resource type="Resource" id="Resource_12ylp"]
 script = ExtResource("1_uiivc")
 RuleSetType = 4
-RuleSet = "Ditongos Abertos"
 RuleType = 18
-Name = "Terminadas em -éi"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Ditongos Abertos"
+Rule = "Terminadas em -éi"
 Description = "Ditongos abertos terminados em -éi, como fiéis, papéis, pastéis, coronéis, anéis."
 Examples = PackedStringArray("fiéis", "papéis", "pastéis")
 IsUnlocked = false
-KeyGemCost = 21
+KeyGemCost = 39
 
-[sub_resource type="Resource" id="Resource_yfp3p"]
+[sub_resource type="Resource" id="Resource_bifya"]
 script = ExtResource("1_uiivc")
 RuleSetType = 4
-RuleSet = "Ditongos Abertos"
 RuleType = 19
-Name = "Terminadas em -éu"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Ditongos Abertos"
+Rule = "Terminadas em -éu"
 Description = "Ditongos abertos terminados em -éu, como céu, chapéu, troféu, véu, réu."
 Examples = PackedStringArray("céu", "chapéu", "troféu")
 IsUnlocked = false
-KeyGemCost = 22
+KeyGemCost = 41
 
-[sub_resource type="Resource" id="Resource_stp1l"]
+[sub_resource type="Resource" id="Resource_875dr"]
 script = ExtResource("1_uiivc")
 RuleSetType = 4
-RuleSet = "Ditongos Abertos"
 RuleType = 20
-Name = "Terminadas em -ói"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Ditongos Abertos"
+Rule = "Terminadas em -ói"
 Description = "Ditongos abertos terminados em -ói, como herói, sóis, faróis, lençóis, rói."
 Examples = PackedStringArray("herói", "sóis", "faróis")
 IsUnlocked = false
-KeyGemCost = 23
+KeyGemCost = 43
 
-[sub_resource type="Resource" id="Resource_qm8m4"]
+[sub_resource type="Resource" id="Resource_4avx1"]
 script = ExtResource("1_uiivc")
 RuleSetType = 5
-RuleSet = "Hiatos I e U Tônicos"
 RuleType = 21
-Name = "Sozinhos na Sílaba"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Hiatos I e U Tônicos"
+Rule = "Sozinhos na Sílaba"
 Description = "Hiatos em que I ou U tônicos aparecem sozinhos na sílaba, como saída, juízes, saúde, viúva, caíste, saíste."
 Examples = PackedStringArray("saída", "juízes", "saúde")
 IsUnlocked = false
-KeyGemCost = 24
+KeyGemCost = 45
 
-[sub_resource type="Resource" id="Resource_rckb1"]
+[sub_resource type="Resource" id="Resource_cy8pp"]
 script = ExtResource("1_uiivc")
 RuleSetType = 5
-RuleSet = "Hiatos I e U Tônicos"
 RuleType = 22
-Name = "Precedidos de Vogais"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Hiatos I e U Tônicos"
+Rule = "Precedidos de Vogais"
 Description = "Hiatos em que I ou U tônicos são precedidos de vogais, como balaústre, ruído, viúvo, egoísmo, egoísta."
 Examples = PackedStringArray("balaústre", "ruído", "viúvo")
 IsUnlocked = false
-KeyGemCost = 25
+KeyGemCost = 47
 
-[sub_resource type="Resource" id="Resource_wvjuu"]
+[sub_resource type="Resource" id="Resource_bprgx"]
 script = ExtResource("1_uiivc")
 RuleSetType = 0
-RuleSet = "Monossílabas Tônicas"
 RuleType = 0
-Name = "Terminadas em -a(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Monossílabas Tônicas"
+Rule = "Terminadas em -a(s)"
 Description = "Monossílabas tônicas terminadas em -a ou -as, como pá, já, má, lá, trás, más, chás."
 Examples = PackedStringArray("pá", "já", "má")
 IsUnlocked = false
-KeyGemCost = 26
+KeyGemCost = 49
 
-[sub_resource type="Resource" id="Resource_fd7kg"]
+[sub_resource type="Resource" id="Resource_mbult"]
 script = ExtResource("1_uiivc")
 RuleSetType = 0
-RuleSet = "Monossílabas Tônicas"
 RuleType = 1
-Name = "Terminadas em -e(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Monossílabas Tônicas"
+Rule = "Terminadas em -e(s)"
 Description = "Monossílabas tônicas terminadas em -e ou -es, como pé, fé, sé, mês, três, rés."
 Examples = PackedStringArray("pé", "fé", "sé")
 IsUnlocked = false
-KeyGemCost = 27
+KeyGemCost = 51
 
-[sub_resource type="Resource" id="Resource_cw0lu"]
+[sub_resource type="Resource" id="Resource_ujg8e"]
 script = ExtResource("1_uiivc")
 RuleSetType = 0
-RuleSet = "Monossílabas Tônicas"
 RuleType = 2
-Name = "Terminadas em -o(s)"
+CategoryType = 0
+Category = "Acentuação gráfica"
+RuleSet = "Monossílabas Tônicas"
+Rule = "Terminadas em -o(s)"
 Description = "Monossílabas tônicas terminadas em -o ou -os, como pó, só, dó, cós, sós, nós."
 Examples = PackedStringArray("pó", "só", "dó")
 IsUnlocked = false
-KeyGemCost = 28
+KeyGemCost = 53
+
+[sub_resource type="Resource" id="Resource_a3ke5"]
+script = ExtResource("2_iapw3")
+RuleSetType = 0
+RuleType = 0
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Sem regra específica (S)"
+Rule = "Sem regra específica (S)"
+Description = "Palavras com S sem uma regra específica aplicável."
+Examples = PackedStringArray("alisar", "atrás", "através")
+IsUnlocked = true
+KeyGemCost = 1
+
+[sub_resource type="Resource" id="Resource_enjdx"]
+script = ExtResource("2_iapw3")
+RuleSetType = 0
+RuleType = 1
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Sufixos -ês, -esa, -ense, -isa"
+Rule = "Sufixos -ês, -esa, -ense, -isa"
+Description = "Uso de S para formar sufixos que indicam origem, título ou profissão."
+Examples = PackedStringArray("portuguesa", "francesa", "chinesa")
+IsUnlocked = false
+KeyGemCost = 2
+
+[sub_resource type="Resource" id="Resource_mcofw"]
+script = ExtResource("2_iapw3")
+RuleSetType = 0
+RuleType = 2
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Prefixo des-"
+Rule = "Prefixo des-"
+Description = "Uso de S em palavras iniciadas pelo prefixo des-."
+Examples = PackedStringArray("desamor", "desolado", "desapego")
+IsUnlocked = false
+KeyGemCost = 3
+
+[sub_resource type="Resource" id="Resource_yinxy"]
+script = ExtResource("2_iapw3")
+RuleSetType = 0
+RuleType = 3
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Sufixos -oso, -osa, -ase, -ese, -isa, -ose"
+Rule = "Sufixos -oso, -osa, -ase, -ese, -isa, -ose"
+Description = "Uso de S em sufixos indicando grande quantidade, estado ou circunstância."
+Examples = PackedStringArray("bondoso", "feiosa", "oleoso")
+IsUnlocked = false
+KeyGemCost = 4
+
+[sub_resource type="Resource" id="Resource_w3f80"]
+script = ExtResource("2_iapw3")
+RuleSetType = 0
+RuleType = 4
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Conjugação dos verbos pôr e querer"
+Rule = "Conjugação dos verbos pôr e querer"
+Description = "Uso de S na conjugação dos verbos pôr e querer."
+Examples = PackedStringArray("pôs", "quis", "quiseram")
+IsUnlocked = false
+KeyGemCost = 5
+
+[sub_resource type="Resource" id="Resource_8gqwp"]
+script = ExtResource("2_iapw3")
+RuleSetType = 0
+RuleType = 5
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Verbos e derivados com S"
+Rule = "Verbos e derivados com S"
+Description = "Uso de S em verbos e derivados de palavras escritas com S."
+Examples = PackedStringArray("análise", "analisar", "aviso")
+IsUnlocked = false
+KeyGemCost = 6
+
+[sub_resource type="Resource" id="Resource_mbem2"]
+script = ExtResource("2_iapw3")
+RuleSetType = 1
+RuleType = 6
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Sem regra específica (Z)"
+Rule = "Sem regra específica (Z)"
+Description = "Palavras com Z sem uma regra específica aplicável."
+Examples = PackedStringArray("amizade", "aprazível", "azar")
+IsUnlocked = false
+KeyGemCost = 7
+
+[sub_resource type="Resource" id="Resource_siqrw"]
+script = ExtResource("2_iapw3")
+RuleSetType = 1
+RuleType = 7
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Exceções para regras de S"
+Rule = "Exceções para regras de S"
+Description = "Palavras com Z que são exceções às regras do S."
+Examples = PackedStringArray("gaze", "treze", "baliza")
+IsUnlocked = false
+KeyGemCost = 8
+
+[sub_resource type="Resource" id="Resource_b7q1j"]
+script = ExtResource("2_iapw3")
+RuleSetType = 1
+RuleType = 8
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Sufixos -izar"
+Rule = "Sufixos -izar"
+Description = "Uso de Z em palavras derivadas com o sufixo -izar e suas derivações."
+Examples = PackedStringArray("civilizar", "realizar", "organizar")
+IsUnlocked = false
+KeyGemCost = 9
+
+[sub_resource type="Resource" id="Resource_tpg5y"]
+script = ExtResource("2_iapw3")
+RuleSetType = 1
+RuleType = 9
+CategoryType = 3
+Category = "Regras para a utilização de S ou Z em palavras na língua portuguesa."
+RuleSet = "Substantivos abstratos com -ez, -eza"
+Rule = "Substantivos abstratos com -ez, -eza"
+Description = "Uso de Z em substantivos abstratos formados a partir de adjetivos terminados em -ez, -eza."
+Examples = PackedStringArray("vez", "rigidez", "certeza")
+IsUnlocked = false
+KeyGemCost = 10
+
+[sub_resource type="Resource" id="Resource_mqexr"]
+script = ExtResource("2_iapw3")
+RuleSetType = 2
+RuleType = 10
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "Sem regra específica (X)"
+Rule = "Sem regra específica (X)"
+Description = "Palavras com X sem uma regra específica aplicável."
+Examples = PackedStringArray("abacaxi", "bexiga", "bruxa")
+IsUnlocked = false
+KeyGemCost = 11
+
+[sub_resource type="Resource" id="Resource_e7qkw"]
+script = ExtResource("2_iapw3")
+RuleSetType = 2
+RuleType = 11
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "X após ditongos"
+Rule = "X após ditongos"
+Description = "Uso de X geralmente após ditongos."
+Examples = PackedStringArray("caixa", "peixe", "feixe")
+IsUnlocked = false
+KeyGemCost = 12
+
+[sub_resource type="Resource" id="Resource_8w8b8"]
+script = ExtResource("2_iapw3")
+RuleSetType = 2
+RuleType = 12
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "X em palavras de origem indígena, africana ou inglesa"
+Rule = "X em palavras de origem indígena, africana ou inglesa"
+Description = "Uso de X em palavras de origem indígena, africana ou inglesa."
+Examples = PackedStringArray("xará", "xampu", "xerife")
+IsUnlocked = false
+KeyGemCost = 13
+
+[sub_resource type="Resource" id="Resource_muaaf"]
+script = ExtResource("2_iapw3")
+RuleSetType = 2
+RuleType = 13
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "X após a sílaba inicial 'en-'"
+Rule = "X após a sílaba inicial 'en-'"
+Description = "Uso de X após a sílaba inicial 'en-' em palavras."
+Examples = PackedStringArray("enxame", "enxada", "enxergar")
+IsUnlocked = false
+KeyGemCost = 14
+
+[sub_resource type="Resource" id="Resource_y5jck"]
+script = ExtResource("2_iapw3")
+RuleSetType = 2
+RuleType = 14
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "X após a sílaba '-me'"
+Rule = "X após a sílaba '-me'"
+Description = "Uso de X após a sílaba '-me' em palavras."
+Examples = PackedStringArray("mexer", "mexido", "mexicano")
+IsUnlocked = false
+KeyGemCost = 15
+
+[sub_resource type="Resource" id="Resource_r4xuq"]
+script = ExtResource("2_iapw3")
+RuleSetType = 3
+RuleType = 15
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "Sem regra específica (CH)"
+Rule = "Sem regra específica (CH)"
+Description = "Palavras com CH sem uma regra específica aplicável."
+Examples = PackedStringArray("bochecha", "boliche", "broche")
+IsUnlocked = false
+KeyGemCost = 16
+
+[sub_resource type="Resource" id="Resource_1bqq6"]
+script = ExtResource("2_iapw3")
+RuleSetType = 3
+RuleType = 16
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "CH em palavras de origem estrangeira"
+Rule = "CH em palavras de origem estrangeira"
+Description = "Uso de CH em palavras de origem estrangeira adaptadas ao português."
+Examples = PackedStringArray("choque", "chique", "chalé")
+IsUnlocked = false
+KeyGemCost = 17
+
+[sub_resource type="Resource" id="Resource_xunpk"]
+script = ExtResource("2_iapw3")
+RuleSetType = 3
+RuleType = 17
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "CH em 'mecha'"
+Rule = "CH em 'mecha'"
+Description = "A palavra 'mecha' (porção de cabelo) escreve-se com ch."
+Examples = PackedStringArray("mecha")
+IsUnlocked = false
+KeyGemCost = 18
+
+[sub_resource type="Resource" id="Resource_2jpwq"]
+script = ExtResource("2_iapw3")
+RuleSetType = 3
+RuleType = 18
+CategoryType = 1
+Category = "Regras para a utilização de X ou CH em palavras na língua portuguesa."
+RuleSet = "CH no verbo encher"
+Rule = "CH no verbo encher"
+Description = "Uso de 'ch' em formas do verbo 'encher' e seus derivados."
+Examples = PackedStringArray("encher", "cheio", "encheu")
+IsUnlocked = false
+KeyGemCost = 19
 
 [resource]
 script = ExtResource("2_rn6wa")
@@ -297,5 +597,7 @@ TotalMoneyAmmount = 0
 TotalGreenKeyGemsAmmount = 0
 TotalRedKeyGemsAmmount = 0
 UnlockedDiactricalMarksSubCategories = [0]
-DiactricalMarkRuleItems = [SubResource("Resource_sqkc3"), SubResource("Resource_mbufs"), SubResource("Resource_0x0x8"), SubResource("Resource_vaj7c"), SubResource("Resource_f6n2h"), SubResource("Resource_nj00s"), SubResource("Resource_r2yhg"), SubResource("Resource_ioofg"), SubResource("Resource_f3w24"), SubResource("Resource_io0b5"), SubResource("Resource_rmyul"), SubResource("Resource_0w1fk"), SubResource("Resource_y0hh7"), SubResource("Resource_wqfb1"), SubResource("Resource_6v8le"), SubResource("Resource_u60r6"), SubResource("Resource_rrn7a"), SubResource("Resource_f248a"), SubResource("Resource_r07ef"), SubResource("Resource_yfp3p"), SubResource("Resource_stp1l"), SubResource("Resource_qm8m4"), SubResource("Resource_rckb1"), SubResource("Resource_wvjuu"), SubResource("Resource_fd7kg"), SubResource("Resource_cw0lu")]
+UnlockedSpellingRuleRuleTypes = [0]
+DiactricalMarkRuleItems = [SubResource("Resource_a2qig"), SubResource("Resource_cwifn"), SubResource("Resource_b4skn"), SubResource("Resource_nb31t"), SubResource("Resource_x68yg"), SubResource("Resource_db6n7"), SubResource("Resource_66ddu"), SubResource("Resource_iegc7"), SubResource("Resource_lsrvd"), SubResource("Resource_yw0cx"), SubResource("Resource_r0gvy"), SubResource("Resource_cqkyj"), SubResource("Resource_br36a"), SubResource("Resource_pprxj"), SubResource("Resource_b07go"), SubResource("Resource_m0qkq"), SubResource("Resource_5rt5x"), SubResource("Resource_x05tk"), SubResource("Resource_12ylp"), SubResource("Resource_bifya"), SubResource("Resource_875dr"), SubResource("Resource_4avx1"), SubResource("Resource_cy8pp"), SubResource("Resource_bprgx"), SubResource("Resource_mbult"), SubResource("Resource_ujg8e")]
+SpellingRuleRuleItems = [SubResource("Resource_a3ke5"), SubResource("Resource_enjdx"), SubResource("Resource_mcofw"), SubResource("Resource_yinxy"), SubResource("Resource_w3f80"), SubResource("Resource_8gqwp"), SubResource("Resource_mbem2"), SubResource("Resource_siqrw"), SubResource("Resource_b7q1j"), SubResource("Resource_tpg5y"), SubResource("Resource_mqexr"), SubResource("Resource_e7qkw"), SubResource("Resource_8w8b8"), SubResource("Resource_muaaf"), SubResource("Resource_y5jck"), SubResource("Resource_r4xuq"), SubResource("Resource_1bqq6"), SubResource("Resource_xunpk"), SubResource("Resource_2jpwq")]
 WordsCategoryInfos = {}

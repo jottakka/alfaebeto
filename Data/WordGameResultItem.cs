@@ -2,7 +2,7 @@
 
 public sealed class WordGameResultItem
 {
-    public RuleType RuleType { get; set; }
+    public CategoryType RuleType { get; set; }
 
     public string Word { get; set; }
 
