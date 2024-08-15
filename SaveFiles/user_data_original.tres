@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_uiivc"]
 [ext_resource type="Script" path="res://Data/UserDataInfoResource.cs" id="2_rn6wa"]
 
-[sub_resource type="Resource" id="Resource_ev0ov"]
+[sub_resource type="Resource" id="Resource_sqkc3"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
 RuleSet = "Oxítonas"
@@ -14,7 +14,7 @@ Examples = PackedStringArray("sofá", "maracujá", "Paraná")
 IsUnlocked = true
 KeyGemCost = 3
 
-[sub_resource type="Resource" id="Resource_qxv4l"]
+[sub_resource type="Resource" id="Resource_mbufs"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
 RuleSet = "Oxítonas"
@@ -25,7 +25,7 @@ Examples = PackedStringArray("Pelé", "café", "você")
 IsUnlocked = false
 KeyGemCost = 4
 
-[sub_resource type="Resource" id="Resource_d3gwx"]
+[sub_resource type="Resource" id="Resource_0x0x8"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
 RuleSet = "Oxítonas"
@@ -36,7 +36,7 @@ Examples = PackedStringArray("cipó", "paletó", "avó")
 IsUnlocked = false
 KeyGemCost = 5
 
-[sub_resource type="Resource" id="Resource_1skyi"]
+[sub_resource type="Resource" id="Resource_vaj7c"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
 RuleSet = "Oxítonas"
@@ -47,7 +47,7 @@ Examples = PackedStringArray("amém", "também", "armazém")
 IsUnlocked = false
 KeyGemCost = 6
 
-[sub_resource type="Resource" id="Resource_h7wur"]
+[sub_resource type="Resource" id="Resource_f6n2h"]
 script = ExtResource("1_uiivc")
 RuleSetType = 1
 RuleSet = "Oxítonas"
@@ -58,7 +58,7 @@ Examples = PackedStringArray("parabéns", "reféns", "armazéns")
 IsUnlocked = false
 KeyGemCost = 7
 
-[sub_resource type="Resource" id="Resource_n45ms"]
+[sub_resource type="Resource" id="Resource_nj00s"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -69,7 +69,7 @@ Examples = PackedStringArray("fácil", "útil", "fóssil")
 IsUnlocked = false
 KeyGemCost = 8
 
-[sub_resource type="Resource" id="Resource_2exvw"]
+[sub_resource type="Resource" id="Resource_r2yhg"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -80,7 +80,7 @@ Examples = PackedStringArray("júri", "lápis", "tênis")
 IsUnlocked = false
 KeyGemCost = 9
 
-[sub_resource type="Resource" id="Resource_oetd0"]
+[sub_resource type="Resource" id="Resource_ioofg"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -91,7 +91,7 @@ Examples = PackedStringArray("hífen", "pólen", "elétron")
 IsUnlocked = false
 KeyGemCost = 10
 
-[sub_resource type="Resource" id="Resource_u37n4"]
+[sub_resource type="Resource" id="Resource_f3w24"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -102,7 +102,7 @@ Examples = PackedStringArray("vírus", "Vênus", "ônus")
 IsUnlocked = false
 KeyGemCost = 11
 
-[sub_resource type="Resource" id="Resource_d1kkf"]
+[sub_resource type="Resource" id="Resource_io0b5"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -113,7 +113,7 @@ Examples = PackedStringArray("revólver", "caráter", "âmbar")
 IsUnlocked = false
 KeyGemCost = 12
 
-[sub_resource type="Resource" id="Resource_ei33n"]
+[sub_resource type="Resource" id="Resource_rmyul"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -124,7 +124,7 @@ Examples = PackedStringArray("látex", "fênix", "tórax")
 IsUnlocked = false
 KeyGemCost = 13
 
-[sub_resource type="Resource" id="Resource_2t478"]
+[sub_resource type="Resource" id="Resource_0w1fk"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -135,7 +135,7 @@ Examples = PackedStringArray("ímã", "órfã", "órfãs")
 IsUnlocked = false
 KeyGemCost = 14
 
-[sub_resource type="Resource" id="Resource_upip3"]
+[sub_resource type="Resource" id="Resource_y0hh7"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -146,7 +146,7 @@ Examples = PackedStringArray("órgão", "sótão", "órgãos")
 IsUnlocked = false
 KeyGemCost = 15
 
-[sub_resource type="Resource" id="Resource_gq4yd"]
+[sub_resource type="Resource" id="Resource_wqfb1"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -157,7 +157,7 @@ Examples = PackedStringArray("álbum", "médium", "fórum")
 IsUnlocked = false
 KeyGemCost = 16
 
-[sub_resource type="Resource" id="Resource_mxuc6"]
+[sub_resource type="Resource" id="Resource_6v8le"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -168,7 +168,7 @@ Examples = PackedStringArray("álbuns", "fóruns")
 IsUnlocked = false
 KeyGemCost = 17
 
-[sub_resource type="Resource" id="Resource_u201m"]
+[sub_resource type="Resource" id="Resource_u60r6"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -179,7 +179,7 @@ Examples = PackedStringArray("fórceps", "bíceps", "crísops")
 IsUnlocked = false
 KeyGemCost = 18
 
-[sub_resource type="Resource" id="Resource_stabc"]
+[sub_resource type="Resource" id="Resource_rrn7a"]
 script = ExtResource("1_uiivc")
 RuleSetType = 2
 RuleSet = "Paroxítonas"
@@ -190,7 +190,7 @@ Examples = PackedStringArray("água", "história", "série")
 IsUnlocked = false
 KeyGemCost = 19
 
-[sub_resource type="Resource" id="Resource_c07fy"]
+[sub_resource type="Resource" id="Resource_f248a"]
 script = ExtResource("1_uiivc")
 RuleSetType = 3
 RuleSet = "Proparoxítonas"
@@ -201,7 +201,7 @@ Examples = PackedStringArray("lânguido", "física", "trópico")
 IsUnlocked = false
 KeyGemCost = 20
 
-[sub_resource type="Resource" id="Resource_rrgj4"]
+[sub_resource type="Resource" id="Resource_r07ef"]
 script = ExtResource("1_uiivc")
 RuleSetType = 4
 RuleSet = "Ditongos Abertos"
@@ -212,7 +212,7 @@ Examples = PackedStringArray("fiéis", "papéis", "pastéis")
 IsUnlocked = false
 KeyGemCost = 21
 
-[sub_resource type="Resource" id="Resource_b0i5x"]
+[sub_resource type="Resource" id="Resource_yfp3p"]
 script = ExtResource("1_uiivc")
 RuleSetType = 4
 RuleSet = "Ditongos Abertos"
@@ -223,7 +223,7 @@ Examples = PackedStringArray("céu", "chapéu", "troféu")
 IsUnlocked = false
 KeyGemCost = 22
 
-[sub_resource type="Resource" id="Resource_u7tw5"]
+[sub_resource type="Resource" id="Resource_stp1l"]
 script = ExtResource("1_uiivc")
 RuleSetType = 4
 RuleSet = "Ditongos Abertos"
@@ -234,7 +234,7 @@ Examples = PackedStringArray("herói", "sóis", "faróis")
 IsUnlocked = false
 KeyGemCost = 23
 
-[sub_resource type="Resource" id="Resource_lvx56"]
+[sub_resource type="Resource" id="Resource_qm8m4"]
 script = ExtResource("1_uiivc")
 RuleSetType = 5
 RuleSet = "Hiatos I e U Tônicos"
@@ -245,7 +245,7 @@ Examples = PackedStringArray("saída", "juízes", "saúde")
 IsUnlocked = false
 KeyGemCost = 24
 
-[sub_resource type="Resource" id="Resource_4hr0d"]
+[sub_resource type="Resource" id="Resource_rckb1"]
 script = ExtResource("1_uiivc")
 RuleSetType = 5
 RuleSet = "Hiatos I e U Tônicos"
@@ -256,7 +256,7 @@ Examples = PackedStringArray("balaústre", "ruído", "viúvo")
 IsUnlocked = false
 KeyGemCost = 25
 
-[sub_resource type="Resource" id="Resource_shm5e"]
+[sub_resource type="Resource" id="Resource_wvjuu"]
 script = ExtResource("1_uiivc")
 RuleSetType = 0
 RuleSet = "Monossílabas Tônicas"
@@ -267,7 +267,7 @@ Examples = PackedStringArray("pá", "já", "má")
 IsUnlocked = false
 KeyGemCost = 26
 
-[sub_resource type="Resource" id="Resource_6s5l5"]
+[sub_resource type="Resource" id="Resource_fd7kg"]
 script = ExtResource("1_uiivc")
 RuleSetType = 0
 RuleSet = "Monossílabas Tônicas"
@@ -278,7 +278,7 @@ Examples = PackedStringArray("pé", "fé", "sé")
 IsUnlocked = false
 KeyGemCost = 27
 
-[sub_resource type="Resource" id="Resource_t8l2b"]
+[sub_resource type="Resource" id="Resource_cw0lu"]
 script = ExtResource("1_uiivc")
 RuleSetType = 0
 RuleSet = "Monossílabas Tônicas"
@@ -297,5 +297,5 @@ TotalMoneyAmmount = 0
 TotalGreenKeyGemsAmmount = 0
 TotalRedKeyGemsAmmount = 0
 UnlockedDiactricalMarksSubCategories = [0]
-DiactricalMarkRuleItems = [SubResource("Resource_ev0ov"), SubResource("Resource_qxv4l"), SubResource("Resource_d3gwx"), SubResource("Resource_1skyi"), SubResource("Resource_h7wur"), SubResource("Resource_n45ms"), SubResource("Resource_2exvw"), SubResource("Resource_oetd0"), SubResource("Resource_u37n4"), SubResource("Resource_d1kkf"), SubResource("Resource_ei33n"), SubResource("Resource_2t478"), SubResource("Resource_upip3"), SubResource("Resource_gq4yd"), SubResource("Resource_mxuc6"), SubResource("Resource_u201m"), SubResource("Resource_stabc"), SubResource("Resource_c07fy"), SubResource("Resource_rrgj4"), SubResource("Resource_b0i5x"), SubResource("Resource_u7tw5"), SubResource("Resource_lvx56"), SubResource("Resource_4hr0d"), SubResource("Resource_shm5e"), SubResource("Resource_6s5l5"), SubResource("Resource_t8l2b")]
+DiactricalMarkRuleItems = [SubResource("Resource_sqkc3"), SubResource("Resource_mbufs"), SubResource("Resource_0x0x8"), SubResource("Resource_vaj7c"), SubResource("Resource_f6n2h"), SubResource("Resource_nj00s"), SubResource("Resource_r2yhg"), SubResource("Resource_ioofg"), SubResource("Resource_f3w24"), SubResource("Resource_io0b5"), SubResource("Resource_rmyul"), SubResource("Resource_0w1fk"), SubResource("Resource_y0hh7"), SubResource("Resource_wqfb1"), SubResource("Resource_6v8le"), SubResource("Resource_u60r6"), SubResource("Resource_rrn7a"), SubResource("Resource_f248a"), SubResource("Resource_r07ef"), SubResource("Resource_yfp3p"), SubResource("Resource_stp1l"), SubResource("Resource_qm8m4"), SubResource("Resource_rckb1"), SubResource("Resource_wvjuu"), SubResource("Resource_fd7kg"), SubResource("Resource_cw0lu")]
 WordsCategoryInfos = {}

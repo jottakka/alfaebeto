@@ -3,13 +3,15 @@ using System.Linq;
 using Godot;
 using Godot.Collections;
 using WordProcessing.Models.DiacriticalMarks;
+using WordProcessing.Models.SpellingRules;
 using WordProcessing.Processing;
 
 public sealed partial class UnlockableRulesTreeBuilderScript : Node
 {
 	public override void _Ready()
 	{
-		GenerateMakredWords();
+		GenerateMarkedWords();
+		GenerateSpellingRuleWords();
 		string filePath = @"C:\git\alfa_e_betto\Data\acentuação\acentos_dados.json";
 		string jsonString = File.ReadAllText(filePath);
 
@@ -71,7 +73,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 		}
 	}
 
-	private void GenerateMakredWords()
+	private void GenerateMarkedWords()
 	{
 		string filePath = @"C:\git\alfa_e_betto\Data\acentuação\acentos_dados.json";
 		string jsonString = File.ReadAllText(filePath);
@@ -116,6 +118,51 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 		}
 		// Save the resource to a .tres file
 		string userDataSavePath = "res://SaveFiles/words_data.tres";
+
+		Error error = ResourceSaver.Save(wordsResource, userDataSavePath);
+		if (error == Error.Ok)
+		{
+			GD.Print("Resource saved successfully!");
+		}
+		else
+		{
+			GD.PrintErr("Failed to save resource: ", error);
+		}
+	}
+
+	private void GenerateSpellingRuleWords()
+	{
+		string filePath = @"C:\git\alfa_e_betto\Data\acentuação\meteor_words_data.json";
+		string jsonString = File.ReadAllText(filePath);
+
+		SpellingRuleRoot spellingRuleRoot = XorCHDeserializer.DeserializeJsonStringSpellingRule(jsonString);
+
+		System.Collections.Generic.Dictionary<SpellingRuleRuleType, SpellingRuleWordResource[]> spellingRuleWords = spellingRuleRoot
+			.RuleSets
+			.SelectMany(
+				(ruleSet, x) =>
+					 ruleSet.Rules.SelectMany(rule =>
+						 rule.Words.Select(word =>
+							 new SpellingRuleWordResource
+							 {
+								 RuleType = ruleSet.RuleSetType,
+								 SpellingRuleType = rule.RuleType,
+								 Options = word.Options.ToArray(),
+								 Original = word.Original,
+								 RightOption = word.RightOption,
+								 FirstPart = word.FirstPart,
+								 SecondPart = word.SecondPart,
+							 })))
+			.GroupBy(word => word.SpellingRuleType)
+			.ToDictionary(i => i.Key, i => i.ToArray());
+
+		SpellingRulesResource wordsResource = new();
+		foreach ((SpellingRuleRuleType type, SpellingRuleWordResource[] words) in spellingRuleWords)
+		{
+			wordsResource.WordsByRule.Add(type, new Array<SpellingRuleWordResource>(words));
+		}
+		// Save the resource to a .tres file
+		string userDataSavePath = "res://SaveFiles/spelling_rule_words_data.tres";
 
 		Error error = ResourceSaver.Save(wordsResource, userDataSavePath);
 		if (error == Error.Ok)

@@ -1,8 +1,11 @@
 ﻿using Godot;
 using WordProcessing.Models.DiacriticalMarks;
+using WordProcessing.Models.Rules;
 
 public sealed partial class DiactricalMarkWordResource : Resource
 {
+    [Export]
+    public RuleType RuleType { get; set; } = RuleType.Acentuation;
     [Export]
     public DiactricalMarkSubCategoryType DiactricalMarkSubCategoryType { get; set; }
     [Export]

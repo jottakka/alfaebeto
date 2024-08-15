@@ -1,7 +1,7 @@
 {
   "RuleSets": [
     {
-      "RuleSetType": "SOrZ",
+      "RuleSetType": "SorZ",
       "Name": "Uso de S ou Z",
       "Description": "Regras para a utilização de S ou Z em palavras na língua portuguesa.",
       "Rules": [
@@ -1070,7 +1070,7 @@
       ]
     },
     {
-      "RuleSetType": "XouCH",
+      "RuleSetType": "XorCH",
       "Name": "Uso de X ou CH",
       "Description": "Regras para a utilização de X ou CH em palavras na língua portuguesa.",
       "Rules": [
