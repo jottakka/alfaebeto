@@ -14,7 +14,7 @@ public sealed partial class Laser : Area2D
 	[Export]
 	public HitBox HitBox { get; set; }
 	[Export]
-	public static float CooldownSecs { get; set; } = 0.1f;
+	public float CooldownSecs { get; set; } = 0.1f;
 	[Export]
 	public float Speed { get; set; } = 900.0f;
 	[Export]
