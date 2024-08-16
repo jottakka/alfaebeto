@@ -18,7 +18,7 @@ public sealed class LetterBlockBuilder
     {
         LetterBlock letterBlock = _letterBlockPackedScene.Instantiate<LetterBlock>();
         letterBlock.SetLabel(letter);
-        letterBlock.SetPosition(position);
+        letterBlock.SetBlockPosition(position);
         letterBlock.IsTarget = isTarget;
 
         return letterBlock;
@@ -27,7 +27,7 @@ public sealed class LetterBlockBuilder
     public NoLetterBlock BuildNoLetterBlock(Vector2 position, bool isTarget)
     {
         NoLetterBlock noLetterBlock = _noLetterBlockPackedScene.Instantiate<NoLetterBlock>();
-        noLetterBlock.SetPosition(position);
+        noLetterBlock.SetBlockPosition(position);
         noLetterBlock.IsTarget = isTarget;
 
         return noLetterBlock;

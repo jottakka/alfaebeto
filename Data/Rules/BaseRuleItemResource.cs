@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using WordProcessing.Models.Rules;
 
@@ -23,6 +24,18 @@ public partial class BaseRuleItemResource
 
 	[Signal]
 	public delegate void OnUnlockSignalEventHandler();
+
+	public virtual TRuleType GetRuleTypeEnum<TRuleType>()
+	where TRuleType : Enum
+	{
+		throw new NotImplementedException("This resource should not be used, only its derived classes");
+	}
+
+	public virtual TRuleSetType GetRuleSetTypeEnum<TRuleSetType>()
+		where TRuleSetType : Enum
+	{
+		throw new NotImplementedException("This resource should not be used, only its derived classes");
+	}
 
 	public void Unlock()
 	{

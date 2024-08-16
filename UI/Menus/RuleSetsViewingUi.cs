@@ -1,4 +1,6 @@
+using System.Linq;
 using Godot;
+using WordProcessing.Models.Rules;
 
 public sealed partial class RuleSetsViewingUi : Control
 {
@@ -8,6 +10,9 @@ public sealed partial class RuleSetsViewingUi : Control
 	public VBoxContainer RuleListVBoxContainer { get; set; }
 	[Export]
 	public Button ExitButton { get; set; }
+	[Export]
+	public CategoryType Category { get; set; }
+
 	private RulesResource _rulesResource => Global.Instance.RulesResource;
 
 	public override void _Ready()
@@ -20,13 +25,34 @@ public sealed partial class RuleSetsViewingUi : Control
 
 	private void BuildItens()
 	{
-		foreach (DiactricalMarkRuleSetItemResource ruleSet in _rulesResource.DiactricalMarkRuleSets)
+		switch (Category)
+		{
+			case CategoryType.Acentuation:
+				UseDiactricalMarkRules();
+				break;
+			default:
+				UseSpellingRuleRules();
+				break;
+		}
+	}
+
+	private void UseDiactricalMarkRules()
+	{
+		foreach (BaseRuleSetItemResource ruleSet in _rulesResource.DiactricalMarkRuleSets)
 		{
 			AddItensToVBox(ruleSet);
 		}
 	}
 
-	private void AddItensToVBox(DiactricalMarkRuleSetItemResource ruleSet)
+	private void UseSpellingRuleRules()
+	{
+		foreach (BaseRuleSetItemResource ruleSet in _rulesResource.SpellingRuleRuleSets.Where(r => r.CategoryType == Category))
+		{
+			AddItensToVBox(ruleSet);
+		}
+	}
+
+	private void AddItensToVBox(BaseRuleSetItemResource ruleSet)
 	{
 		RuleSetListItem ruleListItem = RuleSetListItemPackedScene.Instantiate<RuleSetListItem>();
 		ruleListItem.SetData(ruleSet);

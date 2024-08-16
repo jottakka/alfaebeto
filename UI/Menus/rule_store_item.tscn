@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dotk4pixctwlr" path="res://UI/Menus/Art/diamond (2).png" id="7_li6ar"]
 [ext_resource type="Texture2D" uid="uid://rgckif5sxsh5" path="res://UI/Menus/Art/block.png" id="8_1sysb"]
 
-[node name="RuleStoreItem" type="MarginContainer" node_paths=PackedStringArray("CostLabel", "RuleSetLabel", "RuleLabel", "BoughtColorRect", "BuyButton", "NotAllowed")]
+[node name="RuleStoreItem" type="MarginContainer" node_paths=PackedStringArray("CostLabel", "RuleSetLabel", "RuleLabel", "BoughtColorRect", "BuyButton", "GemsTextureRect", "NotAllowed")]
 offset_right = 408.0
 offset_bottom = 120.0
 size_flags_vertical = 0
@@ -20,7 +20,10 @@ RuleSetLabel = NodePath("MarginContainer/VBoxContainer/RuleSetLabel")
 RuleLabel = NodePath("MarginContainer/VBoxContainer/RuleLabel")
 BoughtColorRect = NodePath("BoughtColorRect")
 BuyButton = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Button")
+GemsTextureRect = NodePath("MarginContainer/VBoxContainer/HBoxContainer/GemsTextureRect")
 NotAllowed = NodePath("NotAllowed")
+RedGemsTexture = "res://UI/Menus/Art/gem_1.png"
+GreenGemsTexture = "res://UI/Menus/Art/green_gems.png"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
@@ -44,13 +47,17 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.866, 0.33, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "adfafasdafsd"
+theme_override_constants/shadow_outline_size = 8
+clip_text = true
+text_overrun_behavior = 4
 
 [node name="RuleSetLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.568627, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "asdfasasfas"
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -63,7 +70,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "100"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="GemsTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_iji0e")
 expand_mode = 2

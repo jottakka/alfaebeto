@@ -61,6 +61,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 		(c, x) =>
 		new DiactricalMarkRuleSetItemResource()
 		{
+			CategoryType = CategoryType.Acentuation,
 			Description = c.Description,
 			RuleSet = c.Name,
 			RuleSetType = c.Type,
@@ -100,7 +101,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 			(cat) => cat.RuleSets.Select(set =>
 			new SpellingRuleRuleSetItemResource()
 			{
-				Description = set.Name,
+				CategoryType = cat.RuleCategoryType,
 				RuleSet = set.Name,
 				RuleSetType = set.RuleSetType,
 				Rules = new Array<SpellingRuleRuleItemResource>(set.Rules.Select(rule =>

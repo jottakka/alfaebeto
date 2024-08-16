@@ -24,13 +24,13 @@ public sealed partial class RulesViewingUi : Control
 	{
 		RuleSetNameLabel.Text = ruleSet.RuleSet;
 		RuleDescriptionLabel.Text = ruleSet.Description;
-		foreach (BaseRuleItemResource ruleListItemModel in ruleSet.Rules)
+		foreach (BaseRuleItemResource ruleListItemModel in ruleSet.RulesAsBaseItemResource)
 		{
 			AddItemsToVBox(ruleListItemModel);
 		}
 	}
 
-	private void AddItemsToVBox(DiactricalMarkRuleItemResource rule)
+	private void AddItemsToVBox(BaseRuleItemResource rule)
 	{
 		RuleListItem ruleListItem = RuleListItemPackedScene.Instantiate<RuleListItem>();
 		ruleListItem.SetData(rule);

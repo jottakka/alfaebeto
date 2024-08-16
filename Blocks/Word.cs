@@ -142,4 +142,3 @@ public partial class Word : Node2D
 		_destructionTimer.Start(0.25f);
 	}
 }
-

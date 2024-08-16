@@ -11,7 +11,6 @@ public partial class DiactricalMarkRuleSetItemResource : BaseRuleSetItemResource
 	[Export]
 	public Array<DiactricalMarkRuleItemResource> Rules { get; set; }
 
-	public int UnlockedRulesCount => Rules.Count(rule => rule.IsUnlocked);
-
-	public int TotalRulesCount => Rules.Count();
+	public override BaseRuleItemResource[] RulesAsBaseItemResource =>
+		Rules.Select(r => r as BaseRuleItemResource).ToArray();
 }

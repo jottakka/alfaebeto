@@ -58,7 +58,7 @@ public partial class LetterBlock : StaticBody2D
 		Label.Text = letter.ToString();
 	}
 
-	public void SetPosition(Vector2 position)
+	public void SetBlockPosition(Vector2 position)
 	{
 		Position = position;
 	}

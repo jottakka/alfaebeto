@@ -13,7 +13,13 @@ public sealed partial class RuleStoreItem : MarginContainer
 	[Export]
 	public Button BuyButton { get; set; }
 	[Export]
+	public TextureRect GemsTextureRect { get; set; }
+	[Export]
 	public Sprite2D NotAllowed { get; set; }
+	[Export(PropertyHint.File)]
+	public string RedGemsTexture { get; set; }
+	[Export(PropertyHint.File)]
+	public string GreenGemsTexture { get; set; }
 
 	[Signal]
 	public delegate void RuleBoughtSignalEventHandler(int gems);
@@ -41,6 +47,9 @@ public sealed partial class RuleStoreItem : MarginContainer
 
 	public void SetData(BaseRuleItemResource ruleItemResource, int totalGems)
 	{
+		GemsTextureRect.Texture = ruleItemResource is DiactricalMarkRuleItemResource
+			? GD.Load<Texture2D>(RedGemsTexture)
+			: GD.Load<Texture2D>(GreenGemsTexture);
 		RuleSetLabel.Text = ruleItemResource.RuleSet;
 		RuleLabel.Text = ruleItemResource.Rule;
 		BoughtColorRect.Visible = ruleItemResource.IsUnlocked;
@@ -51,19 +60,6 @@ public sealed partial class RuleStoreItem : MarginContainer
 		_ruleItemResource = ruleItemResource;
 		VerifyIfEnoughtGems(totalGems);
 	}
-
-	//public void SetData(SpellingRuleRuleItemResource spellingRuleItem, int totalGems)
-	//{
-	//	RuleSetLabel.Text = spellingRuleItem.RuleSet;
-	//	RuleLabel.Text = spellingRuleItem.Rule;
-	//	BoughtColorRect.Visible = spellingRuleItem.IsUnlocked;
-	//	BuyButton.Disabled = spellingRuleItem.IsUnlocked;
-	//	_gemsCost = spellingRuleItem.KeyGemCost;
-	//	CostLabel.Text = _gemsCost.ToString();
-	//	_availabeGems = totalGems;
-	//	_ruleItemResource = spellingRuleItem;
-	//	VerifyIfEnoughtGems(totalGems);
-	//}
 
 	public void OnMaxGemsAvailableAmmountChanged(int totalGems)
 	{

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=49 format=3 uid="uid://b3macyxicg072"]
+[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=49 format=3]
 
 [ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_vk08q"]
 [ext_resource type="Script" path="res://Data/Rules/SpellingRuleRuleItemResource.cs" id="2_78w14"]
@@ -482,7 +482,7 @@ RuleSet = "Sem regra específica (X)"
 Rule = "Sem regra específica (X)"
 Description = "Palavras com X sem uma regra específica aplicável."
 Examples = PackedStringArray("abacaxi", "bexiga", "bruxa")
-IsUnlocked = false
+IsUnlocked = true
 KeyGemCost = 11
 
 [sub_resource type="Resource" id="Resource_ip8lp"]
@@ -495,7 +495,7 @@ RuleSet = "X após ditongos"
 Rule = "X após ditongos"
 Description = "Uso de X geralmente após ditongos."
 Examples = PackedStringArray("caixa", "peixe", "feixe")
-IsUnlocked = false
+IsUnlocked = true
 KeyGemCost = 12
 
 [sub_resource type="Resource" id="Resource_78biv"]
@@ -508,7 +508,7 @@ RuleSet = "X em palavras de origem indígena, africana ou inglesa"
 Rule = "X em palavras de origem indígena, africana ou inglesa"
 Description = "Uso de X em palavras de origem indígena, africana ou inglesa."
 Examples = PackedStringArray("xará", "xampu", "xerife")
-IsUnlocked = false
+IsUnlocked = true
 KeyGemCost = 13
 
 [sub_resource type="Resource" id="Resource_j5q8t"]
@@ -521,7 +521,7 @@ RuleSet = "X após a sílaba inicial 'en-'"
 Rule = "X após a sílaba inicial 'en-'"
 Description = "Uso de X após a sílaba inicial 'en-' em palavras."
 Examples = PackedStringArray("enxame", "enxada", "enxergar")
-IsUnlocked = false
+IsUnlocked = true
 KeyGemCost = 14
 
 [sub_resource type="Resource" id="Resource_jjoqw"]
@@ -593,9 +593,9 @@ KeyGemCost = 19
 script = ExtResource("3_gkq86")
 UserName = "JOGADOR"
 TotalScore = 0
-TotalMoneyAmmount = 0
-TotalGreenKeyGemsAmmount = 1111
-TotalRedKeyGemsAmmount = 2222
+TotalMoneyAmmount = 338000
+TotalGreenKeyGemsAmmount = 1081
+TotalRedKeyGemsAmmount = 2262
 UnlockedDiactricalMarksSubCategories = [0]
 UnlockedSpellingRuleRuleTypes = [0]
 DiactricalMarkRuleItems = [SubResource("Resource_julmp"), SubResource("Resource_582y5"), SubResource("Resource_m5rc1"), SubResource("Resource_ip1kw"), SubResource("Resource_m10ve"), SubResource("Resource_eink5"), SubResource("Resource_pnhvw"), SubResource("Resource_cwfag"), SubResource("Resource_iu1f7"), SubResource("Resource_7ix7u"), SubResource("Resource_0smjw"), SubResource("Resource_nde2p"), SubResource("Resource_a2peh"), SubResource("Resource_erpvs"), SubResource("Resource_kgtw7"), SubResource("Resource_hfj0j"), SubResource("Resource_7opag"), SubResource("Resource_871jv"), SubResource("Resource_bnp2t"), SubResource("Resource_pvsf3"), SubResource("Resource_fiamr"), SubResource("Resource_l3x2r"), SubResource("Resource_pka2a"), SubResource("Resource_xdgm0"), SubResource("Resource_asgt4"), SubResource("Resource_hopdo")]

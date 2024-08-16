@@ -21,6 +21,7 @@ script = ExtResource("1_kg6eu")
 RuleSetListItemPackedScene = ExtResource("1_51ibw")
 RuleListVBoxContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/RulesVBoxContainer")
 ExitButton = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer2/Button")
+Category = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

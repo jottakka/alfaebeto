@@ -10,7 +10,7 @@
 [ext_resource type="Theme" uid="uid://h1f7iqhh7ycb" path="res://UI/Menus/Themes/kenneyUI-yellow.tres" id="7_b8bsa"]
 [ext_resource type="AudioStream" uid="uid://bx7kxuyyad3qu" path="res://UI/Menus/Sounds/success-short.mp3" id="9_1u4j6"]
 
-[node name="RuleStoreUi" type="Control" node_paths=PackedStringArray("RuleItemsVBoxContainer", "TotalGemsLabel", "BackButton", "AudioStreamPlayer", "GemTextureRect")]
+[node name="RuleStoreUi" type="Control" node_paths=PackedStringArray("RuleItemsVBoxContainer", "TotalGemsLabel", "BackButton", "AudioStreamPlayer", "GemTextureRect", "CategoryNameLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +25,8 @@ BackButton = NodePath("MarginContainer/VBoxContainer/BackButton")
 StoreItemPackedScene = ExtResource("3_qg37h")
 AudioStreamPlayer = NodePath("AudioStreamPlayer")
 GemTextureRect = NodePath("MarginContainer/VBoxContainer/HBoxContainer/TextureRect")
+CategoryNameLabel = NodePath("MarginContainer/VBoxContainer/HBoxContainer2/CategoryNameLabel")
+Category = 1
 RedGemTexture = "res://UI/Menus/Art/jewel_pink.png"
 GreenGemTexture = "res://UI/Menus/Art/jewel_green.png"
 
@@ -51,19 +53,37 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.933333, 0, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
 theme_override_font_sizes/font_size = 40
 text = "loja"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_fdmr6")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Categoria: "
+
+[node name="CategoryNameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "asgdsdasasd"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.976471, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Total:"
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 22
+text = "Gemas disponiveis :"
 
 [node name="TatalGemsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
