@@ -1,8 +1,7 @@
 using Godot;
 using WordProcessing.Models.DiacriticalMarks;
 
-[GlobalClass]
-public partial class DiactricalMarkRuleItemResource : BaseRuleItemResource
+public sealed partial class DiactricalMarkRuleItemResource : BaseRuleItemResource
 {
 	[Export]
 	public DiactricalMarkRuleSetType RuleSetType { get; set; }

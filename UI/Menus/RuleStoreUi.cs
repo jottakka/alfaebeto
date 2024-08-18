@@ -36,34 +36,48 @@ public sealed partial class RuleStoreUi : Control
 	{
 		ProcessMode = ProcessModeEnum.Always;
 		BackButton.Pressed += QueueFree;
-
-		CategoryNameLabel.Text = Category.ToString();
-
-		if (Category is CategoryType.Acentuation)
-		{
-			TotalGems = _userData.TotalRedKeyGemsAmmount;
-			TotalGemsLabel.Text = TotalGems.ToString();
-			SetResourceData(_userData.DiactricalMarkRuleItems);
-			GemTextureRect.Texture = GD.Load<Texture2D>(RedGemTexture);
-		}
-		else
-		{
-			TotalGems = _userData.TotalGreenKeyGemsAmmount;
-			TotalGemsLabel.Text = TotalGems.ToString();
-			SetResourceData(_userData.SpellingRuleRuleItems);
-			GemTextureRect.Texture = GD.Load<Texture2D>(GreenGemTexture);
-		}
 	}
 
-	private void SetResourceData(IEnumerable<BaseRuleItemResource> itemResources)
+	public void SetCategory(CategoryType categoryType)
 	{
-		foreach (BaseRuleItemResource item in itemResources.Where(r => r.CategoryType == Category))
+		IEnumerable<BaseRuleItemResource> itemResources = categoryType switch
+		{
+			CategoryType.Acentuation => _userData.DiactricalMarkRuleItems,
+			_ => _userData.SpellingRuleRuleItems.Where(rule => rule.CategoryType == categoryType)
+		};
+
+		CategoryNameLabel.Text = Category.GetCategoryName();
+
+		SetItemData();
+
+		SetListItemsData(itemResources);
+	}
+
+	private void SetListItemsData(IEnumerable<BaseRuleItemResource> itemResources)
+	{
+		foreach (BaseRuleItemResource item in itemResources)
 		{
 			RuleStoreItem storeItem = StoreItemPackedScene.Instantiate<RuleStoreItem>();
 			storeItem.SetData(item, TotalGems);
 			TotalGemsChangeSignal += storeItem.OnMaxGemsAvailableAmmountChanged;
 			storeItem.RuleBoughtSignal += OnRuleBoutght;
 			RuleItemsVBoxContainer.AddChild(storeItem);
+		}
+	}
+
+	private void SetItemData()
+	{
+		if (Category is CategoryType.Acentuation)
+		{
+			TotalGems = _userData.TotalRedKeyGemsAmmount;
+			TotalGemsLabel.Text = TotalGems.ToString();
+			GemTextureRect.Texture = GD.Load<Texture2D>(RedGemTexture);
+		}
+		else
+		{
+			TotalGems = _userData.TotalGreenKeyGemsAmmount;
+			TotalGemsLabel.Text = TotalGems.ToString();
+			GemTextureRect.Texture = GD.Load<Texture2D>(GreenGemTexture);
 		}
 	}
 

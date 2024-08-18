@@ -3,18 +3,22 @@ using Godot;
 public sealed partial class UiComponent : Node
 {
 	[Export]
-	public PackedScene RuleStorePackaeScene { get; set; }
+	public PackedScene RuleCategoryStorePackaeScene { get; set; }
 	[Export]
-	public PackedScene RuleSetsViewingUiPackedScene { get; set; }
+	public PackedScene RuleCategoriesViewingUiPackedScene { get; set; }
 
 	public void OpenRuleStoreUi()
 	{
-		OpenUi<RuleStoreUi>(RuleStorePackaeScene);
+		RuleCategoriesViewingUi ruleStore = RuleCategoriesViewingUiPackedScene.Instantiate<RuleCategoriesViewingUi>();
+		ruleStore.SetData(isStore: true);
+		GetTree().Root.AddChild(ruleStore);
 	}
 
 	public void OpenRuleSetsViewingUi()
 	{
-		OpenUi<RuleSetsViewingUi>(RuleSetsViewingUiPackedScene);
+		RuleCategoriesViewingUi rulesViewing = RuleCategoriesViewingUiPackedScene.Instantiate<RuleCategoriesViewingUi>();
+		rulesViewing.SetData(isStore: false);
+		GetTree().Root.AddChild(rulesViewing);
 	}
 
 	private void OpenUi<TUi>(PackedScene packedScene)

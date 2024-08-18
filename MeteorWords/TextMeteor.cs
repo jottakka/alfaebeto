@@ -19,6 +19,7 @@ public sealed partial class TextMeteor : Area2D
 
 	public void Destroy(bool wasTargetDestroied)
 	{
+		this.ResetCollisionLayerAndMask();
 		if (wasTargetDestroied)
 		{
 			AnimationPlayer.Play(MeteorAnimations.TextMeteorDeathTargetHit);

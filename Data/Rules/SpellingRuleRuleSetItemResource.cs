@@ -3,7 +3,6 @@ using Godot;
 using Godot.Collections;
 using WordProcessing.Models.SpellingRules;
 
-[GlobalClass]
 public sealed partial class SpellingRuleRuleSetItemResource : BaseRuleSetItemResource
 {
 	[Export]

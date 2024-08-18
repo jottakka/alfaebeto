@@ -36,7 +36,7 @@ public sealed partial class RuleListItem : MarginContainer
 			case DiactricalMarkRuleItemResource diactricalMarkRuleItemResource:
 				isUnlocked = _unlockedDiactricalMarkRules.Contains(diactricalMarkRuleItemResource.RuleType);
 				break;
-			case SpellingRuleItemResource spellingRuleItemResource:
+			case SpellingRuleRuleItemResource spellingRuleItemResource:
 				isUnlocked = _unlockedSpellingRuleRules.Contains(spellingRuleItemResource.RuleType);
 				break;
 		}

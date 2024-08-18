@@ -30,6 +30,7 @@ public sealed partial class RuleSetListItem : MarginContainer
 		Global.Instance.UserDataInfoResource.UnlockedDiactricalMarksSubCategories;
 	private Array<SpellingRuleRuleType> _unlockedSpellingRuleRules =>
 		Global.Instance.UserDataInfoResource.UnlockedSpellingRuleRuleTypes;
+
 	public void SetData(BaseRuleSetItemResource ruleSet)
 	{
 		_ruleSet = ruleSet;

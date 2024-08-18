@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7o41wb85oqjm"]
+[gd_scene load_steps=9 format=3 uid="uid://bb5o0760gtrgw"]
 
-[ext_resource type="PackedScene" uid="uid://ceuyos1pmm88w" path="res://UI/Menus/rule_set_list_item.tscn" id="1_51ibw"]
-[ext_resource type="Texture2D" uid="uid://b5njw4506665" path="res://UI/Menus/Art/metalPanel_blue.png" id="1_e1s5m"]
-[ext_resource type="Script" path="res://UI/Menus/RuleSetsViewingUi.cs" id="1_kg6eu"]
-[ext_resource type="Texture2D" uid="uid://vp02d1ih0iut" path="res://UI/Menus/Art/glassPanel.png" id="2_n3p3y"]
-[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="2_ulcdr"]
-[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://UI/Menus/Themes/kenneyUI-red.tres" id="5_4itaa"]
-[ext_resource type="Texture2D" uid="uid://sjfkruom6f88" path="res://UI/Menus/Art/arrow_back.png" id="6_bkcjm"]
+[ext_resource type="Script" path="res://UI/Menus/RuleCategoriesViewingUi.cs" id="1_o6bls"]
+[ext_resource type="PackedScene" uid="uid://7p4h2bdkpejv" path="res://UI/Menus/rule_category_list_item.tscn" id="2_cscmk"]
+[ext_resource type="Texture2D" uid="uid://8gvhk3lupcfu" path="res://UI/Menus/Art/metalPanel_yellow.png" id="3_j1k6x"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="4_3k742"]
+[ext_resource type="Texture2D" uid="uid://vp02d1ih0iut" path="res://UI/Menus/Art/glassPanel.png" id="5_rcatx"]
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://UI/Menus/Themes/kenneyUI-red.tres" id="6_l2sbh"]
+[ext_resource type="Texture2D" uid="uid://sjfkruom6f88" path="res://UI/Menus/Art/arrow_back.png" id="7_sgojp"]
 
 [sub_resource type="Theme" id="Theme_rwfdp"]
 
-[node name="RuleSetsViewingUi" type="Control" node_paths=PackedStringArray("RuleListVBoxContainer", "ExitButton")]
+[node name="RuleCategoriesViewingUi" type="Control" node_paths=PackedStringArray("RuleCategoryListVBoxContainer", "ExitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kg6eu")
-RuleSetListItemPackedScene = ExtResource("1_51ibw")
-RuleListVBoxContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/RulesVBoxContainer")
+script = ExtResource("1_o6bls")
+RuleCategoryListItemPackedScene = ExtResource("2_cscmk")
+RuleCategoryListVBoxContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer/RuleCategoriesVBoxContainer")
 ExitButton = NodePath("MarginContainer/MarginContainer/VBoxContainer/MarginContainer2/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -29,17 +29,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -269.0
-offset_top = -480.0
-offset_right = 274.0
-offset_bottom = 480.0
+offset_left = -271.0
+offset_top = -481.0
+offset_right = 269.0
+offset_bottom = 483.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_rwfdp")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_e1s5m")
+texture = ExtResource("3_j1k6x")
 patch_margin_left = 15
 patch_margin_top = 30
 patch_margin_right = 15
@@ -59,12 +59,12 @@ layout_mode = 2
 self_modulate = Color(1, 1, 1, 0.0235294)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("2_ulcdr")
+theme = ExtResource("4_3k742")
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
-theme = ExtResource("2_ulcdr")
-text = "Regras"
+theme = ExtResource("4_3k742")
+text = "Categorias"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -73,7 +73,7 @@ theme_override_constants/margin_top = 16
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("2_n3p3y")
+texture = ExtResource("5_rcatx")
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
@@ -92,11 +92,11 @@ layout_mode = 2
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 665)
 layout_mode = 2
-theme = ExtResource("2_ulcdr")
+theme = ExtResource("4_3k742")
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 2
 
-[node name="RulesVBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="RuleCategoriesVBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -108,7 +108,7 @@ size_flags_vertical = 10
 
 [node name="Button" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-theme = ExtResource("5_4itaa")
+theme = ExtResource("6_l2sbh")
 text = "Voltar
 "
-icon = ExtResource("6_bkcjm")
+icon = ExtResource("7_sgojp")

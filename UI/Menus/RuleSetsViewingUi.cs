@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Collections.Generic;
 using Godot;
 using WordProcessing.Models.Rules;
 
@@ -10,7 +10,6 @@ public sealed partial class RuleSetsViewingUi : Control
 	public VBoxContainer RuleListVBoxContainer { get; set; }
 	[Export]
 	public Button ExitButton { get; set; }
-	[Export]
 	public CategoryType Category { get; set; }
 
 	private RulesResource _rulesResource => Global.Instance.RulesResource;
@@ -19,34 +18,13 @@ public sealed partial class RuleSetsViewingUi : Control
 	{
 		ProcessMode = ProcessModeEnum.Always;
 		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
-		BuildItens();
 		ExitButton.Pressed += QueueFree;
 	}
 
-	private void BuildItens()
+	public void SetData(CategoryType categoryType, IEnumerable<BaseRuleSetItemResource> ruleSetResources)
 	{
-		switch (Category)
-		{
-			case CategoryType.Acentuation:
-				UseDiactricalMarkRules();
-				break;
-			default:
-				UseSpellingRuleRules();
-				break;
-		}
-	}
-
-	private void UseDiactricalMarkRules()
-	{
-		foreach (BaseRuleSetItemResource ruleSet in _rulesResource.DiactricalMarkRuleSets)
-		{
-			AddItensToVBox(ruleSet);
-		}
-	}
-
-	private void UseSpellingRuleRules()
-	{
-		foreach (BaseRuleSetItemResource ruleSet in _rulesResource.SpellingRuleRuleSets.Where(r => r.CategoryType == Category))
+		Category = categoryType;
+		foreach (BaseRuleSetItemResource ruleSet in ruleSetResources)
 		{
 			AddItensToVBox(ruleSet);
 		}
