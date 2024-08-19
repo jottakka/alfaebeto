@@ -1,0 +1,6 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://bnf4043041npt"]
+
+[resource]
+bus/0/solo = true
+bus/0/mute = true
+bus/0/bypass_fx = true

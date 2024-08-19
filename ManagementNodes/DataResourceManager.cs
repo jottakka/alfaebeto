@@ -52,6 +52,30 @@ public sealed class DataResourceManager
 
 		UserDataInfoResource userData = ResourceLoader.Load<UserDataInfoResource>(_userDataFilePath);
 
+		ConnectRuleBoughtSignalToDiactricalRules(userData);
+
+		ConnectRuleBoughtSignalToSpellingRules(userData);
+
+		return userData;
+	}
+
+	private static void ConnectRuleBoughtSignalToSpellingRules(UserDataInfoResource userData)
+	{
+		foreach (SpellingRuleRuleItemResource rule in userData.SpellingRuleRuleItems)
+		{
+			if (rule.IsUnlocked is false)
+			{
+				rule.OnUnlockSignal += () =>
+				{
+					userData.UnlockedSpellingRuleRuleTypes.Add(rule.RuleType);
+					userData.Update();
+				};
+			}
+		}
+	}
+
+	private static void ConnectRuleBoughtSignalToDiactricalRules(UserDataInfoResource userData)
+	{
 		foreach (DiactricalMarkRuleItemResource rule in userData.DiactricalMarkRuleItems)
 		{
 			if (rule.IsUnlocked is false)
@@ -63,8 +87,6 @@ public sealed class DataResourceManager
 				};
 			}
 		}
-
-		return userData;
 	}
 
 	private void SaveResource(Resource resource, string path)
