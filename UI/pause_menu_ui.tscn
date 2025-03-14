@@ -61,6 +61,7 @@ icon = ExtResource("3_h3q0x")
 icon_alignment = 2
 
 [node name="RulesButton" type="Button" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 136.0
 offset_top = 648.0
