@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgv4oxxsurx0j"]
 
-[ext_resource type="Script" path="res://UI/Menus/RuleListItem.cs" id="1_f8x3m"]
+[ext_resource type="Script" uid="uid://b2xpkm2uf0k0a" path="res://UI/Menus/RuleListItem.cs" id="1_f8x3m"]
 [ext_resource type="PackedScene" uid="uid://b8l0x6quuyu3l" path="res://UI/Menus/rule_description_ui.tscn" id="2_vvmjt"]
 [ext_resource type="Texture2D" uid="uid://c6ooclqq35b73" path="res://UI/Menus/Art/metalPanel_green.png" id="3_qkr6d"]
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="4_tvrhu"]

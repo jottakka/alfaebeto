@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cogb3ni1t73gs"]
 
-[ext_resource type="Script" path="res://Components/WordBuilderComponent.cs" id="1_6850h"]
+[ext_resource type="Script" uid="uid://d213waatsivt7" path="res://Components/WordBuilderComponent.cs" id="1_6850h"]
 [ext_resource type="PackedScene" uid="uid://c70cngjeeglb" path="res://Blocks/word.tscn" id="2_xnpki"]
 
 [node name="WordBuilderComponent" type="Node"]

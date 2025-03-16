@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccqbc6py7ptiv"]
 
-[ext_resource type="Script" path="res://CustomNodes/PlayerSpecialHurtBox.cs" id="1_g6d4g"]
+[ext_resource type="Script" uid="uid://bxntgcerosob3" path="res://CustomNodes/PlayerSpecialHurtBox.cs" id="1_g6d4g"]
 
 [node name="PlayerSpecialHurtBox" type="Area2D"]
 script = ExtResource("1_g6d4g")

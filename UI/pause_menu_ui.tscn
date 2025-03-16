@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://com43imvrt7k3"]
 
-[ext_resource type="Script" path="res://UI/PauseMenuUi.cs" id="1_mqkcb"]
+[ext_resource type="Script" uid="uid://b01e4ws2imctp" path="res://UI/PauseMenuUi.cs" id="1_mqkcb"]
 [ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://UI/Menus/Themes/kenneyUI-red.tres" id="1_mrcku"]
 [ext_resource type="FontFile" uid="uid://m8cw1p7p2u5c" path="res://UI/Menus/Art/Kenney Future.ttf" id="2_3jr7y"]
 [ext_resource type="Texture2D" uid="uid://gcwvaw8xeiha" path="res://UI/Menus/Art/clear.png" id="3_h3q0x"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://qke88ss7nck8"]
 
-[ext_resource type="Script" path="res://UI/GameOverUi.cs" id="1_fgyp8"]
+[ext_resource type="Script" uid="uid://brgfnhld0o448" path="res://UI/GameOverUi.cs" id="1_fgyp8"]
 [ext_resource type="Texture2D" uid="uid://t0t4s1i2de5h" path="res://UI/Art/skull.png" id="1_jqdl2"]
 [ext_resource type="FontFile" uid="uid://b0g2k5rmf0pov" path="res://UI/Art/Kenney High Square.ttf" id="2_ux4w2"]
 [ext_resource type="AudioStream" uid="uid://dr20ncymaqxqb" path="res://UI/Sounds/failure-drum-sound-effect-2-7184.mp3" id="3_dokaf"]
@@ -217,9 +217,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7dpxw"]
 _data = {
-"RESET": SubResource("Animation_eub1l"),
-"game_over_loop": SubResource("Animation_r5b25"),
-"game_over_start": SubResource("Animation_t4r00")
+&"RESET": SubResource("Animation_eub1l"),
+&"game_over_loop": SubResource("Animation_r5b25"),
+&"game_over_start": SubResource("Animation_t4r00")
 }
 
 [node name="GameOverUI" type="Control" node_paths=PackedStringArray("AnimationPlayer", "ProcceedButton")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cn34ji53hhjih"]
 
-[ext_resource type="Script" path="res://Collectables/CollectableCoin.cs" id="1_ogduu"]
+[ext_resource type="Script" uid="uid://bggjnk4o207fb" path="res://Collectables/CollectableCoin.cs" id="1_ogduu"]
 [ext_resource type="Texture2D" uid="uid://bfme5rxpc8tkg" path="res://Collectables/Art/coin_gold.png" id="1_yekgv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_govdm"]
@@ -64,8 +64,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_44pk7"]
 _data = {
-"RESET": SubResource("Animation_krbm6"),
-"coin_spinning": SubResource("Animation_tgyh3")
+&"RESET": SubResource("Animation_krbm6"),
+&"coin_spinning": SubResource("Animation_tgyh3")
 }
 
 [node name="CollectableCoin" type="Area2D" node_paths=PackedStringArray("AnimationPlayer", "Sprite")]

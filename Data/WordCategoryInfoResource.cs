@@ -8,5 +8,5 @@ public sealed partial class WordCategoryInfoResource : Resource
     [Export]
     public CategoryType RuleType { get; set; }
     [Export]
-    public Dictionary<string, WordAccuracyInfoResource> WordAccuracyInfos { get; set; } = new();
+    public Godot.Collections.Dictionary<string, WordAccuracyInfoResource> WordAccuracyInfos { get; set; } = new();
 }

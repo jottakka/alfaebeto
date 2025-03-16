@@ -1,7 +1,7 @@
-[gd_resource type="Resource" load_steps=205 format=3]
+[gd_resource type="Resource" load_steps=205 format=3 uid="uid://cwfo6qbpakatd"]
 
-[ext_resource type="Script" path="res://Data/Words/SpellingRuleWordResource.cs" id="1_c3ak6"]
-[ext_resource type="Script" path="res://Data/Words/SpellingRulesResource.cs" id="2_og4oq"]
+[ext_resource type="Script" uid="uid://cdju2kc0q6tpr" path="res://Data/Words/SpellingRuleWordResource.cs" id="1_c3ak6"]
+[ext_resource type="Script" uid="uid://s0211irl5tv7" path="res://Data/Words/SpellingRulesResource.cs" id="2_og4oq"]
 
 [sub_resource type="Resource" id="Resource_1mo7a"]
 script = ExtResource("1_c3ak6")
@@ -2025,7 +2025,7 @@ SecondPart = "imento"
 
 [resource]
 script = ExtResource("2_og4oq")
-WordsByRule = {
+WordsByRule = Dictionary[int, Array]({
 0: [SubResource("Resource_1mo7a"), SubResource("Resource_m7on2"), SubResource("Resource_jgapc"), SubResource("Resource_cgh26"), SubResource("Resource_nc6in"), SubResource("Resource_y42kp"), SubResource("Resource_jldd5"), SubResource("Resource_dil66"), SubResource("Resource_c0whs")],
 1: [SubResource("Resource_us0ff"), SubResource("Resource_0ff4e"), SubResource("Resource_qigm3"), SubResource("Resource_ycrgt"), SubResource("Resource_sf0hy"), SubResource("Resource_so82n"), SubResource("Resource_albs5"), SubResource("Resource_jgw5q"), SubResource("Resource_pti3k"), SubResource("Resource_wvoc1"), SubResource("Resource_sj44g"), SubResource("Resource_dmr2f"), SubResource("Resource_ojhxc"), SubResource("Resource_8ct1c")],
 2: [SubResource("Resource_27rvh"), SubResource("Resource_vud8q"), SubResource("Resource_dxpa1"), SubResource("Resource_5ylqi"), SubResource("Resource_yqf3x"), SubResource("Resource_chuej"), SubResource("Resource_51e5l"), SubResource("Resource_c3pc0"), SubResource("Resource_maghe"), SubResource("Resource_8dbt1"), SubResource("Resource_rfq8g"), SubResource("Resource_1ourm")],
@@ -2045,4 +2045,4 @@ WordsByRule = {
 16: [SubResource("Resource_8oalp"), SubResource("Resource_6j11i"), SubResource("Resource_ryj8i"), SubResource("Resource_saogy"), SubResource("Resource_4bet7"), SubResource("Resource_l4lqd"), SubResource("Resource_w74io"), SubResource("Resource_r8ocx"), SubResource("Resource_fqwmi"), SubResource("Resource_h8bgh")],
 17: [SubResource("Resource_kp0dp")],
 18: [SubResource("Resource_xypsc"), SubResource("Resource_e7odw"), SubResource("Resource_ea81w"), SubResource("Resource_s3360"), SubResource("Resource_pd0c7"), SubResource("Resource_8gsbs")]
-}
+})

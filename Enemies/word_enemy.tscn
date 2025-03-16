@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://dv65fxpmgwdkg"]
 
-[ext_resource type="Script" path="res://Enemies/EnemyWord.cs" id="1_7m2q7"]
+[ext_resource type="Script" uid="uid://c2wnawdoiygre" path="res://Enemies/EnemyWord.cs" id="1_7m2q7"]
 [ext_resource type="PackedScene" uid="uid://ceyofkkott2kg" path="res://Enemies/Parts/jet_engine.tscn" id="1_egju3"]
 [ext_resource type="PackedScene" uid="uid://c02ldw10qedp" path="res://Enemies/Parts/left_turrent_wing.tscn" id="1_el46a"]
 [ext_resource type="PackedScene" uid="uid://c2ik33idgkd7q" path="res://Enemies/Parts/right_turrent_wing.tscn" id="2_qeip4"]
-[ext_resource type="PackedScene" uid="uid://cogb3ni1t73gs" path="res://Components/word_builder_component.tscn" id="5_cwssp"]
 [ext_resource type="PackedScene" uid="uid://82hbd68lldrd" path="res://Enemies/Parts/enemy_spawner.tscn" id="6_8nj1u"]
 [ext_resource type="PackedScene" uid="uid://crcqkx1wshwdx" path="res://Components/gem_spawner_component.tscn" id="7_hag6g"]
+[ext_resource type="PackedScene" uid="uid://ccas7kysjgamm" path="res://Components/words_set_builder_component.tscn" id="7_vk5ul"]
 
 [sub_resource type="Animation" id="Animation_1o0f4"]
 length = 0.001
@@ -165,16 +165,16 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ijnwc"]
 _data = {
-"RESET": SubResource("Animation_1o0f4"),
-"enemy_word_death": SubResource("Animation_8072m"),
-"enemy_word_dying": SubResource("Animation_v3q78")
+&"RESET": SubResource("Animation_1o0f4"),
+&"enemy_word_death": SubResource("Animation_8072m"),
+&"enemy_word_dying": SubResource("Animation_v3q78")
 }
 
 [node name="WordEnemy" type="CharacterBody2D" node_paths=PackedStringArray("WordBuilderComponent", "EnemySpawnerRight", "EnemySpawnerLeft", "RightTurrentWing", "LeftTurrentWing", "VisibleOnScreenNotifierUpper", "VisibleOnScreenNotifierBottom", "AnimationPlayer", "GemSpawnerComponent")]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_7m2q7")
-WordBuilderComponent = NodePath("WordBuilderComponent")
+WordBuilderComponent = NodePath("WordSetBuilderComponent")
 EnemySpawnerRight = NodePath("EnemySpawnerRight")
 EnemySpawnerLeft = NodePath("EnemySpawnerLeft")
 RightTurrentWing = NodePath("RightTurrentWing")
@@ -198,8 +198,6 @@ z_index = 2
 position = Vector2(13, 0)
 scale = Vector2(0.7, 0.7)
 
-[node name="WordBuilderComponent" parent="." instance=ExtResource("5_cwssp")]
-
 [node name="VisibleOnScreenNotifierUpper" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(1, -53)
 scale = Vector2(-0.489451, 0.45)
@@ -218,7 +216,9 @@ scale = Vector2(0.125, 0.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ijnwc")
+&"": SubResource("AnimationLibrary_ijnwc")
 }
 
 [node name="GemSpawnerComponent" parent="." instance=ExtResource("7_hag6g")]
+
+[node name="WordSetBuilderComponent" parent="." instance=ExtResource("7_vk5ul")]

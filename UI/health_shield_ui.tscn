@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://3mtpb57hvf86"]
 
-[ext_resource type="Script" path="res://UI/HeartShieldUi.cs" id="1_0huvd"]
+[ext_resource type="Script" uid="uid://bh31ywfcxpa76" path="res://UI/HeartShieldUi.cs" id="1_0huvd"]
 [ext_resource type="Texture2D" uid="uid://canhk1icoe182" path="res://UI/Art/modify.png" id="2_xbutg"]
 [ext_resource type="Texture2D" uid="uid://dwc4e7ffjf7vk" path="res://UI/Art/shield (2).png" id="3_xon7c"]
 [ext_resource type="AudioStream" uid="uid://cbmy46jwy6jbs" path="res://UI/Sounds/heartbeat_constant_60bpm.ogg" id="4_qug18"]
@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_72s0j"]
 _data = {
-"RESET": SubResource("Animation_xom46"),
-"health_danger": SubResource("Animation_x5jqd")
+&"RESET": SubResource("Animation_xom46"),
+&"health_danger": SubResource("Animation_x5jqd")
 }
 
 [node name="HealthShieldUi" type="Control" node_paths=PackedStringArray("HealthProgressBar", "ShieldProgressBar", "AnimationPlayer", "HeartBeatAudioStreamPlayer")]

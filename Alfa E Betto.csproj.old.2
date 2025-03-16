@@ -1,0 +1,17 @@
+<Project Sdk="Godot.NET.Sdk/4.3.0">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net7.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'ios' ">net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>AlfaEBetto</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordProcessing\WordProcessing.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Collectables\Resources\" />
+    <Folder Include="Data\User\" />
+    <Folder Include="SaveFiles\" />
+  </ItemGroup>
+</Project>

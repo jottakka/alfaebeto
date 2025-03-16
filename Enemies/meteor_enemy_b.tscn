@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d14rrh8c1n6q1"]
 
-[ext_resource type="Script" path="res://Enemies/MeteorEnemyBase.cs" id="1_fgh0j"]
+[ext_resource type="Script" uid="uid://d3w40r055ih4f" path="res://Enemies/MeteorEnemyBase.cs" id="1_fgh0j"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="2_s8ab1"]
 [ext_resource type="Texture2D" uid="uid://du5bfnq6r11ni" path="res://Enemies/Art/meteorBrown_big1.png" id="2_wx8pg"]
 [ext_resource type="PackedScene" uid="uid://dvekbnt2etvvs" path="res://CustomNodes/enemy_hurt_box.tscn" id="3_4hrwn"]
@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eo5x7"]
 _data = {
-"RESET": SubResource("Animation_rrwij"),
-"meteor_enemy_spin": SubResource("Animation_yb7vt")
+&"RESET": SubResource("Animation_rrwij"),
+&"meteor_enemy_spin": SubResource("Animation_yb7vt")
 }
 
 [node name="MeteorEnemyB" type="StaticBody2D" node_paths=PackedStringArray("AnimationPlayer", "VisibleOnScreenNotifier", "HealthComponent", "HurtComponent", "HitBox", "EnemyHurtBox")]

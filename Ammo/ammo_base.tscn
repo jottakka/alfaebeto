@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cldj0ylgrvu2t"]
 
 [ext_resource type="Texture2D" uid="uid://dq6sv1kerr6je" path="res://Ammo/Art/energy_ball.png" id="1_bdrbm"]
-[ext_resource type="Script" path="res://Ammo/AmmoBase.cs" id="1_ridbi"]
+[ext_resource type="Script" uid="uid://c52umbr2chl7e" path="res://Ammo/AmmoBase.cs" id="1_ridbi"]
 [ext_resource type="Texture2D" uid="uid://brf0t530pevrs" path="res://Ammo/Art/circle_05.png" id="3_mdxkh"]
 [ext_resource type="Texture2D" uid="uid://c27b5udupevmr" path="res://Ammo/Art/spaceEffects_004.png" id="4_3d1t1"]
 [ext_resource type="Texture2D" uid="uid://rov2klpkyx7q" path="res://Ammo/Art/explosions.png" id="5_l6gy3"]
@@ -66,7 +66,6 @@ random_pitch = 1.2
 random_volume_offset_db = 5.0
 streams_count = 1
 stream_0/stream = ExtResource("5_q2fo0")
-stream_0/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_6lrjh"]
 resource_name = "new_animation"
@@ -138,8 +137,8 @@ tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f82es"]
 _data = {
-"RESET": SubResource("Animation_ksk4r"),
-"ammo_explosion": SubResource("Animation_6lrjh")
+&"RESET": SubResource("Animation_ksk4r"),
+&"ammo_explosion": SubResource("Animation_6lrjh")
 }
 
 [node name="Ammo" type="Area2D" node_paths=PackedStringArray("Sprite", "CollisionShape", "VisibleOnScreenNotifier", "AnimationPlayer", "ExplosionSprite")]

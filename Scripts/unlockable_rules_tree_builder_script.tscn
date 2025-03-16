@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://drvxa4585ysqd"]
 
-[ext_resource type="Script" path="res://Scripts/UnlockableRulesTreeBuilderScript.cs" id="1_eqhfp"]
+[ext_resource type="Script" uid="uid://c1hsj3hms2ad4" path="res://Scripts/UnlockableRulesTreeBuilderScript.cs" id="1_eqhfp"]
 
 [node name="UnlockableRulesTreeBuilderScript" type="Node"]
 script = ExtResource("1_eqhfp")

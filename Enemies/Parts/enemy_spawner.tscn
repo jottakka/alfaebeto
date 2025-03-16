@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://82hbd68lldrd"]
 
 [ext_resource type="Texture2D" uid="uid://corgjc1shalqr" path="res://Enemies/Art/spaceStation_027.png" id="1_0sp0u"]
-[ext_resource type="Script" path="res://Enemies/Parts/EnemySpawner.cs" id="1_u1058"]
+[ext_resource type="Script" uid="uid://ccx0u0bfhxqjm" path="res://Enemies/Parts/EnemySpawner.cs" id="1_u1058"]
 [ext_resource type="Texture2D" uid="uid://bgpcbumwwgli2" path="res://Enemies/Art/effect_yellow.png" id="3_gk3gt"]
 [ext_resource type="PackedScene" uid="uid://c0pcej4l0r1oa" path="res://Components/enemy_spawner_controller_component.tscn" id="3_wwa65"]
 [ext_resource type="AudioStream" uid="uid://mmf2feon6lgg" path="res://Enemies/Sound/sci-fi-charge-up-37395.mp3" id="4_m3lvo"]
@@ -166,9 +166,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ghfun"]
 _data = {
-"RESET": SubResource("Animation_8fmnc"),
-"spawn_enemy": SubResource("Animation_6lmrh"),
-"spawner_moving": SubResource("Animation_vab0v")
+&"RESET": SubResource("Animation_8fmnc"),
+&"spawn_enemy": SubResource("Animation_6lmrh"),
+&"spawner_moving": SubResource("Animation_vab0v")
 }
 
 [node name="EnemySpawner" type="Area2D" node_paths=PackedStringArray("SpawnerController", "Muzzle", "AnimationPlayer")]

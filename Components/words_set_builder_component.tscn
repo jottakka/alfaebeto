@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccas7kysjgamm"]
+
+[ext_resource type="Script" uid="uid://bwk6bs0m6bwfb" path="res://Components/WordsSetBuilderComponent.cs" id="1_86h2d"]
+[ext_resource type="PackedScene" uid="uid://cpl0ke8m7bel0" path="res://Blocks/words_set.tscn" id="2_gfldw"]
+
+[node name="WordSetBuilderComponent" type="Node"]
+script = ExtResource("1_86h2d")
+WordsSetPackedScene = ExtResource("2_gfldw")

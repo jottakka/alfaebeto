@@ -29,7 +29,7 @@ public sealed partial class MeteorWordTarget : Area2D
 	public override void _Ready()
 	{
 		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
-		_spellingRuleWordData = Global.Instance.NextSpellingRuleWordResource;
+		_spellingRuleWordData = Global.Instance.GetNextSpellingRuleWordResource();
 
 		Speed = (float)GD.RandRange(Speed - SpeedVariation, Speed + SpeedVariation);
 

@@ -1,5 +1,6 @@
 using System.Linq;
 using Godot;
+using Timer = Godot.Timer;
 
 public sealed partial class OwlFriend : CharacterBody2D
 {

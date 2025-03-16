@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d37imgwwmwrhf"]
 
 [ext_resource type="PackedScene" uid="uid://v88j8pbc0eot" path="res://MeteorWords/text_meteor.tscn" id="1_hdjwy"]
-[ext_resource type="Script" path="res://MeteorWords/MeteorWordTarget.cs" id="1_rhqxe"]
+[ext_resource type="Script" uid="uid://dmr40aaf7s5b8" path="res://MeteorWords/MeteorWordTarget.cs" id="1_rhqxe"]
 [ext_resource type="PackedScene" uid="uid://d0fwxeh3fs848" path="res://MeteorWords/answer_meteor.tscn" id="2_g5j5c"]
 [ext_resource type="PackedScene" uid="uid://crcqkx1wshwdx" path="res://Components/gem_spawner_component.tscn" id="4_0ecsb"]
 
@@ -290,8 +290,8 @@ tracks/11/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gpwuq"]
 _data = {
-"RESET": SubResource("Animation_bmugs"),
-"meteor_word_target_orbiting": SubResource("Animation_yqdq4")
+&"RESET": SubResource("Animation_bmugs"),
+&"meteor_word_target_orbiting": SubResource("Animation_yqdq4")
 }
 
 [node name="MeteorWordTarget" type="Area2D" node_paths=PackedStringArray("MainMeteor", "AnswerMeteor1", "AnswerMeteor2", "AnimationPlayer", "VisibleOnScreenNotifier2D", "GemSpawnerComponent")]

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordProcessing.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e220998520f085b4b52965f385a2d7c0163c58d")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordProcessing.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordProcessing.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

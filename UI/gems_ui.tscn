@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://spoclbkyx6s1" path="res://Collectables/Art/jewel_green.png" id="1_gwg07"]
 [ext_resource type="FontFile" uid="uid://b0g2k5rmf0pov" path="res://UI/Art/Kenney High Square.ttf" id="2_jorxo"]
-[ext_resource type="Script" path="res://UI/GemsUi.cs" id="3_3wos8"]
+[ext_resource type="Script" uid="uid://dkeidiedyd8jr" path="res://UI/GemsUi.cs" id="3_3wos8"]
 [ext_resource type="Texture2D" uid="uid://c4lgkq0b8u1iw" path="res://Collectables/Art/jewel_pink.png" id="3_rgnd4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jl8qh"]
@@ -19,7 +19,7 @@ resource_name = "gem_added"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p2av4"]
 _data = {
-"gem_added": SubResource("Animation_yve5e")
+&"gem_added": SubResource("Animation_yve5e")
 }
 
 [node name="GemsUi" type="MarginContainer" node_paths=PackedStringArray("GreenGemLabel", "RedGemLabel")]

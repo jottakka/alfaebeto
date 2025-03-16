@@ -1023,7 +1023,10 @@
       "xunit.runner.visualstudio/2.4.5": {},
       "WordProcessing/1.0.0": {
         "runtime": {
-          "WordProcessing.dll": {}
+          "WordProcessing.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

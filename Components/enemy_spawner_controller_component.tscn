@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0pcej4l0r1oa"]
 
-[ext_resource type="Script" path="res://Components/EnemySpawnerControllerComponent.cs" id="1_y3p5q"]
+[ext_resource type="Script" uid="uid://c4a86ttxougxc" path="res://Components/EnemySpawnerControllerComponent.cs" id="1_y3p5q"]
 [ext_resource type="PackedScene" uid="uid://ck85u3rkf5tmf" path="res://Enemies/enemy_base.tscn" id="2_2fysa"]
 
 [node name="EnemySpawnerControllerComponent" type="Node" node_paths=PackedStringArray("CooldownTimer")]

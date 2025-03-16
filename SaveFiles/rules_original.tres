@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="RulesResource" load_steps=61 format=3 uid="uid://c4ipiav74xm1h"]
+[gd_resource type="Resource" load_steps=61 format=3 uid="uid://c4ipiav74xm1h"]
 
-[ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_jph6o"]
-[ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleSetItemResource.cs" id="2_1o40p"]
-[ext_resource type="Script" path="res://Data/Rules/RulesResource.cs" id="3_0f6fs"]
-[ext_resource type="Script" path="res://Data/Rules/SpellingRuleRuleItemResource.cs" id="3_s13s8"]
-[ext_resource type="Script" path="res://Data/Rules/SpellingRuleRuleSetItemResource.cs" id="4_jdwcb"]
+[ext_resource type="Script" uid="uid://c70rlai7t23tp" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_jph6o"]
+[ext_resource type="Script" uid="uid://dwebsvgdgqm81" path="res://Data/Rules/DiactricalMarkRuleSetItemResource.cs" id="2_1o40p"]
+[ext_resource type="Script" uid="uid://bcjf22vlcjmk4" path="res://Data/Rules/RulesResource.cs" id="3_0f6fs"]
+[ext_resource type="Script" uid="uid://baravb6fdqt7l" path="res://Data/Rules/SpellingRuleRuleItemResource.cs" id="3_s13s8"]
+[ext_resource type="Script" uid="uid://bko1n8janrx87" path="res://Data/Rules/SpellingRuleRuleSetItemResource.cs" id="4_jdwcb"]
 
 [sub_resource type="Resource" id="Resource_whit0"]
 script = ExtResource("1_jph6o")

@@ -4,4 +4,5 @@ public enum CategoryType
 	Acentuation,
 	XorCH,
 	SorZ,
+	GuessBlock,
 }

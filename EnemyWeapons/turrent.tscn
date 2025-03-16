@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://h7wg0do81ewk"]
 
-[ext_resource type="Script" path="res://EnemyWeapons/TurrentBase.cs" id="1_kf106"]
+[ext_resource type="Script" uid="uid://jojyw0dlp6hd" path="res://EnemyWeapons/TurrentBase.cs" id="1_kf106"]
 [ext_resource type="Texture2D" uid="uid://bvh87qrpihk7f" path="res://EnemyWeapons/Art/turretBase_big.png" id="2_3j2w5"]
 [ext_resource type="Texture2D" uid="uid://c0inki65mxk3t" path="res://Enemies/Art/gun08.png" id="3_7hyiw"]
 [ext_resource type="Texture2D" uid="uid://citc3nvhytfby" path="res://EnemyWeapons/Art/muzzle_flare_07.png" id="4_i55ol"]
@@ -112,7 +112,6 @@ tracks/7/keys = {
 random_volume_offset_db = 5.0
 streams_count = 1
 stream_0/stream = ExtResource("6_btpla")
-stream_0/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_avh8m"]
 resource_name = "shoot"
@@ -249,8 +248,8 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0l1i0"]
 _data = {
-"RESET": SubResource("Animation_mnmvg"),
-"shoot": SubResource("Animation_avh8m")
+&"RESET": SubResource("Animation_mnmvg"),
+&"shoot": SubResource("Animation_avh8m")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5f0ii"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ceuyos1pmm88w" path="res://UI/Menus/rule_set_list_item.tscn" id="1_51ibw"]
 [ext_resource type="Texture2D" uid="uid://b5njw4506665" path="res://UI/Menus/Art/metalPanel_blue.png" id="1_e1s5m"]
-[ext_resource type="Script" path="res://UI/Menus/RuleSetsViewingUi.cs" id="1_kg6eu"]
+[ext_resource type="Script" uid="uid://ql7ii4vj2kk1" path="res://UI/Menus/RuleSetsViewingUi.cs" id="1_kg6eu"]
 [ext_resource type="Texture2D" uid="uid://vp02d1ih0iut" path="res://UI/Menus/Art/glassPanel.png" id="2_n3p3y"]
 [ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://UI/Menus/Themes/kenneyUI-blue.tres" id="2_ulcdr"]
 [ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://UI/Menus/Themes/kenneyUI-red.tres" id="5_4itaa"]

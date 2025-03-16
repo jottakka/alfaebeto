@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://2vtfkbiotoyf"]
 
 [ext_resource type="FontFile" uid="uid://b0g2k5rmf0pov" path="res://UI/Art/Kenney High Square.ttf" id="1_o3hl7"]
-[ext_resource type="Script" path="res://UI/MoneyCounterUi.cs" id="1_q6e12"]
+[ext_resource type="Script" uid="uid://hxm2mtginmhx" path="res://UI/MoneyCounterUi.cs" id="1_q6e12"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rsl1n"]
 font = ExtResource("1_o3hl7")
@@ -40,7 +40,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohi77"]
 _data = {
-"add_money": SubResource("Animation_l1ro7")
+&"add_money": SubResource("Animation_l1ro7")
 }
 
 [node name="MoneyCounterUi" type="Control" node_paths=PackedStringArray("Label", "AnimationPlayer")]

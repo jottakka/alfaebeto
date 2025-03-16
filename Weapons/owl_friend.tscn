@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://beikcvlyy55xx"]
 
 [ext_resource type="Texture2D" uid="uid://d3aakvif85fsj" path="res://Enemies/Art/owl-removebg-preview.png" id="1_lt83i"]
-[ext_resource type="Script" path="res://Weapons/OwlFriend.cs" id="1_y0nxv"]
+[ext_resource type="Script" uid="uid://cn3juxeaqcwpo" path="res://Weapons/OwlFriend.cs" id="1_y0nxv"]
 [ext_resource type="Texture2D" uid="uid://bsoyotleysd17" path="res://Weapons/Art/star_08.png" id="3_6crxj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fg8xj"]
@@ -188,8 +188,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7iom8"]
 _data = {
-"RESET": SubResource("Animation_wgsdn"),
-"owl_friend_eyes_on_attack": SubResource("Animation_6xt2i")
+&"RESET": SubResource("Animation_wgsdn"),
+&"owl_friend_eyes_on_attack": SubResource("Animation_6xt2i")
 }
 
 [node name="OwlFriend" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "CooldownTimer", "HurtBox", "AnimationPlayer")]

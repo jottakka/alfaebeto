@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=49 format=3 uid="uid://c2wihetyn5no2"]
+[gd_resource type="Resource" script_class="UserDataInfoResource" load_steps=50 format=3 uid="uid://c2wihetyn5no2"]
 
-[ext_resource type="Script" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_uiivc"]
-[ext_resource type="Script" path="res://Data/Rules/SpellingRuleRuleItemResource.cs" id="2_iapw3"]
-[ext_resource type="Script" path="res://Data/UserDataInfoResource.cs" id="2_rn6wa"]
+[ext_resource type="Script" uid="uid://c70rlai7t23tp" path="res://Data/Rules/DiactricalMarkRuleItemResource.cs" id="1_uiivc"]
+[ext_resource type="Script" uid="uid://baravb6fdqt7l" path="res://Data/Rules/SpellingRuleRuleItemResource.cs" id="2_iapw3"]
+[ext_resource type="Script" uid="uid://c53f2nln7dso6" path="res://Data/UserDataInfoResource.cs" id="2_rn6wa"]
+[ext_resource type="Script" uid="uid://cbehya5mjxpho" path="res://Data/WordCategoryInfoResource.cs" id="3_i41ja"]
 
 [sub_resource type="Resource" id="Resource_whit0"]
 script = ExtResource("1_uiivc")
@@ -596,8 +597,8 @@ TotalScore = 0
 TotalMoneyAmmount = 0
 TotalGreenKeyGemsAmmount = 10000
 TotalRedKeyGemsAmmount = 10000
-UnlockedDiactricalMarksSubCategories = [0]
-UnlockedSpellingRuleRuleTypes = [0]
+UnlockedDiactricalMarksSubCategories = Array[int]([0])
+UnlockedSpellingRuleRuleTypes = Array[int]([0])
 DiactricalMarkRuleItems = [SubResource("Resource_whit0"), SubResource("Resource_26000"), SubResource("Resource_8jxb0"), SubResource("Resource_0pf8t"), SubResource("Resource_r06dc"), SubResource("Resource_ry0e2"), SubResource("Resource_iexwo"), SubResource("Resource_com35"), SubResource("Resource_icdjb"), SubResource("Resource_3r1n0"), SubResource("Resource_qy1sa"), SubResource("Resource_fo77j"), SubResource("Resource_7q3lp"), SubResource("Resource_5uuav"), SubResource("Resource_84oxs"), SubResource("Resource_o6lc3"), SubResource("Resource_yrsru"), SubResource("Resource_t78qk"), SubResource("Resource_edyav"), SubResource("Resource_q2lj6"), SubResource("Resource_7x1i6"), SubResource("Resource_n8h7q"), SubResource("Resource_j2vsv"), SubResource("Resource_dfw3q"), SubResource("Resource_f3hik"), SubResource("Resource_6u042")]
 SpellingRuleRuleItems = [SubResource("Resource_32uuo"), SubResource("Resource_pfg2g"), SubResource("Resource_m4u5v"), SubResource("Resource_nrhi2"), SubResource("Resource_urkh7"), SubResource("Resource_a2y2p"), SubResource("Resource_umqel"), SubResource("Resource_yetpf"), SubResource("Resource_qqfeq"), SubResource("Resource_dvefj"), SubResource("Resource_jwn87"), SubResource("Resource_aommu"), SubResource("Resource_37dfs"), SubResource("Resource_6i0nc"), SubResource("Resource_6vyk5"), SubResource("Resource_ye2tw"), SubResource("Resource_qmo5j"), SubResource("Resource_sy1nr"), SubResource("Resource_m7373")]
-WordsCategoryInfos = {}
+WordsCategoryInfos = Dictionary[int, ExtResource("3_i41ja")]({})

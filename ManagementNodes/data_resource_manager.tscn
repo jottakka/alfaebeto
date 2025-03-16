@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnxuftb3uknec"]
 
-[ext_resource type="Script" path="res://ManagementNodes/DataResourceManager.cs" id="1_i81jm"]
-[ext_resource type="Resource" uid="uid://cs3ktau5oasf8" path="res://SaveFiles/rules_original.tres" id="2_30bnh"]
-[ext_resource type="Resource" uid="uid://qxs842rj3ap0" path="res://SaveFiles/user_data_original.tres" id="3_b4qbh"]
+[ext_resource type="Script" uid="uid://hv6i5somb06l" path="res://ManagementNodes/DataResourceManager.cs" id="1_i81jm"]
+[ext_resource type="Resource" uid="uid://c4ipiav74xm1h" path="res://SaveFiles/rules_original.tres" id="2_30bnh"]
+[ext_resource type="Resource" uid="uid://c2wihetyn5no2" path="res://SaveFiles/user_data_original.tres" id="3_b4qbh"]
 
 [node name="DataResourceManager" type="Node"]
 script = ExtResource("1_i81jm")

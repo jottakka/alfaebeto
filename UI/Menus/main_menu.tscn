@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://n3viwgm8cp5"]
 
 [ext_resource type="Texture2D" uid="uid://paatxqy1s874" path="res://UI/Menus/Art/5.png" id="1_agj4m"]
-[ext_resource type="Script" path="res://UI/Menus/MainMenuUi.cs" id="1_tu6jm"]
+[ext_resource type="Script" uid="uid://s8vci3p16e3g" path="res://UI/Menus/MainMenuUi.cs" id="1_tu6jm"]
 [ext_resource type="FontFile" uid="uid://cvkvjua8h0866" path="res://UI/Menus/Art/Kenney High Square.ttf" id="2_egk10"]
 [ext_resource type="PackedScene" uid="uid://vx4qqmcsoxwu" path="res://Components/ui_component.tscn" id="3_1q1tu"]
 [ext_resource type="FontFile" uid="uid://m8cw1p7p2u5c" path="res://UI/Menus/Art/Kenney Future.ttf" id="3_ixexg"]
@@ -127,8 +127,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8won7"]
 _data = {
-"RESET": SubResource("Animation_w45kf"),
-"main_menu_loop_animation": SubResource("Animation_kfq41")
+&"RESET": SubResource("Animation_w45kf"),
+&"main_menu_loop_animation": SubResource("Animation_kfq41")
 }
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("StartButton", "StoreButton", "RulesButton", "UiComponent")]

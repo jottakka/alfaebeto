@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmmfe24mog8j7"]
 
-[ext_resource type="Script" path="res://StartGame.cs" id="1_f5nfq"]
+[ext_resource type="Script" uid="uid://ccb57eowsaehd" path="res://StartGame.cs" id="1_f5nfq"]
 [ext_resource type="PackedScene" uid="uid://btej4fp6xwmvg" path="res://Stages/stage_a.tscn" id="2_sitdc"]
 [ext_resource type="PackedScene" uid="uid://blpg2mfx2l1of" path="res://Player/player.tscn" id="3_70pab"]
 [ext_resource type="PackedScene" uid="uid://beikcvlyy55xx" path="res://Weapons/owl_friend.tscn" id="4_va0ql"]

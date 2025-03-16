@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bd8nf1uvto1wq"]
 
-[ext_resource type="Script" path="res://Collectables/CollectableGem.cs" id="1_vtt40"]
+[ext_resource type="Script" uid="uid://6cu0jhia1fjg" path="res://Collectables/CollectableGem.cs" id="1_vtt40"]
 [ext_resource type="Texture2D" uid="uid://d1wt1vbs5rk4x" path="res://Collectables/Art/gems.png" id="2_xit0m"]
 [ext_resource type="Texture2D" uid="uid://dh2mhihlujbfv" path="res://Collectables/Art/star_08.png" id="3_l5vcv"]
 
@@ -161,8 +161,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sdvon"]
 _data = {
-"RESET": SubResource("Animation_edk4p"),
-"gem_shining": SubResource("Animation_6lx4s")
+&"RESET": SubResource("Animation_edk4p"),
+&"gem_shining": SubResource("Animation_6lx4s")
 }
 
 [node name="CollectableGem" type="Area2D" node_paths=PackedStringArray("AnimationPlayer", "Sprite")]

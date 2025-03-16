@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dfgorkxxks0xb"]
 
-[ext_resource type="Script" path="res://Components/PlayerItemCollectingComponent.cs" id="1_gwvcd"]
+[ext_resource type="Script" uid="uid://de1uplm73tfma" path="res://Components/PlayerItemCollectingComponent.cs" id="1_gwvcd"]
 [ext_resource type="AudioStream" uid="uid://dvnbrftc7ixbg" path="res://Collectables/Sounds/coins_pickup_shake_02.ogg" id="2_5b1i8"]
 [ext_resource type="AudioStream" uid="uid://besrerpdlkswa" path="res://Collectables/Sounds/coins_pickup_shake_08.ogg" id="3_j0c3p"]
 [ext_resource type="AudioStream" uid="uid://dmq17gr51txnj" path="res://Collectables/Sounds/coins_pickup_shake_10.ogg" id="4_s6v6y"]
@@ -11,17 +11,13 @@ random_pitch = 1.1
 random_volume_offset_db = 3.0
 streams_count = 3
 stream_0/stream = ExtResource("2_5b1i8")
-stream_0/weight = 1.0
 stream_1/stream = ExtResource("3_j0c3p")
-stream_1/weight = 1.0
 stream_2/stream = ExtResource("4_s6v6y")
-stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e7n7g"]
 random_pitch = 2.0
 streams_count = 1
 stream_0/stream = ExtResource("5_b8tvs")
-stream_0/weight = 1.0
 
 [node name="PlayerItemCollectingComponent" type="Node" node_paths=PackedStringArray("CoinAudioStreamPlayer", "GemAudioStreamPlayer")]
 script = ExtResource("1_gwvcd")

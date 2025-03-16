@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgp8fvw4ywvwv"]
 
 [ext_resource type="PackedScene" uid="uid://3mtpb57hvf86" path="res://UI/health_shield_ui.tscn" id="1_2ar0c"]
-[ext_resource type="Script" path="res://UI/FullUi.cs" id="1_nyqms"]
+[ext_resource type="Script" uid="uid://5nwmaglhbuy8" path="res://UI/FullUi.cs" id="1_nyqms"]
 [ext_resource type="PackedScene" uid="uid://2vtfkbiotoyf" path="res://UI/money_counter_ui.tscn" id="2_xs66a"]
 [ext_resource type="PackedScene" uid="uid://d110ps3ds8fe8" path="res://UI/gems_ui.tscn" id="4_sjcht"]
 

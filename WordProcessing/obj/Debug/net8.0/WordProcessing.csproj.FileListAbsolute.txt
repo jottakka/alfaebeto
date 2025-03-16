@@ -9,3 +9,15 @@ C:\git\WordProcessing\obj\Debug\net8.0\WordProcessing.dll
 C:\git\WordProcessing\obj\Debug\net8.0\refint\WordProcessing.dll
 C:\git\WordProcessing\obj\Debug\net8.0\WordProcessing.pdb
 C:\git\WordProcessing\obj\Debug\net8.0\ref\WordProcessing.dll
+D:\git\alfaebeto\alfaebeto\WordProcessing\bin\Debug\net8.0\WordProcessing.deps.json
+D:\git\alfaebeto\alfaebeto\WordProcessing\bin\Debug\net8.0\WordProcessing.dll
+D:\git\alfaebeto\alfaebeto\WordProcessing\bin\Debug\net8.0\WordProcessing.pdb
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\WordProcessing.GeneratedMSBuildEditorConfig.editorconfig
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\WordProcessing.AssemblyInfoInputs.cache
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\WordProcessing.AssemblyInfo.cs
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\WordProcessing.csproj.CoreCompileInputs.cache
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\WordProcessing.sourcelink.json
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\WordProcessing.dll
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\refint\WordProcessing.dll
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\WordProcessing.pdb
+D:\git\alfaebeto\alfaebeto\WordProcessing\obj\Debug\net8.0\ref\WordProcessing.dll

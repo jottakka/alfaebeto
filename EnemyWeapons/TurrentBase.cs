@@ -8,7 +8,7 @@ public sealed partial class TurrentBase : Area2D
 	[Export]
 	public Marker2D Muzzle { get; set; }
 	[Export]
-	public Timer CooldownTimer { get; set; }
+	public Godot.Timer CooldownTimer { get; set; }
 	[Export]
 	public float RotationSpeed { get; set; } = Mathf.Pi / 10.0f;
 	[Signal]

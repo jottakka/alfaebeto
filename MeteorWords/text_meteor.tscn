@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://v88j8pbc0eot"]
 
-[ext_resource type="Script" path="res://MeteorWords/TextMeteor.cs" id="1_5m7tk"]
+[ext_resource type="Script" uid="uid://cld0jihhhni77" path="res://MeteorWords/TextMeteor.cs" id="1_5m7tk"]
 [ext_resource type="Texture2D" uid="uid://clh74bdgsi76m" path="res://MeteorWords/Art/meteorGrey_big4.png" id="1_o47ak"]
 [ext_resource type="FontFile" uid="uid://ddi5qfyp03r63" path="res://MeteorWords/Art/Kenney Future.ttf" id="3_7pa2t"]
 [ext_resource type="FontFile" uid="uid://c0f8vh7l5fvfk" path="res://MeteorWords/Art/Kenney Blocks.ttf" id="4_ygf8f"]
@@ -26,14 +26,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:label_settings:font_color")
+tracks/0/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordFirstPart:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0.28964, 0.0652607, 0.0244701, 0.717647)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -50,14 +50,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordFirstPart:label_settings:font_color")
+tracks/2/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.28964, 0.0652607, 0.0244701, 0.717647)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -86,19 +86,19 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Debri1:rotation")
+tracks/5/path = NodePath("MarginContainer/NinePatchRect/ColorRect:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Debri3/Octopus:skew")
+tracks/6/path = NodePath("Debri1:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -110,26 +110,26 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Debri3/Octopus:position")
+tracks/7/path = NodePath("Debri3/Octopus:skew")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-0.60843, -42.5676)]
+"values": [0.0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("MarginContainer/NinePatchRect/ColorRect:self_modulate")
+tracks/8/path = NodePath("Debri3/Octopus:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(-0.60843, -42.5676)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -194,7 +194,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("ExplosionFlashSprite3:self_modulate")
+tracks/14/path = NodePath("MarginContainer:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -206,7 +206,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("ExplosionFlashSprite2:self_modulate")
+tracks/15/path = NodePath("ExplosionFlashSprite3:self_modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -218,55 +218,55 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("ExplosionFlashSprite2:visible")
+tracks/16/path = NodePath("MarginContainer/NinePatchRect/ColorRect:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [true]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("ExplosionFlashSprite2:scale")
+tracks/17/path = NodePath("ExplosionFlashSprite2:self_modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.2, 0.2)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("MarginContainer:modulate")
+tracks/18/path = NodePath("ExplosionFlashSprite2:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Debri1:modulate")
+tracks/19/path = NodePath("ExplosionFlashSprite2:scale")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(0.2, 0.2)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Debri3:modulate")
+tracks/20/path = NodePath("Debri1:modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -278,14 +278,14 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("MarginContainer/NinePatchRect/ColorRect:visible")
+tracks/21/path = NodePath("Debri3:modulate")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r1icm"]
@@ -293,7 +293,6 @@ random_pitch = 1.2
 random_volume_offset_db = 3.0
 streams_count = 1
 stream_0/stream = ExtResource("6_7xws6")
-stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1cwnw"]
 random_pitch = 1.2
@@ -304,7 +303,6 @@ random_pitch = 1.4
 random_volume_offset_db = 3.0
 streams_count = 1
 stream_0/stream = ExtResource("6_7xws6")
-stream_0/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_phd5f"]
 resource_name = "text_meteor_death_right"
@@ -420,26 +418,26 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("ExplosionFlashSprite2:scale")
+tracks/9/path = NodePath("MarginContainer:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(1, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.5, 0.5)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("MarginContainer:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ExplosionFlashSprite2:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.5, 0.5)]
 }
 tracks/11/type = "audio"
 tracks/11/imported = false
@@ -471,19 +469,19 @@ tracks/11/use_blend = true
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Debri1:modulate")
+tracks/12/path = NodePath("MarginContainer/NinePatchRect/ColorRect:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [true, false]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Debri3:modulate")
+tracks/13/path = NodePath("Debri1:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -495,14 +493,14 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("MarginContainer/NinePatchRect/ColorRect:visible")
+tracks/14/path = NodePath("Debri3:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_fh4x4"]
@@ -619,26 +617,26 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("ExplosionFlashSprite2:scale")
+tracks/9/path = NodePath("MarginContainer:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(1, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.5, 0.5)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("MarginContainer:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ExplosionFlashSprite2:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.5, 0.5)]
 }
 tracks/11/type = "audio"
 tracks/11/imported = false
@@ -670,19 +668,19 @@ tracks/11/use_blend = true
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Debri1:modulate")
+tracks/12/path = NodePath("MarginContainer/NinePatchRect/ColorRect:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [true, false]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Debri3:modulate")
+tracks/13/path = NodePath("Debri1:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -694,14 +692,14 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("MarginContainer/NinePatchRect/ColorRect:visible")
+tracks/14/path = NodePath("Debri3:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_msqaj"]
@@ -710,14 +708,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:label_settings:font_color")
+tracks/0/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordFirstPart:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.0705882, 0.188235, 0.45098, 0.686275), Color(0.722567, 2.93598e-06, 0.423116, 0.686275), Color(0.258649, 0.0335748, 0.501804, 0.686275), Color(0.760784, 0.0666667, 0, 0.686275)]
+"values": [Color(0.301451, 0.0693731, 0.0265222, 0.717647), Color(0.13468, 0.0168376, 0.0058619, 0.717647)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -734,14 +732,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/WordFirstPart:label_settings:font_color")
+tracks/2/path = NodePath("MarginContainer/MarginContainer/HBoxContainer/QuestionMarkLabel:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.301451, 0.0693731, 0.0265222, 0.717647), Color(0.13468, 0.0168376, 0.0058619, 0.717647)]
+"values": [Color(0.0705882, 0.188235, 0.45098, 0.686275), Color(0.722567, 2.93598e-06, 0.423116, 0.686275), Color(0.258649, 0.0335748, 0.501804, 0.686275), Color(0.760784, 0.0666667, 0, 0.686275)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -806,10 +804,10 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imy5s"]
 _data = {
-"RESET": SubResource("Animation_qb7lc"),
-"text_meteor_death_target_hit": SubResource("Animation_phd5f"),
-"text_meteor_death_target_not_hit": SubResource("Animation_fh4x4"),
-"text_meteor_start": SubResource("Animation_msqaj")
+&"RESET": SubResource("Animation_qb7lc"),
+&"text_meteor_death_target_hit": SubResource("Animation_phd5f"),
+&"text_meteor_death_target_not_hit": SubResource("Animation_fh4x4"),
+&"text_meteor_start": SubResource("Animation_msqaj")
 }
 
 [node name="TextMeteor" type="Area2D" node_paths=PackedStringArray("WordFirstPart", "WordLastPart", "QuestionMarkLabel", "AnimationPlayer")]
@@ -887,7 +885,7 @@ uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_imy5s")
+&"": SubResource("AnimationLibrary_imy5s")
 }
 autoplay = "text_meteor_start"
 

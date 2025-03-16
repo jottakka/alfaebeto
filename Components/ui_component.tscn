@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vx4qqmcsoxwu"]
 
-[ext_resource type="Script" path="res://Components/UiComponent.cs" id="1_ic0rt"]
+[ext_resource type="Script" uid="uid://db0lpideqxlg2" path="res://Components/UiComponent.cs" id="1_ic0rt"]
 [ext_resource type="PackedScene" uid="uid://bb5o0760gtrgw" path="res://UI/Menus/rule_categories_viewing_ui.tscn" id="2_xu3gk"]
 
 [node name="UiComponent" type="Node"]

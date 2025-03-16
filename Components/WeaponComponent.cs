@@ -7,7 +7,7 @@ public sealed partial class WeaponComponent : Node
 	[Export]
 	public PlayerInputProcessor PlayerInputProcessor { get; set; }
 	[Export]
-	public Timer CooldownTimer { get; set; }
+	public Godot.Timer CooldownTimer { get; set; }
 	[Export]
 	public AudioStreamPlayer2D LaserSound { get; set; }
 

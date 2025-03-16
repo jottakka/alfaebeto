@@ -1,10 +1,3 @@
-[gd_resource type="Resource" script_class="CollectableItemResource" load_steps=3 format=3 uid="uid://cyii4hy0d8sqr"]
-
-[ext_resource type="Texture2D" uid="uid://vg7qiecv13os" path="res://Collectables/Art/tanks_crateRepair.png" id="1_qxcoa"]
-[ext_resource type="Script" path="res://Collectables/CollectableItemResource.cs" id="2_qwpot"]
+[gd_resource type="Resource" format=3 uid="uid://cyii4hy0d8sqr"]
 
 [resource]
-script = ExtResource("2_qwpot")
-Name = "RepairKit"
-Texture = ExtResource("1_qxcoa")
-AnimationOnCollect = ""

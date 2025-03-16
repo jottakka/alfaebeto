@@ -1,8 +1,23 @@
 [gd_scene load_steps=7 format=3 uid="uid://bf4adrfpt4ltr"]
 
 [ext_resource type="PackedScene" uid="uid://dnrnvmtchxjl0" path="res://Collectables/collectable_item_base.tscn" id="1_7wep3"]
-[ext_resource type="Script" path="res://Collectables/CollectableHealthItem.cs" id="2_snjt3"]
+[ext_resource type="Script" uid="uid://dnsj8tfn45pph" path="res://Collectables/CollectableHealthItem.cs" id="2_snjt3"]
 [ext_resource type="Texture2D" uid="uid://1m41sobhdvcd" path="res://Collectables/Art/setting.png" id="3_bg0uo"]
+
+[sub_resource type="Animation" id="Animation_lm07k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_4ksbs"]
 resource_name = "health_gear_rotation"
@@ -21,25 +36,10 @@ tracks/0/keys = {
 "values": [0.0, 12.5664]
 }
 
-[sub_resource type="Animation" id="Animation_lm07k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lxn8k"]
 _data = {
-"RESET": SubResource("Animation_lm07k"),
-"health_gear_rotation": SubResource("Animation_4ksbs")
+&"RESET": SubResource("Animation_lm07k"),
+&"health_gear_rotation": SubResource("Animation_4ksbs")
 }
 
 [node name="CollectableHealthItem" instance=ExtResource("1_7wep3")]

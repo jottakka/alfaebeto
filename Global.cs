@@ -11,7 +11,10 @@ public partial class Global : Node
 	public RulesResource RulesResource => _dataResourceManager.RulesResource;
 
 	public DiactricalMarkWordsDataResource DiactricalMarkWordsDataResource => _dataResourceManager.DiactricalMarkWordsDataResource;
-	public SpellingRulesResource SpellingRulesResource => _dataResourceManager.SpellingRulesResource;
+
+    public GuessBlockWordsDataResource GuessBlocksDataResource => _dataResourceManager.GuessBlocksWordsDataResource;
+
+    public SpellingRulesResource SpellingRulesResource => _dataResourceManager.SpellingRulesResource;
 
 	public Player Player { get; private set; }
 
@@ -19,10 +22,13 @@ public partial class Global : Node
 
 	public Node CurrentScene { get; private set; }
 
-	public SpellingRuleWordResource NextSpellingRuleWordResource => _wordServerManager.GetNextSpellingRuleWord();
-	public DiactricalMarkWordResource NextDiactricalMarkRuleWordResource => _wordServerManager.GetNextDiactricalMarkWord();
+	public SpellingRuleWordResource GetNextSpellingRuleWordResource() => _wordServerManager.GetNextSpellingRuleWord();
+	public DiactricalMarkWordResource GetGetNextDiactricalMarkRuleWordResource() => _wordServerManager.GetNextDiactricalMarkWord();
 
-	[Signal]
+    public GuessBlockWordResource GetGetNextGuessBlockWordResource() => _wordServerManager.GetNextGuessBlockWordResource();
+
+
+    [Signal]
 	public delegate void OnMainNodeSetupFinishedSignalEventHandler();
 
 	private WordServerManager _wordServerManager { get; } = new();

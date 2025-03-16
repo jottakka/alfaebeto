@@ -39,7 +39,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 
 	public override void _Ready()
 	{
-		_wordInfo = Global.Instance.NextDiactricalMarkRuleWordResource;
+		_wordInfo = Global.Instance.GetGetNextDiactricalMarkRuleWordResource();
 
 		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
 
@@ -165,7 +165,6 @@ public sealed partial class EnemyWord : CharacterBody2D
 		}
 		else
 		{
-			// Do something to punish the player. A life lost, a score penalty, a strong foe spawn?.
 			_errorCount++;
 		}
 	}
@@ -173,7 +172,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 	private int GetSpawnGemsQuantity()
 	{
 		float percentage =
-			(_wordInfo.Original.Length - _errorCount) / (float)_wordInfo.Original.Length; // your float value here;
+			(_wordInfo.Original.Length - _errorCount) / (float)_wordInfo.Original.Length;
 
 		return percentage switch
 		{
