@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class LetterBlock : StaticBody2D
+public partial class WordBlock : StaticBody2D
 {
 	[Export]
 	public Sprite2D Sprite { get; set; }
@@ -55,12 +55,7 @@ public partial class LetterBlock : StaticBody2D
 
 	public void SetLabel(char letter)
 	{
-		SetLabel(letter.ToString());
-	}
-
-	public void SetLabel(string word)
-	{
-		Label.Text = word;
+		Label.Text = letter.ToString();
 	}
 
 	public void SetBlockPosition(Vector2 position)

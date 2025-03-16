@@ -1,5 +1,6 @@
 using System;
 using Godot;
+using Timer = Godot.Timer;
 
 public sealed partial class SceneEnemySpawnerComponent : Node
 {
@@ -13,6 +14,8 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	public PackedScene[] WordMeteorPackedScenes { get; set; } = Array.Empty<PackedScene>();
 	[Export]
 	public PackedScene[] MeteorPackedScenes { get; set; } = Array.Empty<PackedScene>();
+	[Export]
+	public PackedScene GuessBlockEnemyPackedScenes { get; set; }
 	[Export]
 	public PathFollow2D SpawnFollowPath { get; set; }
 	[Export]
@@ -39,15 +42,16 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 		}
 
 		SpawnFollowPath.Loop = false;
-		SpawnNextSpecial();
-		SpawnEnemy(MeteorPackedScenes);
-		SpawnEnemy(MeteorPackedScenes);
+		//SpawnNextSpecial();
+		SpawnEnemy([GuessBlockEnemyPackedScenes]);
+		//SpawnEnemy(MeteorPackedScenes);
 
-		MeteorSpawnTimer.Timeout += () => SpawnEnemy(MeteorPackedScenes);
-		MeteorWordSpawnTimer.Timeout += SpawnNextWordMeteor;
-		SpecialEnemySpawnTimer.Timeout += SpawnNextSpecial;
-		MeteorWordSpawnTimer.Start();
-		SpecialEnemySpawnTimer.Start();
+		//MeteorSpawnTimer.Timeout += () => SpawnEnemy(MeteorPackedScenes);
+		MeteorSpawnTimer.Timeout += () => SpawnEnemy([GuessBlockEnemyPackedScenes]);
+  //      MeteorWordSpawnTimer.Timeout += SpawnNextWordMeteor;
+		//SpecialEnemySpawnTimer.Timeout += SpawnNextSpecial;
+		//MeteorWordSpawnTimer.Start();
+		//SpecialEnemySpawnTimer.Start();
 		MeteorSpawnTimer.Start();
 	}
 

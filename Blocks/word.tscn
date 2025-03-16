@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c70cngjeeglb"]
 
-[ext_resource type="Script" path="res://Blocks/Word.cs" id="1_dwt8o"]
+[ext_resource type="Script" uid="uid://d2a3ejqmyj153" path="res://Blocks/Word.cs" id="1_dwt8o"]
 [ext_resource type="PackedScene" uid="uid://co3270trdfkno" path="res://Blocks/letter_block.tscn" id="2_nrj3o"]
 [ext_resource type="PackedScene" uid="uid://6eex7c15j4qb" path="res://Blocks/no_letter_block.tscn" id="3_jxrkl"]
 
