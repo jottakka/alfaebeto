@@ -20,5 +20,5 @@ texture = ExtResource("3_v575p")
 flip_h = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-63, -2.7901)
-scale = Vector2(0.55, 3.62713)
+position = Vector2(7.62939e-06, 0.930035)
+scale = Vector2(0.625, 1.06954)

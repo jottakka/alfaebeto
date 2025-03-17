@@ -21,7 +21,7 @@ public sealed partial class AnswerMeteor : StaticBody2D
 
 	[Signal]
 	public delegate void OnDestroiedSignalEventHandler(bool isTarget);
-
+		
 	public bool IsTarget { get; set; } = false;
 
 	private int _healthLevels = 4;

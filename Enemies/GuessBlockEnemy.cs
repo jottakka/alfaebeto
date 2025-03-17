@@ -3,7 +3,7 @@ using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Linq;
-using WordProcessing.Models.DiacriticalMarks;
+using WordProcessing.Enums;
 
 public sealed partial class GuessBlockEnemy : CharacterBody2D
 {
@@ -32,7 +32,7 @@ public sealed partial class GuessBlockEnemy : CharacterBody2D
 	[Export]
 	public float VerticalVelocityModulus { get; set; } = 10.0f;
 	[Export]
-	public int NumberOfWrongOptions { get; set; } = 2;
+	public int NumberOfWrongOptions { get; set; } = 3;
 
 	[Signal]
 	public delegate void OnQueueFreeSignalEventHandler();
@@ -47,8 +47,7 @@ public sealed partial class GuessBlockEnemy : CharacterBody2D
 
 	public override void _Ready()
 	{
-		//_guessBlockWordInfo = Global.Instance.GetGetNextGuessBlockWordResource();
-		_guessBlockWordInfo = HiraganaResourceProvider.GetRandomResource();
+		_guessBlockWordInfo = HiraganaResourceProvider.GetRandomResource(NumberOfWrongOptions);
 
 		GuessBlockLabel.Text = _guessBlockWordInfo.ToBeGuessed;
 
@@ -140,6 +139,7 @@ public sealed partial class GuessBlockEnemy : CharacterBody2D
 				);
 		};
 
+
 		RightTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>
 		{
 			_velocity = new Vector2(
@@ -197,48 +197,15 @@ public sealed partial class GuessBlockEnemy : CharacterBody2D
 
 public static class HiraganaResourceProvider
 {
-	// Holds the entire set of GuessBlockWordResource for Hiragana → Romaji
-	public static GuessBlockWordResource[] AllHiraganaToRomaji { get; }
-
-	// Static constructor: builds the resource array once at class load
-	static HiraganaResourceProvider()
+	public static GuessBlockWordResource GetRandomResource(int numberOfWrongOptions)
 	{
-		// All 46 basic hiragana
-		var hiraganaToRomaji = new (string Hiragana, string Romaji)[]
+		WordProcessing.Util.PickRightOptionFromHintData data = JapaneseKanaUtil.GetRandomRuleData(numberOfWrongOptions);
+
+		return new()
 		{
-			("あ","a"),  ("い","i"),  ("う","u"),  ("え","e"),  ("お","o"),
-			("か","ka"), ("き","ki"), ("く","ku"), ("け","ke"), ("こ","ko"),
-			("さ","sa"), ("し","shi"),("す","su"), ("せ","se"), ("そ","so"),
-			("た","ta"), ("ち","chi"),("つ","tsu"),("て","te"), ("と","to"),
-			("な","na"), ("に","ni"), ("ぬ","nu"), ("ね","ne"), ("の","no"),
-			("は","ha"), ("ひ","hi"), ("ふ","fu"), ("へ","he"), ("ほ","ho"),
-			("ま","ma"), ("み","mi"), ("む","mu"), ("め","me"), ("も","mo"),
-			("や","ya"), ("ゆ","yu"), ("よ","yo"),
-			("ら","ra"), ("り","ri"), ("る","ru"), ("れ","re"), ("ろ","ro"),
-			("わ","wa"), ("を","wo"),
-			("ん","n")
+			AnswerIdx = data.AnswerIdx,
+			ShuffledOptions = data.ShuffledOptions,
+			ToBeGuessed = data.ToBeGuessed
 		};
-
-		AllHiraganaToRomaji = hiraganaToRomaji
-			.Select(pair => new GuessBlockWordResource
-			{
-				DiactricalMarkSubCategoryType = GuessBlockRuleType.GuessRomangiFromHiragana,
-				ToBeGuessed = pair.Hiragana,
-				Answer = pair.Romaji
-			})
-			.ToArray();
-	}
-
-	// Returns a random index (0 to AllHiraganaToRomaji.Length - 1)
-	public static int GetRandomResourceIndex()
-	{
-		return GD.RandRange(0, AllHiraganaToRomaji.Length - 1);
-	}
-
-	// Returns a random GuessBlockWordResource from the array
-	public static GuessBlockWordResource GetRandomResource()
-	{
-		int index = GetRandomResourceIndex();
-		return AllHiraganaToRomaji[index];
 	}
 }

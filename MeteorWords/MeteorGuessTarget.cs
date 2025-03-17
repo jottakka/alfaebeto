@@ -1,7 +1,7 @@
 using System.Linq;
 using Godot;
 
-public sealed partial class MeteorWordTarget : Area2D
+public sealed partial class MeteorGuessTarget : Area2D
 {
 	[Export]
 	public TextMeteor MainMeteor { get; set; }
@@ -20,7 +20,7 @@ public sealed partial class MeteorWordTarget : Area2D
 	[Export]
 	public float SpeedVariation { get; set; } = 10.0f;
 
-	private SpellingRuleWordResource _spellingRuleWordData;
+	WordProcessing.Util.PickRightOptionFromHintData _data;
 
 	private AnswerMeteor _targetMeteor;
 
@@ -28,20 +28,23 @@ public sealed partial class MeteorWordTarget : Area2D
 
 	public override void _Ready()
 	{
+		_data = JapaneseKanaUtil.GetRandomRuleData(1);
 		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
-		_spellingRuleWordData = Global.Instance.GetNextSpellingRuleWordResource();
 
 		Speed = (float)GD.RandRange(Speed - SpeedVariation, Speed + SpeedVariation);
+		BuildAnswerMeteors();
 
 		VisibleOnScreenNotifier2D.ScreenExited += QueueFree;
 
-		BuildAnswerMeteors();
 
 		AnswerMeteor1.OnDestroiedSignal += OnDestructionStart;
 		AnswerMeteor2.OnDestroiedSignal += OnDestructionStart;
 
-		MainMeteor.WordFirstPart.Text = _spellingRuleWordData.FirstPart;
-		MainMeteor.WordLastPart.Text = _spellingRuleWordData.SecondPart;
+		var data = JapaneseKanaUtil.GetRandomRuleData(1);
+
+		MainMeteor.WordFirstPart.Text = "";
+		MainMeteor.WordLastPart.Text = "";
+		MainMeteor.QuestionMarkLabel.Text = _data.ToBeGuessed;
 
 		MainMeteor.ReadyToQueueFreeSignal += OnReadyToQueueFree;
 
@@ -66,9 +69,9 @@ public sealed partial class MeteorWordTarget : Area2D
 
 	private void BuildAnswerMeteors()
 	{
-		AnswerMeteor1.OptionText.Text = _spellingRuleWordData.Options.First();
-		AnswerMeteor2.OptionText.Text = _spellingRuleWordData.Options.Last();
-		_targetMeteor = _spellingRuleWordData.RightOption == _spellingRuleWordData.Options.First()
+		AnswerMeteor1.OptionText.Text = _data.ShuffledOptions.First();
+		AnswerMeteor2.OptionText.Text = _data.ShuffledOptions.Last();
+		_targetMeteor = _data.AnswerIdx == 0
 			? AnswerMeteor1
 			: AnswerMeteor2;
 		_targetMeteor.IsTarget = true;

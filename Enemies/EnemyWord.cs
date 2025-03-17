@@ -183,4 +183,3 @@ public sealed partial class EnemyWord : CharacterBody2D
 		};
 	}
 }
-

@@ -25,7 +25,7 @@ public partial class WordsSet : Node2D
 
 	public LetterBlock Target { get; set; }
 
-	public int NumberOfWrongOptions { get; set; }
+	public int NumberOfIncorrectOptions { get; set; }
 
 	private static LetterBlockBuilder _letterBuilder = null;
 
@@ -51,11 +51,10 @@ public partial class WordsSet : Node2D
 	private void BuildWordBlocks()
 	{
 		float currentX = 0;
-		var (ansIdx, options) = GuessBlockInfo.GetWordOptions(incorrectOptionsCount: NumberOfWrongOptions);
 
-		foreach ((string word, int idx) in options.Select((letter, idx) => (letter, idx)))
+		foreach ((string word, int idx) in GuessBlockInfo.ShuffledOptions.Select((letter, idx) => (letter, idx)))
 		{
-			currentX = BuildWordBlock(currentX, word, idx, ansIdx);
+			currentX = BuildWordBlock(currentX, word, idx, GuessBlockInfo.AnswerIdx);
 		}
 
 		Target.OnTargetBlockCalledDestructionSignal += Destroy;

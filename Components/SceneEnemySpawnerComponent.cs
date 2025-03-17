@@ -17,6 +17,8 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	[Export]
 	public PackedScene GuessBlockEnemyPackedScenes { get; set; }
 	[Export]
+	public PackedScene GuessMeteorPackedScene { get; set; }
+	[Export]
 	public PathFollow2D SpawnFollowPath { get; set; }
 	[Export]
 	public Timer MeteorSpawnTimer { get; set; }
@@ -42,16 +44,19 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 		}
 
 		SpawnFollowPath.Loop = false;
+		SpawnNextGuessSpecial();
 		//SpawnNextSpecial();
-		SpawnEnemy([GuessBlockEnemyPackedScenes]);
+		//SpawnEnemy([GuessBlockEnemyPackedScenes]);
 		//SpawnEnemy(MeteorPackedScenes);
 
-		//MeteorSpawnTimer.Timeout += () => SpawnEnemy(MeteorPackedScenes);
-		MeteorSpawnTimer.Timeout += () => SpawnEnemy([GuessBlockEnemyPackedScenes]);
-  //      MeteorWordSpawnTimer.Timeout += SpawnNextWordMeteor;
-		//SpecialEnemySpawnTimer.Timeout += SpawnNextSpecial;
-		//MeteorWordSpawnTimer.Start();
-		//SpecialEnemySpawnTimer.Start();
+		MeteorSpawnTimer.Timeout += () => SpawnEnemy(MeteorPackedScenes);
+		//MeteorSpawnTimer.Timeout += () => SpawnEnemy();
+		MeteorWordSpawnTimer.Timeout += SpawnNextGuessMeteor;
+		SpecialEnemySpawnTimer.Timeout += SpawnNextGuessSpecial;
+		// SpecialEnemySpawnTimer.Timeout += SpawnNextSpecial();
+
+		MeteorWordSpawnTimer.Start();
+		SpecialEnemySpawnTimer.Start();
 		MeteorSpawnTimer.Start();
 	}
 
@@ -60,6 +65,19 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 		long idx = GD.Randi() % packedScenes.Length;
 		Node2D enemySceneInstantiated = packedScenes[idx].Instantiate<Node2D>();
 		enemySceneInstantiated.Position = GetNewTopSpawnPathRandPosition();
+		_parent.AddChildDeffered(enemySceneInstantiated);
+	}
+
+
+	public void SpawnNextGuessSpecial()
+	{
+		SpecialEnemySpawnTimer.Stop();
+		_currentState = States.SpecialEnemyAlive;
+
+		var enemySceneInstantiated = GuessBlockEnemyPackedScenes.Instantiate<GuessBlockEnemy>();
+		enemySceneInstantiated.Position = SpecialSpawnerPosition.Position;
+		enemySceneInstantiated.OnQueueFreeSignal += OnSpecialEnemyFreed;
+
 		_parent.AddChildDeffered(enemySceneInstantiated);
 	}
 
@@ -72,6 +90,19 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 		enemySceneInstantiated.Position = SpecialSpawnerPosition.Position;
 		enemySceneInstantiated.OnQueueFreeSignal += OnSpecialEnemyFreed;
 
+		_parent.AddChildDeffered(enemySceneInstantiated);
+	}
+
+	public void SpawnNextGuessMeteor()
+	{
+		if (_currentState is States.SpecialEnemyAlive)
+		{
+			return;
+		}
+
+		MeteorGuessTarget enemySceneInstantiated = GuessMeteorPackedScene.Instantiate<MeteorGuessTarget>();
+		Vector2 randonHorizontalVariation = new((float)GD.RandRange(-75.0f, 75.0f), 0.0f);
+		enemySceneInstantiated.Position = SpecialSpawnerPosition.Position + randonHorizontalVariation;
 		_parent.AddChildDeffered(enemySceneInstantiated);
 	}
 

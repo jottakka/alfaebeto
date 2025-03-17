@@ -14,7 +14,7 @@ public sealed class WordsSetBuilder
 		WordsSet wordsSetNode = _wordsSetPackedScene.Instantiate<WordsSet>();
 		wordsSetNode.Position = startPosition;
 		wordsSetNode.GuessBlockInfo = guessBlockWord;
-		wordsSetNode.NumberOfWrongOptions = numberOfWrongOptions;
+		wordsSetNode.NumberOfIncorrectOptions = numberOfWrongOptions;
 		return wordsSetNode;
 	}
 }
