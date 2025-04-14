@@ -404,9 +404,9 @@ color = Color(1, 1, 1, 0)
 
 [node name="CenterContainer" type="CenterContainer" parent="Sprite2D"]
 offset_top = -80.0
-offset_right = 279.0
+offset_right = 418.0
 offset_bottom = 71.0
-scale = Vector2(0.5, 1)
+scale = Vector2(0.33, 1)
 
 [node name="Label" type="Label" parent="Sprite2D/CenterContainer"]
 self_modulate = Color(1, 1, 1, 0.796078)
@@ -417,7 +417,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.733333)
 theme_override_constants/line_spacing = 0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 110
-text = "a"
+text = "der"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

@@ -1,24 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://uovrvrmqh1g7"]
+[gd_scene load_steps=6 format=3 uid="uid://uovrvrmqh1g7"]
 
 [ext_resource type="Script" uid="uid://dkbwc6ohwaesd" path="res://Components/SceneEnemySpawnerComponent.cs" id="1_a8jyr"]
-[ext_resource type="PackedScene" uid="uid://dv65fxpmgwdkg" path="res://Enemies/word_enemy.tscn" id="2_oudl7"]
-[ext_resource type="PackedScene" uid="uid://ck85u3rkf5tmf" path="res://Enemies/enemy_base.tscn" id="3_q15y7"]
-[ext_resource type="PackedScene" uid="uid://d37imgwwmwrhf" path="res://MeteorWords/meteor_word_target.tscn" id="4_t6cal"]
+[ext_resource type="PackedScene" uid="uid://75knn4c1es8e" path="res://Enemies/guess_block_enemy_longword.tscn" id="2_wsa22"]
 [ext_resource type="PackedScene" uid="uid://cvr8oob8wwhy4" path="res://Enemies/meteor_enemy_a.tscn" id="5_ki2ap"]
 [ext_resource type="PackedScene" uid="uid://dyoyb4xvdwtrx" path="res://Enemies/guess_block_enemy.tscn" id="6_dd40e"]
 [ext_resource type="PackedScene" uid="uid://dtq5aei1lgnq6" path="res://MeteorWords/meteor_guess_target.tscn" id="7_lugeo"]
 
-[node name="SceneEnemySpawnerComponent" type="Node" node_paths=PackedStringArray("MeteorSpawnTimer", "MeteorWordSpawnTimer", "SpecialEnemySpawnTimer")]
+[node name="SceneEnemySpawnerComponent" type="Node" node_paths=PackedStringArray("RegularEnemySpawnTimer", "WordMeteorSpawnTimer", "SpecialEnemySpawnTimer")]
 script = ExtResource("1_a8jyr")
-SpecialEnemiesPackedScenes = [ExtResource("2_oudl7")]
-RegularEnemiesPackedScenes = [ExtResource("3_q15y7")]
-WordMeteorPackedScenes = [ExtResource("4_t6cal")]
-MeteorPackedScenes = [ExtResource("5_ki2ap"), ExtResource("5_ki2ap")]
-GuessBlockEnemyPackedScenes = ExtResource("6_dd40e")
-GuessMeteorPackedScene = ExtResource("7_lugeo")
-MeteorSpawnTimer = NodePath("MeteorSpawnTimer")
-MeteorWordSpawnTimer = NodePath("MeteorWordSpawnTimer")
+CurrentLanguage = 1
+RegularEnemySpawnTimer = NodePath("SpecialEnemySpawnTimer")
+WordMeteorSpawnTimer = NodePath("MeteorWordSpawnTimer")
 SpecialEnemySpawnTimer = NodePath("SpecialEnemySpawnTimer")
+GermanSpecialEnemy = ExtResource("2_wsa22")
+GermanWordMeteor = ExtResource("7_lugeo")
+JapaneseSpecialEnemy = ExtResource("6_dd40e")
+JapaneseWordMeteor = ExtResource("7_lugeo")
+MeteorPackedScenes = [ExtResource("5_ki2ap"), ExtResource("5_ki2ap")]
 
 [node name="SpecialEnemySpawnTimer" type="Timer" parent="."]
 wait_time = 15.0

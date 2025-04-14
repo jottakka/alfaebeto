@@ -37,7 +37,6 @@ public partial class LetterBlock : StaticBody2D
 
 	public override void _Ready()
 	{
-
 		ExplosionsSprite2D.Frame = GD.RandRange(0, 8);
 		Sprite.Frame = _currenSpriteFrame;
 		DeathSpriteEffect.Visible = false;
