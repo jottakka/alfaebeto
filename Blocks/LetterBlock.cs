@@ -1,3 +1,4 @@
+using AlfaEBetto.Blocks;
 using Godot;
 
 public partial class LetterBlock : StaticBody2D
@@ -56,6 +57,11 @@ public partial class LetterBlock : StaticBody2D
 	public void SetLabel(char letter)
 	{
 		SetLabel(letter.ToString());
+	}
+
+	public void SetLabelColor(Color color)
+	{
+		Label.AddThemeColorOverride("font_color", color);
 	}
 
 	public void SetLabel(string word)

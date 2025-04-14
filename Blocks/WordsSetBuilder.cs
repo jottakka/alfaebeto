@@ -9,12 +9,20 @@ public sealed class WordsSetBuilder
 		_wordsSetPackedScene = packedScene;
 	}
 
-	public WordsSet BuildWord(GuessBlockWordResource guessBlockWord, Vector2 startPosition, int numberOfWrongOptions)
+	public WordsSet BuildWordSet(GuessBlockWordResource guessBlockWord, Vector2 startPosition)
 	{
 		WordsSet wordsSetNode = _wordsSetPackedScene.Instantiate<WordsSet>();
 		wordsSetNode.Position = startPosition;
 		wordsSetNode.GuessBlockInfo = guessBlockWord;
-		wordsSetNode.NumberOfIncorrectOptions = numberOfWrongOptions;
+		return wordsSetNode;
+	}
+
+	public WordsSet BuildArticleSet(GuessBlockWordResource guessBlockWord, Vector2 startPosition)
+	{
+		WordsSet wordsSetNode = _wordsSetPackedScene.Instantiate<WordsSet>();
+		wordsSetNode.Position = startPosition;
+		wordsSetNode.GuessBlockInfo = guessBlockWord;
+		wordsSetNode.IsGermanArticle = true;
 		return wordsSetNode;
 	}
 }

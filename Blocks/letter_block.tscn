@@ -452,7 +452,7 @@ texture = ExtResource("4_84qg0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3460b")
+&"": SubResource("AnimationLibrary_3460b")
 }
 autoplay = "RESET"
 

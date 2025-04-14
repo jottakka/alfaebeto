@@ -10,14 +10,14 @@
         "projectUniqueName": "D:\\git\\alfaebeto\\alfaebeto\\WordProcessing\\WordProcessing.csproj",
         "projectName": "WordProcessing",
         "projectPath": "D:\\git\\alfaebeto\\alfaebeto\\WordProcessing\\WordProcessing.csproj",
-        "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\fjlim\\.nuget\\packages\\",
         "outputPath": "D:\\git\\alfaebeto\\alfaebeto\\WordProcessing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fjlim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

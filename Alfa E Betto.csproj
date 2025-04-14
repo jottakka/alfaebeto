@@ -11,6 +11,9 @@
     <EmbeddedResource Remove="WordProcessing\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FileName.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Collectables\Resources\" />
     <Folder Include="Data\User\" />
     <Folder Include="SaveFiles\" />

@@ -14,7 +14,13 @@ public partial class WordsSetBuilderComponent : Node
 
 	public WordsSet BuildWordsSet(GuessBlockWordResource guessBlockInfo, Vector2 position, int numberOfWrongOptions)
 	{
-		WordsSet wordsSet = _wordsSetBuilder.BuildWord(guessBlockInfo, position, numberOfWrongOptions);
+		WordsSet wordsSet = _wordsSetBuilder.BuildWordSet(guessBlockInfo, position);
+		return wordsSet;
+	}
+
+	public WordsSet BuildArticleSet(GuessBlockWordResource guessBlockInfo, Vector2 position, int numberOfWrongOptions)
+	{
+		WordsSet wordsSet = _wordsSetBuilder.BuildArticleSet(guessBlockInfo, position);
 		return wordsSet;
 	}
 }

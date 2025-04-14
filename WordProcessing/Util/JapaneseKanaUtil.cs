@@ -135,4 +135,5 @@ public static class JapaneseKanaUtil
             answerIdx,
             optionsArr);
     }
+
 }

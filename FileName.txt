@@ -1,0 +1,46 @@
+Ideias 
+
+
+== Enemies 
+
+- Boss with shield, that one has to shoot proper enemies 
+	- Kangis with same sounds for exmple
+- Enemy that have some options that must be destroied in a certain order (form word? Counting (one, two, three), (ich, ni, san, yon) ?)
+- options in two columns that each pair must be shot one after the other (like match two items in different columns)
+- Swarm of enemies shoot only those that are mispelled or are wrong ( like a enemy has a wrong gender in german for a word, shoot him)  
+=  A possible boss could be a “Kanji cyborg” that assembles kanji from radicals; the player has to shoot the correct combination of radicals or identify the meaning in context (“shoot the kanji that means fire when it appears to disable the boss’s shield”). 
+== Traps
+
+- Give two options of path ( maybe when hearing something)
+	- ex: (to Go)  path 1: went  path 2: goed   < punishment if goed, success if went
+== Languages
+
+German
+- Add right german gender picking enemy
+- Right past form of verbs, mainly helping irregular verbs
+- Dative conjuctives options (mit + dat, zu + dat, )
+- also verb + conjuncitve proper declination ( gehen + in = not dative) (stehen + auf = dative)
+
+English
+- past form of verbs
+
+Port:
+- ??
+
+Spanish:
+- Gender picking (mainly for english and languages without gender speakers)
+- Past for of verbs
+- For portuguese speakers words that sound like but have not the same meaning ( Ideia Prof. Marcus Cilg)
+
+== Features
+- Find the right amount of enemies (controlled by dificult? user's level? )
+- Progression paths 
+- Incremental improvents as one get more experience (as rewards and milestones)
+- Sugestion based on players dificulties
+
+== Improvements
+- Too much enemies can get overhelming. 
+	Options:
+	- Limit spawning for a certain amount of enemies
+	- ONLY ONE special enemy per time
+	- Increase Meteors spawming interval

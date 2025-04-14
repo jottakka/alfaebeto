@@ -14,12 +14,17 @@ public sealed class LetterBlockBuilder
 		_noLetterBlockPackedScene = noLetterBlockPackedScene;
 	}
 
-	public LetterBlock BuildLetterBlock(string word, Vector2 position, bool isTarget)
+	public LetterBlock BuildLetterBlock(string word, Vector2 position, bool isTarget, Color? laborColor = null)
 	{
 		LetterBlock letterBlock = _letterBlockPackedScene.Instantiate<LetterBlock>();
 		letterBlock.SetLabel(word);
 		letterBlock.SetBlockPosition(position);
 		letterBlock.IsTarget = isTarget;
+
+		if (laborColor != null)
+		{
+			letterBlock.SetLabelColor(laborColor.Value);
+		}
 
 		return letterBlock;
 	}

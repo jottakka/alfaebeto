@@ -33,7 +33,7 @@ project/assembly_name="Alfa E Betto"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_player_refactor/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

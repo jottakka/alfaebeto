@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordProcessing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f58f26702eacac8d02fefbc9bb7facbb417fbc9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8c423ce6ac28308d2eb68d6a67b5a5d202d535b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordProcessing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordProcessing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
