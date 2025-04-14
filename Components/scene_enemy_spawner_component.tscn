@@ -8,7 +8,6 @@
 
 [node name="SceneEnemySpawnerComponent" type="Node" node_paths=PackedStringArray("RegularEnemySpawnTimer", "WordMeteorSpawnTimer", "SpecialEnemySpawnTimer")]
 script = ExtResource("1_a8jyr")
-CurrentLanguage = 1
 RegularEnemySpawnTimer = NodePath("SpecialEnemySpawnTimer")
 WordMeteorSpawnTimer = NodePath("MeteorWordSpawnTimer")
 SpecialEnemySpawnTimer = NodePath("SpecialEnemySpawnTimer")

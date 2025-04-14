@@ -44,3 +44,5 @@ Spanish:
 	- Limit spawning for a certain amount of enemies
 	- ONLY ONE special enemy per time
 	- Increase Meteors spawming interval
+
+- At the beggining start with colors to help, latter when improving those will fade.

@@ -1,4 +1,5 @@
 using Godot;
+using WordProcessing.Enums;
 
 public partial class Global : Node
 {
@@ -15,6 +16,8 @@ public partial class Global : Node
     public GuessBlockWordsDataResource GuessBlocksDataResource => _dataResourceManager.GuessBlocksWordsDataResource;
 
     public SpellingRulesResource SpellingRulesResource => _dataResourceManager.SpellingRulesResource;
+
+	public SupportedLanguage SupportedLanguage => SupportedLanguage.German;
 
 	public Player Player { get; private set; }
 

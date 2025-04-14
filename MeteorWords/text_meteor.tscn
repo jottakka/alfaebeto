@@ -1,21 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://v88j8pbc0eot"]
+[gd_scene load_steps=18 format=3 uid="uid://v88j8pbc0eot"]
 
 [ext_resource type="Script" uid="uid://cld0jihhhni77" path="res://MeteorWords/TextMeteor.cs" id="1_5m7tk"]
 [ext_resource type="Texture2D" uid="uid://clh74bdgsi76m" path="res://MeteorWords/Art/meteorGrey_big4.png" id="1_o47ak"]
-[ext_resource type="FontFile" uid="uid://ddi5qfyp03r63" path="res://MeteorWords/Art/Kenney Future.ttf" id="3_7pa2t"]
 [ext_resource type="FontFile" uid="uid://c0f8vh7l5fvfk" path="res://MeteorWords/Art/Kenney Blocks.ttf" id="4_ygf8f"]
 [ext_resource type="Texture2D" uid="uid://dnpd2cfoiu5q7" path="res://MeteorWords/Art/meteorGrey_big1.png" id="5_0yeby"]
 [ext_resource type="AudioStream" uid="uid://7gi4471rxqil" path="res://MeteorWords/Sounds/small-rock-break-194553.mp3" id="5_68t4l"]
 [ext_resource type="AudioStream" uid="uid://vat886ukqral" path="res://MeteorWords/Sounds/explosionCrunch_001.ogg" id="6_7xws6"]
 [ext_resource type="Texture2D" uid="uid://dkicsme8kto3l" path="res://MeteorWords/Art/10.png" id="6_htg02"]
 [ext_resource type="Texture2D" uid="uid://cpo551sg81mqo" path="res://MeteorWords/Art/explosion_flash.png" id="7_4jop5"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_227e2"]
-line_spacing = 0.0
-font = ExtResource("3_7pa2t")
-font_size = 30
-font_color = Color(0.28964, 0.0652607, 0.0244701, 0.717647)
-shadow_color = Color(0.392157, 0.392157, 0.392157, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8g2ym"]
 font = ExtResource("4_ygf8f")
@@ -863,7 +855,7 @@ layout_mode = 2
 [node name="WordFirstPart" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-label_settings = SubResource("LabelSettings_227e2")
+text = "asdfasdfas"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -878,7 +870,7 @@ vertical_alignment = 1
 [node name="WordLastPart" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-label_settings = SubResource("LabelSettings_227e2")
+text = "asdfasdfas"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true

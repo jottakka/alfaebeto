@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://d0fwxeh3fs848"]
+[gd_scene load_steps=28 format=3 uid="uid://d0fwxeh3fs848"]
 
 [ext_resource type="Script" uid="uid://c86d5xp4amoap" path="res://MeteorWords/AnswerMeteor.cs" id="1_c54gp"]
 [ext_resource type="Texture2D" uid="uid://dp0hygdh6q8aj" path="res://MeteorWords/Art/spaceMeteors_003.png" id="2_wmlta"]
-[ext_resource type="FontFile" uid="uid://ddi5qfyp03r63" path="res://MeteorWords/Art/Kenney Future.ttf" id="3_jkkrp"]
 [ext_resource type="Texture2D" uid="uid://chotrib2dwon1" path="res://MeteorWords/Art/debrisWood_2.png" id="3_ksiqo"]
 [ext_resource type="Texture2D" uid="uid://bpvjm2qhimp1b" path="res://MeteorWords/Art/crack_03.png" id="4_eh3gw"]
 [ext_resource type="Texture2D" uid="uid://b3dwl3abqiqoo" path="res://MeteorWords/Art/debrisWood_1.png" id="4_k14lq"]
@@ -18,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://cpo551sg81mqo" path="res://MeteorWords/Art/explosion_flash.png" id="13_j4kkk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_au3ro"]
-font = ExtResource("3_jkkrp")
-font_size = 110
+line_spacing = 2.0
+font_size = 85
 font_color = Color(0.240955, 0.169095, 0.0525059, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_axu2x"]
@@ -651,8 +650,8 @@ EffectsPlayer = NodePath("EffectsPlayer")
 OptionText = NodePath("MainMeteor/OptionText")
 
 [node name="DebrisWood1" type="Sprite2D" parent="."]
-position = Vector2(67, 24)
-scale = Vector2(0.46875, 0.535714)
+position = Vector2(100, 22)
+scale = Vector2(0.703125, 0.535714)
 texture = ExtResource("4_k14lq")
 
 [node name="DebrisWood2" type="Sprite2D" parent="DebrisWood1"]
@@ -671,11 +670,11 @@ scale = Vector2(0.46729, 0.422907)
 texture = ExtResource("2_wmlta")
 
 [node name="OptionText" type="Label" parent="MainMeteor"]
-offset_left = -82.0
-offset_top = -85.0
-offset_right = 103.0
-offset_bottom = 89.0
-text = "SS"
+offset_left = -86.67
+offset_top = -66.3868
+offset_right = 96.33
+offset_bottom = 69.6132
+text = "dem"
 label_settings = SubResource("LabelSettings_au3ro")
 horizontal_alignment = 1
 vertical_alignment = 1

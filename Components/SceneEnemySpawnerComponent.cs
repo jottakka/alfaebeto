@@ -2,17 +2,10 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WordProcessing.Enums;
 using Timer = Godot.Timer; // Explicit alias
 
 // Define supported languages (Add more as needed)
-public enum SupportedLanguage
-{
-	English,
-	German,
-	Portuguese,
-	Japanese
-	// Add others as your game supports them
-}
 
 // Now expects an "OnQueueFreeSignal" signal from special enemies
 
@@ -20,7 +13,6 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 {
 	[ExportGroup("General Configuration")]
 	[Export] public bool IsDeactived { get; set; } = true;
-	[Export] public SupportedLanguage CurrentLanguage { get; set; } = SupportedLanguage.English;
 
 	[ExportGroup("Spawn Points & Timers")]
 	[Export] public Marker2D SpecialSpawnerPosition { get; set; }
@@ -67,6 +59,7 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	public delegate void OnSpawnNextRequestedSignalEventHandler();
 
 	// --- Private Fields ---
+	private SupportedLanguage _currentLanguage => Global.Instance.SupportedLanguage;
 	private States _currentState = States.NoSpecialEnemy;
 	private StageBase _parent; // Cache parent reference
 
@@ -102,7 +95,7 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 		if (!ConfigureActiveScenesForLanguage())
 		{
-			DeactivateSpawner($"Scene configuration invalid for language {CurrentLanguage}.");
+			DeactivateSpawner($"Scene configuration invalid for language {_currentLanguage}.");
 			return;
 		}
 
@@ -118,7 +111,7 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 		StartTimerRandomized(WordMeteorSpawnTimer, MinWordMeteorSpawnInterval, MaxWordMeteorSpawnInterval);
 		// Special enemy timer starts via OnSpecialEnemyFreed
 
-		GD.Print($"{Name}: Initialized. Lang: {CurrentLanguage}");
+		GD.Print($"{Name}: Initialized. Lang: {_currentLanguage}");
 	}
 
 	// --- Configuration & Validation ---
@@ -147,9 +140,9 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 	private bool ConfigureActiveScenesForLanguage()
 	{
-		GD.Print($"Configuring for Language: {CurrentLanguage}");
+		GD.Print($"Configuring for Language: {_currentLanguage}");
 
-		switch (CurrentLanguage)
+		switch (_currentLanguage)
 		{
 			case SupportedLanguage.English:
 				_activeSpecialEnemyScene = EnglishSpecialEnemy;
@@ -172,14 +165,14 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 				_activeRegularEnemyScenes = JapaneseRegularEnemies;
 				break;
 			default:
-				GD.PrintErr($"{Name}: Language '{CurrentLanguage}' not handled in configuration!");
+				GD.PrintErr($"{Name}: Language '{_currentLanguage}' not handled in configuration!");
 				return false;
 		}
 
 		bool scenesValid = true;
-		if (_activeSpecialEnemyScene == null) { GD.PrintErr($"{Name}: Missing Special Enemy scene for {CurrentLanguage}!"); scenesValid = false; }
-		if (_activeWordMeteorScene == null) { GD.PrintErr($"{Name}: Missing Word Meteor scene for {CurrentLanguage}!"); scenesValid = false; }
-		if (_activeRegularEnemyScenes == null || _activeRegularEnemyScenes.Length == 0) { GD.PushWarning($"{Name}: Regular Enemies array is null or empty for {CurrentLanguage}. No regular enemies will spawn."); }
+		if (_activeSpecialEnemyScene == null) { GD.PrintErr($"{Name}: Missing Special Enemy scene for {_currentLanguage}!"); scenesValid = false; }
+		if (_activeWordMeteorScene == null) { GD.PrintErr($"{Name}: Missing Word Meteor scene for {_currentLanguage}!"); scenesValid = false; }
+		if (_activeRegularEnemyScenes == null || _activeRegularEnemyScenes.Length == 0) { GD.PushWarning($"{Name}: Regular Enemies array is null or empty for {_currentLanguage}. No regular enemies will spawn."); }
 
 		return scenesValid;
 	}
@@ -313,7 +306,7 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 		if (chosenScene == null)
 		{
-			GD.PushWarning($"{Name}: Null PackedScene found in array at index {idx} for language {CurrentLanguage}.");
+			GD.PushWarning($"{Name}: Null PackedScene found in array at index {idx} for language {_currentLanguage}.");
 			return;
 		}
 
