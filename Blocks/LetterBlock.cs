@@ -1,4 +1,3 @@
-using AlfaEBetto.Blocks;
 using Godot;
 
 public partial class LetterBlock : StaticBody2D
@@ -53,30 +52,15 @@ public partial class LetterBlock : StaticBody2D
 
 	}
 
-	public void SetLabel(char letter)
-	{
-		SetLabel(letter.ToString());
-	}
+	public void SetLabel(char letter) => SetLabel(letter.ToString());
 
-	public void SetLabelColor(Color color)
-	{
-		Label.AddThemeColorOverride("font_color", color);
-	}
+	public void SetLabelColor(Color color) => Label.AddThemeColorOverride("font_color", color);
 
-	public void SetLabel(string word)
-	{
-		Label.Text = word;
-	}
+	public void SetLabel(string word) => Label.Text = word;
 
-	public void SetBlockPosition(Vector2 position)
-	{
-		Position = position;
-	}
+	public void SetBlockPosition(Vector2 position) => Position = position;
 
-	public void Destroy()
-	{
-		AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockExplode);
-	}
+	public void Destroy() => AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockExplode);
 
 	public void DisableCollisions()
 	{

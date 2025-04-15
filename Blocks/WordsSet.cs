@@ -123,7 +123,6 @@ public partial class WordsSet : Node2D
 			currentX = BuildSingleBlock(currentX, word, idx, GuessBlockInfo.AnswerIdx);
 		}
 
-
 		if (Target == null)
 		{
 			GD.PrintErr("Target block was not set after building blocks. Check AnswerIdx validity.");
@@ -144,7 +143,7 @@ public partial class WordsSet : Node2D
 	/// <returns>The X position for the start of the *next* block.</returns>
 	private float BuildSingleBlock(float currentX, string word, int index, int answerIndex)
 	{
-		bool isTarget = (answerIndex == index);
+		bool isTarget = answerIndex == index;
 		Color? blockColor = IsGermanArticle ? GetColorFromGermanArticle(word) : null;
 
 		LetterBlock letterBlock = _letterBuilder.BuildLetterBlock(
@@ -195,7 +194,7 @@ public partial class WordsSet : Node2D
 	/// </summary>
 	private static float CalculateNextBlockStartPosition(LetterBlock letterBlock, float currentBlockX)
 	{
-		if (letterBlock.CollisionShape == null || !(letterBlock.CollisionShape.Shape is RectangleShape2D shape))
+		if (letterBlock.CollisionShape == null || letterBlock.CollisionShape.Shape is not RectangleShape2D shape)
 		{
 			GD.PrintErr($"LetterBlock '{letterBlock.Name ?? "Unnamed"}' lacks a valid RectangleShape2D CollisionShape.");
 			return currentBlockX + 50; // Fallback spacing

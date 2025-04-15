@@ -10,9 +10,9 @@ public sealed class WordServerManager
 
 	private Queue<SpellingRuleWordResource> _spellingRuleWordResources = new();
 	private Queue<DiactricalMarkWordResource> _diactricalMarkWordResources = new();
-    private Queue<GuessBlockWordResource> _guessBlockResources = new();
+	private Queue<GuessBlockWordResource> _guessBlockResources = new();
 
-    public WordServerManager()
+	public WordServerManager()
 	{
 	}
 	public SpellingRuleWordResource GetNextSpellingRuleWord()
@@ -27,16 +27,15 @@ public sealed class WordServerManager
 
 	public GuessBlockWordResource GetNextGuessBlockWordResource()
 	{
-        if (_guessBlockResources.Count == 0)
-        {
-            _guessBlockResources = GetShuffledGuessBlockWords(40);
-        }
+		if (_guessBlockResources.Count == 0)
+		{
+			_guessBlockResources = GetShuffledGuessBlockWords(40);
+		}
 
-        return _guessBlockResources.Dequeue();
-    }
+		return _guessBlockResources.Dequeue();
+	}
 
-
-    public DiactricalMarkWordResource GetNextDiactricalMarkWord()
+	public DiactricalMarkWordResource GetNextDiactricalMarkWord()
 	{
 		if (_diactricalMarkWordResources.Count == 0)
 		{
@@ -68,20 +67,17 @@ public sealed class WordServerManager
 		return new Queue<DiactricalMarkWordResource>(concatedLists);
 	}
 
-    private Queue<GuessBlockWordResource> GetShuffledGuessBlockWords(int take = 10)
-    {
-        //IEnumerable<DiactricalMarkWordResource> shuffledMarkedWords = GetShuffledMarkedWords(take / 2);
-        //IEnumerable<DiactricalMarkWordResource> shuffledNotMarkedWords = GetShuffledNotMarkedWords((take + 1) / 2);
+	private Queue<GuessBlockWordResource> GetShuffledGuessBlockWords(int take = 10) =>
+		//IEnumerable<DiactricalMarkWordResource> shuffledMarkedWords = GetShuffledMarkedWords(take / 2);
+		//IEnumerable<DiactricalMarkWordResource> shuffledNotMarkedWords = GetShuffledNotMarkedWords((take + 1) / 2);
 
-        //IOrderedEnumerable<DiactricalMarkWordResource> concatedLists = shuffledNotMarkedWords
-        //    .Concat(shuffledMarkedWords)
-        //    .OrderBy(w => Random.Shared.Next());
-        //return new Queue<DiactricalMarkWordResource>(concatedLists);
+		//IOrderedEnumerable<DiactricalMarkWordResource> concatedLists = shuffledNotMarkedWords
+		//    .Concat(shuffledMarkedWords)
+		//    .OrderBy(w => Random.Shared.Next());
+		//return new Queue<DiactricalMarkWordResource>(concatedLists);
 		throw new NotImplementedException();
-    }
 
-
-    private IEnumerable<DiactricalMarkWordResource> GetShuffledNotMarkedWords(int take)
+	private IEnumerable<DiactricalMarkWordResource> GetShuffledNotMarkedWords(int take)
 	{
 		return GetShuffledWords(
 			_diactricalMarkWordResource.NotMarkedWords,
@@ -105,12 +101,10 @@ public sealed class WordServerManager
 			subCatType => _diactricalMarkWordResource.MarkedWordsByRule[subCatType]);
 	}
 
-	private IEnumerable<SpellingRuleWordResource> GetUnlockedSpellingRuleWordsForUser()
-	{
+	private IEnumerable<SpellingRuleWordResource> GetUnlockedSpellingRuleWordsForUser() =>
 		//return _userDataInfo.UnlockedSpellingRuleRuleTypes.SelectMany(
 		//    ruleType => _spellingRulesResource.WordsByRule[ruleType]);
-		return _spellingRulesResource.WordsByRule.Values.SelectMany(v => v);
-	}
+		_spellingRulesResource.WordsByRule.Values.SelectMany(v => v);
 
 	private IEnumerable<TWord> GetShuffledWords<TWord>(IEnumerable<TWord> words, int take)
 	{

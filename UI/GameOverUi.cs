@@ -22,10 +22,7 @@ public sealed partial class GameOverUi : Control
 		};
 	}
 
-	private void OnMainNodeReady()
-	{
-		AnimationPlayer.AnimationFinished += OnAnimationFinished;
-	}
+	private void OnMainNodeReady() => AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
 	private void OnAnimationFinished(StringName animationName)
 	{
@@ -35,8 +32,5 @@ public sealed partial class GameOverUi : Control
 		}
 	}
 
-	public void Open()
-	{
-		AnimationPlayer.Play(UiAnimations.OnGameOverStart);
-	}
+	public void Open() => AnimationPlayer.Play(UiAnimations.OnGameOverStart);
 }

@@ -2,6 +2,6 @@
 
 public partial class BaseDataResource : Resource
 {
-    [Signal]
-    public delegate void OnSaveChangesSignalEventHandler();
+	[Signal]
+	public delegate void OnSaveChangesSignalEventHandler();
 }

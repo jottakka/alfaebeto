@@ -44,20 +44,11 @@ public sealed partial class Player : CharacterBody2D
 		HealthComponent.OnHealthDepletedSignal += OnDeath;
 	}
 
-	public override void _PhysicsProcess(double delta)
-	{
-		PhysicsProcessInternal((float)delta);
-	}
+	public override void _PhysicsProcess(double delta) => PhysicsProcessInternal((float)delta);
 
-	public void AddMoney(long money)
-	{
-		_ = EmitSignal(nameof(OnMoneyChangedSignal), money);
-	}
+	public void AddMoney(long money) => _ = EmitSignal(nameof(OnMoneyChangedSignal), money);
 
-	public void AddGem(GemType gemType)
-	{
-		_ = EmitSignal(nameof(OnGemAddedSignal), (int)gemType);
-	}
+	public void AddGem(GemType gemType) => _ = EmitSignal(nameof(OnGemAddedSignal), (int)gemType);
 
 	private void SettingCollisions()
 	{
@@ -101,10 +92,7 @@ public sealed partial class Player : CharacterBody2D
 		UpdateShieldPositionWhenActive();
 	}
 
-	private void OnCollisionHandler(KinematicCollision2D collisionInfo, CharacterBody2D body)
-	{
-		body.GlobalPosition += collisionInfo.GetNormal() * 40.0f;
-	}
+	private void OnCollisionHandler(KinematicCollision2D collisionInfo, CharacterBody2D body) => body.GlobalPosition += collisionInfo.GetNormal() * 40.0f;
 
 	private void UpdatePlayerPositionWhenShieldActive()
 	{
@@ -126,10 +114,7 @@ public sealed partial class Player : CharacterBody2D
 		}
 	}
 
-	private void OnDeath()
-	{
-		_ = EmitSignal(nameof(OnPlayerDeathSignal));
-	}
+	private void OnDeath() => _ = EmitSignal(nameof(OnPlayerDeathSignal));
 
 	private void OnHurt(Area2D enemyArea)
 	{

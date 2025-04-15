@@ -34,10 +34,7 @@ public sealed partial class RuleCategoryListItem : MarginContainer
 	private Array<SpellingRuleRuleType> _unlockedSpellingRuleRules =>
 		Global.Instance.UserDataInfoResource.UnlockedSpellingRuleRuleTypes;
 
-	public override void _Ready()
-	{
-		ProcessMode = ProcessModeEnum.Always;
-	}
+	public override void _Ready() => ProcessMode = ProcessModeEnum.Always;
 
 	public void SetData(CategoryType category, IEnumerable<BaseRuleSetItemResource> ruleSets, bool isStoreScene)
 	{

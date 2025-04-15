@@ -55,8 +55,5 @@ public sealed partial class Laser : Area2D
 		Position += new Vector2(0, -(Speed * (float)delta));
 	}
 
-	private void OnScreenExited()
-	{
-		QueueFree();
-	}
+	private void OnScreenExited() => QueueFree();
 }

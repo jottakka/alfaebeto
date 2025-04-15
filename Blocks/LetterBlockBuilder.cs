@@ -29,10 +29,7 @@ public sealed class LetterBlockBuilder
 		return letterBlock;
 	}
 
-	public LetterBlock BuildLetterBlock(char letter, Vector2 position, bool isTarget)
-	{
-		return BuildLetterBlock(letter.ToString(), position, isTarget);
-	}
+	public LetterBlock BuildLetterBlock(char letter, Vector2 position, bool isTarget) => BuildLetterBlock(letter.ToString(), position, isTarget);
 
 	public NoLetterBlock BuildNoLetterBlock(Vector2 position, bool isTarget)
 	{

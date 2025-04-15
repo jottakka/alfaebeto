@@ -21,10 +21,7 @@ public sealed partial class GemsUi : MarginContainer
 		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
 	}
 
-	private void OnMainNodeReady()
-	{
-		_player.OnGemAddedSignal += OnGemsChanged;
-	}
+	private void OnMainNodeReady() => _player.OnGemAddedSignal += OnGemsChanged;
 
 	private void OnGemsChanged(GemType gemType)
 	{
@@ -50,8 +47,5 @@ public sealed partial class GemsUi : MarginContainer
 		RedGemLabel.Text = GetString(_redGems);
 	}
 
-	private string GetString(int count)
-	{
-		return $"{count:000}";
-	}
+	private string GetString(int count) => $"{count:000}";
 }

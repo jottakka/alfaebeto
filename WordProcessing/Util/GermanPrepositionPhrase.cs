@@ -56,23 +56,20 @@ public record GermanPrepositionPhrase
 	/// </summary>
 	public int CorrectOptionIndex { get; set; }
 
-	public override string ToString()
-	{
-		return $"{Preposition} ... {Noun} (Case: {GovernedCase}, Gender: {Gender}) Options: [{Options[0]}, {Options[1]}] Correct Idx: {CorrectOptionIndex}";
-	}
+	public override string ToString() => $"{Preposition} ... {Noun} (Case: {GovernedCase}, Gender: {Gender}) Options: [{Options[0]}, {Options[1]}] Correct Idx: {CorrectOptionIndex}";
 }
 
 public static class GermanPhraseGenerator
 {
 	// All possible singular definite article forms
-	private static readonly List<string> _allArticles = new List<string> { "der", "die", "das", "den", "dem", "des" };
-	private static readonly Random _random = new Random();
+	private static readonly List<string> _allArticles = ["der", "die", "das", "den", "dem", "des"];
+	private static readonly Random _random = new();
 
 	// Helper to get one random incorrect article, different from the correct one
 	private static string GetRandomDistractor(string correctArticle)
 	{
 		// Get all articles except the correct one
-		List<string> possibleDistractors = _allArticles.Except(new List<string> { correctArticle }).ToList();
+		List<string> possibleDistractors = _allArticles.Except([correctArticle]).ToList();
 		if (!possibleDistractors.Any())
 		{
 			// Should not happen with standard articles, but as a fallback
@@ -112,8 +109,7 @@ public static class GermanPhraseGenerator
 	}
 
 	private static readonly List<(string Prep, string Noun, NounGender Gen, GrammaticalCase Case)> _phraseData =
-	new List<(string Prep, string Noun, NounGender Gen, GrammaticalCase Case)>
-	{
+	[
              // --- Dative Prepositions ---
             ("mit", "Mann", NounGender.Masculine, GrammaticalCase.Dative),
 			("mit", "Auto", NounGender.Neuter, GrammaticalCase.Dative),
@@ -180,8 +176,7 @@ public static class GermanPhraseGenerator
 			("anstatt", "Kaffee", NounGender.Masculine, GrammaticalCase.Genitive),
 			("innerhalb", "Gebäude", NounGender.Neuter, GrammaticalCase.Genitive),
 			("außerhalb", "Stadt", NounGender.Feminine, GrammaticalCase.Genitive)
-	};
-
+	];
 
 	/// <summary>
 	/// Gets a single, randomly selected German preposition phrase with options.
@@ -198,7 +193,7 @@ public static class GermanPhraseGenerator
 
 		// 1. Select random base data
 		int randomIndex = _random.Next(_phraseData.Count);
-		var data = _phraseData[randomIndex];
+		(string Prep, string Noun, NounGender Gen, GrammaticalCase Case) data = _phraseData[randomIndex];
 
 		// 2. Determine correct article
 		string correctArticle = GetCorrectArticle(data.Gen, data.Case);
@@ -213,7 +208,7 @@ public static class GermanPhraseGenerator
 		string wrongArticle = GetRandomDistractor(correctArticle);
 
 		// 4. Create the phrase object
-		var phrase = new GermanPrepositionPhrase
+		GermanPrepositionPhrase phrase = new()
 		{
 			Preposition = data.Prep,
 			Noun = data.Noun,
@@ -239,7 +234,6 @@ public static class GermanPhraseGenerator
 		return phrase;
 	}
 
-
 	/// <summary>
 	/// Generates the complete list of phrase objects with randomized options.
 	/// Useful for debugging or specific scenarios, but GetRandomPhrase() is
@@ -248,18 +242,24 @@ public static class GermanPhraseGenerator
 	/// <returns>A list of all generated GermanPrepositionPhrase objects.</returns>
 	public static List<GermanPrepositionPhrase> GetAllGeneratedPhrases()
 	{
-		var generatedPhrases = new List<GermanPrepositionPhrase>();
+		List<GermanPrepositionPhrase> generatedPhrases = [];
 
-		if (_phraseData == null) return generatedPhrases; // Return empty list if no base data
+		if (_phraseData == null)
+		{
+			return generatedPhrases; // Return empty list if no base data
+		}
 
-		foreach (var data in _phraseData)
+		foreach ((string Prep, string Noun, NounGender Gen, GrammaticalCase Case) data in _phraseData)
 		{
 			string correctArticle = GetCorrectArticle(data.Gen, data.Case);
-			if (correctArticle == "?") continue; // Skip if article couldn't be determined
+			if (correctArticle == "?")
+			{
+				continue; // Skip if article couldn't be determined
+			}
 
 			string wrongArticle = GetRandomDistractor(correctArticle);
 
-			var phrase = new GermanPrepositionPhrase
+			GermanPrepositionPhrase phrase = new()
 			{
 				Preposition = data.Prep,
 				Noun = data.Noun,
@@ -280,8 +280,10 @@ public static class GermanPhraseGenerator
 				phrase.Options[1] = correctArticle;
 				phrase.CorrectOptionIndex = 1;
 			}
+
 			generatedPhrases.Add(phrase);
 		}
+
 		return generatedPhrases;
 	}
 }

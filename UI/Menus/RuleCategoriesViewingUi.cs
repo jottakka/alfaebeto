@@ -15,10 +15,7 @@ public sealed partial class RuleCategoriesViewingUi : Control
 
 	private RulesResource _rulesResource => Global.Instance.RulesResource;
 
-	public override void _Ready()
-	{
-		ExitButton.Pressed += QueueFree;
-	}
+	public override void _Ready() => ExitButton.Pressed += QueueFree;
 
 	public void SetData(bool isStore)
 	{

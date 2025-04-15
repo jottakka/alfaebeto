@@ -31,23 +31,11 @@ public sealed partial class EnemyHurtBox : Area2D
 		}
 	}
 
-	public void DeactivateCollisions()
-	{
-		this.ResetCollisionLayerAndMask();
-	}
+	public void DeactivateCollisions() => this.ResetCollisionLayerAndMask();
 
-	private void SetHurtBoxForRegularEnemy()
-	{
-		this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
-	}
+	private void SetHurtBoxForRegularEnemy() => this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
 
-	private void SetHurtBoxForWordsEnemy()
-	{
-		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
-	}
+	private void SetHurtBoxForWordsEnemy() => this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
 
-	private void SetHurtBoxForMeteorEnemy()
-	{
-		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemyHurtBox);
-	}
+	private void SetHurtBoxForMeteorEnemy() => this.ActivateCollisionLayer(CollisionLayers.MeteorEnemyHurtBox);
 }

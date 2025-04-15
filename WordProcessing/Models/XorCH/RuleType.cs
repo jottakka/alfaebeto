@@ -2,11 +2,11 @@
 
 public enum RuleType
 {
-    VerboEncher,
-    UsadoAposDitongos,
-    OrigemIndigenaAfricanaInglesa,
-    AposEn,
-    RepresentaSomKs,
-    ChSomSh,
-    OrigemEstrangeiraAdaptada
+	VerboEncher,
+	UsadoAposDitongos,
+	OrigemIndigenaAfricanaInglesa,
+	AposEn,
+	RepresentaSomKs,
+	ChSomSh,
+	OrigemEstrangeiraAdaptada
 }

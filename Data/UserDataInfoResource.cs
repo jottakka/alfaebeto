@@ -19,21 +19,18 @@ public sealed partial class UserDataInfoResource : BaseDataResource
 	[Export]
 	public int TotalRedKeyGemsAmmount { get; set; } = 0;
 	[Export]
-	public Array<DiactricalMarkRuleType> UnlockedDiactricalMarksSubCategories { get; set; } = new();
+	public Array<DiactricalMarkRuleType> UnlockedDiactricalMarksSubCategories { get; set; } = [];
 	[Export]
-	public Array<SpellingRuleRuleType> UnlockedSpellingRuleRuleTypes { get; set; } = new();
+	public Array<SpellingRuleRuleType> UnlockedSpellingRuleRuleTypes { get; set; } = [];
 	[Export]
 	public DiactricalMarkRuleItemResource[] DiactricalMarkRuleItems { get; set; } = System.Array.Empty<DiactricalMarkRuleItemResource>();
 	[Export]
 	public SpellingRuleRuleItemResource[] SpellingRuleRuleItems { get; set; } = System.Array.Empty<SpellingRuleRuleItemResource>();
 	[Export]
-	public Dictionary<CategoryType, WordCategoryInfoResource> WordsCategoryInfos { get; set; } = new();
+	public Dictionary<CategoryType, WordCategoryInfoResource> WordsCategoryInfos { get; set; } = [];
 
 	private readonly WordAccuracyInfoManager _wordAccuracyInfoManager;
-	public UserDataInfoResource()
-	{
-		_wordAccuracyInfoManager = new WordAccuracyInfoManager(this);
-	}
+	public UserDataInfoResource() => _wordAccuracyInfoManager = new WordAccuracyInfoManager(this);
 
 	public void UpdateWithGameResult(GameResultData gameResultData)
 	{
@@ -45,8 +42,5 @@ public sealed partial class UserDataInfoResource : BaseDataResource
 		_ = EmitSignal(nameof(OnSaveChangesSignal));
 	}
 
-	public void Update()
-	{
-		_ = EmitSignal(nameof(OnSaveChangesSignal));
-	}
+	public void Update() => _ = EmitSignal(nameof(OnSaveChangesSignal));
 }

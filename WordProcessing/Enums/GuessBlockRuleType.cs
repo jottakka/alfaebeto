@@ -2,12 +2,12 @@
 
 public enum GuessBlockRuleType
 {
-    GuessRomangiFromHiraganaOptions,
-    GuessRomangiFromKatakanaOptions,
-    GuessHiraganaFromRomangiOptions,
-    GuessHiraganaFromKatakanaOptions,
-    GuessKatakanaFromRomangiOptions,
-    GuessKatakanaFromHiraganaOptions,
-    GuessKanjiFromHiraganaOptions,
-    GuessHiraganaFromKanjiOptions,
+	GuessRomangiFromHiraganaOptions,
+	GuessRomangiFromKatakanaOptions,
+	GuessHiraganaFromRomangiOptions,
+	GuessHiraganaFromKatakanaOptions,
+	GuessKatakanaFromRomangiOptions,
+	GuessKatakanaFromHiraganaOptions,
+	GuessKanjiFromHiraganaOptions,
+	GuessHiraganaFromKanjiOptions,
 }

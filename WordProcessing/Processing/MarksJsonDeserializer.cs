@@ -5,16 +5,16 @@ namespace WordProcessing.Processing;
 
 public static class MarksJsonDeserializer
 {
-    public static DiactricalMarkCategories DeserializeJsonString(string jsonString)
-    {
-        JsonSerializerOptions options = new()
-        {
-            Converters = { new DiactricalMarkWordListConverter() },
-            WriteIndented = true
-        };
+	public static DiactricalMarkCategories DeserializeJsonString(string jsonString)
+	{
+		JsonSerializerOptions options = new()
+		{
+			Converters = { new DiactricalMarkWordListConverter() },
+			WriteIndented = true
+		};
 
-        DiactricalMarkCategories categorias = JsonSerializer.Deserialize<DiactricalMarkCategories>(jsonString, options);
+		DiactricalMarkCategories categorias = JsonSerializer.Deserialize<DiactricalMarkCategories>(jsonString, options);
 
-        return categorias;
-    }
+		return categorias;
+	}
 }

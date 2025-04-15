@@ -21,8 +21,8 @@ public sealed record GuessArticleWordResource
 
 public static class GermanGenderResourceProvider
 {
-	private static readonly List<GermanWordResource> Words = new()
-	{
+	private static readonly List<GermanWordResource> Words =
+	[
         // Masculine (Der)
         new("Apfel", "Der"), new("Baum", "Der"), new("Ball", "Der"), new("Berg", "Der"),
 		new("Hund", "Der"), new("Vogel", "Der"), new("Stuhl", "Der"), new("Tisch", "Der"),
@@ -58,14 +58,14 @@ public static class GermanGenderResourceProvider
 		new("Gesicht", "Das"), new("Tier", "Das"), new("Baby", "Das"), new("Museum", "Das"),
 		new("Land", "Das"), new("Zelt", "Das"), new("Geld", "Das"), new("Problem", "Das"),
 		new("Feuer", "Das"), new("Kissen", "Das"), new("Geschenk", "Das"), new("Fahrrad", "Das")
-	};
+	];
 
 	private static readonly string[] AllOptions = ["Der", "Die", "Das"];
 	private static readonly Random _rng = new();
 
 	public static GuessArticleWordResource GetRandomResource()
 	{
-		var word = Words[_rng.Next(Words.Count)];
+		GermanWordResource word = Words[_rng.Next(Words.Count)];
 		int correctIdx = Array.IndexOf(AllOptions, word.Article);
 
 		return new GuessArticleWordResource

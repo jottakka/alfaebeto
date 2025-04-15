@@ -23,16 +23,9 @@ public sealed partial class TurrentBase : Area2D
 		CooldownTimer.Timeout += CooldownTimerTimeout;
 	}
 
-	public void AllowShoot()
-	{
-		_isAllowedToShoot = true;
+	public void AllowShoot() => _isAllowedToShoot = true;
 
-	}
-
-	public void DesallowShoot()
-	{
-		_isAllowedToShoot = false;
-	}
+	public void DesallowShoot() => _isAllowedToShoot = false;
 
 	public void Shoot()
 	{
@@ -42,15 +35,9 @@ public sealed partial class TurrentBase : Area2D
 		}
 	}
 
-	public void OnAnimationShootReady()
-	{
-		_ = EmitSignal(nameof(ShootPointReachedSignal));
-	}
+	public void OnAnimationShootReady() => _ = EmitSignal(nameof(ShootPointReachedSignal));
 
-	private void CooldownTimerTimeout()
-	{
-		_isCooldownTimoutFinished = true;
-	}
+	private void CooldownTimerTimeout() => _isCooldownTimoutFinished = true;
 
 	private void OnAnimationFinished(StringName animationFinished)
 	{

@@ -26,24 +26,12 @@ public sealed partial class EnemySpawner : Area2D
 		};
 	}
 
-	public void AllowSpawn()
-	{
-		_ = EmitSignal(nameof(OnSpawnerPermissionChangeSignal), true);
-	}
+	public void AllowSpawn() => _ = EmitSignal(nameof(OnSpawnerPermissionChangeSignal), true);
 
-	public void DesallowSpawn()
-	{
-		_ = EmitSignal(nameof(OnSpawnerPermissionChangeSignal), false);
-	}
+	public void DesallowSpawn() => _ = EmitSignal(nameof(OnSpawnerPermissionChangeSignal), false);
 
-	public void StartSpawn()
-	{
-		AnimationPlayer.Play(EnemyPartAnimations.SpawnEnemy);
-	}
+	public void StartSpawn() => AnimationPlayer.Play(EnemyPartAnimations.SpawnEnemy);
 
-	public void OnSpawnEnemyAnimationPointReady()
-	{
-		_ = EmitSignal(nameof(OnSpawnEnemyReadySignal));
-	}
+	public void OnSpawnEnemyAnimationPointReady() => _ = EmitSignal(nameof(OnSpawnEnemyReadySignal));
 }
 

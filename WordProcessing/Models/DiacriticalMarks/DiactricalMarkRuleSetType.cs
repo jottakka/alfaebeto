@@ -2,10 +2,10 @@
 
 public enum DiactricalMarkRuleSetType
 {
-    MonossilabasTonicas,
-    Oxiotonas,
-    Paroxitonas,
-    Proparoxitonas,
-    DitongosAbertos,
-    HiatosIeUTonicos
+	MonossilabasTonicas,
+	Oxiotonas,
+	Paroxitonas,
+	Proparoxitonas,
+	DitongosAbertos,
+	HiatosIeUTonicos
 }

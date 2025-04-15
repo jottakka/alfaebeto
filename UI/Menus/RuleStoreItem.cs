@@ -61,10 +61,7 @@ public sealed partial class RuleStoreItem : MarginContainer
 		VerifyIfEnoughtGems(totalGems);
 	}
 
-	public void OnMaxGemsAvailableAmmountChanged(int totalGems)
-	{
-		VerifyIfEnoughtGems(totalGems);
-	}
+	public void OnMaxGemsAvailableAmmountChanged(int totalGems) => VerifyIfEnoughtGems(totalGems);
 
 	private void VerifyIfEnoughtGems(int totalGems)
 	{

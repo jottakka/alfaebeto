@@ -11,10 +11,7 @@ public sealed partial class StageBase : Node2D
 	[Export]
 	public SceneEnemySpawnerComponent SceneEnemySpawnerComponent { get; set; }
 
-	public override void _Process(double delta)
-	{
-		UpdateParallaxOffset(delta);
-	}
+	public override void _Process(double delta) => UpdateParallaxOffset(delta);
 
 	private void UpdateParallaxOffset(double delta)
 	{

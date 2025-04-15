@@ -7,14 +7,8 @@ public sealed partial class TurrentWing : Area2D
 	[Export]
 	public TurrentBase Turrent { get; set; }
 
-	public void AllowShoot()
-	{
-		Turrent.AllowShoot();
-	}
+	public void AllowShoot() => Turrent.AllowShoot();
 
-	public void DesallowShoot()
-	{
-		Turrent.DesallowShoot();
-	}
+	public void DesallowShoot() => Turrent.DesallowShoot();
 }
 

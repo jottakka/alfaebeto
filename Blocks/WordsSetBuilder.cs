@@ -4,10 +4,7 @@ public sealed class WordsSetBuilder
 {
 	private readonly PackedScene _wordsSetPackedScene;
 
-	public WordsSetBuilder(PackedScene packedScene)
-	{
-		_wordsSetPackedScene = packedScene;
-	}
+	public WordsSetBuilder(PackedScene packedScene) => _wordsSetPackedScene = packedScene;
 
 	public WordsSet BuildWordSet(GuessBlockWordResource guessBlockWord, Vector2 startPosition)
 	{

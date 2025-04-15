@@ -32,8 +32,5 @@ public sealed partial class HurtComponent : Node
 		}
 	}
 
-	public void OnHurtStateFinished()
-	{
-		IsHurt = false;
-	}
+	public void OnHurtStateFinished() => IsHurt = false;
 }

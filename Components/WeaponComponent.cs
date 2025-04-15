@@ -42,9 +42,6 @@ public sealed partial class WeaponComponent : Node
 		CooldownTimer.Start();
 	}
 
-	private void OnCooldownTimeout()
-	{
-		_isWaitingCooldown = false;
-	}
+	private void OnCooldownTimeout() => _isWaitingCooldown = false;
 }
 

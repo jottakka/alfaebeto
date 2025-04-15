@@ -22,7 +22,7 @@ public sealed partial class MainMenuUi : Node
 		};
 
 		StoreButton.Pressed += () =>
-		{ 
+		{
 			UiComponent.OpenRuleStoreUi();
 		};
 

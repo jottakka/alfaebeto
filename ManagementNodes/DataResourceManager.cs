@@ -17,7 +17,6 @@ public sealed class DataResourceManager
 	private string _wordsDataOriginalFilePath => Path.Combine(_saveDataBasePath, _wordsDataFileName);
 	private string _spellingRuleWordsDataFilePath => Path.Combine(_saveDataBasePath, _spellingRuleWordsDataFileName);
 
-
 	private readonly RulesResource _rulesOriginalResource;
 	private readonly UserDataInfoResource _userDataOriginalInfoResource;
 
@@ -29,9 +28,9 @@ public sealed class DataResourceManager
 
 	public DiactricalMarkWordsDataResource DiactricalMarkWordsDataResource { get; }
 
-    public GuessBlockWordsDataResource GuessBlocksWordsDataResource { get; }
+	public GuessBlockWordsDataResource GuessBlocksWordsDataResource { get; }
 
-    public DataResourceManager()
+	public DataResourceManager()
 	{
 		_userDataOriginalInfoResource = ResourceLoader.Load<UserDataInfoResource>(_userDataOriginalFilePath);
 

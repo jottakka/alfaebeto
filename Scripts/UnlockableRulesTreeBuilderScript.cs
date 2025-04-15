@@ -1,7 +1,6 @@
 using System.IO;
 using System.Linq;
 using Godot;
-using Godot.Collections;
 using WordProcessing.Models.DiacriticalMarks;
 using WordProcessing.Models.Rules;
 using WordProcessing.Models.SpellingRules;
@@ -65,7 +64,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 			Description = c.Description,
 			RuleSet = c.Name,
 			RuleSetType = c.Type,
-			Rules = new Array<DiactricalMarkRuleItemResource>(c.Subcategories.Select(sc =>
+			Rules = [.. c.Subcategories.Select(sc =>
 			new DiactricalMarkRuleItemResource
 			{
 				CategoryType = CategoryType.Acentuation,
@@ -78,7 +77,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 				Examples = sc.Words.Take(3).Select(s => s.Original).ToArray(),
 				IsUnlocked = genCostMultiplier == 0,
 				KeyGemCost = startGenCost + (genCostMultiplier++ * genCostIncrement)
-			}))
+			})]
 		}).ToArray();
 
 		DiactricalMarkRuleItemResource[] flatRuleItems = diactricalMarkRuleSets.SelectMany(r => r.Rules).ToArray();
@@ -104,7 +103,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 				CategoryType = cat.RuleCategoryType,
 				RuleSet = set.Name,
 				RuleSetType = set.RuleSetType,
-				Rules = new Array<SpellingRuleRuleItemResource>(set.Rules.Select(rule =>
+				Rules = [.. set.Rules.Select(rule =>
 					new SpellingRuleRuleItemResource
 					{
 						CategoryType = cat.RuleCategoryType,
@@ -117,7 +116,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 						Examples = rule.Words.Take(3).Select(s => s.Original).ToArray(),
 						IsUnlocked = genCostMultiplier == 0,
 						KeyGemCost = startGenCost + (genCostMultiplier++ * genCostIncrement)
-					}))
+					})]
 			})).ToArray();
 
 		SpellingRuleRuleItemResource[] flatRuleItems = ruleSets.SelectMany(r => r.Rules).ToArray();
@@ -163,12 +162,12 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 
 		DiactricalMarkWordsDataResource wordsResource = new()
 		{
-			NotMarkedWords = new Array<DiactricalMarkWordResource>(noMarkWords),
+			NotMarkedWords = [.. noMarkWords],
 		};
 
 		foreach ((DiactricalMarkRuleType type, DiactricalMarkWordResource[] words) in markedWords)
 		{
-			wordsResource.MarkedWordsByRule.Add(type, new Array<DiactricalMarkWordResource>(words));
+			wordsResource.MarkedWordsByRule.Add(type, [.. words]);
 		}
 		// Save the resource to a .tres file
 		string userDataSavePath = "res://SaveFiles/words_data.tres";
@@ -215,7 +214,7 @@ public sealed partial class UnlockableRulesTreeBuilderScript : Node
 		SpellingRulesResource wordsResource = new();
 		foreach ((SpellingRuleRuleType type, SpellingRuleWordResource[] words) in spellingRuleWords)
 		{
-			wordsResource.WordsByRule.Add(type, new Array<SpellingRuleWordResource>(words));
+			wordsResource.WordsByRule.Add(type, [.. words]);
 		}
 		// Save the resource to a .tres file
 		string userDataSavePath = "res://SaveFiles/spelling_rule_words_data.tres";

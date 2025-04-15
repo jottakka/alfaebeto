@@ -7,10 +7,7 @@ public partial class WordsSetBuilderComponent : Node
 
 	private static WordsSetBuilder _wordsSetBuilder = null;
 
-	public override void _Ready()
-	{
-		_wordsSetBuilder ??= new WordsSetBuilder(WordsSetPackedScene);
-	}
+	public override void _Ready() => _wordsSetBuilder ??= new WordsSetBuilder(WordsSetPackedScene);
 
 	public WordsSet BuildWordsSet(GuessBlockWordResource guessBlockInfo, Vector2 position, int numberOfWrongOptions)
 	{

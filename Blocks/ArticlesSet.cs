@@ -76,7 +76,7 @@ public partial class ArticlesSet : Node2D
 			isTarget: isTarget
 		);
 
-		if(idx == 0)
+		if (idx == 0)
 		{
 			letterBlock.OnReadyToDequeueSignal += () =>
 			{

@@ -7,10 +7,7 @@ public partial class WordBuilderComponent : Node
 
 	private static WordBuilder _wordBuilder = null;
 
-	public override void _Ready()
-	{
-		_wordBuilder ??= new WordBuilder(WordPackedScene);
-	}
+	public override void _Ready() => _wordBuilder ??= new WordBuilder(WordPackedScene);
 
 	public Word BuildWord(DiactricalMarkWordResource wordInfo, Vector2 position)
 	{

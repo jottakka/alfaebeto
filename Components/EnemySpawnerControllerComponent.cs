@@ -50,10 +50,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 		CooldownTimer.Start();
 	}
 
-	private double GetRandomCooldownTime()
-	{
-		return GD.Randfn(BaseCooldown, CooldownVariance);
-	}
+	private double GetRandomCooldownTime() => GD.Randfn(BaseCooldown, CooldownVariance);
 
 	private void SpawnProjectile()
 	{

@@ -26,16 +26,10 @@ public partial class BaseRuleItemResource
 	public delegate void OnUnlockSignalEventHandler();
 
 	public virtual TRuleType GetRuleTypeEnum<TRuleType>()
-	where TRuleType : Enum
-	{
-		throw new NotImplementedException("This resource should not be used, only its derived classes");
-	}
+	where TRuleType : Enum => throw new NotImplementedException("This resource should not be used, only its derived classes");
 
 	public virtual TRuleSetType GetRuleSetTypeEnum<TRuleSetType>()
-		where TRuleSetType : Enum
-	{
-		throw new NotImplementedException("This resource should not be used, only its derived classes");
-	}
+		where TRuleSetType : Enum => throw new NotImplementedException("This resource should not be used, only its derived classes");
 
 	public void Unlock()
 	{

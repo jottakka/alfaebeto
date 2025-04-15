@@ -16,10 +16,7 @@ public sealed partial class HitBox : Area2D
 		}
 	}
 
-	public void DeactivateCollisions()
-	{
-		this.ResetCollisionLayerAndMask();
-	}
+	public void DeactivateCollisions() => this.ResetCollisionLayerAndMask();
 
 	public void ActivateCollisionsMasks()
 	{

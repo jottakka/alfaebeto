@@ -43,10 +43,7 @@ public partial class AmmoBase : Area2D
 		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHitBox);
 	}
 
-	public override void _PhysicsProcess(double delta)
-	{
-		Position += _direction * Speed * (float)delta;
-	}
+	public override void _PhysicsProcess(double delta) => Position += _direction * Speed * (float)delta;
 
 	private void OnAreaEntered(Area2D area)
 	{
@@ -63,9 +60,6 @@ public partial class AmmoBase : Area2D
 		}
 	}
 
-	private void OnScreenExited()
-	{
-		QueueFree();
-	}
+	private void OnScreenExited() => QueueFree();
 }
 

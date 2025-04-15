@@ -5,5 +5,5 @@ using WordProcessing.Models.DiacriticalMarks;
 public sealed partial class GuessBlockWordsDataResource : Resource
 {
 	[Export]
-	public Dictionary<DiactricalMarkRuleType, Array<GuessBlockWordResource>> GuessBlockWords { get; set; } = new();
+	public Dictionary<DiactricalMarkRuleType, Array<GuessBlockWordResource>> GuessBlockWords { get; set; } = [];
 }

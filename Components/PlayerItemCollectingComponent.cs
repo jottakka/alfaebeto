@@ -30,15 +30,9 @@ public sealed partial class PlayerItemCollectingComponent : Node
 		}
 	}
 
-	private void CollectHealthItem(CollectableHealthItem healthItem)
-	{
-		_player.HealthComponent.Heal(healthItem.HealingPoints);
-	}
+	private void CollectHealthItem(CollectableHealthItem healthItem) => _player.HealthComponent.Heal(healthItem.HealingPoints);
 
-	private void CollectShieldItem(CollectableShieldItem shieldItem)
-	{
-		_player.PlayerShield.AddShieldPoints(shieldItem.ShieldPoints);
-	}
+	private void CollectShieldItem(CollectableShieldItem shieldItem) => _player.PlayerShield.AddShieldPoints(shieldItem.ShieldPoints);
 
 	private void CollectCoin(CollectableCoin coin)
 	{

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Godot;
+﻿using Godot;
 
 namespace AlfaEBetto.Blocks;
 public static class GermanGenderExtensions
@@ -14,20 +9,13 @@ public static class GermanGenderExtensions
 	/// </summary>
 	public static Color ToColor(this WordGender gender)
 	{
-		switch (gender)
+		return gender switch
 		{
-			case WordGender.Masculine:
-				// A medium-blue shade
-				return new Color("#2E86C1");
-			case WordGender.Feminine:
-				// A moderately bright red shade
-				return new Color("#C0392B");
-			case WordGender.Neuter:
-				// A green shade
-				return new Color("#27AE60");
-			default:
-				// Fallback color
-				return new Color("#000000"); // black
-		}
+			WordGender.Masculine => new Color("#2E86C1"),// A medium-blue shade
+			WordGender.Feminine => new Color("#C0392B"),// A moderately bright red shade
+			WordGender.Neuter => new Color("#27AE60"),// A green shade
+			_ => new Color("#000000"),// Fallback color
+									  // black
+		};
 	}
 }

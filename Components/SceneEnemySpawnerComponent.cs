@@ -1,7 +1,5 @@
-using Godot;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using Godot;
 using WordProcessing.Enums;
 using Timer = Godot.Timer; // Explicit alias
 
@@ -131,10 +129,15 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	{
 		bool isValid = true;
 		if (SpecialSpawnerPosition == null) { GD.PrintErr($"{Name}: Missing SpecialSpawnerPosition!"); isValid = false; }
+
 		if (SpawnFollowPath == null) { GD.PrintErr($"{Name}: Missing SpawnFollowPath!"); isValid = false; }
+
 		if (RegularEnemySpawnTimer == null) { GD.PrintErr($"{Name}: Missing RegularEnemySpawnTimer!"); isValid = false; }
+
 		if (WordMeteorSpawnTimer == null) { GD.PrintErr($"{Name}: Missing WordMeteorSpawnTimer!"); isValid = false; }
+
 		if (SpecialEnemySpawnTimer == null) { GD.PrintErr($"{Name}: Missing SpecialEnemySpawnTimer!"); isValid = false; }
+
 		return isValid;
 	}
 
@@ -171,7 +174,9 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 		bool scenesValid = true;
 		if (_activeSpecialEnemyScene == null) { GD.PrintErr($"{Name}: Missing Special Enemy scene for {_currentLanguage}!"); scenesValid = false; }
+
 		if (_activeWordMeteorScene == null) { GD.PrintErr($"{Name}: Missing Word Meteor scene for {_currentLanguage}!"); scenesValid = false; }
+
 		if (_activeRegularEnemyScenes == null || _activeRegularEnemyScenes.Length == 0) { GD.PushWarning($"{Name}: Regular Enemies array is null or empty for {_currentLanguage}. No regular enemies will spawn."); }
 
 		return scenesValid;
@@ -181,27 +186,27 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 	private void StartTimerRandomized(Timer timer, double minWait, double maxWait)
 	{
-		if (timer == null || IsDeactived) return;
+		if (timer == null || IsDeactived)
+		{
+			return;
+		}
+
 		timer.WaitTime = GD.RandRange(minWait, maxWait);
 		timer.Start();
 	}
 
 	// --- Spawning Methods ---
 
-	private void SpawnRegularEnemy()
-	{
-		SpawnRandomFromPack(_activeRegularEnemyScenes, GetNewTopSpawnPathRandPosition());
-	}
+	private void SpawnRegularEnemy() => SpawnRandomFromPack(_activeRegularEnemyScenes, GetNewTopSpawnPathRandPosition());
 
-	private void SpawnAmbientMeteor()
-	{
-		SpawnRandomFromPack(MeteorPackedScenes, GetNewTopSpawnPathRandPosition());
-	}
-
+	private void SpawnAmbientMeteor() => SpawnRandomFromPack(MeteorPackedScenes, GetNewTopSpawnPathRandPosition());
 
 	private void SpawnConfiguredSpecialEnemy()
 	{
-		if (_parent == null || IsDeactived || _activeSpecialEnemyScene == null) return;
+		if (_parent == null || IsDeactived || _activeSpecialEnemyScene == null)
+		{
+			return;
+		}
 
 		SpecialEnemySpawnTimer.Stop();
 
@@ -243,12 +248,12 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 		}
 		// --- End Signal Connection Section ---
 
-
 		if (enemyNode != null)
 		{
 			if (enemyNode is Node2D enemyNode2D)
 			{
 				if (SpecialSpawnerPosition == null) { GD.PrintErr("SpecialSpawnerPosition is null!"); enemyNode.QueueFree(); return; }
+
 				enemyNode2D.Position = SpecialSpawnerPosition.Position;
 				_parent.CallDeferred(Node.MethodName.AddChild, enemyNode);
 				_currentState = States.SpecialEnemyAlive;
@@ -283,7 +288,8 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 		if (meteorNode is Node2D meteorNode2D)
 		{
 			if (SpecialSpawnerPosition == null) { GD.PrintErr("SpecialSpawnerPosition is null!"); meteorNode.QueueFree(); return; }
-			Vector2 randomHorizontalVariation = new Vector2((float)GD.RandRange(-75.0f, 75.0f), 0.0f);
+
+			Vector2 randomHorizontalVariation = new((float)GD.RandRange(-75.0f, 75.0f), 0.0f);
 			meteorNode2D.Position = SpecialSpawnerPosition.Position + randomHorizontalVariation;
 			_parent.CallDeferred(Node.MethodName.AddChild, meteorNode);
 		}
@@ -335,18 +341,24 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 	private Vector2 GetNewTopSpawnPathRandPosition()
 	{
-		if (SpawnFollowPath == null) return Vector2.Zero;
+		if (SpawnFollowPath == null)
+		{
+			return Vector2.Zero;
+		}
+
 		SpawnFollowPath.ProgressRatio = GD.Randf();
 		return SpawnFollowPath.GlobalPosition;
 	}
-
 
 	// --- Signal Handlers / Timer Callbacks ---
 
 	// Renamed handler to match original convention when using OnQueueFreeSignal
 	private void OnSpecialEnemyFreed() // Connected to "OnQueueFreeSignal"
 	{
-		if (IsDeactived) return;
+		if (IsDeactived)
+		{
+			return;
+		}
 
 		if (_currentState == States.SpecialEnemyAlive)
 		{
@@ -361,21 +373,33 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 
 	private void OnRegularEnemySpawnTimerTimeout()
 	{
-		if (IsDeactived) return;
+		if (IsDeactived)
+		{
+			return;
+		}
+
 		SpawnRegularEnemy();
 		StartTimerRandomized(RegularEnemySpawnTimer, MinRegularEnemySpawnInterval, MaxRegularEnemySpawnInterval);
 	}
 
 	private void OnWordMeteorTimerTimeout()
 	{
-		if (IsDeactived) return;
+		if (IsDeactived)
+		{
+			return;
+		}
+
 		SpawnConfiguredWordMeteor();
 		StartTimerRandomized(WordMeteorSpawnTimer, MinWordMeteorSpawnInterval, MaxWordMeteorSpawnInterval);
 	}
 
 	private void OnSpecialEnemyTimerTimeout()
 	{
-		if (IsDeactived) return;
+		if (IsDeactived)
+		{
+			return;
+		}
+
 		if (_currentState == States.NoSpecialEnemy)
 		{
 			SpawnConfiguredSpecialEnemy();
@@ -386,7 +410,6 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 			GD.PushWarning($"{Name}: SpecialEnemyTimer fired while _currentState was unexpectedly '{_currentState}'. Check logic.");
 		}
 	}
-
 
 	// --- Internal State ---
 	private enum States

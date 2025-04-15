@@ -12,10 +12,7 @@ public sealed partial class TextMeteor : Area2D
 	[Signal]
 	public delegate void ReadyToQueueFreeSignalEventHandler();
 
-	public override void _Ready()
-	{
-		AnimationPlayer.AnimationFinished += OnAnimationFinished;
-	}
+	public override void _Ready() => AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
 	public void Destroy(bool wasTargetDestroied)
 	{

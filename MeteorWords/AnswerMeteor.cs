@@ -1,4 +1,3 @@
-using System.Xml.Linq;
 using Godot;
 
 public sealed partial class AnswerMeteor : StaticBody2D
@@ -48,7 +47,6 @@ public sealed partial class AnswerMeteor : StaticBody2D
 		// Using += here as well for consistency, assuming HurtComponent follows the delegate pattern
 		HurtComponent.OnHurtSignal += OnHurt;
 
-
 		AnimationPlayer?.Play(MeteorAnimations.AnswerMeteorMoving);
 	}
 
@@ -60,6 +58,7 @@ public sealed partial class AnswerMeteor : StaticBody2D
 		{
 			HurtComponent.OnHurtSignal -= OnHurt;
 		}
+
 		if (IsInstanceValid(HealthComponent))
 		{
 			HealthComponent.OnHealthDepletedSignal -= OnHealthDepleted;
@@ -75,7 +74,10 @@ public sealed partial class AnswerMeteor : StaticBody2D
 	public void DestroyCommand()
 	{
 		// Check _isDestroyed flag first for efficiency
-		if (_isDestroyed) return;
+		if (_isDestroyed)
+		{
+			return;
+		}
 
 		// Set flag early to prevent race conditions
 		_isDestroyed = true;
@@ -114,35 +116,42 @@ public sealed partial class AnswerMeteor : StaticBody2D
 	{
 		bool isValid = true;
 		if (HitBox == null) { GD.PrintErr($"{Name}: Missing HitBox!"); isValid = false; }
+
 		if (HurtComponent == null) { GD.PrintErr($"{Name}: Missing HurtComponent!"); isValid = false; }
+
 		if (HurtBox == null) { GD.PrintErr($"{Name}: Missing HurtBox!"); isValid = false; } // Check if both HurtBox and HurtComponent are needed?
+
 		if (CrackSprite2D == null) { GD.PrintErr($"{Name}: Missing CrackSprite2D!"); isValid = false; }
+
 		if (HealthComponent == null) { GD.PrintErr($"{Name}: Missing HealthComponent!"); isValid = false; }
+
 		if (AnimationPlayer == null) { GD.PrintErr($"{Name}: Missing AnimationPlayer!"); isValid = false; }
+
 		if (EffectsPlayer == null) { GD.PrintErr($"{Name}: Missing EffectsPlayer!"); isValid = false; }
+
 		if (OptionText == null) { GD.PrintErr($"{Name}: Missing OptionText!"); isValid = false; }
+
 		return isValid;
 	}
 
-	private void DeactivateBodyCollisions()
-	{
+	private void DeactivateBodyCollisions() =>
 		// Assuming this is an extension method or defined in a base class
 		this.ResetCollisionLayerAndMask();
-	}
 
-	private void ActivateBodyCollisions()
-	{
+	private void ActivateBodyCollisions() =>
 		// Assuming this is an extension method or defined in a base class
 		// Also assuming CollisionLayers enum exists
 		this.ActivateCollisionLayer(CollisionLayers.MeteorEnemy);
-	}
 
 	/// <summary>
 	/// Called by HealthComponent when health reaches zero.
 	/// </summary>
 	private void OnHealthDepleted()
 	{
-		if (_isDestroyed) return; // Prevent multiple triggers
+		if (_isDestroyed)
+		{
+			return; // Prevent multiple triggers
+		}
 
 		_isDestroyed = true;
 		DeactivateBodyCollisions(); // Deactivate static body collision
@@ -164,7 +173,10 @@ public sealed partial class AnswerMeteor : StaticBody2D
 	/// <param name="enemyArea">The area that caused the hurt (e.g., player bullet hitbox).</param>
 	private void OnHurt(Area2D enemyArea)
 	{
-		if (_isDestroyed) return; // Don't take damage if already destroyed
+		if (_isDestroyed)
+		{
+			return; // Don't take damage if already destroyed
+		}
 
 		// Apply damage via HealthComponent (ensure HealthComponent is not null)
 		// Consider making damage amount an export or parameter?
@@ -185,10 +197,16 @@ public sealed partial class AnswerMeteor : StaticBody2D
 	/// <param name="healthLevel">The current health level (e.g., 3, 2, 1).</param>
 	private void OnHealthLevelChanged(int healthLevel)
 	{
-		if (CrackSprite2D == null) return; // Null check
+		if (CrackSprite2D == null)
+		{
+			return; // Null check
+		}
 
 		// Prevent division by zero and handle potential negative levels gracefully
-		if (_healthLevels <= 0) return;
+		if (_healthLevels <= 0)
+		{
+			return;
+		}
 
 		// Calculate alpha based on remaining health levels (more damage = more visible crack)
 		// Alpha goes from nearly 0 (full health) up towards 1 (low health)

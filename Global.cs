@@ -13,9 +13,9 @@ public partial class Global : Node
 
 	public DiactricalMarkWordsDataResource DiactricalMarkWordsDataResource => _dataResourceManager.DiactricalMarkWordsDataResource;
 
-    public GuessBlockWordsDataResource GuessBlocksDataResource => _dataResourceManager.GuessBlocksWordsDataResource;
+	public GuessBlockWordsDataResource GuessBlocksDataResource => _dataResourceManager.GuessBlocksWordsDataResource;
 
-    public SpellingRulesResource SpellingRulesResource => _dataResourceManager.SpellingRulesResource;
+	public SpellingRulesResource SpellingRulesResource => _dataResourceManager.SpellingRulesResource;
 
 	public SupportedLanguage SupportedLanguage => SupportedLanguage.German;
 
@@ -28,10 +28,9 @@ public partial class Global : Node
 	public SpellingRuleWordResource GetNextSpellingRuleWordResource() => _wordServerManager.GetNextSpellingRuleWord();
 	public DiactricalMarkWordResource GetGetNextDiactricalMarkRuleWordResource() => _wordServerManager.GetNextDiactricalMarkWord();
 
-    public GuessBlockWordResource GetGetNextGuessBlockWordResource() => _wordServerManager.GetNextGuessBlockWordResource();
+	public GuessBlockWordResource GetGetNextGuessBlockWordResource() => _wordServerManager.GetNextGuessBlockWordResource();
 
-
-    [Signal]
+	[Signal]
 	public delegate void OnMainNodeSetupFinishedSignalEventHandler();
 
 	private WordServerManager _wordServerManager { get; } = new();
@@ -65,18 +64,11 @@ public partial class Global : Node
 		_ = EmitSignal(nameof(OnMainNodeSetupFinishedSignal));
 	}
 
-	public void SwitchToMainMenu()
-	{
-		GotoScene("res://UI/Menus/main_menu.tscn");
-	}
+	public void SwitchToMainMenu() => GotoScene("res://UI/Menus/main_menu.tscn");
 
-	public void SwitchToStartGame()
-	{
-		GotoScene("res://start_game.tscn");
-	}
+	public void SwitchToStartGame() => GotoScene("res://start_game.tscn");
 
-	private void GotoScene(string path)
-	{
+	private void GotoScene(string path) =>
 		// This function will usually be called from a signal callback,
 		// or some other function from the current scene.
 		// Deleting the current scene at this point is
@@ -87,7 +79,6 @@ public partial class Global : Node
 		// we can be sure that no code from the current scene is running:
 
 		_ = CallDeferred(MethodName.DeferredGotoScene, path);
-	}
 
 	private void DeferredGotoScene(string path)
 	{

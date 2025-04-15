@@ -136,7 +136,6 @@ public sealed partial class GuessArticleBlockEnemy : CharacterBody2D
 				);
 		};
 
-
 		RightTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>
 		{
 			_velocity = new Vector2(

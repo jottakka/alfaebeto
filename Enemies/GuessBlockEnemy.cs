@@ -1,9 +1,5 @@
-using Godot;
 using System;
-using System.Collections.Frozen;
-using System.Collections.Generic;
-using System.Linq;
-using WordProcessing.Enums;
+using Godot;
 
 public sealed partial class GuessBlockEnemy : CharacterBody2D
 {
@@ -139,7 +135,6 @@ public sealed partial class GuessBlockEnemy : CharacterBody2D
 				);
 		};
 
-
 		RightTurrentWing.VisibleOnScreenNotifier2D.ScreenExited += () =>
 		{
 			_velocity = new Vector2(
@@ -183,7 +178,7 @@ public sealed partial class GuessBlockEnemy : CharacterBody2D
 	private int GetSpawnGemsQuantity()
 	{
 		float percentage =
-			(NumberOfWrongOptions + 1 - _errorCount) / (float)(NumberOfWrongOptions+1);
+			(NumberOfWrongOptions + 1 - _errorCount) / (float)(NumberOfWrongOptions + 1);
 
 		return percentage switch
 		{

@@ -179,18 +179,9 @@ public sealed partial class OwlFriend : CharacterBody2D
 		this.ResetCollisionLayerAndMask();
 	}
 
-	private void DeactivateTarget()
-	{
-		Target = null;
-	}
+	private void DeactivateTarget() => Target = null;
 
-	private void LookAtUp()
-	{
-		Rotation = 0;
-	}
+	private void LookAtUp() => Rotation = 0;
 
-	private void LookAtCompensated(Vector2 targetGlobalPosition)
-	{
-		LookAt(targetGlobalPosition);
-	}
+	private void LookAtCompensated(Vector2 targetGlobalPosition) => LookAt(targetGlobalPosition);
 }
