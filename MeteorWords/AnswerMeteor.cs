@@ -19,26 +19,13 @@ public sealed partial class AnswerMeteor : StaticBody2D
 
 	// --- Signals ---
 	[Signal]
-	public delegate void OnDestroiedSignalEventHandler(bool isTarget);
+	public delegate void OnDestroyedSignalEventHandler(bool isTarget);
 
 	// --- Public Properties ---
 	public bool IsTarget { get; set; } = false;
 
 	// --- Private Fields ---
 	private bool _isDestroyed = false;
-
-	// --- Constants ---
-	private static class MeteorAnimations
-	{
-		// Define animation names used in this script
-		public const string AnswerMeteorMoving = "AnswerMeteorMoving";
-		public const string AnswerMeteorFade = "AnswerMeteorFade";
-		public const string AnswerMeteorTargetDeath = "AnswerMeteorTargetDeath";
-		public const string AnswerMeteorNotTargetDeath = "AnswerMeteorNotTargetDeath";
-		public const string AnswerMeteorHurt = "AnswerMeteorHurt";
-	}
-
-	// --- Godot Methods ---
 
 	public override void _Ready()
 	{
@@ -58,9 +45,26 @@ public sealed partial class AnswerMeteor : StaticBody2D
 
 		// Connect signals using safer methods
 		// Assuming OnHurtSignal is defined in HurtComponent like: [Signal] public delegate void OnHurtSignalEventHandler(Area2D area);
-		HurtComponent.Connect(nameof(HurtComponent.OnHurtSignal), Callable.From<Area2D>(OnHurt));
+		// Using += here as well for consistency, assuming HurtComponent follows the delegate pattern
+		HurtComponent.OnHurtSignal += OnHurt;
+
 
 		AnimationPlayer?.Play(MeteorAnimations.AnswerMeteorMoving);
+	}
+
+	// Make sure to disconnect signals if the node might be reused or removed before freeing
+	public override void _ExitTree()
+	{
+		// Disconnect signals to prevent potential issues if the node is reused or handlers become invalid
+		if (IsInstanceValid(HurtComponent))
+		{
+			HurtComponent.OnHurtSignal -= OnHurt;
+		}
+		if (IsInstanceValid(HealthComponent))
+		{
+			HealthComponent.OnHealthDepletedSignal -= OnHealthDepleted;
+			HealthComponent.OnHealthLevelChangeSignal -= OnHealthLevelChanged;
+		}
 	}
 
 	// --- Public Methods ---
@@ -151,9 +155,7 @@ public sealed partial class AnswerMeteor : StaticBody2D
 		AnimationPlayer?.Play(deathAnimation);
 
 		// Emit the signal indicating destruction and whether it was the target
-		// Using nameof() with the delegate name is safe.
-		EmitSignal(nameof(OnDestroiedSignalEventHandler), IsTarget);
-		// Or if using Godot 4 StringNames: EmitSignal(SignalName.OnDestroiedSignal, IsTarget);
+		EmitSignal(SignalName.OnDestroyedSignal, IsTarget);
 	}
 
 	/// <summary>
@@ -203,18 +205,28 @@ public sealed partial class AnswerMeteor : StaticBody2D
 	}
 
 	/// <summary>
-	/// Configures the HealthComponent and connects its signals.
+	/// Configures the HealthComponent and connects its signals using strongly-typed delegates.
 	/// </summary>
 	private void SetUpHealthComponent()
 	{
-		// Null check performed in _Ready before calling this
-		HealthComponent.EmmitInBetweenSignals = true; // Ensure typo 'Emmit' is correct in HealthComponent script
-		HealthComponent.HeathLevelSignalsIntervals = _healthLevels; // Ensure typo 'Heath' is correct in HealthComponent script
+		// Null check for HealthComponent performed in _Ready before calling this
 
-		// Connect signals using safer methods
-		// Assuming signals are defined like: [Signal] public delegate void OnHealthDepletedSignalEventHandler();
-		HealthComponent.Connect(nameof(HealthComponent.OnHealthDepletedSignal), Callable.From(OnHealthDepleted));
-		// Assuming signal is defined like: [Signal] public delegate void OnHealthLevelChangeSignalEventHandler(int level);
-		HealthComponent.Connect(nameof(HealthComponent.OnHealthLevelChangeSignal), Callable.From<int>(OnHealthLevelChanged));
+		// Ensure property names and typos match your HealthComponent script exactly
+		HealthComponent.EmmitInBetweenSignals = true;
+		HealthComponent.HeathLevelSignalsIntervals = _healthLevels;
+
+		// --- Connect signals using += (Strongly-typed C# event pattern) ---
+		// This requires HealthComponent to define signals with delegates:
+		// e.g., [Signal] public delegate void OnHealthDepletedSignalEventHandler();
+		// e.g., [Signal] public delegate void OnHealthLevelChangeSignalEventHandler(int level);
+		// This provides compile-time safety.
+
+		// Remove previous connections first to prevent duplicates if _Ready is called multiple times (unlikely but safe)
+		HealthComponent.OnHealthDepletedSignal -= OnHealthDepleted;
+		HealthComponent.OnHealthLevelChangeSignal -= OnHealthLevelChanged;
+
+		// Connect using +=
+		HealthComponent.OnHealthDepletedSignal += OnHealthDepleted;
+		HealthComponent.OnHealthLevelChangeSignal += OnHealthLevelChanged;
 	}
 }

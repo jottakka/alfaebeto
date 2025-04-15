@@ -37,4 +37,3 @@ public sealed partial class HurtComponent : Node
 		IsHurt = false;
 	}
 }
-

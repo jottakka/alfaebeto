@@ -11,7 +11,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_8g2ym"]
 font = ExtResource("4_ygf8f")
-font_size = 35
+font_size = 24
 
 [sub_resource type="Animation" id="Animation_qb7lc"]
 length = 0.001
@@ -862,7 +862,7 @@ uppercase = true
 
 [node name="QuestionMarkLabel" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "?"
+text = " ? "
 label_settings = SubResource("LabelSettings_8g2ym")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -34,7 +34,7 @@ public sealed partial class TextMeteor : Area2D
 	{
 		if (animationName == MeteorAnimations.TextMeteorDeathTargetHit || animationName == MeteorAnimations.TextMeteorDeathTargetNotHit)
 		{
-			_ = EmitSignal(nameof(ReadyToQueueFreeSignal));
+			_ = EmitSignal(SignalName.ReadyToQueueFreeSignal);
 		}
 	}
 }

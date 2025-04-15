@@ -37,8 +37,8 @@ public sealed partial class MeteorWordTarget : Area2D
 
 		BuildAnswerMeteors();
 
-		AnswerMeteor1.OnDestroiedSignal += OnDestructionStart;
-		AnswerMeteor2.OnDestroiedSignal += OnDestructionStart;
+		AnswerMeteor1.OnDestroyedSignal += OnDestructionStart;
+		AnswerMeteor2.OnDestroyedSignal += OnDestructionStart;
 
 		MainMeteor.WordFirstPart.Text = _spellingRuleWordData.FirstPart;
 		MainMeteor.WordLastPart.Text = _spellingRuleWordData.SecondPart;
