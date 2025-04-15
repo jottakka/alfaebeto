@@ -39,7 +39,7 @@ public sealed partial class EnemyWord : CharacterBody2D
 
 	public override void _Ready()
 	{
-		_wordInfo = Global.Instance.GetGetNextDiactricalMarkRuleWordResource();
+		_wordInfo = Global.Instance.GetNextDiactricalMarkRuleWordResource();
 
 		this.SetVisibilityZOrdering(VisibilityZOrdering.WordEnemy);
 

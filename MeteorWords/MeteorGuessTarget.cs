@@ -49,7 +49,7 @@ public sealed partial class MeteorGuessTarget : Area2D
 
 		try
 		{
-			_currentLanguage = Global.Instance.SupportedLanguage;
+			_currentLanguage = Global.Instance.CurrentLanguage;
 		}
 		catch (Exception ex)
 		{

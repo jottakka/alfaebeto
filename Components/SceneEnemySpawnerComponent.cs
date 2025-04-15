@@ -57,7 +57,7 @@ public sealed partial class SceneEnemySpawnerComponent : Node
 	public delegate void OnSpawnNextRequestedSignalEventHandler();
 
 	// --- Private Fields ---
-	private SupportedLanguage _currentLanguage => Global.Instance.SupportedLanguage;
+	private SupportedLanguage _currentLanguage => Global.Instance.CurrentLanguage;
 	private States _currentState = States.NoSpecialEnemy;
 	private StageBase _parent; // Cache parent reference
 
