@@ -8,3 +8,78 @@
 /addons
 /csv-animations-builder-b6f38e3a2e59dcbb2f33b956fc24c92fe88077eb
 /godot_resource_groups_examples
+
+# Godot 4 specific ignores
+.godot/
+*.translation
+
+# Godot general ignores
+.import/
+export_presets.cfg # Usually machine-specific, uncomment if you DO want to share export presets
+*.tres.import
+*.res.import
+*.wav.import
+*.ogg.import
+*.png.import
+*.jpg.import
+*.jpeg.import
+*.svg.import
+# Add other specific .import types if needed
+
+# Exported game builds (adjust patterns if needed)
+build/
+Build/
+export/
+Export/
+*.exe
+*.pck
+*.zip
+*.apk
+*.aab
+*.dmg
+*.app/
+*.xap
+*.html
+
+# C# / .NET / Rider / VS / VS Code
+[Bb]in/
+[Oo]bj/
+.vs/
+.vscode/ # User-specific settings often go here
+*.csproj.user
+*.sln.user
+*.suo
+*.user
+*.userprefs
+*.userosscache
+*.sln.docstates
+project.assets.json # Usually in obj, but good to have explicitly just in case
+*.csproj.nuget.dgspec.json # Usually in obj
+
+# Log files
+*.log
+logs/
+Logs/
+
+# OS generated files
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# Linux
+*~
+
+# Optional: User data directory (uncomment if you don't want to commit save files, etc.)
+# user://
+
+# Optional: MonoDevelop/Xamarin Studio temporary files
+*.pidb
+*.log
+*.mSYM
+
+# Optional: Rider specific files (if not covered by .vs/)
+#.idea/ Rider project settings, might want to share some (.idea/.name) but ignore others
