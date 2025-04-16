@@ -1,12 +1,4 @@
 using Godot;
-using System; // Required for Mathf, Random
-using System.Linq; // Required for LINQ methods like OfType, FirstOrDefault
-
-// Assuming these exist and are accessible:
-// using YourProject.Global; // Global, Player, VisibilityZOrdering, CollisionLayers
-// using YourProject.Actors; // EnemyBase
-// using YourProject.Components; // HitBox
-// using YourProject.Extensions; // ResetCollisionLayerAndMask, ActivateCollisionLayer, ActivateCollisionMask, SetVisibilityZOrdering
 
 public sealed partial class OwlFriend : CharacterBody2D
 {

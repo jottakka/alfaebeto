@@ -1,9 +1,0 @@
-C:\git\WordProcessing\bin\ExportDebug\net6.0\WordProcessing.deps.json
-C:\git\WordProcessing\bin\ExportDebug\net6.0\WordProcessing.dll
-C:\git\WordProcessing\obj\ExportDebug\net6.0\WordProcessing.GeneratedMSBuildEditorConfig.editorconfig
-C:\git\WordProcessing\obj\ExportDebug\net6.0\WordProcessing.AssemblyInfoInputs.cache
-C:\git\WordProcessing\obj\ExportDebug\net6.0\WordProcessing.AssemblyInfo.cs
-C:\git\WordProcessing\obj\ExportDebug\net6.0\WordProcessing.csproj.CoreCompileInputs.cache
-C:\git\WordProcessing\obj\ExportDebug\net6.0\WordProcessing.dll
-C:\git\WordProcessing\obj\ExportDebug\net6.0\refint\WordProcessing.dll
-C:\git\WordProcessing\obj\ExportDebug\net6.0\ref\WordProcessing.dll
