@@ -152,8 +152,8 @@ public sealed partial class EnemyWord : CharacterBody2D
 	{
 		if (isTarget)
 		{
-			EnemySpawnerLeft.DesallowSpawn();
-			EnemySpawnerRight.DesallowSpawn();
+			EnemySpawnerLeft.DisallowSpawn();
+			EnemySpawnerRight.DisallowSpawn();
 			RightTurrentWing.DesallowShoot();
 			LeftTurrentWing.DesallowShoot();
 			GemSpawnerComponent.SpawnGem(

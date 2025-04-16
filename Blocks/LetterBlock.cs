@@ -134,7 +134,7 @@ public partial class LetterBlock : StaticBody2D
 	private void SetUpHealthComponent()
 	{
 		HealthComponent.EmmitInBetweenSignals = true;
-		HealthComponent.HeathLevelSignalsIntervals = 3;
+		HealthComponent.HealthLevelSignalsIntervals = 3;
 		HealthComponent.OnHealthDepletedSignal += StartDestruction;
 		HealthComponent.OnHealthLevelChangeSignal += OnHealthLevelChanged;
 	}

@@ -231,13 +231,7 @@ public sealed partial class AnswerMeteor : StaticBody2D
 
 		// Ensure property names and typos match your HealthComponent script exactly
 		HealthComponent.EmmitInBetweenSignals = true;
-		HealthComponent.HeathLevelSignalsIntervals = _healthLevels;
-
-		// --- Connect signals using += (Strongly-typed C# event pattern) ---
-		// This requires HealthComponent to define signals with delegates:
-		// e.g., [Signal] public delegate void OnHealthDepletedSignalEventHandler();
-		// e.g., [Signal] public delegate void OnHealthLevelChangeSignalEventHandler(int level);
-		// This provides compile-time safety.
+		HealthComponent.HealthLevelSignalsIntervals = _healthLevels;
 
 		// Remove previous connections first to prevent duplicates if _Ready is called multiple times (unlikely but safe)
 		HealthComponent.OnHealthDepletedSignal -= OnHealthDepleted;

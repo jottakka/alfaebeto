@@ -145,6 +145,3 @@ public partial class Global : Node
 		GD.Print($"DeferredGotoScene: Set '{CurrentSceneNode.Name}' as current scene.");
 	}
 }
-
-// --- Assumed Supporting Code (Place in appropriate files) ---
-/* (Assumed code remains the same) */

@@ -9,6 +9,6 @@ public sealed partial class TurrentWing : Area2D
 
 	public void AllowShoot() => Turrent.AllowShoot();
 
-	public void DesallowShoot() => Turrent.DesallowShoot();
+	public void DesallowShoot() => Turrent.DisallowShoot();
 }
 

@@ -215,7 +215,6 @@ scale = Vector2(4.85, 4.2)
 [node name="HealthComponent" parent="." instance=ExtResource("5_bjsfj")]
 MaxHealth = 60
 EmmitInBetweenSignals = true
-HeathLevelSignalsIntervals = 6
 
 [node name="HurtComponent" parent="." node_paths=PackedStringArray("HurtCooldownTimer", "HitBox") instance=ExtResource("6_mrlhr")]
 HurtCooldownTimer = NodePath("../HurtCooldownTimer")

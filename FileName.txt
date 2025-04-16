@@ -9,7 +9,10 @@ Ideias
 - options in two columns that each pair must be shot one after the other (like match two items in different columns)
 - Swarm of enemies shoot only those that are mispelled or are wrong ( like a enemy has a wrong gender in german for a word, shoot him)  
 =  A possible boss could be a “Kanji cyborg” that assembles kanji from radicals; the player has to shoot the correct combination of radicals or identify the meaning in context (“shoot the kanji that means fire when it appears to disable the boss’s shield”). 
+
+- Enemies like: destroy the item that is not like the others ( maybe rotating around )
 == Traps
+
 
 - Give two options of path ( maybe when hearing something)
 	- ex: (to Go)  path 1: went  path 2: goed   < punishment if goed, success if went
