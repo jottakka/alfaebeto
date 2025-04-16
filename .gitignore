@@ -32,7 +32,7 @@ Build/
 export/
 Export/
 *.exe
-*.pck
+*.pck 
 *.zip
 *.apk
 *.aab
