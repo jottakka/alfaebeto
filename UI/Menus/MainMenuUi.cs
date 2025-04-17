@@ -1,34 +1,38 @@
+﻿using AlfaEBetto.Components;
 using Godot;
 
-public sealed partial class MainMenuUi : Node
+namespace AlfaEBetto.Data.Words
 {
-	[Export]
-	public Button StartButton { get; set; }
-	[Export]
-	public Button StoreButton { get; set; }
-	[Export]
-	public Button RulesButton { get; set; }
-	[Export]
-	public UiComponent UiComponent { get; set; }
-
-	private Global _global => Global.Instance;
-
-	public override void _Ready()
+	public sealed partial class MainMenuUi : Node
 	{
-		ProcessMode = ProcessModeEnum.Always;
-		StartButton.Pressed += () =>
-		{
-			_global.SwitchToStartGame();
-		};
+		[Export]
+		public Button StartButton { get; set; }
+		[Export]
+		public Button StoreButton { get; set; }
+		[Export]
+		public Button RulesButton { get; set; }
+		[Export]
+		public UiComponent UiComponent { get; set; }
 
-		StoreButton.Pressed += () =>
-		{
-			UiComponent.OpenRuleStoreUi();
-		};
+		private Global _global => Global.Instance;
 
-		RulesButton.Pressed += () =>
+		public override void _Ready()
 		{
-			UiComponent.OpenRuleSetsViewingUi();
-		};
+			ProcessMode = ProcessModeEnum.Always;
+			StartButton.Pressed += () =>
+			{
+				_global.SwitchToStartGame();
+			};
+
+			StoreButton.Pressed += () =>
+			{
+				UiComponent.OpenRuleStoreUi();
+			};
+
+			RulesButton.Pressed += () =>
+			{
+				UiComponent.OpenRuleSetsViewingUi();
+			};
+		}
 	}
 }

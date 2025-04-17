@@ -1,15 +1,18 @@
-using Godot;
+﻿using Godot;
 
-public static class NodeExtensions
+namespace AlfaEBetto.Extensions
 {
-	public static void AddChildDeffered(
-		this Node parent,
-		Node child
-	   )
+	public static class NodeExtensions
 	{
-		_ = parent.CallDeferred(
-			Node.MethodName.AddChild,
-			child
-		);
+		public static void AddChildDeffered(
+			this Node parent,
+			Node child
+		   )
+		{
+			_ = parent.CallDeferred(
+				Node.MethodName.AddChild,
+				child
+			);
+		}
 	}
 }

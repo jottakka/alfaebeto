@@ -1,15 +1,19 @@
+﻿using AlfaEBetto.PlayerNodes;
 using Godot;
 
-public sealed partial class CollectableCoin : CollectableItemBase
+namespace AlfaEBetto.Collectables
 {
-	[Export]
-	public long Value { get; set; } = 1000;
-
-	private Player _player => Global.Instance.Player;
-
-	public override void _Ready()
+	public sealed partial class CollectableCoin : CollectableItemBase
 	{
-		base._Ready();
-		AnimationPlayer.Play(CollectableAnimations.CoinSpinning);
+		[Export]
+		public long Value { get; set; } = 1000;
+
+		private Player _player => Global.Instance.Player;
+
+		public override void _Ready()
+		{
+			base._Ready();
+			AnimationPlayer.Play(CollectableAnimations.CoinSpinning);
+		}
 	}
 }

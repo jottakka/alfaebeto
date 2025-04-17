@@ -1,30 +1,35 @@
+﻿using AlfaEBetto.Extensions;
+using AlfaEBetto.PlayerNodes;
 using Godot;
 
-public sealed partial class MoneyCounterUi : Control
+namespace AlfaEBetto.UI
 {
-	[Export]
-	public Label Label { get; set; }
-	[Export]
-	public AnimationPlayer AnimationPlayer { get; set; }
-	[Export]
-	public long Money { get; set; } = 0;
-
-	private Player _player => Global.Instance.Player;
-
-	public override void _Ready()
+	public sealed partial class MoneyCounterUi : Control
 	{
-		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
-		SetMoney(Money);
+		[Export]
+		public Label Label { get; set; }
+		[Export]
+		public AnimationPlayer AnimationPlayer { get; set; }
+		[Export]
+		public long Money { get; set; } = 0;
 
-		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
-	}
+		private Player _player => Global.Instance.Player;
 
-	private void OnMainNodeReady() => _player.OnMoneyChangedSignal += SetMoney;
+		public override void _Ready()
+		{
+			this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
+			SetMoney(Money);
 
-	public void SetMoney(long money)
-	{
-		Money += money;
-		Label.Text = $"$  {Money:0000000000.00}";
-		AnimationPlayer.Play(UiAnimations.OnAddMoney);
+			Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
+		}
+
+		private void OnMainNodeReady() => _player.OnMoneyChangedSignal += SetMoney;
+
+		public void SetMoney(long money)
+		{
+			Money += money;
+			Label.Text = $"$  {Money:0000000000.00}";
+			AnimationPlayer.Play(UiAnimations.OnAddMoney);
+		}
 	}
 }

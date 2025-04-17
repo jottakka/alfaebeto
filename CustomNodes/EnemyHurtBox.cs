@@ -1,41 +1,50 @@
+﻿using AlfaEBetto.Ammo;
+using AlfaEBetto.Blocks;
+using AlfaEBetto.Enemies;
+using AlfaEBetto.Extensions;
+using AlfaEBetto.MeteorWords;
 using Godot;
-public sealed partial class EnemyHurtBox : Area2D
+
+namespace AlfaEBetto.CustomNodes
 {
-	public Node Parent => GetParent();
-
-	public override void _Ready()
+	public sealed partial class EnemyHurtBox : Area2D
 	{
-		this.ResetCollisionLayerAndMask();
+		public Node Parent => GetParent();
 
-		ActivateCollisionsMasks();
-	}
-
-	public void ActivateCollisionsMasks()
-	{
-		switch (Parent)
+		public override void _Ready()
 		{
-			case EnemyBase _:
-				SetHurtBoxForRegularEnemy();
-				break;
-			case MeteorEnemyBase _:
-				SetHurtBoxForMeteorEnemy();
-				break;
-			case LetterBlock _ or EnemyWord _ or AnswerMeteor _:
-				SetHurtBoxForWordsEnemy();
-				break;
-			case AmmoBase _:
-				break;
-			default:
-				GD.PrintErr("HurtBox parent is not recognized");
-				break;
+			this.ResetCollisionLayerAndMask();
+
+			ActivateCollisionsMasks();
 		}
+
+		public void ActivateCollisionsMasks()
+		{
+			switch (Parent)
+			{
+				case EnemyBase _:
+					SetHurtBoxForRegularEnemy();
+					break;
+				case MeteorEnemyBase _:
+					SetHurtBoxForMeteorEnemy();
+					break;
+				case LetterBlock _ or EnemyWord _ or AnswerMeteor _:
+					SetHurtBoxForWordsEnemy();
+					break;
+				case AmmoBase _:
+					break;
+				default:
+					GD.PrintErr("HurtBox parent is not recognized");
+					break;
+			}
+		}
+
+		public void DeactivateCollisions() => this.ResetCollisionLayerAndMask();
+
+		private void SetHurtBoxForRegularEnemy() => this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
+
+		private void SetHurtBoxForWordsEnemy() => this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
+
+		private void SetHurtBoxForMeteorEnemy() => this.ActivateCollisionLayer(CollisionLayers.MeteorEnemyHurtBox);
 	}
-
-	public void DeactivateCollisions() => this.ResetCollisionLayerAndMask();
-
-	private void SetHurtBoxForRegularEnemy() => this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
-
-	private void SetHurtBoxForWordsEnemy() => this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
-
-	private void SetHurtBoxForMeteorEnemy() => this.ActivateCollisionLayer(CollisionLayers.MeteorEnemyHurtBox);
 }

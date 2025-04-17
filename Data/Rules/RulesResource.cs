@@ -1,11 +1,14 @@
 ﻿using Godot;
 
-[GlobalClass]
-public sealed partial class RulesResource : BaseDataResource
+namespace AlfaEBetto.Data.Rules
 {
-	[Export]
-	public DiactricalMarkRuleSetItemResource[] DiactricalMarkRuleSets { get; set; }
+	[GlobalClass]
+	public sealed partial class RulesResource : BaseDataResource
+	{
+		[Export]
+		public DiactricalMarkRuleSetItemResource[] DiactricalMarkRuleSets { get; set; }
 
-	[Export]
-	public SpellingRuleRuleSetItemResource[] SpellingRuleRuleSets { get; set; }
+		[Export]
+		public SpellingRuleRuleSetItemResource[] SpellingRuleRuleSets { get; set; }
+	}
 }

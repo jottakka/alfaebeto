@@ -1,9 +1,12 @@
-using Godot;
+﻿using Godot;
 using Godot.Collections;
 using WordProcessing.Models.SpellingRules;
 
-public sealed partial class SpellingRulesResource : Resource
+namespace AlfaEBetto.Data.Words
 {
-	[Export]
-	public Dictionary<SpellingRuleRuleType, Array<SpellingRuleWordResource>> WordsByRule { get; set; } = [];
+	public sealed partial class SpellingRulesResource : Resource
+	{
+		[Export]
+		public Dictionary<SpellingRuleRuleType, Array<SpellingRuleWordResource>> WordsByRule { get; set; } = [];
+	}
 }

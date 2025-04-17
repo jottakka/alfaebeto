@@ -1,10 +1,13 @@
-using Godot;
+﻿using Godot;
 using WordProcessing.Models.DiacriticalMarks;
 
-public sealed partial class DiactricalMarkRuleItemResource : BaseRuleItemResource
+namespace AlfaEBetto.Data.Rules.Rules
 {
-	[Export]
-	public DiactricalMarkRuleSetType RuleSetType { get; set; }
-	[Export]
-	public DiactricalMarkRuleType RuleType { get; set; }
+	public sealed partial class DiactricalMarkRuleItemResource : BaseRuleItemResource
+	{
+		[Export]
+		public DiactricalMarkRuleSetType RuleSetType { get; set; }
+		[Export]
+		public DiactricalMarkRuleType RuleType { get; set; }
+	}
 }

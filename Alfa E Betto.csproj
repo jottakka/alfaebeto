@@ -1,27 +1,28 @@
-﻿<Project Sdk="Godot.NET.Sdk/4.4.0">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>AlfaEBetto</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="WordProcessing.Test\**" />
-    <Compile Remove="WordProcessing\**" />
-    <EmbeddedResource Remove="WordProcessing.Test\**" />
-    <EmbeddedResource Remove="WordProcessing\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FileName.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Collectables\Resources\" />
-    <Folder Include="Data\User\" />
-    <Folder Include="SaveFiles\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="WordProcessing\WordProcessing.csproj" />
-  </ItemGroup>
+﻿<Project Sdk="Godot.NET.Sdk/4.5.0-dev.2">
+	<PropertyGroup>
+		<GenerateImplicitNamespace>true</GenerateImplicitNamespace>
+		<TargetFramework>net8.0</TargetFramework>
+		<EnableDynamicLoading>true</EnableDynamicLoading>
+		<RootNamespace>AlfaEBetto</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="WordProcessing.Test\**" />
+		<Compile Remove="WordProcessing\**" />
+		<EmbeddedResource Remove="WordProcessing.Test\**" />
+		<EmbeddedResource Remove="WordProcessing\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="FileName.txt" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Collectables\Resources\" />
+		<Folder Include="Data\User\" />
+		<Folder Include="SaveFiles\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="WordProcessing\WordProcessing.csproj" />
+	</ItemGroup>
 </Project>

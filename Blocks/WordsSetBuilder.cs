@@ -1,25 +1,29 @@
+﻿using AlfaEBetto.Data.Words;
 using Godot;
 
-public sealed class WordsSetBuilder
+namespace AlfaEBetto.Blocks
 {
-	private readonly PackedScene _wordsSetPackedScene;
-
-	public WordsSetBuilder(PackedScene packedScene) => _wordsSetPackedScene = packedScene;
-
-	public WordsSet BuildWordSet(GuessBlockWordResource guessBlockWord, Vector2 startPosition)
+	public sealed class WordsSetBuilder
 	{
-		WordsSet wordsSetNode = _wordsSetPackedScene.Instantiate<WordsSet>();
-		wordsSetNode.Position = startPosition;
-		wordsSetNode.GuessBlockInfo = guessBlockWord;
-		return wordsSetNode;
-	}
+		private readonly PackedScene _wordsSetPackedScene;
 
-	public WordsSet BuildArticleSet(GuessBlockWordResource guessBlockWord, Vector2 startPosition)
-	{
-		WordsSet wordsSetNode = _wordsSetPackedScene.Instantiate<WordsSet>();
-		wordsSetNode.Position = startPosition;
-		wordsSetNode.GuessBlockInfo = guessBlockWord;
-		wordsSetNode.IsGermanArticle = true;
-		return wordsSetNode;
+		public WordsSetBuilder(PackedScene packedScene) => _wordsSetPackedScene = packedScene;
+
+		public WordsSet BuildWordSet(GuessBlockWordResource guessBlockWord, Vector2 startPosition)
+		{
+			WordsSet wordsSetNode = _wordsSetPackedScene.Instantiate<WordsSet>();
+			wordsSetNode.Position = startPosition;
+			wordsSetNode.GuessBlockInfo = guessBlockWord;
+			return wordsSetNode;
+		}
+
+		public WordsSet BuildArticleSet(GuessBlockWordResource guessBlockWord, Vector2 startPosition)
+		{
+			WordsSet wordsSetNode = _wordsSetPackedScene.Instantiate<WordsSet>();
+			wordsSetNode.Position = startPosition;
+			wordsSetNode.GuessBlockInfo = guessBlockWord;
+			wordsSetNode.IsGermanArticle = true;
+			return wordsSetNode;
+		}
 	}
 }

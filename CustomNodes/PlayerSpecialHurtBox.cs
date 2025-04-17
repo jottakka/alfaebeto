@@ -1,10 +1,14 @@
+﻿using AlfaEBetto.Extensions;
 using Godot;
 
-public sealed partial class PlayerSpecialHurtBox : Area2D
+namespace AlfaEBetto.CustomNodes
 {
-	public override void _Ready()
+	public sealed partial class PlayerSpecialHurtBox : Area2D
 	{
-		this.ResetCollisionLayerAndMask();
-		this.ActivateCollisionLayer(CollisionLayers.PlayerSpecialHurtBox);
+		public override void _Ready()
+		{
+			this.ResetCollisionLayerAndMask();
+			this.ActivateCollisionLayer(CollisionLayers.PlayerSpecialHurtBox);
+		}
 	}
 }

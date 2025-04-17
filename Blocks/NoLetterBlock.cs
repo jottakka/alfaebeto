@@ -1,8 +1,11 @@
-public sealed partial class NoLetterBlock : LetterBlock
+﻿namespace AlfaEBetto.Blocks
 {
-	public override void _Ready()
+	public sealed partial class NoLetterBlock : LetterBlock
 	{
-		base._Ready();
-		SetLabel(' ');
+		public override void _Ready()
+		{
+			base._Ready();
+			SetLabel(' ');
+		}
 	}
 }

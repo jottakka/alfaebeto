@@ -1,42 +1,45 @@
-using Godot;
+﻿using Godot;
 
-public sealed class LetterBlockBuilder
+namespace AlfaEBetto.Blocks
 {
-	private readonly PackedScene _letterBlockPackedScene;
-	private readonly PackedScene _noLetterBlockPackedScene;
-
-	public LetterBlockBuilder(
-		PackedScene letterBlockPackedScene,
-		PackedScene noLetterBlockPackedScene
-	)
+	public sealed class LetterBlockBuilder
 	{
-		_letterBlockPackedScene = letterBlockPackedScene;
-		_noLetterBlockPackedScene = noLetterBlockPackedScene;
-	}
+		private readonly PackedScene _letterBlockPackedScene;
+		private readonly PackedScene _noLetterBlockPackedScene;
 
-	public LetterBlock BuildLetterBlock(string word, Vector2 position, bool isTarget, Color? laborColor = null)
-	{
-		LetterBlock letterBlock = _letterBlockPackedScene.Instantiate<LetterBlock>();
-		letterBlock.SetLabel(word);
-		letterBlock.SetBlockPosition(position);
-		letterBlock.IsTarget = isTarget;
-
-		if (laborColor != null)
+		public LetterBlockBuilder(
+			PackedScene letterBlockPackedScene,
+			PackedScene noLetterBlockPackedScene
+		)
 		{
-			letterBlock.SetLabelColor(laborColor.Value);
+			_letterBlockPackedScene = letterBlockPackedScene;
+			_noLetterBlockPackedScene = noLetterBlockPackedScene;
 		}
 
-		return letterBlock;
-	}
+		public LetterBlock BuildLetterBlock(string word, Vector2 position, bool isTarget, Color? laborColor = null)
+		{
+			LetterBlock letterBlock = _letterBlockPackedScene.Instantiate<LetterBlock>();
+			letterBlock.SetLabel(word);
+			letterBlock.SetBlockPosition(position);
+			letterBlock.IsTarget = isTarget;
 
-	public LetterBlock BuildLetterBlock(char letter, Vector2 position, bool isTarget) => BuildLetterBlock(letter.ToString(), position, isTarget);
+			if (laborColor != null)
+			{
+				letterBlock.SetLabelColor(laborColor.Value);
+			}
 
-	public NoLetterBlock BuildNoLetterBlock(Vector2 position, bool isTarget)
-	{
-		NoLetterBlock noLetterBlock = _noLetterBlockPackedScene.Instantiate<NoLetterBlock>();
-		noLetterBlock.SetBlockPosition(position);
-		noLetterBlock.IsTarget = isTarget;
+			return letterBlock;
+		}
 
-		return noLetterBlock;
+		public LetterBlock BuildLetterBlock(char letter, Vector2 position, bool isTarget) => BuildLetterBlock(letter.ToString(), position, isTarget);
+
+		public NoLetterBlock BuildNoLetterBlock(Vector2 position, bool isTarget)
+		{
+			NoLetterBlock noLetterBlock = _noLetterBlockPackedScene.Instantiate<NoLetterBlock>();
+			noLetterBlock.SetBlockPosition(position);
+			noLetterBlock.IsTarget = isTarget;
+
+			return noLetterBlock;
+		}
 	}
 }

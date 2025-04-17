@@ -1,13 +1,17 @@
+﻿using AlfaEBetto.Data;
 using Godot;
 
-public sealed partial class UserDataManagementComponent : Node
+namespace AlfaEBetto.Components
 {
-	public UserDataInfoResource UserDataInfo { get; set; }
-
-	public WordServerManager WordServerManager { get; private set; }
-
-	public UserDataManagementComponent()
+	public sealed partial class UserDataManagementComponent : Node
 	{
+		public UserDataInfoResource UserDataInfo { get; set; }
 
+		public WordServerManager WordServerManager { get; private set; }
+
+		public UserDataManagementComponent()
+		{
+
+		}
 	}
 }

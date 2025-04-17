@@ -1,6 +1,10 @@
-using Godot;
-public sealed partial class CollectableShieldItem : CollectableItemBase
+﻿using Godot;
+
+namespace AlfaEBetto.Collectables
 {
-	[Export]
-	public int ShieldPoints { get; set; } = 100;
+	public sealed partial class CollectableShieldItem : CollectableItemBase
+	{
+		[Export]
+		public int ShieldPoints { get; set; } = 100;
+	}
 }

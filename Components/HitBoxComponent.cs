@@ -1,4 +1,8 @@
 ﻿using Godot;
-public sealed partial class HitBoxComponent : Area2D
+
+namespace AlfaEBetto.Components
 {
+	public sealed partial class HitBoxComponent : Area2D
+	{
+	}
 }

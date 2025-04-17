@@ -1,51 +1,56 @@
+﻿using AlfaEBetto.Extensions;
+using AlfaEBetto.PlayerNodes;
 using Godot;
 
-public sealed partial class GemsUi : MarginContainer
+namespace AlfaEBetto.UI
 {
-	[Export]
-	public Label GreenGemLabel { get; set; }
-	[Export]
-	public Label RedGemLabel { get; set; }
-
-	private Player _player => Global.Instance.Player;
-
-	private int _greenGems = 0;
-	private int _redGems = 0;
-
-	public override void _Ready()
+	public sealed partial class GemsUi : MarginContainer
 	{
-		GreenGemLabel.Text = "000";
-		RedGemLabel.Text = "000";
+		[Export]
+		public Label GreenGemLabel { get; set; }
+		[Export]
+		public Label RedGemLabel { get; set; }
 
-		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
-		Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
-	}
+		private Player _player => Global.Instance.Player;
 
-	private void OnMainNodeReady() => _player.OnGemAddedSignal += OnGemsChanged;
+		private int _greenGems = 0;
+		private int _redGems = 0;
 
-	private void OnGemsChanged(GemType gemType)
-	{
-		switch (gemType)
+		public override void _Ready()
 		{
-			case GemType.Green:
-				AddGreenGem();
-				break;
-			case GemType.Red:
-				AddRedGem();
-				break;
+			GreenGemLabel.Text = "000";
+			RedGemLabel.Text = "000";
+
+			this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
+			Global.Instance.OnMainNodeSetupFinishedSignal += OnMainNodeReady;
 		}
-	}
 
-	private void AddGreenGem()
-	{
-		_greenGems++;
-		GreenGemLabel.Text = GetString(_greenGems);
-	}
-	private void AddRedGem()
-	{
-		_redGems++;
-		RedGemLabel.Text = GetString(_redGems);
-	}
+		private void OnMainNodeReady() => _player.OnGemAddedSignal += OnGemsChanged;
 
-	private string GetString(int count) => $"{count:000}";
+		private void OnGemsChanged(GemType gemType)
+		{
+			switch (gemType)
+			{
+				case GemType.Green:
+					AddGreenGem();
+					break;
+				case GemType.Red:
+					AddRedGem();
+					break;
+			}
+		}
+
+		private void AddGreenGem()
+		{
+			_greenGems++;
+			GreenGemLabel.Text = GetString(_greenGems);
+		}
+		private void AddRedGem()
+		{
+			_redGems++;
+			RedGemLabel.Text = GetString(_redGems);
+		}
+
+		private string GetString(int count) => $"{count:000}";
+	}
 }

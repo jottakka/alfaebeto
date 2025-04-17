@@ -1,5 +1,8 @@
-using Godot;
+﻿using Godot;
 
-public sealed partial class MainNode : Node2D
+namespace AlfaEBetto
 {
+	public sealed partial class MainNode : Node2D
+	{
+	}
 }

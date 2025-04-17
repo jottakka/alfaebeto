@@ -1,27 +1,32 @@
+﻿using AlfaEBetto.Data.Rules;
+using AlfaEBetto.Extensions;
 using Godot;
 
-public sealed partial class RuleDescriptionUi : Control
+namespace AlfaEBetto.Data.Words
 {
-	[Export]
-	public Label RuleNameLabel { get; set; }
-	[Export]
-	public RichTextLabel ExamplesRichTextLabel { get; set; }
-	[Export]
-	public RichTextLabel DescriptionRichTextLabel { get; set; }
-	[Export]
-	public Button BackButton { get; set; }
-
-	public override void _Ready()
+	public sealed partial class RuleDescriptionUi : Control
 	{
-		ProcessMode = ProcessModeEnum.Always;
-		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
-		BackButton.Pressed += QueueFree;
-	}
+		[Export]
+		public Label RuleNameLabel { get; set; }
+		[Export]
+		public RichTextLabel ExamplesRichTextLabel { get; set; }
+		[Export]
+		public RichTextLabel DescriptionRichTextLabel { get; set; }
+		[Export]
+		public Button BackButton { get; set; }
 
-	public void SetData(BaseRuleItemResource detailedRule)
-	{
-		RuleNameLabel.Text = detailedRule.Rule;
-		DescriptionRichTextLabel.Text = detailedRule.Description;
-		ExamplesRichTextLabel.Text = string.Join(", ", detailedRule.Examples);
+		public override void _Ready()
+		{
+			ProcessMode = ProcessModeEnum.Always;
+			this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
+			BackButton.Pressed += QueueFree;
+		}
+
+		public void SetData(BaseRuleItemResource detailedRule)
+		{
+			RuleNameLabel.Text = detailedRule.Rule;
+			DescriptionRichTextLabel.Text = detailedRule.Description;
+			ExamplesRichTextLabel.Text = string.Join(", ", detailedRule.Examples);
+		}
 	}
 }

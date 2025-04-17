@@ -1,39 +1,44 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AlfaEBetto.Data.Rules;
+using AlfaEBetto.Extensions;
 using Godot;
 using WordProcessing.Models.Rules;
 
-public sealed partial class RuleSetsViewingUi : Control
+namespace AlfaEBetto.Data.Words
 {
-	[Export]
-	public PackedScene RuleSetListItemPackedScene { get; set; }
-	[Export]
-	public VBoxContainer RuleListVBoxContainer { get; set; }
-	[Export]
-	public Button ExitButton { get; set; }
-	public CategoryType Category { get; set; }
-
-	private RulesResource _rulesResource => Global.Instance.RulesResource;
-
-	public override void _Ready()
+	public sealed partial class RuleSetsViewingUi : Control
 	{
-		ProcessMode = ProcessModeEnum.Always;
-		this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
-		ExitButton.Pressed += QueueFree;
-	}
+		[Export]
+		public PackedScene RuleSetListItemPackedScene { get; set; }
+		[Export]
+		public VBoxContainer RuleListVBoxContainer { get; set; }
+		[Export]
+		public Button ExitButton { get; set; }
+		public CategoryType Category { get; set; }
 
-	public void SetData(CategoryType categoryType, IEnumerable<BaseRuleSetItemResource> ruleSetResources)
-	{
-		Category = categoryType;
-		foreach (BaseRuleSetItemResource ruleSet in ruleSetResources)
+		private RulesResource _rulesResource => Global.Instance.RulesResource;
+
+		public override void _Ready()
 		{
-			AddItensToVBox(ruleSet);
+			ProcessMode = ProcessModeEnum.Always;
+			this.SetVisibilityZOrdering(VisibilityZOrdering.UI);
+			ExitButton.Pressed += QueueFree;
 		}
-	}
 
-	private void AddItensToVBox(BaseRuleSetItemResource ruleSet)
-	{
-		RuleSetListItem ruleListItem = RuleSetListItemPackedScene.Instantiate<RuleSetListItem>();
-		ruleListItem.SetData(ruleSet);
-		RuleListVBoxContainer.AddChildDeffered(ruleListItem);
+		public void SetData(CategoryType categoryType, IEnumerable<BaseRuleSetItemResource> ruleSetResources)
+		{
+			Category = categoryType;
+			foreach (BaseRuleSetItemResource ruleSet in ruleSetResources)
+			{
+				AddItensToVBox(ruleSet);
+			}
+		}
+
+		private void AddItensToVBox(BaseRuleSetItemResource ruleSet)
+		{
+			RuleSetListItem ruleListItem = RuleSetListItemPackedScene.Instantiate<RuleSetListItem>();
+			ruleListItem.SetData(ruleSet);
+			RuleListVBoxContainer.AddChildDeffered(ruleListItem);
+		}
 	}
 }

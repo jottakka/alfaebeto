@@ -3,13 +3,16 @@ using Godot;
 using Godot.Collections;
 using WordProcessing.Models.SpellingRules;
 
-public sealed partial class SpellingRuleRuleSetItemResource : BaseRuleSetItemResource
+namespace AlfaEBetto.Data.Rules
 {
-	[Export]
-	public SpellingRuleRuleSetType RuleSetType { get; set; }
-	[Export]
-	public Array<SpellingRuleRuleItemResource> Rules { get; set; }
+	public sealed partial class SpellingRuleRuleSetItemResource : BaseRuleSetItemResource
+	{
+		[Export]
+		public SpellingRuleRuleSetType RuleSetType { get; set; }
+		[Export]
+		public Array<SpellingRuleRuleItemResource> Rules { get; set; }
 
-	public override BaseRuleItemResource[] RulesAsBaseItemResource =>
-		Rules.Select(r => r as BaseRuleItemResource).ToArray();
+		public override BaseRuleItemResource[] RulesAsBaseItemResource =>
+			Rules.Select(r => r as BaseRuleItemResource).ToArray();
+	}
 }

@@ -1,16 +1,20 @@
-﻿using Godot;
+﻿using AlfaEBetto.Data.Words;
+using Godot;
 
-public sealed class WordBuilder
+namespace AlfaEBetto.Blocks
 {
-	private readonly PackedScene _wordBlockPackedScene;
-
-	public WordBuilder(PackedScene packedScene) => _wordBlockPackedScene = packedScene;
-
-	public Word BuildWord(DiactricalMarkWordResource word, Vector2 startPosition)
+	public sealed class WordBuilder
 	{
-		Word wordNode = _wordBlockPackedScene.Instantiate<Word>();
-		wordNode.Position = startPosition;
-		wordNode.WordInfo = word;
-		return wordNode;
+		private readonly PackedScene _wordBlockPackedScene;
+
+		public WordBuilder(PackedScene packedScene) => _wordBlockPackedScene = packedScene;
+
+		public Word BuildWord(DiactricalMarkWordResource word, Vector2 startPosition)
+		{
+			Word wordNode = _wordBlockPackedScene.Instantiate<Word>();
+			wordNode.Position = startPosition;
+			wordNode.WordInfo = word;
+			return wordNode;
+		}
 	}
 }

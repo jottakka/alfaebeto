@@ -1,13 +1,16 @@
-using Godot;
+﻿using Godot;
 
-public sealed partial class CollectableGem : CollectableItemBase
+namespace AlfaEBetto.Collectables
 {
-	[Export]
-	public GemType GemType { get; set; } = GemType.Red;
-
-	public override void _Ready()
+	public sealed partial class CollectableGem : CollectableItemBase
 	{
-		Sprite.Frame = (int)GemType;
-		base._Ready();
+		[Export]
+		public GemType GemType { get; set; } = GemType.Red;
+
+		public override void _Ready()
+		{
+			Sprite.Frame = (int)GemType;
+			base._Ready();
+		}
 	}
 }
