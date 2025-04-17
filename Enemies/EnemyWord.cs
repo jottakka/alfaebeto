@@ -17,9 +17,9 @@ public sealed partial class EnemyWord : CharacterBody2D
 	[Export]
 	public EnemySpawner EnemySpawnerLeft { get; set; }
 	[Export]
-	public TurrentWing RightTurrentWing { get; set; }
+	public TurretWing RightTurrentWing { get; set; }
 	[Export]
-	public TurrentWing LeftTurrentWing { get; set; }
+	public TurretWing LeftTurrentWing { get; set; }
 	[Export]
 	public VisibleOnScreenNotifier2D VisibleOnScreenNotifierUpper { get; set; }
 	[Export]
@@ -161,8 +161,8 @@ public sealed partial class EnemyWord : CharacterBody2D
 		{
 			EnemySpawnerLeft.DisallowSpawn();
 			EnemySpawnerRight.DisallowSpawn();
-			RightTurrentWing.DesallowShoot();
-			LeftTurrentWing.DesallowShoot();
+			RightTurrentWing.DisallowShoot();
+			LeftTurrentWing.DisallowShoot();
 			GemSpawnerComponent.SpawnGem(
 				GlobalPosition,
 				GemType.Red,

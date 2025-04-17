@@ -175,7 +175,7 @@ _data = {
 font_size = 32
 font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 
-[node name="GuessBlockEnemy" type="CharacterBody2D" node_paths=PackedStringArray("WordsSetBuilderComponent", "EnemySpawnerRight", "EnemySpawnerLeft", "RightTurrentWing", "LeftTurrentWing", "VisibleOnScreenNotifierUpper", "VisibleOnScreenNotifierBottom", "AnimationPlayer", "GemSpawnerComponent", "GuessBlockLabel")]
+[node name="GuessBlockEnemy" type="CharacterBody2D" node_paths=PackedStringArray("WordsSetBuilderComponent", "EnemySpawnerRight", "EnemySpawnerLeft", "RightTurretWing", "LeftTurretWing", "VisibleOnScreenNotifierUpper", "VisibleOnScreenNotifierBottom", "AnimationPlayerNode", "GemSpawnerComponent", "GuessBlockLabel")]
 scale = Vector2(1.3, 1.3)
 collision_layer = 0
 collision_mask = 0
@@ -183,11 +183,11 @@ script = ExtResource("1_13lei")
 WordsSetBuilderComponent = NodePath("WordSetBuilderComponent")
 EnemySpawnerRight = NodePath("EnemySpawnerRight")
 EnemySpawnerLeft = NodePath("EnemySpawnerLeft")
-RightTurrentWing = NodePath("RightTurrentWing")
-LeftTurrentWing = NodePath("LeftTurrentWing")
+RightTurretWing = NodePath("RightTurrentWing")
+LeftTurretWing = NodePath("LeftTurrentWing")
 VisibleOnScreenNotifierUpper = NodePath("VisibleOnScreenNotifierUpper")
 VisibleOnScreenNotifierBottom = NodePath("VisibleOnScreenNotifierBottom")
-AnimationPlayer = NodePath("AnimationPlayer")
+AnimationPlayerNode = NodePath("AnimationPlayer")
 GemSpawnerComponent = NodePath("GemSpawnerComponent")
 GuessBlockLabel = NodePath("MarginContainer/GuessBlockLabel")
 

@@ -1,4 +1,5 @@
-﻿using AlfaEBetto.PlayerNodes;
+﻿using Alfaebeto.Collectables;
+using AlfaEBetto.PlayerNodes;
 using Godot;
 
 namespace AlfaEBetto.Collectables;

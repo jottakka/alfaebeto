@@ -1,4 +1,5 @@
-﻿using AlfaEBetto.Collectables;
+﻿using Alfaebeto.Collectables;
+using AlfaEBetto.Collectables;
 using AlfaEBetto.PlayerNodes;
 using Godot;
 
@@ -18,10 +19,10 @@ public sealed partial class PlayerItemCollectingComponent : Node
 		switch (item)
 		{
 			case CollectableShieldItem shieldItem:
-				CollectShieldItem(shieldItem);
+				CollectShieldItemSet(shieldItem);
 				break;
 			case CollectableHealthItem healthItem:
-				CollectHealthItem(healthItem);
+				CollectHealthItemSet(healthItem);
 				break;
 			case CollectableCoin coin:
 				CollectCoin(coin);
@@ -35,9 +36,9 @@ public sealed partial class PlayerItemCollectingComponent : Node
 		}
 	}
 
-	private void CollectHealthItem(CollectableHealthItem healthItem) => _player.HealthComponent.Heal(healthItem.HealingPoints);
+	private void CollectHealthItemSet(CollectableHealthItem healthItem) => _player.HealthComponent.Heal(healthItem.HealingPoints);
 
-	private void CollectShieldItem(CollectableShieldItem shieldItem) => _player.PlayerShield.AddShieldPoints(shieldItem.ShieldPoints);
+	private void CollectShieldItemSet(CollectableShieldItem shieldItem) => _player.PlayerShield.AddShieldPoints(shieldItem.ShieldPoints);
 
 	private void CollectCoin(CollectableCoin coin)
 	{

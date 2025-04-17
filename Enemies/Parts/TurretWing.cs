@@ -3,7 +3,7 @@ using Godot;
 
 namespace AlfaEBetto.Enemies.Parts;
 
-public sealed partial class TurrentWing : Area2D
+public sealed partial class TurretWing : Area2D
 {
 	[Export]
 	public VisibleOnScreenNotifier2D VisibleOnScreenNotifier2D { get; set; }
@@ -12,5 +12,5 @@ public sealed partial class TurrentWing : Area2D
 
 	public void AllowShoot() => Turrent.AllowShoot();
 
-	public void DesallowShoot() => Turrent.DisallowShoot();
+	public void DisallowShoot() => Turrent.DisallowShoot();
 }

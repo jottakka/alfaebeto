@@ -1,4 +1,5 @@
-﻿using Godot;
+﻿using Alfaebeto.Collectables;
+using Godot;
 
 namespace AlfaEBetto.Collectables;
 

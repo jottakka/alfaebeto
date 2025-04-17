@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d37imgwwmwrhf"]
 
+[ext_resource type="Script" uid="uid://b8vpdib0p485r" path="res://MeteorWords/MeteorTarget.cs" id="1_bhuk1"]
 [ext_resource type="PackedScene" uid="uid://v88j8pbc0eot" path="res://MeteorWords/text_meteor.tscn" id="1_hdjwy"]
-[ext_resource type="Script" uid="uid://dmr40aaf7s5b8" path="res://MeteorWords/MeteorWordTarget.cs" id="1_rhqxe"]
 [ext_resource type="PackedScene" uid="uid://d0fwxeh3fs848" path="res://MeteorWords/answer_meteor.tscn" id="2_g5j5c"]
 [ext_resource type="PackedScene" uid="uid://crcqkx1wshwdx" path="res://Components/gem_spawner_component.tscn" id="4_0ecsb"]
 
@@ -294,12 +294,12 @@ _data = {
 &"meteor_word_target_orbiting": SubResource("Animation_yqdq4")
 }
 
-[node name="MeteorWordTarget" type="Area2D" node_paths=PackedStringArray("MainMeteor", "AnswerMeteor1", "AnswerMeteor2", "AnimationPlayer", "VisibleOnScreenNotifier2D", "GemSpawnerComponent")]
-script = ExtResource("1_rhqxe")
+[node name="MeteorWordTarget" type="Area2D" node_paths=PackedStringArray("MainMeteor", "AnswerMeteor1", "AnswerMeteor2", "AnimationPlayerNode", "VisibleOnScreenNotifier2D", "GemSpawnerComponent")]
+script = ExtResource("1_bhuk1")
 MainMeteor = NodePath("TextMeteor")
 AnswerMeteor1 = NodePath("AnswerMeteor1")
 AnswerMeteor2 = NodePath("AnswerMeteor2")
-AnimationPlayer = NodePath("AnimationPlayer")
+AnimationPlayerNode = NodePath("AnimationPlayer")
 VisibleOnScreenNotifier2D = NodePath("VisibleOnScreenNotifier2D")
 GemSpawnerComponent = NodePath("GemSpawnerComponent")
 
