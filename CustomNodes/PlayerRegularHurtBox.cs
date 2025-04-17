@@ -1,8 +1,7 @@
 ﻿using Godot;
 
-namespace AlfaEBetto.CustomNodes
+namespace AlfaEBetto.CustomNodes;
+
+public sealed partial class PlayerRegularHurtBox : Area2D
 {
-	public sealed partial class PlayerRegularHurtBox : Area2D
-	{
-	}
 }

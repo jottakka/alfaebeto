@@ -1,18 +1,17 @@
 ﻿using Godot;
 using WordProcessing.Models.Rules;
 
-namespace AlfaEBetto.Data
+namespace AlfaEBetto.Data;
+
+[GlobalClass]
+public partial class WordAccuracyInfoResource : Resource
 {
-	[GlobalClass]
-	public partial class WordAccuracyInfoResource : Resource
-	{
-		[Export]
-		public CategoryType RuleType { get; set; }
-		[Export]
-		public string Word { get; set; }
-		[Export]
-		public int Errors { get; set; } = 0;
-		[Export]
-		public int Successes { get; set; } = 0;
-	}
+	[Export]
+	public CategoryType RuleType { get; set; }
+	[Export]
+	public string Word { get; set; }
+	[Export]
+	public int Errors { get; set; } = 0;
+	[Export]
+	public int Successes { get; set; } = 0;
 }

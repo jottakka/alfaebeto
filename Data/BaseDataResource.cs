@@ -1,10 +1,9 @@
 ﻿using Godot;
 
-namespace AlfaEBetto.Data
+namespace AlfaEBetto.Data;
+
+public partial class BaseDataResource : Resource
 {
-	public partial class BaseDataResource : Resource
-	{
-		[Signal]
-		public delegate void OnSaveChangesSignalEventHandler();
-	}
+	[Signal]
+	public delegate void OnSaveChangesSignalEventHandler();
 }

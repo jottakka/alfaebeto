@@ -1,12 +1,11 @@
 ﻿using Godot;
 
-namespace AlfaEBetto.Enemies.Parts
-{
-	public sealed partial class JetEngine : Area2D
-	{
-		[Export]
-		public AnimationPlayer AnimationPlayer { get; set; }
+namespace AlfaEBetto.Enemies.Parts;
 
-		public override void _Ready() => AnimationPlayer.Play(EnemyPartAnimations.JetEngineMoving);
-	}
+public sealed partial class JetEngine : Area2D
+{
+	[Export]
+	public AnimationPlayer AnimationPlayer { get; set; }
+
+	public override void _Ready() => AnimationPlayer.Play(EnemyPartAnimations.JetEngineMoving);
 }

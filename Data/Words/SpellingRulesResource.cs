@@ -2,11 +2,10 @@
 using Godot.Collections;
 using WordProcessing.Models.SpellingRules;
 
-namespace AlfaEBetto.Data.Words
+namespace AlfaEBetto.Data.Words;
+
+public sealed partial class SpellingRulesResource : Resource
 {
-	public sealed partial class SpellingRulesResource : Resource
-	{
-		[Export]
-		public Dictionary<SpellingRuleRuleType, Array<SpellingRuleWordResource>> WordsByRule { get; set; } = [];
-	}
+	[Export]
+	public Dictionary<SpellingRuleRuleType, Array<SpellingRuleWordResource>> WordsByRule { get; set; } = [];
 }

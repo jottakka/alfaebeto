@@ -1,9 +1,8 @@
 ﻿using Godot;
 
-namespace AlfaEBetto.Ammo
+namespace AlfaEBetto.Ammo;
+
+public static class AmmoAnimations
 {
-	public static class AmmoAnimations
-	{
-		public static StringName AmmoExplosion = new("ammo_explosion");
-	}
+	public static StringName AmmoExplosion = new("ammo_explosion");
 }

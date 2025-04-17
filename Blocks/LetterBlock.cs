@@ -3,145 +3,144 @@ using AlfaEBetto.CustomNodes;
 using AlfaEBetto.Extensions;
 using Godot;
 
-namespace AlfaEBetto.Blocks
+namespace AlfaEBetto.Blocks;
+
+public partial class LetterBlock : StaticBody2D
 {
-	public partial class LetterBlock : StaticBody2D
+	[Export]
+	public Sprite2D Sprite { get; set; }
+	[Export]
+	public Label Label { get; set; }
+	[Export]
+	public CollisionShape2D CollisionShape { get; set; }
+	[Export]
+	private AnimationPlayer AnimationPlayer { get; set; }
+	[Export]
+	public HitBox HitBox { get; set; }
+	[Export]
+	public HurtComponent HurtComponent { get; set; }
+	[Export]
+	public bool IsTarget { get; set; }
+	[Export]
+	public Sprite2D DeathSpriteEffect { get; set; }
+	[Export]
+	public Sprite2D ExplosionsSprite2D { get; set; }
+	[Export]
+	private HealthComponent HealthComponent { get; set; }
+
+	[Signal]
+	public delegate void OnTargetBlockCalledDestructionSignalEventHandler();
+	[Signal]
+	public delegate void OnLetterDestructedSignalEventHandler(bool isTarget);
+	[Signal]
+	public delegate void OnReadyToDequeueSignalEventHandler();
+
+	public bool IsDead { get; private set; }
+
+	private int _currenSpriteFrame = 0;
+
+	public override void _Ready()
 	{
-		[Export]
-		public Sprite2D Sprite { get; set; }
-		[Export]
-		public Label Label { get; set; }
-		[Export]
-		public CollisionShape2D CollisionShape { get; set; }
-		[Export]
-		private AnimationPlayer AnimationPlayer { get; set; }
-		[Export]
-		public HitBox HitBox { get; set; }
-		[Export]
-		public HurtComponent HurtComponent { get; set; }
-		[Export]
-		public bool IsTarget { get; set; }
-		[Export]
-		public Sprite2D DeathSpriteEffect { get; set; }
-		[Export]
-		public Sprite2D ExplosionsSprite2D { get; set; }
-		[Export]
-		private HealthComponent HealthComponent { get; set; }
+		ExplosionsSprite2D.Frame = GD.RandRange(0, 8);
+		Sprite.Frame = _currenSpriteFrame;
+		DeathSpriteEffect.Visible = false;
 
-		[Signal]
-		public delegate void OnTargetBlockCalledDestructionSignalEventHandler();
-		[Signal]
-		public delegate void OnLetterDestructedSignalEventHandler(bool isTarget);
-		[Signal]
-		public delegate void OnReadyToDequeueSignalEventHandler();
+		HurtComponent.OnHurtSignal += OnHurt;
+		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
-		public bool IsDead { get; private set; }
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
 
-		private int _currenSpriteFrame = 0;
+		// Collision Masks to observe
+		this.ActivateCollisionMask(CollisionLayers.Player);
 
-		public override void _Ready()
+		SetUpHealthComponent();
+
+	}
+
+	public void SetLabel(char letter) => SetLabel(letter.ToString());
+
+	public void SetLabelColor(Color color) => Label.AddThemeColorOverride("font_color", color);
+
+	public void SetLabel(string word) => Label.Text = word;
+
+	public void SetBlockPosition(Vector2 position) => Position = position;
+
+	public void Destroy() => AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockExplode);
+
+	public void DisableCollisions()
+	{
+		HitBox.DeactivateCollisions();
+		this.ResetCollisionLayerAndMask();
+	}
+
+	private void OnHealthLevelChanged(int healthLevel)
+	{
+		_currenSpriteFrame = healthLevel;
+		Sprite.Frame = _currenSpriteFrame;
+	}
+
+	private void OnAnimationFinished(StringName animationName)
+	{
+
+		if (animationName == LetterBlockAnimations.OnLetterBlockExplode)
 		{
-			ExplosionsSprite2D.Frame = GD.RandRange(0, 8);
-			Sprite.Frame = _currenSpriteFrame;
-			DeathSpriteEffect.Visible = false;
-
-			HurtComponent.OnHurtSignal += OnHurt;
-			AnimationPlayer.AnimationFinished += OnAnimationFinished;
-
-			this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
-
-			// Collision Masks to observe
-			this.ActivateCollisionMask(CollisionLayers.Player);
-
-			SetUpHealthComponent();
-
+			_ = EmitSignal(nameof(OnReadyToDequeueSignal));
+			QueueFree();
 		}
 
-		public void SetLabel(char letter) => SetLabel(letter.ToString());
-
-		public void SetLabelColor(Color color) => Label.AddThemeColorOverride("font_color", color);
-
-		public void SetLabel(string word) => Label.Text = word;
-
-		public void SetBlockPosition(Vector2 position) => Position = position;
-
-		public void Destroy() => AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockExplode);
-
-		public void DisableCollisions()
+		if (animationName == LetterBlockAnimations.OnLetterBlockDyingTarget)
 		{
-			HitBox.DeactivateCollisions();
-			this.ResetCollisionLayerAndMask();
+			_ = EmitSignal(nameof(OnTargetBlockCalledDestructionSignal));
 		}
-
-		private void OnHealthLevelChanged(int healthLevel)
+		else
 		{
-			_currenSpriteFrame = healthLevel;
-			Sprite.Frame = _currenSpriteFrame;
+			AnimationPlayer.Play(LetterBlockAnimations.RESET);
 		}
+	}
 
-		private void OnAnimationFinished(StringName animationName)
+	private void OnHurt(Area2D enemyArea)
+	{
+		if (IsDead is false)
+		{
+			TakeDamage();
+		}
+		else
+		{
+			AnimationPlayer.Play(LetterBlockAnimations.OnHurtDeadLetterBlock);
+		}
+	}
+
+	private void TakeDamage()
+	{
+		HealthComponent.TakeDamage(10);
+		if (HealthComponent.IsDead is false)
 		{
 
-			if (animationName == LetterBlockAnimations.OnLetterBlockExplode)
-			{
-				_ = EmitSignal(nameof(OnReadyToDequeueSignal));
-				QueueFree();
-			}
-
-			if (animationName == LetterBlockAnimations.OnLetterBlockDyingTarget)
-			{
-				_ = EmitSignal(nameof(OnTargetBlockCalledDestructionSignal));
-			}
-			else
-			{
-				AnimationPlayer.Play(LetterBlockAnimations.RESET);
-			}
+			AnimationPlayer.Play(LetterBlockAnimations.OnHurtLetterBlock);
 		}
+	}
 
-		private void OnHurt(Area2D enemyArea)
+	private void StartDestruction()
+	{
+		IsDead = true;
+		DeathSpriteEffect.Visible = true;
+		_ = EmitSignal(nameof(OnLetterDestructedSignal), IsTarget);
+		if (IsTarget)
 		{
-			if (IsDead is false)
-			{
-				TakeDamage();
-			}
-			else
-			{
-				AnimationPlayer.Play(LetterBlockAnimations.OnHurtDeadLetterBlock);
-			}
+			DisableCollisions();
+			AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockDyingTarget);
 		}
-
-		private void TakeDamage()
+		else
 		{
-			HealthComponent.TakeDamage(10);
-			if (HealthComponent.IsDead is false)
-			{
-
-				AnimationPlayer.Play(LetterBlockAnimations.OnHurtLetterBlock);
-			}
+			AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockDyingNotTarget);
 		}
+	}
 
-		private void StartDestruction()
-		{
-			IsDead = true;
-			DeathSpriteEffect.Visible = true;
-			_ = EmitSignal(nameof(OnLetterDestructedSignal), IsTarget);
-			if (IsTarget)
-			{
-				DisableCollisions();
-				AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockDyingTarget);
-			}
-			else
-			{
-				AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockDyingNotTarget);
-			}
-		}
-
-		private void SetUpHealthComponent()
-		{
-			HealthComponent.EmmitInBetweenSignals = true;
-			HealthComponent.HealthLevelSignalsIntervals = 3;
-			HealthComponent.OnHealthDepletedSignal += StartDestruction;
-			HealthComponent.OnHealthLevelChangeSignal += OnHealthLevelChanged;
-		}
+	private void SetUpHealthComponent()
+	{
+		HealthComponent.EmmitInBetweenSignals = true;
+		HealthComponent.HealthLevelSignalsIntervals = 3;
+		HealthComponent.OnHealthDepletedSignal += StartDestruction;
+		HealthComponent.OnHealthLevelChangeSignal += OnHealthLevelChanged;
 	}
 }
