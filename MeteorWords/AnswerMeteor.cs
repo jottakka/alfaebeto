@@ -235,7 +235,7 @@ public sealed partial class AnswerMeteor : StaticBody2D
 		// Null check for HealthComponent performed in _Ready before calling this
 
 		// Ensure property names and typos match your HealthComponent script exactly
-		HealthComponent.EmmitInBetweenSignals = true;
+		HealthComponent.EmitInBetweenSignals = true;
 		HealthComponent.HealthLevelSignalsIntervals = _healthLevels;
 
 		// Remove previous connections first to prevent duplicates if _Ready is called multiple times (unlikely but safe)

@@ -274,7 +274,7 @@ public sealed partial class MeteorEnemyBase : StaticBody2D
 	{
 		// Null check performed in _Ready via ValidateExports
 		// Ensure property names and typos match your HealthComponent script exactly
-		HealthComponent.EmmitInBetweenSignals = true; // Corrected typo
+		HealthComponent.EmitInBetweenSignals = true; // Corrected typo
 		HealthComponent.HealthLevelSignalsIntervals = _healthLevelIntervals; // Corrected typo & use export
 
 		// Connect signals using strongly-typed +=

@@ -90,7 +90,7 @@ public partial class WordsSet : Node2D
 	{
 		if (LetterBlocks.TryDequeue(out LetterBlock firstBlock))
 		{
-			firstBlock.Destroy();
+			firstBlock.TriggerExplosion();
 			if (LetterBlocks.Any())
 			{
 				_destructionTimer.Start(DestructionInterval);
@@ -224,7 +224,7 @@ public partial class WordsSet : Node2D
 	{
 		if (LetterBlocks.TryDequeue(out LetterBlock nextBlock)) // Uses public LetterBlocks property
 		{
-			nextBlock.Destroy();
+			nextBlock.TriggerExplosion();
 			if (!LetterBlocks.Any()) // Uses public LetterBlocks property
 			{
 				_destructionTimer.Stop();

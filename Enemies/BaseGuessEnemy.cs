@@ -240,7 +240,6 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 			CheckNode(GemSpawnerComponent, nameof(GemSpawnerComponent)) &&
 			CheckNode(GuessBlockLabel, nameof(GuessBlockLabel));
 
-
 		return overallIsValid; // Return the overall result
 	}
 

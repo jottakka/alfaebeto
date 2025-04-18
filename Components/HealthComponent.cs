@@ -12,7 +12,7 @@ public sealed partial class HealthComponent : Node
 	public int MaxHealth { get; set; } = 100;
 
 	[Export]
-	public bool EmmitInBetweenSignals { get; set; } = false; // Corrected typo: Emmit -> Emit
+	public bool EmitInBetweenSignals { get; set; } = false; // Corrected typo: Emmit -> Emit
 
 	[Export(PropertyHint.Range, "1,10,1")] // Define how many "levels" of health depletion to signal
 										   // Comment clarified: Level 0 = Full health, Level (Intervals-1) = Low health
@@ -132,7 +132,7 @@ public sealed partial class HealthComponent : Node
 	{
 		EmitSignal(SignalName.OnHealthChangedSignal, CurrentHealth, isIncrease);
 
-		if (EmmitInBetweenSignals)
+		if (EmitInBetweenSignals)
 		{
 			CalculateAndEmitLevel(); // Renamed for clarity
 		}

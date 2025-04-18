@@ -112,6 +112,7 @@ public partial class CollectableItemBase : Area2D
 		{
 			OnCollectedSignal -= _cachedPlayer.PlayerItemCollectingComponent.CollectItem;
 		}
+
 		_externalSignalConnected = false; // Reset flag regardless
 	}
 
@@ -163,6 +164,7 @@ public partial class CollectableItemBase : Area2D
 				overallIsValid = false;
 			}
 		}
+
 		CheckNode(AnimationPlayer, nameof(AnimationPlayer));
 		CheckNode(Sprite, nameof(Sprite));
 		return overallIsValid;

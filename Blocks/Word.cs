@@ -41,7 +41,7 @@ public partial class Word : Node2D
 		{
 			if (LetterBlocks.Any())
 			{
-				LetterBlocks.Dequeue().Destroy();
+				LetterBlocks.Dequeue().TriggerExplosion();
 			}
 			else
 			{
@@ -141,7 +141,7 @@ public partial class Word : Node2D
 
 	public void Destroy()
 	{
-		LetterBlocks.Dequeue().Destroy();
+		LetterBlocks.Dequeue().TriggerExplosion();
 		_destructionTimer.Start(0.25f);
 	}
 }
