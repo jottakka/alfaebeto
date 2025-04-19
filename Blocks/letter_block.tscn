@@ -469,6 +469,7 @@ HitBox = NodePath("../HitBox")
 [node name="HealthComponent" parent="." instance=ExtResource("6_458g0")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(20.5, 0)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_rsj5s")

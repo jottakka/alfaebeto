@@ -1,4 +1,5 @@
-﻿using AlfaEBetto.Components;
+﻿using Alfaebeto;
+using AlfaEBetto.Components;
 using AlfaEBetto.Extensions;
 using Godot;
 

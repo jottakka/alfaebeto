@@ -7,3 +7,4 @@
 script = ExtResource("1_lo5c0")
 
 [node name="MainMenu" parent="." instance=ExtResource("2_imirc")]
+CurrentLanguage = 3

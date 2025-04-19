@@ -208,7 +208,7 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 		}
 	}
 
-	protected virtual void DisableAtack()
+	protected virtual void DisableAttack()
 	{
 		RightTurretWing?.DisallowShoot();
 		LeftTurretWing?.DisallowShoot();

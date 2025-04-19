@@ -1,4 +1,5 @@
 ﻿using Alfaebeto.Blocks;    // For LetterBlock, Word, ArticlesSet (assuming EnemyWord uses Blocks namespace too)
+using Alfaebeto.Enemies;
 using AlfaEBetto.Ammo;
 using AlfaEBetto.Blocks;
 using AlfaEBetto.Enemies;
@@ -49,7 +50,7 @@ public sealed partial class EnemyHurtBox : Area2D
 				SetLayer(CollisionLayers.MeteorEnemyHurtBox);
 				break;
 			// Group common word/block types (adjust if EnemyWord inherits differently)
-			case LetterBlock _ or Word _ or WordsSet _ or AnswerMeteor _:
+			case LetterBlock _ or BlockSetBase _ or AnswerMeteor _ or BaseGuessEnemy:
 				// Assuming all these word/block related interactive elements use the same hurtbox layer
 				SetLayer(CollisionLayers.WordEnemyHurtBox);
 				break;

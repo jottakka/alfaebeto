@@ -1,4 +1,5 @@
 ﻿using System; // Potentially needed for other operations
+using Alfaebeto;
 using AlfaEBetto.Extensions;
 using AlfaEBetto.PlayerNodes;
 using AlfaEBetto.Weapons;
@@ -23,7 +24,7 @@ public sealed partial class WeaponComponent : Node
 	// --- Properties ---
 	// Access Global properties safely
 	private Player _player => Global.Instance?.Player;
-	private Node _scene => Global.Instance?.Scene; // Assuming Scene holds the Node to add laser to
+	private Node _scene => Global.Instance?.CurrentSceneNode; // Assuming Scene holds the Node to add laser to
 
 	// --- State ---
 	private bool _isWaitingCooldown = false;

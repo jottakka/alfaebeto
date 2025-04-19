@@ -139,6 +139,7 @@ VisibleOnScreenNotifierBottom = NodePath("VisibleOnScreenNotifierBottom")
 AnimationPlayer = NodePath("AnimationPlayer")
 GemSpawnerComponent = NodePath("GemSpawnerComponent")
 GuessBlockLabel = NodePath("MarginContainer/MarginContainer/GuessBlockLabel")
+VerticalVelocityModulus = 30.0
 
 [node name="JetEngine2" parent="." instance=ExtResource("2_xofqv")]
 position = Vector2(17, -61)

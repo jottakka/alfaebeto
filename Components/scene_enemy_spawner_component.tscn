@@ -8,13 +8,16 @@
 
 [node name="SceneEnemySpawnerComponent" type="Node" node_paths=PackedStringArray("RegularEnemySpawnTimer", "WordMeteorSpawnTimer", "SpecialEnemySpawnTimer")]
 script = ExtResource("1_a8jyr")
+IsDeactived = false
 RegularEnemySpawnTimer = NodePath("SpecialEnemySpawnTimer")
 WordMeteorSpawnTimer = NodePath("MeteorWordSpawnTimer")
 SpecialEnemySpawnTimer = NodePath("SpecialEnemySpawnTimer")
 GermanSpecialEnemy = ExtResource("2_wsa22")
 GermanWordMeteor = ExtResource("7_lugeo")
+GermanRegularEnemies = [ExtResource("5_ki2ap")]
 JapaneseSpecialEnemy = ExtResource("6_dd40e")
 JapaneseWordMeteor = ExtResource("7_lugeo")
+JapaneseRegularEnemies = [ExtResource("5_ki2ap")]
 MeteorPackedScenes = [ExtResource("5_ki2ap")]
 
 [node name="SpecialEnemySpawnTimer" type="Timer" parent="."]

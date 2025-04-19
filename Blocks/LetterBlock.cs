@@ -28,6 +28,10 @@ public partial class LetterBlock : StaticBody2D
 	[Export] public HurtComponent HurtComponent { get; set; }
 	[Export] public HealthComponent HealthComponent { get; set; }
 	[Export] public AnimationPlayer AnimationPlayer { get; set; } // Renamed export
+
+
+	[Export] public int DamageTakenPerHit { get; set; } = 20;
+
 	#endregion
 
 	#region Signals
@@ -66,7 +70,7 @@ public partial class LetterBlock : StaticBody2D
 		ConnectSignals();
 
 		// Configure collision
-		this.ActivateCollisionLayer(CollisionLayers.WordEnemy);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
 		this.ActivateCollisionMask(CollisionLayers.Player); // Mask determines what *this* body collides with
 	}
 
@@ -172,7 +176,7 @@ public partial class LetterBlock : StaticBody2D
 	private void OnHealthLevelChanged(int healthLevel)
 	{
 		// Ensure frame exists before setting
-		if (Sprite != null && healthLevel >= 0 && healthLevel < Sprite.Hframes) // Assuming horizontal frames indicate health
+		//if (Sprite != null && healthLevel >= 0 && healthLevel < Sprite.Hframes) // Assuming horizontal frames indicate health
 		{
 			_currentSpriteFrame = healthLevel;
 			Sprite.Frame = _currentSpriteFrame;
@@ -193,8 +197,11 @@ public partial class LetterBlock : StaticBody2D
 			EmitSignal(SignalName.OnTargetBlockCalledDestructionSignal);
 			// Typically, the parent receiving this signal will call TriggerExplosion() on all blocks
 		}
-		// Removed the generic RESET play, as it might interfere.
-		// Let animations play out or explicitly chain them if needed.
+		else
+		{
+			AnimationPlayer.Play(LetterBlockAnimations.RESET);
+
+		}
 	}
 
 	private void OnHurt(Area2D hittingArea) // Assuming HurtComponent passes the area
@@ -206,16 +213,12 @@ public partial class LetterBlock : StaticBody2D
 			return;
 		}
 
-		// Determine damage amount (example: get from hittingArea if it's a projectile with damage)
-		int damageAmount = 10; // Default damage - TODO: Make configurable or get from source
-							   // if (hittingArea.Owner is Projectile proj) { damageAmount = proj.Damage; }
-
-		TakeDamage(damageAmount);
+		TakeDamage();
 	}
 
-	private void TakeDamage(int amount)
+	private void TakeDamage()
 	{
-		HealthComponent?.TakeDamage(amount); // Use null check
+		HealthComponent?.TakeDamage(DamageTakenPerHit); // Use null check
 
 		// Play hurt animation only if not dead AFTER taking damage
 		if (HealthComponent != null && !HealthComponent.IsDead)

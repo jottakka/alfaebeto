@@ -3,17 +3,14 @@ using AlfaEBetto.Extensions;
 using Godot;
 
 namespace AlfaEBetto.Weapons;
-
 public sealed partial class Laser : Area2D
 {
 	// --- Exports ---
 	[Export] public Sprite2D Sprite2D { get; set; }
 	[Export] public VisibleOnScreenNotifier2D VisibleOnScreenNotifier { get; set; }
-	[Export] public AnimationPlayer AnimationPlayer { get; set; }
-	// Note: PlayerSpecialHurtBox is exported but not used in this script currently.
+	[Export] public AnimationPlayer AnimationPlayer { get; set; } // Renamed export
 	[Export] public PlayerSpecialHurtBox PlayerSpecialHurtBox { get; set; }
 	[Export] public HitBox HitBox { get; set; } // Assumed to be an Area2D child for detecting hits
-												// Note: CooldownSecs is exported but not used in this script currently.
 	[Export] public float CooldownSecs { get; set; } = 0.1f;
 	[Export] public float Speed { get; set; } = 900.0f;
 	[Export] public float LaserRange { get; set; } = 500.0f;
@@ -26,19 +23,42 @@ public sealed partial class Laser : Area2D
 	{
 		if (!ValidateExports())
 		{
-			GD.PrintErr($"{Name}: Missing required exported nodes. Laser may not function correctly.");
+			GD.PrintErr($"{Name} ({GetPath()}): Missing required exported nodes. Laser may not function correctly.");
 			QueueFree();
 			return;
 		}
 
-		this.SetVisibilityZOrdering(VisibilityZOrdering.Ammo);
+		this.SetVisibilityZOrdering(VisibilityZOrdering.Ammo); // Set parent Area2D ZIndex
+
+		// --- *** ADDED/MODIFIED COLLISION SETUP FOR LASER'S HITBOX *** ---
+		if (HitBox != null) // Check HitBox validity
+		{
+			HitBox.ResetCollisionLayerAndMask(); // Start clean
+
+			// Set the LAYER the laser's hitbox IS ON (e.g., PlayerHitBox)
+			// This layer is what enemy HurtComponents will need in their MASK to detect the laser.
+			HitBox.ActivateCollisionLayer(CollisionLayers.PlayerHitBox); // Or PlayerAmmo if you add it
+
+			// Set the MASK for the laser's hitbox (What layers does IT detect?)
+			// This determines when the laser's OnHitBoxAreaEntered signal fires.
+			HitBox.ActivateCollisionMask(CollisionLayers.WordEnemyHurtBox);   // DETECT WORD BLOCKS!
+			HitBox.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox); // DETECT METEORS!
+			HitBox.ActivateCollisionMask(CollisionLayers.RegularEnemyHurtBox); // DETECT REGULAR ENEMIES!
+																			   // Add any other layers the laser should collide with and explode upon hitting.
+		}
+		else
+		{
+			GD.PrintErr($"{Name} ({GetPath()}): Cannot setup collisions, HitBox is null!");
+			QueueFree(); // Cannot function without HitBox
+			return;
+		}
+		// --- *** END OF COLLISION SETUP *** ---
 
 		// --- Connect Signals ---
 		VisibleOnScreenNotifier.ScreenExited += OnScreenExited;
-		AnimationPlayer.AnimationFinished += OnAnimationFinished;
-		// Connect HitBox signal for hit detection
-		HitBox.AreaEntered += OnHitBoxAreaEntered;
-		// ---------------------
+		AnimationPlayer.AnimationFinished += OnAnimationFinished; // Use renamed export
+		HitBox.AreaEntered += OnHitBoxAreaEntered; // Connect hit detection
+												   // ---------------------
 	}
 
 	public override void _ExitTree()
@@ -51,9 +71,9 @@ public sealed partial class Laser : Area2D
 
 		if (IsInstanceValid(AnimationPlayer))
 		{
-			AnimationPlayer.AnimationFinished -= OnAnimationFinished;
+			AnimationPlayer.AnimationFinished -= OnAnimationFinished; // Use renamed export
 		}
-		// Disconnect HitBox signal
+
 		if (IsInstanceValid(HitBox))
 		{
 			HitBox.AreaEntered -= OnHitBoxAreaEntered;
@@ -62,59 +82,39 @@ public sealed partial class Laser : Area2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		// Don't process movement or range check if a hit has already occurred
 		if (_hitOccurred)
 		{
 			return;
 		}
 
-		// --- Range Check ---
-		if (_distanceTraveled >= LaserRange)
-		{
-			QueueFree(); // Remove laser if it exceeds its range
-			return;
-		}
-		// -----------------
+		if (_distanceTraveled >= LaserRange) { QueueFree(); return; }
 
-		// --- Movement ---
 		float moveAmount = Speed * (float)delta;
-
-		// ** FIX: Calculate movement based on the node's rotation **
-		// Option 1 (Recommended if sprite points UP at rotation 0): Use rotated UP vector
-		Vector2 moveDirection = Vector2.Up.Rotated(Rotation); // Vector2.Up is (0, -1)
-
-		// Option 2 (If sprite points RIGHT at rotation 0 and you set initial rotation correctly): Use Transform.X
-		// Vector2 moveDirection = Transform.X;
-
+		Vector2 moveDirection = Vector2.Up.Rotated(Rotation);
 		Vector2 moveVector = moveDirection * moveAmount;
 		Position += moveVector;
-		_distanceTraveled += moveAmount; // Track distance traveled
-										 // ----------------
+		_distanceTraveled += moveAmount;
 	}
 
 	// --- Signal Handlers ---
-
-	/// <summary>
-	/// Handles the AreaEntered signal from the HitBox child node.
-	/// </summary>
 	private void OnHitBoxAreaEntered(Area2D area)
 	{
-		// Check validity and ensure hit hasn't already been processed
 		if (_hitOccurred || !IsInstanceValid(this))
 		{
 			return;
 		}
 
-		// GD.Print($"{Name} HitBox entered by: {area.Name}"); // Optional debug
+		// We already filtered what the HitBox *can* detect using its Collision Mask in _Ready.
+		// Therefore, any 'area' entering here should trigger the explosion.
+		// Optional: Add extra checks here if needed (e.g., ensure area isn't another laser)
+		// if (area.CollisionLayer == (uint)CollisionLayers.PlayerHitBox) return; // Don't hit other player lasers
+
+		GD.Print($"{Name} HitBox entered by: {area.Name} on layer {area.CollisionLayer}. Triggering HandleHit."); // Debug print
 		HandleHit(); // Trigger hit logic
 	}
 
-	/// <summary>
-	/// Handles the screen exited signal from the notifier.
-	/// </summary>
 	private void OnScreenExited()
 	{
-		// Check validity before queueing free
 		if (!IsInstanceValid(this))
 		{
 			return;
@@ -123,18 +123,13 @@ public sealed partial class Laser : Area2D
 		CallDeferred(MethodName.QueueFree);
 	}
 
-	/// <summary>
-	/// Handles the animation finished signal, specifically for the hit animation.
-	/// </summary>
 	private void OnAnimationFinished(StringName animationName)
 	{
-		// Check validity before queueing free
 		if (!IsInstanceValid(this))
 		{
 			return;
 		}
 
-		// QueueFree after the hit animation completes
 		if (animationName == WeaponAnimations.LaserOnHit)
 		{
 			QueueFree();
@@ -142,46 +137,52 @@ public sealed partial class Laser : Area2D
 	}
 
 	// --- Private Methods ---
-
-	/// <summary>
-	/// Validates that essential exported nodes are assigned.
-	/// </summary>
 	private bool ValidateExports()
 	{
 		bool isValid = true;
-		if (VisibleOnScreenNotifier == null) { GD.PrintErr($"{Name}: Missing VisibleOnScreenNotifier!"); isValid = false; }
+		void CheckNode(Node node, string name) { if (node == null) { GD.PrintErr($"{Name} ({GetPath()}): Exported node '{name}' is null!"); isValid = false; } }
 
-		if (AnimationPlayer == null) { GD.PrintErr($"{Name}: Missing AnimationPlayer!"); isValid = false; }
-
-		if (HitBox == null) { GD.PrintErr($"{Name}: Missing HitBox!"); isValid = false; }
-		// Sprite2D, PlayerSpecialHurtBox, CooldownSecs are currently unused by this script's logic.
+		CheckNode(Sprite2D, nameof(Sprite2D)); // Check sprite even if unused by script, needed visually
+		CheckNode(VisibleOnScreenNotifier, nameof(VisibleOnScreenNotifier));
+		CheckNode(AnimationPlayer, nameof(AnimationPlayer)); // Use renamed export
+		CheckNode(HitBox, nameof(HitBox));
+		// Ignore unused exports PlayerSpecialHurtBox, CooldownSecs for validation
 		return isValid;
 	}
 
-	/// <summary>
-	/// Handles the logic when the laser hits something.
-	/// Stops movement, disables physics, plays hit animation.
-	/// </summary>
 	private void HandleHit()
 	{
-		_hitOccurred = true; // Set flag to prevent repeated hit logic
-		Speed = 0; // Stop potential future movement calculations (though physics stops)
-		SetPhysicsProcess(false); // Stop processing physics for this laser
-
-		// Play hit animation (check validity)
-		AnimationPlayer?.Play(WeaponAnimations.LaserOnHit);
-
-		// If no animation player, queue free immediately
-		if (AnimationPlayer == null)
+		if (_hitOccurred)
 		{
-			GD.PrintErr($"{Name}: No AnimationPlayer found in HandleHit. Queuing free immediately.");
-			QueueFree();
+			return; // Ensure only called once
 		}
 
-		// Optionally disable collision shapes immediately after hit
+		_hitOccurred = true;
+		Speed = 0;
+		SetPhysicsProcess(false);
+
+		// Play hit animation safely
+		if (IsInstanceValid(AnimationPlayer))
+		{
+			if (AnimationPlayer.HasAnimation(WeaponAnimations.LaserOnHit))
+			{
+				AnimationPlayer.Play(WeaponAnimations.LaserOnHit);
+			}
+			else
+			{
+				GD.PrintErr($"{Name} ({GetPath()}): Animation '{WeaponAnimations.LaserOnHit}' not found! Freeing immediately.");
+				QueueFree(); // Free if animation missing
+			}
+		}
+		else
+		{
+			GD.PrintErr($"{Name} ({GetPath()}): No AnimationPlayer found in HandleHit. Queuing free immediately.");
+			QueueFree(); // Free if no player
+		}
+
+		// Disable hitbox safely using deferred calls
 		if (IsInstanceValid(HitBox))
 		{
-			// Disabling monitoring/monitorable via SetDeferred is safer if physics state might be locked
 			HitBox.SetDeferred(Area2D.PropertyName.Monitoring, false);
 			HitBox.SetDeferred(Area2D.PropertyName.Monitorable, false);
 		}

@@ -39,7 +39,7 @@ public sealed partial class GuessBlockEnemy : BaseGuessEnemy // Inherit from bas
 			  CheckNode(EnemySpawnerLeft, nameof(EnemySpawnerLeft));
 	}
 
-	protected override void DisableAtack()
+	protected override void DisableAttack()
 	{
 		EnemySpawnerLeft?.DisallowSpawn();
 		EnemySpawnerRight?.DisallowSpawn();

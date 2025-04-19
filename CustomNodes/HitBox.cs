@@ -1,4 +1,6 @@
-﻿using AlfaEBetto.Ammo;
+﻿using Alfaebeto.Blocks;
+using Alfaebeto.Enemies;
+using AlfaEBetto.Ammo;
 using AlfaEBetto.Blocks;
 using AlfaEBetto.Enemies;
 using AlfaEBetto.Extensions;
@@ -73,7 +75,7 @@ public sealed partial class HitBox : Area2D
 				SetHitBoxForMeteorEnemy();
 				break;
 			// Combined case for various "word" type enemies using 'or' pattern
-			case LetterBlock _ or EnemyWord _ or AnswerMeteor _:
+			case LetterBlock _ or BlockSetBase _ or AnswerMeteor _ or BaseGuessEnemy:
 				SetHitBoxForWordsEnemy();
 				break;
 			case Laser _:
@@ -139,6 +141,7 @@ public sealed partial class HitBox : Area2D
 	{
 		// This hitbox belongs to a Word-type Enemy (LetterBlock, EnemyWord, AnswerMeteor)
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
 
 		// What should a word enemy hitbox detect? (Specific player hurtbox?)
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox); // Example: Only special shots hit these
@@ -172,13 +175,6 @@ public sealed partial class HitBox : Area2D
 
 	private void SetHitBoxForAmmo()
 	{
-		//// This hitbox belongs to Enemy Ammo
-		//this.ActivateCollisionLayer(CollisionLayers.EnemyAmmo);
-
-		//// What should enemy ammo detect? (Player/Shield HurtBoxes)
-		//this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
-		//this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
-		//this.ActivateCollisionMask(CollisionLayers.PlayerShieldHurtBox);
 		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox);
 		this.ActivateCollisionLayer(CollisionLayers.EnemyAmmo);
 	}

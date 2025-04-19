@@ -1,5 +1,6 @@
 ﻿using System; // For Exception
 using System.Linq; // For Any()
+using Alfaebeto;
 using Alfaebeto.Collectables; // Assuming CollectableItemBase is here
 using Godot;
 // using AlfaEBetto.PlayerNodes; // Not currently used
@@ -59,7 +60,7 @@ public sealed partial class RandomItemDropComponent : Node
 		try
 		{
 			_cachedSceneRoot = GetTree()?.CurrentScene;
-			_cachedSceneRoot ??= Global.Instance?.Scene; // Fallback
+			_cachedSceneRoot ??= Global.Instance?.CurrentSceneNode; // Fallback
 			if (_cachedSceneRoot == null) { throw new Exception("Could not determine a valid scene root node."); }
 		}
 		catch (Exception ex)

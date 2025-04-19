@@ -89,7 +89,7 @@ public sealed partial class TurretControllerComponent : Node
 		}
 
 		_player = Global.Instance.Player;
-		_sceneRoot = GetTree()?.CurrentScene ?? Global.Instance.Scene; // Prefer current scene
+		_sceneRoot = GetTree()?.CurrentScene ?? Global.Instance.CurrentSceneNode; // Prefer current scene
 
 		if (!IsInstanceValid(_player))
 		{

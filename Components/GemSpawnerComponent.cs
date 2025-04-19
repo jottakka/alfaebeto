@@ -1,4 +1,5 @@
 ﻿using System; // For Exception
+using Alfaebeto;
 using AlfaEBetto.Collectables;
 using Godot;
 
@@ -45,7 +46,7 @@ public sealed partial class GemSpawnerComponent : Node
 		try
 		{
 			_cachedSceneRoot = GetTree()?.CurrentScene;
-			_cachedSceneRoot ??= Global.Instance?.Scene; // Fallback
+			_cachedSceneRoot ??= Global.Instance?.CurrentSceneNode; // Fallback
 			if (_cachedSceneRoot == null) { throw new Exception("Could not determine a valid scene root node."); }
 		}
 		catch (Exception ex)

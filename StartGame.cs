@@ -1,4 +1,5 @@
 ﻿using System; // Required for IDisposable pattern potentially used by GameResultManager
+using Alfaebeto;
 using AlfaEBetto.Consts;
 using AlfaEBetto.ManagementNodes;
 using AlfaEBetto.PlayerNodes;

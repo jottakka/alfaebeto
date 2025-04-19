@@ -1,4 +1,5 @@
 ﻿using System; // For Exception
+using Alfaebeto;
 using AlfaEBetto.Collectables;
 using Godot;
 
@@ -56,7 +57,7 @@ public sealed partial class CoinSpawnerComponent : Node
 			_cachedSceneRoot = GetTree()?.CurrentScene; // Cache the current scene root
 
 			// Fallback if GetTree().CurrentScene is somehow null at this point
-			_cachedSceneRoot ??= Global.Instance?.Scene;
+			_cachedSceneRoot ??= Global.Instance?.CurrentSceneNode;
 
 			if (_cachedSceneRoot == null)
 			{

@@ -43,7 +43,7 @@ _data = {
 &"add_money": SubResource("Animation_l1ro7")
 }
 
-[node name="MoneyCounterUi" type="Control" node_paths=PackedStringArray("Label", "AnimationPlayer")]
+[node name="MoneyCounterUi" type="Control" node_paths=PackedStringArray("MoneyLabel", "AnimationPlayerNode")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,8 +51,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q6e12")
-Label = NodePath("CenterContainer/Label")
-AnimationPlayer = NodePath("AnimationPlayer")
+MoneyLabel = NodePath("CenterContainer/Label")
+AnimationPlayerNode = NodePath("AnimationPlayer")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -74,5 +74,5 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ohi77")
+&"": SubResource("AnimationLibrary_ohi77")
 }
