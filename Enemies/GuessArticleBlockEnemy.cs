@@ -1,4 +1,5 @@
-﻿using AlfaEBetto.Blocks;
+﻿using Alfaebeto.Blocks;
+using AlfaEBetto.Blocks;
 using AlfaEBetto.Data.Words;
 using Godot;
 using WordProcessing.Util;
@@ -22,7 +23,7 @@ public sealed partial class GuessArticleBlockEnemy : BaseGuessEnemy // Inherit f
 		// If BuildArticleSet has a different signature or doesn't return WordsSet,
 		// you might need to adjust the base class or this implementation.
 		// For now, assuming it returns WordsSet for consistency:
-		return WordsSetBuilderComponent.BuildArticleSet(resource, position, numOptions);
+		return WordsSetBuilderComponent.BuildArticleSet(resource, position);
 	}
 }
 

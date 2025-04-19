@@ -1,4 +1,6 @@
 ﻿using System;
+using Alfaebeto.Blocks;
+using Alfaebeto.Enemies.Parts;
 using AlfaEBetto.Blocks;
 using AlfaEBetto.Components;
 using AlfaEBetto.Data.Words;
@@ -18,7 +20,7 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 	[Export] public TurretWing LeftTurretWing { get; protected set; }
 	[Export] public VisibleOnScreenNotifier2D VisibleOnScreenNotifierUpper { get; protected set; }
 	[Export] public VisibleOnScreenNotifier2D VisibleOnScreenNotifierBottom { get; protected set; }
-	[Export] public AnimationPlayer AnimationPlayerNode { get; protected set; }
+	[Export] public AnimationPlayer AnimationPlayer { get; protected set; }
 	[Export] public GemSpawnerComponent GemSpawnerComponent { get; protected set; }
 	[Export] public Label GuessBlockLabel { get; protected set; }
 	[Export] public float HorizontalSpeedModulus { get; protected set; } = 30.0f;
@@ -165,7 +167,7 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 		WordSetBlocks.ReadyToDequeueSignal += OnWordSetReadyToDequeue; // Assumes signal exists
 
 		// AnimationPlayer Signals
-		AnimationPlayerNode.AnimationFinished += OnAnimationFinished;
+		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 	}
 
 	// --- Signal Handler Methods ---
@@ -184,7 +186,7 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 
 	private void OnScreenExitedRightWing() => _currentVelocity.X = -Mathf.Abs(HorizontalSpeedModulus);
 
-	private void OnWordSetReadyToDequeue() => AnimationPlayerNode?.Play(EnemyAnimations.EnemyWordDeath, customSpeed: 2);
+	private void OnWordSetReadyToDequeue() => AnimationPlayer?.Play(EnemyAnimations.EnemyWordDeath, customSpeed: 2);
 
 	private void OnLetterBlockDestruct(bool isTarget)
 	{
@@ -198,7 +200,7 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 				GemType.Red,
 				GetSpawnGemsQuantity()
 			);
-			AnimationPlayerNode?.Play(EnemyAnimations.EnemyWordDying); // Assumes animation exists
+			AnimationPlayer?.Play(EnemyAnimations.EnemyWordDying); // Assumes animation exists
 		}
 		else
 		{
@@ -236,7 +238,7 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 			CheckNode(LeftTurretWing, nameof(LeftTurretWing)) &&
 			CheckNode(VisibleOnScreenNotifierUpper, nameof(VisibleOnScreenNotifierUpper)) &&
 			CheckNode(VisibleOnScreenNotifierBottom, nameof(VisibleOnScreenNotifierBottom)) &&
-			CheckNode(AnimationPlayerNode, nameof(AnimationPlayerNode)) && // Use the property name here
+			CheckNode(AnimationPlayer, nameof(AnimationPlayer)) && // Use the property name here
 			CheckNode(GemSpawnerComponent, nameof(GemSpawnerComponent)) &&
 			CheckNode(GuessBlockLabel, nameof(GuessBlockLabel));
 

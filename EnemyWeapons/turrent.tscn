@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://h7wg0do81ewk"]
 
-[ext_resource type="Script" uid="uid://jojyw0dlp6hd" path="res://EnemyWeapons/TurrentBase.cs" id="1_kf106"]
+[ext_resource type="Script" uid="uid://ug0cty53gbpp" path="res://EnemyWeapons/TurretBase.cs" id="1_tgpbp"]
 [ext_resource type="Texture2D" uid="uid://bvh87qrpihk7f" path="res://EnemyWeapons/Art/turretBase_big.png" id="2_3j2w5"]
 [ext_resource type="Texture2D" uid="uid://c0inki65mxk3t" path="res://Enemies/Art/gun08.png" id="3_7hyiw"]
 [ext_resource type="Texture2D" uid="uid://citc3nvhytfby" path="res://EnemyWeapons/Art/muzzle_flare_07.png" id="4_i55ol"]
 [ext_resource type="Texture2D" uid="uid://c0e8rxhbfwlyk" path="res://EnemyWeapons/Art/circle_05.png" id="5_6jtuj"]
 [ext_resource type="AudioStream" uid="uid://bww2xgfk31vsv" path="res://EnemyWeapons/Sounds/start-sound-beep-102201.mp3" id="5_a12kb"]
 [ext_resource type="AudioStream" uid="uid://cs7u33wrhbsqx" path="res://EnemyWeapons/Sounds/futuristic-gun-shot-sci-fi-217154.mp3" id="6_btpla"]
-[ext_resource type="PackedScene" uid="uid://byr2ow0cg7y4w" path="res://Components/turrent_controller_component.tscn" id="6_u5fjk"]
+[ext_resource type="PackedScene" uid="uid://byr2ow0cg7y4w" path="res://Components/turret_controller_component.tscn" id="6_u5fjk"]
 
 [sub_resource type="Animation" id="Animation_mnmvg"]
 length = 0.001
@@ -255,12 +255,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_5f0ii"]
 radius = 20.025
 
-[node name="Turrent" type="Area2D" node_paths=PackedStringArray("TurrentControllerComponent", "AnimationPlayer", "Muzzle", "CooldownTimer")]
-script = ExtResource("1_kf106")
-TurrentControllerComponent = NodePath("TurrentControllerComponent")
-AnimationPlayer = NodePath("AnimationPlayer")
+[node name="Turret" type="Area2D" node_paths=PackedStringArray("TurretControllerComponent", "AnimationPlayerNode", "Muzzle", "CooldownTimer")]
+script = ExtResource("1_tgpbp")
+TurretControllerComponent = NodePath("TurretControllerComponent")
+AnimationPlayerNode = NodePath("AnimationPlayer")
 Muzzle = NodePath("Muzzle")
 CooldownTimer = NodePath("CooldownTimer")
+RotationSpeed = 0.1
 
 [node name="Base" type="Sprite2D" parent="."]
 texture = ExtResource("2_3j2w5")
@@ -282,7 +283,7 @@ position = Vector2(0, 53)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0l1i0")
+&"": SubResource("AnimationLibrary_0l1i0")
 }
 speed_scale = 2.0
 
@@ -301,7 +302,7 @@ color = Color(1, 1, 0.811765, 0.337255)
 shadow_color = Color(0, 0, 0, 0.886275)
 texture = ExtResource("5_6jtuj")
 
-[node name="TurrentControllerComponent" parent="." instance=ExtResource("6_u5fjk")]
+[node name="TurretControllerComponent" parent="." instance=ExtResource("6_u5fjk")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5f0ii")

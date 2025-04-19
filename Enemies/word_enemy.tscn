@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c2wnawdoiygre" path="res://Enemies/EnemyWord.cs" id="1_7m2q7"]
 [ext_resource type="PackedScene" uid="uid://ceyofkkott2kg" path="res://Enemies/Parts/jet_engine.tscn" id="1_egju3"]
-[ext_resource type="PackedScene" uid="uid://c02ldw10qedp" path="res://Enemies/Parts/left_turrent_wing.tscn" id="1_el46a"]
-[ext_resource type="PackedScene" uid="uid://c2ik33idgkd7q" path="res://Enemies/Parts/right_turrent_wing.tscn" id="2_qeip4"]
+[ext_resource type="PackedScene" uid="uid://c02ldw10qedp" path="res://Enemies/Parts/left_turret_wing.tscn" id="1_el46a"]
+[ext_resource type="PackedScene" uid="uid://c2ik33idgkd7q" path="res://Enemies/Parts/right_turret_wing.tscn" id="2_qeip4"]
 [ext_resource type="PackedScene" uid="uid://82hbd68lldrd" path="res://Enemies/Parts/enemy_spawner.tscn" id="6_8nj1u"]
 [ext_resource type="PackedScene" uid="uid://crcqkx1wshwdx" path="res://Components/gem_spawner_component.tscn" id="7_hag6g"]
 [ext_resource type="PackedScene" uid="uid://ccas7kysjgamm" path="res://Components/words_set_builder_component.tscn" id="7_vk5ul"]

@@ -30,7 +30,7 @@ public sealed partial class MeteorTarget : Area2D
 	[Export] public TextMeteor MainMeteor { get; set; }
 	[Export] public AnswerMeteor AnswerMeteor1 { get; set; }
 	[Export] public AnswerMeteor AnswerMeteor2 { get; set; }
-	[Export] public AnimationPlayer AnimationPlayerNode { get; set; } // Renamed to avoid conflict
+	[Export] public AnimationPlayer AnimationPlayer { get; set; } // Renamed to avoid conflict
 	[Export] public VisibleOnScreenNotifier2D VisibleOnScreenNotifier2D { get; set; }
 	[Export] public GemSpawnerComponent GemSpawnerComponent { get; set; }
 
@@ -109,7 +109,7 @@ public sealed partial class MeteorTarget : Area2D
 		ConnectSignals();
 
 		// 5. Start initial animation (Common)
-		AnimationPlayerNode?.Play(MeteorAnimations.MeteorWordOrbiting);
+		AnimationPlayer?.Play(MeteorAnimations.MeteorWordOrbiting);
 	}
 
 	public override void _ExitTree() =>
@@ -346,7 +346,7 @@ public sealed partial class MeteorTarget : Area2D
 
 		_isDestructionStarted = true;
 
-		AnimationPlayerNode?.Stop(true); // Stop orbiting animation
+		AnimationPlayer?.Stop(true); // Stop orbiting animation
 
 		// Command destruction on all parts safely
 		AnswerMeteor1?.DestroyCommand();
@@ -381,7 +381,7 @@ public sealed partial class MeteorTarget : Area2D
 		CheckNode(AnswerMeteor2, nameof(AnswerMeteor2));
 		CheckChildNode(AnswerMeteor2, nameof(AnswerMeteor2), AnswerMeteor2?.OptionText, "OptionText");
 
-		CheckNode(AnimationPlayerNode, nameof(AnimationPlayerNode));
+		CheckNode(AnimationPlayer, nameof(AnimationPlayer));
 		CheckNode(VisibleOnScreenNotifier2D, nameof(VisibleOnScreenNotifier2D));
 		CheckNode(GemSpawnerComponent, nameof(GemSpawnerComponent));
 

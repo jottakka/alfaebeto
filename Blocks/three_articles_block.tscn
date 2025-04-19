@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bhqp58qf1hx54" path="res://Blocks/Art/explosion_flash.png" id="14_g5cuy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sk5a"]
+friction = 0.65
+bounce = 11.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj5s"]
 size = Vector2(19.5, 16)
@@ -361,21 +363,21 @@ _data = {
 &"letter_block_explode": SubResource("Animation_poxcl")
 }
 
-[node name="ThreeArticlesBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "CollisionShape", "AnimationPlayer", "HitBox", "HurtComponent", "DeathSpriteEffect", "ExplosionsSprite2D", "HealthComponent")]
-position = Vector2(16, 0)
+[node name="ThreeArticlesBlock" type="StaticBody2D" node_paths=PackedStringArray("Sprite", "Label", "DeathSpriteEffect", "ExplosionsSprite2D", "CollisionShape", "HitBox", "HurtComponent", "HealthComponent", "AnimationPlayer")]
+position = Vector2(-20, 0)
 collision_layer = 0
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_2sk5a")
 script = ExtResource("1_xb5qg")
 Sprite = NodePath("Sprite2D")
 Label = NodePath("Sprite2D/CenterContainer/Label")
-CollisionShape = NodePath("HitBox/CollisionShape2D")
-AnimationPlayer = NodePath("AnimationPlayer")
-HitBox = NodePath("HitBox")
-HurtComponent = NodePath("HurtComponent")
 DeathSpriteEffect = NodePath("Sprite2D/DeathSpriteEffect")
 ExplosionsSprite2D = NodePath("ExplosionFlashSprite2D")
+CollisionShape = NodePath("HitBox/CollisionShape2D")
+HitBox = NodePath("HitBox")
+HurtComponent = NodePath("HurtComponent")
 HealthComponent = NodePath("HealthComponent")
+AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="HitBox" parent="." instance=ExtResource("2_wgbne")]
 
@@ -442,8 +444,6 @@ HurtCooldownTimer = NodePath("../HurtCooldown")
 HitBox = NodePath("../HitBox")
 
 [node name="HealthComponent" parent="." instance=ExtResource("13_rvnlp")]
-EmmitInBetweenSignals = true
-HeathLevelSignalsIntervals = 3
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false

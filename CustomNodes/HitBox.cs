@@ -130,6 +130,7 @@ public sealed partial class HitBox : Area2D
 		this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox); // Assuming player has different hurtboxes
 		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
 		this.ActivateCollisionMask(CollisionLayers.PlayerShieldHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox);
 		// Maybe other enemies?
 		// this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox);
 	}
@@ -171,12 +172,14 @@ public sealed partial class HitBox : Area2D
 
 	private void SetHitBoxForAmmo()
 	{
-		// This hitbox belongs to Enemy Ammo
-		this.ActivateCollisionLayer(CollisionLayers.EnemyAmmo);
+		//// This hitbox belongs to Enemy Ammo
+		//this.ActivateCollisionLayer(CollisionLayers.EnemyAmmo);
 
-		// What should enemy ammo detect? (Player/Shield HurtBoxes)
-		this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
-		this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
-		this.ActivateCollisionMask(CollisionLayers.PlayerShieldHurtBox);
+		//// What should enemy ammo detect? (Player/Shield HurtBoxes)
+		//this.ActivateCollisionMask(CollisionLayers.PlayerRegularHurtBox);
+		//this.ActivateCollisionMask(CollisionLayers.PlayerSpecialHurtBox);
+		//this.ActivateCollisionMask(CollisionLayers.PlayerShieldHurtBox);
+		this.ActivateCollisionMask(CollisionLayers.MeteorEnemyHurtBox);
+		this.ActivateCollisionLayer(CollisionLayers.EnemyAmmo);
 	}
 }

@@ -41,6 +41,6 @@ public sealed partial class RuleCategoriesViewingUi : Control
 	{
 		RuleCategoryListItem ruleCategoryListItem = RuleCategoryListItemPackedScene.Instantiate<RuleCategoryListItem>();
 		ruleCategoryListItem.SetData(category, ruleSetItemResources, isStore);
-		RuleCategoryListVBoxContainer.AddChildDeffered(ruleCategoryListItem);
+		RuleCategoryListVBoxContainer.AddChildDefered(ruleCategoryListItem);
 	}
 }

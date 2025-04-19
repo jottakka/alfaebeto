@@ -1,4 +1,6 @@
-﻿using AlfaEBetto.Components;
+﻿using Alfaebeto.Components;
+using Alfaebeto.CustomNodes;
+using AlfaEBetto.Components;
 using AlfaEBetto.CustomNodes;
 using AlfaEBetto.Extensions;
 using AlfaEBetto.PlayerNodes;
@@ -257,7 +259,7 @@ public sealed partial class EnemyBase : CharacterBody2D
 		}
 
 		AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
-		HurtComponent.OnHurtStateFinished(); // Notify component hurt state is over
+		HurtComponent.OnHurtCooldownTimeout(); // Notify component hurt state is over
 		ActivateCollisions(); // Re-enable collisions
 	}
 
@@ -346,7 +348,7 @@ public sealed partial class EnemyBase : CharacterBody2D
 	private void ActivateCollisions()
 	{
 		// Assuming HurtBox and HitBox components handle their specific layer/mask activation
-		HurtBox?.ActivateCollisionsMasks();
+		HurtBox?.SetCollisionLayerBasedOnParent();
 		HitBox?.ActivateCollisionsMasks();
 		// Also activate the main CharacterBody collision if needed
 		// CollisionLayer = ...; // Set appropriate layer/mask for CharacterBody2D itself

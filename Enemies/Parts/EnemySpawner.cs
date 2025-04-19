@@ -1,4 +1,5 @@
-﻿using AlfaEBetto.Components;
+﻿using Alfaebeto.Components;
+using AlfaEBetto.Components;
 using Godot;
 
 namespace AlfaEBetto.Enemies.Parts;

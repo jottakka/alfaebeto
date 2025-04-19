@@ -1,4 +1,7 @@
 ﻿using System;
+using Alfaebeto.Blocks;
+using Alfaebeto.Components;
+using Alfaebeto.Enemies.Parts;
 using AlfaEBetto.Blocks;
 using AlfaEBetto.Components;
 using AlfaEBetto.Data.Words;

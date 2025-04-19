@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bqvc3r0i488sc" path="res://Enemies/GuessBlockEnemy.cs" id="1_13lei"]
 [ext_resource type="PackedScene" uid="uid://ceyofkkott2kg" path="res://Enemies/Parts/jet_engine.tscn" id="2_f1f8h"]
-[ext_resource type="PackedScene" uid="uid://c02ldw10qedp" path="res://Enemies/Parts/left_turrent_wing.tscn" id="3_13lei"]
-[ext_resource type="PackedScene" uid="uid://c2ik33idgkd7q" path="res://Enemies/Parts/right_turrent_wing.tscn" id="4_p7n1g"]
+[ext_resource type="PackedScene" uid="uid://c02ldw10qedp" path="res://Enemies/Parts/left_turret_wing.tscn" id="3_13lei"]
+[ext_resource type="PackedScene" uid="uid://c2ik33idgkd7q" path="res://Enemies/Parts/right_turret_wing.tscn" id="4_p7n1g"]
 [ext_resource type="PackedScene" uid="uid://82hbd68lldrd" path="res://Enemies/Parts/enemy_spawner.tscn" id="6_wmiwv"]
 [ext_resource type="PackedScene" uid="uid://crcqkx1wshwdx" path="res://Components/gem_spawner_component.tscn" id="7_u10xl"]
 [ext_resource type="Texture2D" uid="uid://8e1eyd7qtew7" path="res://Blocks/Art/elementMetal018.png" id="8_13lei"]
@@ -175,19 +175,19 @@ _data = {
 font_size = 32
 font_color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 
-[node name="GuessBlockEnemy" type="CharacterBody2D" node_paths=PackedStringArray("WordsSetBuilderComponent", "EnemySpawnerRight", "EnemySpawnerLeft", "RightTurretWing", "LeftTurretWing", "VisibleOnScreenNotifierUpper", "VisibleOnScreenNotifierBottom", "AnimationPlayerNode", "GemSpawnerComponent", "GuessBlockLabel")]
+[node name="GuessBlockEnemy" type="CharacterBody2D" node_paths=PackedStringArray("EnemySpawnerRight", "EnemySpawnerLeft", "WordsSetBuilderComponent", "RightTurretWing", "LeftTurretWing", "VisibleOnScreenNotifierUpper", "VisibleOnScreenNotifierBottom", "AnimationPlayer", "GemSpawnerComponent", "GuessBlockLabel")]
 scale = Vector2(1.3, 1.3)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_13lei")
-WordsSetBuilderComponent = NodePath("WordSetBuilderComponent")
 EnemySpawnerRight = NodePath("EnemySpawnerRight")
 EnemySpawnerLeft = NodePath("EnemySpawnerLeft")
+WordsSetBuilderComponent = NodePath("WordSetBuilderComponent")
 RightTurretWing = NodePath("RightTurrentWing")
 LeftTurretWing = NodePath("LeftTurrentWing")
 VisibleOnScreenNotifierUpper = NodePath("VisibleOnScreenNotifierUpper")
 VisibleOnScreenNotifierBottom = NodePath("VisibleOnScreenNotifierBottom")
-AnimationPlayerNode = NodePath("AnimationPlayer")
+AnimationPlayer = NodePath("AnimationPlayer")
 GemSpawnerComponent = NodePath("GemSpawnerComponent")
 GuessBlockLabel = NodePath("MarginContainer/GuessBlockLabel")
 

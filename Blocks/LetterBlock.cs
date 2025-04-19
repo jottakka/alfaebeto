@@ -1,4 +1,5 @@
-﻿using AlfaEBetto.Components;
+﻿using Alfaebeto.Components;
+using AlfaEBetto.Components;
 using AlfaEBetto.CustomNodes;
 using AlfaEBetto.Extensions;
 using Godot;
@@ -26,7 +27,7 @@ public partial class LetterBlock : StaticBody2D
 	[Export] public HitBox HitBox { get; set; }
 	[Export] public HurtComponent HurtComponent { get; set; }
 	[Export] public HealthComponent HealthComponent { get; set; }
-	[Export] public AnimationPlayer AnimationPlayerNode { get; set; } // Renamed export
+	[Export] public AnimationPlayer AnimationPlayer { get; set; } // Renamed export
 	#endregion
 
 	#region Signals
@@ -93,13 +94,13 @@ public partial class LetterBlock : StaticBody2D
 	public void TriggerExplosion()
 	{
 		// Ensure required nodes are valid before playing animation
-		if (IsInstanceValid(AnimationPlayerNode))
+		if (IsInstanceValid(AnimationPlayer))
 		{
-			AnimationPlayerNode.Play(LetterBlockAnimations.OnLetterBlockExplode);
+			AnimationPlayer.Play(LetterBlockAnimations.OnLetterBlockExplode);
 		}
 		else
 		{
-			GD.PrintErr($"{Name}: Cannot TriggerExplosion, AnimationPlayerNode is invalid.");
+			GD.PrintErr($"{Name}: Cannot TriggerExplosion, AnimationPlayer is invalid.");
 			// Fallback: just queue free immediately if animation fails
 			EmitSignal(SignalName.OnReadyToDequeueSignal);
 			QueueFree();
@@ -140,9 +141,9 @@ public partial class LetterBlock : StaticBody2D
 			HurtComponent.OnHurtSignal += OnHurt;
 		}
 
-		if (AnimationPlayerNode != null)
+		if (AnimationPlayer != null)
 		{
-			AnimationPlayerNode.AnimationFinished += OnAnimationFinished;
+			AnimationPlayer.AnimationFinished += OnAnimationFinished;
 		}
 
 		// Health signals are connected in SetupHealthComponent to ensure correct order
@@ -156,9 +157,9 @@ public partial class LetterBlock : StaticBody2D
 			HurtComponent.OnHurtSignal -= OnHurt;
 		}
 
-		if (IsInstanceValid(AnimationPlayerNode))
+		if (IsInstanceValid(AnimationPlayer))
 		{
-			AnimationPlayerNode.AnimationFinished -= OnAnimationFinished;
+			AnimationPlayer.AnimationFinished -= OnAnimationFinished;
 		}
 
 		if (IsInstanceValid(HealthComponent))
@@ -201,7 +202,7 @@ public partial class LetterBlock : StaticBody2D
 		// Check if already dead to prevent taking damage/playing animations multiple times
 		if (IsDead)
 		{
-			AnimationPlayerNode?.Play(LetterBlockAnimations.OnHurtDeadLetterBlock); // Play a specific "clink" animation maybe
+			AnimationPlayer?.Play(LetterBlockAnimations.OnHurtDeadLetterBlock); // Play a specific "clink" animation maybe
 			return;
 		}
 
@@ -219,7 +220,7 @@ public partial class LetterBlock : StaticBody2D
 		// Play hurt animation only if not dead AFTER taking damage
 		if (HealthComponent != null && !HealthComponent.IsDead)
 		{
-			AnimationPlayerNode?.Play(LetterBlockAnimations.OnHurtLetterBlock);
+			AnimationPlayer?.Play(LetterBlockAnimations.OnHurtLetterBlock);
 		}
 	}
 
@@ -241,13 +242,13 @@ public partial class LetterBlock : StaticBody2D
 		if (IsTarget)
 		{
 			DisableCollisions(); // Prevent further interaction if it's the target
-			AnimationPlayerNode?.Play(LetterBlockAnimations.OnLetterBlockDyingTarget);
+			AnimationPlayer?.Play(LetterBlockAnimations.OnLetterBlockDyingTarget);
 		}
 		else
 		{
 			// Non-targets might just play a shorter dying animation or go straight to explode
 			// depending on game design. Assuming a non-target dying animation here.
-			AnimationPlayerNode?.Play(LetterBlockAnimations.OnLetterBlockDyingNotTarget);
+			AnimationPlayer?.Play(LetterBlockAnimations.OnLetterBlockDyingNotTarget);
 			// Often, non-targets might just explode immediately when hit once if HP <= 0:
 			// TriggerExplosion(); // Alternative: Explode immediately if not target
 		}
@@ -264,7 +265,7 @@ public partial class LetterBlock : StaticBody2D
 		CheckNode(Sprite, nameof(Sprite));
 		CheckNode(Label, nameof(Label));
 		CheckNode(CollisionShape, nameof(CollisionShape)); // Needed for StaticBody2D
-		CheckNode(AnimationPlayerNode, nameof(AnimationPlayerNode));
+		CheckNode(AnimationPlayer, nameof(AnimationPlayer));
 		CheckNode(HitBox, nameof(HitBox));
 		CheckNode(HurtComponent, nameof(HurtComponent));
 		CheckNode(DeathSpriteEffect, nameof(DeathSpriteEffect));

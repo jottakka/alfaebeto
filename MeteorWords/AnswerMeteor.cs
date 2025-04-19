@@ -1,4 +1,6 @@
-﻿using AlfaEBetto.Components;
+﻿using Alfaebeto.Components;
+using Alfaebeto.CustomNodes;
+using AlfaEBetto.Components;
 using AlfaEBetto.CustomNodes;
 using AlfaEBetto.Extensions;
 using Godot;
@@ -111,7 +113,7 @@ public sealed partial class AnswerMeteor : StaticBody2D
 	{
 		// Use null-conditional operators for safety
 		HitBox?.ActivateCollisionsMasks();
-		HurtBox?.ActivateCollisionsMasks();
+		HurtBox?.SetCollisionLayerBasedOnParent();
 		ActivateBodyCollisions();
 	}
 

@@ -10,7 +10,7 @@ namespace AlfaEBetto.Components;
 // using YourProject.Global; // Global, StageBase
 // using YourProject.Actors; // Player, Laser
 // using YourProject.Input; // PlayerInputProcessor
-// using YourProject.Extensions; // AddChildDeffered (if it's an extension method)
+// using YourProject.Extensions; // AddChildDefered (if it's an extension method)
 
 public sealed partial class WeaponComponent : Node
 {
@@ -129,8 +129,8 @@ public sealed partial class WeaponComponent : Node
 
 		// Position and add the laser
 		laser.GlobalPosition = currentPlayer.MuzzlePosition.GlobalPosition; // Use GlobalPosition for world space
-																			// Assuming AddChildDeffered is an extension method on Node
-		currentScene.AddChildDeffered(laser);
+																			// Assuming AddChildDefered is an extension method on Node
+		currentScene.AddChildDefered(laser);
 
 		// Play sound and start timer (use null-conditional for safety)
 		LaserSound?.Play();

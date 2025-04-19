@@ -1,267 +1,163 @@
-﻿using System.Collections.Generic;
 using System.Linq;
+using AlfaEBetto.Blocks;
 using AlfaEBetto.Data.Words;
 using Godot;
 
-namespace AlfaEBetto.Blocks;
+namespace Alfaebeto.Blocks;
 
-/// <summary>
-/// Manages a set of interactive letter/word blocks for a guessing activity,
-/// potentially involving German articles. Handles block creation, layout,
-/// interaction, and destruction animations.
-/// Public members retain original names and accessibility.
-/// </summary>
-public partial class WordsSet : Node2D
+public partial class WordsSet : BlockSetBase // Inherit from base
 {
-	// --- Exports (Public by nature) ---
-	[Export]
-	public PackedScene LetterBlockPackedScene { get; set; }
+	#region Exports (Specific to WordsSet)
+	[Export] public PackedScene WordBlockPackedScene { get; set; } // Note: Still seems unused?
+	[Export] public PackedScene ThreeArticleBlockPackedScene { get; set; }
 
-	[Export]
-	public PackedScene WordBlockPackedScene { get; set; } // Note: Still unused in this logic.
+	[ExportGroup("Layout")]
+	[Export] public float ArticleBlockStretchFactor { get; set; } = 1.5f; // e.g., 1.5 makes it 50% wider
+	#endregion
 
-	[Export]
-	public PackedScene ThreeArticleBlockPackedScene { get; set; }
 
-	// --- Signals (Public delegates, names preserved, typo fixed) ---
-	[Signal]
-	public delegate void ReadyToDequeueSignalEventHandler(); // Original Name
-
-	[Signal]
-	public delegate void OnLetterDestructedSignalEventHandler(bool isTarget); // Original Name
-
-	[Signal]
-	public delegate void OnDisableChildrenCollisionsInternalSignalEventHandler(); // Original Name (Typo corrected)
-
-	// --- Public Properties (Names and accessibility preserved) ---
+	#region Specific Data & Config
 	public GuessBlockWordResource GuessBlockInfo { get; set; }
-
 	public bool IsGermanArticle { get; set; } = false;
+	#endregion
 
-	public float CenterOffset { get; set; } = 0.0f; // Public setter retained
+	#region Private Fields
+	// LetterBlockBuilder is now initialized in ValidateAndLoadData
+	#endregion
 
-	public int TargetIdx { get; set; }
+	#region Abstract Method Implementations
 
-	public Queue<LetterBlock> LetterBlocks { get; set; } = new(); // Public setter retained
-
-	public LetterBlock Target { get; set; } // Public setter retained
-
-	// --- Private Fields ---
-	private LetterBlockBuilder _letterBuilder; // Instance field (non-static)
-	private readonly Timer _destructionTimer = new();
-	private const float DestructionInterval = 0.25f;
-
-	// --- Godot Methods ---
-	public override void _Ready()
+	protected override bool ValidateAndLoadData()
 	{
-		// Input Validation
+		// 1. Validate Data Source
 		if (GuessBlockInfo == null)
 		{
-			GD.PrintErr($"{nameof(WordsSet)} requires a {nameof(GuessBlockInfo)} to be set.");
-			return;
+			GD.PrintErr($"{GetType().Name} '{Name}': {nameof(GuessBlockInfo)} is required but was not set.");
+			return false;
 		}
 
+		if (GuessBlockInfo.ShuffledOptions == null || !GuessBlockInfo.ShuffledOptions.Any())
+		{
+			GD.PrintErr($"{GetType().Name} '{Name}': {nameof(GuessBlockInfo.ShuffledOptions)} is null or empty.");
+			return false;
+		}
+
+		// 2. Validate PackedScene based on mode
 		PackedScene blockScene = IsGermanArticle ? ThreeArticleBlockPackedScene : LetterBlockPackedScene;
+		string requiredSceneName = IsGermanArticle ? nameof(ThreeArticleBlockPackedScene) : nameof(LetterBlockPackedScene);
 
 		if (blockScene == null)
 		{
-			GD.PrintErr($"{nameof(WordsSet)} is missing a required PackedScene. Assign {(IsGermanArticle ? nameof(ThreeArticleBlockPackedScene) : nameof(LetterBlockPackedScene))} in the inspector.");
-			return;
+			GD.PrintErr($"{GetType().Name} '{Name}': Required PackedScene '{requiredSceneName}' is not assigned.");
+			return false;
 		}
 
-		// Initialize the instance-specific builder
-		_letterBuilder = new LetterBlockBuilder(blockScene, null); // Adjust constructor if needed
+		// 3. Initialize Instance-Specific Builder
+		_letterBuilder = new LetterBlockBuilder(blockScene, null); // Pass required scene
 
-		AddChild(_destructionTimer);
-		_destructionTimer.Timeout += OnDestructionTimerTimeout;
-
-		// Renamed internal setup method, remains private
-		BuildAndPositionBlocks();
+		return true; // Validation passed
 	}
 
-	// --- Public Methods (Names preserved) ---
-
-	/// <summary>
-	/// Initiates the destruction sequence for the blocks.
-	/// Starts by destroying the first block, then subsequent blocks via timer.
-	/// Original public method name preserved.
-	/// </summary>
-	public void Destroy() // Original Name
+	protected override void BuildAndPositionBlocksInternal()
 	{
-		if (LetterBlocks.TryDequeue(out LetterBlock firstBlock))
-		{
-			firstBlock.TriggerExplosion();
-			if (LetterBlocks.Any())
-			{
-				_destructionTimer.Start(DestructionInterval);
-			}
-		}
-		else
-		{
-			GD.Print("Destroy called but no letter blocks remain.");
-			_destructionTimer.Stop();
-		}
-	}
-
-	// --- Private Helper Methods (Internal improvements) ---
-
-	/// <summary>
-	/// Creates, configures, and positions all letter/word blocks based on GuessBlockInfo.
-	/// (Internal method, previously implicitly private, now explicitly private)
-	/// </summary>
-	private void BuildAndPositionBlocks() // Was BuildWordBlocks implicitly private, now explicitly private with clearer name
-	{
-		if (_letterBuilder == null)
-		{
-			GD.PrintErr($"Cannot build blocks: {nameof(_letterBuilder)} was not initialized.");
-			return;
-		}
-
 		float currentX = 0f;
 
-		// Using original LINQ approach as it was concise
-		foreach ((string word, int idx) in GuessBlockInfo.ShuffledOptions.Select((letter, idx) => (letter, idx)))
+		// Build blocks based on ShuffledOptions
+		foreach ((string word, int idx) in GuessBlockInfo.ShuffledOptions.Select((word, idx) => (word, idx)))
 		{
-			currentX = BuildSingleBlock(currentX, word, idx, GuessBlockInfo.AnswerIdx);
+			currentX = BuildSingleBlock(currentX, word, idx); // Pass string as blockData
 		}
 
-		if (Target == null)
-		{
-			GD.PrintErr("Target block was not set after building blocks. Check AnswerIdx validity.");
-		}
-		else
-		{
-			// Connect signal only after all blocks are potentially created
-			// Using original signal name from LetterBlock (assuming it exists)
-			Target.OnTargetBlockCalledDestructionSignal += Destroy;
-		}
-
-		CenterBlocksLayout(currentX); // Renamed internal method
+		// Center the layout
+		CenterBlocksLayout(currentX);
 	}
 
-	/// <summary>
-	/// Builds and configures a single letter/word block.
-	/// </summary>
-	/// <returns>The X position for the start of the *next* block.</returns>
-	private float BuildSingleBlock(float currentX, string word, int index, int answerIndex)
+	protected override float BuildSingleBlock(float currentX, object blockData, int index)
 	{
-		bool isTarget = answerIndex == index;
+		if (blockData is not string word)
+		{
+			GD.PrintErr($"{GetType().Name} '{Name}': Invalid blockData type provided to BuildSingleBlock. Expected string.");
+			return currentX;
+		}
+
+		bool isTarget = GuessBlockInfo.AnswerIdx == index;
 		Color? blockColor = IsGermanArticle ? GetColorFromGermanArticle(word) : null;
 
 		LetterBlock letterBlock = _letterBuilder.BuildLetterBlock(
 			word,
-			new Vector2(currentX, 0),
+			new Vector2(currentX, 0), // Initial position before potential scaling adjustment
 			isTarget,
 			blockColor
 		);
 
-		ConfigureBlockSignals(letterBlock, index, isTarget); // Pass isTarget
+		// --- Apply Stretching ---
+		if (IsGermanArticle)
+		{
+			// Ensure factor is positive
+			float stretchFactor = Mathf.Max(1.0f, ArticleBlockStretchFactor);
+			letterBlock.Scale = new Vector2(stretchFactor, letterBlock.Scale.Y); // Apply horizontal scale
+																				 // Note: This scales the entire block node, including sprite, label, and collision shape.
+		}
+		// ------------------------
 
-		AddChild(letterBlock);
-		LetterBlocks.Enqueue(letterBlock); // Uses the public LetterBlocks property
-
-		// Update public Target property if this is the target block
 		if (isTarget)
 		{
-			Target = letterBlock; // Uses the public Target property
-			TargetIdx = index;    // Uses the public TargetIdx property
+			Target = letterBlock;
+			TargetIdx = index;
 		}
 
-		return CalculateNextBlockStartPosition(letterBlock, currentX); // Renamed internal method
+		ConfigureBlockSignals(letterBlock, index);
+
+		AddChild(letterBlock);
+		LetterBlocks.Enqueue(letterBlock);
+
+		// Use the modified base helper which now considers scale
+		return CalculateNextBlockStartPosition(letterBlock, currentX);
 	}
 
-	/// <summary>
-	/// Connects signals for a newly created LetterBlock.
-	/// </summary>
-	private void ConfigureBlockSignals(LetterBlock letterBlock, int index, bool isTarget)
+	protected override void ConfigureBlockSignals(LetterBlock letterBlock, int index)
 	{
-		// Connect signals using original public delegate names
+		// Connect common destruction signal
+		letterBlock.OnLetterDestructedSignal += OnLetterBlockDestroyed; // Use base handler
+
+		// Emit final signal when the *first* block is ready to dequeue (matches original logic)
 		if (index == 0)
 		{
-			letterBlock.OnReadyToDequeueSignal += () => EmitSignal(SignalName.ReadyToDequeueSignal); // Original Signal Name
+			letterBlock.OnReadyToDequeueSignal += () => EmitSignal(SignalName.ReadyToDequeueSignal);
 		}
 
-		letterBlock.OnLetterDestructedSignal += OnLetterBlockDestroyed; // Connect to private handler
-
-		if (!isTarget)
+		// Connect internal collision disabling signal for non-targets
+		if (!letterBlock.IsTarget)
 		{
-			// Connect non-target blocks to the internal signal for disabling collisions
-			// Using original signal name (with typo fixed)
 			OnDisableChildrenCollisionsInternalSignal += letterBlock.DisableCollisions;
 		}
 	}
 
-	/// <summary>
-	/// Calculates the starting X position for the next block based on the current block's size.
-	/// </summary>
-	private static float CalculateNextBlockStartPosition(LetterBlock letterBlock, float currentBlockX)
+	protected override void ConnectTargetSignal()
 	{
-		if (letterBlock.CollisionShape == null || letterBlock.CollisionShape.Shape is not RectangleShape2D shape)
+		// Connect the target block's signal (assuming name) to the base Destroy method
+		if (Target != null)
 		{
-			GD.PrintErr($"LetterBlock '{letterBlock.Name ?? "Unnamed"}' lacks a valid RectangleShape2D CollisionShape.");
-			return currentBlockX + 50; // Fallback spacing
-		}
-
-		float blockWidth = shape.Size.X * 2;
-		const float gap = 5.0f; // Optional gap
-		return currentBlockX + blockWidth + gap;
-	}
-
-	/// <summary>
-	/// Centers the entire set of blocks horizontally relative to this node's origin.
-	/// Uses the public CenterOffset property.
-	/// </summary>
-	private void CenterBlocksLayout(float totalWidth) // Renamed internal method
-	{
-		CenterOffset = totalWidth / 2.0f; // Uses the public CenterOffset property
-		Position = new Vector2(-CenterOffset, Position.Y);
-	}
-
-	/// <summary>
-	/// Handles the Timeout signal from the destruction timer.
-	/// </summary>
-	private void OnDestructionTimerTimeout()
-	{
-		if (LetterBlocks.TryDequeue(out LetterBlock nextBlock)) // Uses public LetterBlocks property
-		{
-			nextBlock.TriggerExplosion();
-			if (!LetterBlocks.Any()) // Uses public LetterBlocks property
-			{
-				_destructionTimer.Stop();
-			}
-		}
-		else
-		{
-			_destructionTimer.Stop();
+			Target.OnTargetBlockCalledDestructionSignal += Destroy;
+			// _targetSignalConnected = true; // Set flag if needed by base Disconnect
 		}
 	}
 
-	/// <summary>
-	/// Handles the destruction signal from individual letter blocks.
-	/// Emits public signals using original names.
-	/// </summary>
-	private void OnLetterBlockDestroyed(bool isTarget) // Private handler
-	{
-		if (isTarget)
-		{
-			// Emit the internal signal using original name (typo fixed)
-			EmitSignal(SignalName.OnDisableChildrenCollisionsInternalSignal);
-		}
-		// Forward the signal externally using original name
-		EmitSignal(SignalName.OnLetterDestructedSignal, isTarget);
-	}
+	#endregion
 
-	/// <summary>
-	/// Determines the color based on the German article. (Internal helper)
-	/// </summary>
+	#region Specific Helper Methods (WordsSet Class)
+
 	private Color GetColorFromGermanArticle(string germanArticle)
 	{
+		// Assuming WordGender and ToColor() extension exist
 		return germanArticle.ToLowerInvariant() switch
 		{
 			"der" => WordGender.Masculine.ToColor(),
 			"die" => WordGender.Feminine.ToColor(),
 			"das" => WordGender.Neuter.ToColor(),
-			_ => Colors.Black
+			_ => Colors.White // Default color if article not recognized
 		};
 	}
+
+	#endregion
 }

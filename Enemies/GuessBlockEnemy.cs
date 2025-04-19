@@ -1,3 +1,4 @@
+using Alfaebeto.Blocks;
 using AlfaEBetto.Blocks;
 using AlfaEBetto.Data.Words;
 using AlfaEBetto.Enemies.Parts;
@@ -28,7 +29,7 @@ public sealed partial class GuessBlockEnemy : BaseGuessEnemy // Inherit from bas
 
 	protected override WordsSet BuildBlockSetInternal(GuessBlockWordResource resource, Vector2 position, int numOptions) =>
 		// Call the specific BuildWordsSet method on the component
-		WordsSetBuilderComponent?.BuildWordsSet(resource, position, numOptions);
+		WordsSetBuilderComponent?.BuildWordsSet(resource, position);
 
 	protected override bool ValidateExports()
 	{

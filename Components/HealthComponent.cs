@@ -2,8 +2,6 @@
 using Godot;
 
 namespace AlfaEBetto.Components;
-// Assuming Player class exists in the global namespace or relevant using statement is added
-// using YourProject.Actors;
 
 public sealed partial class HealthComponent : Node
 {

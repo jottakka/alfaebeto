@@ -1,4 +1,6 @@
-﻿using AlfaEBetto.Components;
+﻿using Alfaebeto.Components;
+using Alfaebeto.CustomNodes;
+using AlfaEBetto.Components;
 using AlfaEBetto.CustomNodes;
 using AlfaEBetto.Extensions;
 using Godot;
@@ -47,6 +49,8 @@ public sealed partial class MeteorEnemyBase : StaticBody2D
 		// --- Connect Signals ---
 		// Use += for strongly-typed connections (requires delegates defined in components)
 		HurtComponent.OnHurtSignal += OnHurt;
+		GD.Print($"Connecting ScreenExited. Notifier valid? {IsInstanceValid(VisibleOnScreenNotifier)}");
+
 		VisibleOnScreenNotifier.ScreenExited += HandleScreenExited; // Connect screen exited
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 		// Health signals connected in SetUpHealthComponent after validation

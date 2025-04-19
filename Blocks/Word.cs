@@ -1,147 +1,163 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using AlfaEBetto.Blocks;
 using AlfaEBetto.Data.Words;
 using Godot;
 
-namespace AlfaEBetto.Blocks;
+namespace Alfaebeto.Blocks;
 
-public partial class Word : Node2D
+public partial class Word : BlockSetBase // Inherit from base
 {
-	[Export]
-	public PackedScene LetterBlockPackedScene { get; set; }
-	[Export]
-	public PackedScene NoLetterBlockPackedScene { get; set; }
+	#region Exports (Specific to Word)
+	[Export] public PackedScene NoLetterBlockPackedScene { get; set; }
+	#endregion
 
-	[Signal]
-	public delegate void ReadyToDequeueSignalEventHandler();
-	[Signal]
-	public delegate void OnLetterDestructedSignalEventHandler(bool isTarget);
-	[Signal]
-	public delegate void OnDisableChildrenCollisionsInternalSingalEventHandler();
-
+	#region Specific Data
 	public DiactricalMarkWordResource WordInfo { get; set; }
+	#endregion
 
-	public float CenterOffset { get; set; } = 0.0f;
+	#region Private Fields
+	// LetterBlockBuilder is now initialized in ValidateAndLoadData
+	private NoLetterBlock _noLetterBlockInstance; // Keep track if needed
+	#endregion
 
-	public int TargetIdx { get; set; }
+	#region Abstract Method Implementations
 
-	public Queue<LetterBlock> LetterBlocks { get; set; } = new();
-
-	public LetterBlock Target { get; set; }
-
-	private static LetterBlockBuilder _letterBuilder = null;
-
-	private Timer _destructionTimer = new();
-	public override void _Ready()
+	protected override bool ValidateAndLoadData()
 	{
-		_letterBuilder ??= new LetterBlockBuilder(LetterBlockPackedScene, NoLetterBlockPackedScene);
-		AddChild(_destructionTimer);
-		BuildLetterBlocks();
-		_destructionTimer.Timeout += () =>
+		// 1. Validate Data Source
+		if (WordInfo == null)
 		{
-			if (LetterBlocks.Any())
-			{
-				LetterBlocks.Dequeue().TriggerExplosion();
-			}
-			else
-			{
-				_destructionTimer.Stop();
-			}
-		};
-	}
-
-	private void BuildLetterBlocks()
-	{
-		float currentX = AddNoLetterBlock();
-
-		foreach ((char letter, int idx) in WordInfo.WithoutMark.Select((letter, idx) => (letter, idx)))
-		{
-			currentX = BuildLetterBlock(currentX, letter, idx);
+			GD.PrintErr($"{GetType().Name} '{Name}': {nameof(WordInfo)} is required but was not set.");
+			return false;
 		}
 
-		Target.OnTargetBlockCalledDestructionSignal += Destroy;
-		CenterWordPositionOn(currentX);
-	}
-
-	private void CenterWordPositionOn(float currentX)
-	{
-		CenterOffset = currentX / 2.0f;
-
-		Position -= new Vector2(CenterOffset, 0);
-	}
-
-	private float AddNoLetterBlock()
-	{
-		NoLetterBlock noLetterBlock = _letterBuilder.BuildNoLetterBlock(
-			new Vector2(0.0f, 0.0f),
-			isTarget: WordInfo.HasMark is false
-		);
-
-		// always being the last to be destroyed
-		noLetterBlock.OnReadyToDequeueSignal += () =>
+		// 2. Validate PackedScenes
+		if (LetterBlockPackedScene == null)
 		{
-			_ = EmitSignal(nameof(ReadyToDequeueSignal));
-		};
+			GD.PrintErr($"{GetType().Name} '{Name}': {nameof(LetterBlockPackedScene)} is required.");
+			return false;
+		}
 
-		float currentX = SetBlock(noLetterBlock, 0.0f);
-		return currentX;
+		if (NoLetterBlockPackedScene == null)
+		{
+			GD.PrintErr($"{GetType().Name} '{Name}': {nameof(NoLetterBlockPackedScene)} is required for {GetType().Name}.");
+			return false;
+		}
+
+		// 3. Initialize Instance-Specific Builder (Fixing static issue)
+		// Pass both scenes needed by this derived class
+		_letterBuilder = new LetterBlockBuilder(LetterBlockPackedScene, NoLetterBlockPackedScene);
+
+		return true; // Validation passed
 	}
 
-	private float BuildLetterBlock(float currentX, char letter, int idx)
+	protected override void BuildAndPositionBlocksInternal()
 	{
-		bool isTarget = WordInfo.HasMark && WordInfo.MarkIndex == idx;
+		// 1. Build the initial "No Mark" block
+		float currentX = BuildNoLetterBlock();
+
+		// 2. Build the actual letter blocks
+		if (WordInfo?.WithoutMark != null) // Null check for safety
+		{
+			foreach ((char letter, int idx) in WordInfo.WithoutMark.Select((letter, idx) => (letter, idx)))
+			{
+				currentX = BuildSingleBlock(currentX, letter, idx); // Pass char as blockData
+			}
+		}
+
+		// 3. Center the layout
+		CenterBlocksLayout(currentX);
+	}
+
+	protected override float BuildSingleBlock(float currentX, object blockData, int index)
+	{
+		if (blockData is not char letter) // Ensure correct data type
+		{
+			GD.PrintErr($"{GetType().Name} '{Name}': Invalid blockData type provided to BuildSingleBlock. Expected char.");
+			return currentX;
+		}
+
+		bool isTarget = WordInfo.HasMark && WordInfo.MarkIndex == index;
 
 		LetterBlock letterBlock = _letterBuilder.BuildLetterBlock(
-			letter,
+			letter, // Pass char directly
 			new Vector2(currentX, 0),
-			isTarget: isTarget
+			isTarget
 		);
 
-		return SetBlock(letterBlock, currentX);
-	}
-
-	private float SetBlock(LetterBlock letterBlock, float currentX)
-	{
-		if (letterBlock.IsTarget)
-		{
-			Target = letterBlock;
-		}
-		else
-		{
-			OnDisableChildrenCollisionsInternalSingal += letterBlock.DisableCollisions;
-		}
-
-		letterBlock.OnLetterDestructedSignal += OnLetterDestroyed;
-
-		LetterBlocks.Enqueue(letterBlock);
-		AddChild(letterBlock);
-
-		return CalculateNextLetterPosition(letterBlock, currentX);
-	}
-
-	private static float CalculateNextLetterPosition(LetterBlock letterBlock, float currentX)
-	{
-		CollisionShape2D collisionShape = letterBlock.CollisionShape;
-
-		RectangleShape2D shape = collisionShape.Shape as RectangleShape2D;
-
-		float nextXPosition = currentX + (shape.Size.X * 2);
-		return nextXPosition;
-	}
-
-	private void OnLetterDestroyed(bool isTarget)
-	{
 		if (isTarget)
 		{
-			_ = EmitSignal(nameof(OnDisableChildrenCollisionsInternalSingal));
+			Target = letterBlock; // Update protected property
+			TargetIdx = index;   // Update protected property
 		}
 
-		_ = EmitSignal(nameof(OnLetterDestructedSignal), isTarget);
+		ConfigureBlockSignals(letterBlock, index); // Call common signal config
+
+		AddChild(letterBlock);
+		LetterBlocks.Enqueue(letterBlock); // Add to protected queue
+
+		return CalculateNextBlockStartPosition(letterBlock, currentX); // Use base helper
 	}
 
-	public void Destroy()
+	protected override void ConfigureBlockSignals(LetterBlock letterBlock, int index)
 	{
-		LetterBlocks.Dequeue().TriggerExplosion();
-		_destructionTimer.Start(0.25f);
+		// Connect common destruction signal
+		letterBlock.OnLetterDestructedSignal += OnLetterBlockDestroyed; // Use base handler
+
+		// Connect internal collision disabling signal for non-targets
+		if (!letterBlock.IsTarget)
+		{
+			// Use base signal name (ensure typo is fixed if base definition had it)
+			OnDisableChildrenCollisionsInternalSignal += letterBlock.DisableCollisions;
+		}
+
+		// Word.cs doesn't emit ReadyToDequeueSignal based on letter index,
+		// it uses the NoLetterBlock for that (handled in BuildNoLetterBlock).
 	}
+
+	protected override void ConnectTargetSignal()
+	{
+		// Connect the target block's signal (assuming name) to the base Destroy method
+		if (Target != null)
+		{
+			Target.OnTargetBlockCalledDestructionSignal += Destroy;
+			// _targetSignalConnected = true; // Set flag if needed by base Disconnect
+		}
+	}
+
+	#endregion
+
+	#region Specific Helper Methods (Word Class)
+
+	private float BuildNoLetterBlock()
+	{
+		bool isTarget = WordInfo.HasMark is false; // Target if word has no mark
+
+		_noLetterBlockInstance = _letterBuilder.BuildNoLetterBlock(
+			new Vector2(0.0f, 0.0f),
+			isTarget
+		);
+
+		if (isTarget)
+		{
+			Target = _noLetterBlockInstance; // Can be the target
+			TargetIdx = -1; // Special index for no-letter block
+		}
+
+		// The 'NoLetterBlock' is always the last destroyed, so it emits the final signal
+		_noLetterBlockInstance.OnReadyToDequeueSignal += () => EmitSignal(SignalName.ReadyToDequeueSignal);
+
+		ConfigureBlockSignals(_noLetterBlockInstance, -1); // Configure its signals too
+
+		AddChild(_noLetterBlockInstance);
+		LetterBlocks.Enqueue(_noLetterBlockInstance);
+
+		return CalculateNextBlockStartPosition(_noLetterBlockInstance, 0.0f);
+	}
+
+	#endregion
+
+	#region Overrides (Optional)
+	// Override Destroy or other virtual methods from base class if needed
+	#endregion
 }

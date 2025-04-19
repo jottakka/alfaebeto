@@ -1,4 +1,4 @@
-﻿using AlfaEBetto.Extensions;
+using AlfaEBetto.Extensions;
 using Godot;
 
 namespace AlfaEBetto.Ammo;
@@ -91,12 +91,13 @@ public partial class AmmoBase : Area2D
 			AnimationPlayer.AnimationFinished += OnAnimationFinished;
 		}
 
-		// Connect AreaEntered last, as it might trigger immediately if overlapping at spawn
+		// Connect AreaEntered last
 		AreaEntered += OnAreaEntered;
 	}
 
 	private void DisconnectSignals()
 	{
+		// Disconnect other signals
 		if (IsInstanceValid(VisibleOnScreenNotifier))
 		{
 			VisibleOnScreenNotifier.ScreenExited -= OnScreenExited;
@@ -107,39 +108,35 @@ public partial class AmmoBase : Area2D
 			AnimationPlayer.AnimationFinished -= OnAnimationFinished;
 		}
 
-		// Might be disconnected already if explosion happened, but removing is safe.
-		AreaEntered -= OnAreaEntered;
+		// --- REMOVED this line ---
+		// AreaEntered -= OnAreaEntered;
+		// Reason: This signal is explicitly disconnected within StartExplosion()
+		// to prevent multiple triggers. Attempting to disconnect again here
+		// causes the "nonexistent connection" error if an explosion occurred.
+		// If no explosion occurred (e.g., ScreenExited), removing a non-existent
+		// connection here wouldn't error, but it's cleaner to omit it since
+		// StartExplosion *always* disconnects it upon a hit.
 	}
 
 	private void OnAreaEntered(Area2D area)
 	{
-		// Prevent multiple triggers if already exploding
 		if (_isExploding)
 		{
 			return;
 		}
-
-		// TODO: Add more specific checks?
-		// Optional: Check if the area belongs to a valid target type or group
-		// E.g., if (area.IsInGroup("DamageablePlayer")) { ... }
-		// E.g., if (area is PlayerHitBox || area is PlayerShieldHitBox) { ... }
 
 		StartExplosion();
 	}
 
 	private void OnAnimationFinished(StringName animationName)
 	{
-		// Assuming AmmoAnimations class/constants exist
 		if (animationName == AmmoAnimations.AmmoExplosion)
 		{
-			// Animation finished, now safe to remove
 			QueueFree();
 		}
 	}
 
-	private void OnScreenExited() =>
-		// Clean up if ammo goes off-screen without hitting anything
-		QueueFree();
+	private void OnScreenExited() => QueueFree();
 	#endregion
 
 	#region Internal Logic
@@ -147,19 +144,17 @@ public partial class AmmoBase : Area2D
 	{
 		if (_isExploding)
 		{
-			return; // Already handled
+			return;
 		}
 
 		_isExploding = true;
 
-		Speed = 0; // Stop movement
+		Speed = 0;
 
-		// Disable further collision checks
+		// Disable further collision checks *AND* disconnect the signal here
 		CollisionShape?.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-		// No longer need to detect entering areas
-		AreaEntered -= OnAreaEntered;
+		AreaEntered -= OnAreaEntered; // Disconnect immediately
 
-		// Hide main sprite, show explosion animation
 		if (Sprite != null)
 		{
 			Sprite.Visible = false;
@@ -170,10 +165,8 @@ public partial class AmmoBase : Area2D
 			ExplosionSprite.Visible = true;
 		}
 
-		// Play explosion animation
 		AnimationPlayer?.Play(AmmoAnimations.AmmoExplosion);
 
-		// If AnimationPlayer is missing or fails, queue free immediately as fallback
 		if (AnimationPlayer == null)
 		{
 			GD.PrintErr($"{Name}: Missing AnimationPlayer, cannot play explosion. Queuing free.");
@@ -183,10 +176,11 @@ public partial class AmmoBase : Area2D
 
 	private bool ValidateExports()
 	{
+		// ...(Validation logic remains the same)...
 		bool isValid = true;
 		void CheckNode(Node node, string name)
 		{
-			if (node == null) { GD.PrintErr($"{Name}: Exported node '{name}' is null!"); isValid = false; }
+			if (node == null) { GD.PrintErr($"{Name} ({GetPath()}): Exported node '{name}' is null!"); isValid = false; }
 		}
 
 		CheckNode(Sprite, nameof(Sprite));

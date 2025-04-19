@@ -38,6 +38,6 @@ public sealed partial class RulesViewingUi : Control
 	{
 		RuleListItem ruleListItem = RuleListItemPackedScene.Instantiate<RuleListItem>();
 		ruleListItem.SetData(rule);
-		RuleListVBoxContainer.AddChildDeffered(ruleListItem);
+		RuleListVBoxContainer.AddChildDefered(ruleListItem);
 	}
 }

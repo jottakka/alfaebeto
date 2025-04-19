@@ -246,13 +246,13 @@ _data = {
 &"meteor_word_target_orbiting": SubResource("Animation_yqdq4")
 }
 
-[node name="MeteorGuessTarget" type="Area2D" node_paths=PackedStringArray("MainMeteor", "AnswerMeteor1", "AnswerMeteor2", "AnimationPlayerNode", "VisibleOnScreenNotifier2D", "GemSpawnerComponent")]
+[node name="MeteorGuessTarget" type="Area2D" node_paths=PackedStringArray("MainMeteor", "AnswerMeteor1", "AnswerMeteor2", "AnimationPlayer", "VisibleOnScreenNotifier2D", "GemSpawnerComponent")]
 script = ExtResource("1_alqsk")
 Mode = 1
 MainMeteor = NodePath("TextMeteor")
 AnswerMeteor1 = NodePath("AnswerMeteor1")
 AnswerMeteor2 = NodePath("AnswerMeteor2")
-AnimationPlayerNode = NodePath("AnimationPlayer")
+AnimationPlayer = NodePath("AnimationPlayer")
 VisibleOnScreenNotifier2D = NodePath("VisibleOnScreenNotifier2D")
 GemSpawnerComponent = NodePath("GemSpawnerComponent")
 

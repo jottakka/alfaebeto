@@ -201,8 +201,3 @@ public sealed partial class StartGame : Node2D // Or Node, depending on needs
 		GameOverUi.Open(); // Assuming this method makes it visible and plays intro anim
 	}
 }
-
-// ==================================================
-// --- Assumed Supporting Code (Place in appropriate files) ---
-// ==================================================
-/* (Assumed code remains the same) */

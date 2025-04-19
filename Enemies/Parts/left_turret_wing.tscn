@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c02ldw10qedp"]
+
+[ext_resource type="Script" uid="uid://dwypxf0r7irhc" path="res://Enemies/Parts/TurretWing.cs" id="1_ed0ti"]
+[ext_resource type="PackedScene" uid="uid://h7wg0do81ewk" path="res://EnemyWeapons/turrent.tscn" id="2_pll4i"]
+[ext_resource type="Texture2D" uid="uid://c773bi3w1jkc2" path="res://Enemies/Art/wingYellow_1.png" id="3_qt8oa"]
+
+[node name="LeftTurretWing" type="Area2D" node_paths=PackedStringArray("VisibleOnScreenNotifier2D", "Turret")]
+show_behind_parent = true
+position = Vector2(-20, -1)
+scale = Vector2(1, 1.07523)
+script = ExtResource("1_ed0ti")
+VisibleOnScreenNotifier2D = NodePath("VisibleOnScreenNotifier2D")
+Turret = NodePath("Turret")
+
+[node name="Turret" parent="." instance=ExtResource("2_pll4i")]
+RotationSpeed = null
+
+[node name="Wing" type="Sprite2D" parent="."]
+position = Vector2(-26, -9.3)
+texture = ExtResource("3_qt8oa")
+flip_h = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(7.62939e-06, 0.930035)
+scale = Vector2(0.625, 1.06954)

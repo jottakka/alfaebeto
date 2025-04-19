@@ -1,11 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpl0ke8m7bel0"]
 
 [ext_resource type="Script" uid="uid://wdxhlk2atwwp" path="res://Blocks/WordsSet.cs" id="1_kujrd"]
+[ext_resource type="PackedScene" uid="uid://co3270trdfkno" path="res://Blocks/letter_block.tscn" id="2_2x5w8"]
 [ext_resource type="PackedScene" uid="uid://dirpk7ofu7r1o" path="res://Blocks/three_articles_block.tscn" id="3_ilbxt"]
-[ext_resource type="PackedScene" uid="uid://clgy8ut3h15vi" path="res://Blocks/word_block.tscn" id="3_x0ckx"]
 
 [node name="WordsSet" type="Node2D"]
 script = ExtResource("1_kujrd")
-LetterBlockPackedScene = ExtResource("3_x0ckx")
-WordBlockPackedScene = ExtResource("3_x0ckx")
+WordBlockPackedScene = ExtResource("2_2x5w8")
 ThreeArticleBlockPackedScene = ExtResource("3_ilbxt")
+ArticleBlockStretchFactor = 2.0
+LetterBlockPackedScene = ExtResource("2_2x5w8")

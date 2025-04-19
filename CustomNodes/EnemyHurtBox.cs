@@ -1,49 +1,93 @@
-﻿using AlfaEBetto.Ammo;
+﻿using Alfaebeto.Blocks;    // For LetterBlock, Word, ArticlesSet (assuming EnemyWord uses Blocks namespace too)
+using AlfaEBetto.Ammo;
 using AlfaEBetto.Blocks;
 using AlfaEBetto.Enemies;
 using AlfaEBetto.Extensions;
 using AlfaEBetto.MeteorWords;
 using Godot;
 
-namespace AlfaEBetto.CustomNodes;
+namespace Alfaebeto.CustomNodes; // Assuming namespace for HitBox/HurtBox
 
+/// <summary>
+/// An Area2D representing the area where an enemy can be hurt.
+/// Automatically sets its collision layer based on the parent node's type during _Ready.
+/// It typically doesn't set its mask, relying on attacking objects (like player ammo)
+/// to have the correct mask to detect this hurtbox's layer.
+/// </summary>
 public sealed partial class EnemyHurtBox : Area2D
 {
-	public Node Parent => GetParent();
+	// Keep Parent property if frequently accessed, otherwise GetParent() is fine too.
+	// public Node ParentNode => GetParent(); // Renamed for clarity
 
 	public override void _Ready()
 	{
+		// Ensure starting clean
 		this.ResetCollisionLayerAndMask();
 
-		ActivateCollisionsMasks();
+		// Set the correct layer based on the parent type
+		SetCollisionLayerBasedOnParent();
 	}
 
-	public void ActivateCollisionsMasks()
+	/// <summary>
+	/// Sets the appropriate collision layer for this hurtbox based on its parent node's type.
+	/// </summary>
+	public void SetCollisionLayerBasedOnParent() // Renamed from ActivateCollisionsMasks
 	{
-		switch (Parent)
+		Node parentNode = GetParent(); // Get parent reference
+
+		if (parentNode == null)
 		{
-			case EnemyBase _:
-				SetHurtBoxForRegularEnemy();
-				break;
+			GD.PrintErr($"{Name}: HurtBox has no parent node. Cannot set collision layer.");
+			return;
+		}
+
+		// Determine layer based on parent type using pattern matching
+		switch (parentNode)
+		{
+			// Specific Enemy Types first
 			case MeteorEnemyBase _:
-				SetHurtBoxForMeteorEnemy();
+				SetLayer(CollisionLayers.MeteorEnemyHurtBox);
 				break;
-			case LetterBlock _ or EnemyWord _ or AnswerMeteor _:
-				SetHurtBoxForWordsEnemy();
+			// Group common word/block types (adjust if EnemyWord inherits differently)
+			case LetterBlock _ or Word _ or WordsSet _ or AnswerMeteor _:
+				// Assuming all these word/block related interactive elements use the same hurtbox layer
+				SetLayer(CollisionLayers.WordEnemyHurtBox);
 				break;
+			// General Enemy Type (Catches types inheriting from EnemyBase but not MeteorEnemyBase)
+			case EnemyBase _: // Put this after more specific enemy types
+				SetLayer(CollisionLayers.RegularEnemyHurtBox);
+				break;
+			// Ignore specific types that shouldn't have this hurtbox logic
 			case AmmoBase _:
+				// Ammo shouldn't typically have an EnemyHurtBox, do nothing.
+				GD.PrintRich($"[color=orange]{Name}: EnemyHurtBox attached to AmmoBase parent '{parentNode.Name}'. Hurtbox will not be active.[/color]");
 				break;
+			// Default case for unrecognized parents
 			default:
-				GD.PrintErr("HurtBox parent is not recognized");
+				GD.PrintErr($"{Name}: HurtBox parent type '{parentNode.GetType().Name}' is not recognized or handled. Hurtbox layer not set.");
 				break;
 		}
 	}
 
-	public void DeactivateCollisions() => this.ResetCollisionLayerAndMask();
+	/// <summary>
+	/// Deactivates collisions by resetting the layer and mask.
+	/// </summary>
+	public void DeactivateCollisions()
+	{
+		this.ResetCollisionLayerAndMask();
+		// Optionally disable the monitoring state as well if no longer needed
+		this.Monitoring = false;
+	}
 
-	private void SetHurtBoxForRegularEnemy() => this.ActivateCollisionLayer(CollisionLayers.RegularEnemyHurtBox);
+	/// <summary>
+	/// Helper method to activate a single collision layer.
+	/// </summary>
+	/// <param name="layer">The layer to activate.</param>
+	private void SetLayer(CollisionLayers layer)
+	{
+		// Assumes ResetCollisionLayerAndMask was called before this
+		this.Monitoring = true;
 
-	private void SetHurtBoxForWordsEnemy() => this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
-
-	private void SetHurtBoxForMeteorEnemy() => this.ActivateCollisionLayer(CollisionLayers.MeteorEnemyHurtBox);
+		this.ActivateCollisionLayer(layer);
+	}
 }
