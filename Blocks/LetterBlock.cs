@@ -71,6 +71,7 @@ public partial class LetterBlock : StaticBody2D
 
 		// Configure collision
 		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHurtBox);
+		this.ActivateCollisionLayer(CollisionLayers.WordEnemyHitBox);
 		this.ActivateCollisionMask(CollisionLayers.Player); // Mask determines what *this* body collides with
 	}
 

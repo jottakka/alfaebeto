@@ -37,7 +37,7 @@ public sealed partial class Laser : Area2D
 
 			// Set the LAYER the laser's hitbox IS ON (e.g., PlayerHitBox)
 			// This layer is what enemy HurtComponents will need in their MASK to detect the laser.
-			HitBox.ActivateCollisionLayer(CollisionLayers.PlayerHitBox); // Or PlayerAmmo if you add it
+			//HitBox.ActivateCollisionLayer(CollisionLayers.PlayerSpecialHurtBox);
 
 			// Set the MASK for the laser's hitbox (What layers does IT detect?)
 			// This determines when the laser's OnHitBoxAreaEntered signal fires.

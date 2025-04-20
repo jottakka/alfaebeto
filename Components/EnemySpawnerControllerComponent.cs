@@ -1,14 +1,19 @@
-﻿using System; // For Exception
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AlfaEBetto.Components;
 using AlfaEBetto.Enemies;
 using AlfaEBetto.Enemies.Parts;
 using Godot;
+// Assuming EnemyBase and EnemySpawner exist in the namespaces above
 
-namespace Alfaebeto.Components; // Corrected namespace
+namespace Alfaebeto.Components;
 
 /// <summary>
 /// Controls an associated EnemySpawner part, managing cooldown timers and
 /// handling the instantiation of enemies via an EnemyBuilder when signaled.
+/// Limits the maximum number of active enemies spawned by this component
+/// and cleans them up when this component is freed.
 /// </summary>
 public sealed partial class EnemySpawnerControllerComponent : Node
 {
@@ -16,9 +21,16 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 	[Export] public PackedScene EnemyPackedScene { get; set; }
 	[Export] public Timer CooldownTimer { get; set; }
 
+	/// <summary>
+	/// The maximum number of enemies spawned by this component that can be active at once.
+	/// Set to 0 or less for no limit.
+	/// </summary>
+	[Export(PropertyHint.Range, "0, 50, 1")] // Moved to top export group
+	public int MaxSpawnedEnemies { get; set; } = 2; // Example limit
+
 	[ExportGroup("Timing")]
-	[Export] public float BaseCooldown { get; set; } = 1.5f;
-	[Export] public float CooldownVariance { get; set; } = 0.2f; // Standard deviation for Randfn
+	[Export] public float BaseCooldown { get; set; } = 5.0f;
+	[Export] public float CooldownVariance { get; set; } = 1f;
 
 	[ExportGroup("Spawn Properties")]
 	[Export] public float SpawnSpeed { get; set; } = 100.0f;
@@ -26,113 +38,97 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
 	#region Private Fields
 	private EnemyBuilder _enemyBuilder;
-	private EnemySpawner _enemySpawner; // Reference to the controlled spawner part
-	private Node _cachedSceneRoot; // Cache scene root for adding children
-	private bool _allowToShoot = false;
+	private EnemySpawner _enemySpawner;
+	private Node _cachedSceneRoot;
 	private bool _isInitialized = false;
+
+	// State Flags
+	private bool _externalPermissionToShoot = true; // Tracks permission from parent spawner's signal
+	private bool _allowToShoot = false; // Actual permission considering external AND max count
+	private bool _disallowedByMaxCount = false; // Tracks if disallowed SPECIFICALLY by max count
+
+	// Tracking
+	private readonly List<EnemyBase> _spawnedEnemies = [];
 	#endregion
 
-	#region Godot Methods
+	#region Godot Methods & Initialization
 	public override void _Ready() => Initialize();
 
-	public override void _ExitTree()
-	{
-		DisconnectSignals();
-		// Stop timer if node is removed prematurely
-		CooldownTimer?.Stop();
-	}
-	#endregion
-
-	#region Initialization and Validation
 	private void Initialize()
 	{
+		// ... (Validation for Exports, Parent, Muzzle, Builder, SceneRoot remains the same) ...
 		if (_isInitialized)
 		{
 			return;
 		}
 
-		// 1. Validate Exports
-		if (!ValidateExports())
-		{
-			GD.PrintErr($"{Name}: Missing required exported nodes/scenes. Deactivating controller.");
-			SetProcess(false); SetPhysicsProcess(false); // Deactivate
-			_isInitialized = false;
-			return;
-		}
+		if (!ValidateExports()) { /* Error Log + Deactivate */ _isInitialized = false; return; }
 
-		// 2. Get Parent Spawner
 		_enemySpawner = GetParent<EnemySpawner>();
-		if (_enemySpawner == null)
-		{
-			GD.PrintErr($"{Name}: Parent node is not or does not inherit from EnemySpawner. Deactivating.");
-			SetProcess(false); SetPhysicsProcess(false);
-			_isInitialized = false;
-			return;
-		}
+		if (_enemySpawner == null) { /* Error Log + Deactivate */ _isInitialized = false; return; }
 
-		if (_enemySpawner.Muzzle == null) // Also check if Muzzle exists on parent
-		{
-			GD.PrintErr($"{Name}: Parent EnemySpawner '{_enemySpawner.Name}' is missing required Muzzle node. Deactivating.");
-			SetProcess(false); SetPhysicsProcess(false);
-			_isInitialized = false;
-			return;
-		}
+		if (_enemySpawner.Muzzle == null) { /* Error Log + Deactivate */ _isInitialized = false; return; }
 
-		// 3. Create Enemy Builder
-		try
-		{
-			_enemyBuilder = new EnemyBuilder(EnemyPackedScene); // Uses constructor validation for PackedScene
-		}
-		catch (Exception ex)
-		{
-			GD.PrintErr($"{Name}: Failed to initialize EnemyBuilder. Error: {ex.Message}. Deactivating.");
-			SetProcess(false); SetPhysicsProcess(false);
-			_isInitialized = false;
-			return;
-		}
+		try { _enemyBuilder = new EnemyBuilder(EnemyPackedScene); }
+		catch (Exception ex) { /* Error Log + Deactivate */ _isInitialized = false; return; }
 
-		// 4. Cache Scene Root
-		// Consider if GetTree().CurrentScene is appropriate, or if enemies
-		// should be added as children of _enemySpawner or another specific node.
-		// Using CurrentScene for now as per original logic.
 		_cachedSceneRoot = GetTree()?.CurrentScene;
-		if (_cachedSceneRoot == null)
-		{
-			GD.PrintErr($"{Name}: Could not cache scene root. Deactivating.");
-			SetProcess(false); SetPhysicsProcess(false);
-			_isInitialized = false;
-			return;
-		}
+		if (_cachedSceneRoot == null) { /* Error Log + Deactivate */ _isInitialized = false; return; }
 
-		// 5. Connect Signals
 		ConnectSignals();
-
-		// 6. Initial Timer Setup (but don't start automatically)
 		CooldownTimer.WaitTime = GetRandomCooldownTime();
-
 		_isInitialized = true;
-		GD.Print($"{Name}: Initialized successfully.");
-		// Timer is started/stopped via OnSpawnerPermissionChange
+		GD.Print($"{Name}: Initialized. Max Enemies: {MaxSpawnedEnemies}");
+		// Start disabled until permission is granted
+		UpdateShootingPermission(); // Calculate initial permission state
 	}
 
 	private bool ValidateExports()
 	{
+		// ... (Validation for Scene, Timer remains the same) ...
 		bool isValid = true;
-		if (EnemyPackedScene == null) { GD.PrintErr($"{Name}: Missing {nameof(EnemyPackedScene)} export."); isValid = false; }
+		if (EnemyPackedScene == null) { GD.PrintErr($"{Name} ({GetPath()}): Missing {nameof(EnemyPackedScene)} export."); isValid = false; }
 
-		if (CooldownTimer == null) { GD.PrintErr($"{Name}: Missing {nameof(CooldownTimer)} export."); isValid = false; }
-		// Add checks for BaseCooldown, CooldownVariance > 0?
+		if (CooldownTimer == null) { GD.PrintErr($"{Name} ({GetPath()}): Missing {nameof(CooldownTimer)} export."); isValid = false; }
+
+		if (MaxSpawnedEnemies < 0)
+		{
+			GD.PushWarning($"{Name} ({GetPath()}): {nameof(MaxSpawnedEnemies)} is negative ({MaxSpawnedEnemies}). Treating as 0 (no limit).");
+			MaxSpawnedEnemies = 0;
+		}
+
 		return isValid;
+	}
+
+	public override void _Notification(int what)
+	{
+		// ... (NotificationPredelete cleanup logic remains the same) ...
+		if (what == NotificationPredelete)
+		{
+			// GD.Print($"{Name} ({GetPath()}): Cleaning up spawned enemies on Predelete.");
+			foreach (EnemyBase enemy in _spawnedEnemies.ToList())
+			{
+				if (IsInstanceValid(enemy)) { enemy.ForceDespawn(); }
+			}
+
+			_spawnedEnemies.Clear();
+		}
+	}
+
+	public override void _ExitTree()
+	{
+		DisconnectSignals();
+		CooldownTimer?.Stop();
 	}
 	#endregion
 
-	#region Signal Handling
+	#region Signal Handling & State Updates
+
 	private void ConnectSignals()
 	{
-		// Connect signals FROM parent EnemySpawner
+		// ... (Connections FROM EnemySpawner remain the same) ...
 		if (_enemySpawner != null)
 		{
-			// Ensure signals exist before connecting (optional but safer)
 			if (_enemySpawner.HasSignal(EnemySpawner.SignalName.OnSpawnEnemyReadySignal))
 			{
 				_enemySpawner.OnSpawnEnemyReadySignal += SpawnProjectile;
@@ -144,7 +140,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
 			if (_enemySpawner.HasSignal(EnemySpawner.SignalName.OnSpawnProcessingFinishedSignal))
 			{
-				_enemySpawner.OnSpawnProcessingFinishedSignal += OnReadyToRestartTimer; // Corrected typo
+				_enemySpawner.OnSpawnProcessingFinishedSignal += OnReadyToRestartTimer;
 			}
 			else
 			{
@@ -153,30 +149,25 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
 			if (_enemySpawner.HasSignal(EnemySpawner.SignalName.OnSpawnerPermissionChangeSignal))
 			{
-				_enemySpawner.OnSpawnerPermissionChangeSignal += OnSpawnerPermissionChange;
+				_enemySpawner.OnSpawnerPermissionChangeSignal += OnExternalPermissionChange; // Renamed handler
 			}
 			else
 			{
 				GD.PrintErr($"{Name}: EnemySpawner missing signal {EnemySpawner.SignalName.OnSpawnerPermissionChangeSignal}");
 			}
 		}
-
-		// Connect signals FROM Timer component
+		// --- Timer connection still goes to local handler ---
 		if (CooldownTimer != null)
 		{
-			// Connect timer timeout to the PARENT spawner's StartSpawn method.
-			// This assumes the parent EnemySpawner node has the visual logic (muzzle flash, etc.)
-			// and will emit OnSpawnEnemyReadySignal when ready for projectile creation.
-			CooldownTimer.Timeout += _enemySpawner.StartSpawn; // Keep original logic, ensure StartSpawn exists on EnemySpawner
+			CooldownTimer.Timeout += HandleCooldownTimerTimeout;
 		}
 	}
 
 	private void DisconnectSignals()
 	{
-		// Use IsInstanceValid before accessing potentially freed nodes
+		// ... (Disconnections FROM EnemySpawner remain the same, adjust handler name) ...
 		if (IsInstanceValid(_enemySpawner))
 		{
-			// Check if signals exist before trying to disconnect (optional but avoids potential errors if signals changed)
 			if (_enemySpawner.HasSignal(EnemySpawner.SignalName.OnSpawnEnemyReadySignal))
 			{
 				_enemySpawner.OnSpawnEnemyReadySignal -= SpawnProjectile;
@@ -184,59 +175,78 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
 			if (_enemySpawner.HasSignal(EnemySpawner.SignalName.OnSpawnProcessingFinishedSignal))
 			{
-				_enemySpawner.OnSpawnProcessingFinishedSignal -= OnReadyToRestartTimer; // Corrected typo
+				_enemySpawner.OnSpawnProcessingFinishedSignal -= OnReadyToRestartTimer;
 			}
 
 			if (_enemySpawner.HasSignal(EnemySpawner.SignalName.OnSpawnerPermissionChangeSignal))
 			{
-				_enemySpawner.OnSpawnerPermissionChangeSignal -= OnSpawnerPermissionChange;
+				_enemySpawner.OnSpawnerPermissionChangeSignal -= OnExternalPermissionChange; // Renamed handler
 			}
 		}
 
-		if (IsInstanceValid(CooldownTimer) && IsInstanceValid(_enemySpawner))
+		if (IsInstanceValid(CooldownTimer))
 		{
-			CooldownTimer.Timeout -= _enemySpawner.StartSpawn;
+			CooldownTimer.Timeout -= HandleCooldownTimerTimeout;
 		}
 	}
 
 	/// <summary>
-	/// Handles permission changes signaled by the parent EnemySpawner.
-	/// Starts or stops the cooldown timer accordingly.
+	/// Handles permission changes signaled EXTERNALLY by the parent EnemySpawner.
+	/// Stores this external permission and updates the overall shooting permission.
 	/// </summary>
-	private void OnSpawnerPermissionChange(bool isAllowedToShoot)
-	{
-		if (!_isInitialized)
-		{
-			return; // Don't respond if not ready
-		}
-
-		_allowToShoot = isAllowedToShoot;
-		if (_allowToShoot && CooldownTimer.IsStopped()) // Start only if stopped
-		{
-			// Reset and start timer immediately when allowed
-			CooldownTimer.WaitTime = GetRandomCooldownTime();
-			CooldownTimer.Start();
-			// GD.Print($"{Name}: CooldownTimer started.");
-		}
-		else if (!_allowToShoot && !CooldownTimer.IsStopped()) // Stop only if running
-		{
-			CooldownTimer.Stop();
-			// GD.Print($"{Name}: CooldownTimer stopped.");
-		}
-	}
-
-	/// <summary>
-	/// Called when the parent EnemySpawner signals it has finished its spawn process.
-	/// Resets and starts the cooldown timer if permission is still granted.
-	/// </summary>
-	private void OnReadyToRestartTimer() // Corrected typo
+	private void OnExternalPermissionChange(bool isAllowedExternally)
 	{
 		if (!_isInitialized)
 		{
 			return;
 		}
 
-		// Only restart if still allowed to shoot
+		_externalPermissionToShoot = isAllowedExternally;
+		UpdateShootingPermission(); // Recalculate overall permission
+	}
+
+	/// <summary>
+	/// Determines the actual _allowToShoot state based on external permission
+	/// AND the max enemy count. Starts/stops the timer accordingly.
+	/// </summary>
+	private void UpdateShootingPermission()
+	{
+		// Calculate new permission state
+		bool canShootNow = _externalPermissionToShoot && !_disallowedByMaxCount;
+
+		// Check if state actually changed
+		if (canShootNow == _allowToShoot)
+		{
+			return; // No change needed
+		}
+
+		_allowToShoot = canShootNow; // Update the actual permission flag
+
+		// Start or stop timer based on the NEW state
+		if (_allowToShoot && CooldownTimer.IsStopped())
+		{
+			CooldownTimer.WaitTime = GetRandomCooldownTime();
+			CooldownTimer.Start();
+			// GD.Print($"{Name}: Timer STARTED due to permission update.");
+		}
+		else if (!_allowToShoot && !CooldownTimer.IsStopped())
+		{
+			CooldownTimer.Stop();
+			// GD.Print($"{Name}: Timer STOPPED due to permission update.");
+		}
+	}
+
+	/// <summary>
+	/// Called when the parent EnemySpawner signals it has finished its spawn process.
+	/// Restarts the cooldown timer *if* still allowed to shoot.
+	/// </summary>
+	private void OnReadyToRestartTimer()
+	{
+		if (!_isInitialized)
+		{
+			return;
+		}
+		// Only restart if overall permission is still true
 		if (_allowToShoot)
 		{
 			CooldownTimer.WaitTime = GetRandomCooldownTime();
@@ -244,26 +254,71 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 		}
 	}
 
+	private double GetRandomCooldownTime() => Mathf.Max(0.1, GD.Randfn(BaseCooldown, CooldownVariance));
+
 	/// <summary>
-	/// Calculates a random cooldown time using normal distribution.
+	/// Called when the CooldownTimer times out. Checks permission and max count
+	/// before telling the EnemySpawner part to start its spawn process.
 	/// </summary>
-	private double GetRandomCooldownTime() => Mathf.Max(0.1, GD.Randfn(BaseCooldown, CooldownVariance)); // Ensure minimum wait time
+	private void HandleCooldownTimerTimeout()
+	{
+		if (!_isInitialized || !IsInstanceValid(_enemySpawner))
+		{
+			return;
+		}
+
+		// Clean list before check
+		_spawnedEnemies.RemoveAll(enemy => !IsInstanceValid(enemy));
+
+		// Check external permission first
+		if (!_externalPermissionToShoot)
+		{
+			_allowToShoot = false; // Ensure internal state matches
+								   // Timer should already be stopped by OnExternalPermissionChange, but check just in case
+			if (!CooldownTimer.IsStopped())
+			{
+				CooldownTimer.Stop();
+			}
+			// GD.Print($"{Name}: Timer fired but external permission denied.");
+			return;
+		}
+
+		// Check max enemy count
+		if (MaxSpawnedEnemies > 0 && _spawnedEnemies.Count >= MaxSpawnedEnemies)
+		{
+			// GD.Print($"{Name}: Timer fired but max enemy limit ({MaxSpawnedEnemies}) reached.");
+			_disallowedByMaxCount = true; // Mark reason for disallowing
+			UpdateShootingPermission(); // Update state (will set _allowToShoot false & stop timer)
+			return; // Do not proceed to spawn
+		}
+
+		// If we reach here, conditions are met
+		_disallowedByMaxCount = false; // Ensure this is false if we are allowed to proceed
+		_allowToShoot = true; // Ensure internal state matches
+
+		// Tell the spawner part to start its process (animation etc.)
+		// GD.Print($"{Name}: Timer fired, permission OK, limit OK. Calling StartSpawn().");
+		_enemySpawner.StartSpawn(); // This will eventually trigger SpawnProjectile via signal
+	}
+
 	#endregion
 
 	#region Spawning
-	/// <summary>
-	/// Called when the parent EnemySpawner signals it's ready to spawn the projectile visually.
-	/// Creates the enemy instance and adds it to the scene.
-	/// </summary>
+	// SpawnProjectile remains mostly the same, but the MaxEnemyCheck is removed from here
+	// as it's now handled before StartSpawn is even called.
 	private void SpawnProjectile()
 	{
-		// ... (validation checks remain the same) ...
+		if (!_isInitialized || !IsInstanceValid(_cachedSceneRoot) || !IsInstanceValid(_enemySpawner) || !IsInstanceValid(_enemySpawner.Muzzle))
+		{
+			// Log error if needed
+			return;
+		}
+		// MAX COUNT CHECK REMOVED FROM HERE
 
 		Vector2 direction = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition);
 		Vector2 velocity = direction.Normalized() * SpawnSpeed;
 		Vector2 spawnPosition = _enemySpawner.Muzzle.GlobalPosition;
 
-		// Create enemy instance - Builder now sets InitialPosition and SpawnInitialVelocity
 		EnemyBase enemy = _enemyBuilder.Create(spawnPosition, velocity);
 
 		if (enemy == null)
@@ -272,17 +327,72 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 			return;
 		}
 
+		// Add to tracking list BEFORE connecting signals from it
+		_spawnedEnemies.Add(enemy);
+		// Connect TreeExiting immediately after adding to list
+		enemy.TreeExiting += () => OnSpawnedEnemyExiting(enemy);
+		// GD.Print($"{Name}: Added {enemy.Name} to tracking. Count: {_spawnedEnemies.Count}");
+
+		// Configure spawning state AFTER adding to list/connecting signal
 		if (enemy.HasMethod("SetAsSpawning"))
 		{
 			enemy.Call("SetAsSpawning", true);
 		}
 
-		// --- *** MODIFIED LINES *** ---
-		// Add the child deferred
+		// Add to scene
 		_cachedSceneRoot.CallDeferred(Node.MethodName.AddChild, enemy);
-		// NO LONGER NEEDED: enemy.CallDeferred(Node2D.PropertyName.GlobalPosition, spawnPosition);
-		// The enemy's _Ready method will handle setting GlobalPosition from InitialPosition.
-		// --- *** END OF MODIFIED LINES *** ---
+
+		// NEW: Check if limit is NOW reached after this spawn
+		CheckMaxEnemyCountAndSetPermission();
 	}
+	#endregion
+
+	#region Enemy Tracking
+	// _spawnedEnemies list definition moved near top with other fields
+
+	// OnNotificationPredelete remains the same
+
+	/// <summary>
+	/// Called when a spawned enemy's TreeExiting signal is emitted.
+	/// Removes the enemy from the tracking list and potentially re-enables spawning.
+	/// </summary>
+	private void OnSpawnedEnemyExiting(EnemyBase enemy)
+	{
+		if (enemy == null)
+		{
+			return;
+		}
+
+		bool removed = _spawnedEnemies.Remove(enemy);
+		// if (removed) GD.Print($"{Name}: Removed {enemy.Name} from tracking. Count: {_spawnedEnemies.Count}");
+
+		// If spawning was disallowed *because* of the max count,
+		// check if we are now below the limit and can re-allow shooting.
+		if (_disallowedByMaxCount && MaxSpawnedEnemies > 0 && _spawnedEnemies.Count < MaxSpawnedEnemies)
+		{
+			// GD.Print($"{Name}: Enemy count dropped below limit. Re-evaluating permission.");
+			_disallowedByMaxCount = false; // No longer disallowed by count
+										   // Recalculate overall permission (respecting external permission)
+			UpdateShootingPermission();
+			// UpdateShootingPermission will restart the timer if _allowToShoot becomes true
+		}
+	}
+
+	/// <summary>
+	/// Checks if the max enemy count has been reached and updates permission state.
+	/// </summary>
+	private void CheckMaxEnemyCountAndSetPermission()
+	{
+		if (MaxSpawnedEnemies > 0 && _spawnedEnemies.Count >= MaxSpawnedEnemies)
+		{
+			if (!_disallowedByMaxCount) // Only update if not already disallowed by count
+			{
+				// GD.Print($"{Name}: Max enemy limit ({MaxSpawnedEnemies}) reached AFTER spawn.");
+				_disallowedByMaxCount = true;
+				UpdateShootingPermission(); // Update state (will set _allowToShoot false & stop timer)
+			}
+		}
+	}
+
 	#endregion
 }

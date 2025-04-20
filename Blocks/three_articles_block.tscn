@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dirpk7ofu7r1o"]
+[gd_scene load_steps=27 format=3 uid="uid://dirpk7ofu7r1o"]
 
 [ext_resource type="Script" uid="uid://b2gkibub8s3qi" path="res://Blocks/LetterBlock.cs" id="1_xb5qg"]
 [ext_resource type="PackedScene" uid="uid://bv2s5t8b0qw1n" path="res://CustomNodes/hit_box.tscn" id="2_wgbne"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cv0jqgxb3rnll" path="res://Components/hurt_component.tscn" id="12_ctq6g"]
 [ext_resource type="PackedScene" uid="uid://c274e6q6sakp1" path="res://Components/health_component.tscn" id="13_rvnlp"]
 [ext_resource type="Texture2D" uid="uid://bhqp58qf1hx54" path="res://Blocks/Art/explosion_flash.png" id="14_g5cuy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xb5qg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsj5s"]
 size = Vector2(19.5, 16)
@@ -363,6 +365,7 @@ _data = {
 position = Vector2(-20, 0)
 collision_layer = 0
 collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_xb5qg")
 script = ExtResource("1_xb5qg")
 Sprite = NodePath("Sprite2D")
 Label = NodePath("Sprite2D/CenterContainer/Label")

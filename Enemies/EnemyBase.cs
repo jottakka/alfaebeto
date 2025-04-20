@@ -1,4 +1,5 @@
-﻿using Alfaebeto;
+﻿using System;
+using Alfaebeto;
 using Alfaebeto.Components; // Corrected namespace
 using Alfaebeto.CustomNodes; // Corrected namespace
 using AlfaEBetto.Components;
@@ -217,6 +218,16 @@ public sealed partial class EnemyBase : CharacterBody2D // Correct base type
 
 	#region Public API
 	/// <summary>
+	/// Forces the enemy to start its death sequence immediately.
+	/// Useful for external triggers like spawner cleanup.
+	/// </summary>
+	public void ForceDespawn() // New method
+	{
+		// Call the same method that handling health depletion calls
+		// This ensures animations play, coins drop, etc.
+		OnDeath();
+	}
+	/// <summary>
 	/// Sets the enemy state to spawning. Called externally by the spawner.
 	/// Ensures spawn animation plays and collisions are initially off.
 	/// </summary>
@@ -255,7 +266,7 @@ public sealed partial class EnemyBase : CharacterBody2D // Correct base type
 
 	private void OnHurt(Area2D hittingArea)
 	{
-		if (_isDead || _isSpawning || (HurtComponent?.IsHurt ?? true))
+		if (_isDead || _isSpawning)
 		{
 			return; // Added check for HurtComponent cooldown
 		}
@@ -277,28 +288,28 @@ public sealed partial class EnemyBase : CharacterBody2D // Correct base type
 
 	private int DetermineDamage(Area2D hittingArea)
 	{
-		// Determine damage based on what hit the enemy
-		// Example logic - refine based on your projectile/hitbox types/groups
-		int damage = 0;
-		// IMPORTANT: Replace PlayerSpecialHurtBox/OwlFriend with actual types/groups/layers from your project
-		if (hittingArea is PlayerSpecialHurtBox) // Use 'is' check
+		// Add this print first!
+		GD.Print($"DetermineDamage called. Hitting area: {hittingArea?.Name}, Layer: {hittingArea?.CollisionLayer}, Groups: {string.Join(",", hittingArea?.GetGroups() ?? [])}");
+
+		int damage = 15;
+		if (hittingArea is PlayerSpecialHurtBox)
 		{
-			damage = 10; // Example damage
+			damage = 20;
 		}
-		// Check owner if area itself isn't specific enough
-		else if (hittingArea?.GetOwner() is OwlFriend owlFriend) // Check owner type
+		else if (hittingArea?.GetOwner() is OwlFriend owlFriend)
 		{
-			damage = owlFriend.HitPoints; // Assuming OwlFriend has HitPoints
+			damage = owlFriend.HitPoints;
 		}
-		else if (hittingArea != null && hittingArea.IsInGroup("PlayerProjectile")) // Example group check
+		// *** THIS IS THE IMPORTANT CHECK FOR THE LASER ***
+		else if (hittingArea != null && hittingArea.IsInGroup("PlayerProjectile"))
 		{
-			damage = 5; // Default projectile damage
+			damage = 5; // Default projectile damage (Adjust as needed)
 		}
 		else
 		{
-			GD.Print($"{Name} hurt by unknown/unhandled area: {hittingArea?.Name ?? "null"} Layer: {hittingArea?.CollisionLayer}");
+			GD.Print($"{Name} hurt by unhandled area type/group."); // You might be seeing this log
 		}
-
+		GD.Print($"Damage determined: {damage}"); // Check if this is > 0
 		return damage;
 	}
 
