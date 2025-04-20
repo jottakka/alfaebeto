@@ -487,11 +487,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_42wdb")
+&"": SubResource("AnimationLibrary_42wdb")
 }
 
 [node name="HurtComponent" parent="." node_paths=PackedStringArray("HitBox") instance=ExtResource("4_l0mx3")]
 HitBox = NodePath("../HitBox")
+CooldownSeconds = 3.0
 
 [node name="HitBox" parent="." instance=ExtResource("5_jdbne")]
 SetOnReady = false

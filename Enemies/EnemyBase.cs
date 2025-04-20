@@ -1,6 +1,6 @@
 ﻿using Alfaebeto;
-using Alfaebeto.Components;
-using Alfaebeto.CustomNodes;
+using Alfaebeto.Components; // Corrected namespace
+using Alfaebeto.CustomNodes; // Corrected namespace
 using AlfaEBetto.Components;
 using AlfaEBetto.CustomNodes;
 using AlfaEBetto.Extensions;
@@ -8,14 +8,18 @@ using AlfaEBetto.PlayerNodes;
 using AlfaEBetto.Weapons;
 using Godot;
 
-namespace AlfaEBetto.Enemies;
+namespace AlfaEBetto.Enemies; // Corrected namespace
 
-public sealed partial class EnemyBase : CharacterBody2D
+/// <summary>
+/// Base class for standard enemies that move, take damage, and drop items.
+/// Uses CharacterBody2D for movement.
+/// </summary>
+public sealed partial class EnemyBase : CharacterBody2D // Correct base type
 {
-	// --- Exports ---
+	#region Exports
 	[Export] public AnimationPlayer AnimationPlayer { get; set; }
-	[Export] public HitBox HitBox { get; set; }
-	[Export] public EnemyHurtBox HurtBox { get; set; }
+	[Export] public HitBox HitBox { get; set; } // For detecting player attacks
+	[Export] public EnemyHurtBox HurtBox { get; set; } // For player detection (sets its own layer)
 	[Export] public HurtComponent HurtComponent { get; set; }
 	[Export] public HealthComponent HealthComponent { get; set; }
 	[Export] public CoinSpawnerComponent CoinSpawnerComponent { get; set; }
@@ -23,60 +27,128 @@ public sealed partial class EnemyBase : CharacterBody2D
 
 	[ExportGroup("Movement & Stats")]
 	[Export] public float Speed { get; set; } = 60.0f;
-	[Export] public float KnockBackFactor { get; set; } = 50.0f;
-	[Export(PropertyHint.Range, "1, 10, 1")] // Assuming 1 to 10 frames for the splat
-	private int _splatFrameCount = 5; // Default value, adjust based on your Sprite2D frames
+	[Export] public float KnockBackFactor { get; set; } = 50.0f; // Consider using impulses/velocity changes for knockback
+	[Export(PropertyHint.Range, "1, 10, 1")]
+	private int _splatFrameCount = 5; // Default value
+	#endregion
 
-	// --- Public Properties (Set by Spawner/Creator) ---
+	#region Public Properties (Set by Spawner/Creator)
+	/// <summary>Intended initial global position, set by the spawner/builder.</summary>
 	public Vector2 InitialPosition { get; set; } = Vector2.Zero;
+	/// <summary>Intended initial velocity, set by the spawner/builder.</summary>
 	public Vector2 SpawnInitialVelocity { get; set; } = Vector2.Zero;
+	#endregion
 
-	// --- Private Fields ---
-	private Player _cachedPlayer; // Cache player reference for efficiency
-	private bool _isSpawning = false; // Internal state flag
+	#region Private Fields
+	private Player _cachedPlayer;
+	private bool _isSpawning = false; // Track if in spawning animation
+	private bool _isInitialized = false;
+	private bool _isDead = false; // Added explicit death flag
+	#endregion
 
+	#region Godot Methods
 	public override void _Ready()
 	{
-		if (!ValidateExports())
+		Initialize();
+		GD.Print($"{Name} _Ready: Initial GlobalPosition = {GlobalPosition}, Initial Position = {Position}"); // Keep log for verification
+	}
+
+	private void Initialize()
+	{
+		if (_isInitialized)
 		{
-			GD.PrintErr($"{Name}: Missing required exported nodes. Deactivating.");
-			QueueFree(); // Cannot function without components
 			return;
 		}
 
-		// Cache player reference safely
+		if (!ValidateExports())
+		{
+			GD.PrintErr($"{Name} ({GetPath()}): Missing required exported nodes. Deactivating.");
+			QueueFree();
+			return;
+		}
+
+		// --- *** POSITIONING LOGIC *** ---
+		// Set initial position using the value provided BEFORE _Ready by the builder/spawner.
+		GlobalPosition = InitialPosition;
+		// --- *** END POSITIONING LOGIC *** ---
+
+		CachePlayerReference();
+		SetupVisuals();
+		ConnectSignals();
+		SetupInitialState();
+
+		_isInitialized = true;
+	}
+
+	public override void _ExitTree() => DisconnectSignals();
+
+	public override void _PhysicsProcess(double delta)
+	{
+		// Don't process if not initialized, dead, or hurt
+		if (!_isInitialized || _isDead || (HurtComponent?.IsHurt ?? false))
+		{
+			// Optional: Apply friction or stop movement if hurt/dead
+			// Velocity = Velocity.Lerp(Vector2.Zero, 0.1f); MoveAndSlide();
+			return;
+		}
+
+		Vector2 currentVelocity = Vector2.Zero;
+		if (_isSpawning)
+		{
+			// Apply initial spawn velocity (e.g., being pushed out of spawner)
+			currentVelocity = SpawnInitialVelocity;
+			// Note: Consider adding drag/friction or reducing this velocity over time.
+			// For now, assumes spawn animation handles transition.
+		}
+		else // Not spawning, normal behavior (e.g., move towards player)
+		{
+			if (IsInstanceValid(_cachedPlayer))
+			{
+				Vector2 direction = GlobalPosition.DirectionTo(_cachedPlayer.GlobalPosition);
+				currentVelocity = direction * Speed;
+			}
+			else
+			{
+				currentVelocity = Vector2.Zero; // Stop if no player
+			}
+		}
+
+		Velocity = currentVelocity; // Set CharacterBody2D velocity
+		MoveAndSlide();
+	}
+	#endregion
+
+	#region Initialization Helpers
+	private void CachePlayerReference()
+	{
 		if (IsInstanceValid(Global.Instance))
 		{
 			_cachedPlayer = Global.Instance.Player;
 			if (!IsInstanceValid(_cachedPlayer))
 			{
-				GD.PrintErr($"{Name}: Global.Instance.Player is invalid in _Ready. Enemy might not behave correctly.");
-				// Consider SetPhysicsProcess(false) if player is essential for movement?
+				GD.PrintErr($"{Name} ({GetPath()}): Global.Instance.Player is invalid in _Ready.");
 			}
 		}
 		else
 		{
-			GD.PrintErr($"{Name}: Global.Instance is invalid in _Ready. Cannot get Player reference.");
-			// Consider SetPhysicsProcess(false)?
+			GD.PrintErr($"{Name} ({GetPath()}): Global.Instance is invalid in _Ready.");
 		}
+	}
 
+	private void SetupVisuals()
+	{
 		// Randomize the splat sprite frame
 		if (IsInstanceValid(SplatsSprite2D) && _splatFrameCount > 0)
 		{
-			SplatsSprite2D.Frame = (int)(GD.Randi() % (uint)_splatFrameCount); // Use uint cast for modulo
+			SplatsSprite2D.Visible = false; // Start hidden
+			SplatsSprite2D.Frame = GD.RandRange(0, _splatFrameCount - 1); // Correct range
 		}
+		// Set Z index
+		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies); // Check enum name
+	}
 
-		// Assuming SetVisibilityZOrdering extension method exists
-		this.SetVisibilityZOrdering(VisibilityZOrdering.PlayerAndEnemies);
-
-		// Start with collisions deactivated
-		DeactivateCollisions();
-
-		// Set initial position provided by spawner/creator
-		GlobalPosition = InitialPosition;
-
-		// --- Connect Signals ---
-		// Use += for strongly-typed connections (requires delegates defined in components)
+	private void ConnectSignals()
+	{
 		if (IsInstanceValid(HurtComponent))
 		{
 			HurtComponent.OnHurtSignal += OnHurt;
@@ -91,24 +163,10 @@ public sealed partial class EnemyBase : CharacterBody2D
 		{
 			AnimationPlayer.AnimationFinished += OnAnimationFinished;
 		}
-		// ---------------------
-
-		// Initial state setup based on whether SetAsSpawning was called before _Ready
-		if (_isSpawning)
-		{
-			// SetAsSpawning was called before _Ready, ensure animation plays
-			AnimationPlayer?.Play(EnemyAnimations.EnemySpawn);
-		}
-		else
-		{
-			// Start directly in active state
-			OnReadyToAction();
-		}
 	}
 
-	public override void _ExitTree()
+	private void DisconnectSignals()
 	{
-		// Disconnect signals when removed from the tree
 		if (IsInstanceValid(HurtComponent))
 		{
 			HurtComponent.OnHurtSignal -= OnHurt;
@@ -125,107 +183,162 @@ public sealed partial class EnemyBase : CharacterBody2D
 		}
 	}
 
-	public override void _PhysicsProcess(double delta)
+	private void SetupInitialState()
 	{
-		// Check validity and state before processing movement
-		if (!IsInstanceValid(HealthComponent) || HealthComponent.IsDead ||
-			!IsInstanceValid(HurtComponent) || HurtComponent.IsHurt)
-		{
-			// Stop movement if dead or currently in hurt state
-			// Velocity = Vector2.Zero; // Optional: Explicitly stop velocity
-			return;
-		}
-
-		Vector2 currentVelocity = Vector2.Zero;
+		// Deactivate collisions initially IF spawning, otherwise activate
 		if (_isSpawning)
 		{
-			// Apply initial spawn velocity (e.g., being pushed out of spawner)
-			currentVelocity = SpawnInitialVelocity;
-			// Note: Consider adding drag or reducing this velocity over time if needed
+			DeactivateCollisions();
+			AnimationPlayer?.Play(EnemyAnimations.EnemySpawn); // Start spawn anim immediately
 		}
-		else // Not spawning, move towards player
+		else
 		{
-			if (IsInstanceValid(_cachedPlayer)) // Check if player reference is valid
-			{
-				Vector2 direction = GlobalPosition.DirectionTo(_cachedPlayer.GlobalPosition);
-				currentVelocity = direction * Speed;
-			}
-			// else: Player is invalid, maybe stand still or patrol?
-			// currentVelocity = Vector2.Zero; // Example: Stop if no player
+			// If not spawning, become active immediately
+			OnReadyToAction();
 		}
-
-		Velocity = currentVelocity; // Set velocity for CharacterBody2D
-		MoveAndSlide();
 	}
 
-	// --- Public Methods ---
-
-	/// <summary>
-	/// Sets the enemy state to spawning, plays spawn animation, and deactivates collisions.
-	/// Typically called by the spawner immediately after instantiating the enemy.
-	/// </summary>
-	public void SetAsSpawning()
-	{
-		// Check validity before playing animation
-		if (!IsInstanceValid(AnimationPlayer))
-		{
-			return;
-		}
-
-		DeactivateCollisions();
-		_isSpawning = true;
-		Visible = true; // Ensure visible
-		AnimationPlayer.Play(EnemyAnimations.EnemySpawn);
-	}
-
-	// --- Private Methods ---
-
-	/// <summary>
-	/// Validates that essential exported nodes are assigned.
-	/// </summary>
 	private bool ValidateExports()
 	{
+		// ... (validation code remains the same) ...
 		bool isValid = true;
-		if (AnimationPlayer == null) { GD.PrintErr($"{Name}: Missing AnimationPlayer!"); isValid = false; }
+		void CheckNode(GodotObject node, string name) { if (node == null) { GD.PrintErr($"{Name} ({GetPath()}): Missing export '{name}'!"); isValid = false; } }
 
-		if (HitBox == null) { GD.PrintErr($"{Name}: Missing HitBox!"); isValid = false; }
-
-		if (HurtBox == null) { GD.PrintErr($"{Name}: Missing HurtBox!"); isValid = false; }
-
-		if (HurtComponent == null) { GD.PrintErr($"{Name}: Missing HurtComponent!"); isValid = false; }
-
-		if (HealthComponent == null) { GD.PrintErr($"{Name}: Missing HealthComponent!"); isValid = false; }
-
-		if (CoinSpawnerComponent == null) { GD.PrintErr($"{Name}: Missing CoinSpawnerComponent!"); isValid = false; }
-
-		if (SplatsSprite2D == null) { GD.PrintErr($"{Name}: Missing SplatsSprite2D!"); isValid = false; }
-
+		CheckNode(AnimationPlayer, nameof(AnimationPlayer));
+		CheckNode(HitBox, nameof(HitBox));
+		CheckNode(HurtBox, nameof(HurtBox));
+		CheckNode(HurtComponent, nameof(HurtComponent));
+		CheckNode(HealthComponent, nameof(HealthComponent));
+		CheckNode(CoinSpawnerComponent, nameof(CoinSpawnerComponent));
+		CheckNode(SplatsSprite2D, nameof(SplatsSprite2D));
 		return isValid;
 	}
+	#endregion
 
+	#region Public API
 	/// <summary>
-	/// Handles the health depletion signal. Plays death animation.
+	/// Sets the enemy state to spawning. Called externally by the spawner.
+	/// Ensures spawn animation plays and collisions are initially off.
 	/// </summary>
-	private void OnDeath()
+	public void SetAsSpawning(bool spawning = true)
 	{
-		// Check validity before playing animation
-		if (!IsInstanceValid(AnimationPlayer))
+		_isSpawning = spawning;
+		Visible = true; // Ensure visible when spawning starts
+
+		// If _Ready hasn't run yet, the flag will be checked there.
+		// If _Ready has run, play the animation now (if not already playing).
+		if (_isInitialized && spawning && AnimationPlayer?.CurrentAnimation != EnemyAnimations.EnemySpawn)
+		{
+			DeactivateCollisions(); // Ensure collisions off during spawn anim
+			AnimationPlayer?.Play(EnemyAnimations.EnemySpawn);
+		}
+		else if (!spawning)
+		{
+			// Force transition to active state if called with false externally
+			OnReadyToAction();
+		}
+	}
+	#endregion
+
+	#region Internal Logic & Handlers
+
+	/// <summary>Called when the enemy is ready for normal actions (after spawning or reset).</summary>
+	private void OnReadyToAction()
+	{
+		_isSpawning = false; // Ensure spawning state is false
+		if (!_isDead) // Only activate if not dead
+		{
+			AnimationPlayer?.Play(EnemyAnimations.EnemyBugMoving); // Or Idle?
+			ActivateCollisions();
+		}
+	}
+
+	private void OnHurt(Area2D hittingArea)
+	{
+		if (_isDead || _isSpawning || (HurtComponent?.IsHurt ?? true))
+		{
+			return; // Added check for HurtComponent cooldown
+		}
+
+		// Apply knockback first? Or damage? Depends on feel. Let's do damage first.
+		int damageToTake = DetermineDamage(hittingArea);
+
+		if (damageToTake > 0)
+		{
+			HealthComponent?.TakeDamage(damageToTake); // HealthComponent handles validity
+			if (HealthComponent != null && !HealthComponent.IsDead)
+			{
+				AnimationPlayer?.Play(EnemyAnimations.EnemyBugHurtBlink); // Play hurt animation
+				ApplyKnockback(hittingArea); // Apply knockback only if hurt but not dead
+			}
+			// Note: OnDeath handles logic if health depleted
+		}
+	}
+
+	private int DetermineDamage(Area2D hittingArea)
+	{
+		// Determine damage based on what hit the enemy
+		// Example logic - refine based on your projectile/hitbox types/groups
+		int damage = 0;
+		// IMPORTANT: Replace PlayerSpecialHurtBox/OwlFriend with actual types/groups/layers from your project
+		if (hittingArea is PlayerSpecialHurtBox) // Use 'is' check
+		{
+			damage = 10; // Example damage
+		}
+		// Check owner if area itself isn't specific enough
+		else if (hittingArea?.GetOwner() is OwlFriend owlFriend) // Check owner type
+		{
+			damage = owlFriend.HitPoints; // Assuming OwlFriend has HitPoints
+		}
+		else if (hittingArea != null && hittingArea.IsInGroup("PlayerProjectile")) // Example group check
+		{
+			damage = 5; // Default projectile damage
+		}
+		else
+		{
+			GD.Print($"{Name} hurt by unknown/unhandled area: {hittingArea?.Name ?? "null"} Layer: {hittingArea?.CollisionLayer}");
+		}
+
+		return damage;
+	}
+
+	private void ApplyKnockback(Area2D hittingArea)
+	{
+		if (!IsInstanceValid(hittingArea))
 		{
 			return;
 		}
 
-		DeactivateCollisions(); // Ensure collisions are off
-		Velocity = Vector2.Zero; // Stop movement
-		SetPhysicsProcess(false); // Optional: Stop physics processing entirely
-		AnimationPlayer.Play(EnemyAnimations.EnemyBugDie);
+		Vector2 knockDirection = hittingArea.GlobalPosition.DirectionTo(GlobalPosition).Normalized();
+		// Applying knockback to CharacterBody2D: Modify Velocity
+		Velocity += knockDirection * KnockBackFactor; // Add impulse
+													  // MoveAndSlide() in _PhysicsProcess will handle the movement
 	}
 
-	/// <summary>
-	/// Handles the animation finished signal. Cleans up or transitions state.
-	/// </summary>
+	private void OnDeath()
+	{
+		if (_isDead)
+		{
+			return;
+		}
+
+		_isDead = true;
+
+		Velocity = Vector2.Zero; // Stop movement
+		SetPhysicsProcess(false); // Stop physics updates
+		DeactivateCollisions();
+
+		// Make splat visible just before main death animation
+		if (SplatsSprite2D != null)
+		{
+			SplatsSprite2D.Visible = true;
+		}
+
+		AnimationPlayer?.Play(EnemyAnimations.EnemyBugDie);
+	}
+
 	private void OnAnimationFinished(StringName animationName)
 	{
-		// Check validity of this node first
 		if (!IsInstanceValid(this))
 		{
 			return;
@@ -233,137 +346,54 @@ public sealed partial class EnemyBase : CharacterBody2D
 
 		if (animationName == EnemyAnimations.EnemyBugDie)
 		{
-			// Spawn coins using component (check validity)
-			CoinSpawnerComponent?.SpawnCoins(GlobalPosition);
-			QueueFree(); // Enemy is done after death animation
+			CoinSpawnerComponent?.SpawnCoins(GlobalPosition); // Spawn coins on death completion
+			QueueFree();
 		}
 		else if (animationName == EnemyAnimations.EnemyBugHurtBlink)
 		{
-			OnHurtStateFinished(); // Transition out of hurt state
+			OnHurtStateFinished(); // Ready to act again after hurt anim
 		}
 		else if (animationName == EnemyAnimations.EnemySpawn)
 		{
-			_isSpawning = false; // Spawning finished
-			OnReadyToAction(); // Transition to normal action state
+			OnReadyToAction(); // Ready to act after spawn anim
 		}
 	}
 
-	/// <summary>
-	/// Called when the hurt animation finishes. Resumes normal state.
-	/// </summary>
+	/// <summary>Called when the hurt animation finishes.</summary>
 	private void OnHurtStateFinished()
 	{
-		// Check validity before playing animation or accessing components
-		if (!IsInstanceValid(AnimationPlayer) || !IsInstanceValid(HurtComponent))
+		if (_isDead)
 		{
-			return;
+			return; // Don't reactivate if died during hurt
 		}
 
-		AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
-		HurtComponent.OnHurtCooldownTimeout(); // Notify component hurt state is over
-		ActivateCollisions(); // Re-enable collisions
-	}
-
-	/// <summary>
-	/// Called when the enemy is ready for normal actions (after spawning or reset).
-	/// </summary>
-	private void OnReadyToAction()
-	{
-		// Check validity before playing animation
-		if (!IsInstanceValid(AnimationPlayer))
+		// HurtComponent should still be valid based on _Ready check
+		HurtComponent?.OnHurtCooldownTimeout(); // Reset HurtComponent state
+		if (!_isSpawning) // Don't activate collisions if still in (an interrupted?) spawn state
 		{
-			return;
-		}
-
-		AnimationPlayer.Play(EnemyAnimations.EnemyBugMoving);
-		ActivateCollisions(); // Enable collisions
-	}
-
-	/// <summary>
-	/// Handles the hurt signal. Applies damage and knockback.
-	/// </summary>
-	private void OnHurt(Area2D enemyArea) // Assuming enemyArea is the hitbox that hit us
-	{
-		// Check validity of this node and components
-		if (!IsInstanceValid(this) || !IsInstanceValid(HealthComponent) || !IsInstanceValid(AnimationPlayer))
-		{
-			return;
-		}
-
-		// Ignore hurt while spawning or already dead
-		if (_isSpawning || HealthComponent.IsDead)
-		{
-			return;
-		}
-
-		// Deactivate collisions immediately to prevent multi-hits during hurt animation
-		DeactivateCollisions();
-
-		int damageToTake = 0;
-
-		// Determine damage based on what hit the enemy
-		if (enemyArea is PlayerSpecialHurtBox) // Example check - use actual type or group
-		{
-			damageToTake = 10; // Example damage value - consider making this data-driven
-		}
-		else if (enemyArea?.GetParent() is OwlFriend owlFriend && IsInstanceValid(owlFriend)) // Check validity of area and parent
-		{
-			// Get damage from the specific source if possible
-			damageToTake = owlFriend.HitPoints; // Assuming OwlFriend has HitPoints property
-		}
-		else
-		{
-			// Unknown source? Apply default damage or ignore?
-			GD.Print($"{Name} hurt by unknown area: {enemyArea?.Name}");
-			// damageToTake = 1; // Example default
-			// Or maybe reactivate collisions and return if source is unknown/invalid
 			ActivateCollisions();
-			return;
-		}
-
-		// Apply damage if any was determined
-		if (damageToTake > 0)
-		{
-			HealthComponent.TakeDamage(damageToTake);
-		}
-
-		// Play hurt animation only if not dead after taking damage
-		if (!HealthComponent.IsDead)
-		{
-			AnimationPlayer.Play(EnemyAnimations.EnemyBugHurtBlink);
-		}
-
-		// Apply knockback (check if enemyArea is still valid)
-		if (IsInstanceValid(enemyArea))
-		{
-			Vector2 knockDirection = enemyArea.GlobalPosition.DirectionTo(GlobalPosition); // Direction away from hitter
-																						   // Apply knockback by directly moving? Or applying velocity? Moving is simpler here.
-																						   // Using Tween might be smoother than direct position change.
-			Position += knockDirection * KnockBackFactor;
+			AnimationPlayer?.Play(EnemyAnimations.EnemyBugMoving); // Return to moving/idle
 		}
 	}
 
-	/// <summary>
-	/// Activates collision shapes using helper components/methods.
-	/// </summary>
 	private void ActivateCollisions()
 	{
-		// Assuming HurtBox and HitBox components handle their specific layer/mask activation
-		HurtBox?.SetCollisionLayerBasedOnParent();
-		HitBox?.ActivateCollisionsMasks();
-		// Also activate the main CharacterBody collision if needed
-		// CollisionLayer = ...; // Set appropriate layer/mask for CharacterBody2D itself
+		// Activate main body collision (adjust layer/mask as needed for specific enemy)
+		this.ResetCollisionLayerAndMask(); // Clear first
+		this.ActivateCollisionLayer(CollisionLayers.RegularEnemy); // Example layer for body
+		this.ActivateCollisionMask(CollisionLayers.Player); // Example mask
+		this.ActivateCollisionMask(CollisionLayers.Enviroment); // Example mask
+
+		// Activate component collision areas
+		HurtBox?.SetCollisionLayerBasedOnParent(); // HurtBox sets its layer
+		HitBox?.ActivateCollisionsMasks(); // HitBox sets its mask? Or maybe layer? Check HitBox script.
 	}
 
-	/// <summary>
-	/// Deactivates collision shapes using helper components/methods.
-	/// </summary>
-	private void DeactivateCollisions() // Renamed from DeactiveCollisions
+	private void DeactivateCollisions()
 	{
-		// Assuming ResetCollisionLayerAndMask is an extension method or defined elsewhere
 		this.ResetCollisionLayerAndMask(); // Reset CharacterBody2D layer/mask
-										   // Deactivate component collision shapes
 		HurtBox?.DeactivateCollisions();
 		HitBox?.DeactivateCollisions();
 	}
+	#endregion
 }

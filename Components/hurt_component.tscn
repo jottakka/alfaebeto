@@ -2,5 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ds0faaxmln6ma" path="res://Components/HurtComponent.cs" id="1_rhem4"]
 
-[node name="HurtComponent" type="Node"]
+[node name="HurtComponent" type="Node" node_paths=PackedStringArray("HurtCooldownTimer")]
 script = ExtResource("1_rhem4")
+HurtCooldownTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]

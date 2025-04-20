@@ -33,32 +33,30 @@ public sealed class EnemyBuilder
 	/// Included for potential future use or adaptation if EnemyBase provides a setter method.
 	/// </param>
 	/// <returns>The instantiated EnemyBase node, or null if instantiation fails.</returns>
-	public EnemyBase Create(Vector2 globalPosition, Vector2 initialVelocity) // Keep velocity param for now, but don't use directly
+	public EnemyBase Create(Vector2 globalPosition, Vector2 initialVelocity)
 	{
 		try
 		{
-			// Instantiate the scene using the generic method for type safety
 			EnemyBase enemy = _enemyPackedScene.Instantiate<EnemyBase>();
-
-			// Check if instantiation actually returned the expected type
 			if (enemy == null)
 			{
-				GD.PrintErr($"{nameof(EnemyBuilder)}: Failed to instantiate scene '{_enemyPackedScene.ResourcePath}'. The root node is not assignable to '{nameof(EnemyBase)}'.");
+				GD.PrintErr($"{nameof(EnemyBuilder)}: Failed to instantiate scene '{_enemyPackedScene.ResourcePath}'. Root not assignable to '{nameof(EnemyBase)}'.");
 				return null;
 			}
 
-			// Configure the instantiated node
-			enemy.GlobalPosition = globalPosition;
+			// --- *** MODIFIED LINES *** ---
+			// Set the properties the EnemyBase expects in _Ready
+			enemy.InitialPosition = globalPosition;
+			enemy.SpawnInitialVelocity = initialVelocity;
+			// Do NOT set GlobalPosition here directly if _Ready uses InitialPosition
+			// --- *** END OF MODIFIED LINES *** ---
 
 			return enemy;
 		}
-		catch (Exception ex) // Catch potential errors during instantiation
+		catch (Exception ex)
 		{
-			GD.PrintErr($"{nameof(EnemyBuilder)}: Exception during instantiation or setup of enemy scene '{_enemyPackedScene?.ResourcePath ?? "NULL"}'. Error: {ex.Message}");
-			// Note: Cannot QueueFree potential 'enemy' instance here easily if exception
-			// occurs after instantiation but before return, as it's not added to tree yet.
-			// Godot's GC should handle it eventually if not referenced elsewhere.
-			return null; // Return null on failure
+			GD.PrintErr($"{nameof(EnemyBuilder)}: Exception during instantiation: {ex.Message}");
+			return null;
 		}
 	}
 }

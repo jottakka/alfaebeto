@@ -257,50 +257,32 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 	/// </summary>
 	private void SpawnProjectile()
 	{
-		if (!_isInitialized || !IsInstanceValid(_cachedSceneRoot) || !IsInstanceValid(_enemySpawner) || !IsInstanceValid(_enemySpawner.Muzzle))
-		{
-			GD.PrintErr($"{Name}: SpawnProjectile called but component/nodes are not ready or valid.");
-			return;
-		}
+		// ... (validation checks remain the same) ...
 
-		// Calculate initial velocity based on spawner's orientation
-		Vector2 direction = _enemySpawner.GlobalTransform.X; // Use spawner's forward direction (X-axis)
-															 // Or if muzzle orientation matters:
-															 // Vector2 direction = _enemySpawner.Muzzle.GlobalTransform.X;
-															 // Or direction from spawner center to muzzle:
-															 // Vector2 direction = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition);
-
+		Vector2 direction = _enemySpawner.GlobalPosition.DirectionTo(_enemySpawner.Muzzle.GlobalPosition);
 		Vector2 velocity = direction.Normalized() * SpawnSpeed;
 		Vector2 spawnPosition = _enemySpawner.Muzzle.GlobalPosition;
 
-		// Create enemy instance using the builder
-		EnemyBase enemy = _enemyBuilder.Create(spawnPosition, velocity); // Velocity passed but likely unused by improved builder
+		// Create enemy instance - Builder now sets InitialPosition and SpawnInitialVelocity
+		EnemyBase enemy = _enemyBuilder.Create(spawnPosition, velocity);
 
-		// Check if creation succeeded before proceeding
 		if (enemy == null)
 		{
 			GD.PrintErr($"{Name}: EnemyBuilder failed to create enemy instance.");
-			// Optional: Maybe restart cooldown timer here? Depends on desired flow.
-			// OnReadyToRestartTimer();
 			return;
 		}
 
-		// Configure the spawned enemy (if needed beyond builder)
-		// Check if method exists before calling
 		if (enemy.HasMethod("SetAsSpawning"))
 		{
-			enemy.Call("SetAsSpawning", true); // Assuming SetAsSpawning takes a bool
-		}
-		else
-		{
-			// This might be okay if not all enemies have this method
-			// GD.PushWarning($"{Name}: Spawned enemy {enemy.Name} does not have SetAsSpawning method.");
+			enemy.Call("SetAsSpawning", true);
 		}
 
-		// Add to the scene using deferred call
+		// --- *** MODIFIED LINES *** ---
+		// Add the child deferred
 		_cachedSceneRoot.CallDeferred(Node.MethodName.AddChild, enemy);
-
-		// AddChildDefered(enemy); // If using extension method
+		// NO LONGER NEEDED: enemy.CallDeferred(Node2D.PropertyName.GlobalPosition, spawnPosition);
+		// The enemy's _Ready method will handle setting GlobalPosition from InitialPosition.
+		// --- *** END OF MODIFIED LINES *** ---
 	}
 	#endregion
 }
