@@ -1,5 +1,5 @@
+using System;
 using Alfaebeto.Blocks;
-using AlfaEBetto.Blocks;
 using AlfaEBetto.Data.Words;
 using AlfaEBetto.Enemies.Parts;
 using Godot;
@@ -50,6 +50,27 @@ public sealed partial class GuessBlockEnemy : BaseGuessEnemy // Inherit from bas
 		EnemySpawnerLeft?.AllowSpawn();
 		EnemySpawnerRight?.AllowSpawn();
 		base.OnScreenEnteredUpper();
+	}
+
+	protected override void OnReadyToCleanUp()
+	{
+		if (this is GuessBlockEnemy guessBlockEnemyInstance)
+		{
+			GD.Print($"{Name}: EnemyWordDeath animation finished. Preparing GuessBlockEnemy child controllers before QueueFree.");
+			try // Add try-catch for safety when getting nodes
+			{
+				EnemySpawnerLeft.PrepareForCleanup();
+
+				EnemySpawnerRight.PrepareForCleanup(); // Call the cleanup method
+			}
+			catch (Exception ex)
+			{
+				// Log any error during the cleanup preparation
+				GD.PrintErr($"{Name}: Error during controller cleanup preparation in OnAnimationFinished: {ex.Message}");
+			}
+		}
+
+		QueueFree();
 	}
 }
 

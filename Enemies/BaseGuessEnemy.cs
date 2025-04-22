@@ -1,5 +1,6 @@
 ﻿using System;
 using Alfaebeto.Blocks;
+using Alfaebeto.Components;
 using Alfaebeto.Enemies.Parts;
 using AlfaEBetto.Blocks;
 using AlfaEBetto.Components;
@@ -122,12 +123,26 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 	#region Common Private Methods
 	private void OnAnimationFinished(StringName animationName)
 	{
-		// Assuming EnemyAnimations class is accessible
+		// Assuming EnemyAnimations class/constants are accessible
 		if (animationName == EnemyAnimations.EnemyWordDeath)
 		{
+			// *** ADD THIS CLEANUP LOGIC HERE ***
+			// Check if the specific instance being freed is a GuessBlockEnemy
+			// to safely access its specific members.
+			OnReadyToCleanUp();
+			// *** END OF ADDED CLEANUP LOGIC ***
+
+
+			// Original line that frees the enemy after the animation
 			QueueFree();
 		}
 		// Add handling for other animations if needed (e.g., Spawn animation finish)
+		// else if (animationName == ...) { ... }
+	}
+
+	protected virtual void OnReadyToCleanUp()
+	{
+		QueueFree();
 	}
 
 	private void SetUpInitialStates()

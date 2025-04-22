@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AlfaEBetto.Components;
@@ -56,30 +56,77 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
 	private void Initialize()
 	{
-		// ... (Validation for Exports, Parent, Muzzle, Builder, SceneRoot remains the same) ...
 		if (_isInitialized)
 		{
 			return;
 		}
 
-		if (!ValidateExports()) { /* Error Log + Deactivate */ _isInitialized = false; return; }
+		if (!ValidateExports())
+		{
+			GD.PrintErr($"{Name} ({GetPath()}): Initialization failed due to missing exports.");
+			SetProcess(false); // Deactivate
+			_isInitialized = false; // Mark as not initialized
+			return;
+		}
 
+		// --- Get the parent node ---
 		_enemySpawner = GetParent<EnemySpawner>();
-		if (_enemySpawner == null) { /* Error Log + Deactivate */ _isInitialized = false; return; }
 
-		if (_enemySpawner.Muzzle == null) { /* Error Log + Deactivate */ _isInitialized = false; return; }
+		// *** ADD LOGGING HERE ***
+		if (_enemySpawner != null)
+		{
+			// Log details about the identified parent
+			GD.Print($"@@@ {Name} ({GetInstanceId()}): Initializing... Found Parent: '{_enemySpawner.Name}' (ID: {_enemySpawner.GetInstanceId()}, Path: '{_enemySpawner.GetPath()}') @@@");
+		}
+		else
+		{
+			// Log an error if the parent is NOT an EnemySpawner or is null
+			Node potentialParent = GetParent();
+			string parentInfo = (potentialParent != null)
+				? $"'{potentialParent.Name}' (Type: {potentialParent.GetType().Name}, Path: '{potentialParent.GetPath()}')"
+				: "null";
+			GD.PrintErr($"@@@ {Name} ({GetInstanceId()}): Initialization failed! Parent is not EnemySpawner or is null. Found: {parentInfo} @@@");
+			SetProcess(false); // Deactivate
+			_isInitialized = false;
+			return;
+		}
+		// *** END LOGGING SECTION ***
 
-		try { _enemyBuilder = new EnemyBuilder(EnemyPackedScene); }
-		catch (Exception ex) { /* Error Log + Deactivate */ _isInitialized = false; return; }
+		// --- Continue with other initialization checks ---
+		if (_enemySpawner.Muzzle == null)
+		{
+			GD.PrintErr($"{Name} ({GetPath()}): Initialization failed! Parent EnemySpawner '{_enemySpawner.Name}' is missing Muzzle node.");
+			SetProcess(false);
+			_isInitialized = false;
+			return;
+		}
+
+		try
+		{
+			_enemyBuilder = new EnemyBuilder(EnemyPackedScene);
+		}
+		catch (Exception ex)
+		{
+			GD.PrintErr($"{Name} ({GetPath()}): Initialization failed! Error creating EnemyBuilder: {ex.Message}");
+			SetProcess(false);
+			_isInitialized = false;
+			return;
+		}
 
 		_cachedSceneRoot = GetTree()?.CurrentScene;
-		if (_cachedSceneRoot == null) { /* Error Log + Deactivate */ _isInitialized = false; return; }
+		if (_cachedSceneRoot == null)
+		{
+			GD.PrintErr($"{Name} ({GetPath()}): Initialization failed! Cannot find current scene root.");
+			SetProcess(false);
+			_isInitialized = false;
+			return;
+		}
 
+		// --- Finish initialization ---
 		ConnectSignals();
 		CooldownTimer.WaitTime = GetRandomCooldownTime();
 		_isInitialized = true;
-		GD.Print($"{Name}: Initialized. Max Enemies: {MaxSpawnedEnemies}");
-		// Start disabled until permission is granted
+		GD.Print($"{Name}: Initialized. Max Enemies: {MaxSpawnedEnemies}"); // Existing log
 		UpdateShootingPermission(); // Calculate initial permission state
 	}
 
@@ -102,13 +149,14 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
 	public override void _Notification(int what)
 	{
-		// ... (NotificationPredelete cleanup logic remains the same) ...
+		base._Notification(what); // Call base implementation first
 		if (what == NotificationPredelete)
 		{
-			// GD.Print($"{Name} ({GetPath()}): Cleaning up spawned enemies on Predelete.");
+			// Use PrintErr for high visibility in logs
+			// Current cleanup logic:
 			foreach (EnemyBase enemy in _spawnedEnemies.ToList())
 			{
-				if (IsInstanceValid(enemy)) { enemy.ForceDespawn(); }
+				if (IsInstanceValid(enemy)) { enemy.QueueFree(); } // Use QueueFree for standard cleanup
 			}
 
 			_spawnedEnemies.Clear();
@@ -117,8 +165,11 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 
 	public override void _ExitTree()
 	{
+		// Use PrintErr for high visibility in logs
 		DisconnectSignals();
 		CooldownTimer?.Stop();
+		// Make sure to call base if you override _ExitTree in a class deriving from Node
+		base._ExitTree();
 	}
 	#endregion
 
@@ -211,28 +262,33 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 	/// </summary>
 	private void UpdateShootingPermission()
 	{
-		// Calculate new permission state
 		bool canShootNow = _externalPermissionToShoot && !_disallowedByMaxCount;
 
-		// Check if state actually changed
-		if (canShootNow == _allowToShoot)
+		// FIX: Only proceed if the state needs changing OR the timer is invalid
+		// if (canShootNow == _allowToShoot || IsInstanceValid(CooldownTimer)) // OLD INCORRECT
+		if (canShootNow == _allowToShoot || !IsInstanceValid(CooldownTimer)) // CORRECTED CHECK
 		{
-			return; // No change needed
+			// No change in permission needed, or timer is invalid anyway.
+			GD.Print($"{Name}: No change in permission or timer invalid. Current: {canShootNow}, Previous: {_allowToShoot}");
+			return;
 		}
 
 		_allowToShoot = canShootNow; // Update the actual permission flag
 
 		// Start or stop timer based on the NEW state
-		if (_allowToShoot && CooldownTimer.IsStopped())
+		if (IsInstanceValid(CooldownTimer)) // Extra safety check
 		{
-			CooldownTimer.WaitTime = GetRandomCooldownTime();
-			CooldownTimer.Start();
-			// GD.Print($"{Name}: Timer STARTED due to permission update.");
-		}
-		else if (!_allowToShoot && !CooldownTimer.IsStopped())
-		{
-			CooldownTimer.Stop();
-			// GD.Print($"{Name}: Timer STOPPED due to permission update.");
+			if (_allowToShoot && CooldownTimer.IsStopped())
+			{
+				CooldownTimer.WaitTime = GetRandomCooldownTime();
+				CooldownTimer.Start();
+				GD.Print($"{Name}: Timer STARTED by UpdateShootingPermission."); // Log start
+			}
+			else if (!_allowToShoot && !CooldownTimer.IsStopped())
+			{
+				CooldownTimer.Stop();
+				GD.Print($"{Name}: Timer STOPPED by UpdateShootingPermission."); // Log stop
+			}
 		}
 	}
 
@@ -327,7 +383,7 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 			return;
 		}
 
-		// Add to tracking list BEFORE connecting signals from it
+		// Add to tracking list BEFORE connecting signals from ita
 		_spawnedEnemies.Add(enemy);
 		// Connect TreeExiting immediately after adding to list
 		enemy.TreeExiting += () => OnSpawnedEnemyExiting(enemy);
@@ -358,23 +414,51 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 	/// </summary>
 	private void OnSpawnedEnemyExiting(EnemyBase enemy)
 	{
-		if (enemy == null)
+		// This check is still crucial, especially during the forced cleanup above.
+		if (!IsInstanceValid(this))
+		{
+			// This might now get logged when PrepareForCleanup force-frees enemies,
+			// if the enemy's exit signal is deferred slightly after this controller is freed.
+			GD.PrintErr($"{Name ?? "DisposedController"}: OnSpawnedEnemyExiting called but 'this' controller is invalid!");
+			return;
+		}
+
+		if (enemy == null) { return; }
+
+		// This Remove call might return false if the list was already cleared
+		// in PrepareForCleanup, which is okay.
+		bool removed = _spawnedEnemies.Remove(enemy);
+		if (removed)
+		{
+			GD.Print($"{Name}: OnSpawnedEnemyExiting removed '{enemy.Name}'.");
+		}
+		else
+		{
+			GD.Print($"{Name}: OnSpawnedEnemyExiting called for '{enemy.Name}', but it was already removed/list cleared.");
+		}
+
+		// Check again before potentially calling UpdateShootingPermission
+		if (!IsInstanceValid(this))
 		{
 			return;
 		}
 
-		bool removed = _spawnedEnemies.Remove(enemy);
-		// if (removed) GD.Print($"{Name}: Removed {enemy.Name} from tracking. Count: {_spawnedEnemies.Count}");
-
-		// If spawning was disallowed *because* of the max count,
-		// check if we are now below the limit and can re-allow shooting.
+		// The rest of the logic might be less relevant now but safe with checks:
 		if (_disallowedByMaxCount && MaxSpawnedEnemies > 0 && _spawnedEnemies.Count < MaxSpawnedEnemies)
 		{
-			// GD.Print($"{Name}: Enemy count dropped below limit. Re-evaluating permission.");
-			_disallowedByMaxCount = false; // No longer disallowed by count
-										   // Recalculate overall permission (respecting external permission)
+			if (!IsInstanceValid(this))
+			{
+				return;
+			}
+
+			_disallowedByMaxCount = false;
+
+			if (!IsInstanceValid(this))
+			{
+				return;
+			}
+
 			UpdateShootingPermission();
-			// UpdateShootingPermission will restart the timer if _allowToShoot becomes true
 		}
 	}
 
@@ -395,4 +479,67 @@ public sealed partial class EnemySpawnerControllerComponent : Node
 	}
 
 	#endregion
+
+	#region Cleanup
+
+	/// <summary>
+	/// Call this method BEFORE the controller or its parent is freed.
+	/// Stops the timer and disconnects signals from currently tracked enemies.
+	/// </summary>
+	/// <summary>
+	/// Call this method BEFORE the controller or its parent is freed.
+	/// Stops the timer and FORCES cleanup of currently tracked enemies.
+	/// </summary>
+	public void PrepareForCleanup()
+	{
+		if (!IsInstanceValid(this))
+		{
+			return; // Safety check
+		}
+
+		GD.Print($"{Name} ({GetInstanceId()}): PrepareForCleanup called.");
+
+		// Stop any future spawning
+		CooldownTimer?.Stop();
+		_allowToShoot = false; // Prevent restarts or accidental triggers
+		_externalPermissionToShoot = false; // Assume permission revoked
+
+		// *** ADDED: Force despawn tracked enemies ***
+		if (_spawnedEnemies != null)
+		{
+			GD.Print($"{Name}: Force despawning {_spawnedEnemies.Count} tracked enemies during PrepareForCleanup.");
+			// Iterate on a copy (.ToList()) because QueueFree inside the loop
+			// will trigger OnSpawnedEnemyExiting, which might modify the original list.
+			foreach (EnemyBase enemy in _spawnedEnemies.ToList())
+			{
+				if (IsInstanceValid(enemy))
+				{
+					GD.Print($"{Name}: QueueFreeing tracked enemy '{enemy.Name}' ({enemy.GetInstanceId()}).");
+					// Calling QueueFree here triggers the enemy's TreeExiting NOW,
+					// while 'this' controller is still valid.
+					enemy.QueueFree();
+				}
+			}
+			// Clear the list AFTER iterating and queuing free.
+			// OnSpawnedEnemyExiting will run for each enemy above, but the
+			// IsInstanceValid(this) check inside it should keep it safe.
+			// Clearing the list ensures it's empty before the controller itself is freed.
+			_spawnedEnemies.Clear();
+			GD.Print($"{Name}: Spawned enemies list cleared after QueueFree loop.");
+		}
+		// *** END ADDED SECTION ***
+
+		// Ensure the node stops processing if it hasn't already
+		if (this.HasMethod("SetProcess"))
+		{
+			SetProcess(false);
+		}
+
+		if (this.HasMethod("SetPhysicsProcess"))
+		{
+			SetPhysicsProcess(false);
+		}
+	}
+	#endregion
+
 }

@@ -1,0 +1,220 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkh6f5o0hvae5"]
+
+[ext_resource type="Texture2D" uid="uid://paatxqy1s874" path="res://UI/Menus/Art/5.png" id="1_bgtex"]
+[ext_resource type="FontFile" uid="uid://m8cw1p7p2u5c" path="res://UI/Menus/Art/Kenney Future.ttf" id="2_mainfont"]
+[ext_resource type="Texture2D" uid="uid://bxaxdfjqbilsc" path="res://UI/Menus/Art/book.png" id="5_backicon"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = ExtResource("2_mainfont")
+font_size = 48
+font_color = Color(1, 0.976471, 0.0392157, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skillbg"]
+bg_color = Color(0.2, 0.2, 0.2, 0.7)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7, 0.7, 0.7, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_skillbutton"]
+Button/styles/disabled = SubResource("StyleBoxFlat_skillbg")
+Button/styles/focus = SubResource("StyleBoxFlat_skillbg")
+Button/styles/hover = SubResource("StyleBoxFlat_skillbg")
+Button/styles/normal = SubResource("StyleBoxFlat_skillbg")
+Button/styles/pressed = SubResource("StyleBoxFlat_skillbg")
+
+[sub_resource type="LabelSettings" id="LabelSettings_skillname"]
+font = ExtResource("2_mainfont")
+font_color = Color(0.9, 0.9, 0.9, 1)
+outline_size = 2
+outline_color = Color(0.1, 0.1, 0.1, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5)
+
+[node name="SkillTreeUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bgtex")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 90.0
+grow_horizontal = 2
+text = "Habilidades"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 120.0
+offset_right = -20.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkillContainer" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(1000, 800)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Skill_1" type="Button" parent="ScrollContainer/SkillContainer"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+tooltip_text = "Skill Base: Descri��o aqui"
+mouse_filter = 2
+theme = SubResource("Theme_skillbutton")
+text = "Skill Base"
+autowrap_mode = 2
+
+[node name="Skill_2" type="Button" parent="ScrollContainer/SkillContainer"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 130.0
+offset_right = 280.0
+offset_bottom = 230.0
+tooltip_text = "Skill 2: Requer Skill Base"
+theme = SubResource("Theme_skillbutton")
+
+[node name="Icon" type="TextureRect" parent="ScrollContainer/SkillContainer/Skill_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="ScrollContainer/SkillContainer/Skill_2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Skill 2"
+label_settings = SubResource("LabelSettings_skillname")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Skill_3" type="Button" parent="ScrollContainer/SkillContainer"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 270.0
+offset_right = 280.0
+offset_bottom = 370.0
+tooltip_text = "Skill 3: Requer Skill Base"
+theme = SubResource("Theme_skillbutton")
+
+[node name="Icon" type="TextureRect" parent="ScrollContainer/SkillContainer/Skill_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="ScrollContainer/SkillContainer/Skill_3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Skill 3"
+label_settings = SubResource("LabelSettings_skillname")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer_SkillContainer_Connections#Line2D_1_3" type="Line2D" parent="."]
+scale = Vector2(1.02503, 0.899021)
+points = PackedVector2Array(130, 80, 230, 320)
+default_color = Color(0.8, 0.8, 0.8, 0.5)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -70.0
+offset_right = -30.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_mainfont")
+theme_override_font_sizes/font_size = 30
+text = "Voltar"
+icon = ExtResource("5_backicon")
+icon_alignment = 1

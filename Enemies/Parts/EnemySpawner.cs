@@ -62,11 +62,17 @@ public sealed partial class EnemySpawner : Area2D
 	/// </summary>
 	public void OnSpawnEnemyAnimationPointReady() => EmitSignal(SignalName.OnSpawnEnemyReadySignal);
 
+	public void PrepareForCleanup()
+	{
+		SpawnerController.PrepareForCleanup();
+	}
+
 	// --- Private Methods ---
 
 	/// <summary>
 	/// Validates that essential exported nodes are assigned.
 	/// </summary>
+	/// 
 	private bool ValidateExports()
 	{
 		bool isValid = true;
