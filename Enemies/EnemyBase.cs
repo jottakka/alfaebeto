@@ -1,5 +1,4 @@
-﻿using System;
-using Alfaebeto;
+﻿using Alfaebeto;
 using Alfaebeto.Components; // Corrected namespace
 using Alfaebeto.CustomNodes; // Corrected namespace
 using AlfaEBetto.Components;
@@ -222,11 +221,10 @@ public sealed partial class EnemyBase : CharacterBody2D // Correct base type
 	/// Useful for external triggers like spawner cleanup.
 	/// </summary>
 	public void ForceDespawn() // New method
-	{
+=>
 		// Call the same method that handling health depletion calls
 		// This ensures animations play, coins drop, etc.
 		OnDeath();
-	}
 	/// <summary>
 	/// Sets the enemy state to spawning. Called externally by the spawner.
 	/// Ensures spawn animation plays and collisions are initially off.
@@ -309,6 +307,7 @@ public sealed partial class EnemyBase : CharacterBody2D // Correct base type
 		{
 			GD.Print($"{Name} hurt by unhandled area type/group."); // You might be seeing this log
 		}
+
 		GD.Print($"Damage determined: {damage}"); // Check if this is > 0
 		return damage;
 	}

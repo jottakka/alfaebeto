@@ -1,5 +1,4 @@
 ﻿using Alfaebeto.Blocks;
-using AlfaEBetto.Blocks;
 using AlfaEBetto.Data.Words;
 using Godot;
 using WordProcessing.Util;

@@ -1,5 +1,4 @@
 using Alfaebeto.EnemyWeapons;
-using AlfaEBetto.EnemyWeapons;
 using Godot;
 
 namespace Alfaebeto.Enemies.Parts; // Corrected namespace

@@ -29,7 +29,6 @@ public partial class LetterBlock : StaticBody2D
 	[Export] public HealthComponent HealthComponent { get; set; }
 	[Export] public AnimationPlayer AnimationPlayer { get; set; } // Renamed export
 
-
 	[Export] public int DamageTakenPerHit { get; set; } = 20;
 
 	#endregion

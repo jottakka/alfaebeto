@@ -15,7 +15,6 @@ public partial class WordsSet : BlockSetBase // Inherit from base
 	[Export] public float ArticleBlockStretchFactor { get; set; } = 1.5f; // e.g., 1.5 makes it 50% wider
 	#endregion
 
-
 	#region Specific Data & Config
 	public GuessBlockWordResource GuessBlockInfo { get; set; }
 	public bool IsGermanArticle { get; set; } = false;

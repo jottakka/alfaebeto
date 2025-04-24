@@ -17,7 +17,7 @@ public sealed partial class MoneyCounterUi : Control
 
 	/// <summary>Assign the AnimationPlayer used for feedback animations.</summary>
 	[Export] public AnimationPlayer AnimationPlayerNode { get; set; } // Renamed for clarity
-	
+
 	[Export] public long Money { get; set; } = 0;
 	#endregion
 

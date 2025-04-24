@@ -1,12 +1,9 @@
 ﻿using System;
 using Alfaebeto.Blocks;
-using Alfaebeto.Components;
 using Alfaebeto.Enemies.Parts;
-using AlfaEBetto.Blocks;
 using AlfaEBetto.Components;
 using AlfaEBetto.Data.Words;
 using AlfaEBetto.Enemies;
-using AlfaEBetto.Enemies.Parts;
 using AlfaEBetto.Extensions;
 using Godot;
 // Add using for EnemyAnimations if it's in a different namespace
@@ -132,7 +129,6 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 			OnReadyToCleanUp();
 			// *** END OF ADDED CLEANUP LOGIC ***
 
-
 			// Original line that frees the enemy after the animation
 			QueueFree();
 		}
@@ -140,10 +136,7 @@ public abstract partial class BaseGuessEnemy : CharacterBody2D
 		// else if (animationName == ...) { ... }
 	}
 
-	protected virtual void OnReadyToCleanUp()
-	{
-		QueueFree();
-	}
+	protected virtual void OnReadyToCleanUp() => QueueFree();
 
 	private void SetUpInitialStates()
 	{

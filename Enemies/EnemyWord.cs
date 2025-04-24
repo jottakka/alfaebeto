@@ -3,7 +3,6 @@ using Alfaebeto;
 using Alfaebeto.Blocks;
 using Alfaebeto.Components;
 using Alfaebeto.Enemies.Parts;
-using AlfaEBetto.Blocks;
 using AlfaEBetto.Components;
 using AlfaEBetto.Data.Words;
 using AlfaEBetto.Enemies.Parts;

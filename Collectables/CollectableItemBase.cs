@@ -1,6 +1,4 @@
 ﻿using Alfaebeto.CustomNodes;
-using AlfaEBetto;
-using AlfaEBetto.CustomNodes;
 using AlfaEBetto.Extensions;
 using AlfaEBetto.PlayerNodes;
 using Godot;

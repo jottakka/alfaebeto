@@ -1,5 +1,4 @@
 ﻿using Alfaebeto.Components;
-using AlfaEBetto.Components;
 using Godot;
 
 namespace AlfaEBetto.Enemies.Parts;
@@ -62,10 +61,7 @@ public sealed partial class EnemySpawner : Area2D
 	/// </summary>
 	public void OnSpawnEnemyAnimationPointReady() => EmitSignal(SignalName.OnSpawnEnemyReadySignal);
 
-	public void PrepareForCleanup()
-	{
-		SpawnerController.PrepareForCleanup();
-	}
+	public void PrepareForCleanup() => SpawnerController.PrepareForCleanup();
 
 	// --- Private Methods ---
 

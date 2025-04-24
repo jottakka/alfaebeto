@@ -71,6 +71,7 @@ public partial class Global : Node
 			QueueFree();
 			return;
 		}
+
 		Instance = this;
 		// Optional: Make truly persistent across scene loads if not already an Autoload
 		// ProcessMode = ProcessModeEnum.Always;
@@ -196,6 +197,7 @@ public partial class Global : Node
 			GD.Print($"DeferredGotoScene: Queuing free of old scene '{CurrentSceneNode.Name}'.");
 			CurrentSceneNode.QueueFree();
 		}
+
 		CurrentSceneNode = null; // Clear reference immediately
 
 		// Load the new scene resource
@@ -220,7 +222,6 @@ public partial class Global : Node
 		GetTree().Root.AddChild(CurrentSceneNode);
 		GetTree().CurrentScene = CurrentSceneNode; // Important for GetTree().CurrentScene to work immediately
 		GD.Print($"DeferredGotoScene: Added '{CurrentSceneNode.Name}' and set as current scene.");
-
 
 		// --- *** ADDED LOGIC: Find Player/Stage and Set Data *** ---
 		Player foundPlayer = null;
