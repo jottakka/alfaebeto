@@ -2,7 +2,7 @@
 
 AlfaEBeto is an educational 2D top-down space shooter game designed to help users learn and practice aspects of various languages. The game is built using the Godot Engine with C#.
 
-![Gameplay GIF](https://jumpshare.com/s/IivHKcnGnoBhmmI2NsmY)
+![Gameplay GIF](https://pouch.jumpshare.com/preview/3FxpS42WQBsVQhRWLIuEWAIXcHBsOihJH0GCloZYdzNH8dm75Y4lOHsUwbNXVJfbLNsbZekPUHjXpZcBkqKWiKzM_Zikf_MXKuz1HhoJ8g0)
 
 ## 🎮 Gameplay
 
